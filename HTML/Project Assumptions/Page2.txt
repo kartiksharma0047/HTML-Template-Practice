@@ -1,0 +1,131 @@
+
+HTML CODE :-
+
+<div class="slide-container slide-container2">
+<!-- Flex Container Box -->
+<div class="flex-container">
+<div class="Left-side-box">
+<h1 class="slide-Heading">Implementation & Timeline Assumptions​</h1>
+<!-- Box 1 -->
+<div class="box">
+<h3>DATA MIGRATION AND PREPARATION</h3>
+<ul>
+<li>
+<p>
+<b class="colorBold">Exclusions:</b>
+Data migration is excluded from the current scope. If required, this must be discussed and prioritized separately, with additional effort and costs negotiated.<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Data Accuracy:</b>
+PartnerRe is responsible for ensuring the accuracy, completeness, and readiness of data to be used in the implementation.<p>
+</li>
+</ul>
+</div>
+<!-- Box 2 -->
+<div class="box">
+<h3>CHANGE MANAGEMENT AND TRAINING</h3>
+<ul>
+<li>
+<p>
+<b class="colorBold">Scope of Training:</b>
+Xebia will provide training to PartnerRe’s identified end-users and administrators. PartnerRe will ensure availability and participation of stakeholders for scheduled training sessions.​<p>
+</li>
+<li>
+<p>
+Xebia would ensure, through its proposed recommendation to work with PartnerRe to have a smooth Change Management, but the final decision and accountability lies at PartnerRe side.<p>
+</li>
+</ul>
+</div>
+<!-- Box 3 -->
+<div class="box">
+<h3>RISK MITIGATION</h3>
+<ul>
+<li>
+<p>
+<b class="colorBold">Timely Risk Escalation:</b>
+Xebia will promptly notify PartnerRe of any potential risks to timelines, costs, or scope during the discovery or implementation phases. Resolution will require close collaboration.<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Dependency Management:</b>
+Dependencies on PartnerRe systems, third-party integrations, or external vendors will be managed collaboratively. Delays caused by these parties are beyond Xebia’s accountability.<p>
+</li>
+</ul>
+<p class="red-para">*These assumptions are based on the current understanding and will be revisited and refined during the discovery phase (Sprint 0) to align with finalized project details.​</p>
+</div>
+</div>
+<div class="Right-side-box">
+<img src="Images\Cloud Computing Specialist Quantitative Analyst clipart.png"/>
+</div>
+</div>
+</div>
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CSS CODE :- 
+
+
+.slide-container2{
+  margin-top: -75px !important;
+  margin-left: -55px !important;
+  margin-right: -80px !important;
+}
+
+.slide-Heading {
+  color: #4d435f;
+  font-size: 27px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.box {
+  margin-left: 40px;
+}
+.box ul li {
+  list-style-type:circle;
+  font-size:13px;
+  margin: 0;
+  padding: 0;
+}
+.box h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: #4d435f;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.box p {
+  font-size: 13px;
+  margin: 0;
+  padding: 0 0 3px 0;
+}
+.box .colorBold {
+  color: #73658e;
+}
+.red-para{
+  color:#ff0000;  
+  font-size: 12px;
+  margin-top: 195px !important;
+}
+.Right-side-box{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 330px;
+  position: relative;
+}
+.Right-side-box img{
+  transform: scale(1.2);
+  position: absolute;
+  bottom: -26px;
+  right: 0px;
+}

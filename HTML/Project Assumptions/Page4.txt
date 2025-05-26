@@ -1,0 +1,134 @@
+
+HTML CODE :- 
+
+
+<div class="slide-container slide-container2">
+<!-- Flex Container Box -->
+<div class="flex-container">
+<div class="Left-side-box">
+<h1 class="slide-Heading">Assumptions​​</h1>
+<!-- Box 1 -->
+<div class="box">
+<h3>PROJECT SCOPE AND TIMELINES</h3>
+<ul>
+<li>
+<p>
+<b class="colorBold">Discovery Phase Deliverables:</b>
+Xebia will work with KHDA to agree on the necessary business requirements, use cases, and stakeholder inputs as needed during the discovery phase to finalize the product releases backlog. Any delays in providing this information may impact timelines.<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Flexibility in Scope:</b>
+We will agree on the scope of deliverables during sprint 0.  Any additions or changes to the agreed scope after Sprint 0 (discovery), will be treated as change requests and may result in revised timelines and costs. Xebia will ensure to cater any critical feedbacks in the current release to ensure the release is providing value to the end users, but this can be subjected to the impact it might have on timeline and cost. ** <b>The current proposal only covers from high level what framework components will be built, but the final sign off/ decision on actual scope to be implemented would be based on the discovery period only.</b><p>
+</li>
+<li>
+<p>
+<b class="colorBold">Project Timeline Dependencies:</b>
+Timelines are based on the assumption that all KHDA approvals, data inputs, and integrations are provided on time. Delays in these will impact the overall schedule.<p>
+</li>
+</ul>
+</div>
+<!-- Box 2 -->
+<div class="box">
+<h3>INFRASTRUCTURE AND RESOURCES</h3>
+<ul>
+<li>
+<p>
+<b class="colorBold">Infrastructure Readiness:</b>
+KHDA is responsible for procuring and setting up the necessary infrastructure (project management tools and others as needed), Power Platform environments, and licensing before the development kick-off. Any delays or unavailability of these will impact timelines and are outside Xebia’s control.​​<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Integration Readiness:</b>
+It is assumed that KHDA will provide the necessary APIs and system integration details. Xebia will not be responsible for any delays resulting from missing or incomplete integration readiness. All existing and third-party systems required for integration must be accessible and compatible with the Microsoft Power Platform.​<p>
+<p>APIs will be exposed for aggregator/partner integration. The integration efforts are not included.</p>
+</li>
+<li>
+<p>
+<b class="colorBold">Testing Environments:</b>
+KHDA will ensure the availability of a production-like testing environment for end-to-end testing. Delays in providing this environment will affect project progress.​​<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Project Resources:</b>
+All the team working on the project from Xebia side will be remote/ off-shore. Any need for onsite presence can be provided by Xebia and will be charged based on actual expenses incurred.​​<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Language:</b>
+All the team working on the project from Xebia side will be communicated with KHDA in English. Any need for non-English speaker needs to be communicated upfront to Xebia, for making the required arrangements as necessary which might incur additional cost which will be confirmed by Xebia.​<p>
+</li>
+</ul>
+</div>
+</div>
+<div class="Right-side-box"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CSS CODE :- 
+
+.slide-container2{
+  margin-top: -25px !important;
+  margin-left: -55px !important;
+  margin-right: -80px !important;
+}
+
+.slide-Heading {
+  color: #6c1d5f;
+  font-size: 27px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.box {
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+.box ul li {
+  list-style-type:circle;
+  font-size:13px;
+  margin: 0;
+  padding: 0;
+}
+.box h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: #4d435f;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.box p {
+  font-size: 13px;
+  margin: 0;
+  padding: 0 0 3px 0;
+}
+.box .colorBold {
+  color: #73658e;
+}
+.red-para{
+  color:#ff0000;  
+  font-size: 12px;
+  margin-left: 50px !important;
+  margin-top: 55px !important;
+}
+.Right-side-box{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 100px;
+  position: relative;
+}

@@ -1,0 +1,123 @@
+
+
+HTML CODE :- 
+
+<div class="slide-container slide-container2">
+<!-- Flex Container Box -->
+<div class="flex-container">
+<div class="Left-side-box">
+<h1 class="slide-Heading">Assumptions​</h1>
+<!-- Box 1 -->
+<div class="box">
+<h3>LICENSING ASSUMPTIONS</h3>
+<ul>
+<li>
+<p>Xebia has shared an estimated breakdown of Microsoft Power Platform licensing to give KHDA a clear idea of what may be needed for the proposed solution.<p>
+</li>
+<li>
+<p>However, <b>KHDA will be responsible for purchasing the required licenses directly from Microsoft</b> or through an authorized partner.<p>
+</li>
+<li>
+<p>Microsoft also offers <b>special discounts and licensing programs for educational institutions</b>, which KHDA may benefit from. We recommend discussing these options directly with Microsoft.​<p>
+</li>
+<li>
+<p>Please note: <b>Xebia will not handle license procurement</b> but will support KHDA in planning and aligning the required licenses.​</p>
+</li>
+</ul>
+</div>
+<!-- Box 2 -->
+<div class="box">
+<h3>COLLABORATION AND GOVERNANCE</h3>
+<ul>
+<li>
+<p>
+<b>Single Point of Contact (SPOC):</b>
+KHDA will assign a dedicated IT SPOC to coordinate requirements, integration details, and approvals. Delays caused by the absence of a SPOC will impact the project timeline.​<p>
+</li>
+<li>
+<p>
+<b>Stakeholder Approvals:</b>
+Any delays in obtaining approvals from KHDA stakeholders during UAT phases may impact delivery timelines and are not Xebia's responsibility.​<p>
+</li>
+</ul>
+</div>
+<!-- Box 3 -->
+<div class="box">
+<h3>DATA MIGRATION AND PREPARATION</h3>
+<ul>
+<li>
+<p>Data migration of up to 2 TB is included within the current scope. Should the volume exceed this threshold or require additional complexity (e.g., new sources, cleansing, transformation), it must be discussed, evaluated, and prioritized separately. Any such extension will be subject to additional effort, timelines, and commercial considerations, to be mutually agreed upon by both parties.<p>
+<p><b>Data Accuracy:</b> KHDA is responsible for ensuring the accuracy, completeness, and readiness of data to be used in the implementation.​</p>
+</li>
+</ul>
+<p class="red-para">*These assumptions are based on the current understanding and will be revisited and refined during the discovery phase (Sprint 0) to align with finalized project details.​</p>
+</div>
+</div>
+<div class="Right-side-box"></div>
+</div>
+</div>
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+CSS CODE :- 
+
+
+.slide-container2{
+  margin-left: -25px !important;
+  margin-right: -80px !important;
+}
+
+.slide-Heading {
+  color: #6c1d5f;
+  font-size: 27px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.box {
+  margin-left: 40px;
+}
+.box ul li {
+  list-style-type:circle;
+  font-size:13px;
+  margin: 0;
+  padding: 0;
+}
+.box h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: #4d435f;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.box p {
+  font-size: 13px;
+  margin: 0;
+  padding: 0 0 3px 0;
+}
+.box .colorBold {
+  color: #73658e;
+}
+.red-para{
+  color:#ff0000;  
+  font-size: 12px;
+  margin-left: -40px !important;
+  margin-top: 105px !important;
+}
+.Right-side-box{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 330px;
+  position: relative;
+}

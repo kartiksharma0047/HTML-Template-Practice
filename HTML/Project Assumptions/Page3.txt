@@ -1,0 +1,137 @@
+
+
+HTML CODE :- 
+
+<div class="slide-container slide-container2">
+<!-- Flex Container Box -->
+<div class="flex-container">
+<div class="Left-side-box">
+<h1 class="slide-Heading">Project Assumptions​</h1>
+<!-- Box 1 -->
+<div class="box">
+<h3>PROJECT SCOPE AND TIMELINES</h3>
+<ul>
+<li>
+<p>
+<b class="colorBold">Discovery Phase Deliverables:</b>
+General Authority of Minors’ Affairs’ will provide all necessary business requirements, use cases, and stakeholder inputs as needed during the discovery phase to finalize the product releases backlog. Any delays in providing this information may impact timelines.<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Scope Flexibility:</b>
+The proposed timelines are based on requirements shared during the RFP phase. Any changes post-discovery will be treated as change requests and may impact cost and timelines.<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Project Timeline Dependencies:</b>
+Timelines are based on the assumption that all Authority approvals, data inputs, and integrations are provided on time. Delays in these will impact the overall schedule.<p>
+</li>
+</ul>
+</div>
+<!-- Box 2 -->
+<div class="box">
+<h3>INFRASTRUCTURE AND RESOURCES</h3>
+<ul>
+<li>
+<p>
+<b class="colorBold">Infrastructure Readiness:</b>
+General Authority of Minors’ Affairs /Takamol must provide all necessary infrastructure to support development across all required platforms. Xebia will handle only the implementation.​<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Licensing:</b>
+General Authority of Minors’ Affairs/ Takamol is expected to procure and provide all required setups for development kickoff, including infrastructure, environments project management tools etc.​<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Testing Environments:</b>
+General Authority of Minors’ Affairs /Takamol will ensure the availability of a production-like testing environment for end-to-end testing. Delays in providing this environment will affect project progress​<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Project Resources:</b>
+All the team working on the project from Xebia side will be remote/ off-shore. However, Onsite team can be provided as required upon request from the General Authority of Minors’ Affairs team with Additional cost.​<p>
+</li>
+</ul>
+</div>
+<!-- Box 3 -->
+<div class="box">
+<h3>Integration Readiness</h3>
+<ul>
+<li>
+<p>General Authority of Minors’ Affairs’/ Takamol  will ensure integration readiness by providing necessary APIs, integration details, and a designated Integration SPOC to facilitate the process. Xebia will not be accountable for delays caused by missing or incomplete integration readiness.<p>
+</li>
+<li>
+<p>All integration touchpoints will be available, well-documented, and ready for consumption.<p>
+</li>
+<li><p>Any delays in integration readiness (e.g., missing integration details or SPOC availability) may impact project timelines. Xebia will not be responsible for such delays.</p></li>
+</ul>
+<p class="red-para">*These assumptions are based on the current understanding and will be revisited and refined during the discovery phase (Sprint 0) to align with finalized project details.​</p>
+</div>
+</div>
+<div class="Right-side-box"></div>
+</div>
+</div>
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CSS CODE :- 
+
+
+.slide-container2{
+  margin-top: -75px !important;
+  margin-left: -55px !important;
+  margin-right: -80px !important;
+}
+
+.slide-Heading {
+  color: #6c1d5f;
+  font-size: 27px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.box {
+  margin-left: 40px;
+}
+.box ul li {
+  list-style-type:circle;
+  font-size:13px;
+  margin: 0;
+  padding: 0;
+}
+.box h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: #4d435f;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.box p {
+  font-size: 13px;
+  margin: 0;
+  padding: 0 0 3px 0;
+}
+.box .colorBold {
+  color: #73658e;
+}
+.red-para{
+  color:#ff0000;  
+  font-size: 12px;
+  margin-left: 50px !important;
+  margin-top: 55px !important;
+}
+.Right-side-box{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 330px;
+  position: relative;
+}
