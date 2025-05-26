@@ -1,0 +1,131 @@
+
+
+HTML CODE :- 
+
+<div class="slide-container slide-container2">
+<!-- Flex Container Box -->
+<div class="flex-container">
+<div class="Left-side-box">
+<h1 class="slide-Heading">Assumptions</h1>
+<!-- Box 1 -->
+<div class="box">
+<h3>CHANGE MANAGEMENT AND TRAINING</h3>
+<p>Xebia will provide two types of training as part of the engagement:</p>
+<ul>
+<li>
+<p>
+<b>Agile Training:</b>
+<p>
+<ul class="child-box">
+<li>Delivered in person to KHDA’s IT team.</li>
+<li>Conducted in <b>English</b>, as detailed in the Training Model slide.</li>
+<li><b>Note:</b> All travel and accommodation costs related to onsite Agile training will either be reimbursed by KHDA on actuals or directly arranged and covered by KHDA. These expenses are excluded from the commercial proposal and will be treated as separate, pass-through costs.​</li>
+</ul>
+</li>
+<li>
+<p>
+<b>Platform Training (Microsoft Power Platform):</b>
+<p>
+<ul class="child-box">
+<li>Delivered <b>primarily remotely</b> to KHDA’s IT team in <b>English.</b></li>
+<li>If required, sessions can be delivered in <b>Arabic</b> at an additional cost of <b>$99/hour</b> for an Arabic-speaking trainer.</li>
+<li>The training will be <b>contextual and hands-on</b>, centered around the actual solution being built, enabling KHDA teams to learn through practical exposure to the platform they will operate and maintain.</li>
+</ul>
+</li>
+<li>
+<p>
+<b>End-User & Administrator Training:</b>
+</br>​Xebia will also provide dedicated sessions for KHDA’s identified end-users and system administrators. KHDA will be responsible for ensuring the availability and participation of stakeholders in the scheduled training programs.<p>
+</li>
+<li>
+<p>
+<b>Change Management Approach:</b>
+</br>Xebia will recommend and support a structured change management plan aligned with the new platform rollout. While Xebia will collaborate closely with KHDA to ensure smooth transition and adoption, the ultimate decision-making and ownership of change management outcomes will reside with KHDA.<p>
+</li>
+</ul>
+</div>
+<!-- Box 2 -->
+<div class="box">
+<h3>RISK MITIGATION</h3>
+<ul>
+<li>
+<p>
+<b>Timely Risk Escalation:</b>
+Xebia will promptly notify KHDA of any potential risks to timelines, costs, or scope during the discovery or implementation phases. Resolution will require close collaboration.​​<p>
+</li>
+<li>
+<p>
+<b>Dependency Management:</b>
+Dependencies on KHDA systems, third-party integrations, or external vendors will be managed collaboratively. Delays caused by these parties are beyond Xebia’s accountability.​<p>
+</li>
+</ul>
+<p class="red-para">*These assumptions are based on the current understanding and will be revisited and refined during the discovery phase (Sprint 0) to align with finalized project details.​</p>
+</div>
+</div>
+<div class="Right-side-box"></div>
+</div>
+</div>
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CSS CODE :- 
+
+.slide-container2{
+  margin-top: -75px !important;
+  margin-left: -55px !important;
+  margin-right: -80px !important;
+}
+
+.slide-Heading {
+  color: #6c1d5f;
+  font-size: 27px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.box {
+  margin-left: 40px;
+}
+.box ul li {
+  list-style-type:circle;
+  font-size:13px;
+  margin: 0;
+  padding: 0;
+}
+.box .child-box{
+  padding-left: 40px;
+}
+.box h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: #4d435f;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.box p {
+  font-size: 13px;
+  margin: 0;
+  padding: 0 0 3px 0;
+}
+.box .colorBold {
+  color: #73658e;
+}
+.red-para{
+  color:#ff0000;  
+  font-size: 12px;
+  margin-top: 55px !important;
+}
+.Right-side-box{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 330px;
+  position: relative;
+}

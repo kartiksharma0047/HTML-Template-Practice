@@ -1,0 +1,149 @@
+
+
+HTML CODE :- 
+
+<div class="slide-container slide-container2">
+<!-- Flex Container Box -->
+<div class="flex-container">
+<div class="Left-side-box">
+<h1 class="slide-Heading">Assumptions​</h1>
+<!-- Box 1 -->
+<div class="box">
+<h3>1. PROJECT SCOPE & TIMELINES</h3>
+<ul>
+<li>
+<p>
+<b class="colorBold">Discovery Phase Deliverables:</b>
+Tesco will provide all necessary business requirements, use cases, and stakeholder inputs as needed during the discovery phase to finalize the product releases backlog. Any delays in providing this information may impact timelines.<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Scope Flexibility:</b>
+The proposed timelines are based on requirements shared during the RFP phase. Any changes post-discovery will be treated as change requests and may impact cost and timelines.​<p>
+</li>
+<li>
+<p>
+<b class="colorBold">Project Timeline Dependencies:</b>
+Timelines are based on the assumption that all Tesco approvals, data inputs, and integrations are provided on time. Delays in these will impact the overall schedule.​<p>
+</li>
+</ul>
+</div>
+<!-- Box 2 -->
+<div class="box">
+<h3>2. WORKFLOW CUSTOMIZATIONS AND SUPPORT</h3>
+<ul>
+<li>
+<p>We have assumed 30% of additional effort to customize the workflows for regional / divisional variants of the workflows.​<p>
+</li>
+<li>
+<p>The workflows will have a 3-month break-fix guarantee to ensure BAU.​<p>
+</li>
+<li>
+<p> In this proposal, we are focused on UK specific workflows and any geographic variations can be dealt separately​<p>
+</li>
+</ul>
+</div>
+<!-- Box 3 -->
+<div class="box">
+<h3>3. INFRASTRUCTURE AND RESOURCES</h3>
+<ul>
+<li>
+<p><b class="colorBold">Infrastructure Readiness:</b>
+General Authority of Minors’ Affairs’/ Takamol  will ensure integration readiness by providing necessary APIs, integration details, and a designated Integration SPOC to facilitate the process. Xebia will not be accountable for delays caused by missing or incomplete integration readiness.<p>
+</li>
+<li>
+<p><b class="colorBold">Integration Readiness:</b>
+It is assumed that Tesco will provide APIs and system integration details. Xebia will not be accountable for delays caused by missing or incomplete integration readiness.<p>
+</li>
+<li>
+<p><b class="colorBold">Testing Environments:</b>
+Tesco will ensure the availability of a production-like testing environment for end-to-end testing. Delays in providing this environment will affect project progress​.<p>
+</li>
+<li>
+<p><b class="colorBold">Project Resources:</b>
+All the team working on the project from Xebia side will be remote/ off-shore. onsite support will be provided as required upon request from the Tesco team.​<p>
+</li>
+</ul>
+</div>
+<div class="box">
+<h3>4. INTEGRATION READINESS</h3>
+<ul>
+<li>
+<p>Tesco will ensure <b>integration readiness</b> by providing necessary APIs, integration details, and a designated Integration SPOC to facilitate the process.​<p>
+</li>
+<li>
+<p>All integration touchpoints will be available, well-documented, and ready for consumption.​​<p>
+</li>
+<li>
+<p>Any delays in integration readiness (e.g., missing integration details or SPOC availability) may impact project timelines. Xebia will not be responsible for such delays.​<p>
+</li>
+</ul>
+<p class="red-para">*These assumptions are based on the current understanding and will be revisited and refined during the discovery phase (Sprint 0) to align with finalized project details.​</p>
+</div>
+</div>
+<div class="Right-side-box"></div>
+</div>
+</div>
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CSS CODE :- 
+
+.slide-container2{
+  margin-top: -75px !important;
+  margin-left: -55px !important;
+  margin-right: -80px !important;
+}
+
+.slide-Heading {
+  color: #020a51;
+  font-size: 27px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.box {
+  margin-left: 40px;
+}
+.box ul li {
+  list-style-type:circle;
+  font-size:13px;
+  margin: 0;
+  padding: 0;
+}
+.box h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: #020a51;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.box p {
+  font-size: 13px;
+  margin: 0;
+  padding: 0 0 0px 0;
+}
+.box .colorBold {
+  color: #595959;
+  font-weight: 800;
+}
+.red-para{
+  color:#ff0000;  
+  font-size: 12px;
+  margin-left: 0px !important;
+  margin-top: 15px !important;
+}
+.Right-side-box{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 330px;
+  position: relative;
+}
