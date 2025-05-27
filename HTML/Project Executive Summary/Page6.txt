@@ -1,0 +1,305 @@
+
+
+HTML CODE :- 
+
+<div class="slide-container">
+<!-- box-container for applying flex -->
+<div class="box-container">
+<!-- Left Box -->
+<div class="left-box">
+<h1>Executive Summary​</h1>
+<div class="left-box-content">
+<p>Xebia is honoured to partner with <b>Grupo Crédito Agrícola</b> to transform and modernize your <b>BPM/Workflow capabilities</b> leveraging <b>Microsoft Power Platform</b>. Our proven expertise in <b>delivering intelligent case management frameworks, workflow automation, and integration-driven solutions</b> makes us your ideal partner to meet the defined Q1 2025 go-live timeline.
+</p>
+<p>We understand the objective of this initiative is to build a framework that includes:</p>
+<ul>
+<li><p>Seamless Orchestration of Workflows</p></li>
+<li><p>Efficient Reuse of Sub-Processes</p></li>
+<li><p>Smooth System Integrations</p></li>
+<li><p>Accurate Reporting and Actionable Insights</p></li>
+</ul>
+</div>
+<div class="left-box-footer">
+<div class="LineAndCircle">
+<div class="Line"></div>
+<div class="Circle"></div>
+</div>
+<p>Leveraging our experience in the Financial Services Industry, combined with our authority in implementing low-code intelligent automation platforms, Xebia helps to create a future-ready, scalable solution that drives measurable value and operational excellence.</p>
+<p class="normal-para">Thank you once again for this opportunity. We look forward to the possibility of working together.​
+</p>
+<p class="normal-para margin-para">Guido van den Boom, Gaurav Tripathi, Akhilesh Natani</p>
+</div>
+</div>
+<!-- Right Box -->
+<div class="right-box">
+<h3>Here is how we plan to make the  <span class="biggerWord">DIFFERENCE !!</span>​</h3>
+<div class="LineAndCircle">
+<div class="Line"></div>
+<div class="Circle"></div>
+</div>
+<!-- Now Right Side is divided into 2 portions -->
+<div class="right-box-container">
+<div class="right-box-left">
+<div class="Design1">
+<img src="Images\Executive_Summary_PPT\image (8).png"/>
+</div>
+<div class="Design2">
+<img src="Images\Executive_Summary_PPT\image (7).png"/>
+</div>
+<div class="Design3">
+<img src="Images\Executive_Summary_PPT\image (2).png"/>
+</div>
+<div class="Design4">
+<img src="Images\Executive_Summary_PPT\image (3).png"/>
+</div>
+<div class="Design5">
+<img src="Images\Executive_Summary_PPT\image (4).png"/>
+</div>
+<div class="Design6">
+<img src="Images\Executive_Summary_PPT\image (5).png"/>
+</div>
+<div class="Design7">
+<img src="Images\Executive_Summary_PPT\image (6).png"/>
+</div>
+</div>
+<div class="right-box-right">
+<p class="Bold-para">PRIOR EXPERIENCE AT CREDITO AGRICOLA</p>
+<p>​Xebia had a great engagement so far with Credito, working together on the Omnichannel Strategy, which enables Xebia to understand the ecosystem and how does Credito operates helping Xebia to accelerate the overall process.</p>
+
+<p class="Bold-para">ON-TIME DELIVERY SUPPORTED WITH RISK MANAGEMENT FRAMEWORK​</p>
+<p>Our structured delivery approach ensures adherence to the Q1 2025 go-live timeline. Using a well-established risk management framework, we anticipate dependencies, mitigate challenges, and guarantee a smooth implementation.​</p>
+
+<p class="Bold-para">COST EFFICIENT</p>
+<p>Xebia's deep understanding of Microsoft Power Platform ensures optimized resource utilization, reusable workflows, and tight budget controls. We deliver maximum value with minimal overhead.​</p>
+
+<p class="Bold-para">CASE MANAGEMENT EXCELLENCE</p>
+<p>With 10+ years of experience & as leaders in building case management frameworks, we enable cross-functional task orchestration, reusable sub-processes (e.g., document approvals, authorization workflows), and seamless collaboration across teams.​</p>
+
+<p class="Bold-para">FINANCIAL SERVICES CASE MANAGEMENT EXPERIENCE​</p>
+<p>Xebia with its majority of its exposure on financial services understands the nuances and help the team to build solutions/ accelerators/ frameworks aligned to the industry best practices as much as possible by together working with the customers stakeholders.​</p>
+
+<p class="Bold-para">STRONG CULTURAL & COLLABORATIVE FIT​</p>
+<p><b>Our collaborative approach ensures transparency, open communication, mutual respect, and shared ownership</b>, making us a trusted partner committed to PartnerRe’s success at every step.​</p>
+
+<p class="Bold-para">XEBIA'S SKIN IN THE GAME​</p>
+<p>We believe in sharing risks and rewards, therefore in our proposal, we are tying payments to the successful execution of project milestones based on what would be agreed and signed off b/w Credito and Xebia at the end of discovery phase.​</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+CSS CODE :-
+
+
+.box-container {
+  display: flex;
+  align-items: flex-start;
+  margin-left: -55px;
+  margin-top: -30px;
+}
+
+/* Left Side CSS */
+.left-box {
+  width: 850px;
+  margin-right: 40px;
+}
+.left-box h1 {
+  color: #4d435f;
+  font-size: 37px;
+  margin-bottom: 30px;
+}
+.left-box-content p {
+  font-style: italic;
+  font-size: 13px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+.left-box-content ul li {
+  font-size: 12px;
+  margin-left: -43px;
+}
+.left-box-content ul li p {
+  padding-bottom: 0px;
+}
+.normal-para{
+  color: #939393 !important;
+  font-size: 15px !important;
+  font-weight: normal !important;
+}
+.margin-para{
+  margin-top: 40px;
+}
+.LineAndCircle {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  justify-content: start;
+  text-align: left;
+}
+.LineAndCircle .Line {
+  border-top: 2px solid #73658e;
+  width: 300px;
+  display: flex;
+}
+.LineAndCircle .Circle {
+  height: 5px;
+  width: 5px;
+  background-color: #73658e;
+  border-radius: 50%;
+  border: 1px solid #73658e;
+}
+.left-box-footer p {
+  color: #73658e;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Right Side CSS */
+.right-box h3 {
+  color: #73658e;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 25px;
+  margin-top: 35px;
+}
+.right-box .LineAndCircle {
+  margin-top: -5px;
+  margin-left: 25px;
+}
+.right-box .LineAndCircle .Circle {
+  height: 5px;
+  width: 5px;
+}
+.right-box .LineAndCircle .Line {
+  width: 450px;
+}
+.right-box-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-box-left {
+  position: relative;
+}
+.right-box-left div {
+  position: absolute;
+  width: 67.2px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+.right-box-left div::before {
+  content: "";
+  height: 67.2px;
+  width: 67.2px;
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+  top: -25%;
+  left: 50%;
+  z-index: 1;
+}
+/* Design 7 */
+.right-box-left .Design7::before {
+  background-color: #4d435f;
+}
+.right-box-left .Design7 {
+  background-color: #4d435f;
+  height: 120.16px;
+  top: 250px;
+}
+/* Design 6 */
+.right-box-left .Design6::before {
+  background-color: #73658e;
+}
+.right-box-left .Design6 {
+  background-color: #73658e;
+  height: 150.16px;
+  top: 170px;
+}
+/* Design 5 */
+.right-box-left .Design5::before {
+  background-color: #c4bed1;
+  top: -19%;
+}
+.right-box-left .Design5 {
+  background-color: #c4bed1;
+  height: 180.16px;
+  top: 80px;
+}
+/* Desgin 4 */
+.right-box-left .Design4::before {
+  background-color: #d8d3e0;
+}
+.right-box-left .Design4 {
+  background-color: #d8d3e0;
+  height: 120.16px;
+  top: -10px;
+}
+/* Design 3 */
+.right-box-left .Design3::before {
+  background-color: #ebe9f0;
+}
+.right-box-left .Design3 {
+  background-color: #ebe9f0;
+  height: 120.16px;
+  top: -80px;
+}
+/* Design 2 */
+.right-box-left .Design2::before {
+  background-color: #f6f5f9;
+}
+.right-box-left .Design2 {
+  background-color: #f6f5f9;
+  height: 150.16px;
+  top: -160px;
+}
+/* Design 1 */
+.right-box-left .Design1::before {
+  background-color: #d8d3e0;
+  top: -15%;
+}
+.right-box-left .Design1 {
+  background-color: #d8d3e0;
+  height: 180.16px;
+  top: -240px;
+}
+.right-box-left img {
+  height: 35.5px;
+  width: 35.5px;
+  z-index: 3;
+}
+.right-box-right {
+  padding-left: 90px;
+}
+
+.right-box-right .Bold-para {
+  margin-top: 10px;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.biggerWord{
+  font-size: 21px;
+}
+.right-box-right p {
+  font-size: 11px;
+  margin: 0%;
+  padding: 0%;
+  padding-bottom: 3px;
+}

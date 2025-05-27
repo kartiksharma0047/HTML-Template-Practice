@@ -56,7 +56,7 @@ Dependencies on PartnerRe systems, third-party integrations, or external vendors
 </div>
 </div>
 <div class="Right-side-box">
-<img src="Images\Cloud Computing Specialist Quantitative Analyst clipart.png"/>
+<img src="Images\Assumptions_PPT\Cloud Computing Specialist Quantitative Analyst clipart.png"/>
 </div>
 </div>
 </div>

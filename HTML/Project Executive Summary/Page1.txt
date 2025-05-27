@@ -1,0 +1,286 @@
+
+
+HTML CODE :- 
+
+<div class="slide-container">
+<!-- box-container for applying flex -->
+<div class="box-container">
+<!-- Left Box -->
+<div class="left-box">
+<h1>Executive Summary​</h1>
+<div class="left-box-content">
+<p>Xebia is excited to submit this proposal to be Imperial Brands' partner in the development of PLM Data Intelligent Tool. Imperial Brands is seeking a partner to create an intelligent tool for standardized data ingestion of information from multiple suppliers into Aras PLM, featuring workflow management, error handling, quality control, and secure access.</p>
+<p>Our overall approach for this implementation for Imperials Brands is to “Think big, start small, and scale fast and keep on learning”. Xebia is already helping in building Enterprise AI Assistant for knowledge management. In this response   Xebia proposes to  leverage existing knowledge of IT landscape at IB and reuse some of the existing component like data pipeline and AI governance etc.The engagement starts off with a small discovery phase, followed by the pilot implementation, Full scope MVP and Scaling out. As partner for this AI Journey, Xebia will leverage his extensive knowledge and experiences in the Data & AI market and recent customers implementations. </p>
+</br>
+<p>Xebia will develop a modular architecture optimized for Microsoft Azure AI and Microsoft Power Platform. The architecture will be flexible and scalable, enabling future expansions. With our proven expertise in AI and GenAI, our deep understanding of Microsoft technologies, and our focus on data governance, change management, and user adoption, we are a strong but also pragmatic partner to realize this pilot.</p>
+</div>
+<div class="left-box-footer">
+<div class="LineAndCircle">
+<div class="Line"></div>
+<div class="Circle"></div>
+</div>
+<p>We look forward to furthering our partnership and helping Imperial Brands creating business value from this PLM Data Intelligent Tool</p>
+<p>- The Xebia team</p>
+</div>
+</div>
+<!-- Right Box -->
+<div class="right-box">
+<h3>KEY DIFFERENCE !!</h3>
+<div class="LineAndCircle">
+<div class="Line"></div>
+<div class="Circle"></div>
+</div>
+<!-- Now Right Side is divided into 2 portions -->
+<div class="right-box-container">
+<div class="right-box-left">
+<div class="Design1">
+<img src="Images\Executive_Summary_PPT\image (2).png"/>
+</div>
+<div class="Design2">
+<img src="Images\Executive_Summary_PPT\image (3).png"/>
+</div>
+<div class="Design3">
+<img src="Images\Executive_Summary_PPT\image (4).png"/>
+</div>
+<div class="Design4">
+<img src="Images\Executive_Summary_PPT\image (5).png"/>
+</div>
+</div>
+<div class="right-box-right">
+<p class="Bold-para">Xebia knows Imperial Brands very well & we have a strong partnership since 2018</p>
+<ul>
+<li>
+<p>
+We are a trusted partners of large manufacturing and retail companies.
+</p>
+</li>
+<li>
+<p>
+Xebia has been working with IB’s for 6+ years (since 2018), which means that you have a partner that that needs minimal introductions and cultural alignments between the teams.
+</p>
+</li>
+<li>
+<p>
+Xebia has been a registered as a Global IT Partner within IB and we have a fully updated MSA (May 2024).
+</p>
+​</li>
+</ul>
+
+<p class="Bold-para">Extensive knowledge in our global Microsoft and AI practices </p>
+<ul>
+<li>
+<p>
+Global Microsoft Partner certifications on Azure, Security, Data & AI and Github and 250+ implementation in Retail, Travel, Finance and Healthcare.​
+</p>
+</li>
+<li>
+<p>
+Helping clients from Strategy, Implementation to global support 24/7.
+</p>
+</li>
+<li>
+<p>
+​Global knowledge contributor on Data, AI and Microsoft solutions.
+</p>
+​</li>
+</ul>
+
+<p class="Bold-para">Strong and relevant customer cases</p>
+<ul>
+<li>
+<p>
+Helping global and local customer in their AI Journey from creating GenAI use-cases to full implementations, like: ING, Klaverblad, Takeaway, Holland America Lines, etc.
+</p>
+</li>
+<li>
+<p>
+Combining our knowledge and experiences between Cloud, Data and AI.
+</p>
+</li>
+</ul>
+
+<p class="Bold-para">Xebia Academy</p>
+<ul>
+<li>
+<p>
+An established channel for GenAI skills development of IB employees. Xebia Academy, the training arm of Xebia Group, is an established entity to help enterprises to build digital workforce on new age technologies.
+</p>
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+CSS CODE :- 
+
+
+.box-container {
+  display: flex;
+  align-items:flex-start;
+  margin-left: -35px;
+}
+
+/* Left Side CSS */
+.left-box{
+  width: 1350px;
+  margin-right: 10px;
+}
+.left-box h1 {
+  color: #4d435f;
+  font-size: 37px;
+  margin-bottom: 30px;
+}
+.left-box-content p {
+  font-style: italic;
+  font-size: 13px;
+  margin: 0;
+  padding-bottom: 2px;
+}
+.LineAndCircle {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+  justify-content: start;
+  text-align: left;
+}
+.LineAndCircle .Line {
+  border-top: 2px solid #73658e;
+  width: 500px;
+  display: flex;
+}
+.LineAndCircle .Circle {
+  height: 10px;
+  width: 10px;
+  background-color: #73658e;
+  border-radius: 50%;
+  border: 1px solid #73658e;
+}
+.left-box-footer p {
+  color: #73658e;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Right Side CSS */
+.right-box h3 {
+  color: #73658e;
+  font-size: 21px;
+  font-weight: bold;
+}
+.right-box .LineAndCircle {
+  margin-top: -5px;
+}
+.right-box .LineAndCircle .Circle{
+  height: 5px;
+  width: 5px;
+}
+.right-box .LineAndCircle .Line{
+  width: 300px;
+}
+
+.right-box-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-box-left{
+  position: relative;
+}
+.right-box-left div {
+  position: absolute;
+  width: 67.2px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+.right-box-left div::before {
+  content: "";
+  height: 67.2px;
+  width: 67.2px;
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+  top: -25%;
+  left: 50%;
+  z-index: 1;
+}
+/* Desgin 4 */
+.right-box-left .Design4::before {
+  background-color: #73658e;
+}
+.right-box-left .Design4 {
+  background-color: #73658e;
+  height: 120.16px;
+  top: 190px;
+}
+/* Design 3 */
+.right-box-left .Design3::before {
+  background-color: #c4bed1;
+}
+.right-box-left .Design3 {
+  background-color: #c4bed1;
+  height: 120.16px;
+  top: 70px;
+}
+/* Design 2 */
+.right-box-left .Design2::before {
+  background-color: #d8d3e0;
+}
+.right-box-left .Design2 {
+  background-color: #d8d3e0;
+  height: 150.16px;
+  top: -60px;
+}
+/* Design 1 */
+.right-box-left .Design1::before {
+  background-color: #ebe9f0;
+  top: -19%;
+}
+.right-box-left .Design1 {
+  background-color: #ebe9f0;
+  height: 180.16px;
+  top: -210px;
+}
+.right-box-left img {
+  height: 35.5px;
+  width: 35.5px;
+  z-index: 3;
+}
+.right-box-right{
+  padding-left: 90px;
+  margin-top: 50px;
+}
+.right-box-right .Bold-para{
+  color: #73658e;
+  font-size: 13px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.right-box-right ul li{
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+.right-box-right ul{
+  padding-left: 13px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.right-box-right p{
+  font-size: 11px;
+  margin: 0%;
+  padding: 0%;
+}

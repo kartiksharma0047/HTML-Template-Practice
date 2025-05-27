@@ -1,0 +1,161 @@
+
+
+HTML CODE :- 
+
+<div class="slide-container">
+<h1>Executive Summary​</h1>
+<h5>Accelerating the Digital Transformation of Lost and Found Management​</h5>
+<p>The <b>General Authority for Minors’ Affairs</b> is poised to revolutionize <b>Lost and Found Management</b> through a modern, digital-first platform. <b>Xebia</b> is uniquely positioned to be the trusted partner in this journey, offering the perfect combination of <b>technical excellence, regional insight, and a proven delivery approach.​</b></p>
+<div class="container">
+<div class="left">
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/Courthouse.png"/>
+<div class="box-content">
+<h4>End-to-End Technical Mastery</h4>
+<p>We possess the expertise to deliver a secure, scalable, and user-centric platform, with expert teams spanning the full technology stack—Appian, React/Angular/Vue.js, middleware, and databases.​</p>
+</div>
+</div>
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/Courthouse.png"/>
+<div class="box-content">
+<h4>Futuristic and Scalable Architecture</h4>
+<p>Xebia will deliver a platform designed for seamless evolution, leveraging modern architectural principles and a cloud-native approach, supported by our strategic GCP partnership.​</p>
+</div>
+
+</div>
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/Courthouse.png"/>
+<div class="box-content">
+<h4>Strategic GCP Partnership</h4>
+<p>As a regional Google Cloud Platform (GCP) partner, we bring deep experience in cloud-native development, data & AI, security, and infrastructure modernization, supporting future cloud migration and digital innovation.​​</p>
+</div>
+
+</div>
+</div>
+<div class="right">
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/Courthouse.png"/>
+<div class="box-content">
+<h4>Deep Regional Expertise</h4>
+<p>Our strong presence in the MEA region, including successful delivery for KSA government entities, ensures cultural alignment, regulatory compliance, and seamless integration with existing government systems.​​</p>
+</div>
+
+</div>
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/Courthouse.png"/>
+<div class="box-content">
+<h4>Accelerated and Cost-Effective Delivery</h4>
+<p>Using reusable components and an agile, phased rollout, we commit to delivering an MVP/Pilot in just 4 months, with final rollout within 7 months—enabling rapid value realization and optimized resource utilization.​</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="footer-div">
+<h2>Our Commitment</h2>
+<div class="line-and-circle">
+<div class="line"></div>
+<div class="circle"></div>
+</div>
+</div>
+<div class="final-div">
+<p>Xebia prioritizes <b>early stakeholder involvement</b>, continuous feedback loops, and a value-driven delivery model. Our methodology accelerates impact for <b>priority use cases</b> while providing the foundation for a <b>comprehensive, long-term platform.</b></p>
+<p>With a track record of success in delivering large-scale digital platforms, <b>Xebia is the ideal partner to deliver this critical, future-ready solution</b>.</p>
+</div>
+</div>
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+CSS CODE :- 
+
+
+.slide-container{
+  margin-left: -55px !important;
+  margin-top: -70px !important;
+}
+h1{
+  color:#6a205f;
+  font-size: 40px;
+  font-weight: bold;
+}
+h5{
+  font-style: italic;
+  font-weight: bold;
+  font-size: 19px;
+  color:#6c1d5f;
+}
+p{
+  font-size: 16px;
+  width: 1150px;
+}
+.container{
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+  margin: 20px 0 0 0;
+}
+.box{
+  display: flex;
+  align-items: start;
+  justify-content:center; 
+}
+.box-content{
+  margin-left: 15px;
+}
+.box h4{
+  font-size: 16px;
+  color: #6c1d5f;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+.box p{
+  font-size: 14px;
+  color: #595959;
+  width: 420px;
+}
+.box img{
+  width: 70px;
+  height: 70px;
+}
+.footer-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+}
+.footer-div h2{
+  font-size: 27px;
+  color:#6c1d5f;
+}
+.line-and-circle {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  text-align: left;
+  padding-left: 40px;
+}
+.line-and-circle .line {
+  border-top: 2px solid #6c1d5f;
+  width: 800px;
+  display: flex;
+}
+.line-and-circle .circle {
+  height: 5px;
+  width: 5px;
+  background-color: #6c1d5f;
+  border-radius: 50%;
+  border: 1px solid #6c1d5f;
+}
+.final-div{
+  margin-left: 55px;
+}
+.final-div p{
+  font-size: 14px;
+  color: #595959;
+}

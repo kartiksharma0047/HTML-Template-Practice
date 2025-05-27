@@ -1,0 +1,232 @@
+
+
+HTML CODE :- 
+
+---
+marp: true
+theme: xebia
+paginate: true
+transition: dissolve
+---
+
+<div class="slide-container slide-container2">
+<img class="BackgroundPage9" src="Images\Assumptions_PPT\Page9_Background.png"/>
+<!-- Flex Container Box -->
+<div class="flex-container">
+<img src="Images\Assumptions_PPT\Page9_Design.png" class="TopLeftDesign"/>
+<img src="Images\Assumptions_PPT\Page9_Design.png" class="BottomRightDesign"/>
+<!-- Left Side Div -->
+<div class="Left-side-box">
+<h1 class="slide-Heading">Project Assumptions​</h1>
+<img class="LeftSideImage" src="Images\Assumptions_PPT\A group of clipboards with check marks and pencils__Description automatically generated.png">
+</div>
+<!-- Right Side Div -->
+<div class="Right-side-box">
+<!-- Box 1 -->
+<div class="box">
+<h3>PROJECT SCOPE AND REQUIREMENTS CLARITY</h3>
+<ul>
+<li>
+<p>Timelines: The proposed High Level Project timelines are based on the understanding derived from the information provided by Pacifico Seguros. Actual timelines may vary depending on the discovery of detailed use cases during the project kick-off.<p>
+</li>
+<li>
+<p>Impact Assessment: Xebia will promptly inform Pacifico of any potential impacts on project timelines, costs, or other risks identified during discovery workshops. Collaboration with Pacifico product owners will be prioritized to address such issues.​<p>
+</li>
+</ul>
+</div>
+<!-- Line Div -->
+<div class="circleAndLine">
+<div class="LineDiv"></div>
+<div class="circleInLine"></div>
+</div>
+<!-- Box 2 -->
+<div class="box">
+<h3>CHANGE MANAGEMENT & TRAINING RELATED</h3>
+<ul>
+<li>
+<p>As part of any business feedbacks, UAT, go-live, if any requests was not originally part of the agreed scope finalized post Sprint 0, the same would be treated as Change Requests. However, Xebia would also consider any small change requests during the implementation if the same does not impact the given phase timelines.​​<p>
+</li>
+<li>
+<p>Xebia would ensure to work and align with Pacifico internal and end users of the new application for conducting required trainings. Xebia would be available to support on any trainings to facilitate Pacifico for these activities as needed.​<p>
+</li>
+<li>
+<p>The development team will have access to Continuous Integration to facilitate seamless project development Any delays in providing access or necessary infrastructure may impact the project timeline and are not solely the responsibility of Xebia.​<p>
+</li>
+</ul>
+</div>
+<div class="circleAndLine">
+<div class="LineDiv"></div>
+<div class="circleInLine"></div>
+</div>
+<!-- Box 3 -->
+<div class="box">
+<h3>TRAINING RELATED</h3>
+<ul>
+<li>
+<p>We will provide user training to a selected group of stakeholders on how to use the application. These stakeholders, appointed by the Pacifico, will then be responsible for transferring this knowledge to other users.​<p>
+</li>
+</ul>
+</div>
+<!-- Box 4 -->
+<div class="circleAndLine">
+<div class="LineDiv"></div>
+<div class="circleInLine"></div>
+</div>
+<div class="box">
+<h3>INTEGRATION</h3>
+<ul>
+<li>
+<p>It is assumed that Pacifico will appoint an IT SPOC to collaborate with our team and furnish essential details about systems. Xebia will not be held responsible for any go-live delays arising from the non-availability of required integrations.​<p>
+</li>
+<li>
+<p>​Pacifico would provide the production like environment wherein E2E testing can be facilitated with all the integrations.​​<p>
+</li>
+<li>
+<p>Required Data access and system access will be provided by Pacifico. Any delays in obtaining this access may impact project timelines, and Xebia will not be held responsible for such delays.​<p>
+</li>
+</ul>
+</div>
+<!-- Box 5 -->
+<div class="circleAndLine">
+<div class="LineDiv"></div>
+<div class="circleInLine"></div>
+</div>
+<div class="box">
+<h3>INFRASTRUCTURE & SERVER</h3>
+<ul>
+<li>
+<p>We assume that the infrastructure and servers will be owned and managed by Pacifico. It is the responsibility of Pacifico to provide Xebia with the appropriate infrastructure and server access in a timely manner. Any delays in provisioning these resources may impact the project timelines, and Xebia will not be held responsible for such delays.​<p>
+</li>
+</ul>
+<p class="red-para">* These are based on our understanding & Assumptions today and does not include exhaustive list. This list will be revised during Sprint 0 when more clarification is received. ​</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CSS CODE :- .slide-container2 {
+  margin-top: -80px !important;
+  margin-left: -80px !important;
+  margin-right: -80px !important;
+  margin-bottom: -80px !important;
+  position: relative;
+}
+
+.BackgroundPage9 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.slide-Heading {
+  color: #ffffff;
+  font-size: 27px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.flex-container {
+  display: flex;
+  position: relative;
+}
+.TopLeftDesign,
+.BottomRightDesign {
+  position: absolute;
+  width: 412px;
+  height: 185px;
+  z-index: 1;
+}
+.TopLeftDesign {
+  top: 0;
+  left: 0;
+}
+.BottomRightDesign {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.Right-side-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+  padding-right: 25px;
+}
+
+.box {
+  margin-left: 40px;
+  margin-bottom: -2px;
+}
+.box ul li {
+  list-style-type: square;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  margin-left:-44px ;
+  color: #ffffff;
+}
+.box h3 {
+  font-size: 13px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -1px;
+}
+.box p {
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+.circleAndLine{
+  display: flex;
+  align-items:center; 
+  margin-bottom: 14px;
+  justify-content: start;
+  text-align: left;
+  width: 91%;
+}
+.LineDiv{
+  border: 1px solid #ffffff;
+  width: 300px;
+  display: flex;
+}
+.circleInLine{
+  height: 5px;
+  width: 5px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+}
+.red-para {
+  color: #ff0000 !important;
+  font-size: 13px;
+  margin-left: 50px !important;
+  margin-top: 25px !important;
+  width: 550px;
+  margin-bottom: 10px !important;
+}
+.Left-side-box {
+  display: flex;
+  justify-content: end;
+  width: 800px;
+  position: relative;
+}
+.LeftSideImage{
+  position: fixed;
+  z-index: 1;
+  height: 662px;
+  width: 635px;
+  opacity: 0.7;
+  top: 80px;
+  left: -122px;
+}

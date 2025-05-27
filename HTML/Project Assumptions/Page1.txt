@@ -79,7 +79,7 @@ Any delays in obtaining approvals from PartnerRe stakeholders during UAT phases 
 </div>
 </div>
 <div class="Right-side-box">
-<img src="Images\Cloud Computing Specialist Quantitative Analyst clipart.png"/>
+<img src="Images\Assumptions_PPT\Cloud Computing Specialist Quantitative Analyst clipart.png"/>
 </div>
 </div>
 </div>
