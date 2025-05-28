@@ -45,7 +45,7 @@
   --default-strong-font-color: rgb(201, 59, 34);
   --italic-background-color: orangered;
   --default-border-color: 2px solid rgb(211, 34, 11);
-  background-image: url("http://localhost:5500/bg.jpg");
+  /* background-image: url("http://localhost:5500/bg.jpg"); */
   color: var(--default-font-color);
 }
 
@@ -58,4 +58,39 @@
   }
 }
 /* ---------------- COVER PAGE ---------------- */
+
+
+.screenshots-slide1-logo {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 52.8px;
+  height: 45.12px;
+}
+.screenshots-slide1-laptop-screen {
+  position: fixed;  
+  z-index: 1;
+  top: 61px;
+  left: -131px;
+}
+.screenshots-slide1-laptop-frame {
+  position: fixed;
+  top: 26px;
+  left: -311px;
+  z-index: 2;
+}
+
+.screenshots-slide1-mobile-screen {
+  position: fixed;
+  bottom: 62px;
+  right: 293px;
+  z-index: 3;
+}
+
+.screenshots-slide1-mobile-frame {
+  position: fixed;
+  bottom: 30px;
+  right:240px;
+  z-index: 4;
+}
 
