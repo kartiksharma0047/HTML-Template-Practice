@@ -1,0 +1,187 @@
+
+
+
+HTML CODE :- 
+
+
+---
+marp: true
+theme: xebia
+paginate: true
+transition: dissolve
+---
+
+<div class="slide-container">
+<h1>Executive Summary​</h1>
+<br/>
+<p>We express our enthusiasm for the opportunity to respond to the Request for Information regarding the <b>Business Process Management Automated System</b> released by Abu Dhabi Department of Education and Knowledge.</p>
+<p>At Xebia, we pride ourselves on our commitment to innovative technology solutions, and we believe that our expertise aligns perfectly with ADEK's vision for <b>enhancing operational efficiency and service delivery.</b></p>
+<p>Having thoroughly reviewed the requirements outlined in the RFI, we understand the need for a <b>robust, user-friendly BPM solution</b> that streamlines processes and improves collaboration.</p>
+<p>We are excited to highlight the potential options of the <b>MS-Power Platform and Appian platform</b>, which are well-suited to provide the necessary features such as process automation, real-time analytics, and seamless integration with existing systems. Our experienced team is ready to leverage the capabilities of selected platform to deliver a tailored solution that meets ADEK's specific needs while ensuring high-quality outcomes.</p>
+<p>We look forward to the possibility of collaborating with you to elevate ADEK's operational excellence.​</p>
+<div class="container">
+<h2>Our Value Proposition​</h2>
+<div class="container-box">
+<div class="box">
+<h5>Client-first Mindset​</h5>
+<p>We build long-lasting relationships with our customers. We work on common goals and trust by showing genuine interest.​</p>
+</div>
+<div class="box">
+<h5>Partner Ecosystem</h5>
+<p>Xebia is  a Microsoft Solution Partner in various designations. We are also an Elite Solution Appian Partner, offering tailored professional services with number of successful implementations.​</p>
+</div>
+<div class="box">
+<h5>Engineering Excellence​​</h5>
+<p>Apt expertise as per requirements​</p>
+<ul>
+<li><p>Software engineering best practices​</p></li>
+<li><p>Xebia Academy and CoE’s for skill enhancement and trainings​</p></li>
+</ul>
+</div>
+<div class="box">
+<h5>Cost Optimization​</h5>
+<p>High-quality solution at competitive price through right-shoring of people, minimal timelines and robust program management.​​</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+CSS CODE :- 
+
+
+
+/* @theme xebia */
+
+/*
+  ============================================
+    Created by Paulo Cunha
+    version: 1.0
+    last update: 17.mar.2024
+  ============================================       
+*/
+
+/* Importing COLOR SCHEMA */
+
+@import "default";
+@import "schema";
+@import "structure";
+
+/* Importing Font */
+/* Font Credit: htts://https://www.cdnfonts.com/ */
+@import url("https://fonts.cdnfonts.com/css/fira-sans-condensed?styles=19730");
+@import url("https://fonts.cdnfonts.com/css/noto-sans-sc");
+
+:root {
+  font-family: BodyFont, sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: initial;
+
+  /* --default-background-color: #d6d2c6;  */
+  --default-background-color: #f7b900;
+  --default-font-color: rgb(68, 19, 16);
+
+  --default-list-font-color: #e0ac00;
+  --cool-list-color: rgb(255, 31, 1);
+
+  --bold-color: rgb(0, 85, 255);
+
+  --default-header-font-color: rgb(22, 22, 22);
+  --subtitle-color: rgb(12, 55, 75);
+  --letter-spacing: -0.6px !important;
+  --default-header-bold-font-color: rgb(228, 5, 5);
+  --default-strong-font-color: rgb(201, 59, 34);
+  --italic-background-color: orangered;
+  --default-border-color: 2px solid rgb(211, 34, 11);
+  background-image: url("http://localhost:5500/bg.jpg");
+  color: var(--default-font-color);
+}
+
+@keyframes marp-transition-dissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ---------------- COVER PAGE ---------------- */
+
+.slide-container {
+  margin-top: -85px !important;
+}
+h1 {
+  font-size: 40px;
+  color: #6a205f;
+  font-weight: bold;
+}
+p{
+  font-size: 15px;
+  color: #595959;
+  padding: 5px 0;
+  margin: 0;
+}
+.container {
+  position: relative;
+  border-top:1px dashed #d9d9d9;
+  padding-top: 40px;
+  margin-top: 70px;
+}
+.container h2 {
+  font-size: 19px;
+  color: #595959;
+  font-weight: bold;
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  background-color: white;
+  padding: 10px 40px;
+}
+.container-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box {
+  width: 270px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #793b74;
+  color: white;
+  text-align: center;
+}
+.box h5 {
+  font-size: 19px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.box p {
+  font-size: 13px;
+  color: white;
+  margin: 0;
+  padding: 0 10px;
+}
+.box ul li p {
+  margin: 0;
+  padding: 0;
+  padding-right: 10px;
+}
+.box ul li {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
