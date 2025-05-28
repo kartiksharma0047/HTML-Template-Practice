@@ -1,0 +1,321 @@
+
+
+HTML CODE :- 
+
+<div class="slide-container">
+<!-- Container > Circle Shape(Top Left) -->
+<div class="circle-shape"></div>
+<div class="container">
+<!-- Container > Left Container -->
+<div class="left-container">
+<h1>Executive Summary​</h1>
+<p>Lilium is at the forefront of aviation innovation, with a futuristic emerging technology (eVTOL), striving to become a fully digital and data-driven company. To support this vision, Lilium requires a modern, scalable, and open end-to-end data platform.</p>
+<p>Xebia is excited to present our proposal to support Lilium’s digital transformation journey. Leveraging our expertise in the aviation sector and IT transformation, we are uniquely positioned to drive innovation at Lilium, accelerating decision making and time-to-market . Our approach centres on a collaborative and flexible partnership to quickly unlock business value , leveraging the best technology, that is future-proof, scalable and agile. We understand that this transformation is pivotal to Lilium’s growth strategy, that involves geographic expansion, enabling the introduction of innovative product offerings to your customers.​</p>
+<p>Our proposal outlines a comprehensive strategy that meets your data visualisation and process automation requirements , utilising your existing technology investments. In delivering the program, Xebia envisages leveraging reusable components and prebuilt solution accelerators that deliver quick ROI and lower TCO at Lilium. We adhere to industry best practices and governance standards, ensuring high-quality, compliant, and secure solutions. Additionally, our commitment to innovation and continuous improvement ensures that we remain a strategic partner for Lilium’s future growth and success.</p>
+<p>Xebia is well positioned to foresee the unique challenges of this flagship transformation program for Lilium. The program delivery demands seamless collaboration of Xebia team with Lilium's IT team, the key business users from Engineering, Production, Services and Supply chain, your existing partners, and technology providers to name a few. We are aware that a fool-proof governance mechanism that drives the best project management techniques into action would be quintessential to deliver success.</p>
+<p>Xebia envisions our collaboration with Lilium to deliver a robust 'single pane of window' powered by the best orchestration engine to seamlessly integrate diverse systems and workflows. Our solution is designed to be flexible, re-usable, easy to implement, and scalable, ensuring a low-code environment that empowers end users to modify processes effortlessly.</p>
+<p>Our specific responses to the RFP questions of Lilium have been captured in the enclosed “Lilium RFP Success Criteria” sheet. We hope to meet your expectations in this selection process by providing you access to the right information, and the right opportunity to touch and feel the future state with a Proof-of-Value or PoC.</p>
+</div>
+<!-- Container > Right Container -->
+<div class="right-container">
+<!-- Container > Right Container > Top -->
+<div class="right-container-top">
+<div class="reactangle-shape">
+<h1>Making a DIFFERENCE for Lilium !!​</h1>
+</div>
+<div class="left-box">
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/star-bullet.png"/>
+<div class="flex-box1">
+<h6>Faster Delivery</h6>
+<p>Leverage Xebia's solution accelerators to deliver projects 2X faster. Access to Domain and Industry experts to ensure quick solutions to problems.​</p>
+</div>
+</div>
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/star-bullet.png"/>
+<div class="flex-box1">
+<h6>Agile Development and creativity</h6>
+<p>Using agile methodologies, we ensure a swift, efficient delivery, enhancing your operational efficiency and reducing costs. Agile way also gives room for creative thoughts.​​</p>
+</div>
+</div>
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/star-bullet.png"/>
+<div class="flex-box1">
+<h6>Xebia's Skin in the Game</h6>
+<ul>
+<li><p>Dedicated team with Ear marked Key resources</p></li>
+<li><p>Co-develop solutions</p></li>
+<li><p>Long term commitment​</p></li>
+<li><p>Flexible capacity scaling​</p></li>
+<li><p>Exclusive access to our accelerators​</p></li>
+<li><p>Payments linked to milestones​</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-box">
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/star-bullet.png"/>
+<div class="flex-box1">
+<h6>Cost Efficient​</h6>
+<p>Our hybrid model (onsite- offsite)of  resourcing the projects gives 60% cost arbitrage compared to pure onsite model. And we follow strict control measures to ensure Zero compromise on quality​.​</p>
+</div>
+</div>
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/star-bullet.png"/>
+<div class="flex-box1">
+<h6>Right Technology & Proven Success​</h6>
+<p>Appian is a platform of choice for Lilium for the unmatched functionalities/ features, stability, security and scalability that is offered. With over 1100 implementations , including mission critical projects, our 750+ strong Appian specialists are best in the industry. Our 50+ Solution accelerators ensure that Lilium would have a good foundation on Day 1 to built further upon.​</p>
+</div>
+</div>
+<div class="box">
+<img src="./Images/Executive_Summary_PPT/star-bullet.png"/>
+<div class="flex-box1">
+<h6>User Experience​</h6>
+<p>Success lies in adoption. Our strategy is designed to engage users and ensure a smooth transition, making the new system easy to embrace.​</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Container > Right Container > Bottom -->
+<div class="right-container-bottom">
+<h4>Xebia's proposal is a commitment to excellence and partnership. We are eager to discuss how our solution can transform your IT Landscape and deliver tangible business outcomes.</h4>
+<p>Thank you once again for this opportunity. We look forward to the possibility of working together.​</p>
+</div>
+</div>
+</div>
+<!-- Container > Xebia Logo(Top Right) -->
+<img class="xebia-logo" src="./Images/Executive_Summary_PPT/Xebia_logo.png"/>
+</div>
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+CSS CODE (Copy whole as i removed wave theme on top right corner):- 
+
+
+
+
+/* @theme xebia */
+
+/*
+  ============================================
+    Created by Paulo Cunha
+    version: 1.0
+    last update: 17.mar.2024
+  ============================================       
+*/
+
+/* Importing COLOR SCHEMA */
+
+@import "default";
+@import "schema";
+@import "structure";
+
+/* Importing Font */
+/* Font Credit: htts://https://www.cdnfonts.com/ */
+@import url("https://fonts.cdnfonts.com/css/fira-sans-condensed?styles=19730");
+@import url("https://fonts.cdnfonts.com/css/noto-sans-sc");
+
+:root {
+  font-family: BodyFont, sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: initial;
+
+  /* --default-background-color: #d6d2c6;  */
+  --default-background-color: #f7b900;
+  --default-font-color: rgb(68, 19, 16);
+
+  --default-list-font-color: #e0ac00;
+  --cool-list-color: rgb(255, 31, 1);
+
+  --bold-color: rgb(0, 85, 255);
+
+  --default-header-font-color: rgb(22, 22, 22);
+  --subtitle-color: rgb(12, 55, 75);
+  --letter-spacing: -0.6px !important;
+  --default-header-bold-font-color: rgb(228, 5, 5);
+  --default-strong-font-color: rgb(201, 59, 34);
+  --italic-background-color: orangered;
+  --default-border-color: 2px solid rgb(211, 34, 11);
+  /* background-image: url("http://localhost:5500/bg.jpg"); */
+  color: var(--default-font-color);
+}
+
+@keyframes marp-transition-dissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ---------------- COVER PAGE ---------------- */
+
+.slide-container {
+  position: relative;
+  margin-top: -85px !important;
+  margin-right: -85px !important;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Circle Shape Top Left */
+.circle-shape{
+  position: absolute;
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  background-color: #d0becd;
+  top: -40px;
+  left: -140px;
+}
+.circle-shape::before{
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: white;
+  transform: translate(-50%,-50%);
+}
+
+/* Xebia Logo */
+.xebia-logo{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 94px;
+  height: 37px;
+}
+
+/* Left Container */
+.left-container {
+  width: 450px;
+  margin-left: 25px;
+  margin-right: 60px;
+  margin-top: 30px;
+}
+.left-container h1 {
+  font-size: 32px;
+  color: #651959;
+  margin-bottom: -5px;
+  font-weight: bold;
+}
+.left-container p {
+  font-size: 11px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* Right Container */
+.right-container{
+  margin-top: 130px;
+  width: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.right-container-top {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+  border-top: 1px solid #802873;
+  background-color: #fffaf4;
+  padding: 0 10px;
+}
+.reactangle-shape {
+  background-color: #6a205f;
+  width: 348px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translateY(-50%);
+}
+.reactangle-shape::before{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 19px solid transparent;
+  border-bottom: 19px solid transparent;
+  border-left: 21px solid #6a205f;
+  right: -20px;
+  top: 0px;
+}
+.right-container-top h1 {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+}
+.right-box{
+  padding-right:20px;
+}
+.box{
+  display: flex;
+  align-items: start;
+  margin-top: 50px;
+}
+.box img{
+  width: 20px;
+  height: 20px;
+  padding-right: 10px;
+}
+.flex-box1 h6{
+  color: #6a205f;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2px;
+}
+.flex-box1 p{
+  font-size: 9px;
+  color: #6c1d5f;
+  margin: 0;
+  padding: 0;
+  width: 294px;
+}
+.flex-box1 ul li{
+  margin: 0;
+  padding: 0;
+}
+.flex-box1 ul{
+  font-size: 9px;
+  color: #6c1d5f;
+  margin-bottom: 40px;
+}
+.right-container-bottom{
+  padding: 0 30px;
+}
+.right-container-bottom h4{
+  font-size: 14px;
+  color: #6a205f;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+.right-container-bottom p{
+  font-size: 15px;
+  font-style: italic;
+  color:#939393;
+  text-align: center;
+}

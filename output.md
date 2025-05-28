@@ -5,6 +5,4 @@ paginate: true
 transition: dissolve
 ---
 
-<div class="slide-container">
-
-</div>
+<div class="slide-container"></div>
