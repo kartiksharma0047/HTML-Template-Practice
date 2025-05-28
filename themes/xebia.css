@@ -20,6 +20,11 @@
 @import url("https://fonts.cdnfonts.com/css/noto-sans-sc");
 
 :root {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
   font-family: BodyFont, sans-serif;
   font-family: "Fira Sans", sans-serif;
   font-weight: initial;
@@ -40,7 +45,7 @@
   --default-strong-font-color: rgb(201, 59, 34);
   --italic-background-color: orangered;
   --default-border-color: 2px solid rgb(211, 34, 11);
-  /* background-image: url("http://localhost:5500/bg.jpg"); */
+  background-image: url("http://localhost:5500/bg.jpg");
   color: var(--default-font-color);
 }
 
@@ -54,166 +59,3 @@
 }
 /* ---------------- COVER PAGE ---------------- */
 
-.slide-container {
-  position: relative;
-  margin-top: -85px !important;
-  margin-right: -85px !important;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Circle Shape Top Left */
-.circle-shape{
-  position: absolute;
-  width: 156px;
-  height: 156px;
-  border-radius: 50%;
-  background-color: #d0becd;
-  top: -40px;
-  left: -140px;
-}
-.circle-shape::before{
-  content: "";
-  position: absolute;
-  width: 75%;
-  height: 75%;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  background-color: white;
-  transform: translate(-50%,-50%);
-}
-
-/* Xebia Logo */
-.xebia-logo{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 94px;
-  height: 37px;
-}
-
-/* Left Container */
-.left-container {
-  width: 450px;
-  margin-left: 25px;
-  margin-right: 60px;
-  margin-top: 30px;
-}
-.left-container h1 {
-  font-size: 32px;
-  color: #651959;
-  margin-bottom: -5px;
-  font-weight: bold;
-}
-.left-container p {
-  font-size: 11px;
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-/* Right Container */
-.right-container{
-  margin-top: 130px;
-  width: 660px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.right-container-top {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  position: relative;
-  border-top: 1px solid #802873;
-  background-color: #fffaf4;
-  padding: 0 10px;
-}
-.reactangle-shape {
-  background-color: #6a205f;
-  width: 348px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  transform: translateY(-50%);
-}
-.reactangle-shape::before{
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 19px solid transparent;
-  border-bottom: 19px solid transparent;
-  border-left: 21px solid #6a205f;
-  right: -20px;
-  top: 0px;
-}
-.right-container-top h1 {
-  font-size: 16px;
-  color: white;
-  margin: 0;
-  padding: 0;
-  padding-left: 20px;
-}
-.right-box{
-  padding-right:20px;
-}
-.box{
-  display: flex;
-  align-items: start;
-  margin-top: 50px;
-}
-.box img{
-  width: 20px;
-  height: 20px;
-  padding-right: 10px;
-}
-.flex-box1 h6{
-  color: #6a205f;
-  font-size: 15px;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 2px;
-}
-.flex-box1 p{
-  font-size: 9px;
-  color: #6c1d5f;
-  margin: 0;
-  padding: 0;
-  width: 294px;
-}
-.flex-box1 ul li{
-  margin: 0;
-  padding: 0;
-}
-.flex-box1 ul{
-  font-size: 9px;
-  color: #6c1d5f;
-  margin-bottom: 40px;
-}
-.right-container-bottom{
-  padding: 0 30px;
-}
-.right-container-bottom h4{
-  font-size: 14px;
-  color: #6a205f;
-  font-weight: bold;
-  font-style: italic;
-  text-align: center;
-}
-.right-container-bottom p{
-  font-size: 15px;
-  font-style: italic;
-  color:#939393;
-  text-align: center;
-}

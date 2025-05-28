@@ -1,0 +1,283 @@
+
+
+HTML CODE :- 
+
+
+---
+marp: true
+theme: xebia
+paginate: true
+transition: dissolve
+---
+
+<div class="executive-summary-slide8-container">
+<h1>Executive Summary​</h1>
+<div class="executive-summary-slide8-container-box">
+<!-- Divide of 2 Div into left and right -->
+<div class="executive-summary-slide8-left">
+<p>Xebia is collaborating with Appian as a subcontractor to deliver the Connected Claims Solution for Pacifico Seguros. With over a decade of experience with Appian , we developed the Appian Connected Claims (ACC) platform, which is being white-labeled by Appian.​</p>
+<p>Leveraging our expertise in the Insurance Sector, we are uniquely positioned to Drive Innovation At Pacifico, Accelerating Decision Making, Quick ROI , Lower TCO and Decreasing time-to-market . Our approach centres on a collaborative and flexible partnership to quickly unlock business value , leveraging the best technology, that is future-proof, scalable and agile.</p>
+<p>Our proposal outlines a comprehensive strategy that meets your requirements. We adhere to industry best practices and governance standards, ensuring high-quality, compliant, and secure solutions. Additionally, our commitment to innovation and continuous improvement ensures that we remain a strategic partner for Pacifico’s future growth and success.</p>
+<p>Xebia is well positioned to foresee the unique challenges of this flagship transformation program for Pacifico. The program delivery demands seamless collaboration of Xebia team with Pacifico's IT team, the key business users from Engineering, Production, Services and Supply chain, your existing partners, and technology providers to name a few. We are aware that a fool-proof governance mechanism that drives the best project management techniques into action would be quintessential to deliver success.</p>
+</div>
+<div class="executive-summary-slide8-right">
+
+<div class="executive-summary-slide8-right-border">
+
+<h2>Making a DIFFERENCE for Pacifico Seguros !!​</h2>
+<div class="executive-summary-slide8-right-container">
+<div class="executive-summary-slide8-right-container-box">
+<div class="executive-summary-slide8-box">
+<h6>Faster Delivery</h6>
+<p>Leverage Xebia's solution accelerators to deliver projects 2X faster. Access to Domain and Industry experts to ensure quick solutions to problems.​</p>
+</div>
+<div class="executive-summary-slide8-box">
+<h6>Reduce Time to Market</h6>
+<p>Xebia enables faster product launches to capitalize on market opportunities, sustain a competitive advantage, and swiftly adapt the product portfolio.​</p>
+</div>
+<div class="executive-summary-slide8-box">
+<h6>Xebia's Skin in the Game</h6>
+<p>Dedicated team with Ear marked Key resources​</p>
+<p>Co-develop solutions​</p>
+<p>Long term commitment​</p>
+<p>Flexible capacity scaling​</p>
+<p>Exclusive access to our accelerators​</p>
+<p>Payments linked to milestones​</p>
+</div>
+<div class="executive-summary-slide8-box">
+<h6>User Experience</h6>
+<p>Success lies in adoption. Our strategy is designed to enPacificoe users and ensure a smooth transition, making the new system easy to embrace.​</p>
+</div>
+</div>
+<div class="executive-summary-slide8-right-container-box">
+<div class="executive-summary-slide8-box">
+<h6>Cost Efficient</h6>
+<p>Our hybrid model (onsite- offsite)of  resourcing the projects gives 60% cost arbitrage compared to pure onsite model & we follow strict control measures to ensure Zero compromise on quality​</p>
+</div>
+<div class="executive-summary-slide8-box">
+<h6>Agile Development & Creativity</h6>
+<p>Using agile methodologies, we ensure a swift, efficient delivery, enhancing your operational efficiency and reducing costs. Agile way also gives room for creative thoughts.​</p>
+</div>
+<div class="executive-summary-slide8-box">
+<h6>Right Technology & Proven Success​</h6>
+<p>Appian is a platform of choice for various Insurance for the unmatched functionalities/ features, stability, security and scalability that is offered. With over 1100 implementations , including mission critical projects, our 700+ strong Appian specialists are best in the industry. Our 50+ Solution accelerators ensure that Pacifico would have a good foundation on Day 1 to built further upon.​</p>
+</div>
+<div class="executive-summary-slide8-box">
+<h6>Accelerated ROI</h6>
+<p>Xebia accelerates ROI by leveraging our deep expertise to swiftly implement cost-effective solutions tailored to drive immediate business value​.</p>
+</div>
+</div>
+</div>
+</div>
+<h3>Xebia is collaborating as a subcontractor with Appian to deliver  Appian Connected Claims solution for Pacifico Seguros. </h3>
+</div>
+</div>
+<p class="executive-summary-slide8-footer">​Thank you once again for this opportunity. We look forward to the possibility of working together.​</p>
+<!-- Postion Designs -->
+<img src="./Images/Executive_Summary_PPT/Page8_Background.png" class="executive-summary-slide8-background-image"/>
+<img src="./Images/Executive_Summary_PPT/Page8_Design.png"
+class="executive-summary-slide8-Design-image executive-summary-slide8-Design1-image"/>
+<img src="./Images/Executive_Summary_PPT/Page8_Design.png"
+class="executive-summary-slide8-Design-image executive-summary-slide8-Design2-image"/>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+CSS CODE :- 
+
+
+
+/* @theme xebia */
+
+/*
+  ============================================
+    Created by Paulo Cunha
+    version: 1.0
+    last update: 17.mar.2024
+  ============================================       
+*/
+
+/* Importing COLOR SCHEMA */
+
+@import "default";
+@import "schema";
+@import "structure";
+
+/* Importing Font */
+/* Font Credit: htts://https://www.cdnfonts.com/ */
+@import url("https://fonts.cdnfonts.com/css/fira-sans-condensed?styles=19730");
+@import url("https://fonts.cdnfonts.com/css/noto-sans-sc");
+
+:root {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  font-family: BodyFont, sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: initial;
+
+  /* --default-background-color: #d6d2c6;  */
+  --default-background-color: #f7b900;
+  --default-font-color: rgb(68, 19, 16);
+
+  --default-list-font-color: #e0ac00;
+  --cool-list-color: rgb(255, 31, 1);
+
+  --bold-color: rgb(0, 85, 255);
+
+  --default-header-font-color: rgb(22, 22, 22);
+  --subtitle-color: rgb(12, 55, 75);
+  --letter-spacing: -0.6px !important;
+  --default-header-bold-font-color: rgb(228, 5, 5);
+  --default-strong-font-color: rgb(201, 59, 34);
+  --italic-background-color: orangered;
+  --default-border-color: 2px solid rgb(211, 34, 11);
+  /* background-image: url("http://localhost:5500/bg.jpg"); */
+  color: var(--default-font-color);
+}
+
+@keyframes marp-transition-dissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ---------------- COVER PAGE ---------------- */
+
+.executive-summary-slide8-container {
+  margin-right: -60px;
+  margin-left: -60px;
+}
+
+/* Normal CSS */
+.executive-summary-slide8-container h1 {
+  position: relative;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  z-index: 3;
+}
+.executive-summary-slide8-container-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  color: white;
+}
+.executive-summary-slide8-left {
+  margin-right: 50px;
+}
+.executive-summary-slide8-left p {
+  font-size: 15px;
+  margin: 2px 0;
+  padding: 0;
+}
+.executive-summary-slide8-left p:nth-child(1) {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+/* Right side */
+.executive-summary-slide8-right-border {
+  border: 1px solid white;
+  border-radius: 20px;
+}
+.executive-summary-slide8-right h3{
+  color:#ffd966;
+  font-style: italic;
+  font-size: 21px;
+  text-align: center;
+  font-weight: normal;
+}
+.executive-summary-slide8-right h2 {
+  font-size: 24px;
+  color: #ffd966;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+.executive-summary-slide8-right-container {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding: 10px 0px 10px 20px;
+}
+.executive-summary-slide8-box{
+  border-left: 3px solid white;
+  margin: 20px 0;
+  padding: 0 20px 0 10px;
+}
+.executive-summary-slide8-box h6 {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2px;
+}
+.executive-summary-slide8-box p {
+  font-size: 9px;
+  color: #20d2e2;
+  margin: 0;
+  padding: 2px 0;
+  width: 300px;
+}
+
+/* Design CSS */
+.executive-summary-slide8-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.executive-summary-slide8-Design-image {
+  position: absolute;
+  z-index: 2;
+}
+.executive-summary-slide8-Design1-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.executive-summary-slide8-Design2-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  transform: rotate(180deg);
+}
+.executive-summary-slide8-footer{
+  position: relative;
+  z-index: 3;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  color: white;
+  margin-top: 20px;
+}
