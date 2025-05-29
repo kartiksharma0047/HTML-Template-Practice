@@ -1,0 +1,693 @@
+
+
+HTML CODE :- 
+
+
+
+---
+marp: true
+theme: xebia
+paginate: true
+transition: dissolve
+---
+
+<div class="timeline-slide1">
+<p class="heading-para"><i>Option 1:</i> <b>Implementation Timeline (11 Months)</b></p>
+
+<div class="designed-div">
+<p>This proposed implementation plan outlines a phased approach for the OneScore project, spanning 11 months of active implementation followed by 1 month of hypercare. The project is structured into two key functional releases leading up to a final production go-live at the end of Month 11.​</p>
+<p><b>Release 1</b> will deliver foundational components and prioritized features identified through early business alignment during workshops and discovery sessions. These items will be made available in the UAT environment to allow formal business validation and feedback.​</p>
+<p><b>Release 2</b> will follow, incorporating additional functionality and enhancements, leading to the final production release.​</p>
+</div>
+
+<div class="table-div">
+
+<!-- Left Container -->
+<div class="box-container">
+
+<div class="box-title">
+<p class="ribbonDesign"></p>
+<h3>Project Stages</h3>
+</div>
+<h4>Discovery​</h4>
+<h4>Development​</h4>
+<h4>UAT​</h4>
+<h4>Go live​</h4>
+<h4>Hypercare​​</h4>
+</div>
+
+<!-- Right Container -->
+<div class="table-container">
+<h2 class="edit-h2"><p></p>11 Months Implementation (+ 1 Month Hypercare)​</h2>
+<div class="months-boxes">
+<p>Month 1</p>
+<p>Month 2</p>
+<p>Month 3</p>
+<p>Month 4</p>
+<p>Month 5</p>
+<p>Month 6</p>
+<p>Month 7</p>
+<p>Month 8</p>
+<p>Month 9</p>
+<p>Month 10</p>
+<p>Month 11</p>
+<p>Month 12</p>
+</div>
+<h2 class="sprint-txt">SPRINTS​</h2>
+<div class="sprints-boxes">
+<p>S0</p>
+<p>S1</p>
+<p>S2</p>
+<p>S3</p>
+<p>S4</p>
+<p>S5</p>
+<p>S6</p>
+<p>S7</p>
+<p>S8</p>
+<p>S9</p>
+<p>S10</p>
+<p>S11</p>
+<p>S12</p>
+<p>S13</p>
+<p>S14</p>
+<p>S15</p>
+<p>S16</p>
+<p>S17</p>
+<p>S18</p>
+<p>S19</p>
+<p>S20</p>
+<p>S21</p>
+<p>S22</p>
+<p>S23</p>
+</div>
+
+<table class="table">
+<tr>
+      <td class="background postional-columns col1">
+      <p>0.5 Month</p>
+      </td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="postional-columns col1">
+      <p>0.5 Month</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="background"></td>
+      <td class="background postional-columns col2">
+      <p>1 Month</p>
+      </td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td></td>
+      <td></td>
+      <td class="postional-columns col2">
+      <p>1 Month</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background postional-columns col3">
+      <p>1 Month</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="postional-columns col3">
+      <p>1.5 Month</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="postional-columns col4">
+      <img class="column4Image" src="./Images/Timeline_PPT/Rocket_image.png">
+      <p>0.5 Month</p>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="background"></td>
+      <td class="postional-columns col5">
+      <p>1 Month</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="postional-columns col5">
+      <p>1 Month</p>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+</table>
+
+<div class="footer">
+<p>Release 1</p>
+<p>Release 2</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+CSS :- 
+
+
+
+
+/* @theme xebia */
+
+/*
+  ============================================
+    Created by Paulo Cunha
+    version: 1.0
+    last update: 17.mar.2024
+  ============================================       
+*/
+
+/* Importing COLOR SCHEMA */
+
+@import "default";
+@import "schema";
+@import "structure";
+
+/* Importing Font */
+/* Font Credit: htts://https://www.cdnfonts.com/ */
+@import url("https://fonts.cdnfonts.com/css/fira-sans-condensed?styles=19730");
+@import url("https://fonts.cdnfonts.com/css/noto-sans-sc");
+
+:root {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  font-family: BodyFont, sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: initial;
+
+  /* --default-background-color: #d6d2c6;  */
+  --default-background-color: #f7b900;
+  --default-font-color: rgb(68, 19, 16);
+
+  --default-list-font-color: #e0ac00;
+  --cool-list-color: rgb(255, 31, 1);
+
+  --bold-color: rgb(0, 85, 255);
+
+  --default-header-font-color: rgb(22, 22, 22);
+  --subtitle-color: rgb(12, 55, 75);
+  --letter-spacing: -0.6px !important;
+  --default-header-bold-font-color: rgb(228, 5, 5);
+  --default-strong-font-color: rgb(201, 59, 34);
+  --italic-background-color: orangered;
+  --default-border-color: 2px solid rgb(211, 34, 11);
+  background-image: url("http://localhost:5500/bg.jpg");
+  color: var(--default-font-color);
+}
+
+@keyframes marp-transition-dissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ---------------- COVER PAGE ---------------- */
+
+.timeline-slide1 {
+  margin-left: -40px;
+}
+.heading-para {
+  color: #73658e;
+  font-size: 32px;
+}
+.designed-div {
+  font-size: 12px;
+  border-left: 8px solid #635a72;
+  padding: 10px 0px 10px 10px;
+  width: 1100px;
+  background: linear-gradient(to right, #c5bfd2, white 100%);
+  border-top-right-radius: 50% !important;
+}
+.designed-div p {
+  margin: 0;
+  padding: 0;
+}
+
+.table-div {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.box-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ribbonDesign {
+  width: 50px;
+  height: 20px;
+  background-color: #6c1d5f;
+  margin: 0;
+  padding: 0;
+  margin-left: -20px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.box-container h3 {
+  font-size: 19px;
+  color: black;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.box-container h4 {
+  font-size: 16px;
+  color: #595959;
+  background-color: white;
+  box-shadow: 0px 0px 10px #0000003d;
+  width: 190px;
+  padding: 12px 0px 12px 20px;
+  border-radius: 5px;
+  margin: 12.5px 0;
+}
+.box-container h4:nth-child(2) {
+  border-left: 4px solid #491e47;
+}
+.box-container h4:nth-child(3) {
+  border-left: 4px solid #445bb5;
+}
+.box-container h4:nth-child(4) {
+  border-left: 4px solid #00b050;
+}
+.box-container h4:nth-child(5) {
+  border-left: 4px solid #ffc000;
+}
+.box-container h4:nth-child(6) {
+  border-left: 4px solid #f77976;
+}
+
+.table-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 890px;
+}
+.edit-h2 {
+  font-size: 15px;
+  width: 430px;
+  color: white;
+  background-color: #73658e;
+  position: relative;
+  border-radius: 20px;
+  padding: 5px 0;
+  z-index: 3;
+}
+.edit-h2 p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 890px;
+  border: 1px solid #73658e;
+  z-index: -10;
+}
+
+.months-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 890px;
+  margin: 0;
+  padding: 0;
+}
+.months-boxes p {
+  font-size: 13px;
+  background-color: #73658e;
+  margin: 0;
+  padding: 5px 12px;
+  color: white;
+}
+.sprint-txt {
+  font-size: 12px;
+  width: 100%;
+  background-color: #ebe9f0;
+  margin: 0;
+  padding: 5px 0;
+}
+.sprints-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 890px;
+  margin: 0;
+  padding: 0;
+}
+.sprints-boxes p {
+  font-size: 13px;
+  background-color: #73658e;
+  margin: 0;
+  width: 37px;
+  padding: 5px 0;
+  color: white;
+  margin-bottom: 10px;
+}
+.table td {
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  width: 34px;
+  height: 55px;
+}
+.background {
+  background-color: #fef1f1 !important;
+}
+
+.postional-columns {
+  position: relative !important;
+}
+
+.col1 p,
+.col2 p,
+.col3 p,
+.col4 p,
+.col5 p {
+  position: absolute;
+  font-size: 13px;
+  font-weight: bold;
+  text-wrap: nowrap;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.col1 p::after,
+.col2 p::after,
+.col3 p::after,
+.col4 p::after,
+.col5 p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.col1 p::before,
+.col2 p::before,
+.col3 p::before,
+.col4 p::before,
+.col5 p::before {
+  content: "";
+  height: 20px;
+  border-left: 1px solid black;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ----------- Column 1 Custom Positioning ----------- */
+
+/* Column 1 - First cell (1st row, 1st col) */
+tr:first-child td.col1:nth-of-type(1) p {
+  left: 45px;
+  color: #f77976;
+}
+tr:first-child td.col1:nth-of-type(1) p::after {
+  width: 34px;
+  left: -50px;
+  border: 3px solid #491e47;
+}
+tr:first-child td.col1:nth-of-type(1) p::before {
+  left: -8px;
+}
+
+/* Column 1 - Tenth cell (1st row, 10th col) */
+tr:first-child td.col1:nth-of-type(10) p {
+  left: 50px;
+  color: #f77976;
+}
+tr:first-child td.col1:nth-of-type(10) p::after {
+  width: 30px;
+  left: -50px;
+  border: 3px solid #491e47;
+}
+tr:first-child td.col1:nth-of-type(10) p::before {
+  left: -12px;
+}
+
+/* ----------- Column 2 Custom Positioning ----------- */
+
+/* Column 2 - Second cell (2nd row, 2nd col) */
+tr:nth-child(2) td.col2:nth-of-type(2) p {
+  left: 85px;
+  top: 15px;
+  color: #445bb5;
+}
+tr:nth-child(2) td.col2:nth-of-type(2) p::after {
+  width: 218px;
+  top: 30px;
+  left: -85px;
+  border: 3px solid #445bb5;
+}
+tr:nth-child(2) td.col2:nth-of-type(2) p::before {
+  left: 140px;
+  top: 30px;
+}
+
+/* Column 2 - Second cell (2nd row, 12nd col) */
+tr:nth-child(2) td.col2:nth-of-type(12) p {
+  left: 85px;
+  top: 15px;
+  color: #445bb5;
+}
+tr:nth-child(2) td.col2:nth-of-type(12) p::after {
+  width: 290px;
+  top: 30px;
+  left: -121px;
+  border: 3px solid #445bb5;
+}
+tr:nth-child(2) td.col2:nth-of-type(12) p::before {
+  left: 176px;
+  top: 30px;
+}
+
+/* ----------- Column 3 Custom Positioning ----------- */
+
+/* col3 - First cell in 3rd row (left side) */
+tr:nth-child(3) td.col3:nth-of-type(9) p {
+  left: 45px;
+  color: #00b050;
+}
+tr:nth-child(3) td.col3:nth-of-type(9) p::after {
+  width: 70px;
+  left: -82px;
+  border: 3px solid #00b050;
+}
+tr:nth-child(3) td.col3:nth-of-type(9) p::before {
+  left: -5px;
+}
+
+/* col3 - Second cell in 3rd row (right side) */
+tr:nth-child(3) td.col3:nth-of-type(19) p {
+  left: 120px;
+  color: #00b050;
+}
+tr:nth-child(3) td.col3:nth-of-type(19) p::after {
+  width: 108px;
+  left: -122px;
+  border: 3px solid #00b050;
+}
+tr:nth-child(3) td.col3:nth-of-type(19) p::before {
+  left: -7px;
+}
+
+/* ----------- Column 4 Custom Positioning ----------- */
+
+.column4Image {
+  position: fixed;
+  right: 142px;
+  top: 565px;
+  z-index: 10;
+}
+/* col4 - First cell in 3rd row (left side) */
+tr:nth-child(4) td.col4:nth-of-type(22) p {
+  left: 50px;
+  color: #ffc000;
+}
+tr:nth-child(4) td.col4:nth-of-type(22) p::after {
+  width: 50px;
+  left: -65px;
+  border: 3px solid #ffc000;
+}
+tr:nth-child(4) td.col4:nth-of-type(22) p::before {
+  content: "Live*";
+  color: black;
+  border: none;
+  top: -10px;
+  left: -47px;
+}
+
+/* ----------- Column 5 Custom Positioning ----------- */
+
+/* col3 - First cell in 3rd row (left side) */
+tr:nth-child(5) td.col5:nth-of-type(10) p {
+  left: 14px;
+  top: 15px;
+  color: #f77976;
+}
+tr:nth-child(5) td.col5:nth-of-type(10) p::after {
+  top: 30px;
+  left: -15px;
+  width: 70px;
+  border: 3px solid #f77976;
+}
+tr:nth-child(5) td.col5:nth-of-type(10) p::before {
+  display: none;
+}
+
+/* col3 - Second cell in 3rd row (right side) */
+tr:nth-child(5) td.col5:nth-of-type(22) p {
+  left: 51px;
+  top: 15px;
+  color: #f77976;
+}
+tr:nth-child(5) td.col5:nth-of-type(22) p::after {
+  top: 30px;
+  left: -15px;
+  width: 70px;
+  border: 3px solid #f77976;
+}
+tr:nth-child(5) td.col5:nth-of-type(22) p::before {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.footer p {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0 10px;
+  box-shadow: 0px 1px 1px #d9d9d9, 0px -1px 1px #d9d9d9;
+}
+.footer p:first-child {
+  background-color: #fcdcdc;
+  border: none;
+}
