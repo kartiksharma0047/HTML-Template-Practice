@@ -14,10 +14,70 @@ transition: dissolve
 <h1>Our Understanding of Where PartnerRe Is Currently & High-Level Scope of this RFP</h1>
 
 <div class="Scope-slide2-box-container">
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
+<!-- Box 1 -->
+<div class="box">
+<h2>Existing PartnerRe's Processes</h2>
+<h3></h3>
+<!-- Inside Box 1 -->
+<div class="inside-box">
+<h5>Astro -</h5>
+<p>Existing application on Appian already built by PartnerRe on Life & Health Underwriting Treaty stream</p>
+<p>Astro includes different sets of functionalities which are built including use cases:​</p>
+
+<div class="box1-footer">
+<h6>Business Partner Onboarding & Workflows​</h6>
+<h6>Active Price Workflows, etc.​</h6>
 </div>
+
+</div>
+</div>
+<!-- Box 2 -->
+<div class="box box2">
+<h2>Scope of RFP-</h2>
+<p>Life & Health Price and Negotiation process</p>
+<h3></h3>
+<div class="inside-box">
+
+<div class="positional-div1">
+<div class="position-div1">
+<h4>Extension of the Current MVP to new Enhancements</h4>
+<p>Add new functionalities on top of existing processes systems​</p>
+</div>
+<p class="release1">Release 1 - Q2 / 2025</p>
+</div>
+
+<div class="positional-div2">
+<div class="position-div2">
+<h4>Completeness of the System to a more Matured State​</h4>
+<p>A fully mature Version with Advanced features and Integrations​</p>
+</div>
+<p class="release2">Release 2 – Q3/Q4 / 2025​</p>
+</div>
+
+</div>
+</div>
+<!-- Box 3 -->
+<div class="box">
+<h2>Planned Released for Scope of</h2>
+<p><b>Work</b> (part of this RFP)</p>
+<h3></h3>
+<div class="inside-box"></div>
+</div>
+</div>
+
+
+<div class="box2-footer">
+<div class="primeScopeLine">
+<p>PRIME PROCESSES OF SCOPE​</p>
+<div>
+<div class="rectangleFlows">
+<h6>1. Calculate Price​</h6>
+<h6>2. Prepare, Present & Negotiate Offer​</h6>
+<h6>3. Handover To Valuation & Ops​</h6>
+</div>
+</div>
+
+<p class="error-para">** Please Note this is our high-level understanding of current scope & Requirements. These stand to be revised and refined further during discovery Period ​</p>
 </div>
 
 
@@ -94,12 +154,267 @@ CSS CODE :-
 }
 /* ---------------- COVER PAGE ---------------- */
 
-.Scope-slide2-container{
+.Scope-slide2-container {
   margin-left: -50px !important;
 }
 
-.Scope-slide2-container h1{
-  color:#4d435f;
+.Scope-slide2-container h1 {
+  color: #4d435f;
   font-size: 27px;
   width: 820px;
+  margin-bottom: 30px;
+}
+
+.Scope-slide2-box-container {
+  display: flex;
+  align-items: end;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+.box {
+  width: 330px;
+  text-align: center;
+  padding: 0 10px;
+}
+.box h2 {
+  font-size: 19px;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: #4d435f;
+}
+.box p {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  margin-top: -10px !important;
+}
+.box p b {
+  font-size: 19px;
+  font-style: normal;
+}
+.box h3 {
+  border-bottom: 4px solid #73658e;
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+.inside-box {
+  height: 360px;
+  border: 1px solid #e3d9e3;
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inside-box h5 {
+  font-size: 21px;
+  color: #73658e;
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+}
+.inside-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  word-spacing: 1px;
+  width: 270px;
+  margin-top: 5px !important;
+}
+.inside-box p:nth-child(3) {
+  line-height: normal;
+  width: 260px;
+  font-style: normal;
+  word-spacing: 0;
+  margin-top: 15px !important;
+}
+.box1-footer {
+  font-size: 15px;
+  margin-top: 12px;
+}
+.box1-footer h6 {
+  color: #73658e;
+  font-weight: lighter;
+  border: 1px solid #e3d9e3;
+  padding: 15px 20px;
+  width: 200px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.box2 {
+  position: relative;
+  border: 2px solid #ffc000;
+}
+.box2 .inside-box {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+}
+
+.positional-div1 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #7f7f7f;
+  top: 110px;
+  left: 10px;
+  width: 700px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.positional-div2 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #9d92b2;
+  top: 0;
+  left: 10px;
+  width: 700px;
+  background-color: #ebe9f0;
+  top: 240px;
+  overflow: hidden;
+}
+.position-div1,
+.position-div2 {
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.position-div1 h4,
+.position-div2 h4 {
+  font-size: 16px;
+  width: 340px;
+  font-weight: 900;
+  color: #181717;
+  margin: 0;
+  padding: 0;
+}
+.position-div1 p,
+.position-div2 p {
+  font-size: 12px;
+  width: 300px;
+}
+.position-div2 h4 {
+  width: 350px;
+  color: #4d435f;
+}
+.release1,
+.release2 {
+  font-style: normal !important;
+  font-size: 24px !important;
+  width: 300px !important;
+  margin-left: 25px !important;
+  padding: 20px 0 !important;
+}
+.release1 {
+  background-color: #d9d9d9;
+  color: #181717;
+}
+.release2 {
+  background-color: #c4bed1;
+  color: #4d435f;
+}
+
+.box2-footer{
+  position: fixed !important;
+  bottom:55px;
+  left: 510px;
+}
+
+.box2-footer .primeScopeLine p {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+  position: fixed;
+  bottom:155px;
+  left: 496px;
+  z-index: 2;
+  padding: 0 15px;
+  background-color: white;
+}
+.box2-footer .primeScopeLine p::after{
+  position: absolute;
+  content: "";
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 7px solid black; 
+  top: 50%;
+  transform: translateY(-50%);
+  left: -35px;
+}
+.box2-footer .primeScopeLine p::before{
+  position: absolute;
+  content: "";
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid black; 
+  top: 50%;
+  transform: translateY(-50%);
+  right: -35px;
+}
+.box2-footer .primeScopeLine{
+  position: relative;
+}
+.box2-footer .primeScopeLine::after {
+  content: "";
+  border-top:1px solid black;
+  width: 300px;
+  left: -43px;
+  position: absolute;
+  bottom: 127px;
+  z-index: 1;
+}
+.box2-footer .rectangleFlows h6 {
+  font-size: 11px;
+}
+.rectangleFlows{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  bottom: 105px;
+  left: 439px;
+}
+.rectangleFlows h6{
+  padding: 10px 2px;
+  margin: 0 7px;
+  font-weight: lighter;
+  border: 1px solid #e3d9e3;
+}
+.rectangleFlows h6:nth-child(1){
+  width: 80px;
+  text-align: center;
+}
+.rectangleFlows h6:nth-child(2){
+  width: 115px;
+  text-align: center;
+}
+.rectangleFlows h6:nth-child(3){
+  width: 100px;
+  text-align: center;
+}
+.error-para{
+  color: #ff0000;
+  width: 100%;
+  position: fixed;
+  bottom:0px !important;
+  left: 80px !important;
+}
+.error-para::after{
+  display: none;
 }
