@@ -1,0 +1,479 @@
+
+
+
+HTML CODE :- 
+
+
+
+---
+marp: true
+theme: xebia
+paginate: true
+transition: dissolve
+---
+
+<div class="Timeline">
+<h1>Proposed High Level Timeline by Xebia​</h1>
+
+<!-- Mid Table Section Start-->
+<div class="mid">
+
+<div class="left">
+<h2>Discovery​</h2>
+<h2>Design  (BRD, Data Model, UI/UX)​​</h2>
+<h2>Development​</h2>
+<h2>UAT​​</h2>
+<h2>Post Go-Live Support​</h2>
+</div>
+
+<!-- Right Bottom Start -->
+<div class="right">
+
+
+
+<div class="line-right1-h2">
+<h2 class="line-h2"></h2>
+<h2 class="right1-h2">3 Months Implementation (Q1/2025) + 6 Months Support</h2>
+</div>
+
+<div class="only-lines">
+<div class="only-line1">
+<p>2 weeks</p>
+<h3></h3>
+</div>
+<div class="only-line2">
+<p>10 weeks (Design + Development + Testing)​</p>
+<h3></h3>
+</div>
+<div class="only-line3">
+<p>24 weeks</p>
+<h3></h3>
+</div>
+</div>
+
+<div class="table-line">
+<p>Quarter 1 2025​</p>
+<p>6 Months​</p>
+</div>
+
+<table class="table">
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+<!-- Right Bottom End -->
+</div>
+
+</div>
+<!-- Mid Table Section End-->
+
+<div class="end-div">
+
+
+<div class="div1">
+<h5>Key activities during Discovery:​</h5>
+<ul>
+<li>Understanding Data - Unstructured, Structured (Volume, Variety,</li>
+<li>complexity, Multi Modality)​</li>
+<li>Functional Clarifications (Recommendations)​</li>
+<li>Refining Architecture​</li>
+<li>Sample Data​</li>
+<li>Infra setup and Access Provisioning​</li>
+<li>Environment Strategies and Setup​</li>
+<li>Kickoff​</li>
+</ul>
+</div>
+
+
+<div class="div2">
+<h5>Expected Outcome of Design</h5>
+<ul>
+<li>ERD</li>
+<li>Database design & development​​</li>
+<li>UI/UX Design Completion and Sign-off​</li>
+<li>Understanding of BRD​</li>
+</ul>
+</div>
+
+
+<div class="div3">
+<h5>Expected Outcome of Development​</h5>
+<ul>
+<li>Workflow Engine​</li>
+<li>Business Rule engine​</li>
+<li>Stage, task and action management​​</li>
+<li>Auditing/Tracing</li>
+<li>Notification Engine​</li>
+<li>Integrations with other systems​</li>
+</ul>
+</div>
+
+
+<div class="div4">
+<h5>*Post Go-Live Support engagement for 6 months continues​</h5>
+</div>
+
+</div>
+
+<p class="end-para">** Based on the outcomes of the discovery, the final scope will be locked and agreed to be delivered.​</p>
+
+
+<!-- Logo -->
+<img class="logo" src="./Images/Timeline_PPT/Xebia_logo_2.png"/>
+</div>
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+CSS CODE :- 
+
+
+
+/* @theme xebia */
+
+/*
+  ============================================
+    Created by Paulo Cunha
+    version: 1.0
+    last update: 17.mar.2024
+  ============================================       
+*/
+
+/* Importing COLOR SCHEMA */
+
+@import "default";
+@import "schema";
+@import "structure";
+
+/* Importing Font */
+/* Font Credit: htts://https://www.cdnfonts.com/ */
+@import url("https://fonts.cdnfonts.com/css/fira-sans-condensed?styles=19730");
+@import url("https://fonts.cdnfonts.com/css/noto-sans-sc");
+
+:root {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  font-family: BodyFont, sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: initial;
+
+  /* --default-background-color: #d6d2c6;  */
+  --default-background-color: #f7b900;
+  --default-font-color: rgb(68, 19, 16);
+
+  --default-list-font-color: #e0ac00;
+  --cool-list-color: rgb(255, 31, 1);
+
+  --bold-color: rgb(0, 85, 255);
+
+  --default-header-font-color: rgb(22, 22, 22);
+  --subtitle-color: rgb(12, 55, 75);
+  --letter-spacing: -0.6px !important;
+  --default-header-bold-font-color: rgb(228, 5, 5);
+  --default-strong-font-color: rgb(201, 59, 34);
+  --italic-background-color: orangered;
+  --default-border-color: 2px solid rgb(211, 34, 11);
+  /* background-image: url("http://localhost:5500/bg.jpg"); */
+  color: var(--default-font-color);
+}
+
+@keyframes marp-transition-dissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ---------------- COVER PAGE ---------------- */
+
+.Timeline h1 {
+  font-size: 32px;
+  color: #4d435f;
+  text-align: center;
+}
+.mid {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.left {
+  margin-bottom: 15px;
+}
+.left h2 {
+  color: #333333;
+  font-weight: lighter;
+  font-size: 13px;
+  width: 220px;
+  border: 1px solid rgba(0, 0, 0, 0.097);
+  padding: 5px 0 5px 15px;
+}
+.left h2:nth-child(1) {
+  border-left: 5px solid #491e47;
+}
+.left h2:nth-child(2) {
+  border-left: 5px solid #445bb5;
+}
+.left h2:nth-child(3) {
+  border-left: 5px solid #00b050;
+}
+.left h2:nth-child(4) {
+  border-left: 5px solid #ffc000;
+}
+.left h2:nth-child(5) {
+  border-left: 5px solid #f77976;
+}
+
+.right {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.line-right1-h2 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.right1-h2 {
+  font-size: 9px;
+  background-color: #73658e;
+  padding: 3px 20px;
+  color: white;
+  font-weight: 900;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+}
+.line-h2 {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 880px;
+  border-top: 1px solid #6e2161;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.only-lines {
+  display: flex;
+  align-items: center;
+  width: 880;
+  font-size: 12px;
+  text-align: center;
+  color: #6c1d5f;
+  font-weight: bold;
+}
+.only-line1 {
+  width: 140px;
+  margin-right: 20px;
+}
+.only-line2 {
+  width: 495px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.only-line3 {
+  width: 185px;
+  margin-left: 20px;
+}
+.only-line1 h3,
+.only-line2 h3,
+.only-line3 h3 {
+  border-top: 1px solid #6c1d5f;
+  margin: 0;
+  margin-top: -15px;
+  position: relative;
+}
+.only-line1 h3::after,
+.only-line2 h3::after,
+.only-line3 h3::after {
+  content: "";
+  position: absolute;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #6c1d5f;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  right: -10px;
+}
+.only-line3 h3::after {
+  right: -4px;
+}
+.only-line1 h3::before,
+.only-line2 h3::before,
+.only-line3 h3::before {
+  content: "";
+  position: absolute;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 8px solid #6c1d5f;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 0px;
+}
+.only-line1 h3::before {
+  left: 4px;
+}
+
+.table-line {
+  display: flex;
+  align-items: center;
+  font-size: 8px;
+  font-weight: bold;
+  font-style: italic;
+  color: #4d435f;
+  background-color: #ebe9f0;
+  margin: 5px 0;
+}
+.table-line p {
+  margin: 0;
+  padding: 3px 0;
+  text-align: center;
+}
+.table-line p:nth-child(1) {
+  width: 675px;
+  position: relative;
+}
+.table-line p:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  border-right: 5px solid white;
+  height: 100%;
+  top: 0;
+  right: -3px;
+}
+.table-line p:nth-child(2) {
+  width: 205px;
+}
+
+.table td {
+  width: 53px;
+  height: 40px;
+  background-color: white;
+}
+
+.end-div {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 1150px;
+}
+.end-div div h5 {
+  color: #6c1d5f;
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+.end-div div ul {
+  border: 1px solid #d9d9d9;
+  font-size: 11px;
+  margin-left: -10px;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+.div1 {
+  margin-right: 40px;
+}
+.div2 {
+  margin-right: 40px;
+}
+.div3 {
+  margin-right: 40px;
+}
+.div4 {
+  margin-top: 60px;
+  width: 200px;
+}
+.div4 h5 {
+  color: black !important;
+}
+.end-para{
+  color: #6c1d5f;
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+}
+.logo{
+  position:fixed;
+  bottom: 10px;
+  left: 10px;
+  transform: scale(0.7);
+}
