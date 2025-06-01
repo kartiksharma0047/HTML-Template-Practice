@@ -1,0 +1,445 @@
+
+
+HTML CODE :- 
+
+
+
+---
+marp: true
+theme: xebia
+paginate: true
+transition: dissolve
+---
+
+<div class="main">
+<img class="background" src="./Images/Team_Structure_PPT/Page_Background.png"/>
+<div class="team-page">
+<h1>Proposed High – Level Team Structure for Implementing ACC for Pacifico​​</h1>
+<div class="mid">
+
+<div class="left">
+<div class="left-div1">
+<table class="table1">
+<tr>
+<th>TEAM COMPOSITION​</th>
+</tr>
+<tr>
+<td>Delivery Manager (Spanish Speaking)</td>
+</tr>
+<tr>
+<td>Connected Claims - Tech Lead</td>
+</tr>
+<tr>
+<td>Connected Claims -Business Analyst (Spanish Speaking)</td>
+</tr>
+<tr>
+<td>Connected Claims Quality Analyst</td>
+</tr>
+<tr>
+<td>Connected Claims – Appian Developers (Senior + Junior)</td>
+</tr>
+<tr>
+<td>Connected Claims - UI/ UX</td>
+</tr>
+</table>
+</div>
+</div>
+
+
+<div class="right">
+
+<div class="div1">
+<div class="images">
+<img class="img1" src="./Images/Team_Structure_PPT/white_left.svg"/>
+<img class="img2" src="./Images/Team_Structure_PPT/White_people_border.png"/>
+<img class="img3" src="./Images/Team_Structure_PPT/white_right.svg"/>
+</div>
+<h3>Specialized Appian Delivery Team​</h3>
+</div>
+
+<div class="div2">
+<h3>Delivery  Manager(Spanish Spekaing)​</h3>
+<h3>Business Analyst (Spanish Spekaing)​</h3>
+<h3>Team Lead​</h3>
+</div>
+
+<div class="div3">
+<h3>Appian Developer​</h3>
+<h3>Quality Analyst​​</h3>
+<h3>UI/UX  Developers​</h3>
+</div>
+
+<h3 class="footer-h">DELIVERY TEAM​</h3>
+
+<p class="footer-para">Specialized pool of technical team with specific roles, responsible for right design, architecture, implementation and quality checks of the functionalities required by Pacifico​</p>
+</div>
+
+<p class="last-para"><span>NOTE</span>:The team requirements outlined here are preliminary and subject to change Post – Discovery Phase.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+CSS CODE :- 
+
+
+
+
+/* @theme xebia */
+
+/*
+  ============================================
+    Created by Paulo Cunha
+    version: 1.0
+    last update: 17.mar.2024
+  ============================================       
+*/
+
+/* Importing COLOR SCHEMA */
+
+@import "default";
+@import "schema";
+@import "structure";
+
+/* Importing Font */
+/* Font Credit: htts://https://www.cdnfonts.com/ */
+@import url("https://fonts.cdnfonts.com/css/fira-sans-condensed?styles=19730");
+@import url("https://fonts.cdnfonts.com/css/noto-sans-sc");
+
+:root {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  font-family: BodyFont, sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: initial;
+
+  /* --default-background-color: #d6d2c6;  */
+  --default-background-color: #f7b900;
+  --default-font-color: rgb(68, 19, 16);
+
+  --default-list-font-color: #e0ac00;
+  --cool-list-color: rgb(255, 31, 1);
+
+  --bold-color: rgb(0, 85, 255);
+
+  --default-header-font-color: rgb(22, 22, 22);
+  --subtitle-color: rgb(12, 55, 75);
+  --letter-spacing: -0.6px !important;
+  --default-header-bold-font-color: rgb(228, 5, 5);
+  --default-strong-font-color: rgb(201, 59, 34);
+  --italic-background-color: orangered;
+  --default-border-color: 2px solid rgb(211, 34, 11);
+  background-image: url("http://localhost:5500/bg.jpg");
+  color: var(--default-font-color);
+}
+
+@keyframes marp-transition-dissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ---------------- COVER PAGE ---------------- */
+
+.main{
+  margin: 0;
+  padding: 0;
+}
+.background{
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-top: -39px;
+  margin-left: -78.5px;
+  z-index: 1;
+}
+.team-page {
+  margin-left: -70px;
+  position: relative;
+  z-index: 2;
+}
+.team-page h1 {
+  font-size: 32px;
+  color: white;
+  margin-left: 50px;
+}
+.mid {
+  display: flex;
+  align-items:start;
+  justify-content: space-between;
+}
+
+.left {
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-left: -70px;
+}
+.left h2 {
+  font-size: 19px;
+  color: #6a205f;
+  text-align: center;
+  margin: 0;
+}
+.left table th {
+  font-size: 13px;
+  background-color: #dfe0f9 !important;
+  opacity: 0.6;
+  color: #231f6b !important;
+}
+.left table td {
+  font-size: 12px;
+  background-color: transparent !important;
+  text-align: center;
+}
+.table1 th,
+.table1 td {
+  width: 300px;
+  height: 30px;
+}
+table tr,
+table td,
+table th {
+  border-width: 2px;
+  border-color: white !important;
+  background-color: transparent !important;
+  color: white;
+}
+.table1 {
+  margin-bottom: 20px;
+  width: 435px;
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  width: 800px;
+  height: 600px;
+  position: relative;
+}
+
+.div1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  left: -5px;
+}
+
+.images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img1,
+.img3 {
+  width: 35px;
+}
+.img2 {
+  width: 170px;
+  height: 130px;
+}
+.div1 h3 {
+  font-size: 12px;
+  background-color: rgba(233,234,251,0.65);
+  color: white;
+  width: 270px;
+  padding: 15px 0;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+.div1 h3::after {
+  position: absolute;
+  content: "";
+  width: 110px;
+  border: 1px solid #dfe0f9;
+  top: -97.5px;
+  right: -95px;
+}
+.div1 h3::before {
+  position: absolute;
+  content: "";
+  width: 135px;
+  height: 118px;
+  border: 1px solid #dfe0f9;
+  top: -125px;
+  right: -231px;
+}
+.div2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  position: absolute;
+  top: 55px;
+  left: 440px;
+}
+.div2 h3 {
+  font-size: 11px;
+  background-color: #231f6b;
+  width: 300px;
+  border-radius: 10px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  border: 1px solid white;
+  padding: 15px 0;
+  margin: 7px 0;
+  position: relative;
+}
+.div2 h3:nth-child(1)::before{
+  position:absolute;
+  content: "";
+  width: 80px;
+  border-top: 1px solid #dfe0f9;
+  top: 80px;
+  left: -79px;
+}
+.div2 h3:nth-child(2)::before{
+  position:absolute;
+  content: "";
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid #dfe0f9;
+  top: 49%;
+  transform: translateY(-50%);
+  left: -10px;
+}
+.div2 h3:nth-child(2){
+  width: 310px;
+}
+.div2 h3:nth-child(3){
+  width: 110px;
+}
+.div2 h3:nth-child(3)::before {
+  position: absolute;
+  content: "";
+  transform: translateY(-50%);
+  left: 50%;
+  height: 100px;
+  border-right: 1px solid #dfe0f9;
+  top: 96px;
+}
+.div2 h3:nth-child(1)::after,
+.div2 h3:nth-child(3)::after {
+  position: absolute;
+  content: "";
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid #dfe0f9;
+  top: 47%;
+  transform: translateY(-50%);
+  left: -10px;
+}
+.div2 h3:nth-child(3)::after {
+  top: 47%;
+}
+.div2 h3:nth-child(2)::after {
+  position: absolute;
+  content: "";
+  border-top: 1px solid #dfe0f9;
+  border-left: 1px solid #dfe0f9;
+  border-right: 1px solid #dfe0f9;
+  width: 365px;
+  height: 45px;
+  left: 17.5%;
+  transform: translateX(-50%);
+  top: 155px;
+}
+.div3 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 320px;
+  right: -4px;
+}
+.div3 h3 {
+  font-size: 11px;
+  background-color: transparent;
+  width: 160px;
+  border-radius: 10px;
+  font-weight: 900;
+  text-align: center;
+  color: black;
+  padding: 15px 0;
+  margin: 7px 10px;
+  color: white;
+  position: relative;
+  border: 1px solid white;
+}
+.div3 h3:nth-child(3)::after, .div3 h3:nth-child(1)::after, .div3 h3:nth-child(2)::after {
+  position: absolute;
+  content: "";
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid #dfe0f9;
+  top: -3px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.div3 h3:nth-child(1)::after{
+  left: 48%;
+}
+.div3 h3:nth-child(2)::after{
+  left: 49.5%;
+}
+.footer-h{
+  position: absolute;
+  background-color: rgba(223,224,249,0.61);
+  color: white;
+  font-size: 11px;
+  padding: 5px 30px;
+  top: 380px;
+  right: 193px;
+}
+.footer-para{
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  width: 530px;
+  position: absolute;
+  top: 450px;
+  right: -10px;
+  border: 1px solid rgb(222, 222, 222);
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+.footer-para span{
+  background-color: #ffff00;
+}
+.last-para{
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  bottom: -10px;
+}
+.last-para span{
+  color: red;
+}
