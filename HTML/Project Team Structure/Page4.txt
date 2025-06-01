@@ -1,3 +1,127 @@
+
+
+HTML CODE :-
+
+
+---
+marp: true
+theme: xebia
+paginate: true
+transition: dissolve
+---
+
+<div class="team-page">
+<h1>Proposed Project Team Structure​</h1>
+<div class="mid">
+
+<div class="left">
+<div class="left-div1">
+<h2>EUROPA TEAM​</h2>
+<table class="table1">
+<tr>
+<th>EUROPA TEAM​</th>
+</tr>
+<tr>
+<td>Business Analyst</td>
+</tr>
+<tr>
+<td>IT SPOC Integration</td>
+</tr>
+<tr>
+<td>Industry SME</td>
+</tr>
+</table>
+<table class="table2">
+<tr>
+<th>Team Composition</th>
+<th>No. of Resources</th>
+</tr>
+<tr>
+<td>Connected Clamis - Tech Lead Expert</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Connected Clamis - Functional Expert(Business Analyst)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Connected Clamis - QA Lead</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Connected Clamis - UI/ UX</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>Connected Clamis - Developers (Senior + Junior)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Poland Based Delivery Manager</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>Poland Based Business Analyst</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Poland Based Quality Analyst</td>
+<td>1</td>
+</tr>
+</table>
+</div>
+</div>
+
+
+<div class="right">
+
+<div class="div1">
+<div class="images">
+<img class="img1" src="./Images/Team_Structure_PPT/left.svg"/>
+<img class="img2" src="./Images/Team_Structure_PPT/image (2).png"/>
+<img class="img3" src="./Images/Team_Structure_PPT/right.svg"/>
+</div>
+<h3>Specialized Appian Delivery Team​</h3>
+<p>Offshore Resources.​</p>
+<p>Poland Based Resources​</p>
+</div>
+
+<div class="div2">
+<h3>Delivery Manager​</h3>
+<h3>Business Analyst​</h3>
+<h3>Team Lead​</h3>
+</div>
+
+<div class="div3">
+<h3>Developer​</h3>
+<h3>UI/UX Developers​</h3>
+<h3>Quality Analyst​</h3>
+</div>
+
+<h3 class="footer-h">DELIVERY TEAM​</h3>
+
+<p class="footer-para">Specialized pool of technical team with specific roles, responsible for right design, architecture, implementation and quality checks of the functionalities required by <span>client name​</span></p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+CSS CODE :- 
+
+
+
 /* @theme xebia */
 
 /*
@@ -59,33 +183,18 @@
 }
 /* ---------------- COVER PAGE ---------------- */
 
-.main{
-  margin: 0;
-  padding: 0;
-}
-.background{
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  margin-top: -39px;
-  margin-left: -78.5px;
-  z-index: 1;
-}
 .team-page {
   margin-left: -70px;
-  position: relative;
-  z-index: 2;
 }
 .team-page h1 {
-  font-size: 32px;
+  font-size: 21px;
   color: #802873;
+  font-weight: 900;
   margin-left: 50px;
 }
 .mid {
   display: flex;
-  align-items:start;
+  align-items: end;
   justify-content: space-between;
 }
 
@@ -95,8 +204,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
-  margin-left: -70px;
 }
 .left h2 {
   font-size: 19px;
@@ -106,33 +213,35 @@
 }
 .left table th {
   font-size: 13px;
-  background-color: #dfe0f9 !important;
-  opacity: 0.6;
-  color: #231f6b !important;
+  background-color: #760d62;
+  color: white;
 }
 .left table td {
   font-size: 12px;
-  background-color: transparent !important;
+  background-color: white;
   text-align: center;
 }
 .table1 th,
 .table1 td {
-  width: 300px;
+  width: 200px;
   height: 30px;
 }
 table tr,
 table td,
 table th {
-  border-width: 2px;
-  border-color: white !important;
-  background-color: transparent !important;
-  color: white;
+  border-color: #3b3b3b !important;
 }
 .table1 {
   margin-bottom: 20px;
   width: 435px;
   display: flex;
   justify-content: center;
+}
+.table2 th:last-child {
+  width: 80px;
+}
+.table2 {
+  margin-bottom: 0px;
 }
 
 .right {
@@ -148,7 +257,7 @@ table th {
   flex-direction: column;
   position: absolute;
   top: 40px;
-  left: -5px;
+  left: -65px;
 }
 
 .images {
@@ -166,7 +275,7 @@ table th {
 }
 .div1 h3 {
   font-size: 12px;
-  background-color: rgba(233,234,251,0.65);
+  background-color: #6f2162;
   color: white;
   width: 270px;
   padding: 15px 0;
@@ -174,68 +283,69 @@ table th {
   text-align: center;
   position: relative;
 }
+.div1 p {
+  font-size: 12px;
+  text-align: left;
+  width: 140px;
+  position: relative;
+  margin-left: 60px;
+}
+.div1 p::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid #595959;
+  left: -30px;
+  top: -3px;
+}
+.div1 p:nth-of-type(1)::after {
+  background-color: #f6ecf1;
+}
+.div1 p:nth-of-type(2)::after {
+  background-color: #fff2cc;
+}
 .div1 h3::after {
   position: absolute;
   content: "";
-  width: 110px;
-  border: 1px solid #dfe0f9;
-  top: -97.5px;
-  right: -95px;
+  width: 120px;
+  border: 1px solid #6f2162;
+  top: -97px;
+  right: -103px;
 }
 .div1 h3::before {
   position: absolute;
   content: "";
-  width: 135px;
-  height: 118px;
-  border: 1px solid #dfe0f9;
-  top: -125px;
-  right: -231px;
+  width: 215px;
+  height: 175px;
+  border: 1px solid #6f2162;
+  top: -135px;
+  right: -320px;
 }
 .div2 {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   position: absolute;
-  top: 55px;
+  top: 30px;
   left: 440px;
 }
 .div2 h3 {
   font-size: 11px;
-  background-color: #231f6b;
-  width: 300px;
+  background-color: #fff2cc;
+  width: 170px;
   border-radius: 10px;
   font-weight: 900;
   text-align: center;
-  color: white;
-  border: 1px solid white;
-  padding: 15px 0;
+  color: black;
+  padding: 30px 0;
   margin: 7px 0;
   position: relative;
 }
-.div2 h3:nth-child(1)::before{
-  position:absolute;
-  content: "";
-  width: 80px;
-  border-top: 1px solid #dfe0f9;
-  top: 80px;
-  left: -79px;
-}
-.div2 h3:nth-child(2)::before{
-  position:absolute;
-  content: "";
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-left: 10px solid #dfe0f9;
-  top: 49%;
-  transform: translateY(-50%);
-  left: -10px;
-}
-.div2 h3:nth-child(2){
-  width: 310px;
-}
-.div2 h3:nth-child(3){
-  width: 110px;
+.div2 h3:nth-child(3) {
+  background-color: #ead1dc;
+  position: relative;
 }
 .div2 h3:nth-child(3)::before {
   position: absolute;
@@ -243,7 +353,7 @@ table th {
   transform: translateY(-50%);
   left: 50%;
   height: 100px;
-  border-right: 1px solid #dfe0f9;
+  border-right: 1px solid #6f2162;
   top: 123px;
 }
 .div2 h3:nth-child(1)::after,
@@ -252,20 +362,17 @@ table th {
   content: "";
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
-  border-left: 10px solid #dfe0f9;
-  top: 47%;
+  border-left: 10px solid #6f2162;
+  top: 50%;
   transform: translateY(-50%);
   left: -10px;
-}
-.div2 h3:nth-child(3)::after {
-  top: 47%;
 }
 .div2 h3:nth-child(2)::after {
   position: absolute;
   content: "";
-  border-top: 1px solid #dfe0f9;
-  border-left: 1px solid #dfe0f9;
-  border-right: 1px solid #dfe0f9;
+  border-top: 1px solid #6f2162;
+  border-left: 1px solid #6f2162;
+  border-right: 1px solid #6f2162;
   width: 322px;
   height: 45px;
   left: 50%;
@@ -300,7 +407,7 @@ table th {
   content: "";
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 10px solid #dfe0f9;
+  border-top: 10px solid #6f2162;
   top: -3px;
   left: 50%;
   transform: translate(-50%,-50%);

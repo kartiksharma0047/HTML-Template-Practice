@@ -33,10 +33,37 @@ transition: dissolve
 </div>
 <!-- Right Divide -->
 <div class="team-structure-slide1-right-box">
+
 <div class="box1">
+<div>
+<img src="./Images/Team_Structure_PPT/left.svg"/>
+<img src="./Images/Team_Structure_PPT/image (2).png"/>
+<img src="./Images/Team_Structure_PPT/right.svg"/>
+</div>
+<h3>Specialized Delivery Team​</h3>
+</div>
+
+<div class="box2">
+<h3>Project Manager​</h3>
+<h3>Technical Lead​</h3>
+</div>
+
+<div class="box3">
+<h3>Power Pages Developer​</h3>
+<h3>Power Automate developers​</h3>
+<h3>Power App Developers​</h3>
+<h3>Power BI Developers​</h3>
+<h3>Business Analyst​</h3>
+<h3>Quality Analyst​</h3>
+</div>
+
+<div class="box4">
+<h4>DELIVERY TEAM​</h4>
+<p>Specialized pool of technical team with specific roles, responsible for right design, architecture, implementation and quality checks of the functionalities required by Crédito Agrícola​</p>
+</div>
 
 </div>
-</div>
+
 </div>
 </div>
 
@@ -49,7 +76,6 @@ transition: dissolve
 
 
 CSS CODE :- 
-
 
 
 /* @theme xebia */
@@ -113,29 +139,36 @@ CSS CODE :-
 }
 /* ---------------- COVER PAGE ---------------- */
 
-.team-structure-slide1-container h1{
+.team-structure-slide1-container h1 {
   font-size: 32px;
-  color:#4d435f;
+  color: #4d435f;
+  text-align: center;
 }
-.team-structure-slide1-left-box{
+.team-structure-slide1-container-box {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.team-structure-slide1-left-box {
   width: 320px;
+  margin-left: -40px;
 }
-.team-structure-slide1-left-box h2{
+.team-structure-slide1-left-box h2 {
   font-size: 19px;
-  color:#4d435f;
+  color: #4d435f;
   text-align: center;
   border-bottom: 3px solid #73658e;
 }
-.team-structure-slide1-job-box{
+.team-structure-slide1-job-box {
   background-color: #f6f5f9;
-  padding: 10px 0;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
   border: 1px solid #ebe9f0;
 }
-.team-structure-slide1-job-box p{
+.team-structure-slide1-job-box p {
   font-size: 15px;
   color: #73658e;
   width: 286px;
@@ -148,4 +181,183 @@ CSS CODE :-
   padding: 0;
   border-radius: 20px;
   border: 1px solid black;
+}
+.team-structure-slide1-right-box {
+  position: relative;
+  width: 870px;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.box1 {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+}
+.box1 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box1 div img:nth-child(1),
+.box1 div img:nth-child(3) {
+  height: 150px;
+}
+.box1 div img:nth-child(2) {
+  width: 200px;
+  height: 150px;
+}
+.box1 h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #73658e;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 10px 0;
+  border-radius: 5px;
+  position: relative;
+}
+.box1 h3::after {
+  position: absolute;
+  content: "";
+  width: 220px;
+  top: -100px;
+  right: -215px;
+  border-top: 1px solid #b7b7b7;
+}
+
+.box2 {
+  position: absolute;
+  top: 17px;
+  right: 100px;
+}
+
+.box2 h3 {
+  font-size: 15px;
+  color: #73658e;
+  font-weight: lighter;
+  padding: 35px 30px;
+  background-color: #ebe9f0;
+  border-radius: 10px;
+}
+.box2 h3:nth-child(1) {
+  position: relative;
+}
+.box2 h3:nth-child(2) {
+  position: relative;
+  z-index: 2;
+}
+.box2 h3:nth-child(1)::after {
+  position: absolute;
+  content: "";
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #73658e;
+  left: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.box2 h3:nth-child(1)::before {
+  position: absolute;
+  content: "";
+  border-right: 2px solid #73658e;
+  height: 160px;
+  bottom: -240px;
+  left: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+.box2 h3:nth-child(2)::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #73658e;
+  width: 599px;
+  top: 135px;
+  left: -381px;
+}
+
+.box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 335px;
+  right: 0px;
+}
+.box3 h3 {
+  position: relative;
+  color: #434343;
+  font-size: 12px;
+  border: 1px solid #d8d3e0;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px 2px;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+.box3 h3:nth-child(5) {
+  width: 80px;
+}
+.box3 h3:nth-child(6) {
+  width: 80px;
+}
+.box3 h3::after {
+  content: "";
+  position: absolute;
+  height: 45px;
+  border-right: 1px solid #73658e;
+  top: -25px;
+  left: 50%;
+  transform: translateY(-50%);
+}
+.box3 h3::before {
+  content: "";
+  position: absolute;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 8px solid #73658e;
+  top: -5px;
+  left: 45%;
+  transform: translateY(-50%);
+}
+
+.box4 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 410px;
+  right: 130px;
+}
+.box4 h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  background-color: #73658e;
+  width: 150px;
+  text-align: center;
+  color: white;
+  padding: 5px 0;
+}
+.box4 p {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  width: 400px;
+  height: 90px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.142);
+  border-left: 2px solid #73658e;
+  padding-left: 20px;
 }

@@ -1,0 +1,425 @@
+
+
+HTML CODE :- 
+
+
+
+---
+marp: true
+theme: xebia
+paginate: true
+transition: dissolve
+---
+
+<div class="timeline-page">
+<h1>Proposed High Level Timeline by Xebia​</h1>
+
+<div class="mid">
+
+<div class="left">
+
+<div class="Timeline-page7-rotated-text">
+<p>KICK-OFF MEETING</p>
+<div></div>
+</div>
+
+<div class="left-bottom-container">
+<p>Discovery​</p>
+<p>Design​</p>
+<p>Workflow Management (Configuration Application)​</p>
+<p>Dynamic Form Management ​</p>
+<p>Case/Task Management (Engagement Application)​</p>
+<p>Role, Group & Privilege Management​</p>
+<p>Integration</p>
+<p>Document Management</p>
+<p>Communication Management​</p>
+<p>Audit Management​</p>
+<p>UAT​</p>
+<p>Post Go-Live Support​</p>
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="line-right1-h2">
+<h2 class="line-h2"></h2>
+<h2 class="right1-h2">3 Months Implementation (Q1/2025) + 6 Months Support</h2>
+</div>
+
+<div class="month">
+<p>Month 1</p>
+<p>Month 2</p>
+<p>Month 3</p>
+<p>Month 4</p>
+<p>Month 5</p>
+<p>Month 6</p>
+<p>Month 7</p>
+<p>Month 8</p>
+<p>Month 9</p>
+</div>
+
+<div class="weeks">
+<p>W1</p>
+<p>W2</p>
+<p>W3</p>
+<p>W4</p>
+<p>W5</p>
+<p>W6</p>
+<p>W7</p>
+<p>W8</p>
+<p>W9</p>
+<p>W10</p>
+<p>W11</p>
+<p>W12</p>
+<p>W13</p>
+<p>W14</p>
+<p>W15</p>
+<p>W16</p>
+<p>W17</p>
+<p>W18</p>
+<p>W19</p>
+<p>W20</p>
+<p>W21</p>
+<p>W22</p>
+<p>W23</p>
+<p>W24</p>
+<p>W25</p>
+<p>W26</p>
+<p>W27</p>
+<p>W28</p>
+<p>W29</p>
+<p>W30</p>
+<p>W31</p>
+<p>W32</p>
+<p>W33</p>
+<p>W34</p>
+<p>W35</p>
+<p>W36</p>
+</div>
+
+<div class="lines"></div>
+
+</div>
+
+</div>
+<p class="ending-para">*These assumptions are based on the current understanding and will be revisited and refined during the discovery phase to align with finalized project details.​</p>
+
+<!-- Logo -->
+<img class="logo-Img" src="./Images/Timeline_PPT/Xebia_logo_2.png"/>
+</div>
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+CSS CODE :-
+
+
+
+
+
+/* @theme xebia */
+
+/*
+  ============================================
+    Created by Paulo Cunha
+    version: 1.0
+    last update: 17.mar.2024
+  ============================================       
+*/
+
+/* Importing COLOR SCHEMA */
+
+@import "default";
+@import "schema";
+@import "structure";
+
+/* Importing Font */
+/* Font Credit: htts://https://www.cdnfonts.com/ */
+@import url("https://fonts.cdnfonts.com/css/fira-sans-condensed?styles=19730");
+@import url("https://fonts.cdnfonts.com/css/noto-sans-sc");
+
+:root {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  font-family: BodyFont, sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: initial;
+
+  /* --default-background-color: #d6d2c6;  */
+  --default-background-color: #f7b900;
+  --default-font-color: rgb(68, 19, 16);
+
+  --default-list-font-color: #e0ac00;
+  --cool-list-color: rgb(255, 31, 1);
+
+  --bold-color: rgb(0, 85, 255);
+
+  --default-header-font-color: rgb(22, 22, 22);
+  --subtitle-color: rgb(12, 55, 75);
+  --letter-spacing: -0.6px !important;
+  --default-header-bold-font-color: rgb(228, 5, 5);
+  --default-strong-font-color: rgb(201, 59, 34);
+  --italic-background-color: orangered;
+  --default-border-color: 2px solid rgb(211, 34, 11);
+  /* background-image: url("http://localhost:5500/bg.jpg"); */
+  color: var(--default-font-color);
+}
+
+@keyframes marp-transition-dissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ---------------- COVER PAGE ---------------- */
+.timeline-page{
+  margin-top: 30px !important;
+}
+.timeline-page h1 {
+  font-size: 32px;
+  color: #4d435f;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.mid {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.left {
+  width: 200px;
+  margin-right: 20px;
+  margin-top: 70px;
+}
+
+.Timeline-page7-rotated-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Timeline-page7-rotated-text div {
+  width: 24px;
+  height: 48px;
+  background-color: #73658e;
+  clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 100%, 50% 90%, 0 100%);
+  margin-bottom: 10px;
+  transform: rotateZ(90deg) scale(0.6);
+}
+.Timeline-page7-rotated-text p {
+  font-size: 11px;
+  margin-top: 5px;
+  color: black;
+  font-weight: 900;
+  padding-right: 20px;
+}
+.left-bottom-container {
+  margin-top: -10px;
+  margin-left: -18px;
+}
+.left-bottom-container p {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 11px;
+  color: #333333;
+  width: 189px;
+  text-align: end;
+  padding-right: 10px;
+  border-right: 4px solid #00b050;
+  height: 27px;
+  margin: 10px 0;
+}
+.left-bottom-container p:nth-child(1) {
+  border-color: #491e47;
+}
+.left-bottom-container p:nth-child(2) {
+  border-color: #445bb5;
+}
+.left-bottom-container p:nth-child(3) {
+  width: 179px;
+  margin-left: 10px;
+}
+.left-bottom-container p:nth-child(5) {
+  width: 179px;
+  margin-left: 10px;
+}
+.left-bottom-container p:nth-child(6) {
+  width: 179px;
+  margin-left: 10px;
+}
+.left-bottom-container p:nth-child(11) {
+  border-color: #ffc000;
+}
+.left-bottom-container p:nth-child(12) {
+  border-color: #f77976;
+}
+
+.right {
+  width: 1000px;
+}
+.line-right1-h2 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right1-h2 {
+  font-size: 9px;
+  background-color: #73658e;
+  padding: 3px 20px;
+  color: white;
+  font-weight: 900;
+  border-radius: 20px;
+  position: relative;
+  width: 300px;
+  z-index: 2;
+}
+.line-h2 {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 1000px;
+  border-top: 1px solid #6e2161;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.month {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.month p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #73658e;
+  color: white;
+  width: 50px;
+  height: 30px;
+  margin: 0 1px;
+}
+.month p:nth-child(1) {
+  width: 114px;
+  margin-left: 0;
+}
+.month p:nth-child(2) {
+  width: 300px;
+}
+.month p:nth-child(3) {
+  width: 300px;
+}
+.month p:nth-child(9) {
+  margin-right: 0;
+}
+.weeks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.weeks p {
+  font-size: 8px;
+  width: 10px;
+  padding: 2px 1px 0 1px;
+  background-color: #d8d3e0;
+  text-align: center;
+  height: 27px;
+  margin: 0 0.25px;
+}
+.weeks p:nth-child(1),
+.weeks p:nth-child(2),
+.weeks p:nth-child(3),
+.weeks p:nth-child(4),
+.weeks p:nth-child(5),
+.weeks p:nth-child(6),
+.weeks p:nth-child(7),
+.weeks p:nth-child(8),
+.weeks p:nth-child(9),
+.weeks p:nth-child(10),
+.weeks p:nth-child(11),
+.weeks p:nth-child(12) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weeks p:nth-child(1) {
+  width: 25px;
+  margin-left: 0;
+}
+.weeks p:nth-child(2) {
+  width: 25px;
+}
+.weeks p:nth-child(3) {
+  width: 25px;
+}
+.weeks p:nth-child(4) {
+  width: 25px;
+}
+.weeks p:nth-child(5) {
+  width: 75px;
+}
+.weeks p:nth-child(6) {
+  width: 75px;
+}
+.weeks p:nth-child(7) {
+  width: 75px;
+}
+.weeks p:nth-child(8) {
+  width: 75px;
+}
+.weeks p:nth-child(9) {
+  width: 75px;
+}
+.weeks p:nth-child(10) {
+  width: 75px;
+}
+.weeks p:nth-child(11) {
+  width: 75px;
+}
+.weeks p:nth-child(12) {
+  width: 75px;
+}
+.weeks p:nth-child(36) {
+  margin-right: 0;
+}
+.lines{
+  width: 1000px;
+  height: 450px;
+  margin-bottom: 50px;
+}
+.ending-para{
+  color: #ff0000;
+  font-size: 13px;
+  text-align: center; 
+  margin-left: 100px;
+}
+.logo-Img{
+  position: fixed;
+  bottom: 5px;
+  left: 10px;
+  transform: scale(0.7);
+}
