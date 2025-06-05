@@ -1,0 +1,279 @@
+
+
+
+HTML CODE :- 
+
+
+---
+marp: true
+theme: xebia
+paginate: true
+transition: dissolve
+---
+
+<div class="container">
+<h1>Our Understanding of Scope of Work (SOW)​</h1>
+<p class="header-para">We understands that Tesco is seeking a <b>unified, global Grievance Management platform</b> built on a robust and scalable solution to transform their colleague experience and organizational culture. The current decentralized approach, relying on disparate tools and manual processes, lacks the necessary consistency, visibility, and reporting capabilities to effectively manage colleague-related cases across their diverse markets and entities.​</p>
+<p class="header-para">Our understanding of core objectives includes following</p>
+
+<div class="Top-boxes">
+
+<div class="box box1">
+<div class="circle"></div>
+<h2>1</h2>
+<h3>Centralization</h3>
+<p>Implementing a single platform to manage all formal case types (disciplinary, grievance, performance, absence, whistleblowing initially, with room for expansion).​</p>
+</div>
+
+<div class="box box2">
+<div class="circle"></div>
+<h2>2</h2>
+<h3>Process Streamlining & Automation​</h3>
+<p>Automating workflows to improve efficiency, accuracy, and consistency in handling cases, while adhering to varying local and organizational policies.​​</p>
+</div>
+
+<div class="box box3">
+<div class="circle"></div>
+<h2>3</h2>
+<h3>Enhanced Colleague Experience​​</h3>
+<p>Providing a user-friendly and transparent system for both colleagues raising cases and managers handling them​.​</p>
+</div>
+
+<div class="box box4">
+<div class="circle"></div>
+<h2>4</h2 >
+<h3>Improved Insights and Reporting​​</h3>
+<p>Enabling real-time reporting and analysis to identify cultural themes, patterns, and areas for improvement across Tesco PLC​​​</p>
+</div>
+
+</div>
+
+<div class="Bottom-boxes">
+
+<div class="box box5">
+<div class="circle"></div>
+<h2>5</h2>
+<h3>Global Scalability and Flexibility​</h3>
+<p>The platform must be adaptable to Tesco's global footprint, supporting different operating models, processes, and policy compliance across various entities and geographies, while also meeting data privacy and regulatory requirements.​​</p>
+</div>
+
+<div class="box box6">
+<div class="circle"></div>
+<h2>6</h2>
+<h3>Seamless Integration​</h3>
+<p>The platform must connect with different intake channels such as MyTesco, Zendesk, Colleague Help etc. and existing systems for reporting or artifacts management to create a cohesive, efficient, and compliant platform, and also should support integrating with the Integration adapter as an entity​​​</p>
+</div>
+
+<div class="box box7">
+<div class="circle"></div>
+<h2>7</h2>
+<h3>Future-Proofing​​</h3>
+<p>The platform should be a strategic enabler for onboarding additional case types and user journeys in the future.​​</p>
+</div>
+
+</div>
+
+<p class="footer-para">We recognizes the critical need for a solution that not only manages cases efficiently but also provides valuable insights to foster a positive and engaging work environment for Tesco's extensive workforce. We believe a well-implemented Case Management system will empower Tesco to better support their core values, improve controls and compliance, deliver exceptional user support, and drive continuous improvement across the organization.​</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+CSS CODE :- 
+
+
+
+
+/* @theme xebia */
+
+/*
+  ============================================
+    Created by Paulo Cunha
+    version: 1.0
+    last update: 17.mar.2024
+  ============================================       
+*/
+
+/* Importing COLOR SCHEMA */
+
+@import "default";
+@import "schema";
+@import "structure";
+
+/* Importing Font */
+/* Font Credit: htts://https://www.cdnfonts.com/ */
+@import url("https://fonts.cdnfonts.com/css/fira-sans-condensed?styles=19730");
+@import url("https://fonts.cdnfonts.com/css/noto-sans-sc");
+
+:root {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  font-family: BodyFont, sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: initial;
+
+  /* --default-background-color: #d6d2c6;  */
+  --default-background-color: #f7b900;
+  --default-font-color: rgb(68, 19, 16);
+
+  --default-list-font-color: #e0ac00;
+  --cool-list-color: rgb(255, 31, 1);
+
+  --bold-color: rgb(0, 85, 255);
+
+  --default-header-font-color: rgb(22, 22, 22);
+  --subtitle-color: rgb(12, 55, 75);
+  --letter-spacing: -0.6px !important;
+  --default-header-bold-font-color: rgb(228, 5, 5);
+  --default-strong-font-color: rgb(201, 59, 34);
+  --italic-background-color: orangered;
+  --default-border-color: 2px solid rgb(211, 34, 11);
+  /* background-image: url("http://localhost:5500/bg.jpg"); */
+  color: var(--default-font-color);
+}
+
+@keyframes marp-transition-dissolve {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ---------------- COVER PAGE ---------------- */
+.container {
+  margin: 0 -55px;
+}
+.container h1 {
+  font-size: 32px;
+  color: #020a51;
+  margin: 0;
+  padding: 0;
+}
+.header-para {
+  color: #595959;
+  font-size: 16px;
+  width: 1200px;
+  margin: 0;
+  padding: 0;
+}
+.Top-boxes {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  text-align: center;
+}
+.Bottom-boxes {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.Bottom-boxes .box{
+  width: 290px;
+  height: 225px;
+}
+.Bottom-boxes .box p{
+  width: 280px;
+}
+.Bottom-boxes .box h3{
+  margin: 10px 0 5px 0
+}
+.box6 {
+  width: 320px !important;
+}
+.box6 p{
+  width: 280px !important;
+}
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  border: 1px solid #445bb5;
+  width: 270px;
+  border-radius: 10px;
+  height: 205px;
+  position: relative;
+  z-index: 2;
+  background-color: white;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #d3d8ee;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.box h2 {
+  font-size: 19px;
+  color: #445bb5;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.box h3 {
+  font-size: 21px;
+  font-weight: lighter;
+  color: #020a51;
+  margin: 15px 0 20px 0;
+  padding: 0;
+  position: relative;
+  z-index: 3 !important;
+}
+.box p {
+  font-size: 15px;
+  color: #595959;
+  width: 230px;
+  position: relative;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-color: white;
+  top: 16px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.footer-para{
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
