@@ -1,4 +1,11 @@
 JSON_Data = {
+  footer: {
+    footer_1_width: "92%",
+    footer_2_width: "84.5%",
+    footer_3_width: "67%",
+    footer_4_width: "50%",
+    footer_5_width: "20%",
+  },
   body: [
     // Start of Prediagnosi
     {
@@ -59,6 +66,27 @@ JSON_Data = {
               arrow_color: "#a334c8",
               line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             },
+            connection_Line: {
+              display: "false",
+              content_Num: 0,
+              position: {
+                left: ["0px"],
+                top: ["0px"],
+              },
+              width: ["0px"],
+              arrow_color: ["#a334c8"],
+              line_color: ["#9f30cb"],
+            },
+            connection_Rectangle: {
+              display: "false",
+              position_Left: "0px",
+              width: "0px",
+              height: "0px",
+              border_size: "12px",
+              border_color: "#58e3d2",
+              border_radius:"10px"
+            },
+            connection_Circle:{},
             line_right: "true",
             line_color: "#c4c9ca",
             logo_para_color: "white",
@@ -72,7 +100,7 @@ JSON_Data = {
                 "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
               bottom_shape_color:
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
-              bottom_shape_postion: "Level_1",
+              bottom_shape_postion: ["Level_1", "Level_2", "Level_2"],
             },
             timelineSeries: {
               content: ["<10 gg da", "<10 gg da"],
@@ -94,7 +122,7 @@ JSON_Data = {
             logo_heading: [""],
             content_width: "150px",
             logo_heading_color:
-              "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
             logo_heading_border_color: "#a334c8",
             logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_title: ["GOM"],
@@ -102,8 +130,28 @@ JSON_Data = {
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             top_down_arrow: {
               display: "true",
-              arrow_color: "#a334c8",
-              line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+              arrow_color: "#ffc100",
+              line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+            },
+            connection_Line: {
+              display: "false",
+              content_Num: 0,
+              position: {
+                left: ["0px"],
+                top: ["0px"],
+              },
+              width: ["0px"],
+              arrow_color: ["#a334c8"],
+              line_color: ["#9f30cb"],
+            },
+            connection_Rectangle: {
+              display: "true",
+              position_Left: "135px",
+              width: "465px",
+              height: "100px",
+              border_size:"12px",
+              border_color: "#58e3d2",
+              border_radius:"10px"
             },
             line_right: "false",
             line_color: "#c4c9ca",
@@ -118,7 +166,7 @@ JSON_Data = {
                 "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
               bottom_shape_color:
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
-              bottom_shape_postion: "Level_1",
+              bottom_shape_postion: ["Level_2"],
             },
             timelineSeries: {
               content: ["<30 gg da"],
@@ -166,11 +214,32 @@ JSON_Data = {
               arrow_color: "#a334c8",
               line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             },
+            connection_Line: {
+              display: "true",
+              content_Num: 3,
+              position: {
+                left: ["50px", "150px", "50px"],
+                bottom: ["60px", "60px", "60px"],
+              },
+              width: ["440px", "426px", "640px"],
+              height: ["54px", "70px", "54px"],
+              arrow_color: ["#a334c8", "#ffc100", "#a334c8"],
+              line_color: ["#9f30cb", "#ffc100", "#9f30cb"],
+            },
+            connection_Rectangle: {
+              display: "true",
+              position_Left: "-5px",
+              width: "245px",
+              height: "70px",
+              border_size: "12px",
+              border_color: "#58e3d2",
+              border_radius:"10px"
+            },
             line_right: "true",
             line_color: "#c4c9ca",
             logo_para_color: "white",
             on_line_content_configuration: {
-              content: ["ET","TT","CT"],
+              content: ["ET", "TT", "CT"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -179,7 +248,7 @@ JSON_Data = {
                 "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
               bottom_shape_color:
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
-              bottom_shape_postion: "Level_1",
+              bottom_shape_postion: ["Level_3", "Level_3", "Level_2"],
             },
             timelineSeries: {
               content: ["<30 gg da"],
@@ -198,13 +267,13 @@ JSON_Data = {
             padding: "0 0 0 15px",
           },
           content: {
-            logo_heading: ["GOM",""],
+            logo_heading: ["GOM", ""],
             content_width: "200px",
             logo_heading_color:
               "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             logo_heading_border_color: "#a334c8",
             logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            logo_title: ["Chirurgo/ Senologo","Chirurgo Plastico"],
+            logo_title: ["Chirurgo/ Senologo", "Chirurgo Plastico"],
             logo_title_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             top_down_arrow: {
@@ -212,7 +281,27 @@ JSON_Data = {
               arrow_color: "#a334c8",
               line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             },
-            line_right: "false",
+            connection_Line: {
+              display: "false",
+              content_Num: 0,
+              position: {
+                left: ["0px"],
+                top: ["0px"],
+              },
+              width: ["0px"],
+              arrow_color: ["#a334c8"],
+              line_color: ["#9f30cb"],
+            },
+            connection_Rectangle: {
+              display: "false",
+              position_Left: "0px",
+              width: "0px",
+              height: "0px",
+              border_size: "12px",
+              border_color: "#58e3d2",
+              border_radius:"10px"
+            },
+            line_right: "true",
             line_color: "#c4c9ca",
             logo_para_color: "white",
             on_line_content_configuration: {
@@ -225,12 +314,202 @@ JSON_Data = {
                 "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
               bottom_shape_color:
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
-              bottom_shape_postion: "Level_1",
+              bottom_shape_postion: ["Level_2"],
             },
             timelineSeries: {
               content: ["<60 gg da"],
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+            },
+          },
+        },
+        {
+          component: "Sub-Header",
+          title: "Chemioterapia",
+          configurations: {
+            title_color: "rgb(81, 81, 81)",
+            title_size: "14px",
+            margin: "0px",
+            padding: "0 15px",
+          },
+          content: {
+            logo_heading: [""],
+            content_width: "180px",
+            logo_heading_color:
+              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+            logo_title: [""],
+            top_down_arrow: {
+              display: "false",
+              arrow_color: "#ffc100",
+              line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+            },
+            connection_Line: {
+              display: "false",
+              content_Num: 0,
+              position: {
+                left: ["0px"],
+                top: ["0px"],
+              },
+              width: ["0px"],
+              arrow_color: ["#a334c8"],
+              line_color: ["#9f30cb"],
+            },
+            connection_Rectangle: {
+              display: "false",
+              position_Left: "0px",
+              width: "0px",
+              height: "0px",
+              border_size: "12px",
+              border_color: "#58e3d2",
+              border_radius:"10px"
+            },
+            line_right: "true",
+            line_color: "#c4c9ca",
+            logo_para_color: "white",
+            on_line_content_configuration: {
+              content: ["DIAGNOSI", "CT"],
+              color: "black",
+              background_color: "#e6fffc",
+              bottom_point_color:
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+              bottom_line_color:
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+              bottom_shape_color:
+                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              bottom_shape_postion: ["Level_2", "Level_2"],
+            },
+            timelineSeries: {
+              content: ["<30 gg da"],
+              background_color:
+                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+            },
+          },
+        },
+        {
+          component: "Sub-Header",
+          title: "Radioterapia",
+          configurations: {
+            title_color: "rgb(81, 81, 81)",
+            title_size: "14px",
+            margin: "0",
+            padding: "0 0 0 15px",
+          },
+          content: {
+            logo_heading: ["ROM"],
+            content_width: "140px",
+            logo_heading_color:
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            logo_heading_border_color: "#a334c8",
+            logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            logo_title: ["MMG"],
+            logo_title_color:
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            top_down_arrow: {
+              display: "true",
+              arrow_color: "#a334c8",
+              line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+            },
+            connection_Line: {
+              display: "false",
+              content_Num: 0,
+              position: {
+                left: ["0px"],
+                top: ["0px"],
+              },
+              width: ["0px"],
+              arrow_color: ["#a334c8"],
+              line_color: ["#9f30cb"],
+            },
+            connection_Rectangle: {
+              display: "false",
+              position_Left: "0px",
+              width: "0px",
+              height: "0px",
+              border_size: "12px",
+              border_color: "#58e3d2",
+              border_radius:"10px"
+            },
+            line_right: "false",
+            line_color: "#c4c9ca",
+            logo_para_color: "white",
+            on_line_content_configuration: {
+              content: ["VISITA"],
+              color: "black",
+              background_color: "#e6fffc",
+              bottom_point_color:
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+              bottom_line_color:
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+              bottom_shape_color:
+                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              bottom_shape_postion: ["Level_3"],
+            },
+            timelineSeries: {
+              content: ["<60 gg da"],
+              background_color:
+                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+            },
+          },
+        },
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "rgb(81, 81, 81)",
+            title_size: "14px",
+            margin: "0",
+            padding: "0 40px 0 0",
+          },
+          content: {
+            logo_heading: [""],
+            content_width: "50px",
+            logo_heading_color:
+              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+            logo_heading_border_color: "#ffc100",
+            logo_color:
+              "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
+            logo_title: ["GOM"],
+            logo_title_color:
+              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+            top_down_arrow: {
+              display: "true",
+              arrow_color: "#ffc100",
+              line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+            },
+            connection_Line: {
+              display: "false",
+              content_Num: 0,
+              position: {
+                left: ["0px"],
+                top: ["0px"],
+              },
+              width: ["0px"],
+              arrow_color: ["#a334c8"],
+              line_color: ["#9f30cb"],
+            },
+            connection_Rectangle: {
+              display: "false",
+              position_Left: "0px",
+              width: "0px",
+              height: "0px",
+              border_size: "12px",
+              border_color: "#58e3d2",
+              border_radius:"10px"
+            },
+            line_right: "false",
+            line_color: "#c4c9ca",
+            logo_para_color: "white",
+            on_line_content_configuration: {
+              content: ["CT"],
+              color: "black",
+              background_color: "#e6fffc",
+              bottom_point_color:
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+              bottom_line_color:
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+              bottom_shape_color:
+                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              bottom_shape_postion: ["Level_4"],
             },
           },
         },
@@ -474,13 +753,14 @@ function convertToFormat(JsonData) {
         html += `<div class="icon_plus_name">\n`;
         if (heading) html += `<span>${limitText(heading, 5)}</span>\n`;
         html += `<i class="fa-solid fa-user"></i>\n`;
-        html += `<p>${limitText(logo,8)}</p>\n`;
+        html += `<p>${limitText(logo, 8)}</p>\n`;
         html += `</div>\n`;
       });
       html += `</div>\n`;
 
       // ▶️ On-line content
       html += `<div class="subgroups-on-line">\n`;
+
       sg.content.on_line_content_configuration.content.forEach((c, i) => {
         html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
           i + 1
@@ -488,6 +768,26 @@ function convertToFormat(JsonData) {
         html += `<h6 class="box-shadow-box">${c}</h6>\n`;
         html += `</div>\n`;
       });
+      if (
+        sg.content.connection_Line &&
+        (sg.content.connection_Line.display === "true" ||
+          sg.content.connection_Line.display === true)
+      ) {
+        for (let i = 0; i < sg.content.connection_Line.content_Num; i++) {
+          html += `<div class="${uniqueClassName}-sub-group-div${
+            idx + 1
+          }-connection-line-${i + 1}"></div>\n`;
+        }
+      }
+
+      if (
+        sg.content.connection_Rectangle &&
+        (sg.content.connection_Rectangle.display === "true" ||
+          sg.content.connection_Rectangle.display === true)
+      ) {
+        html += `<div class="connection-Rectangle${idx + 1}"></div>\n`;
+      }
+
       html += `</div>\n`;
 
       // ▶️ Timeline bottom content — NOW DYNAMIC
@@ -613,29 +913,6 @@ function convertToFormat(JsonData) {
   .${uniqueClassName} .subgroups-on-line-content{
     position: relative;
   }
-  .${uniqueClassName} .subgroups-on-line-content::after {
-    content: "";
-    position: absolute;
-    height: 345px;
-    width: 2px !important;
-    top: 45px;
-    left: 50%;
-    padding: 0;
-    margin: 0;
-    z-index: 1;
-    transform: translateX(-50%);
-  }
-  .${uniqueClassName} .subgroups-on-line-content::before {
-    content: "";
-    position: absolute;
-    width: 17px;
-    height: 15px;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    top: 395px;
-    left: 50%;
-    transform: translate(-50%, -50%) rotateZ(30deg);
-    z-index: 2;
-  }
   .${uniqueClassName} .subgroups-on-line-content h6{
     margin: 0;
     font-size: 15px;
@@ -657,7 +934,7 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} .subgroups-Timeline-bottom-content {
     display: flex;
-    margin-top: 100px;
+    margin-top: 180px;
     align-items: center;
     justify-content: space-around;
     position: relative;
@@ -821,6 +1098,145 @@ function convertToFormat(JsonData) {
     top: 5px;
   }`;
       }
+
+      sub_groups.forEach((sg, subGroupIdx) => {
+        const inlineContentArray =
+          sg.content.on_line_content_configuration.bottom_shape_postion || [];
+
+        inlineContentArray.forEach((level, inlineIdx) => {
+          let beforeTop = "395px";
+          let afterTop = "45px";
+          let afterHeight = "345px";
+
+          switch (level) {
+            case "Level_2":
+              beforeTop = "423px";
+              afterTop = "40px";
+              afterHeight = "375px";
+              break;
+            case "Level_3":
+              beforeTop = "450px";
+              afterTop = "40px";
+              afterHeight = "405px";
+              break;
+            case "Level_4":
+              beforeTop = "476px";
+              afterTop = "40px";
+              afterHeight = "430px";
+              break;
+            case "Level_5":
+              beforeTop = "505px";
+              afterTop = "40px";
+              afterHeight = "457px";
+              break;
+          }
+
+          css += ` .${uniqueClassName}-sub-group-div${
+            subGroupIdx + 1
+          } .${uniqueClassName}-on-line-content${inlineIdx + 1}::after {
+        content: "";
+        position: absolute;
+        height: ${afterHeight};
+        width: 2px !important;
+        top: ${afterTop};
+        left: 50%;
+        padding: 0;
+        margin: 0;
+        z-index: 1;
+        transform: translateX(-50%);
+        background: ${
+          sg.content.on_line_content_configuration.bottom_line_color
+        };
+      }
+      .${uniqueClassName}-sub-group-div${
+            subGroupIdx + 1
+          } .${uniqueClassName}-on-line-content${inlineIdx + 1}::before {
+        content: "";
+        position: absolute;
+        width: 17px;
+        height: 15px;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        top: ${beforeTop};
+        left: 50%;
+        transform: translate(-50%, -50%) rotateZ(30deg);
+        z-index: 2;
+        background: ${
+          sg.content.on_line_content_configuration.bottom_shape_color
+        };
+      }
+    `;
+        });
+      });
+      // ✅ connection_Line CSS block:
+      if (
+        sg.content.connection_Line &&
+        (sg.content.connection_Line.display === "true" ||
+          sg.content.connection_Line.display === true)
+      ) {
+        for (let i = 0; i < sg.content.connection_Line.content_Num; i++) {
+          css += `
+  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+            idx + 1
+          }-connection-line-${i + 1} {
+    position: absolute;
+    bottom: ${sg.content.connection_Line.position?.bottom[i] || "0px"};
+    left: ${sg.content.connection_Line.position?.left[i] || "0px"};
+    width: ${sg.content.connection_Line.width[i] || "0px"};
+    height: ${sg.content.connection_Line.height[i] || "0px"};
+    border-top:2px solid ${sg.content.connection_Line.line_color[i] || "black"};
+    border-right:2px solid ${
+      sg.content.connection_Line.line_color[i] || "black"
+    };
+    border-top-right-radius:20px;
+  }
+  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+            idx + 1
+          }-connection-line-${i + 1}::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-top: 10px solid ${
+      sg.content.connection_Line.arrow_color[i] || "#000"
+    };
+    right: -7px;
+    bottom:-2px;
+  }
+      `;
+        }
+      }
+
+      // ✅ New connection_Rectangle CSS generation
+      if (
+        sg.content.connection_Rectangle &&
+        (sg.content.connection_Rectangle.display === "true" ||
+          sg.content.connection_Rectangle.display === true)
+      ) {
+        css += `
+.${uniqueClassName} .subgroups-on-line .connection-Rectangle${idx + 1} {
+  position: absolute;
+  left: ${sg.content.connection_Rectangle.position_Left || "0px"};
+  width: ${sg.content.connection_Rectangle.width || "0px"};
+  height: ${sg.content.connection_Rectangle.height || "0px"};
+  border-bottom: ${sg.content.connection_Rectangle.border_size || "12px"} solid ${
+    sg.content.connection_Rectangle.border_color || "#000"
+  };
+  border-left: ${sg.content.connection_Rectangle.border_size || "12px"} solid ${
+    sg.content.connection_Rectangle.border_color || "#000"
+  };
+  border-right: ${sg.content.connection_Rectangle.border_size || "12px"} solid ${
+    sg.content.connection_Rectangle.border_color || "#000"
+  };
+  border-bottom-left-radius:${sg.content.connection_Rectangle.border_radius || "0px"};
+  border-bottom-right-radius:${sg.content.connection_Rectangle.border_radius || "0px"};
+  box-sizing: border-box;
+  top:32px;
+  z-index:-1;
+}
+  `;
+      }
     });
 
     return { html, css };
@@ -916,20 +1332,23 @@ body {
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
 }
-.footer-dark-five-lines > div:nth-child(1) { width: 92%; }
-.footer-dark-five-lines > div:nth-child(2) { width: 84.5%; }
-.footer-dark-five-lines > div:nth-child(3) { width: 67%; }
-.footer-dark-five-lines > div:nth-child(4) { width: 40%; }
-.footer-dark-five-lines > div:nth-child(5) { width: 20%; }
 `;
 
-// 4️⃣ Combine: Replace the placeholder with generated HTML
+let dynamicFooterCSS = "";
+if (JSON_Data.footer) {
+  Object.keys(JSON_Data.footer).forEach((key, idx) => {
+    dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${
+      idx + 1
+    }) { width: ${JSON_Data.footer[key]}; }\n`;
+  });
+}
+
+const Final_CSS = PreDefined_CSS + result.CSS + dynamicFooterCSS;
+
 const Final_HTML = PreDefined_HTML.replace("<!-- Add Here -->", result.HTML);
 
-// ✅ Replace the entire body — no need for .PPT-Box to exist yet
 document.body.innerHTML = Final_HTML;
 
-// ✅ Add combined CSS
 const styleTag = document.createElement("style");
-styleTag.textContent = PreDefined_CSS + result.CSS;
+styleTag.textContent = Final_CSS;
 document.head.appendChild(styleTag);
