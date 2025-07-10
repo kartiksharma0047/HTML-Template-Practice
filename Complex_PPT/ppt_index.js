@@ -1,11 +1,28 @@
 JSON_Data = {
   footer: {
-    footer_1_width: "92%",
-    footer_2_width: "84.5%",
-    footer_3_width: "67%",
-    footer_4_width: "50%",
-    footer_5_width: "20%",
+    footer_label: {
+      footer_1_label: "Ambulatorio",
+      footer_2_label: "Centro di Senologia/Ospedale",
+      footer_3_label: "Casa",
+      footer_4_label: "Altra struttura",
+      footer_5_label: "Earmacia ospedaliera",
+    },
+    footer_label_position_left: {
+      footer_1_left: "-80px",
+      footer_2_left: "-180px",
+      footer_3_left: "-40px",
+      footer_4_left: "-90px",
+      footer_5_left: "-130px",
+    },
+    label_width: {
+      footer_1_width: "92%",
+      footer_2_width: "84.5%",
+      footer_3_width: "67%",
+      footer_4_width: "50%",
+      footer_5_width: "20%",
+    },
   },
+  scaling: "1",
   body: [
     // Start of Prediagnosi
     {
@@ -84,9 +101,15 @@ JSON_Data = {
               height: "0px",
               border_size: "12px",
               border_color: "#58e3d2",
-              border_radius:"10px"
+              border_radius: "10px",
             },
-            connection_Circle:{},
+            connection_Circle: {
+              display: "false",
+              position_Left: "0px",
+              Width_And_Height: "130px",
+              border_size: "15px",
+              border_color: "#58e3d2",
+            },
             line_right: "true",
             line_color: "#c4c9ca",
             logo_para_color: "white",
@@ -105,7 +128,28 @@ JSON_Data = {
             timelineSeries: {
               content: ["<10 gg da", "<10 gg da"],
               background_color:
-                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+                "linear-gradient(to right, #f6f4dc60 , #ffc305)",
+              configuration: {
+                position_left: ["49px", "164px"],
+                position_top: ["0px", "0px"],
+                width: ["110px", "90px"],
+                pseudo_Element_Configuration: {
+                  color: ["#ffc100", "#ffc100"],
+                  border_width: ["1px", "1px"],
+                  circle_size: ["7px", "7px"],
+                  line_width: ["92px", "92px"],
+                  line_height: ["43px", "43px"],
+                  circle_position: {
+                    bottom: ["70px", "70px"],
+                    right: ["111px", "111px"],
+                  },
+                  line_position: {
+                    bottom: ["30px", "30px"],
+                    right: ["19px", "19px"],
+                    radius: ["30px", "30px"],
+                  },
+                },
+              },
             },
           },
         },
@@ -149,9 +193,16 @@ JSON_Data = {
               position_Left: "135px",
               width: "465px",
               height: "100px",
-              border_size:"12px",
+              border_size: "12px",
               border_color: "#58e3d2",
-              border_radius:"10px"
+              border_radius: "10px",
+            },
+            connection_Circle: {
+              display: "false",
+              position_Left: "0px",
+              Width_And_Height: "130px",
+              border_size: "15px",
+              border_color: "#58e3d2",
             },
             line_right: "false",
             line_color: "#c4c9ca",
@@ -172,6 +223,27 @@ JSON_Data = {
               content: ["<30 gg da"],
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+              configuration: {
+                position_left: ["-47px"],
+                position_top: ["0px"],
+                width: ["130px"],
+                pseudo_Element_Configuration: {
+                  color: ["#ffc100"],
+                  border_width: ["1px"],
+                  circle_size: ["7px"],
+                  line_width: ["143px"],
+                  line_height: ["43px"],
+                  circle_position: {
+                    bottom: ["70px"],
+                    right: ["159px"],
+                  },
+                  line_position: {
+                    bottom: ["30px"],
+                    right: ["18px"],
+                    radius: ["30px"],
+                  },
+                },
+              },
             },
           },
         },
@@ -221,7 +293,7 @@ JSON_Data = {
                 left: ["50px", "150px", "50px"],
                 bottom: ["60px", "60px", "60px"],
               },
-              width: ["440px", "426px", "640px"],
+              width: ["265px", "640px", "640px"],
               height: ["54px", "70px", "54px"],
               arrow_color: ["#a334c8", "#ffc100", "#a334c8"],
               line_color: ["#9f30cb", "#ffc100", "#9f30cb"],
@@ -233,7 +305,14 @@ JSON_Data = {
               height: "70px",
               border_size: "12px",
               border_color: "#58e3d2",
-              border_radius:"10px"
+              border_radius: "10px",
+            },
+            connection_Circle: {
+              display: "false",
+              position_Left: "0px",
+              Width_And_Height: "130px",
+              border_size: "15px",
+              border_color: "#58e3d2",
             },
             line_right: "true",
             line_color: "#c4c9ca",
@@ -254,6 +333,27 @@ JSON_Data = {
               content: ["<30 gg da"],
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+              configuration: {
+                position_left: ["-76px"],
+                position_top: ["0px"],
+                width: ["248px"],
+                pseudo_Element_Configuration: {
+                  color: ["#ffc100"],
+                  border_width: ["1px"],
+                  circle_size: ["7px"],
+                  line_width: ["256px"],
+                  line_height: ["43px"],
+                  circle_position: {
+                    bottom: ["70px"],
+                    right: ["274px"],
+                  },
+                  line_position: {
+                    bottom: ["30px"],
+                    right: ["19px"],
+                    radius: ["30px"],
+                  },
+                },
+              },
             },
           },
         },
@@ -299,7 +399,14 @@ JSON_Data = {
               height: "0px",
               border_size: "12px",
               border_color: "#58e3d2",
-              border_radius:"10px"
+              border_radius: "10px",
+            },
+            connection_Circle: {
+              display: "false",
+              position_Left: "0px",
+              Width_And_Height: "130px",
+              border_size: "15px",
+              border_color: "#58e3d2",
             },
             line_right: "true",
             line_color: "#c4c9ca",
@@ -317,9 +424,30 @@ JSON_Data = {
               bottom_shape_postion: ["Level_2"],
             },
             timelineSeries: {
-              content: ["<60 gg da"],
+              content: ["<30 gg da", "<60 gg da"],
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+              configuration: {
+                position_left: ["-33px", "-454px"],
+                position_top: ["0px", "33px"],
+                width: ["142px", "563px"],
+                pseudo_Element_Configuration: {
+                  color: ["#ffc100"],
+                  border_width: ["1px"],
+                  circle_size: ["7px"],
+                  line_width: ["149px"],
+                  line_height: ["43px"],
+                  circle_position: {
+                    bottom: ["70px"],
+                    right: ["167px"],
+                  },
+                  line_position: {
+                    bottom: ["30px"],
+                    right: ["20px"],
+                    radius: ["30px"],
+                  },
+                },
+              },
             },
           },
         },
@@ -361,7 +489,14 @@ JSON_Data = {
               height: "0px",
               border_size: "12px",
               border_color: "#58e3d2",
-              border_radius:"10px"
+              border_radius: "10px",
+            },
+            connection_Circle: {
+              display: "true",
+              position_Left: "20px",
+              Width_And_Height: "150px",
+              border_size: "15px",
+              border_color: "#58e3d2",
             },
             line_right: "true",
             line_color: "#c4c9ca",
@@ -382,6 +517,27 @@ JSON_Data = {
               content: ["<30 gg da"],
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+              configuration: {
+                position_left: ["-95px"],
+                position_top: ["2px"],
+                width: ["251px"],
+                pseudo_Element_Configuration: {
+                  color: ["#ffc100"],
+                  border_width: ["1px"],
+                  circle_size: ["7px"],
+                  line_width: ["261px"],
+                  line_height: ["43px"],
+                  circle_position: {
+                    bottom: ["70px"],
+                    right: ["278px"],
+                  },
+                  line_position: {
+                    bottom: ["30px"],
+                    right: ["19px"],
+                    radius: ["30px"],
+                  },
+                },
+              },
             },
           },
         },
@@ -427,7 +583,14 @@ JSON_Data = {
               height: "0px",
               border_size: "12px",
               border_color: "#58e3d2",
-              border_radius:"10px"
+              border_radius: "10px",
+            },
+            connection_Circle: {
+              display: "false",
+              position_Left: "0px",
+              Width_And_Height: "130px",
+              border_size: "15px",
+              border_color: "#58e3d2",
             },
             line_right: "false",
             line_color: "#c4c9ca",
@@ -443,11 +606,6 @@ JSON_Data = {
               bottom_shape_color:
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               bottom_shape_postion: ["Level_3"],
-            },
-            timelineSeries: {
-              content: ["<60 gg da"],
-              background_color:
-                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
             },
           },
         },
@@ -494,13 +652,20 @@ JSON_Data = {
               height: "0px",
               border_size: "12px",
               border_color: "#58e3d2",
-              border_radius:"10px"
+              border_radius: "10px",
+            },
+            connection_Circle: {
+              display: "false",
+              position_Left: "0px",
+              Width_And_Height: "130px",
+              border_size: "15px",
+              border_color: "#58e3d2",
             },
             line_right: "false",
             line_color: "#c4c9ca",
             logo_para_color: "white",
             on_line_content_configuration: {
-              content: ["CT"],
+              content: ["RT"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -510,6 +675,32 @@ JSON_Data = {
               bottom_shape_color:
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               bottom_shape_postion: ["Level_4"],
+            },
+            timelineSeries: {
+              content: ["<60 gg da"],
+              background_color:
+                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+              configuration: {
+                position_left: ["-183px"],
+                position_top: [""],
+                width: ["219px"],
+                pseudo_Element_Configuration: {
+                  color: ["#ffc100"],
+                  border_width: ["1px"],
+                  circle_size: ["7px"],
+                  line_width: ["228px"],
+                  line_height: ["43px"],
+                  circle_position: {
+                    bottom: ["70px"],
+                    right: ["246px"],
+                  },
+                  line_position: {
+                    bottom: ["30px"],
+                    right: ["19px"],
+                    radius: ["30px"],
+                  },
+                },
+              },
             },
           },
         },
@@ -610,7 +801,7 @@ function convertToFormat(JsonData) {
   .${className} .mid-top {
     margin-top: 200px;
     position: relative;
-    z-index: 3;
+    z-index: 1;
     width: max-content;
   }
 
@@ -624,7 +815,6 @@ function convertToFormat(JsonData) {
     height: 550px;
     right: 0px;
     bottom: 500px;
-    z-index: 1;
   }
 
   .${className}::before {
@@ -636,7 +826,7 @@ function convertToFormat(JsonData) {
     border-radius: 50%;
     right: -4px;
     top: 30px;
-    z-index: 2;
+    z-index: 1;
   }
   `
       : ""
@@ -768,6 +958,16 @@ function convertToFormat(JsonData) {
         html += `<h6 class="box-shadow-box">${c}</h6>\n`;
         html += `</div>\n`;
       });
+      if (
+        sg.content.connection_Circle &&
+        (sg.content.connection_Circle.display === "true" ||
+          sg.content.connection_Circle.display === true)
+      ) {
+        html += `<div class="connection-Circle-box${idx + 1}">
+        <div class="connection-Circle-shape"></div>
+        </div>\n`;
+      }
+
       if (
         sg.content.connection_Line &&
         (sg.content.connection_Line.display === "true" ||
@@ -908,7 +1108,7 @@ function convertToFormat(JsonData) {
     justify-content: space-evenly;
     position: relative;
     margin-top: 225px;
-    z-index: 2;
+    z-index: 3;
   }
   .${uniqueClassName} .subgroups-on-line-content{
     position: relative;
@@ -930,16 +1130,15 @@ function convertToFormat(JsonData) {
     bottom: 0px;
     left: 50%;
     transform: translate(-50%, 50%);
-    z-index: 2;
+    z-index: 4;
   }
   .${uniqueClassName} .subgroups-Timeline-bottom-content {
     display: flex;
     margin-top: 180px;
     align-items: center;
-    justify-content: space-around;
-    position: relative;
+    position: absolute;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
   }
   .${uniqueClassName} .subgroups-Timeline-bottom-content .fa-clock{
     font-size: 18px;
@@ -953,16 +1152,15 @@ function convertToFormat(JsonData) {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     font-size:10px;
-    width:130px;
     margin: 0;
     padding: 0;
     padding-right: 10px;
-    position: relative;
+    position: absolute;
   }
   
-  /* === Timeline line example === */
+  /* === Right Line example === */
   ${
     configurations.line_right
       ? `
@@ -973,7 +1171,6 @@ function convertToFormat(JsonData) {
     height: 530px;
     right: 0px;
     bottom: 485px;
-    z-index: 1;
   }
   .${uniqueClassName}::before {
     content: "";
@@ -984,7 +1181,6 @@ function convertToFormat(JsonData) {
     border-radius: 50%;
     right: -4px;
     top: 62px;
-    z-index: 2;
   } `
       : ""
   }
@@ -1069,12 +1265,63 @@ function convertToFormat(JsonData) {
   `;
 
       sg.content.timelineSeries?.content.forEach((t, i) => {
+        const pseudoConfig =
+          sg.content.timelineSeries.configuration.pseudo_Element_Configuration;
+
         css += `
+  /* Timeline base block */
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${
           idx + 1
         } .${uniqueClassName}-timeline-bottom${i + 1} {
     background: ${sg.content.timelineSeries.background_color};
-  }`;
+  }
+
+  /* Main logo text block */
+  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}
+    .subgroups-Timeline-bottom-logo_text.${uniqueClassName}-timeline-bottom${
+          i + 1
+        } {
+      width: ${sg.content.timelineSeries.configuration.width[i] || "100px"};
+      left: ${
+        sg.content.timelineSeries.configuration.position_left[i] || "0px"
+      };
+      top: ${sg.content.timelineSeries.configuration.position_top[i] || "0px"};
+      position: absolute; /* Important for pseudo positioning */
+  }
+
+  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}
+    .subgroups-Timeline-bottom-logo_text.${uniqueClassName}-timeline-bottom${
+          i + 1
+        }::before {
+      content: "";
+      position: absolute;
+      width: ${pseudoConfig.line_width[i] || "100px"};
+      height: ${pseudoConfig.line_height[i] || "43px"};
+      border-top: ${pseudoConfig.border_width[i] || "1px"} solid ${
+          pseudoConfig.color[i] || "transparent"
+        };
+      border-right: ${pseudoConfig.border_width[i] || "1px"} solid ${
+          pseudoConfig.color[i] || "transparent"
+        };
+      border-top-right-radius:${pseudoConfig.line_position.radius[i] || "20px"};
+      bottom: ${pseudoConfig.line_position.bottom[i] || "70px"};
+      right: ${pseudoConfig.line_position.right[i] || "0px"};
+  }
+
+  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}
+    .subgroups-Timeline-bottom-logo_text.${uniqueClassName}-timeline-bottom${
+          i + 1
+        }::after {
+      content: "";
+      position: absolute;
+      border-radius:50%;
+      width: ${pseudoConfig.circle_size[i] || "7px"};
+      height: ${pseudoConfig.circle_size[i] || "7px"};
+      background: ${pseudoConfig.color[i] || "transparent"};
+      bottom: ${pseudoConfig.circle_position.bottom[i] || "70px"};
+      right: ${pseudoConfig.circle_position.right[i] || "0px"};
+  }
+  `;
       });
 
       if (sg.content.line_right === "true" || sg.content.line_right === true) {
@@ -1167,7 +1414,42 @@ function convertToFormat(JsonData) {
     `;
         });
       });
-      // ✅ connection_Line CSS block:
+
+      // connection_Circle CSS generation
+      if (
+        sg.content.connection_Circle &&
+        (sg.content.connection_Circle.display === "true" ||
+          sg.content.connection_Circle.display === true)
+      ) {
+        css += `
+.${uniqueClassName} .subgroups-on-line .connection-Circle-box${idx + 1} {
+  position: absolute;
+  left: ${sg.content.connection_Circle.position_Left || "0px"};
+  width: ${sg.content.connection_Circle.Width_And_Height || "0px"};
+  height: ${sg.content.connection_Circle.Width_And_Height || "0px"};
+  bottom:30px;
+  overflow: hidden;
+  z-index:-2;
+  transform: rotateZ(180deg);
+}
+.${uniqueClassName} .subgroups-on-line .connection-Circle-box${
+          idx + 1
+        } .connection-Circle-shape {
+  position: absolute;
+  box-sizing: border-box;
+  width: ${sg.content.connection_Circle.Width_And_Height || "130px"};
+  height: ${sg.content.connection_Circle.Width_And_Height || "130px"};
+  border: ${sg.content.connection_Circle.border_size || "15px"} solid ${
+          sg.content.connection_Circle.border_color || "#000"
+        };
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 0%;
+}
+  `;
+      }
+      // connection_Line CSS block:
       if (
         sg.content.connection_Line &&
         (sg.content.connection_Line.display === "true" ||
@@ -1179,6 +1461,7 @@ function convertToFormat(JsonData) {
             idx + 1
           }-connection-line-${i + 1} {
     position: absolute;
+    z-index:-1;
     bottom: ${sg.content.connection_Line.position?.bottom[i] || "0px"};
     left: ${sg.content.connection_Line.position?.left[i] || "0px"};
     width: ${sg.content.connection_Line.width[i] || "0px"};
@@ -1193,6 +1476,7 @@ function convertToFormat(JsonData) {
             idx + 1
           }-connection-line-${i + 1}::after {
     content: "";
+    z-index:-1;
     position: absolute;
     width: 0;
     height: 0;
@@ -1208,7 +1492,7 @@ function convertToFormat(JsonData) {
         }
       }
 
-      // ✅ New connection_Rectangle CSS generation
+      // connection_Rectangle CSS generation
       if (
         sg.content.connection_Rectangle &&
         (sg.content.connection_Rectangle.display === "true" ||
@@ -1220,17 +1504,21 @@ function convertToFormat(JsonData) {
   left: ${sg.content.connection_Rectangle.position_Left || "0px"};
   width: ${sg.content.connection_Rectangle.width || "0px"};
   height: ${sg.content.connection_Rectangle.height || "0px"};
-  border-bottom: ${sg.content.connection_Rectangle.border_size || "12px"} solid ${
-    sg.content.connection_Rectangle.border_color || "#000"
-  };
+  border-bottom: ${
+    sg.content.connection_Rectangle.border_size || "12px"
+  } solid ${sg.content.connection_Rectangle.border_color || "#000"};
   border-left: ${sg.content.connection_Rectangle.border_size || "12px"} solid ${
-    sg.content.connection_Rectangle.border_color || "#000"
+          sg.content.connection_Rectangle.border_color || "#000"
+        };
+  border-right: ${
+    sg.content.connection_Rectangle.border_size || "12px"
+  } solid ${sg.content.connection_Rectangle.border_color || "#000"};
+  border-bottom-left-radius:${
+    sg.content.connection_Rectangle.border_radius || "0px"
   };
-  border-right: ${sg.content.connection_Rectangle.border_size || "12px"} solid ${
-    sg.content.connection_Rectangle.border_color || "#000"
+  border-bottom-right-radius:${
+    sg.content.connection_Rectangle.border_radius || "0px"
   };
-  border-bottom-left-radius:${sg.content.connection_Rectangle.border_radius || "0px"};
-  border-bottom-right-radius:${sg.content.connection_Rectangle.border_radius || "0px"};
   box-sizing: border-box;
   top:32px;
   z-index:-1;
@@ -1273,11 +1561,7 @@ const PreDefined_HTML = `
 <div class="PPT-Box">
   <div class="mid-Line"></div>
   <div class="footer-dark-five-lines">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <!-- Footer Divs Will Be Added Here -->
   </div>
   <!-- Add Here -->
 </div>
@@ -1287,19 +1571,20 @@ const PreDefined_HTML = `
 const PreDefined_CSS = `
 body {
   display: flex;
-  align-items: center;
+  align-items:center;
   justify-content: center;
+  transform:scale(0.6);
   font-family: sans-serif;
 }
 .PPT-Box {
   border: 1px solid black;
   height: 1080px;
-  width: 1920px;
+  width: 1900px;
   background-color: #f6fcfc;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   padding: 20px 0 0 0;
 }
 .mid-Line {
@@ -1311,7 +1596,7 @@ body {
   height: 25px;
   box-shadow: 0 0 70px #58e3d2, 0 0 30px #b8f4eb;
   background-color: #58e3d2;
-  z-index: 2;
+  z-index: 1;
 }
 .box-shadow-box {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.218);
@@ -1331,21 +1616,53 @@ body {
   height: calc(137px / 5);
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:start;
+}
+.footer-dark-five-lines div h4 {
+  margin: 0;
+  font-size: 12px;
+  text-align: right;
+  color: #333;
+  position:absolute;
 }
 `;
 
 let dynamicFooterCSS = "";
-if (JSON_Data.footer) {
-  Object.keys(JSON_Data.footer).forEach((key, idx) => {
-    dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${
-      idx + 1
-    }) { width: ${JSON_Data.footer[key]}; }\n`;
-  });
-}
 
-const Final_CSS = PreDefined_CSS + result.CSS + dynamicFooterCSS;
+// Add widths for each footer div
+Object.keys(JSON_Data.footer.label_width).forEach((key, idx) => {
+  const widthValue = JSON_Data.footer.label_width[key];
+  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${idx + 1}) { width: ${widthValue}; }\n`;
+});
 
-const Final_HTML = PreDefined_HTML.replace("<!-- Add Here -->", result.HTML);
+// Add left positions for each h4
+Object.keys(JSON_Data.footer.footer_label_position_left).forEach((key, idx) => {
+  const leftValue = JSON_Data.footer.footer_label_position_left[key];
+  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${idx + 1}) h4 { left: ${leftValue}; }\n`;
+});
+
+let footerHTML = "";
+const labels = JSON_Data.footer.footer_label;
+Object.keys(labels).forEach((key, idx) => {
+  footerHTML += `<div><h4 class="footer-label-${idx + 1}">${
+    labels[key]
+  }</h4></div>\n`;
+});
+
+const PreDefined_CSS_WithScale = PreDefined_CSS.replace(
+  /transform:scale\([^)]*\)/,
+  `transform: scale(${JSON_Data.scaling})`
+);
+
+const Final_CSS = PreDefined_CSS_WithScale + result.CSS + dynamicFooterCSS;
+
+const Final_HTML = PreDefined_HTML.replace(
+  "<!-- Footer Divs Will Be Added Here -->",
+  footerHTML
+).replace("<!-- Add Here -->", result.HTML);
 
 document.body.innerHTML = Final_HTML;
 
