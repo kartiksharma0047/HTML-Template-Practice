@@ -8,11 +8,11 @@ JSON_Data = {
       footer_5_label: "Earmacia ospedaliera",
     },
     footer_label_position_left: {
-      footer_1_left: "-80px",
-      footer_2_left: "-180px",
-      footer_3_left: "-40px",
-      footer_4_left: "-90px",
-      footer_5_left: "-130px",
+      footer_1_left: "-70px",
+      footer_2_left: "-140px",
+      footer_3_left: "-30px",
+      footer_4_left: "-70px",
+      footer_5_left: "-100px",
     },
     label_width: {
       footer_1_width: "92%",
@@ -30,8 +30,8 @@ JSON_Data = {
       title: "Pre-diagnosi",
       configurations: {
         title_color: "#515151",
-        title_size: "19px",
-        box_width: "180px",
+        title_size: "12px",
+        box_width: "150px",
         line_right: "True",
       },
       start_content: {
@@ -39,9 +39,9 @@ JSON_Data = {
         steps: ["SINTOMI", "REPERTO INCIDENTALE", "SCREENING I LIVELLO"],
         configurations: {
           logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
-          width: ["70px", "110px", "95px"],
+          width: ["40px", "65px", "55px"],
           background_color: "white",
-          font_size: "15px",
+          font_size: "9px",
           font_color: "black",
         },
       },
@@ -52,7 +52,7 @@ JSON_Data = {
       title: "Diagnosi e pre-treatment",
       configurations: {
         title_color: "#515151",
-        title_size: "19px",
+        title_size: "12px",
         line_right: "true",
         line_color: "#adafaf",
         box_padding: "0 10px",
@@ -64,13 +64,13 @@ JSON_Data = {
           title: "Diagnosi a presa in carico",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "14px",
+            title_size: "10px",
             margin: "0",
-            padding: "0",
+            padding: "0 10px 0 0",
           },
           content: {
             logo_heading: ["", "GOM", "GOM"],
-            content_width: "300px",
+            content_width: "210px",
             logo_heading_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_heading_border_color: "#a334c8",
@@ -130,22 +130,22 @@ JSON_Data = {
               background_color:
                 "linear-gradient(to right, #f6f4dc60 , #ffc305)",
               configuration: {
-                position_left: ["49px", "164px"],
+                position_left: ["38px", "117px"],
                 position_top: ["0px", "0px"],
-                width: ["110px", "90px"],
+                width: ["72px", "60px"],
                 pseudo_Element_Configuration: {
                   color: ["#ffc100", "#ffc100"],
                   border_width: ["1px", "1px"],
-                  circle_size: ["7px", "7px"],
-                  line_width: ["92px", "92px"],
+                  circle_size: ["5px", "5px"],
+                  line_width: ["66px", "66px"],
                   line_height: ["43px", "43px"],
                   circle_position: {
-                    bottom: ["70px", "70px"],
-                    right: ["111px", "111px"],
+                    bottom: ["61px", "61px"],
+                    right: ["77px", "77px"],
                   },
                   line_position: {
-                    bottom: ["30px", "30px"],
-                    right: ["19px", "19px"],
+                    bottom: ["20px", "20px"],
+                    right: ["13px", "13px"],
                     radius: ["30px", "30px"],
                   },
                 },
@@ -158,13 +158,13 @@ JSON_Data = {
           title: "Decisione Terapeutica",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "14px",
+            title_size: "10px",
             margin: "0px",
             padding: "0 0 0 15px",
           },
           content: {
             logo_heading: [""],
-            content_width: "150px",
+            content_width: "110px",
             logo_heading_color:
               "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
             logo_heading_border_color: "#a334c8",
@@ -190,12 +190,12 @@ JSON_Data = {
             },
             connection_Rectangle: {
               display: "true",
-              position_Left: "135px",
-              width: "465px",
-              height: "100px",
-              border_size: "12px",
+              position_Left: "95px",
+              width: "360px",
+              height: "60px",
+              border_size: "10px",
               border_color: "#58e3d2",
-              border_radius: "10px",
+              border_radius: "6px",
             },
             connection_Circle: {
               display: "false",
@@ -224,22 +224,22 @@ JSON_Data = {
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
               configuration: {
-                position_left: ["-47px"],
+                position_left: ["-50px"],
                 position_top: ["0px"],
-                width: ["130px"],
+                width: ["110px"],
                 pseudo_Element_Configuration: {
                   color: ["#ffc100"],
                   border_width: ["1px"],
-                  circle_size: ["7px"],
-                  line_width: ["143px"],
+                  circle_size: ["5px"],
+                  line_width: ["115px"],
                   line_height: ["43px"],
                   circle_position: {
-                    bottom: ["70px"],
-                    right: ["159px"],
+                    bottom: ["61px"],
+                    right: ["128px"],
                   },
                   line_position: {
-                    bottom: ["30px"],
-                    right: ["18px"],
+                    bottom: ["20px"],
+                    right: ["13px"],
                     radius: ["30px"],
                   },
                 },
@@ -255,7 +255,7 @@ JSON_Data = {
       title: "Treatment",
       configurations: {
         title_color: "#515151",
-        title_size: "19px",
+        title_size: "12px",
         line_right: "true",
         line_color: "#adafaf",
         box_padding: "0 10px",
@@ -267,13 +267,13 @@ JSON_Data = {
           title: "Terapia Neo-Adiuvante",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "14px",
+            title_size: "10px",
             margin: "0",
             padding: "0",
           },
           content: {
             logo_heading: ["GOM", "GOM"],
-            content_width: "200px",
+            content_width: "150px",
             logo_heading_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_heading_border_color: "#a334c8",
@@ -290,22 +290,22 @@ JSON_Data = {
               display: "true",
               content_Num: 3,
               position: {
-                left: ["50px", "150px", "50px"],
-                bottom: ["60px", "60px", "60px"],
+                left: ["37px", "113px", "37px"],
+                bottom: ["40px", "40px", "40px"],
               },
-              width: ["265px", "640px", "640px"],
-              height: ["54px", "70px", "54px"],
+              width: ["192px", "460px", "465px"],
+              height: ["30px", "40px", "30px"],
               arrow_color: ["#a334c8", "#ffc100", "#a334c8"],
               line_color: ["#9f30cb", "#ffc100", "#9f30cb"],
             },
             connection_Rectangle: {
               display: "true",
               position_Left: "-5px",
-              width: "245px",
-              height: "70px",
-              border_size: "12px",
+              width: "170px",
+              height: "40px",
+              border_size: "9px",
               border_color: "#58e3d2",
-              border_radius: "10px",
+              border_radius: "6px",
             },
             connection_Circle: {
               display: "false",
@@ -334,22 +334,22 @@ JSON_Data = {
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
               configuration: {
-                position_left: ["-76px"],
+                position_left: ["-63px"],
                 position_top: ["0px"],
-                width: ["248px"],
+                width: ["191px"],
                 pseudo_Element_Configuration: {
                   color: ["#ffc100"],
                   border_width: ["1px"],
-                  circle_size: ["7px"],
-                  line_width: ["256px"],
+                  circle_size: ["5px"],
+                  line_width: ["196px"],
                   line_height: ["43px"],
                   circle_position: {
-                    bottom: ["70px"],
-                    right: ["274px"],
+                    bottom: ["61px"],
+                    right: ["208px"],
                   },
                   line_position: {
-                    bottom: ["30px"],
-                    right: ["19px"],
+                    bottom: ["20px"],
+                    right: ["13px"],
                     radius: ["30px"],
                   },
                 },
@@ -362,13 +362,13 @@ JSON_Data = {
           title: "Chirurgia",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "14px",
+            title_size: "10px",
             margin: "0px",
-            padding: "0 0 0 15px",
+            padding: "0 10px",
           },
           content: {
             logo_heading: ["GOM", ""],
-            content_width: "200px",
+            content_width: "140px",
             logo_heading_color:
               "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             logo_heading_border_color: "#a334c8",
@@ -428,22 +428,22 @@ JSON_Data = {
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
               configuration: {
-                position_left: ["-33px", "-454px"],
+                position_left: ["-25px", "-352px"],
                 position_top: ["0px", "33px"],
-                width: ["142px", "563px"],
+                width: ["100px", "427px"],
                 pseudo_Element_Configuration: {
                   color: ["#ffc100"],
                   border_width: ["1px"],
-                  circle_size: ["7px"],
-                  line_width: ["149px"],
+                  circle_size: ["5px"],
+                  line_width: ["105px"],
                   line_height: ["43px"],
                   circle_position: {
-                    bottom: ["70px"],
-                    right: ["167px"],
+                    bottom: ["61px"],
+                    right: ["117px"],
                   },
                   line_position: {
-                    bottom: ["30px"],
-                    right: ["20px"],
+                    bottom: ["20px"],
+                    right: ["13px"],
                     radius: ["30px"],
                   },
                 },
@@ -456,13 +456,13 @@ JSON_Data = {
           title: "Chemioterapia",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "14px",
-            margin: "0px",
-            padding: "0 15px",
+            title_size: "10px",
+            margin: "0px 0px",
+            padding: "0px 10px",
           },
           content: {
             logo_heading: [""],
-            content_width: "180px",
+            content_width: "130px",
             logo_heading_color:
               "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
             logo_title: [""],
@@ -493,9 +493,9 @@ JSON_Data = {
             },
             connection_Circle: {
               display: "true",
-              position_Left: "20px",
-              Width_And_Height: "150px",
-              border_size: "15px",
+              position_Left: "10px",
+              Width_And_Height: "110px",
+              border_size: "10px",
               border_color: "#58e3d2",
             },
             line_right: "true",
@@ -514,26 +514,26 @@ JSON_Data = {
               bottom_shape_postion: ["Level_2", "Level_2"],
             },
             timelineSeries: {
-              content: ["<30 gg da"],
+              content: ["<60 gg da"],
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
               configuration: {
-                position_left: ["-95px"],
-                position_top: ["2px"],
-                width: ["251px"],
+                position_left: ["-78px"],
+                position_top: ["3.5px"],
+                width: ["188px"],
                 pseudo_Element_Configuration: {
                   color: ["#ffc100"],
                   border_width: ["1px"],
-                  circle_size: ["7px"],
-                  line_width: ["261px"],
+                  circle_size: ["5px"],
+                  line_width: ["193px"],
                   line_height: ["43px"],
                   circle_position: {
-                    bottom: ["70px"],
-                    right: ["278px"],
+                    bottom: ["61px"],
+                    right: ["204px"],
                   },
                   line_position: {
-                    bottom: ["30px"],
-                    right: ["19px"],
+                    bottom: ["20px"],
+                    right: ["13px"],
                     radius: ["30px"],
                   },
                 },
@@ -546,13 +546,13 @@ JSON_Data = {
           title: "Radioterapia",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "14px",
+            title_size: "10px",
             margin: "0",
-            padding: "0 0 0 15px",
+            padding: "0 0 0 10px",
           },
           content: {
             logo_heading: ["ROM"],
-            content_width: "140px",
+            content_width: "90px",
             logo_heading_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_heading_border_color: "#a334c8",
@@ -616,7 +616,7 @@ JSON_Data = {
             title_color: "rgb(81, 81, 81)",
             title_size: "14px",
             margin: "0",
-            padding: "0 40px 0 0",
+            padding: "0 15px 0 0",
           },
           content: {
             logo_heading: [""],
@@ -681,22 +681,22 @@ JSON_Data = {
               background_color:
                 "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
               configuration: {
-                position_left: ["-183px"],
+                position_left: ["-123px"],
                 position_top: [""],
-                width: ["219px"],
+                width: ["153px"],
                 pseudo_Element_Configuration: {
                   color: ["#ffc100"],
                   border_width: ["1px"],
-                  circle_size: ["7px"],
-                  line_width: ["228px"],
+                  circle_size: ["5px"],
+                  line_width: ["159px"],
                   line_height: ["43px"],
                   circle_position: {
-                    bottom: ["70px"],
-                    right: ["246px"],
+                    bottom: ["61px"],
+                    right: ["170px"],
                   },
                   line_position: {
-                    bottom: ["30px"],
-                    right: ["19px"],
+                    bottom: ["20px"],
+                    right: ["12.5px"],
                     radius: ["30px"],
                   },
                 },
@@ -765,7 +765,7 @@ function convertToFormat(JsonData) {
     // ✅ Extract configurations
     const boxWidth = configurations?.box_width || "180px";
     const titleColor = configurations?.title_color || "#515151";
-    const title_size = configurations?.title_size || "19px";
+    const title_size = configurations?.title_size || "12px";
     const lineRight = configurations?.line_right === "True";
     const font_size = start_content?.configurations?.font_size || "15px";
     const logoGradient = start_content?.configurations?.logo_color || "#2394b9";
@@ -799,7 +799,7 @@ function convertToFormat(JsonData) {
   }
 
   .${className} .mid-top {
-    margin-top: 200px;
+    margin-top: 140px;
     position: relative;
     z-index: 1;
     width: max-content;
@@ -811,21 +811,21 @@ function convertToFormat(JsonData) {
   .${className}::after {
     content: "";
     position: absolute;
-    border-right: 3px solid #adafaf;
-    height: 550px;
+    border-right: 2px solid #adafaf;
+    height: 365px;
     right: 0px;
-    bottom: 500px;
+    bottom: 324px;
   }
 
   .${className}::before {
     content: "";
     position: absolute;
     background-color: #767979;
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
-    right: -4px;
-    top: 30px;
+    right: -2px;
+    top: 16px;
     z-index: 1;
   }
   `
@@ -835,10 +835,11 @@ function convertToFormat(JsonData) {
   .${className} .start-mid-back-line {
     position: absolute;
     z-index: 1;
-    top: 340px;
-    width: 25px;
-    height: 257px;
+    top: 208px;
+    width: 15px;
+    height: 190px;
     background-color: #58e3d2;
+    border-bottom-left-radius:10px;
   }
 
   .${className} .mid-top .icon_plus_name {
@@ -853,32 +854,33 @@ function convertToFormat(JsonData) {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 15px;
     background: ${logoGradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border: 2px solid #2394b9;
-    width: 52px;
-    height: 52px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   .${className} .mid-top .icon_plus_name p {
     display: inline;
     background: ${logoGradient};
-    padding: 13px 23px;
+    padding: 8px 11px;
+    font-size:9px;
     border-radius: 23px;
     position: absolute;
-    top: 30px;
+    top: 21px;
     color: white;
   }
 
   .${className} .mid-top .start-step {
     background-color: ${stepBg};
-    padding: 10px;
+    padding: 7px;
     margin: 0;
-    margin-left: 40px;
+    margin-left: 35px;
     border-radius: 7px;
     font-size: ${font_size};
     color:${font_color};
@@ -891,7 +893,7 @@ function convertToFormat(JsonData) {
     align-items: start;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 210px;
+    height: 135px;
   }
   `;
 
@@ -902,12 +904,6 @@ function convertToFormat(JsonData) {
     }
     `;
     });
-
-    css += `
-  .${className} .mid-bottom {
-    height: 360px;
-  }
-  `;
 
     return { html, css };
   };
@@ -1017,9 +1013,9 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} h1 {
     color: ${configurations?.title_color || "#515151"};
-    font-size: ${configurations?.title_size || "19px"};
-    margin-top: 15px;
-    margin-bottom: 40px;
+    font-size: ${configurations?.title_size || "12px"};
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
   .${uniqueClassName} .sub-groups {
     display: flex;
@@ -1032,7 +1028,7 @@ function convertToFormat(JsonData) {
   .${uniqueClassName} .sub-group-div h2 {
     height:15px;
     margin:0;
-    margin-bottom: 162px;
+    margin-bottom: 115px;
   }
   .${uniqueClassName} .subgroups-mid-top {
     display: flex;
@@ -1053,9 +1049,9 @@ function convertToFormat(JsonData) {
   .${uniqueClassName} .icon_plus_name::after{
     content: "";
     position: absolute;
-    height: 200px;
-    width: 1px;
-    top: 89px;
+    height: 140px;
+    width: 0.5px;
+    top: 55px;
     left: 50%;
     padding: 0;
     margin: 0;
@@ -1065,41 +1061,43 @@ function convertToFormat(JsonData) {
   .${uniqueClassName} .icon_plus_name::before{
     content: "";
     position: absolute;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    top: 285px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    top: 195px;
     left: 50%;
+    z-index:2;
     transform: translateX(-50%);
   }`
         : ""
     }
   .${uniqueClassName} .icon_plus_name span {
     position: absolute;
-    top: -20px;
+    top: -12px;
+    font-size:10px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .${uniqueClassName} .icon_plus_name .fa-user{
-    font-size: 30px;
+    font-size: 15px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     margin-bottom: 30px; 
   }
   .${uniqueClassName} .icon_plus_name p {
     display: inline;
-    padding: 13px 10px;
-    border-radius: 20px;
+    padding: 8px 11px;
+    border-radius: 23px;
     position: absolute;
-    top: 29px;
-    font-size: 16px;
+    top: 21px;
+    font-size: 9px;
     color: white;
-    width: 65px;
+    width: 40px;
     text-align: center;
   }
   .${uniqueClassName} .subgroups-on-line {
@@ -1107,7 +1105,7 @@ function convertToFormat(JsonData) {
     align-items: center;
     justify-content: space-evenly;
     position: relative;
-    margin-top: 225px;
+    margin-top: 135px;
     z-index: 3;
   }
   .${uniqueClassName} .subgroups-on-line-content{
@@ -1115,17 +1113,17 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} .subgroups-on-line-content h6{
     margin: 0;
-    font-size: 15px;
-    border-radius: 7px;
-    border-bottom-right-radius: 20px;
-    padding: 13px 17px;
+    font-size: 9px;
+    border-radius: 5px;
+    border-bottom-right-radius: 18px;
+    padding: 10px 15px;
     position: relative;
   }
   .${uniqueClassName} .subgroups-on-line-content h6::after {
     content: "";
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     bottom: 0px;
     left: 50%;
@@ -1134,29 +1132,29 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} .subgroups-Timeline-bottom-content {
     display: flex;
-    margin-top: 180px;
+    margin-top: 130px;
     align-items: center;
     position: absolute;
     width: 100%;
     z-index: 3;
   }
   .${uniqueClassName} .subgroups-Timeline-bottom-content .fa-clock{
-    font-size: 18px;
+    font-size: 10px;
     margin: 0;
     padding: 0;
     margin-top: 2px;
-    padding-left: 5px;
+    padding-left: 3px;
   }
   .${uniqueClassName} .subgroups-Timeline-bottom-logo_text {
     display: flex;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     align-items: center;
     justify-content: end;
-    font-size:10px;
+    font-size:7px;
     margin: 0;
     padding: 0;
-    padding-right: 10px;
+    padding-right: 7px;
     position: absolute;
   }
   
@@ -1167,20 +1165,20 @@ function convertToFormat(JsonData) {
   .${uniqueClassName}::after {
     content: "";
     position: absolute;
-    border-right: 3px solid ${configurations?.line_color};
-    height: 530px;
+    border-right: 2px solid ${configurations?.line_color};
+    height: 367px;
     right: 0px;
-    bottom: 485px;
+    bottom: 325px;
   }
   .${uniqueClassName}::before {
     content: "";
     position: absolute;
     background-color: ${configurations?.line_color};
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
-    right: -4px;
-    top: 62px;
+    right: -1.5px;
+    top: 18px;
   } `
       : ""
   }
@@ -1194,7 +1192,7 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} h2 {
     color: ${sg.configurations?.title_color || "#333"};
-    font-size: ${sg.configurations?.title_size || "14px"};
+    font-size: ${sg.configurations?.title_size || "10px"};
   }
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
@@ -1215,7 +1213,7 @@ function convertToFormat(JsonData) {
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${
           idx + 1
         } .icon_plus_name::before {
-    border-top: 10px solid ${sg.content.top_down_arrow.arrow_color};
+    border-top: 7px solid ${sg.content.top_down_arrow.arrow_color};
   }
   `;
       }
@@ -1286,7 +1284,7 @@ function convertToFormat(JsonData) {
         sg.content.timelineSeries.configuration.position_left[i] || "0px"
       };
       top: ${sg.content.timelineSeries.configuration.position_top[i] || "0px"};
-      position: absolute; /* Important for pseudo positioning */
+      position: absolute;
   }
 
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}
@@ -1330,18 +1328,18 @@ function convertToFormat(JsonData) {
     position: absolute;
     content: "";
     border-left: 1px solid ${sg.content.line_color};
-    height: 500px;
+    height: 330px;
     right: -1px;
     top: 10px;
   }
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}::before {
     position: absolute;
     content: "";
-    height: 7px;
+    height: 5px;
     background-color: ${sg.content.line_color};
     border-radius: 50%;
-    width: 7px;
-    right: -4px;
+    width: 5px;
+    right: -3px;
     top: 5px;
   }`;
       }
@@ -1351,30 +1349,30 @@ function convertToFormat(JsonData) {
           sg.content.on_line_content_configuration.bottom_shape_postion || [];
 
         inlineContentArray.forEach((level, inlineIdx) => {
-          let beforeTop = "395px";
-          let afterTop = "45px";
-          let afterHeight = "345px";
+          let beforeTop = "245px";
+          let afterTop = "30px";
+          let afterHeight = "210px";
 
           switch (level) {
             case "Level_2":
-              beforeTop = "423px";
-              afterTop = "40px";
-              afterHeight = "375px";
+              beforeTop = "265px";
+              afterTop = "30px";
+              afterHeight = "230px";
               break;
             case "Level_3":
-              beforeTop = "450px";
-              afterTop = "40px";
-              afterHeight = "405px";
+              beforeTop = "285px";
+              afterTop = "30px";
+              afterHeight = "250px";
               break;
             case "Level_4":
-              beforeTop = "476px";
-              afterTop = "40px";
-              afterHeight = "430px";
+              beforeTop = "305px";
+              afterTop = "30px";
+              afterHeight = "270px";
               break;
             case "Level_5":
-              beforeTop = "505px";
-              afterTop = "40px";
-              afterHeight = "457px";
+              beforeTop = "325px";
+              afterTop = "30px";
+              afterHeight = "290px";
               break;
           }
 
@@ -1384,7 +1382,7 @@ function convertToFormat(JsonData) {
         content: "";
         position: absolute;
         height: ${afterHeight};
-        width: 2px !important;
+        width: 1px !important;
         top: ${afterTop};
         left: 50%;
         padding: 0;
@@ -1400,8 +1398,8 @@ function convertToFormat(JsonData) {
           } .${uniqueClassName}-on-line-content${inlineIdx + 1}::before {
         content: "";
         position: absolute;
-        width: 17px;
-        height: 15px;
+        width: 13px;
+        height: 11px;
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
         top: ${beforeTop};
         left: 50%;
@@ -1427,7 +1425,7 @@ function convertToFormat(JsonData) {
   left: ${sg.content.connection_Circle.position_Left || "0px"};
   width: ${sg.content.connection_Circle.Width_And_Height || "0px"};
   height: ${sg.content.connection_Circle.Width_And_Height || "0px"};
-  bottom:30px;
+  bottom:20px;
   overflow: hidden;
   z-index:-2;
   transform: rotateZ(180deg);
@@ -1466,8 +1464,8 @@ function convertToFormat(JsonData) {
     left: ${sg.content.connection_Line.position?.left[i] || "0px"};
     width: ${sg.content.connection_Line.width[i] || "0px"};
     height: ${sg.content.connection_Line.height[i] || "0px"};
-    border-top:2px solid ${sg.content.connection_Line.line_color[i] || "black"};
-    border-right:2px solid ${
+    border-top:1px solid ${sg.content.connection_Line.line_color[i] || "black"};
+    border-right:1px solid ${
       sg.content.connection_Line.line_color[i] || "black"
     };
     border-top-right-radius:20px;
@@ -1480,13 +1478,13 @@ function convertToFormat(JsonData) {
     position: absolute;
     width: 0;
     height: 0;
-    border-right: 7px solid transparent;
-    border-left: 7px solid transparent;
-    border-top: 10px solid ${
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top: 6px solid ${
       sg.content.connection_Line.arrow_color[i] || "#000"
     };
-    right: -7px;
-    bottom:-2px;
+    right: -4px;
+    bottom:-5px;
   }
       `;
         }
@@ -1520,7 +1518,7 @@ function convertToFormat(JsonData) {
     sg.content.connection_Rectangle.border_radius || "0px"
   };
   box-sizing: border-box;
-  top:32px;
+  top:21px;
   z-index:-1;
 }
   `;
@@ -1578,25 +1576,26 @@ body {
 }
 .PPT-Box {
   border: 1px solid black;
-  height: 1080px;
-  width: 1900px;
+  height: 710px;
+  width:1520px;
   background-color: #f6fcfc;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px 0 0 0;
+  overflow:hidden;
+  justify-content: start;
 }
 .mid-Line {
-  width: 90%;
+  width: 95%;
   position: absolute;
   top: 55%;
-  left: 50%;
+  left: 52%;
   transform: translate(-50%, -50%);
-  height: 25px;
-  box-shadow: 0 0 70px #58e3d2, 0 0 30px #b8f4eb;
+  height: 15px;
+  box-shadow: 0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;
   background-color: #58e3d2;
   z-index: 1;
+  border-bottom-left-radius:10px;
 }
 .box-shadow-box {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.218);
@@ -1606,14 +1605,14 @@ body {
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 137px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: end;
 }
 .footer-dark-five-lines div {
   background: linear-gradient(to bottom, #f5fbfb, #eaf0f0);
-  height: calc(137px / 5);
+  height: calc(100px / 5);
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
   position:relative;
@@ -1623,7 +1622,7 @@ body {
 }
 .footer-dark-five-lines div h4 {
   margin: 0;
-  font-size: 12px;
+  font-size: 9px;
   text-align: right;
   color: #333;
   position:absolute;
