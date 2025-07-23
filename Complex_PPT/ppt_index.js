@@ -30,8 +30,6 @@ JSON_Data = {
       title: "Pre-diagnosi",
       configurations: {
         title_color: "#515151",
-        title_size: "12px",
-        box_width: "150px",
         line_right: "True",
       },
       start_content: {
@@ -39,9 +37,7 @@ JSON_Data = {
         steps: ["SINTOMI", "REPERTO INCIDENTALE", "SCREENING I LIVELLO"],
         configurations: {
           logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
-          width: ["40px", "65px", "55px"],
           background_color: "white",
-          font_size: "9px",
           font_color: "black",
         },
       },
@@ -52,11 +48,8 @@ JSON_Data = {
       title: "Diagnosi e pre-treatment",
       configurations: {
         title_color: "#515151",
-        title_size: "12px",
         line_right: "true",
         line_color: "#adafaf",
-        box_padding: "0 10px",
-        box_margin: "0px 0px",
       },
       sub_groups: [
         {
@@ -64,18 +57,19 @@ JSON_Data = {
           title: "Diagnosi a presa in carico",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "10px",
-            margin: "0",
-            padding: "0 10px 0 0",
           },
           content: {
             logo_heading: ["", "GOM", "GOM"],
-            content_width: "210px",
             logo_heading_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_heading_border_color: "#a334c8",
             logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_title: ["MMG", "Chirurgo Senologo", "Radiologo"],
+            logo_id_names: [
+              "logo_title_id1",
+              "logo_title_id2",
+              "logo_title_id3",
+            ],
             logo_title_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             top_down_arrow: {
@@ -83,16 +77,22 @@ JSON_Data = {
               arrow_color: "#a334c8",
               line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             },
-            connection_Line: {
-              display: "false",
-              content_Num: 0,
-              position: {
-                left: ["0px"],
-                top: ["0px"],
-              },
-              width: ["0px"],
-              arrow_color: ["#a334c8"],
-              line_color: ["#9f30cb"],
+            connecting_Line: {
+              display: "true",
+              connections: [
+                {
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id2",
+                  height: "Level_1",
+                },
+                {
+                  starting: "logo_title_id2",
+                  ending: "logo_title_id3",
+                  height: "Level_1",
+                },
+              ],
+              arrow_color: ["#a334c8", "#9f30cb"],
+              line_color: ["#9f30cb", "#9f30cb"],
             },
             connection_Rectangle: {
               display: "false",
@@ -115,6 +115,11 @@ JSON_Data = {
             logo_para_color: "white",
             on_line_content_configuration: {
               content: ["VISITA", "VISITA", "ESAMI"],
+              content_id: [
+                "on_line_content_1",
+                "on_line_content_2",
+                "on_line_content_3",
+              ],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -125,31 +130,26 @@ JSON_Data = {
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               bottom_shape_postion: ["Level_1", "Level_2", "Level_2"],
             },
-            timelineSeries: {
-              content: ["<10 gg da", "<10 gg da"],
+            BottomtimelineSeries: {
               background_color:
-                "linear-gradient(to right, #f6f4dc60 , #ffc305)",
-              configuration: {
-                position_left: ["38px", "117px"],
-                position_top: ["0px", "0px"],
-                width: ["72px", "60px"],
-                pseudo_Element_Configuration: {
-                  color: ["#ffc100", "#ffc100"],
-                  border_width: ["1px", "1px"],
-                  circle_size: ["5px", "5px"],
-                  line_width: ["66px", "66px"],
-                  line_height: ["43px", "43px"],
-                  circle_position: {
-                    bottom: ["61px", "61px"],
-                    right: ["77px", "77px"],
-                  },
-                  line_position: {
-                    bottom: ["20px", "20px"],
-                    right: ["13px", "13px"],
-                    radius: ["30px", "30px"],
-                  },
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc100",
+              timlines: [
+                {
+                  content: "<10 gg da",
+                  height: "Level_1",
+                  show_border: "true",
+                  starting: "on_line_content_1",
+                  ending: "on_line_content_2",
                 },
-              },
+                {
+                  content: "<10 gg da",
+                  height: "Level_1",
+                  show_border: "true",
+                  starting: "on_line_content_2",
+                  ending: "on_line_content_3",
+                },
+              ],
             },
           },
         },
@@ -158,18 +158,15 @@ JSON_Data = {
           title: "Decisione Terapeutica",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "10px",
-            margin: "0px",
-            padding: "0 0 0 15px",
           },
           content: {
             logo_heading: [""],
-            content_width: "110px",
             logo_heading_color:
               "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
             logo_heading_border_color: "#a334c8",
             logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_title: ["GOM"],
+            logo_id_names: ["logo_title_id4"],
             logo_title_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             top_down_arrow: {
@@ -177,16 +174,22 @@ JSON_Data = {
               arrow_color: "#ffc100",
               line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
             },
-            connection_Line: {
-              display: "false",
-              content_Num: 0,
-              position: {
-                left: ["0px"],
-                top: ["0px"],
-              },
-              width: ["0px"],
-              arrow_color: ["#a334c8"],
-              line_color: ["#9f30cb"],
+            connecting_Line: {
+              display: "true",
+              connections: [
+                {
+                  starting: "logo_title_id4",
+                  ending: "logo_title_id6",
+                  height: "Level_1",
+                },
+                {
+                  starting: "logo_title_id4",
+                  ending: "logo_title_id5",
+                  height: "Level_1",
+                },
+              ],
+              arrow_color: ["#ffc305", "#ffc305"],
+              line_color: ["#ffc305", "#ffc305"],
             },
             connection_Rectangle: {
               display: "true",
@@ -209,6 +212,7 @@ JSON_Data = {
             logo_para_color: "white",
             on_line_content_configuration: {
               content: ["DIAGNOSI"],
+              content_id: ["on_line_content_4"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -219,31 +223,19 @@ JSON_Data = {
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               bottom_shape_postion: ["Level_2"],
             },
-            timelineSeries: {
-              content: ["<30 gg da"],
+            BottomtimelineSeries: {
               background_color:
-                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-              configuration: {
-                position_left: ["-50px"],
-                position_top: ["0px"],
-                width: ["110px"],
-                pseudo_Element_Configuration: {
-                  color: ["#ffc100"],
-                  border_width: ["1px"],
-                  circle_size: ["5px"],
-                  line_width: ["115px"],
-                  line_height: ["43px"],
-                  circle_position: {
-                    bottom: ["61px"],
-                    right: ["128px"],
-                  },
-                  line_position: {
-                    bottom: ["20px"],
-                    right: ["13px"],
-                    radius: ["30px"],
-                  },
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc100",
+              timlines: [
+                {
+                  content: "<30 gg da",
+                  height: "Level_1",
+                  show_border: "true",
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_4",
                 },
-              },
+              ],
             },
           },
         },
@@ -255,11 +247,8 @@ JSON_Data = {
       title: "Treatment",
       configurations: {
         title_color: "#515151",
-        title_size: "12px",
         line_right: "true",
         line_color: "#adafaf",
-        box_padding: "0 10px",
-        box_margin: "0px 0px",
       },
       sub_groups: [
         {
@@ -267,18 +256,15 @@ JSON_Data = {
           title: "Terapia Neo-Adiuvante",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "10px",
-            margin: "0",
-            padding: "0",
           },
           content: {
             logo_heading: ["GOM", "GOM"],
-            content_width: "150px",
             logo_heading_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_heading_border_color: "#a334c8",
             logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_title: ["Oncologo", "Infermiere"],
+            logo_id_names: ["logo_title_id5", "logo_title_id6"],
             logo_title_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             top_down_arrow: {
@@ -286,17 +272,27 @@ JSON_Data = {
               arrow_color: "#a334c8",
               line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             },
-            connection_Line: {
+            connecting_Line: {
               display: "true",
-              content_Num: 3,
-              position: {
-                left: ["37px", "113px", "37px"],
-                bottom: ["40px", "40px", "40px"],
-              },
-              width: ["192px", "460px", "465px"],
-              height: ["30px", "40px", "30px"],
-              arrow_color: ["#a334c8", "#ffc100", "#a334c8"],
-              line_color: ["#9f30cb", "#ffc100", "#9f30cb"],
+              connections: [
+                {
+                  starting: "logo_title_id5",
+                  ending: "logo_title_id8",
+                  height: "Level_5",
+                },
+                {
+                  starting: "logo_title_id6",
+                  ending: "logo_title_id11",
+                  height: "Level_6",
+                },
+                {
+                  starting: "logo_title_id6",
+                  ending: "logo_title_id12",
+                  height: "Level_6",
+                },
+              ],
+              arrow_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
+              line_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
             },
             connection_Rectangle: {
               display: "true",
@@ -319,6 +315,11 @@ JSON_Data = {
             logo_para_color: "white",
             on_line_content_configuration: {
               content: ["ET", "TT", "CT"],
+              content_id: [
+                "on_line_content_5",
+                "on_line_content_6",
+                "on_line_content_7",
+              ],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -329,31 +330,19 @@ JSON_Data = {
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               bottom_shape_postion: ["Level_3", "Level_3", "Level_2"],
             },
-            timelineSeries: {
-              content: ["<30 gg da"],
+            BottomtimelineSeries: {
               background_color:
-                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-              configuration: {
-                position_left: ["-63px"],
-                position_top: ["0px"],
-                width: ["191px"],
-                pseudo_Element_Configuration: {
-                  color: ["#ffc100"],
-                  border_width: ["1px"],
-                  circle_size: ["5px"],
-                  line_width: ["196px"],
-                  line_height: ["43px"],
-                  circle_position: {
-                    bottom: ["61px"],
-                    right: ["208px"],
-                  },
-                  line_position: {
-                    bottom: ["20px"],
-                    right: ["13px"],
-                    radius: ["30px"],
-                  },
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc100",
+              timlines: [
+                {
+                  content: "<30 gg da",
+                  height: "Level_1",
+                  show_border: "true",
+                  starting: "on_line_content_4",
+                  ending: "on_line_content_7",
                 },
-              },
+              ],
             },
           },
         },
@@ -362,35 +351,21 @@ JSON_Data = {
           title: "Chirurgia",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "10px",
-            margin: "0px",
-            padding: "0 10px",
           },
           content: {
             logo_heading: ["GOM", ""],
-            content_width: "140px",
             logo_heading_color:
               "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             logo_heading_border_color: "#a334c8",
             logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_title: ["Chirurgo/ Senologo", "Chirurgo Plastico"],
+            logo_id_names: ["logo_title_id7", "logo_title_id8"],
             logo_title_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             top_down_arrow: {
               display: "false",
               arrow_color: "#a334c8",
               line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
-            },
-            connection_Line: {
-              display: "false",
-              content_Num: 0,
-              position: {
-                left: ["0px"],
-                top: ["0px"],
-              },
-              width: ["0px"],
-              arrow_color: ["#a334c8"],
-              line_color: ["#9f30cb"],
             },
             connection_Rectangle: {
               display: "false",
@@ -413,6 +388,7 @@ JSON_Data = {
             logo_para_color: "white",
             on_line_content_configuration: {
               content: ["INTERVENTO"],
+              content_id: ["on_line_content_8"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -423,31 +399,26 @@ JSON_Data = {
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               bottom_shape_postion: ["Level_2"],
             },
-            timelineSeries: {
-              content: ["<30 gg da", "<60 gg da"],
+            BottomtimelineSeries: {
               background_color:
-                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-              configuration: {
-                position_left: ["-25px", "-352px"],
-                position_top: ["0px", "33px"],
-                width: ["100px", "427px"],
-                pseudo_Element_Configuration: {
-                  color: ["#ffc100"],
-                  border_width: ["1px"],
-                  circle_size: ["5px"],
-                  line_width: ["105px"],
-                  line_height: ["43px"],
-                  circle_position: {
-                    bottom: ["61px"],
-                    right: ["117px"],
-                  },
-                  line_position: {
-                    bottom: ["20px"],
-                    right: ["13px"],
-                    radius: ["30px"],
-                  },
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc100",
+              timlines: [
+                {
+                  content: "<30 gg da",
+                  height: "Level_1",
+                  show_border: "true",
+                  starting: "on_line_content_7",
+                  ending: "on_line_content_8",
                 },
-              },
+                {
+                  content: "<60 gg da",
+                  height: "Level_6",
+                  show_border: "false",
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_8",
+                },
+              ],
             },
           },
         },
@@ -456,31 +427,22 @@ JSON_Data = {
           title: "Chemioterapia",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "10px",
-            margin: "0px 0px",
-            padding: "0px 10px",
           },
           content: {
-            logo_heading: [""],
-            content_width: "130px",
+            logo_heading: ["GOM", "DOM"],
             logo_heading_color:
-              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
-            logo_title: [""],
+              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
+            logo_heading_border_color: "#a334c801",
+            logo_title: ["GOM", "DOM"],
+            logo_id_names: ["logo_title_id9", "logo_title_id10"],
+            logo_color:
+              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
+            logo_title_color:
+              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
             top_down_arrow: {
               display: "false",
               arrow_color: "#ffc100",
               line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-            },
-            connection_Line: {
-              display: "false",
-              content_Num: 0,
-              position: {
-                left: ["0px"],
-                top: ["0px"],
-              },
-              width: ["0px"],
-              arrow_color: ["#a334c8"],
-              line_color: ["#9f30cb"],
             },
             connection_Rectangle: {
               display: "false",
@@ -502,7 +464,8 @@ JSON_Data = {
             line_color: "#c4c9ca",
             logo_para_color: "white",
             on_line_content_configuration: {
-              content: ["DIAGNOSI", "CT"],
+              content: ["DICT", "CTDI"],
+              content_id: ["on_line_content_9", "on_line_content_10"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -513,31 +476,19 @@ JSON_Data = {
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               bottom_shape_postion: ["Level_2", "Level_2"],
             },
-            timelineSeries: {
-              content: ["<60 gg da"],
+            BottomtimelineSeries: {
               background_color:
-                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-              configuration: {
-                position_left: ["-78px"],
-                position_top: ["3.5px"],
-                width: ["188px"],
-                pseudo_Element_Configuration: {
-                  color: ["#ffc100"],
-                  border_width: ["1px"],
-                  circle_size: ["5px"],
-                  line_width: ["193px"],
-                  line_height: ["43px"],
-                  circle_position: {
-                    bottom: ["61px"],
-                    right: ["204px"],
-                  },
-                  line_position: {
-                    bottom: ["20px"],
-                    right: ["13px"],
-                    radius: ["30px"],
-                  },
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc100",
+              timlines: [
+                {
+                  content: "<60 gg da",
+                  height: "Level_1",
+                  show_border: "true",
+                  starting: "on_line_content_8",
+                  ending: "on_line_content_10",
                 },
-              },
+              ],
             },
           },
         },
@@ -546,35 +497,21 @@ JSON_Data = {
           title: "Radioterapia",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "10px",
-            margin: "0",
-            padding: "0 0 0 10px",
           },
           content: {
             logo_heading: ["ROM"],
-            content_width: "90px",
             logo_heading_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_heading_border_color: "#a334c8",
             logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
             logo_title: ["MMG"],
+            logo_id_names: ["logo_title_id11"],
             logo_title_color:
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             top_down_arrow: {
               display: "true",
               arrow_color: "#a334c8",
               line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
-            },
-            connection_Line: {
-              display: "false",
-              content_Num: 0,
-              position: {
-                left: ["0px"],
-                top: ["0px"],
-              },
-              width: ["0px"],
-              arrow_color: ["#a334c8"],
-              line_color: ["#9f30cb"],
             },
             connection_Rectangle: {
               display: "false",
@@ -597,6 +534,7 @@ JSON_Data = {
             logo_para_color: "white",
             on_line_content_configuration: {
               content: ["VISITA"],
+              content_id: ["on_line_content_11"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -614,36 +552,22 @@ JSON_Data = {
           title: "",
           configurations: {
             title_color: "rgb(81, 81, 81)",
-            title_size: "14px",
-            margin: "0",
-            padding: "0 15px 0 0",
           },
           content: {
             logo_heading: [""],
-            content_width: "50px",
             logo_heading_color:
               "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
             logo_heading_border_color: "#ffc100",
             logo_color:
               "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
             logo_title: ["GOM"],
+            logo_id_names: ["logo_title_id12"],
             logo_title_color:
               "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
             top_down_arrow: {
               display: "true",
               arrow_color: "#ffc100",
               line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-            },
-            connection_Line: {
-              display: "false",
-              content_Num: 0,
-              position: {
-                left: ["0px"],
-                top: ["0px"],
-              },
-              width: ["0px"],
-              arrow_color: ["#a334c8"],
-              line_color: ["#9f30cb"],
             },
             connection_Rectangle: {
               display: "false",
@@ -666,6 +590,7 @@ JSON_Data = {
             logo_para_color: "white",
             on_line_content_configuration: {
               content: ["RT"],
+              content_id: ["on_line_content_12"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -676,31 +601,19 @@ JSON_Data = {
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               bottom_shape_postion: ["Level_4"],
             },
-            timelineSeries: {
-              content: ["<60 gg da"],
+            BottomtimelineSeries: {
               background_color:
-                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-              configuration: {
-                position_left: ["-123px"],
-                position_top: [""],
-                width: ["153px"],
-                pseudo_Element_Configuration: {
-                  color: ["#ffc100"],
-                  border_width: ["1px"],
-                  circle_size: ["5px"],
-                  line_width: ["159px"],
-                  line_height: ["43px"],
-                  circle_position: {
-                    bottom: ["61px"],
-                    right: ["170px"],
-                  },
-                  line_position: {
-                    bottom: ["20px"],
-                    right: ["12.5px"],
-                    radius: ["30px"],
-                  },
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc100",
+              timlines: [
+                {
+                  content: "<60 gg da",
+                  height: "Level_1",
+                  show_border: "true",
+                  starting: "on_line_content_10",
+                  ending: "on_line_content_12",
                 },
-              },
+              ],
             },
           },
         },
@@ -763,17 +676,9 @@ function convertToFormat(JsonData) {
   `;
 
     // ✅ Extract configurations
-    const boxWidth = configurations?.box_width || "180px";
     const titleColor = configurations?.title_color || "#515151";
-    const title_size = configurations?.title_size || "12px";
     const lineRight = configurations?.line_right === "True";
-    const font_size = start_content?.configurations?.font_size || "15px";
     const logoGradient = start_content?.configurations?.logo_color || "#2394b9";
-    const stepWidths = start_content?.configurations?.width || [
-      "70px",
-      "110px",
-      "95px",
-    ];
     const stepBg = start_content?.configurations?.background_color || "white";
     const font_color = start_content?.configurations?.font_color || "black";
 
@@ -784,7 +689,7 @@ function convertToFormat(JsonData) {
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    width: ${boxWidth};
+    width: 140px;
     height: 100%;
     position: relative;
   }
@@ -794,7 +699,7 @@ function convertToFormat(JsonData) {
   }
 
   .${className} .top h2 {
-    font-size: ${title_size};
+    font-size: 12px;
     color: ${titleColor};
   }
 
@@ -882,7 +787,9 @@ function convertToFormat(JsonData) {
     margin: 0;
     margin-left: 35px;
     border-radius: 7px;
-    font-size: ${font_size};
+    max-width:65px;
+    min-width:45px;
+    font-size: 9px;
     color:${font_color};
     border-bottom-right-radius: 23px;
   }
@@ -896,14 +803,6 @@ function convertToFormat(JsonData) {
     height: 135px;
   }
   `;
-
-    stepWidths.forEach((w, i) => {
-      css += `
-    .${className} .mid-top .start-step${i + 1} {
-      width: ${w};
-    }
-    `;
-    });
 
     return { html, css };
   };
@@ -936,22 +835,30 @@ function convertToFormat(JsonData) {
       html += `<div class="subgroups-mid-top">\n`;
       sg.content.logo_title.forEach((logo, i) => {
         const heading = sg.content.logo_heading[i];
+        const logoId = sg.content.logo_id_names?.[i] || ""; // Safe optional chaining
         html += `<div class="icon_plus_name">\n`;
         if (heading) html += `<span>${limitText(heading, 5)}</span>\n`;
         html += `<i class="fa-solid fa-user"></i>\n`;
-        html += `<p>${limitText(logo, 8)}</p>\n`;
+        html += `<p${logoId ? ` id="${logoId}"` : ""}>${limitText(
+          logo,
+          8
+        )}</p>\n`;
         html += `</div>\n`;
       });
+
       html += `</div>\n`;
 
       // ▶️ On-line content
       html += `<div class="subgroups-on-line">\n`;
 
       sg.content.on_line_content_configuration.content.forEach((c, i) => {
+        const contentId =
+          sg.content.on_line_content_configuration.content_id?.[i] || "";
+
         html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
           i + 1
-        }">\n`;
-        html += `<h6 class="box-shadow-box">${c}</h6>\n`;
+        }" id="${contentId}">\n`;
+        html += `<h6 class="box-shadow-box">${limitText(c, 10)}</h6>\n`;
         html += `</div>\n`;
       });
       if (
@@ -962,18 +869,6 @@ function convertToFormat(JsonData) {
         html += `<div class="connection-Circle-box${idx + 1}">
         <div class="connection-Circle-shape"></div>
         </div>\n`;
-      }
-
-      if (
-        sg.content.connection_Line &&
-        (sg.content.connection_Line.display === "true" ||
-          sg.content.connection_Line.display === true)
-      ) {
-        for (let i = 0; i < sg.content.connection_Line.content_Num; i++) {
-          html += `<div class="${uniqueClassName}-sub-group-div${
-            idx + 1
-          }-connection-line-${i + 1}"></div>\n`;
-        }
       }
 
       if (
@@ -1008,12 +903,11 @@ function convertToFormat(JsonData) {
     width: max-content;
     height: 100%;
     position:relative;
-    padding:${configurations.box_padding || "0"};
-    margin:${configurations.box_margin || "0"};
+    margin:0 10px;
   }
   .${uniqueClassName} h1 {
     color: ${configurations?.title_color || "#515151"};
-    font-size: ${configurations?.title_size || "12px"};
+    font-size: 12px;
     margin-top: 10px;
     margin-bottom: 20px;
   }
@@ -1167,7 +1061,7 @@ function convertToFormat(JsonData) {
     position: absolute;
     border-right: 2px solid ${configurations?.line_color};
     height: 367px;
-    right: 0px;
+    right: -8px;
     bottom: 325px;
   }
   .${uniqueClassName}::before {
@@ -1177,7 +1071,7 @@ function convertToFormat(JsonData) {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    right: -1.5px;
+    right: -10.5px;
     top: 18px;
   } `
       : ""
@@ -1185,19 +1079,21 @@ function convertToFormat(JsonData) {
   `;
 
     sub_groups.forEach((sg, idx) => {
+      const logoLength = sg.content?.logo_title?.filter(Boolean)?.length || 0;
+      const dynamicWidth = 110 + (logoLength - 1) * 50;
       css += `
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} {
-    margin:${sg.configurations?.margin || "0px"};
-    padding:${sg.configurations?.padding || "0px"};
+    margin:0px;
+    padding:0 10px;
   }
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} h2 {
     color: ${sg.configurations?.title_color || "#333"};
-    font-size: ${sg.configurations?.title_size || "10px"};
+    font-size: 10px;
   }
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
       } .subgroups-mid-top {
-    width: ${sg.content?.content_width || "auto"};
+    width: ${dynamicWidth}px;
   }
   `;
       if (
@@ -1447,48 +1343,6 @@ function convertToFormat(JsonData) {
 }
   `;
       }
-      // connection_Line CSS block:
-      if (
-        sg.content.connection_Line &&
-        (sg.content.connection_Line.display === "true" ||
-          sg.content.connection_Line.display === true)
-      ) {
-        for (let i = 0; i < sg.content.connection_Line.content_Num; i++) {
-          css += `
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-            idx + 1
-          }-connection-line-${i + 1} {
-    position: absolute;
-    z-index:-1;
-    bottom: ${sg.content.connection_Line.position?.bottom[i] || "0px"};
-    left: ${sg.content.connection_Line.position?.left[i] || "0px"};
-    width: ${sg.content.connection_Line.width[i] || "0px"};
-    height: ${sg.content.connection_Line.height[i] || "0px"};
-    border-top:1px solid ${sg.content.connection_Line.line_color[i] || "black"};
-    border-right:1px solid ${
-      sg.content.connection_Line.line_color[i] || "black"
-    };
-    border-top-right-radius:20px;
-  }
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-            idx + 1
-          }-connection-line-${i + 1}::after {
-    content: "";
-    z-index:-1;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-    border-top: 6px solid ${
-      sg.content.connection_Line.arrow_color[i] || "#000"
-    };
-    right: -4px;
-    bottom:-5px;
-  }
-      `;
-        }
-      }
 
       // connection_Rectangle CSS generation
       if (
@@ -1556,7 +1410,7 @@ console.log(result);
 
 // 2️⃣ Your predefined HTML with placeholder
 const PreDefined_HTML = `
-<div class="PPT-Box">
+<div class="PPT-Box" id="PPT-Box">
   <div class="mid-Line"></div>
   <div class="footer-dark-five-lines">
     <!-- Footer Divs Will Be Added Here -->
@@ -1634,13 +1488,17 @@ let dynamicFooterCSS = "";
 // Add widths for each footer div
 Object.keys(JSON_Data.footer.label_width).forEach((key, idx) => {
   const widthValue = JSON_Data.footer.label_width[key];
-  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${idx + 1}) { width: ${widthValue}; }\n`;
+  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${
+    idx + 1
+  }) { width: ${widthValue}; }\n`;
 });
 
 // Add left positions for each h4
 Object.keys(JSON_Data.footer.footer_label_position_left).forEach((key, idx) => {
   const leftValue = JSON_Data.footer.footer_label_position_left[key];
-  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${idx + 1}) h4 { left: ${leftValue}; }\n`;
+  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${
+    idx + 1
+  }) h4 { left: ${leftValue}; }\n`;
 });
 
 let footerHTML = "";
@@ -1668,3 +1526,250 @@ document.body.innerHTML = Final_HTML;
 const styleTag = document.createElement("style");
 styleTag.textContent = Final_CSS;
 document.head.appendChild(styleTag);
+
+// Make Connecting Lines
+function drawConnectingLines(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+
+  if (!pptBox) {
+    console.warn("PPT-Box not found.");
+    return;
+  }
+
+  const sub_groupELs = Array.from(
+    document.getElementsByClassName("subgroups-mid-top")
+  );
+
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, idx) => {
+      if (
+        sg.content &&
+        sg.content.connecting_Line &&
+        (sg.content.connecting_Line.display === "true" ||
+          sg.content.connecting_Line.display === true)
+      ) {
+        sg.content.connecting_Line.connections.forEach((connection, i) => {
+          const startEl = document.getElementById(connection.starting);
+          const endEl = document.getElementById(connection.ending);
+
+          if (!startEl || !endEl) {
+            console.warn("Element not found for connection:", connection);
+            return;
+          }
+
+          const levelStr = connection.height || "Level_1";
+          const levelNum = parseInt(levelStr.split("_")[1]) || 1;
+
+          const baseHeight = 30;
+          const baseTopH = 130;
+          const increment = 5;
+
+          // Calculate raw values
+          let rawHeight = baseHeight + (levelNum - 1) * increment;
+          let rawTopH = baseTopH - (levelNum - 1) * increment;
+
+          // Apply bounds (min = 30, max = 130)
+          const height = Math.min(Math.max(rawHeight, 30), 130);
+          const topH = Math.min(Math.max(rawTopH, 30), 130);
+
+          const startRect = startEl.getBoundingClientRect();
+          const endRect = endEl.getBoundingClientRect();
+          const pptRect = pptBox.getBoundingClientRect();
+
+          const deltaX = endRect.left - startRect.left;
+          const deltaY = endRect.top - startRect.top;
+          const width = Math.sqrt(deltaX * deltaX + deltaY * deltaY) - 10;
+          const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+
+          const left = startRect.left - pptRect.left + startRect.width / 2;
+          const top = startRect.top - pptRect.top;
+
+          const lineClass = `sub-group-sub-header-div${
+            idx + 1
+          }-connecting-line-${i + 1}`;
+          const dynamicStyle = `
+              .${lineClass} {
+                position: absolute;
+                z-index: 1;
+                top: ${topH + top}px;
+                left: ${left}px;
+                width: ${width}px;
+                height: ${height}px;
+                border-top: 1px solid ${
+                  sg.content.connecting_Line.line_color[i] || "black"
+                };
+                border-right: 1px solid ${
+                  sg.content.connecting_Line.line_color[i] || "black"
+                };
+                border-top-right-radius: 20px;
+                transform: rotate(${angle}deg);
+              }
+              .${lineClass}::after {
+                content: "";
+                position: absolute;
+                top: 90%;
+                right: 0px;
+                transform: translateX(50%);
+                border-top: 6px solid ${
+                  sg.content.connecting_Line.arrow_color[i] || "#000"
+                };
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+              }
+            `;
+
+          const style = document.createElement("style");
+          style.textContent = dynamicStyle;
+          document.head.appendChild(style);
+
+          const lineDiv = document.createElement("div");
+          lineDiv.className = lineClass;
+          pptBox.appendChild(lineDiv);
+        });
+      }
+    });
+  });
+}
+
+drawConnectingLines(JSON_Data);
+
+// Rendering Timeline Series
+function drawBottomTimelineSeries(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+
+  if (!pptBox) {
+    console.warn("PPT-Box not found.");
+    return;
+  }
+
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, idx) => {
+      const timeline = sg.content?.BottomtimelineSeries;
+      if (!timeline || !timeline.timlines || timeline.timlines.length === 0)
+        return;
+
+      timeline.timlines.forEach((item, i) => {
+        const startEl = document.getElementById(item.starting);
+        const endEl = document.getElementById(item.ending);
+
+        if (!startEl || !endEl) {
+          console.warn("Start or End element not found for timeline:", item);
+          return;
+        }
+
+        // Level-based height logic
+        const levelStr = item.height || "Level_1";
+        const levelNum = parseInt(levelStr.split("_")[1]) || 1;
+
+        const baseTopH = 160;
+        const increment = 5;
+
+        let rawTopH = baseTopH + (levelNum - 1) * increment;
+
+        const topH = Math.min(Math.max(rawTopH, 30), 210);
+
+        // Get bounding rectangles
+        const startRect = startEl.getBoundingClientRect();
+        const endRect = endEl.getBoundingClientRect();
+        const pptRect = pptBox.getBoundingClientRect();
+
+        const startCenterX =
+          startRect.left - pptRect.left + startRect.width / 2;
+        const endCenterX = endRect.left - pptRect.left + endRect.width / 2;
+
+        const width2 = Math.abs(endCenterX - startCenterX);
+
+        const left = startRect.left - pptRect.left + startRect.width / 2;
+        const top = startRect.top - pptRect.top;
+
+        const timelineClass = `timeline-bottom-line-${sectionIdx}-${idx}-${i}`;
+        const bg = timeline.background_color || "yellow";
+        const showBorder =
+          item.show_border === "true" || item.show_border === true;
+        const borderColor = showBorder
+          ? timeline.border_color || "black"
+          : "transparent";
+
+        const style = document.createElement("style");
+        style.textContent = `
+          .${timelineClass} {
+            position: absolute;
+            z-index: 3;
+            top: ${topH + top}px;
+            left: ${left}px;
+            width: ${width2+4}px;
+            height:20px;
+            background: ${bg};
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-right: 5px;
+            color: black;
+          }
+          .${timelineClass} p{
+            font-size: 7px;
+            font-weight:bold;
+          }
+          .${timelineClass} i{
+            font-size: 10px;
+            margin-top:1px;
+            margin-left: 5px;
+          }
+          .${timelineClass}::after {
+            content: "";
+            position: absolute;
+            bottom: 55px;
+            left: -4px;
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            background: ${borderColor};
+          }
+          .${timelineClass}::before {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            border-top:1px solid ${borderColor};
+            border-right:1px solid ${borderColor};
+            width:${width2}px;
+            left: -3px;
+            height:38px;
+            border-top-right-radius:20px;
+          }
+
+        `;
+        document.head.appendChild(style);
+
+        const div = document.createElement("div");
+        div.className = timelineClass;
+        div.innerHTML = `<p>${item.content}</p><i class="fa-regular fa-clock"></i>`;
+        pptBox.appendChild(div);
+      });
+    });
+  });
+}
+
+drawBottomTimelineSeries(JSON_Data);
+
+// Practice
+const PPT_Box = document.getElementById("PPT-Box");
+const elem1 = document.getElementById("logo_title_id10");
+
+const parent_rect = PPT_Box.getBoundingClientRect();
+const rect1 = elem1.getBoundingClientRect();
+
+const relativeX = rect1.left - parent_rect.left;
+const relativeY = rect1.top - parent_rect.top;
+
+console.log("Position inside PPT_Box:", {
+  x: relativeX,
+  y: relativeY,
+  width: rect1.width,
+  height: rect1.height,
+});
