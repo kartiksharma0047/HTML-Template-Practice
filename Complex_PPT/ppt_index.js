@@ -94,21 +94,27 @@ JSON_Data = {
               arrow_color: ["#a334c8", "#9f30cb"],
               line_color: ["#9f30cb", "#9f30cb"],
             },
-            connection_Rectangle: {
-              display: "false",
-              position_Left: "0px",
-              width: "0px",
-              height: "0px",
-              border_size: "12px",
-              border_color: "#58e3d2",
-              border_radius: "10px",
-            },
-            connection_Circle: {
-              display: "false",
-              position_Left: "0px",
-              Width_And_Height: "130px",
-              border_size: "15px",
-              border_color: "#58e3d2",
+            connecting_Rectangle: {
+              display: "true",
+              connections: [
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "false",
+                  ending: "on_line_content_3",
+                  end_from_ending: "true",
+                  height: "Level_5",
+                  border_thickness: "Level_2",
+                },
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "true",
+                  ending: "on_line_content_10",
+                  end_from_ending: "true",
+                  height: "Level_15",
+                  border_thickness: "Level_1",
+                },
+              ],
+              color: ["#58e3d2", "#9f30cb"],
             },
             line_right: "true",
             line_color: "#c4c9ca",
@@ -191,21 +197,27 @@ JSON_Data = {
               arrow_color: ["#ffc305", "#ffc305"],
               line_color: ["#ffc305", "#ffc305"],
             },
-            connection_Rectangle: {
-              display: "true",
-              position_Left: "95px",
-              width: "360px",
-              height: "60px",
-              border_size: "10px",
-              border_color: "#58e3d2",
-              border_radius: "6px",
-            },
-            connection_Circle: {
+            connecting_Rectangle: {
               display: "false",
-              position_Left: "0px",
-              Width_And_Height: "130px",
-              border_size: "15px",
-              border_color: "#58e3d2",
+              connections: [
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "false",
+                  ending: "on_line_content_3",
+                  end_from_ending: "true",
+                  height: "Level_5",
+                  border_thickness: "Level_2",
+                },
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "true",
+                  ending: "on_line_content_10",
+                  end_from_ending: "true",
+                  height: "Level_15",
+                  border_thickness: "Level_1",
+                },
+              ],
+              color: ["#58e3d2", "#9f30cb"],
             },
             line_right: "false",
             line_color: "#c4c9ca",
@@ -241,6 +253,7 @@ JSON_Data = {
         },
       ],
     },
+
     // Treatment
     {
       component: "Header",
@@ -294,21 +307,19 @@ JSON_Data = {
               arrow_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
               line_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
             },
-            connection_Rectangle: {
-              display: "true",
-              position_Left: "-5px",
-              width: "170px",
-              height: "40px",
-              border_size: "9px",
-              border_color: "#58e3d2",
-              border_radius: "6px",
-            },
-            connection_Circle: {
+            connecting_Rectangle: {
               display: "false",
-              position_Left: "0px",
-              Width_And_Height: "130px",
-              border_size: "15px",
-              border_color: "#58e3d2",
+              connections: [
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "false",
+                  ending: "on_line_content_3",
+                  end_from_ending: "true",
+                  height: "Level_5",
+                  border_thickness: "Level_2",
+                },
+              ],
+              color: ["#58e3d2"],
             },
             line_right: "true",
             line_color: "#c4c9ca",
@@ -367,21 +378,19 @@ JSON_Data = {
               arrow_color: "#a334c8",
               line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             },
-            connection_Rectangle: {
+            connecting_Rectangle: {
               display: "false",
-              position_Left: "0px",
-              width: "0px",
-              height: "0px",
-              border_size: "12px",
-              border_color: "#58e3d2",
-              border_radius: "10px",
-            },
-            connection_Circle: {
-              display: "false",
-              position_Left: "0px",
-              Width_And_Height: "130px",
-              border_size: "15px",
-              border_color: "#58e3d2",
+              connections: [
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "false",
+                  ending: "on_line_content_3",
+                  end_from_ending: "true",
+                  height: "Level_5",
+                  border_thickness: "Level_2",
+                },
+              ],
+              color: ["#58e3d2"],
             },
             line_right: "true",
             line_color: "#c4c9ca",
@@ -444,21 +453,19 @@ JSON_Data = {
               arrow_color: "#ffc100",
               line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
             },
-            connection_Rectangle: {
+            connecting_Rectangle: {
               display: "false",
-              position_Left: "0px",
-              width: "0px",
-              height: "0px",
-              border_size: "12px",
-              border_color: "#58e3d2",
-              border_radius: "10px",
-            },
-            connection_Circle: {
-              display: "true",
-              position_Left: "10px",
-              Width_And_Height: "110px",
-              border_size: "10px",
-              border_color: "#58e3d2",
+              connections: [
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "false",
+                  ending: "on_line_content_3",
+                  end_from_ending: "true",
+                  height: "Level_5",
+                  border_thickness: "Level_2",
+                },
+              ],
+              color: ["#58e3d2"],
             },
             line_right: "true",
             line_color: "#c4c9ca",
@@ -513,21 +520,19 @@ JSON_Data = {
               arrow_color: "#a334c8",
               line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
             },
-            connection_Rectangle: {
+            connecting_Rectangle: {
               display: "false",
-              position_Left: "0px",
-              width: "0px",
-              height: "0px",
-              border_size: "12px",
-              border_color: "#58e3d2",
-              border_radius: "10px",
-            },
-            connection_Circle: {
-              display: "false",
-              position_Left: "0px",
-              Width_And_Height: "130px",
-              border_size: "15px",
-              border_color: "#58e3d2",
+              connections: [
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "false",
+                  ending: "on_line_content_3",
+                  end_from_ending: "true",
+                  height: "Level_5",
+                  border_thickness: "Level_2",
+                },
+              ],
+              color: ["#58e3d2"],
             },
             line_right: "false",
             line_color: "#c4c9ca",
@@ -569,21 +574,19 @@ JSON_Data = {
               arrow_color: "#ffc100",
               line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
             },
-            connection_Rectangle: {
+            connecting_Rectangle: {
               display: "false",
-              position_Left: "0px",
-              width: "0px",
-              height: "0px",
-              border_size: "12px",
-              border_color: "#58e3d2",
-              border_radius: "10px",
-            },
-            connection_Circle: {
-              display: "false",
-              position_Left: "0px",
-              Width_And_Height: "130px",
-              border_size: "15px",
-              border_color: "#58e3d2",
+              connections: [
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "false",
+                  ending: "on_line_content_3",
+                  end_from_ending: "true",
+                  height: "Level_5",
+                  border_thickness: "Level_2",
+                },
+              ],
+              color: ["#58e3d2"],
             },
             line_right: "false",
             line_color: "#c4c9ca",
@@ -689,7 +692,8 @@ function convertToFormat(JsonData) {
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    width: 140px;
+    width: 120px;
+    padding-right:10px;
     height: 100%;
     position: relative;
   }
@@ -861,36 +865,8 @@ function convertToFormat(JsonData) {
         html += `<h6 class="box-shadow-box">${limitText(c, 10)}</h6>\n`;
         html += `</div>\n`;
       });
-      if (
-        sg.content.connection_Circle &&
-        (sg.content.connection_Circle.display === "true" ||
-          sg.content.connection_Circle.display === true)
-      ) {
-        html += `<div class="connection-Circle-box${idx + 1}">
-        <div class="connection-Circle-shape"></div>
-        </div>\n`;
-      }
-
-      if (
-        sg.content.connection_Rectangle &&
-        (sg.content.connection_Rectangle.display === "true" ||
-          sg.content.connection_Rectangle.display === true)
-      ) {
-        html += `<div class="connection-Rectangle${idx + 1}"></div>\n`;
-      }
 
       html += `</div>\n`;
-
-      // ▶️ Timeline bottom content — NOW DYNAMIC
-      html += `<div class="subgroups-Timeline-bottom-content">\n`;
-      sg.content.timelineSeries?.content.forEach((t, i) => {
-        html += `<div class="subgroups-Timeline-bottom-logo_text ${uniqueClassName}-timeline-bottom${
-          i + 1
-        }">\n`;
-        html += `<p><b>${t}</b></p>\n<i class="fa-regular fa-clock"></i>\n`;
-        html += `</div>\n`;
-      });
-      html += `</div>\n`; // End Timeline bottom
 
       html += `</div>\n`; // End sub-group-div
     });
@@ -944,7 +920,7 @@ function convertToFormat(JsonData) {
     content: "";
     position: absolute;
     height: 140px;
-    width: 0.5px;
+    width: 1px;
     top: 55px;
     left: 50%;
     padding: 0;
@@ -1023,33 +999,6 @@ function convertToFormat(JsonData) {
     left: 50%;
     transform: translate(-50%, 50%);
     z-index: 4;
-  }
-  .${uniqueClassName} .subgroups-Timeline-bottom-content {
-    display: flex;
-    margin-top: 130px;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    z-index: 3;
-  }
-  .${uniqueClassName} .subgroups-Timeline-bottom-content .fa-clock{
-    font-size: 10px;
-    margin: 0;
-    padding: 0;
-    margin-top: 2px;
-    padding-left: 3px;
-  }
-  .${uniqueClassName} .subgroups-Timeline-bottom-logo_text {
-    display: flex;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    align-items: center;
-    justify-content: end;
-    font-size:7px;
-    margin: 0;
-    padding: 0;
-    padding-right: 7px;
-    position: absolute;
   }
   
   /* === Right Line example === */
@@ -1158,66 +1107,6 @@ function convertToFormat(JsonData) {
   }
   `;
 
-      sg.content.timelineSeries?.content.forEach((t, i) => {
-        const pseudoConfig =
-          sg.content.timelineSeries.configuration.pseudo_Element_Configuration;
-
-        css += `
-  /* Timeline base block */
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-          idx + 1
-        } .${uniqueClassName}-timeline-bottom${i + 1} {
-    background: ${sg.content.timelineSeries.background_color};
-  }
-
-  /* Main logo text block */
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}
-    .subgroups-Timeline-bottom-logo_text.${uniqueClassName}-timeline-bottom${
-          i + 1
-        } {
-      width: ${sg.content.timelineSeries.configuration.width[i] || "100px"};
-      left: ${
-        sg.content.timelineSeries.configuration.position_left[i] || "0px"
-      };
-      top: ${sg.content.timelineSeries.configuration.position_top[i] || "0px"};
-      position: absolute;
-  }
-
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}
-    .subgroups-Timeline-bottom-logo_text.${uniqueClassName}-timeline-bottom${
-          i + 1
-        }::before {
-      content: "";
-      position: absolute;
-      width: ${pseudoConfig.line_width[i] || "100px"};
-      height: ${pseudoConfig.line_height[i] || "43px"};
-      border-top: ${pseudoConfig.border_width[i] || "1px"} solid ${
-          pseudoConfig.color[i] || "transparent"
-        };
-      border-right: ${pseudoConfig.border_width[i] || "1px"} solid ${
-          pseudoConfig.color[i] || "transparent"
-        };
-      border-top-right-radius:${pseudoConfig.line_position.radius[i] || "20px"};
-      bottom: ${pseudoConfig.line_position.bottom[i] || "70px"};
-      right: ${pseudoConfig.line_position.right[i] || "0px"};
-  }
-
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}
-    .subgroups-Timeline-bottom-logo_text.${uniqueClassName}-timeline-bottom${
-          i + 1
-        }::after {
-      content: "";
-      position: absolute;
-      border-radius:50%;
-      width: ${pseudoConfig.circle_size[i] || "7px"};
-      height: ${pseudoConfig.circle_size[i] || "7px"};
-      background: ${pseudoConfig.color[i] || "transparent"};
-      bottom: ${pseudoConfig.circle_position.bottom[i] || "70px"};
-      right: ${pseudoConfig.circle_position.right[i] || "0px"};
-  }
-  `;
-      });
-
       if (sg.content.line_right === "true" || sg.content.line_right === true) {
         css += `
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}::after {
@@ -1308,75 +1197,6 @@ function convertToFormat(JsonData) {
     `;
         });
       });
-
-      // connection_Circle CSS generation
-      if (
-        sg.content.connection_Circle &&
-        (sg.content.connection_Circle.display === "true" ||
-          sg.content.connection_Circle.display === true)
-      ) {
-        css += `
-.${uniqueClassName} .subgroups-on-line .connection-Circle-box${idx + 1} {
-  position: absolute;
-  left: ${sg.content.connection_Circle.position_Left || "0px"};
-  width: ${sg.content.connection_Circle.Width_And_Height || "0px"};
-  height: ${sg.content.connection_Circle.Width_And_Height || "0px"};
-  bottom:20px;
-  overflow: hidden;
-  z-index:-2;
-  transform: rotateZ(180deg);
-}
-.${uniqueClassName} .subgroups-on-line .connection-Circle-box${
-          idx + 1
-        } .connection-Circle-shape {
-  position: absolute;
-  box-sizing: border-box;
-  width: ${sg.content.connection_Circle.Width_And_Height || "130px"};
-  height: ${sg.content.connection_Circle.Width_And_Height || "130px"};
-  border: ${sg.content.connection_Circle.border_size || "15px"} solid ${
-          sg.content.connection_Circle.border_color || "#000"
-        };
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 0%;
-}
-  `;
-      }
-
-      // connection_Rectangle CSS generation
-      if (
-        sg.content.connection_Rectangle &&
-        (sg.content.connection_Rectangle.display === "true" ||
-          sg.content.connection_Rectangle.display === true)
-      ) {
-        css += `
-.${uniqueClassName} .subgroups-on-line .connection-Rectangle${idx + 1} {
-  position: absolute;
-  left: ${sg.content.connection_Rectangle.position_Left || "0px"};
-  width: ${sg.content.connection_Rectangle.width || "0px"};
-  height: ${sg.content.connection_Rectangle.height || "0px"};
-  border-bottom: ${
-    sg.content.connection_Rectangle.border_size || "12px"
-  } solid ${sg.content.connection_Rectangle.border_color || "#000"};
-  border-left: ${sg.content.connection_Rectangle.border_size || "12px"} solid ${
-          sg.content.connection_Rectangle.border_color || "#000"
-        };
-  border-right: ${
-    sg.content.connection_Rectangle.border_size || "12px"
-  } solid ${sg.content.connection_Rectangle.border_color || "#000"};
-  border-bottom-left-radius:${
-    sg.content.connection_Rectangle.border_radius || "0px"
-  };
-  border-bottom-right-radius:${
-    sg.content.connection_Rectangle.border_radius || "0px"
-  };
-  box-sizing: border-box;
-  top:21px;
-  z-index:-1;
-}
-  `;
-      }
     });
 
     return { html, css };
@@ -1425,30 +1245,34 @@ body {
   display: flex;
   align-items:center;
   justify-content: center;
-  transform:scale(0.6);
   font-family: sans-serif;
+  transform:scale(1);
+  overflow:hidden;
 }
 .PPT-Box {
   border: 1px solid black;
-  height: 710px;
   width:1520px;
+  height:710px;
   background-color: #f6fcfc;
   position: relative;
   display: flex;
+  overflow-x:hidden;
+  overflow-y:hidden;
   align-items: center;
-  overflow:hidden;
   justify-content: start;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .mid-Line {
-  width: 95%;
+  width:100%;
   position: absolute;
   top: 55%;
-  left: 52%;
-  transform: translate(-50%, -50%);
+  left: 55px;
+  transform: translateY(-50%);
   height: 15px;
   box-shadow: 0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;
   background-color: #58e3d2;
-  z-index: 1;
+  z-index: 3;
   border-bottom-left-radius:10px;
 }
 .box-shadow-box {
@@ -1536,10 +1360,6 @@ function drawConnectingLines(JSON_Data) {
     return;
   }
 
-  const sub_groupELs = Array.from(
-    document.getElementsByClassName("subgroups-mid-top")
-  );
-
   JSON_Data.body.forEach((section, sectionIdx) => {
     if (!section.sub_groups) return;
 
@@ -1586,9 +1406,7 @@ function drawConnectingLines(JSON_Data) {
           const left = startRect.left - pptRect.left + startRect.width / 2;
           const top = startRect.top - pptRect.top;
 
-          const lineClass = `sub-group-sub-header-div${
-            idx + 1
-          }-connecting-line-${i + 1}`;
+          const lineClass = `connecting-line-sec${sectionIdx}-sub${idx}-line${i}`;
           const dynamicStyle = `
               .${lineClass} {
                 position: absolute;
@@ -1701,7 +1519,7 @@ function drawBottomTimelineSeries(JSON_Data) {
             z-index: 3;
             top: ${topH + top}px;
             left: ${left}px;
-            width: ${width2+4}px;
+            width: ${width2 + 4}px;
             height:20px;
             background: ${bg};
             border-top-right-radius: 10px;
@@ -1756,6 +1574,127 @@ function drawBottomTimelineSeries(JSON_Data) {
 }
 
 drawBottomTimelineSeries(JSON_Data);
+
+// Rendering Rectangle
+function drawConnectingRectangle(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+
+  if (!pptBox) {
+    console.warn("PPT-Box not found.");
+    return;
+  }
+
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, idx) => {
+      const rectangleData = sg.content?.connecting_Rectangle;
+
+      if (
+        !rectangleData ||
+        !(rectangleData.display === "true" || rectangleData.display === true)
+      )
+        return;
+
+      rectangleData.connections.forEach((connection, i) => {
+        const startEl = document.getElementById(connection.starting);
+        const endEl = document.getElementById(connection.ending);
+
+        if (!startEl || !endEl) {
+          console.warn(
+            "Element not found for rectangle connection:",
+            connection
+          );
+          return;
+        }
+
+        const pptRect = pptBox.getBoundingClientRect();
+        const startRect = startEl.getBoundingClientRect();
+        const endRect = endEl.getBoundingClientRect();
+        const distant_Space = 5;
+
+        // Determine start and end X based on flags
+        const startX =
+          connection.start_from_starting === "true" ||
+          connection.start_from_starting === true
+            ? startRect.left - distant_Space
+            : startRect.left + startRect.width + distant_Space;
+
+        const endX =
+          connection.end_from_ending === "true" ||
+          connection.end_from_ending === true
+            ? endRect.left + endRect.width + distant_Space
+            : endRect.left - distant_Space;
+
+        const left = Math.min(startX, endX) - pptRect.left - distant_Space;
+        const width = Math.abs(endX - startX);
+
+        // Handle height level
+        const heightLevelStr = connection.height || "Level_1";
+        const heightLevelNum = parseInt(heightLevelStr.split("_")[1]) || 1;
+        const baseHeight = 20;
+        const heightIncrement = 5;
+        const minHeight = 10;
+        const maxHeight = 95;
+        const height = Math.min(
+          Math.max(
+            baseHeight + (heightLevelNum - 1) * heightIncrement,
+            minHeight
+          ),
+          maxHeight
+        );
+
+        // Handle border thickness level
+        const borderLevelStr = connection.border_thickness || "Level_1";
+        const borderLevelNum = parseInt(borderLevelStr.split("_")[1]) || 1;
+        const baseBorder = 6;
+        const borderIncrement = 2;
+        const minBorder = 4;
+        const maxBorder = 20;
+        const borderSize = Math.min(
+          Math.max(
+            baseBorder + (borderLevelNum - 1) * borderIncrement,
+            minBorder
+          ),
+          maxBorder
+        );
+
+        const color = rectangleData.color?.[i] || "#000";
+        const borderRadius = "8px";
+        const topOffset = 397;
+
+        const className = `connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}`;
+
+        const dynamicStyle = `
+          .${className} {
+            position: absolute;
+            left: ${left}px;
+            width: ${width}px;
+            height: ${height}px;
+            border-bottom: ${borderSize}px solid ${color};
+            border-left: ${borderSize}px solid ${color};
+            border-right: ${borderSize}px solid ${color};
+            border-bottom-left-radius: ${borderRadius};
+            border-bottom-right-radius: ${borderRadius};
+            box-sizing: border-box;
+            top: ${topOffset}px;
+            z-index: 2;
+          }
+        `;
+
+        const styleEl = document.createElement("style");
+        styleEl.textContent = dynamicStyle;
+        document.head.appendChild(styleEl);
+
+        const rectDiv = document.createElement("div");
+        rectDiv.className = className;
+        pptBox.appendChild(rectDiv);
+      });
+    });
+  });
+}
+
+drawConnectingRectangle(JSON_Data);
 
 // Practice
 const PPT_Box = document.getElementById("PPT-Box");
