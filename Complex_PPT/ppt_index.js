@@ -34,7 +34,9 @@ JSON_Data = {
       },
       start_content: {
         logo_title: "Paziente",
+        link:"https://www.youtube.com/",
         steps: ["SINTOMI", "REPERTO INCIDENTALE", "SCREENING I LIVELLO"],
+        stepsLink:["https://www.youtube.com/","","https://www.youtube.com/"],
         configurations: {
           logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           background_color: "white",
@@ -60,22 +62,37 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["", "GOM", "GOM"],
-            logo_heading_color:
+            logo_heading_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            logo_heading_border_color: "#a334c8",
-            logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #340046ff 20%, #bb0000ff)",
+              "linear-gradient(to right top, #bf00ffff 20%, #ff8f8fff)",
+            ],
+            logo_heading_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+            logo_color: [
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
             logo_title: ["MMG", "Chirurgo Senologo", "Radiologo"],
+            link: ["https://www.youtube.com", "", "www.google.com"],
             logo_id_names: [
               "logo_title_id1",
               "logo_title_id2",
               "logo_title_id3",
             ],
-            logo_title_color:
+            logo_title_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #530000ff)",
+            ],
             top_down_arrow: {
               display: "true",
-              arrow_color: "#a334c8",
-              line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+              arrow_color: ["#a334c8", "#a334c8", "#a334c8"],
+              line_color: [
+                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+              ],
             },
             connecting_Line: {
               display: "true",
@@ -121,6 +138,7 @@ JSON_Data = {
             logo_para_color: "white",
             on_line_content_configuration: {
               content: ["VISITA", "VISITA", "ESAMI"],
+              link: ["www.google.com", "", "www.google.com"],
               content_id: [
                 "on_line_content_1",
                 "on_line_content_2",
@@ -167,18 +185,25 @@ JSON_Data = {
           },
           content: {
             logo_heading: [""],
-            logo_heading_color:
-              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
-            logo_heading_border_color: "#a334c8",
-            logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            logo_heading_color: [
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
+            logo_heading_border_color: ["#a334c8"],
+            logo_color: [
+              "linear-gradient(to right top, #000000ff 20%, #f65467)",
+            ],
             logo_title: ["GOM"],
             logo_id_names: ["logo_title_id4"],
-            logo_title_color:
+            link: ["www.google.com"],
+            logo_title_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
             top_down_arrow: {
               display: "true",
-              arrow_color: "#ffc100",
-              line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+              arrow_color: ["#000000ff"],
+              line_color: [
+                "linear-gradient(to right, #00000060 10%, #ffc400ff)",
+              ],
             },
             connecting_Line: {
               display: "true",
@@ -225,6 +250,7 @@ JSON_Data = {
             on_line_content_configuration: {
               content: ["DIAGNOSI"],
               content_id: ["on_line_content_4"],
+              link: ["www.google.com"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -272,18 +298,29 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["GOM", "GOM"],
-            logo_heading_color:
+            logo_heading_color: [
+              "linear-gradient(to right top, #000000ff 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #000000ff)",
+            ],
+            logo_heading_border_color: ["#a334c8", "#a334c8"],
+            logo_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            logo_heading_border_color: "#a334c8",
-            logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
             logo_title: ["Oncologo", "Infermiere"],
             logo_id_names: ["logo_title_id5", "logo_title_id6"],
-            logo_title_color:
+            link: ["www.google.com", ""],
+            logo_title_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
             top_down_arrow: {
               display: "true",
-              arrow_color: "#a334c8",
-              line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+              arrow_color: ["#a334c8", "#a334c8"],
+              line_color: [
+                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+                "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              ],
             },
             connecting_Line: {
               display: "true",
@@ -331,6 +368,7 @@ JSON_Data = {
                 "on_line_content_6",
                 "on_line_content_7",
               ],
+              link: ["www.google.com", "", "www.google.com"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -365,18 +403,29 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["GOM", ""],
-            logo_heading_color:
-              "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
-            logo_heading_border_color: "#a334c8",
-            logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            logo_heading_color: [
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
+            logo_heading_border_color: ["#a334c8", "#a334c8"],
+            logo_color: [
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
             logo_title: ["Chirurgo/ Senologo", "Chirurgo Plastico"],
             logo_id_names: ["logo_title_id7", "logo_title_id8"],
-            logo_title_color:
+            link: ["www.google.com", ""],
+            logo_title_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
             top_down_arrow: {
               display: "false",
-              arrow_color: "#a334c8",
-              line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+              arrow_color: ["#a334c8", "#a334c8"],
+              line_color: [
+                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+              ],
             },
             connecting_Rectangle: {
               display: "false",
@@ -398,6 +447,7 @@ JSON_Data = {
             on_line_content_configuration: {
               content: ["INTERVENTO"],
               content_id: ["on_line_content_8"],
+              link: ["www.google.com"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -439,19 +489,29 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["GOM", "DOM"],
-            logo_heading_color:
+            logo_heading_color: [
               "linear-gradient(to right top, #a334c801 20%, #f6546701)",
-            logo_heading_border_color: "#a334c801",
+              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
+            ],
+            logo_heading_border_color: ["#a334c801", "#a334c801"],
             logo_title: ["GOM", "DOM"],
             logo_id_names: ["logo_title_id9", "logo_title_id10"],
-            logo_color:
+            link: ["www.google.com", ""],
+            logo_color: [
               "linear-gradient(to right top, #a334c801 20%, #f6546701)",
-            logo_title_color:
               "linear-gradient(to right top, #a334c801 20%, #f6546701)",
+            ],
+            logo_title_color: [
+              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
+              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
+            ],
             top_down_arrow: {
               display: "false",
-              arrow_color: "#ffc100",
-              line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+              arrow_color: ["#ffc100", "#ffc100"],
+              line_color: [
+                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+              ],
             },
             connecting_Rectangle: {
               display: "false",
@@ -473,6 +533,7 @@ JSON_Data = {
             on_line_content_configuration: {
               content: ["DICT", "CTDI"],
               content_id: ["on_line_content_9", "on_line_content_10"],
+              link: ["www.google.com", ""],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -507,18 +568,21 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["ROM"],
-            logo_heading_color:
+            logo_heading_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            logo_heading_border_color: "#a334c8",
-            logo_color: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
+            logo_heading_border_color: ["#a334c8"],
+            logo_color: ["linear-gradient(to right top, #a334c8 20%, #f65467)"],
             logo_title: ["MMG"],
             logo_id_names: ["logo_title_id11"],
-            logo_title_color:
+            link: ["www.google.com"],
+            logo_title_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            ],
             top_down_arrow: {
               display: "true",
-              arrow_color: "#a334c8",
-              line_color: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+              arrow_color: ["#a334c8"],
+              line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
             },
             connecting_Rectangle: {
               display: "false",
@@ -540,6 +604,7 @@ JSON_Data = {
             on_line_content_configuration: {
               content: ["VISITA"],
               content_id: ["on_line_content_11"],
+              link: ["www.google.com"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -560,19 +625,23 @@ JSON_Data = {
           },
           content: {
             logo_heading: [""],
-            logo_heading_color:
+            logo_heading_color: [
               "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
-            logo_heading_border_color: "#ffc100",
-            logo_color:
+            ],
+            logo_heading_border_color: ["#ffc100"],
+            logo_color: [
               "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
+            ],
             logo_title: ["GOM"],
             logo_id_names: ["logo_title_id12"],
-            logo_title_color:
+            link: ["www.google.com"],
+            logo_title_color: [
               "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+            ],
             top_down_arrow: {
               display: "true",
-              arrow_color: "#ffc100",
-              line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+              arrow_color: ["#ffc100"],
+              line_color: ["linear-gradient(to right, #f6f4dc60 10%, #ffc305)"],
             },
             connecting_Rectangle: {
               display: "false",
@@ -594,6 +663,7 @@ JSON_Data = {
             on_line_content_configuration: {
               content: ["RT"],
               content_id: ["on_line_content_12"],
+              link: ["www.google.com"],
               color: "black",
               background_color: "#e6fffc",
               bottom_point_color:
@@ -839,14 +909,24 @@ function convertToFormat(JsonData) {
       html += `<div class="subgroups-mid-top">\n`;
       sg.content.logo_title.forEach((logo, i) => {
         const heading = sg.content.logo_heading[i];
-        const logoId = sg.content.logo_id_names?.[i] || ""; // Safe optional chaining
-        html += `<div class="icon_plus_name">\n`;
-        if (heading) html += `<span>${limitText(heading, 5)}</span>\n`;
-        html += `<i class="fa-solid fa-user"></i>\n`;
-        html += `<p${logoId ? ` id="${logoId}"` : ""}>${limitText(
-          logo,
-          8
-        )}</p>\n`;
+        const logoId = sg.content.logo_id_names?.[i] || "";
+        const link = sg.content.link?.[i];
+        const hasLink = link && link.trim() !== "";
+
+        html += `<div class="icon_plus_name icon_plus_name_${i + 1}">\n`;
+
+        if (heading)
+          html += `<span class="span-${i + 1}">${limitText(
+            heading,
+            5
+          )}</span>\n`;
+        html += `<i class="fa-solid fa-user fa-user-${i + 1}"></i>\n`;
+        html += `<p${
+          hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""
+        }${logoId ? ` id="${logoId}"` : ""} class="icon-plus-name-paragraph-${
+          i + 1
+        }${hasLink ? " Div-link" : ""}">${limitText(logo, 8)}</p>\n`;
+
         html += `</div>\n`;
       });
 
@@ -862,7 +942,13 @@ function convertToFormat(JsonData) {
         html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
           i + 1
         }" id="${contentId}">\n`;
-        html += `<h6 class="box-shadow-box">${limitText(c, 10)}</h6>\n`;
+        const link = sg.content.on_line_content_configuration.link?.[i];
+        const hasLink = link && link.trim() !== "";
+
+        html += `<h6 class="box-shadow-box${hasLink ? " Div-link" : ""}"${
+          hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""
+        }>${limitText(c, 10)}</h6>\n`;
+
         html += `</div>\n`;
       });
 
@@ -904,6 +990,13 @@ function convertToFormat(JsonData) {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+  }
+  .Div-link:hover{
+    cursor:pointer;
+    box-shadow:0 0 10px #0000006b;
+  }
+  .Div-link:active{
+    transform:scale(0.9);
   }
   .${uniqueClassName} .icon_plus_name {
     display: flex;
@@ -969,6 +1062,7 @@ function convertToFormat(JsonData) {
     color: white;
     width: 40px;
     text-align: center;
+    transition:0.1s all;
   }
   .${uniqueClassName} .subgroups-on-line {
     display: flex;
@@ -988,6 +1082,7 @@ function convertToFormat(JsonData) {
     border-bottom-right-radius: 18px;
     padding: 10px 15px;
     position: relative;
+    transition:0.1s all;
   }
   .${uniqueClassName} .subgroups-on-line-content h6::after {
     content: "";
@@ -1030,60 +1125,23 @@ function convertToFormat(JsonData) {
     sub_groups.forEach((sg, idx) => {
       const logoLength = sg.content?.logo_title?.filter(Boolean)?.length || 0;
       const dynamicWidth = 110 + (logoLength - 1) * 50;
+
       css += `
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} {
-    margin:0px;
-    padding:0 10px;
-  }
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} h2 {
-    color: ${sg.configurations?.title_color || "#333"};
-    font-size: 10px;
-  }
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+.${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} {
+  margin: 0px;
+  padding: 0 10px;
+}
+.${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} h2 {
+  color: ${sg.configurations?.title_color || "#333"};
+  font-size: 10px;
+}
+.${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
       } .subgroups-mid-top {
-    width: ${dynamicWidth}px;
-  }
-  `;
-      if (
-        sg.content.top_down_arrow.display === "true" ||
-        sg.content.top_down_arrow.display === true
-      ) {
-        css += `
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-          idx + 1
-        } .icon_plus_name::after {
-    background: ${sg.content.top_down_arrow.line_color};
-  }
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-          idx + 1
-        } .icon_plus_name::before {
-    border-top: 7px solid ${sg.content.top_down_arrow.arrow_color};
-  }
-  `;
-      }
-      css += `
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        idx + 1
-      } .icon_plus_name span {
-    background: ${sg.content.logo_heading_color};
-    -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  }
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        idx + 1
-      } .icon_plus_name .fa-user {
-      border:2px solid ${sg.content.logo_heading_border_color};
-    background: ${sg.content.logo_color};
-    -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  }
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        idx + 1
-      } .icon_plus_name p {
-    background: ${sg.content.logo_title_color};
-  }
-  `;
+  width: ${dynamicWidth}px;
+}
+`;
+
       css += `
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
@@ -1197,6 +1255,70 @@ function convertToFormat(JsonData) {
     `;
         });
       });
+    });
+
+    // Handling Colors Dynamically
+    sub_groups.forEach((sg, subGroupIdx) => {
+      const styleConfigs = [
+        {
+          array: sg.content.logo_heading_color || [],
+          classPrefix: "span-",
+          selector: ".icon_plus_name",
+          styles: (color) => `
+        background: ${color};
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;`,
+        },
+        {
+          array: sg.content.logo_heading_border_color || [],
+          classPrefix: "fa-user-",
+          selector: ".icon_plus_name",
+          styles: (color, idx) => `
+        border: 2px solid ${color};
+        background: ${(sg.content.logo_color || [])[idx]};
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;`,
+        },
+        {
+          array: sg.content.logo_title_color || [],
+          classPrefix: "icon-plus-name-paragraph-",
+          selector: ".icon_plus_name",
+          styles: (color) => `background: ${color};`,
+        },
+      ];
+
+      styleConfigs.forEach(({ array, classPrefix, selector, styles }) => {
+        array.forEach((color, inlineIdx) => {
+          css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+            subGroupIdx + 1
+          } ${selector} .${classPrefix}${inlineIdx + 1} {${styles(
+            color,
+            inlineIdx
+          )}
+}\n`;
+        });
+      });
+
+      if (
+        sg.content.top_down_arrow?.display === "true" ||
+        sg.content.top_down_arrow?.display === true
+      ) {
+        (sg.content.top_down_arrow.line_color || []).forEach((color, idx) => {
+          css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+            subGroupIdx + 1
+          } .icon_plus_name_${idx + 1}::after {
+  background: ${color};
+}\n`;
+        });
+
+        (sg.content.top_down_arrow.arrow_color || []).forEach((color, idx) => {
+          css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+            subGroupIdx + 1
+          } .icon_plus_name_${idx + 1}::before {
+  border-top: 7px solid ${color};
+}\n`;
+        });
+      }
     });
 
     return { html, css };
@@ -1695,20 +1817,3 @@ function drawConnectingRectangle(JSON_Data) {
 }
 
 drawConnectingRectangle(JSON_Data);
-
-// Practice
-const PPT_Box = document.getElementById("PPT-Box");
-const elem1 = document.getElementById("logo_title_id10");
-
-const parent_rect = PPT_Box.getBoundingClientRect();
-const rect1 = elem1.getBoundingClientRect();
-
-const relativeX = rect1.left - parent_rect.left;
-const relativeY = rect1.top - parent_rect.top;
-
-console.log("Position inside PPT_Box:", {
-  x: relativeX,
-  y: relativeY,
-  width: rect1.width,
-  height: rect1.height,
-});
