@@ -8,21 +8,58 @@ JSON_Data = {
       footer_5_label: "Earmacia ospedaliera",
     },
     footer_label_position_left: {
-      footer_1_left: "-70px",
-      footer_2_left: "-140px",
-      footer_3_left: "-30px",
-      footer_4_left: "-70px",
-      footer_5_left: "-100px",
+      footer_1_left: "Level_5",
+      footer_2_left: "Level_0",
+      footer_3_left: "Level_7",
+      footer_4_left: "Level_4",
+      footer_5_left: "Level_2",
     },
     label_width: {
-      footer_1_width: "92%",
-      footer_2_width: "84.5%",
-      footer_3_width: "67%",
-      footer_4_width: "50%",
-      footer_5_width: "20%",
+      footer_1_width: "92",
+      footer_2_width: "85",
+      footer_3_width: "67",
+      footer_4_width: "50",
+      footer_5_width: "20",
     },
+    footer_lines_color:"linear-gradient(to bottom, #f5fbfb, #eaf0f0)"
   },
-  scaling: "1",
+  Page_Configuration:{
+    background_color:"#f6fcfc"
+  },
+  mid_line_config:{
+    color:"#58e3d2",
+    shadow:"0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;"
+  },
+  colors: {
+    // Colors For Start-header
+    white_color: "#ffffff",
+    black_color: "#000000",
+
+    // Header Colors
+    Common_Header_title: "#515151",
+    Common_Header_Line: "#adafaf",
+    Common_SubHeader_title: "rgb(81, 81, 81)",
+    Common_SubHeader_lineRight: "#c4c9ca",
+    Common_logo_heading: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+    Common_logo_border: "#a334c8",
+    Common_logo: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+    Common_logo_title: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+    Common_TopDown_arror: "#a334c8",
+    Common_TopDown_Line: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+    Common_ConnectingLine_arrow: "#a334c8",
+    Common_ConnectingLine_line: "#9f30cb",
+    Common_ConnectingRectangle: "#58e3d2",
+    Common_onLineContent_font: "#000000",
+    Common_onLineContent_Background: "#e6fffc",
+    Common_onLineContent_Point:
+      "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+    Common_onLineContent_Line:
+      "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+    Common_onLineContent_Shape: "linear-gradient(to top, #1375af 5%, #45d0cb)",
+    Common_timeLineSeries_Background:
+      "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+    Common_timeLineSeries_Border: "#ffc100",
+    },
   body: [
     // Start of Prediagnosi
     {
@@ -31,16 +68,25 @@ JSON_Data = {
       configurations: {
         title_color: "#515151",
         line_right: "True",
+        line_color: "#adafaf",
+        circle_color: "#767979",
       },
       start_content: {
         logo_title: "Paziente",
-        link:"https://www.youtube.com/",
+        link: "https://www.youtube.com/",
         steps: ["SINTOMI", "REPERTO INCIDENTALE", "SCREENING I LIVELLO"],
-        stepsLink:["https://www.youtube.com/","","https://www.youtube.com/"],
+        stepsLink: ["https://www.youtube.com/", "", "https://www.youtube.com/"],
+        title_detail: "Hello World!",
+        steps_details: ["Hello World!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.", "Hello World!"],
         configurations: {
           logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
-          background_color: "white",
-          font_color: "black",
+          logo_border_color: "#2394b9",
+          logo_para_color:
+            "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
+          mid_line_color: "#58e3d2",
+          background_color: ["white_color", "white_color", "white_color"],
+          font_color: ["black_color", "black_color", "black_color"],
+          logo_font_color: "white_color",
         },
       },
     },
@@ -49,30 +95,30 @@ JSON_Data = {
       component: "Header",
       title: "Diagnosi e pre-treatment",
       configurations: {
-        title_color: "#515151",
+        title_color: "Common_Header_title",
         line_right: "true",
-        line_color: "#adafaf",
+        line_color: "Common_Header_Line",
       },
       sub_groups: [
         {
           component: "Sub-Header",
           title: "Diagnosi a presa in carico",
           configurations: {
-            title_color: "rgb(81, 81, 81)",
+            title_color: "Common_SubHeader_title",
           },
           content: {
             logo_heading: ["", "GOM", "GOM"],
             logo_heading_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "Common_logo_heading",
               "linear-gradient(to right top, #340046ff 20%, #bb0000ff)",
               "linear-gradient(to right top, #bf00ffff 20%, #ff8f8fff)",
             ],
-            logo_heading_border_color: ["#a334c8", "#a334c8", "#a334c8"],
-            logo_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+            logo_heading_border_color: [
+              "Common_logo_border",
+              "Common_logo_border",
+              "Common_logo_border",
             ],
+            logo_color: ["Common_logo", "Common_logo", "Common_logo"],
             logo_title: ["MMG", "Chirurgo Senologo", "Radiologo"],
             link: ["https://www.youtube.com", "", "www.google.com"],
             logo_id_names: [
@@ -80,18 +126,23 @@ JSON_Data = {
               "logo_title_id2",
               "logo_title_id3",
             ],
+            logo_detail: ["Hello World!", "Hello World!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula."],
             logo_title_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              "Common_logo_title",
+              "Common_logo_title",
               "linear-gradient(to right top, #a334c8 20%, #530000ff)",
             ],
             top_down_arrow: {
               display: "true",
-              arrow_color: ["#a334c8", "#a334c8", "#a334c8"],
+              arrow_color: [
+                "Common_TopDown_arror",
+                "Common_TopDown_arror",
+                "Common_TopDown_arror",
+              ],
               line_color: [
-                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
-                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
-                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+                "Common_TopDown_Line",
+                "Common_TopDown_Line",
+                "Common_TopDown_Line",
               ],
             },
             connecting_Line: {
@@ -104,12 +155,18 @@ JSON_Data = {
                 },
                 {
                   starting: "logo_title_id2",
-                  ending: "logo_title_id3",
+                  ending: "logo_title_id4",
                   height: "Level_1",
                 },
               ],
-              arrow_color: ["#a334c8", "#9f30cb"],
-              line_color: ["#9f30cb", "#9f30cb"],
+              arrow_color: [
+                "Common_ConnectingLine_arrow",
+                "Common_ConnectingLine_arrow",
+              ],
+              line_color: [
+                "Common_ConnectingLine_line",
+                "Common_ConnectingLine_line",
+              ],
             },
             connecting_Rectangle: {
               display: "true",
@@ -131,11 +188,10 @@ JSON_Data = {
                   border_thickness: "Level_1",
                 },
               ],
-              color: ["#58e3d2", "#9f30cb"],
+              color: ["Common_ConnectingRectangle", "#9f30cb"],
             },
             line_right: "true",
-            line_color: "#c4c9ca",
-            logo_para_color: "white",
+            line_color: "Common_SubHeader_lineRight",
             on_line_content_configuration: {
               content: ["VISITA", "VISITA", "ESAMI"],
               link: ["www.google.com", "", "www.google.com"],
@@ -144,20 +200,37 @@ JSON_Data = {
                 "on_line_content_2",
                 "on_line_content_3",
               ],
-              color: "black",
-              background_color: "#e6fffc",
-              bottom_point_color:
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              bottom_line_color:
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              bottom_shape_color:
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              content_details: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.", "Hello World!", "Hello World!"],
+              color: [
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+              ],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
+              bottom_point_color: [
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+              ],
+              bottom_line_color: [
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+              ],
+              bottom_shape_color: [
+                "Common_onLineContent_Shape",
+                "Common_onLineContent_Shape",
+                "Common_onLineContent_Shape",
+              ],
               bottom_shape_postion: ["Level_1", "Level_2", "Level_2"],
             },
             BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
+              background_color: "Common_timeLineSeries_Background",
+              border_color: "Common_timeLineSeries_Border",
               timlines: [
                 {
                   content: "<10 gg da",
@@ -181,29 +254,22 @@ JSON_Data = {
           component: "Sub-Header",
           title: "Decisione Terapeutica",
           configurations: {
-            title_color: "rgb(81, 81, 81)",
+            title_color: "Common_SubHeader_title",
           },
           content: {
             logo_heading: [""],
-            logo_heading_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_heading_border_color: ["#a334c8"],
-            logo_color: [
-              "linear-gradient(to right top, #000000ff 20%, #f65467)",
-            ],
+            logo_heading_color: ["Common_logo_heading"],
+            logo_heading_border_color: ["Common_logo_border"],
+            logo_color: ["Common_logo"],
             logo_title: ["GOM"],
             logo_id_names: ["logo_title_id4"],
+            logo_detail:["Hello World!"],
             link: ["www.google.com"],
-            logo_title_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
+            logo_title_color: ["Common_logo_title"],
             top_down_arrow: {
               display: "true",
-              arrow_color: ["#000000ff"],
-              line_color: [
-                "linear-gradient(to right, #00000060 10%, #ffc400ff)",
-              ],
+              arrow_color: ["Common_TopDown_arror"],
+              line_color: ["Common_TopDown_Line"],
             },
             connecting_Line: {
               display: "true",
@@ -226,45 +292,33 @@ JSON_Data = {
               display: "false",
               connections: [
                 {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
+                  starting: "on_line_content_4",
+                  start_from_starting: "true",
+                  ending: "on_line_content_7",
                   end_from_ending: "true",
                   height: "Level_5",
                   border_thickness: "Level_2",
                 },
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "true",
-                  ending: "on_line_content_10",
-                  end_from_ending: "true",
-                  height: "Level_15",
-                  border_thickness: "Level_1",
-                },
               ],
-              color: ["#58e3d2", "#9f30cb"],
+              color: ["Common_ConnectingRectangle"],
             },
             line_right: "false",
-            line_color: "#c4c9ca",
-            logo_para_color: "white",
+            line_color: "Common_SubHeader_lineRight",
             on_line_content_configuration: {
               content: ["DIAGNOSI"],
               content_id: ["on_line_content_4"],
+              content_details:["Hello World!"],
               link: ["www.google.com"],
-              color: "black",
-              background_color: "#e6fffc",
-              bottom_point_color:
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              bottom_line_color:
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              bottom_shape_color:
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              color: ["Common_onLineContent_font"],
+              background_color: ["Common_onLineContent_Background"],
+              bottom_point_color: ["Common_onLineContent_Point"],
+              bottom_line_color: ["Common_onLineContent_Line"],
+              bottom_shape_color: ["Common_onLineContent_Shape"],
               bottom_shape_postion: ["Level_2"],
             },
             BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
+              background_color: "Common_timeLineSeries_Background",
+              border_color: "Common_timeLineSeries_Border",
               timlines: [
                 {
                   content: "<30 gg da",
@@ -309,6 +363,7 @@ JSON_Data = {
             ],
             logo_title: ["Oncologo", "Infermiere"],
             logo_id_names: ["logo_title_id5", "logo_title_id6"],
+            logo_detail:["Hello World",""],
             link: ["www.google.com", ""],
             logo_title_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
@@ -360,7 +415,6 @@ JSON_Data = {
             },
             line_right: "true",
             line_color: "#c4c9ca",
-            logo_para_color: "white",
             on_line_content_configuration: {
               content: ["ET", "TT", "CT"],
               content_id: [
@@ -368,15 +422,25 @@ JSON_Data = {
                 "on_line_content_6",
                 "on_line_content_7",
               ],
+              content_details:["Hello","hi","World"],
               link: ["www.google.com", "", "www.google.com"],
-              color: "black",
-              background_color: "#e6fffc",
-              bottom_point_color:
+              color: ["black", "black", "black"],
+              background_color: ["#e6fffc", "#e6fffc", "#e6fffc"],
+              bottom_point_color: [
                 "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              bottom_line_color:
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+              ],
+              bottom_line_color: [
                 "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              bottom_shape_color:
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+              ],
+              bottom_shape_color: [
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
+                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              ],
               bottom_shape_postion: ["Level_3", "Level_3", "Level_2"],
             },
             BottomtimelineSeries: {
@@ -443,19 +507,21 @@ JSON_Data = {
             },
             line_right: "true",
             line_color: "#c4c9ca",
-            logo_para_color: "white",
             on_line_content_configuration: {
               content: ["INTERVENTO"],
               content_id: ["on_line_content_8"],
               link: ["www.google.com"],
-              color: "black",
-              background_color: "#e6fffc",
-              bottom_point_color:
+              color: ["black"],
+              background_color: ["#e6fffc"],
+              bottom_point_color: [
                 "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              bottom_line_color:
+              ],
+              bottom_line_color: [
                 "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              bottom_shape_color:
+              ],
+              bottom_shape_color: [
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              ],
               bottom_shape_postion: ["Level_2"],
             },
             BottomtimelineSeries: {
@@ -488,7 +554,7 @@ JSON_Data = {
             title_color: "rgb(81, 81, 81)",
           },
           content: {
-            logo_heading: ["GOM", "DOM"],
+            logo_heading: ["", ""],
             logo_heading_color: [
               "linear-gradient(to right top, #a334c801 20%, #f6546701)",
               "linear-gradient(to right top, #a334c801 20%, #f6546701)",
@@ -496,7 +562,7 @@ JSON_Data = {
             logo_heading_border_color: ["#a334c801", "#a334c801"],
             logo_title: ["GOM", "DOM"],
             logo_id_names: ["logo_title_id9", "logo_title_id10"],
-            link: ["www.google.com", ""],
+            link: ["", ""],
             logo_color: [
               "linear-gradient(to right top, #a334c801 20%, #f6546701)",
               "linear-gradient(to right top, #a334c801 20%, #f6546701)",
@@ -529,19 +595,24 @@ JSON_Data = {
             },
             line_right: "true",
             line_color: "#c4c9ca",
-            logo_para_color: "white",
             on_line_content_configuration: {
               content: ["DICT", "CTDI"],
               content_id: ["on_line_content_9", "on_line_content_10"],
               link: ["www.google.com", ""],
-              color: "black",
-              background_color: "#e6fffc",
-              bottom_point_color:
+              color: ["black", "black"],
+              background_color: ["#e6fffc", "#e6fffc"],
+              bottom_point_color: [
                 "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              bottom_line_color:
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+              ],
+              bottom_line_color: [
                 "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              bottom_shape_color:
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+              ],
+              bottom_shape_color: [
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
+                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              ],
               bottom_shape_postion: ["Level_2", "Level_2"],
             },
             BottomtimelineSeries: {
@@ -600,19 +671,21 @@ JSON_Data = {
             },
             line_right: "false",
             line_color: "#c4c9ca",
-            logo_para_color: "white",
             on_line_content_configuration: {
               content: ["VISITA"],
               content_id: ["on_line_content_11"],
               link: ["www.google.com"],
-              color: "black",
-              background_color: "#e6fffc",
-              bottom_point_color:
+              color: ["black"],
+              background_color: ["#e6fffc"],
+              bottom_point_color: [
                 "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              bottom_line_color:
+              ],
+              bottom_line_color: [
                 "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              bottom_shape_color:
+              ],
+              bottom_shape_color: [
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              ],
               bottom_shape_postion: ["Level_3"],
             },
           },
@@ -659,19 +732,21 @@ JSON_Data = {
             },
             line_right: "false",
             line_color: "#c4c9ca",
-            logo_para_color: "white",
             on_line_content_configuration: {
               content: ["RT"],
               content_id: ["on_line_content_12"],
               link: ["www.google.com"],
-              color: "black",
-              background_color: "#e6fffc",
-              bottom_point_color:
+              color: ["black"],
+              background_color: ["#e6fffc"],
+              bottom_point_color: [
                 "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              bottom_line_color:
+              ],
+              bottom_line_color: [
                 "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              bottom_shape_color:
+              ],
+              bottom_shape_color: [
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              ],
               bottom_shape_postion: ["Level_4"],
             },
             BottomtimelineSeries: {
@@ -693,6 +768,20 @@ JSON_Data = {
       ],
     },
   ],
+};
+
+// Color Map Function
+const resolveColor = (value, colorMap) => {
+  if (colorMap[value]) return colorMap[value]; // if it's a key in colors
+  if (
+    typeof value === "string" &&
+    (value.startsWith("#") ||
+      value.startsWith("rgb") ||
+      value.includes("gradient"))
+  ) {
+    return value;
+  }
+  return value;
 };
 
 // Function to return predefined HTML and CSS
@@ -722,7 +811,6 @@ function convertToFormat(JsonData) {
   const generateStartHeader = (component, className) => {
     const { title, configurations, start_content } = component;
 
-    // HTML
     let html = `
   <div class="start slide-div ${className}">
     <div class="start-mid-back-line"></div>
@@ -732,28 +820,97 @@ function convertToFormat(JsonData) {
     <div class="mid-top">
       <div class="icon_plus_name">
         <i class="fa-solid fa-user"></i>
-        <p>${limitText(start_content.logo_title, 10)}</p>
+        <p
+          title="${limitText(start_content.title_detail,280) || ""}"
+          ${
+            start_content.link
+              ? `class="Div-link" onclick="window.open('${start_content.link}', '_blank')"`
+              : ""
+          }
+        >
+          ${limitText(start_content.logo_title, 10)}
+        </p>
       </div>
       <div class="mid-top-on-line">
-      `;
+`;
+
+    // Loop steps
     start_content.steps.slice(0, 3).forEach((step, index) => {
-      html += `<h5 class="start-step start-step${
-        index + 1
-      } box-shadow-box">${limitText(step, 20)}</h5>\n`;
+      const bg =
+        resolveColor(
+          start_content.configurations.background_color?.[index],
+          JsonData.colors
+        ) || "white";
+      const font =
+        resolveColor(
+          start_content.configurations.font_color?.[index],
+          JsonData.colors
+        ) || "black";
+      const stepLink = start_content.stepsLink?.[index] || "";
+      const stepDetail = start_content.steps_details?.[index] || "";
+      const hasStepLink = stepLink.trim() !== "";
+
+      html += `<h5 
+      class="start-step start-step${index + 1} box-shadow-box${
+        hasStepLink ? " Div-link" : ""
+      }" 
+      title="${limitText(stepDetail,280)}"
+      style="background-color: ${bg}; color: ${font};"
+      ${hasStepLink ? `onclick="window.open('${stepLink}', '_blank')"` : ""}
+    >${limitText(step, 20)}</h5>\n`;
     });
 
     html += `
-    </div>
+      </div>
     </div>
   </div>
-  `;
+`;
 
     // ✅ Extract configurations
-    const titleColor = configurations?.title_color || "#515151";
+    const titleColor =
+      resolveColor(configurations?.title_color, JsonData.colors) || "#515151";
+
     const lineRight = configurations?.line_right === "True";
-    const logoGradient = start_content?.configurations?.logo_color || "#2394b9";
-    const stepBg = start_content?.configurations?.background_color || "white";
-    const font_color = start_content?.configurations?.font_color || "black";
+
+    const logoGradient =
+      resolveColor(
+        start_content?.configurations?.logo_color,
+        JsonData.colors
+      ) || "#2394b9";
+    const logo_background =
+      resolveColor(
+        start_content?.configurations?.logo_para_color,
+        JsonData.colors
+      ) || "#2394b9";
+    const stepBg =
+      resolveColor(
+        start_content?.configurations?.background_color,
+        JsonData.colors
+      ) || "white";
+    const font_color =
+      resolveColor(
+        start_content?.configurations?.font_color,
+        JsonData.colors
+      ) || "black";
+    const logo_font_color =
+      resolveColor(
+        start_content?.configurations?.logo_font_color,
+        JsonData.colors
+      ) || "black";
+    const mid_line_color =
+      resolveColor(
+        start_content?.configurations?.mid_line_color,
+        JsonData.colors
+      ) || "#58e3d2";
+    const logo_border =
+      resolveColor(
+        start_content?.configurations?.logo_border_color,
+        JsonData.colors
+      ) || "#2394b9";
+    const line_color =
+      resolveColor(configurations?.line_color, JsonData.colors) || "#adafaf";
+    const circle_color =
+      resolveColor(configurations?.circle_color, JsonData.colors) || "#767979";
 
     // ✅ Build dynamic CSS
     let css = `
@@ -790,7 +947,7 @@ function convertToFormat(JsonData) {
   .${className}::after {
     content: "";
     position: absolute;
-    border-right: 2px solid #adafaf;
+    border-right: 2px solid ${line_color};
     height: 365px;
     right: 0px;
     bottom: 324px;
@@ -799,7 +956,7 @@ function convertToFormat(JsonData) {
   .${className}::before {
     content: "";
     position: absolute;
-    background-color: #767979;
+    background-color: ${circle_color};
     width: 5px;
     height: 5px;
     border-radius: 50%;
@@ -817,7 +974,7 @@ function convertToFormat(JsonData) {
     top: 208px;
     width: 15px;
     height: 190px;
-    background-color: #58e3d2;
+    background-color: ${mid_line_color};
     border-bottom-left-radius:10px;
   }
 
@@ -837,7 +994,7 @@ function convertToFormat(JsonData) {
     background: ${logoGradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    border: 2px solid #2394b9;
+    border: 2px solid ${logo_border};
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -846,13 +1003,13 @@ function convertToFormat(JsonData) {
 
   .${className} .mid-top .icon_plus_name p {
     display: inline;
-    background: ${logoGradient};
+    background: ${logo_background};
     padding: 8px 11px;
     font-size:9px;
     border-radius: 23px;
     position: absolute;
     top: 21px;
-    color: white;
+    color: ${logo_font_color};
   }
 
   .${className} .mid-top .start-step {
@@ -891,7 +1048,7 @@ function convertToFormat(JsonData) {
   /**
    * Generate unique Header + Sub-Headers HTML + scoped CSS
    */
-  function generateHeaderHTMLandCSS(component, uniqueClassName) {
+  function generateHeaderHTMLandCSS(component, uniqueClassName, colors) {
     const { title, configurations, sub_groups } = component;
 
     let html = `<div class="Slide-box ${uniqueClassName}">\n`;
@@ -911,6 +1068,7 @@ function convertToFormat(JsonData) {
         const heading = sg.content.logo_heading[i];
         const logoId = sg.content.logo_id_names?.[i] || "";
         const link = sg.content.link?.[i];
+        const logoDetail=sg.content.logo_detail?.[i] || "";
         const hasLink = link && link.trim() !== "";
 
         html += `<div class="icon_plus_name icon_plus_name_${i + 1}">\n`;
@@ -921,7 +1079,7 @@ function convertToFormat(JsonData) {
             5
           )}</span>\n`;
         html += `<i class="fa-solid fa-user fa-user-${i + 1}"></i>\n`;
-        html += `<p${
+        html += `<p title="${limitText(logoDetail,280)}" ${
           hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""
         }${logoId ? ` id="${logoId}"` : ""} class="icon-plus-name-paragraph-${
           i + 1
@@ -944,8 +1102,9 @@ function convertToFormat(JsonData) {
         }" id="${contentId}">\n`;
         const link = sg.content.on_line_content_configuration.link?.[i];
         const hasLink = link && link.trim() !== "";
+        const contentDetail=sg.content.on_line_content_configuration.content_details?.[i] || "";
 
-        html += `<h6 class="box-shadow-box${hasLink ? " Div-link" : ""}"${
+        html += `<h6 title="${limitText(contentDetail,280)}" class="box-shadow-box${hasLink ? " Div-link" : ""}"${
           hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""
         }>${limitText(c, 10)}</h6>\n`;
 
@@ -968,7 +1127,7 @@ function convertToFormat(JsonData) {
     margin:0 10px;
   }
   .${uniqueClassName} h1 {
-    color: ${configurations?.title_color || "#515151"};
+    color: ${resolveColor(configurations?.title_color, colors) || "#515151"};
     font-size: 12px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -1103,7 +1262,9 @@ function convertToFormat(JsonData) {
   .${uniqueClassName}::after {
     content: "";
     position: absolute;
-    border-right: 2px solid ${configurations?.line_color};
+    border-right: 2px solid ${
+      resolveColor(configurations?.line_color, colors) || "#adafaf"
+    };
     height: 367px;
     right: -8px;
     bottom: 325px;
@@ -1111,11 +1272,13 @@ function convertToFormat(JsonData) {
   .${uniqueClassName}::before {
     content: "";
     position: absolute;
-    background-color: ${configurations?.line_color};
+    background-color: ${
+      resolveColor(configurations?.line_color, colors) || "#adafaf"
+    };
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    right: -10.5px;
+    right: -9.5px;
     top: 18px;
   } `
       : ""
@@ -1132,7 +1295,9 @@ function convertToFormat(JsonData) {
   padding: 0 10px;
 }
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} h2 {
-  color: ${sg.configurations?.title_color || "#333"};
+  color: ${
+    resolveColor(sg.configurations?.title_color, colors) || "rgb(81, 81, 81)"
+  };
   font-size: 10px;
 }
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
@@ -1142,35 +1307,14 @@ function convertToFormat(JsonData) {
 }
 `;
 
-      css += `
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        idx + 1
-      } .subgroups-on-line-content::after {
-    background: ${sg.content.on_line_content_configuration.bottom_line_color};
-  }
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        idx + 1
-      } .subgroups-on-line-content::before {
-    background: ${sg.content.on_line_content_configuration.bottom_shape_color};
-  }
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        idx + 1
-      } .subgroups-on-line-content h6 {
-    background: ${sg.content.on_line_content_configuration.background_color};
-  }
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        idx + 1
-      } .subgroups-on-line-content h6::after {
-    background: ${sg.content.on_line_content_configuration.bottom_point_color};
-  }
-  `;
-
       if (sg.content.line_right === "true" || sg.content.line_right === true) {
         css += `
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}::after {
     position: absolute;
     content: "";
-    border-left: 1px solid ${sg.content.line_color};
+    border-left: 1px solid ${
+      resolveColor(sg.content.line_color, colors) || "#c4c9ca"
+    };
     height: 330px;
     right: -1px;
     top: 10px;
@@ -1179,13 +1323,61 @@ function convertToFormat(JsonData) {
     position: absolute;
     content: "";
     height: 5px;
-    background-color: ${sg.content.line_color};
+    background-color: ${
+      resolveColor(sg.content.line_color, colors) || "#c4c9ca"
+    };
     border-radius: 50%;
     width: 5px;
     right: -3px;
     top: 5px;
   }`;
       }
+
+      const onLine = sg.content.on_line_content_configuration;
+
+      (onLine?.content_id || []).forEach((id, index) => {
+        const bgColor =
+          resolveColor(onLine.background_color?.[index], colors) || "#e6fffc";
+        const fontColor = resolveColor(onLine.color?.[index], colors) || "#000";
+        const bottomPoint =
+          resolveColor(onLine.bottom_point_color?.[index], colors) ||
+          "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
+        const bottomLine =
+          resolveColor(onLine.bottom_line_color?.[index], colors) ||
+          "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
+        const bottomShape =
+          resolveColor(onLine.bottom_shape_color?.[index], colors) ||
+          "linear-gradient(to top, #1375af 5%, #45d0cb)";
+
+        css += `
+  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} {
+    background: ${bgColor};
+    color: ${fontColor};
+    border-radius: 5px;
+    border-bottom-right-radius: 18px;
+  }
+
+
+.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+          idx + 1
+        } #${id} h6::after {
+  background: ${bottomPoint};
+}
+
+
+  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+          idx + 1
+        } #${id}::before {
+    background: ${bottomShape};
+  }
+
+  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+          idx + 1
+        } #${id}.subgroups-on-line-content::after {
+    background: ${bottomLine};
+  }
+  `;
+      });
 
       sub_groups.forEach((sg, subGroupIdx) => {
         const inlineContentArray =
@@ -1232,9 +1424,6 @@ function convertToFormat(JsonData) {
         margin: 0;
         z-index: 1;
         transform: translateX(-50%);
-        background: ${
-          sg.content.on_line_content_configuration.bottom_line_color
-        };
       }
       .${uniqueClassName}-sub-group-div${
             subGroupIdx + 1
@@ -1248,9 +1437,6 @@ function convertToFormat(JsonData) {
         left: 50%;
         transform: translate(-50%, -50%) rotateZ(30deg);
         z-index: 2;
-        background: ${
-          sg.content.on_line_content_configuration.bottom_shape_color
-        };
       }
     `;
         });
@@ -1264,26 +1450,44 @@ function convertToFormat(JsonData) {
           array: sg.content.logo_heading_color || [],
           classPrefix: "span-",
           selector: ".icon_plus_name",
-          styles: (color) => `
-        background: ${color};
+          styles: (color) => {
+            const resolved =
+              resolveColor(color, colors) ||
+              "linear-gradient(to right top, #a334c8 20%, #f65467)";
+            return `
+        background: ${resolved};
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;`,
+        -webkit-text-fill-color: transparent;
+      `;
+          },
         },
         {
           array: sg.content.logo_heading_border_color || [],
           classPrefix: "fa-user-",
           selector: ".icon_plus_name",
-          styles: (color, idx) => `
-        border: 2px solid ${color};
-        background: ${(sg.content.logo_color || [])[idx]};
+          styles: (color, idx) => {
+            const resolvedBorder = resolveColor(color, colors) || "#a334c8";
+            const resolvedBg =
+              resolveColor((sg.content.logo_color || [])[idx], colors) ||
+              "linear-gradient(to right top, #a334c8 20%, #f65467)";
+            return `
+        border: 2px solid ${resolvedBorder};
+        background: ${resolvedBg};
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;`,
+        -webkit-text-fill-color: transparent;
+      `;
+          },
         },
         {
           array: sg.content.logo_title_color || [],
           classPrefix: "icon-plus-name-paragraph-",
           selector: ".icon_plus_name",
-          styles: (color) => `background: ${color};`,
+          styles: (color) => {
+            const resolved =
+              resolveColor(color, colors) ||
+              "linear-gradient(to right top, #a334c8 20%, #f65467)";
+            return `background: ${resolved};`;
+          },
         },
       ];
 
@@ -1307,7 +1511,10 @@ function convertToFormat(JsonData) {
           css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
             subGroupIdx + 1
           } .icon_plus_name_${idx + 1}::after {
-  background: ${color};
+  background: ${
+    resolveColor(color, colors) ||
+    "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"
+  };
 }\n`;
         });
 
@@ -1315,7 +1522,7 @@ function convertToFormat(JsonData) {
           css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
             subGroupIdx + 1
           } .icon_plus_name_${idx + 1}::before {
-  border-top: 7px solid ${color};
+  border-top: 7px solid ${resolveColor(color, colors) || "#a334c8"};
 }\n`;
         });
       }
@@ -1331,7 +1538,7 @@ function convertToFormat(JsonData) {
       case "Start-Header":
         return generateStartHeader(component, className);
       case "Header":
-        return generateHeaderHTMLandCSS(component, className);
+        return generateHeaderHTMLandCSS(component, className, JsonData.colors);
       default:
         return { html: "", css: "" }; // fallback for unknowns
     }
@@ -1368,14 +1575,13 @@ body {
   align-items:center;
   justify-content: center;
   font-family: sans-serif;
-  transform:scale(1);
   overflow:hidden;
 }
 .PPT-Box {
   border: 1px solid black;
   width:1520px;
   height:710px;
-  background-color: #f6fcfc;
+  background-color: ${JSON_Data.Page_Configuration.background_color || "#f6fcfc"};
   position: relative;
   display: flex;
   overflow-x:hidden;
@@ -1392,8 +1598,8 @@ body {
   left: 55px;
   transform: translateY(-50%);
   height: 15px;
-  box-shadow: 0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;
-  background-color: #58e3d2;
+  box-shadow: ${JSON_Data.mid_line_config.shadow || "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb"};
+  background-color: ${JSON_Data.mid_line_config.color || "#58e3d2"};
   z-index: 3;
   border-bottom-left-radius:10px;
 }
@@ -1411,7 +1617,7 @@ body {
   align-items: end;
 }
 .footer-dark-five-lines div {
-  background: linear-gradient(to bottom, #f5fbfb, #eaf0f0);
+  background: ${JSON_Data.footer.footer_lines_color || "linear-gradient(to bottom, #f5fbfb, #eaf0f0)"};
   height: calc(100px / 5);
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
@@ -1433,15 +1639,35 @@ let dynamicFooterCSS = "";
 
 // Add widths for each footer div
 Object.keys(JSON_Data.footer.label_width).forEach((key, idx) => {
-  const widthValue = JSON_Data.footer.label_width[key];
-  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${
-    idx + 1
-  }) { width: ${widthValue}; }\n`;
+  let widthValue = parseFloat(JSON_Data.footer.label_width[key]);
+
+  // If the value is NaN (like if user passes "abc"), default to 70
+  if (isNaN(widthValue)) widthValue = 70;
+
+  // Clamp the value between 0 and 100
+  widthValue = Math.max(0, Math.min(100, widthValue));
+
+  // Add % at the end for CSS
+  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${idx + 1}) { width: ${widthValue}%; }\n`;
 });
+
+const levelToPixel = (levelString) => {
+  const defaultLevel = 10;
+  const totalLevels = 20;
+  const maxOffset = 140;
+  let level = parseInt(levelString?.replace("Level_", ""), 10);
+  if (isNaN(level)) level = defaultLevel;
+  level = Math.max(0, Math.min(totalLevels, level));
+  const offsetFromCenter = level - defaultLevel;
+  const pixelValue = (offsetFromCenter / defaultLevel) * maxOffset;
+
+  return `${pixelValue}px`;
+};
 
 // Add left positions for each h4
 Object.keys(JSON_Data.footer.footer_label_position_left).forEach((key, idx) => {
-  const leftValue = JSON_Data.footer.footer_label_position_left[key];
+  const levelString = JSON_Data.footer.footer_label_position_left[key];
+  const leftValue = levelToPixel(levelString);
   dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${
     idx + 1
   }) h4 { left: ${leftValue}; }\n`;
@@ -1455,11 +1681,15 @@ Object.keys(labels).forEach((key, idx) => {
   }</h4></div>\n`;
 });
 
-const PreDefined_CSS_WithScale = PreDefined_CSS.replace(
-  /transform:scale\([^)]*\)/,
-  `transform: scale(${JSON_Data.scaling})`
-);
-
+let userScale = parseFloat(JSON_Data.scaling);
+if (isNaN(userScale)) {
+  userScale = 1; // default
+} else if (userScale > 1) {
+  userScale = 1;
+} else if (userScale < 0) {
+  userScale = 0;
+}
+const PreDefined_CSS_WithScale = PreDefined_CSS
 const Final_CSS = PreDefined_CSS_WithScale + result.CSS + dynamicFooterCSS;
 
 const Final_HTML = PreDefined_HTML.replace(
@@ -1538,10 +1768,16 @@ function drawConnectingLines(JSON_Data) {
                 width: ${width}px;
                 height: ${height}px;
                 border-top: 1px solid ${
-                  sg.content.connecting_Line.line_color[i] || "black"
+                  resolveColor(
+                    sg.content.connecting_Line.line_color[i],
+                    JSON_Data.colors
+                  ) || "#9f30cb"
                 };
                 border-right: 1px solid ${
-                  sg.content.connecting_Line.line_color[i] || "black"
+                  resolveColor(
+                    sg.content.connecting_Line.line_color[i],
+                    JSON_Data.colors
+                  ) || "#9f30cb"
                 };
                 border-top-right-radius: 20px;
                 transform: rotate(${angle}deg);
@@ -1553,7 +1789,10 @@ function drawConnectingLines(JSON_Data) {
                 right: 0px;
                 transform: translateX(50%);
                 border-top: 6px solid ${
-                  sg.content.connecting_Line.arrow_color[i] || "#000"
+                  resolveColor(
+                    sg.content.connecting_Line.arrow_color[i],
+                    JSON_Data.colors
+                  ) || "#a334c8"
                 };
                 border-left: 4px solid transparent;
                 border-right: 4px solid transparent;
@@ -1627,11 +1866,13 @@ function drawBottomTimelineSeries(JSON_Data) {
         const top = startRect.top - pptRect.top;
 
         const timelineClass = `timeline-bottom-line-${sectionIdx}-${idx}-${i}`;
-        const bg = timeline.background_color || "yellow";
+        const bg =
+          resolveColor(timeline.background_color, JSON_Data.colors) ||
+          "linear-gradient(to right, #f6f4dc10 10%, #ffc305)";
         const showBorder =
           item.show_border === "true" || item.show_border === true;
         const borderColor = showBorder
-          ? timeline.border_color || "black"
+          ? resolveColor(timeline.border_color, JSON_Data.colors) || "#ffc100"
           : "transparent";
 
         const style = document.createElement("style");
@@ -1781,7 +2022,8 @@ function drawConnectingRectangle(JSON_Data) {
           maxBorder
         );
 
-        const color = rectangleData.color?.[i] || "#000";
+        const color =
+          resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
         const borderRadius = "8px";
         const topOffset = 397;
 
