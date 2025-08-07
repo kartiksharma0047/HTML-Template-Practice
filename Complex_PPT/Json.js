@@ -21,10 +21,13 @@ JSON_Data1 = {
       footer_4_width: "50",
       footer_5_width: "60",
     },
+    footer_width: "auto",
     footer_lines_color: "linear-gradient(to bottom, #c9c9c97c, #92929263)",
   },
   Page_Configuration: {
     background_color: "#e3ffffff",
+    border_color:"black",
+    scroll_horizontal:true
   },
   mid_line_config: {
     color: "#5899e3ff",
@@ -32,11 +35,8 @@ JSON_Data1 = {
       "0 0 70px #5899e3ff, 0 0 30px #5899e3ff,0 0 20px #5899e3ff, 0 0 100px #5899e3ff;",
   },
   colors: {
-    // Colors For Start-header
     white_color: "#ffffff",
     black_color: "#000000",
-
-    // Header Colors
     Common_Header_title: "#242424ff",
     Common_Header_Line: "#adafaf",
     Common_SubHeader_title: "rgba(0, 0, 0, 1)",
@@ -62,7 +62,6 @@ JSON_Data1 = {
     Common_timeLineSeries_Border: "#ffc100",
   },
   body: [
-    // Start of Prediagnosi
     {
       component: "Start-Header",
       title: "Document Upload",
@@ -99,7 +98,6 @@ JSON_Data1 = {
         },
       },
     },
-    // Initial Review
     {
       component: "Header",
       title: "Primary Review",
@@ -242,7 +240,6 @@ JSON_Data1 = {
         },
       ],
     },
-    // Final Review
     {
       component: "Header",
       title: "Final Review",
@@ -352,7 +349,6 @@ JSON_Data1 = {
         },
       ],
     },
-    // Approval
     {
       component: "Header",
       title: "Approval",
@@ -474,11 +470,8 @@ JSON_Data2={
     shadow:"0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;"
   },
   colors: {
-    // Colors For Start-header
     white_color: "#ffffff",
     black_color: "#000000",
-
-    // Header Colors
     Common_Header_title: "#515151",
     Common_Header_Line: "#adafaf",
     Common_SubHeader_title: "rgb(81, 81, 81)",
@@ -504,7 +497,6 @@ JSON_Data2={
     Common_timeLineSeries_Border: "#ffc100",
     },
   body: [
-    // Start of Prediagnosi
     {
       component: "Start-Header",
       title: "Pre-diagnosi",
@@ -533,7 +525,6 @@ JSON_Data2={
         },
       },
     },
-    // Diagnosi e pre-treatment
     {
       component: "Header",
       title: "Diagnosi e pre-treatment",
@@ -776,8 +767,6 @@ JSON_Data2={
         },
       ],
     },
-
-    // Treatment
     {
       component: "Header",
       title: "Treatment",
@@ -1236,30 +1225,33 @@ JSON_Data3 = {
       footer_4_width: "50",
       footer_5_width: "30",
     },
+    footer_width: "auto",
     footer_lines_color: "linear-gradient(to bottom, #c5bba790, #faecd6ff)",
   },
   Page_Configuration: {
     background_color: "#fff9e3ff",
+    border_color:"black",
+    scroll_horizontal:true
   },
   mid_line_config: {
     color: "#e3b558ff",
     shadow:
       "0 0 70px #e3b758ff, 0 0 30px #e3b758ff,0 0 20px #e3b758ff, 0 0 100px #e3b758ff;",
+    width:"auto"  
   },
   colors: {
-    // Colors For Start-header
     white_color: "#ffffff",
     black_color: "#000000",
-
-    // Header Colors
     Common_Header_title: "#242424ff",
     Common_Header_Line: "#adafaf",
     Common_SubHeader_title: "rgba(0, 0, 0, 1)",
     Common_SubHeader_lineRight: "#c4c9ca",
-    Common_logo_heading: "linear-gradient(to right top, #fff067ff 20%, #f69a54ff)",
+    Common_logo_heading:
+      "linear-gradient(to right top, #fff067ff 20%, #f69a54ff)",
     Common_logo_border: "#c89c34ff",
     Common_logo: "linear-gradient(to right top, #c89934ff 20%, #f6c854ff)",
-    Common_logo_title: "linear-gradient(to right top, #c86534ff 20%, #f6c054ff)",
+    Common_logo_title:
+      "linear-gradient(to right top, #c86534ff 20%, #f6c054ff)",
     Common_TopDown_arror: "#ff0000ff",
     Common_TopDown_Line: "linear-gradient(to bottom, #ff5d5dff 70%, #cb3030ff)",
     Common_ConnectingLine_arrow: "#a334c8",
@@ -1271,13 +1263,13 @@ JSON_Data3 = {
       "linear-gradient(to right top, #b29220ff 1%, #cbb241ff)",
     Common_onLineContent_Line:
       "linear-gradient(to bottom, #eee2bbff 70%, #e1cfa5ff)",
-    Common_onLineContent_Shape: "linear-gradient(to top, #afa213ff 5%, #d0c045ff)",
+    Common_onLineContent_Shape:
+      "linear-gradient(to top, #afa213ff 5%, #d0c045ff)",
     Common_timeLineSeries_Background:
       "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
     Common_timeLineSeries_Border: "#ffc100",
   },
   body: [
-    // Start of Prediagnosi
     {
       component: "Start-Header",
       title: "Job Application",
@@ -1290,11 +1282,7 @@ JSON_Data3 = {
       start_content: {
         logo_title: "User",
         link: "https://www.youtube.com/",
-        steps: [
-          "Portal",
-          "Browse Jobs",
-          "View Description",
-        ],
+        steps: ["Portal", "Browse Jobs", "View Description"],
         stepsLink: ["", ""],
         title_detail: "User will Access Portal",
         steps_details: [
@@ -1349,7 +1337,11 @@ JSON_Data3 = {
               "logo_title_id2",
               "logo_title_id3",
             ],
-            logo_detail: ["Application received in system", "Parse and scan resume using AI tool (keywords, experience match)", "Initial screening of resume (basic qualification check)"],
+            logo_detail: [
+              "Application received in system",
+              "Parse and scan resume using AI tool (keywords, experience match)",
+              "Initial screening of resume (basic qualification check)",
+            ],
             logo_title_color: [
               "Common_logo_title",
               "Common_logo_title",
@@ -1404,7 +1396,11 @@ JSON_Data3 = {
                 "on_line_content_2",
                 "on_line_content_3",
               ],
-              content_details: ["Handled By Robot for storing applications", "Handled By Robot for pointing key values from application", "Handled by HR to select/Reject Applications"],
+              content_details: [
+                "Handled By Robot for storing applications",
+                "Handled By Robot for pointing key values from application",
+                "Handled by HR to select/Reject Applications",
+              ],
               color: [
                 "Common_onLineContent_font",
                 "Common_onLineContent_font",
@@ -1456,7 +1452,6 @@ JSON_Data3 = {
         },
       ],
     },
-    // Final Review
     {
       component: "Header",
       title: "Recuritment Process",
@@ -1473,23 +1468,47 @@ JSON_Data3 = {
             title_color: "Common_SubHeader_title",
           },
           content: {
-            logo_heading: ["", "","AUTO"],
-            logo_heading_color: ["Common_logo_heading","Common_logo_heading", "Common_logo_heading"],
+            logo_heading: ["", "", "AUTO"],
+            logo_heading_color: [
+              "Common_logo_heading",
+              "Common_logo_heading",
+              "Common_logo_heading",
+            ],
             logo_heading_border_color: [
               "Common_logo_border",
               "Common_logo_border",
               "Common_logo_border",
             ],
-            logo_color: ["Common_logo", "Common_logo","Common_logo"],
-            logo_title: ["Recruiter", "HR","E-Mails"],
+            logo_color: ["Common_logo", "Common_logo", "Common_logo"],
+            logo_title: ["Recruiter", "HR", "E-Mails"],
             link: ["", ""],
-            logo_id_names: ["logo_title_id4", "logo_title_id5","logo_title_id6"],
-            logo_detail: ["Recruiter shortlists for further review", "Hiring manager reviews detailed application","Schedule auto-email for online technical assessment"],
-            logo_title_color: ["Common_logo_title","Common_logo_title", "Common_logo_title"],
+            logo_id_names: [
+              "logo_title_id4",
+              "logo_title_id5",
+              "logo_title_id6",
+            ],
+            logo_detail: [
+              "Recruiter shortlists for further review",
+              "Hiring manager reviews detailed application",
+              "Schedule auto-email for online technical assessment",
+            ],
+            logo_title_color: [
+              "Common_logo_title",
+              "Common_logo_title",
+              "Common_logo_title",
+            ],
             top_down_arrow: {
               display: "true",
-              arrow_color: ["Common_TopDown_arror", "Common_TopDown_arror","Common_TopDown_arror"],
-              line_color: ["Common_TopDown_Line","Common_TopDown_Line", "Common_TopDown_Line"],
+              arrow_color: [
+                "Common_TopDown_arror",
+                "Common_TopDown_arror",
+                "Common_TopDown_arror",
+              ],
+              line_color: [
+                "Common_TopDown_Line",
+                "Common_TopDown_Line",
+                "Common_TopDown_Line",
+              ],
             },
             connecting_Line: {
               display: "true",
@@ -1520,20 +1539,32 @@ JSON_Data3 = {
             line_right: "false",
             line_color: "Common_SubHeader_lineRight",
             on_line_content_configuration: {
-              content: ["Process", "Review","Response"],
-              link: ["", "",""],
-              content_id: ["on_line_content_4", "on_line_content_5","on_line_content_6"],
-              content_details: ["Recuritment Process Initiated", "Review is being seen by HR","Now Email Response sended to Users"],
-              color: ["Common_onLineContent_font", "Common_onLineContent_font","Common_onLineContent_font"],
+              content: ["Process", "Review", "Response"],
+              link: ["", "", ""],
+              content_id: [
+                "on_line_content_4",
+                "on_line_content_5",
+                "on_line_content_6",
+              ],
+              content_details: [
+                "Recuritment Process Initiated",
+                "Review is being seen by HR",
+                "Now Email Response sended to Users",
+              ],
+              color: [
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+              ],
               background_color: [
                 "Common_onLineContent_Background",
                 "Common_onLineContent_Background",
-                "Common_onLineContent_Background"
+                "Common_onLineContent_Background",
               ],
               bottom_point_color: [
                 "Common_onLineContent_Point",
                 "Common_onLineContent_Point",
-                "Common_onLineContent_Point"
+                "Common_onLineContent_Point",
               ],
               bottom_line_color: [
                 "Common_onLineContent_Line",
@@ -1543,9 +1574,9 @@ JSON_Data3 = {
               bottom_shape_color: [
                 "Common_onLineContent_Shape",
                 "Common_onLineContent_Shape",
-                "Common_onLineContent_Shape"
+                "Common_onLineContent_Shape",
               ],
-              bottom_shape_postion: ["Level_2", "Level_3","Level_3"],
+              bottom_shape_postion: ["Level_2", "Level_3", "Level_3"],
             },
             BottomtimelineSeries: {
               background_color: "Common_timeLineSeries_Background",
@@ -1564,14 +1595,13 @@ JSON_Data3 = {
                   show_border: "true",
                   starting: "on_line_content_4",
                   ending: "on_line_content_6",
-                }
+                },
               ],
             },
           },
         },
       ],
     },
-    // Technical Process
     {
       component: "Header",
       title: "Interview Process",
@@ -1588,22 +1618,22 @@ JSON_Data3 = {
             title_color: "Common_SubHeader_title",
           },
           content: {
-            logo_heading: ["AUTO",""],
-            logo_heading_color: ["Common_logo_heading","Common_logo_heading"],
+            logo_heading: ["AUTO", ""],
+            logo_heading_color: ["Common_logo_heading", "Common_logo_heading"],
             logo_heading_border_color: [
               "Common_logo_border",
-              "Common_logo_border"
+              "Common_logo_border",
             ],
-            logo_color: ["Common_logo","Common_logo"],
-            logo_title: ["Technical Interview","Final Interview"],
-            link: ["",""],
-            logo_id_names: ["logo_title_id7","logo_title_id8"],
-            logo_detail: ["Technical Interview","Final HR Round"],
-            logo_title_color: ["Common_logo_title","Common_logo_title"],
+            logo_color: ["Common_logo", "Common_logo"],
+            logo_title: ["Technical Interview", "Final Interview"],
+            link: ["", ""],
+            logo_id_names: ["logo_title_id7", "logo_title_id8"],
+            logo_detail: ["Technical Interview", "Final HR Round"],
+            logo_title_color: ["Common_logo_title", "Common_logo_title"],
             top_down_arrow: {
               display: "true",
-              arrow_color: ["Common_TopDown_arror","Common_TopDown_arror"],
-              line_color: ["Common_TopDown_Line","Common_TopDown_Line"],
+              arrow_color: ["Common_TopDown_arror", "Common_TopDown_arror"],
+              line_color: ["Common_TopDown_Line", "Common_TopDown_Line"],
             },
             connecting_Rectangle: {
               display: "false",
@@ -1622,28 +1652,31 @@ JSON_Data3 = {
             line_right: "false",
             line_color: "Common_SubHeader_lineRight",
             on_line_content_configuration: {
-              content: ["DSA","HR interview"],
+              content: ["DSA", "HR interview"],
               link: [""],
-              content_id: ["on_line_content_7","on_line_content_8"],
-              content_details: ["Technical team evaluates test results","Conduct HR interview (background & behavior)"],
-              color: ["Common_onLineContent_font","Common_onLineContent_font"],
+              content_id: ["on_line_content_7", "on_line_content_8"],
+              content_details: [
+                "Technical team evaluates test results",
+                "Conduct HR interview (background & behavior)",
+              ],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
               background_color: [
                 "Common_onLineContent_Background",
-                "Common_onLineContent_Background"
+                "Common_onLineContent_Background",
               ],
               bottom_point_color: [
                 "Common_onLineContent_Point",
-                "Common_onLineContent_Point"
+                "Common_onLineContent_Point",
               ],
               bottom_line_color: [
                 "Common_onLineContent_Line",
-                "Common_onLineContent_Line"
+                "Common_onLineContent_Line",
               ],
               bottom_shape_color: [
                 "Common_onLineContent_Shape",
-                "Common_onLineContent_Shape"
+                "Common_onLineContent_Shape",
               ],
-              bottom_shape_postion: ["Level_3","Level_3"],
+              bottom_shape_postion: ["Level_3", "Level_3"],
             },
             BottomtimelineSeries: {
               background_color: "Common_timeLineSeries_Background",
@@ -1662,12 +1695,13 @@ JSON_Data3 = {
                   show_border: "false",
                   starting: "on_line_content_5",
                   ending: "on_line_content_8",
-                }
+                },
               ],
             },
           },
         },
       ],
     },
+    
   ],
 };
