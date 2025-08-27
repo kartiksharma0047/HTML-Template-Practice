@@ -1,5 +1,6 @@
+let collapsibleData = [];
 JSON_Data = {
-    footer: {
+  footer: {
     footer_label: {
       footer_1_label: "Ambulatorio",
       footer_2_label: "Centro di Senologia/Ospedale",
@@ -21,14 +22,19 @@ JSON_Data = {
       footer_4_width: "50",
       footer_5_width: "20",
     },
-    footer_lines_color:"linear-gradient(to bottom, #f5fbfb, #eaf0f0)"
+    footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
+    footer_width:"auto"
   },
-  Page_Configuration:{
-    background_color:"#f6fcfc"
+  Page_Configuration: {
+    background_color: "#f6fcfc",
+    border_color: "black",
+    scroll_horizontal: true,
   },
-  mid_line_config:{
-    color:"#58e3d2",
-    shadow:"0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;"
+  mid_line_config: {
+    color: "#58e3d2",
+    shadow:
+      "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
+    width: "auto",
   },
   colors: {
     white_color: "#ffffff",
@@ -56,7 +62,7 @@ JSON_Data = {
     Common_timeLineSeries_Background:
       "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
     Common_timeLineSeries_Border: "#ffc100",
-    },
+  },
   body: [
     {
       component: "Start-Header",
@@ -73,7 +79,11 @@ JSON_Data = {
         steps: ["SINTOMI", "REPERTO INCIDENTALE", "SCREENING I LIVELLO"],
         stepsLink: ["https://www.youtube.com/", "", "https://www.youtube.com/"],
         title_detail: "Hello World!",
-        steps_details: ["Hello World!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.", "Hello World!"],
+        steps_details: [
+          "Hello World!",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.",
+          "Hello World!",
+        ],
         configurations: {
           logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           logo_border_color: "#2394b9",
@@ -121,7 +131,11 @@ JSON_Data = {
               "logo_title_id2",
               "logo_title_id3",
             ],
-            logo_detail: ["Hello World!", "Hello World!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula."],
+            logo_detail: [
+              "Hello World!",
+              "Hello World!",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.",
+            ],
             logo_title_color: [
               "Common_logo_title",
               "Common_logo_title",
@@ -195,7 +209,11 @@ JSON_Data = {
                 "on_line_content_2",
                 "on_line_content_3",
               ],
-              content_details: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.", "Hello World!", "Hello World!"],
+              content_details: [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.",
+                "Hello World!",
+                "Hello World!",
+              ],
               color: [
                 "Common_onLineContent_font",
                 "Common_onLineContent_font",
@@ -258,7 +276,7 @@ JSON_Data = {
             logo_color: ["Common_logo"],
             logo_title: ["GOM"],
             logo_id_names: ["logo_title_id4"],
-            logo_detail:["Hello World!"],
+            logo_detail: ["Hello World!"],
             link: ["www.google.com"],
             logo_title_color: ["Common_logo_title"],
             top_down_arrow: {
@@ -302,7 +320,7 @@ JSON_Data = {
             on_line_content_configuration: {
               content: ["DIAGNOSI"],
               content_id: ["on_line_content_4"],
-              content_details:["Hello World!"],
+              content_details: ["Hello World!"],
               link: ["www.google.com"],
               color: ["Common_onLineContent_font"],
               background_color: ["Common_onLineContent_Background"],
@@ -328,6 +346,7 @@ JSON_Data = {
         },
       ],
     },
+
     {
       component: "Header",
       title: "Treatment",
@@ -356,7 +375,7 @@ JSON_Data = {
             ],
             logo_title: ["Oncologo", "Infermiere"],
             logo_id_names: ["logo_title_id5", "logo_title_id6"],
-            logo_detail:["Hello World",""],
+            logo_detail: ["Hello World", ""],
             link: ["www.google.com", ""],
             logo_title_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
@@ -415,7 +434,7 @@ JSON_Data = {
                 "on_line_content_6",
                 "on_line_content_7",
               ],
-              content_details:["Hello","hi","World"],
+              content_details: ["Hello", "hi", "World"],
               link: ["www.google.com", "", "www.google.com"],
               color: ["black", "black", "black"],
               background_color: ["#e6fffc", "#e6fffc", "#e6fffc"],
@@ -761,8 +780,7 @@ JSON_Data = {
       ],
     },
   ],
-}
-
+};
 // Color Map Function
 const resolveColor = (value, colorMap) => {
   if (colorMap[value]) return colorMap[value]; // if it's a key in colors
@@ -1045,7 +1063,7 @@ function convertToFormat(JsonData) {
     const { title, configurations, sub_groups } = component;
 
     let html = `<div class="Slide-box ${uniqueClassName}">\n`;
-    html += `<h1>${title}</h1>\n`;
+    html += `<h1><i class="fa-regular fa-square-caret-right"></i>${title}</h1>\n`;
 
     html += `<div class="sub-groups">\n`;
 
@@ -1053,7 +1071,9 @@ function convertToFormat(JsonData) {
       html += `<div class="sub-group-div ${uniqueClassName}-sub-group-div${
         idx + 1
       }">\n`;
-      html += `<h2>${sg.title}</h2>\n`;
+      html += `<h2>
+      <i class="fa-regular fa-square-caret-right"></i>
+      ${sg.title}</h2>\n`;
 
       // ▶️ Top icons with logo_heading + logo_title
       html += `<div class="subgroups-mid-top">\n`;
@@ -1128,6 +1148,45 @@ function convertToFormat(JsonData) {
     font-size: 12px;
     margin-top: 10px;
     margin-bottom: 20px;
+  }
+  .${uniqueClassName} h1 .fa-square-caret-right,
+  .${uniqueClassName} h1 .fa-square-caret-down{
+    margin-right:5px;
+    cursor:pointer;
+    transition:0.2s all;
+    &:hover{
+      color:#000000;
+      transform:scale(1.1);
+    }
+    &:active{
+      transform:scale(0.9);
+    }
+  }
+  .${uniqueClassName} h2 .fa-square-caret-right,
+  .${uniqueClassName} h2 .fa-square-caret-down
+  {
+    margin-right:5px;
+    cursor:pointer;
+    transition:0.2s all;
+    &:hover{
+      color:#000000;
+      transform:scale(1.1);
+    }
+    &:active{
+      transform:scale(0.9);
+    }
+  }
+    
+  .${uniqueClassName} h2 {
+    font-size: 10px;
+    color: ${
+      resolveColor(
+        configurations?.sub_title_color || configurations?.title_color,
+        colors
+      ) || "#515151"
+    };
+    margin-bottom: 10px;
+    padding-bottom: 3px;
   }
   .${uniqueClassName} .sub-groups {
     display: flex;
@@ -1251,7 +1310,6 @@ function convertToFormat(JsonData) {
     transform: translate(-50%, 50%);
     z-index: 4;
   }
-  
   /* === Right Line example === */
   ${
     configurations.line_right
@@ -1574,9 +1632,7 @@ body {
   overflow:hidden;
 }
 .PPT-Box {
-  border: 1px solid ${
-    JSON_Data.Page_Configuration.border_color || "#000000"
-  };
+  border: 1px solid ${JSON_Data.Page_Configuration.border_color || "#000000"};
   width:1520px;
   height:710px;
   background-color: ${
@@ -1584,7 +1640,9 @@ body {
   };
   position: relative;
   display: flex;
-  overflow-x:${JSON_Data.Page_Configuration.scroll_horizontal ? "scroll":"hidden"};
+  overflow-x:${
+    JSON_Data.Page_Configuration.scroll_horizontal ? "scroll" : "hidden"
+  };
   overflow-y:hidden;
   align-items: center;
   justify-content: start;
@@ -1709,7 +1767,7 @@ const styleTag = document.createElement("style");
 styleTag.textContent = Final_CSS;
 document.head.appendChild(styleTag);
 
-// ✅ Adjust Mid-Line Width Dynamically
+//  Adjust Mid-Line Width Dynamically
 function adjustMidLineWidth(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
   const midLine = pptBox?.querySelector(".mid-Line");
@@ -1719,38 +1777,51 @@ function adjustMidLineWidth(JSON_Data) {
   const pptRect = pptBox.getBoundingClientRect();
 
   let maxRight = 0;
-  let lastId = "";
+  let lastVisibleId = null;
 
-  // 1️⃣ Find farthest element on screen
+  // 1. Track farthest visible element only
   allChildren.forEach((el) => {
     const rect = el.getBoundingClientRect();
-    const relativeRight = rect.right - pptRect.left;
-    if (relativeRight > maxRight) {
-      maxRight = relativeRight;
-      lastId = el.id;
+
+    // Check visibility within PPT box (not full screen)
+    const isVisible = rect.right > pptRect.left && rect.left < pptRect.right;
+    if (isVisible) {
+      const relativeRight = rect.right - pptRect.left;
+      if (relativeRight > maxRight) {
+        maxRight = relativeRight;
+        lastVisibleId = el.id;
+      }
     }
   });
 
-  // 2️⃣ Get number of logo elements in the last subgroup of last section
+  // 2. Determine last parent's logos
   let logoCount = 0;
-
+  let lastParentId = null;
   try {
     const array = JSON_Data.body;
     const lastSubGroups = array[array.length - 1].sub_groups;
-    const lastLogoIds = lastSubGroups[lastSubGroups.length - 1]?.content?.logo_id_names || [];
-
+    const lastContent = lastSubGroups[lastSubGroups.length - 1]?.content;
+    const lastLogoIds = lastContent?.logo_id_names || [];
     logoCount = lastLogoIds.length;
-    console.log("🔵 Last Subgroup logo IDs:", lastLogoIds);
+
+    if (lastLogoIds.length > 0) {
+      lastParentId = lastLogoIds[lastLogoIds.length - 1]; // last element's id
+    }
   } catch (err) {
-    console.warn("⚠️ Could not determine logo count from JSON_Data:", err);
+    console.warn("Could not determine logo count from JSON_Data:", err);
   }
 
-  // 3️⃣ Decide offset based on logo count
+  // 3. Decide offset base (by logo count)
   let offset = 20;
   if (logoCount === 1) offset = 42;
   else if (logoCount === 2) offset = 26;
 
-  // 4️⃣ Apply width logic
+  // 4. Add *extra* 20px if last parent is NOT visible
+  if (lastParentId && lastVisibleId !== lastParentId) {
+    offset += 46; // hardcoded extra width
+  }
+
+  // 5. Apply width logic
   const midLineWidthSetting = (
     JSON_Data.mid_line_config?.width || "auto"
   ).toLowerCase();
@@ -1758,13 +1829,12 @@ function adjustMidLineWidth(JSON_Data) {
   if (midLineWidthSetting === "default") {
     midLine.style.width = `100%`;
   } else {
-    const dynamicWidth = maxRight - 55 + offset;
+    const dynamicWidth = maxRight ? maxRight - 55 + offset : 0;
     midLine.style.width = `${dynamicWidth}px`;
-    console.log("✅ Final mid-line width:", dynamicWidth);
   }
 }
-adjustMidLineWidth(JSON_Data);
 
+adjustMidLineWidth(JSON_Data);
 
 // Adjust Footer Width Dynamically
 function adjustFooterWidth(JSON_Data) {
@@ -1773,39 +1843,53 @@ function adjustFooterWidth(JSON_Data) {
   if (!pptBox || !footer) return;
 
   const allChildren = pptBox.querySelectorAll("*[id^='logo_title_id']");
-  let maxRight = 0;
+  const pptRect = pptBox.getBoundingClientRect();
 
+  let maxRight = 0;
+  let lastVisibleId = null;
+
+  // 1. Track farthest visible element only
   allChildren.forEach((el) => {
     const rect = el.getBoundingClientRect();
-    const pptRect = pptBox.getBoundingClientRect();
-    const relativeRight = rect.right - pptRect.left;
-    if (relativeRight > maxRight) {
-      maxRight = relativeRight;
+
+    const isVisible = rect.right > pptRect.left && rect.left < pptRect.right;
+    if (isVisible) {
+      const relativeRight = rect.right - pptRect.left;
+      if (relativeRight > maxRight) {
+        maxRight = relativeRight;
+        lastVisibleId = el.id;
+      }
     }
   });
 
-  // ✅ Determine logo count from last subgroup
+  // 2. Determine last parent's logos
   let logoCount = 0;
-
+  let lastParentId = null;
   try {
     const array = JSON_Data.body;
-    const lastSubGroups = array[array.length - 1]?.sub_groups || [];
-    const lastLogoIds = lastSubGroups[lastSubGroups.length - 1]?.content?.logo_id_names || [];
-
+    const lastSubGroups = array[array.length - 1].sub_groups;
+    const lastContent = lastSubGroups[lastSubGroups.length - 1]?.content;
+    const lastLogoIds = lastContent?.logo_id_names || [];
     logoCount = lastLogoIds.length;
-    console.log("🔵 Last Subgroup logo IDs:", lastLogoIds);
+
+    if (lastLogoIds.length > 0) {
+      lastParentId = lastLogoIds[lastLogoIds.length - 1]; // last element's id
+    }
   } catch (err) {
-    console.warn("⚠️ Could not determine logo count from JSON_Data:", err);
+    console.warn("Could not determine logo count from JSON_Data:", err);
   }
 
-  // ✅ Dynamically set padding based on logo count
-  let padding_border_width_add = 20; // default for >2
-  if (logoCount === 1) {
-    padding_border_width_add = 40;
-  } else if (logoCount === 2) {
-    padding_border_width_add = 24;
+  // 3. Decide base padding by logo count
+  let padding_border_width_add = 20; // default >2
+  if (logoCount === 1) padding_border_width_add = 40;
+  else if (logoCount === 2) padding_border_width_add = 24;
+
+  // 4. Add extra 20px if last parent is NOT visible
+  if (lastParentId && lastVisibleId !== lastParentId) {
+    padding_border_width_add += 48;
   }
 
+  // 5. Apply width logic
   const footerWidthSetting = (
     JSON_Data.footer?.footer_width || "auto"
   ).toLowerCase();
@@ -1815,25 +1899,36 @@ function adjustFooterWidth(JSON_Data) {
   } else {
     const dynamicWidth = maxRight + padding_border_width_add;
     footer.style.width = `${dynamicWidth}px`;
-    console.log("✅ Final footer width:", dynamicWidth);
   }
 }
 
 adjustFooterWidth(JSON_Data);
 
-// Make Connecting Lines
 function drawConnectingLines(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
-
   if (!pptBox) {
     console.warn("PPT-Box not found.");
     return;
   }
 
+  // Clear previously drawn connecting lines
+  pptBox
+    .querySelectorAll("[class^='connecting-line-sec']")
+    .forEach((el) => el.remove());
+  document.querySelectorAll("style").forEach((styleEl) => {
+    if (styleEl.textContent.includes("connecting-line-sec")) styleEl.remove();
+  });
+
   JSON_Data.body.forEach((section, sectionIdx) => {
     if (!section.sub_groups) return;
 
     section.sub_groups.forEach((sg, idx) => {
+      // Skip if parent group is collapsed
+      const parentItem = collapsibleData.find(
+        (p) => p.parent_class === section.unique_class
+      );
+      if (parentItem && parentItem.collapsed) return;
+
       if (
         sg.content &&
         sg.content.connecting_Line &&
@@ -1841,14 +1936,20 @@ function drawConnectingLines(JSON_Data) {
           sg.content.connecting_Line.display === true)
       ) {
         sg.content.connecting_Line.connections.forEach((connection, i) => {
+          // Look up endpoints
           const startEl = document.getElementById(connection.starting);
           const endEl = document.getElementById(connection.ending);
 
-          if (!startEl || !endEl) {
-            console.warn("Element not found for connection:", connection);
-            return;
+          // Require BOTH elements present AND visible
+          if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl)) {
+            console.warn(
+              "Skipping connection: missing or hidden element",
+              connection
+            );
+            return; // skip drawing this line
           }
 
+          // --- Position + style calculations ---
           const levelStr = connection.height || "Level_1";
           const levelNum = parseInt(levelStr.split("_")[1]) || 1;
 
@@ -1856,11 +1957,9 @@ function drawConnectingLines(JSON_Data) {
           const baseTopH = 130;
           const increment = 5;
 
-          // Calculate raw values
           let rawHeight = baseHeight + (levelNum - 1) * increment;
           let rawTopH = baseTopH - (levelNum - 1) * increment;
 
-          // Apply bounds (min = 30, max = 130)
           const height = Math.min(Math.max(rawHeight, 30), 130);
           const topH = Math.min(Math.max(rawTopH, 30), 130);
 
@@ -1929,13 +2028,23 @@ function drawConnectingLines(JSON_Data) {
     });
   });
 }
-
 drawConnectingLines(JSON_Data);
 
 // Rendering Timeline Series
+function isVisible(el) {
+  if (!el) return false;
+  const rect = el.getBoundingClientRect();
+  const style = window.getComputedStyle(el);
+  return (
+    style.display !== "none" &&
+    style.visibility !== "hidden" &&
+    rect.width > 0 &&
+    rect.height > 0
+  );
+}
+
 function drawBottomTimelineSeries(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
-
   if (!pptBox) {
     console.warn("PPT-Box not found.");
     return;
@@ -1946,30 +2055,44 @@ function drawBottomTimelineSeries(JSON_Data) {
 
     section.sub_groups.forEach((sg, idx) => {
       const timeline = sg.content?.BottomtimelineSeries;
-      if (!timeline || !timeline.timlines || timeline.timlines.length === 0)
+
+      // If no timeline or no items, remove any previous lines for this subgroup
+      if (!timeline || !timeline.timlines || timeline.timlines.length === 0) {
+        const oldLines = pptBox.querySelectorAll(
+          `[class*="timeline-bottom-line-${sectionIdx}-${idx}-"]`
+        );
+        oldLines.forEach((line) => line.remove());
         return;
+      }
 
       timeline.timlines.forEach((item, i) => {
+        const timelineClass = `timeline-bottom-line-${sectionIdx}-${idx}-${i}`;
+
+        // Always remove any old instance first
+        const oldLine = pptBox.querySelector(`.${timelineClass}`);
+        if (oldLine) oldLine.remove();
+        const oldStyle = document.querySelector(
+          `style[data-timeline="${timelineClass}"]`
+        );
+        if (oldStyle) oldStyle.remove();
+
+        // --- Look up endpoints ---
         const startEl = document.getElementById(item.starting);
         const endEl = document.getElementById(item.ending);
 
-        if (!startEl || !endEl) {
-          console.warn("Start or End element not found for timeline:", item);
-          return;
+        // Require BOTH elements present AND visible
+        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl)) {
+          return; // skip if either is missing or hidden
         }
 
-        // Level-based height logic
+        // --- Position + style calculations ---
         const levelStr = item.height || "Level_1";
         const levelNum = parseInt(levelStr.split("_")[1]) || 1;
-
         const baseTopH = 160;
         const increment = 5;
-
-        let rawTopH = baseTopH + (levelNum - 1) * increment;
-
+        const rawTopH = baseTopH + (levelNum - 1) * increment;
         const topH = Math.min(Math.max(rawTopH, 30), 210);
 
-        // Get bounding rectangles
         const startRect = startEl.getBoundingClientRect();
         const endRect = endEl.getBoundingClientRect();
         const pptRect = pptBox.getBoundingClientRect();
@@ -1977,13 +2100,10 @@ function drawBottomTimelineSeries(JSON_Data) {
         const startCenterX =
           startRect.left - pptRect.left + startRect.width / 2;
         const endCenterX = endRect.left - pptRect.left + endRect.width / 2;
-
         const width2 = Math.abs(endCenterX - startCenterX);
-
         const left = startRect.left - pptRect.left + startRect.width / 2;
         const top = startRect.top - pptRect.top;
 
-        const timelineClass = `timeline-bottom-line-${sectionIdx}-${idx}-${i}`;
         const bg =
           resolveColor(timeline.background_color, JSON_Data.colors) ||
           "linear-gradient(to right, #f6f4dc10 10%, #ffc305)";
@@ -1993,7 +2113,9 @@ function drawBottomTimelineSeries(JSON_Data) {
           ? resolveColor(timeline.border_color, JSON_Data.colors) || "#ffc100"
           : "transparent";
 
+        // --- Inject new style ---
         const style = document.createElement("style");
+        style.setAttribute("data-timeline", timelineClass);
         style.textContent = `
           .${timelineClass} {
             position: absolute;
@@ -2041,10 +2163,10 @@ function drawBottomTimelineSeries(JSON_Data) {
             height:38px;
             border-top-right-radius:20px;
           }
-
         `;
         document.head.appendChild(style);
 
+        // --- Add timeline div ---
         const div = document.createElement("div");
         div.className = timelineClass;
         div.innerHTML = `<p>${item.content}</p><i class="fa-regular fa-clock"></i>`;
@@ -2053,13 +2175,10 @@ function drawBottomTimelineSeries(JSON_Data) {
     });
   });
 }
-
 drawBottomTimelineSeries(JSON_Data);
 
-// Rendering Rectangle
 function drawConnectingRectangle(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
-
   if (!pptBox) {
     console.warn("PPT-Box not found.");
     return;
@@ -2071,30 +2190,41 @@ function drawConnectingRectangle(JSON_Data) {
     section.sub_groups.forEach((sg, idx) => {
       const rectangleData = sg.content?.connecting_Rectangle;
 
+      // If this subgroup doesn't have rectangle config or is turned off, remove any existing rects for it
       if (
         !rectangleData ||
         !(rectangleData.display === "true" || rectangleData.display === true)
-      )
+      ) {
+        const oldRects = pptBox.querySelectorAll(
+          `[class*="connection-Rectangle-sec${sectionIdx}-sub${idx}-rect"]`
+        );
+        oldRects.forEach((rect) => rect.remove());
         return;
+      }
 
       rectangleData.connections.forEach((connection, i) => {
+        const className = `connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}`;
+
+        // Always clear any prior instance of this connection first
+        const oldRect = pptBox.querySelector(`.${className}`);
+        if (oldRect) oldRect.remove();
+
+        // look up endpoints
         const startEl = document.getElementById(connection.starting);
         const endEl = document.getElementById(connection.ending);
 
-        if (!startEl || !endEl) {
-          console.warn(
-            "Element not found for rectangle connection:",
-            connection
-          );
+        // require BOTH present AND visible; otherwise skip (and since we removed oldRect above, it disappears)
+        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl)) {
           return;
         }
 
+        // measurements
         const pptRect = pptBox.getBoundingClientRect();
         const startRect = startEl.getBoundingClientRect();
         const endRect = endEl.getBoundingClientRect();
+
         const distant_Space = 5;
 
-        // Determine start and end X based on flags
         const startX =
           connection.start_from_starting === "true" ||
           connection.start_from_starting === true
@@ -2110,34 +2240,21 @@ function drawConnectingRectangle(JSON_Data) {
         const left = Math.min(startX, endX) - pptRect.left - distant_Space;
         const width = Math.abs(endX - startX);
 
-        // Handle height level
-        const heightLevelStr = connection.height || "Level_1";
-        const heightLevelNum = parseInt(heightLevelStr.split("_")[1]) || 1;
-        const baseHeight = 20;
-        const heightIncrement = 5;
-        const minHeight = 10;
-        const maxHeight = 95;
+        // height level
+        const heightLevelNum =
+          parseInt((connection.height || "Level_1").split("_")[1]) || 1;
         const height = Math.min(
-          Math.max(
-            baseHeight + (heightLevelNum - 1) * heightIncrement,
-            minHeight
-          ),
-          maxHeight
+          Math.max(20 + (heightLevelNum - 1) * 5, 10),
+          95
         );
 
-        // Handle border thickness level
-        const borderLevelStr = connection.border_thickness || "Level_1";
-        const borderLevelNum = parseInt(borderLevelStr.split("_")[1]) || 1;
-        const baseBorder = 6;
-        const borderIncrement = 2;
-        const minBorder = 4;
-        const maxBorder = 20;
+        // border thickness level
+        const borderLevelNum =
+          parseInt((connection.border_thickness || "Level_1").split("_")[1]) ||
+          1;
         const borderSize = Math.min(
-          Math.max(
-            baseBorder + (borderLevelNum - 1) * borderIncrement,
-            minBorder
-          ),
-          maxBorder
+          Math.max(6 + (borderLevelNum - 1) * 2, 4),
+          20
         );
 
         const color =
@@ -2145,9 +2262,9 @@ function drawConnectingRectangle(JSON_Data) {
         const borderRadius = "8px";
         const topOffset = 397;
 
-        const className = `connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}`;
-
-        const dynamicStyle = `
+        // inject style for this instance
+        const styleEl = document.createElement("style");
+        styleEl.textContent = `
           .${className} {
             position: absolute;
             left: ${left}px;
@@ -2163,9 +2280,6 @@ function drawConnectingRectangle(JSON_Data) {
             z-index: 2;
           }
         `;
-
-        const styleEl = document.createElement("style");
-        styleEl.textContent = dynamicStyle;
         document.head.appendChild(styleEl);
 
         const rectDiv = document.createElement("div");
@@ -2177,3 +2291,171 @@ function drawConnectingRectangle(JSON_Data) {
 }
 
 drawConnectingRectangle(JSON_Data);
+
+function collapsabile() {
+  const parents = document.querySelectorAll(".Slide-box");
+
+  // Initialize collapsibleData once
+  if (collapsibleData.length === 0) {
+    parents.forEach((parent) => {
+      const parentClasses = Array.from(parent.classList).filter(
+        (c) => c !== "Slide-box"
+      );
+      const parentId = parentClasses.join(" ");
+
+      // Store original title in data-title if not already present
+      const h1 = parent.querySelector("h1");
+      if (h1 && !parent.hasAttribute("data-title")) {
+        const textNode = Array.from(h1.childNodes).find(
+          (n) => n.nodeType === Node.TEXT_NODE
+        );
+        const originalTitle = textNode ? textNode.textContent.trim() : "";
+        parent.setAttribute("data-title", originalTitle);
+      }
+
+      // Prepare subgroup collapsible data
+      const subGroups = parent.querySelectorAll(".sub-groups > div");
+      const subGroupData = [];
+      subGroups.forEach((sg) => {
+        const sgClasses = Array.from(sg.classList);
+
+        // Store subgroup title in data-title
+        const h2 = sg.querySelector("h2");
+        if (h2 && !sg.hasAttribute("data-title")) {
+          const textNode = Array.from(h2.childNodes).find(
+            (n) => n.nodeType === Node.TEXT_NODE
+          );
+          const originalTitle = textNode ? textNode.textContent.trim() : "";
+          sg.setAttribute("data-title", originalTitle);
+        }
+
+        subGroupData.push({
+          unique_class: sgClasses.join(" "),
+          collapsed: false,
+        });
+      });
+
+      collapsibleData.push({
+        parent_class: parentId,
+        collapsed: false,
+        sub_groups: subGroupData,
+      });
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    // ===== PARENT COLLAPSE =====
+    if (e.target.matches("h1 i") && e.target.closest(".Slide-box")) {
+      const parentBox = e.target.closest(".Slide-box");
+      const parentId = Array.from(parentBox.classList).filter(
+        (c) => c !== "Slide-box"
+      )[0];
+      const icon = e.target;
+
+      const parentItem = collapsibleData.find(
+        (item) => item.parent_class === parentId
+      );
+      if (!parentItem) return;
+
+      const h1 = parentBox.querySelector("h1");
+      const titleNode = Array.from(h1.childNodes).find(
+        (n) => n.nodeType === Node.TEXT_NODE
+      );
+      const originalTitle = parentBox.getAttribute("data-title") || "";
+
+      const subGroups = parentBox.querySelector(".sub-groups");
+
+      if (!parentItem.collapsed) {
+        // Collapse parent
+        parentItem.collapsed = true;
+        if (titleNode) titleNode.textContent = "";
+        icon.title = originalTitle;
+        if (subGroups) subGroups.style.display = "none";
+        icon.classList.remove("fa-square-caret-right");
+        icon.classList.add("fa-square-caret-down");
+      } else {
+        // Expand parent
+        parentItem.collapsed = false;
+        if (titleNode) titleNode.textContent = " " + originalTitle;
+        icon.removeAttribute("title");
+        if (subGroups) subGroups.style.display = "";
+        icon.classList.remove("fa-square-caret-down");
+        icon.classList.add("fa-square-caret-right");
+      }
+
+      // redraw after any toggle
+      drawBottomTimelineSeries(JSON_Data);
+      drawConnectingLines(JSON_Data);
+      drawConnectingRectangle(JSON_Data);
+      adjustFooterWidth(JSON_Data);
+      adjustMidLineWidth(JSON_Data);
+    }
+
+    // ===== SUBGROUP COLLAPSE =====
+    if (e.target.matches(".sub-groups > div h2 i")) {
+      const childDiv = e.target.closest(".sub-groups > div");
+      const childId = Array.from(childDiv.classList).join(" ");
+      const icon = e.target;
+
+      collapsibleData.forEach((parentItem) => {
+        const childItem = parentItem.sub_groups.find(
+          (sg) => sg.unique_class === childId
+        );
+        if (!childItem) return;
+
+        const h2 = childDiv.querySelector("h2");
+        let labelSpan = h2.querySelector(".label-text");
+
+        // If no label span exists, create one wrapping only the text nodes
+        if (!labelSpan) {
+          const textNodes = Array.from(h2.childNodes).filter(
+            (n) => n.nodeType === Node.TEXT_NODE
+          );
+          if (textNodes.length > 0) {
+            labelSpan = document.createElement("span");
+            labelSpan.className = "label-text";
+            labelSpan.textContent = textNodes
+              .map((n) => n.textContent)
+              .join("")
+              .trim();
+            textNodes.forEach((n) => h2.removeChild(n));
+            h2.appendChild(labelSpan);
+          }
+        }
+
+        const labelText = labelSpan ? labelSpan.textContent.trim() : "";
+        const midTop = childDiv.querySelector(".subgroups-mid-top");
+        const onLine = childDiv.querySelector(".subgroups-on-line");
+
+        if (!childItem.collapsed) {
+          // Collapse subgroup
+          childItem.collapsed = true;
+          if (labelSpan) labelSpan.style.display = "none";
+          icon.title = labelText; // Tooltip now matches label
+          if (midTop) midTop.style.display = "none";
+          if (onLine) onLine.style.display = "none";
+          icon.classList.remove("fa-square-caret-right");
+          icon.classList.add("fa-square-caret-down");
+        } else {
+          // Expand subgroup
+          childItem.collapsed = false;
+          if (labelSpan) labelSpan.style.display = "";
+          icon.removeAttribute("title");
+          if (midTop) midTop.style.display = "";
+          if (onLine) onLine.style.display = "";
+          icon.classList.remove("fa-square-caret-down");
+          icon.classList.add("fa-square-caret-right");
+        }
+
+        // redraw after any toggle
+        drawBottomTimelineSeries(JSON_Data);
+        drawConnectingLines(JSON_Data);
+        drawConnectingRectangle(JSON_Data);
+        adjustFooterWidth(JSON_Data);
+        adjustMidLineWidth(JSON_Data);
+      });
+    }
+  });
+}
+
+collapsabile();

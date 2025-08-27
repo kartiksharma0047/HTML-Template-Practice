@@ -26,11 +26,12 @@ JSON_Data1 = {
   },
   Page_Configuration: {
     background_color: "#e3ffffff",
-    border_color:"black",
-    scroll_horizontal:true
+    border_color: "black",
+    scroll_horizontal: true,
   },
   mid_line_config: {
     color: "#5899e3ff",
+    width:"auto",
     shadow:
       "0 0 70px #5899e3ff, 0 0 30px #5899e3ff,0 0 20px #5899e3ff, 0 0 100px #5899e3ff;",
   },
@@ -41,7 +42,8 @@ JSON_Data1 = {
     Common_Header_Line: "#adafaf",
     Common_SubHeader_title: "rgba(0, 0, 0, 1)",
     Common_SubHeader_lineRight: "#c4c9ca",
-    Common_logo_heading: "linear-gradient(to right top, #d967ffff 20%, #54d8f6ff)",
+    Common_logo_heading:
+      "linear-gradient(to right top, #d967ffff 20%, #54d8f6ff)",
     Common_logo_border: "#34c8a0ff",
     Common_logo: "linear-gradient(to right top, #a334c8 20%, #54e6f6ff)",
     Common_logo_title: "linear-gradient(to right top, #a334c8 20%, #54e6f6ff)",
@@ -366,16 +368,20 @@ JSON_Data1 = {
           },
           content: {
             logo_heading: ["Manager"],
-            logo_heading_color: ["linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)"],
-            logo_heading_border_color: [
-              "#ffc100",
+            logo_heading_color: [
+              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
             ],
-            logo_color: ["linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)"],
+            logo_heading_border_color: ["#ffc100"],
+            logo_color: [
+              "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
+            ],
             logo_title: ["Approver"],
             link: [""],
             logo_id_names: ["logo_title_id6"],
             logo_detail: ["Approval Manager"],
-            logo_title_color: ["linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)"],
+            logo_title_color: [
+              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+            ],
             top_down_arrow: {
               display: "true",
               arrow_color: ["#ffc100"],
@@ -403,22 +409,15 @@ JSON_Data1 = {
               content_id: ["on_line_content_6"],
               content_details: ["Manager will archive all the documents"],
               color: ["Common_onLineContent_font"],
-              background_color: [
-                "Common_onLineContent_Background",
-              ],
-              bottom_point_color: [
-                "Common_onLineContent_Point",
-              ],
-              bottom_line_color: [
-                "Common_onLineContent_Line",
-              ],
-              bottom_shape_color: [
-                "Common_onLineContent_Shape",
-              ],
+              background_color: ["Common_onLineContent_Background"],
+              bottom_point_color: ["Common_onLineContent_Point"],
+              bottom_line_color: ["Common_onLineContent_Line"],
+              bottom_shape_color: ["Common_onLineContent_Shape"],
               bottom_shape_postion: ["Level_5"],
             },
             BottomtimelineSeries: {
-              background_color: "linear-gradient(to right, #eef6dc10 10%, #9fff05ff)",
+              background_color:
+                "linear-gradient(to right, #eef6dc10 10%, #9fff05ff)",
               border_color: "#bfff00ff",
               timlines: [
                 {
@@ -437,8 +436,8 @@ JSON_Data1 = {
   ],
 };
 
-JSON_Data2={
-    footer: {
+JSON_Data2 = {
+  footer: {
     footer_label: {
       footer_1_label: "Ambulatorio",
       footer_2_label: "Centro di Senologia/Ospedale",
@@ -460,14 +459,19 @@ JSON_Data2={
       footer_4_width: "50",
       footer_5_width: "20",
     },
-    footer_lines_color:"linear-gradient(to bottom, #f5fbfb, #eaf0f0)"
+    footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
+    footer_width:"auto"
   },
-  Page_Configuration:{
-    background_color:"#f6fcfc"
+  Page_Configuration: {
+    background_color: "#f6fcfc",
+    border_color:"black",
+    scroll_horizontal:true
   },
-  mid_line_config:{
-    color:"#58e3d2",
-    shadow:"0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;"
+  mid_line_config: {
+    color: "#58e3d2",
+    shadow:
+      "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
+      width:"auto"
   },
   colors: {
     white_color: "#ffffff",
@@ -495,7 +499,7 @@ JSON_Data2={
     Common_timeLineSeries_Background:
       "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
     Common_timeLineSeries_Border: "#ffc100",
-    },
+  },
   body: [
     {
       component: "Start-Header",
@@ -512,7 +516,11 @@ JSON_Data2={
         steps: ["SINTOMI", "REPERTO INCIDENTALE", "SCREENING I LIVELLO"],
         stepsLink: ["https://www.youtube.com/", "", "https://www.youtube.com/"],
         title_detail: "Hello World!",
-        steps_details: ["Hello World!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.", "Hello World!"],
+        steps_details: [
+          "Hello World!",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.",
+          "Hello World!",
+        ],
         configurations: {
           logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           logo_border_color: "#2394b9",
@@ -560,7 +568,11 @@ JSON_Data2={
               "logo_title_id2",
               "logo_title_id3",
             ],
-            logo_detail: ["Hello World!", "Hello World!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula."],
+            logo_detail: [
+              "Hello World!",
+              "Hello World!",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.",
+            ],
             logo_title_color: [
               "Common_logo_title",
               "Common_logo_title",
@@ -634,7 +646,11 @@ JSON_Data2={
                 "on_line_content_2",
                 "on_line_content_3",
               ],
-              content_details: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.", "Hello World!", "Hello World!"],
+              content_details: [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.",
+                "Hello World!",
+                "Hello World!",
+              ],
               color: [
                 "Common_onLineContent_font",
                 "Common_onLineContent_font",
@@ -697,7 +713,7 @@ JSON_Data2={
             logo_color: ["Common_logo"],
             logo_title: ["GOM"],
             logo_id_names: ["logo_title_id4"],
-            logo_detail:["Hello World!"],
+            logo_detail: ["Hello World!"],
             link: ["www.google.com"],
             logo_title_color: ["Common_logo_title"],
             top_down_arrow: {
@@ -741,7 +757,7 @@ JSON_Data2={
             on_line_content_configuration: {
               content: ["DIAGNOSI"],
               content_id: ["on_line_content_4"],
-              content_details:["Hello World!"],
+              content_details: ["Hello World!"],
               link: ["www.google.com"],
               color: ["Common_onLineContent_font"],
               background_color: ["Common_onLineContent_Background"],
@@ -795,7 +811,7 @@ JSON_Data2={
             ],
             logo_title: ["Oncologo", "Infermiere"],
             logo_id_names: ["logo_title_id5", "logo_title_id6"],
-            logo_detail:["Hello World",""],
+            logo_detail: ["Hello World", ""],
             link: ["www.google.com", ""],
             logo_title_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
@@ -854,7 +870,7 @@ JSON_Data2={
                 "on_line_content_6",
                 "on_line_content_7",
               ],
-              content_details:["Hello","hi","World"],
+              content_details: ["Hello", "hi", "World"],
               link: ["www.google.com", "", "www.google.com"],
               color: ["black", "black", "black"],
               background_color: ["#e6fffc", "#e6fffc", "#e6fffc"],
@@ -1200,7 +1216,7 @@ JSON_Data2={
       ],
     },
   ],
-}
+};
 
 JSON_Data3 = {
   footer: {
@@ -1230,14 +1246,14 @@ JSON_Data3 = {
   },
   Page_Configuration: {
     background_color: "#fff9e3ff",
-    border_color:"black",
-    scroll_horizontal:true
+    border_color: "black",
+    scroll_horizontal: true,
   },
   mid_line_config: {
     color: "#e3b558ff",
     shadow:
       "0 0 70px #e3b758ff, 0 0 30px #e3b758ff,0 0 20px #e3b758ff, 0 0 100px #e3b758ff;",
-    width:"auto"  
+    width: "auto",
   },
   colors: {
     white_color: "#ffffff",
@@ -1702,6 +1718,5 @@ JSON_Data3 = {
         },
       ],
     },
-    
   ],
 };
