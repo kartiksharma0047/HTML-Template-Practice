@@ -713,6 +713,26 @@ JSON_Data = {
               ],
               color: ["#58e3d2"],
             },
+            connecting_Circle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_8",
+                  ending: "on_line_content_10",
+                  start_from: "middle",
+                  end_from: "middle",
+                  border_thickness: "Level_2",
+                },
+                {
+                  starting: "on_line_content_9",
+                  ending: "on_line_content_10",
+                  start_from: "start",
+                  end_from: "end",
+                  border_thickness: "Level_2",
+                }
+              ],
+              color: ["#c140a5","#58e3d2"],
+            },
             line_right: "true",
             line_color: "#c4c9ca",
             on_line_content_configuration: {
@@ -1056,7 +1076,7 @@ function convertToFormat(JsonData) {
   .${className} .mid-top {
     margin-top: 140px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     width: max-content;
   }
 
@@ -1283,6 +1303,8 @@ function convertToFormat(JsonData) {
     font-size: 12px;
     margin-top: 10px;
     margin-bottom: 20px;
+    position:relative;
+    z-index:10;
   }
   .${uniqueClassName} h1 .fa-square-caret-right,
   .${uniqueClassName} h1 .fa-square-caret-down{
@@ -1322,6 +1344,8 @@ function convertToFormat(JsonData) {
     };
     margin-bottom: 10px;
     padding-bottom: 3px;
+    position:relative;
+    z-index:10;
   }
   .${uniqueClassName} .sub-groups {
     display: flex;
@@ -1355,6 +1379,7 @@ function convertToFormat(JsonData) {
     flex-direction: column;
     position: relative;
     width: 100%;
+    z-index:10;
   }
     ${
       sub_groups[0].content.top_down_arrow.display
@@ -1587,7 +1612,7 @@ function convertToFormat(JsonData) {
 
         const borderConfig = onLine.bordered?.[index] || {};
         const borderEnabled = borderConfig.border ?? false;
-        const borderColor = resolveColor(borderConfig.color,colors) || "black";
+        const borderColor = resolveColor(borderConfig.color, colors) || "black";
         const borderStyle = borderEnabled
           ? `border: 1px solid ${borderColor};`
           : "border: none;";
@@ -2627,6 +2652,152 @@ function drawConnectingRectangle(JSON_Data) {
 
 drawConnectingRectangle(JSON_Data);
 
+function drawConnectingCircle(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("PPT-Box not found.");
+    return;
+  }
+
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, idx) => {
+      const circleData = sg.content?.connecting_Circle;
+
+      // Remove old circles for this sub-group if display disabled or config missing
+      if (
+        !circleData ||
+        !(circleData.display === "true" || circleData.display === true)
+      ) {
+        const oldEls = pptBox.querySelectorAll(
+          `[class*="connection-Circle-sec${sectionIdx}-sub${idx}-circle"]`
+        );
+        oldEls.forEach((el) => {
+          // remove related style if present
+          const styleTag = document.querySelector(
+            `style[data-conn="${el.className}"]`
+          );
+          if (styleTag) styleTag.remove();
+          el.remove();
+        });
+        return;
+      }
+
+      (circleData.connections || []).forEach((connection, i) => {
+        const className = `connection-Circle-sec${sectionIdx}-sub${idx}-circle${i}`;
+
+        // remove any prior one + its style
+        const old = pptBox.querySelector(`.${className}`);
+        const oldStyle = document.querySelector(
+          `style[data-conn="${className}"]`
+        );
+        if (old) old.remove();
+        if (oldStyle) oldStyle.remove();
+
+        // look up endpoints
+        const startEl = document.getElementById(connection.starting);
+        const endEl = document.getElementById(connection.ending);
+        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
+          return;
+
+        // measurements
+        const pptRect = pptBox.getBoundingClientRect();
+        const startRect = startEl.getBoundingClientRect();
+        const endRect = endEl.getBoundingClientRect();
+        const distant_Space = 5;
+
+        // normalize start_from / end_from to "start" | "middle" | "end"
+        const normalize = (v) => {
+          if (v === undefined || v === null) return "middle";
+          const s = String(v).toLowerCase();
+          return s === "start" || s === "end" || s === "middle" ? s : "middle";
+        };
+        const startFrom = normalize(connection.start_from);
+        const endFrom = normalize(connection.end_from);
+
+        // compute X coordinate using the same outward spacing convention you used in rectangle:
+        //   start -> rect.left - distant_Space
+        //   middle -> rect.left + rect.width/2
+        //   end -> rect.left + rect.width + distant_Space
+        const computeX = (rect, part) => {
+          if (part === "start") return rect.left - distant_Space;
+          if (part === "end") return rect.left + rect.width + distant_Space;
+          return rect.left + rect.width / 2;
+        };
+
+        const startX = computeX(startRect, startFrom);
+        const endX = computeX(endRect, endFrom);
+
+        const leftAbs = Math.min(startX, endX);
+        const distance = Math.abs(endX - startX);
+
+        // nothing or too small to draw
+        if (distance <= 1) return;
+
+        const diameter = distance;
+        const radius = diameter / 2;
+
+        // border_thickness mapping (same formula as rectangle)
+        const borderLevelNum =
+          parseInt((connection.border_thickness || "Level_1").split("_")[1]) ||
+          1;
+        const borderSize = Math.min(
+          Math.max(6 + (borderLevelNum - 1) * 2, 4),
+          20
+        );
+
+        // color resolution (use the i-th color if provided)
+        const color =
+          resolveColor(circleData.color?.[i], JSON_Data.colors) || "#58e3d2";
+
+        const minTop = Math.min(startRect.top, endRect.top);
+        const topOffset = minTop - pptRect.top - diameter + borderSize / 2 +diameter/2;        
+        const styleEl = document.createElement("style");
+        styleEl.setAttribute("data-conn", className);
+        styleEl.textContent = `
+          .${className} {
+            position: absolute;
+            left: ${leftAbs - pptRect.left - distant_Space}px;
+            width: ${diameter}px;
+            height: ${radius}px;
+            overflow: hidden;
+            top: ${topOffset}px;
+            z-index: 1;
+            pointer-events: none;
+            display: block;
+            box-sizing: content-box;
+          }
+
+          .${className} .inner-circle {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: ${diameter}px;
+            height: ${diameter}px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: ${borderSize}px solid ${color};
+            background: transparent;
+          }
+        `;
+        document.head.appendChild(styleEl);
+
+        // build DOM
+        const container = document.createElement("div");
+        container.className = className;
+
+        const circle = document.createElement("div");
+        circle.className = "inner-circle";
+
+        container.appendChild(circle);
+        pptBox.appendChild(container);
+      });
+    });
+  });
+}
+drawConnectingCircle(JSON_Data);
+
 function collapsabile() {
   const parents = document.querySelectorAll(".Slide-box");
 
@@ -2722,6 +2893,7 @@ function collapsabile() {
       drawBottomTimelineSeries(JSON_Data);
       drawConnectingLines(JSON_Data);
       drawConnectingRectangle(JSON_Data);
+      drawConnectingCircle(JSON_Data);
       adjustFooterWidth(JSON_Data);
       adjustMidLineWidth(JSON_Data);
     }
@@ -2786,6 +2958,7 @@ function collapsabile() {
         drawBottomTimelineSeries(JSON_Data);
         drawConnectingLines(JSON_Data);
         drawConnectingRectangle(JSON_Data);
+        drawConnectingCircle(JSON_Data);
         adjustFooterWidth(JSON_Data);
         adjustMidLineWidth(JSON_Data);
       });
