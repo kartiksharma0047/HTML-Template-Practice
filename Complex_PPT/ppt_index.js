@@ -23,7 +23,7 @@ JSON_Data = {
       footer_5_width: "20",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
-    footer_width:"auto"
+    footer_width: "auto",
   },
   Page_Configuration: {
     background_color: "#f6fcfc",
@@ -52,6 +52,7 @@ JSON_Data = {
     Common_ConnectingLine_arrow: "#a334c8",
     Common_ConnectingLine_line: "#9f30cb",
     Common_ConnectingRectangle: "#58e3d2",
+    Common_AboveLine_Text: "#7a1bffff",
     Common_onLineContent_font: "#000000",
     Common_onLineContent_Background: "#e6fffc",
     Common_onLineContent_Point:
@@ -187,6 +188,35 @@ JSON_Data = {
                   end_from_ending: "true",
                   height: "Level_5",
                   border_thickness: "Level_2",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-left",
+                      "fa-solid fa-angles-left",
+                      "fa-solid fa-angles-left",
+                      "fa-solid fa-angles-left",
+                      "fa-solid fa-angles-left",
+                      "fa-solid fa-angles-left",
+                    ],
+                    iconColors: [
+                      "black_color",
+                      "black_color",
+                      "black_color",
+                      "black_color",
+                      "black_color",
+                      "black_color",
+                    ],
+                    iconSize: [
+                      "Size_0",
+                      "Size_0",
+                      "Size_0",
+                      "Size_0",
+                      "Size_0",
+                      "Size_0",
+                    ],
+                    justify_content: "center",
+                    start_end_gaps: "Level_0",
+                    shape: "rounded_x_lg",
+                  },
                 },
                 {
                   starting: "on_line_content_1",
@@ -194,15 +224,87 @@ JSON_Data = {
                   ending: "on_line_content_10",
                   end_from_ending: "true",
                   height: "Level_15",
-                  border_thickness: "Level_1",
+                  border_thickness: "Level_4",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-caret-right",
+                      "fa-solid fa-caret-right",
+                      "fa-solid fa-caret-right",
+                      "fa-solid fa-caret-right",
+                      "fa-solid fa-caret-right",
+                      "fa-solid fa-caret-right",
+                    ],
+                    iconColors: [
+                      "white_color",
+                      "white_color",
+                      "white_color",
+                      "white_color",
+                      "white_color",
+                      "white_color",
+                    ],
+                    iconSize: [
+                      "Size_2",
+                      "Size_2",
+                      "Size_2",
+                      "Size_2",
+                      "Size_2",
+                      "Size_2",
+                    ],
+                    justify_content: "evenly",
+                    start_end_gaps: "Level_5",
+                    shape: "rounded_bottom",
+                  },
                 },
               ],
               color: ["Common_ConnectingRectangle", "#9f30cb"],
             },
             line_right: "true",
             line_color: "Common_SubHeader_lineRight",
+            above_line_content: {
+              content: ["effettua", "effettua", "effettua"],
+              color: [
+                "Common_AboveLine_Text",
+                "Common_AboveLine_Text",
+                "Common_AboveLine_Text",
+              ],
+              content_details: [
+                "effettuaastag",
+                "effettuaastag",
+                "effettuaastag",
+              ],
+              justify_content: "evenly",
+            },
             on_line_content_configuration: {
               content: ["VISITA", "VISITA", "ESAMI"],
+              shapes: ["rounded_vertices", "Default", "Rounded_sm"],
+              striping: [
+                { striped: false },
+                {
+                  stripped: true,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+                {
+                  stripped: true,
+                  reversed: true,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              bordered: [
+                { border: true, color: "black_color" },
+                { border: false },
+                { border: false },
+              ],
               link: ["www.google.com", "", "www.google.com"],
               content_id: [
                 "on_line_content_1",
@@ -295,7 +397,7 @@ JSON_Data = {
                 {
                   starting: "logo_title_id4",
                   ending: "logo_title_id5",
-                  height: "Level_1",
+                  height: "Level_3",
                 },
               ],
               arrow_color: ["#ffc305", "#ffc305"],
@@ -317,6 +419,12 @@ JSON_Data = {
             },
             line_right: "false",
             line_color: "Common_SubHeader_lineRight",
+            above_line_content: {
+              content: ["effettua"],
+              color: ["Common_AboveLine_Text"],
+              content_details: ["effettuaastag"],
+              justify_content: "evenly",
+            },
             on_line_content_configuration: {
               content: ["DIAGNOSI"],
               content_id: ["on_line_content_4"],
@@ -1075,7 +1183,7 @@ function convertToFormat(JsonData) {
       <i class="fa-regular fa-square-caret-right"></i>
       ${sg.title}</h2>\n`;
 
-      // ▶️ Top icons with logo_heading + logo_title
+      // Top icons with logo_heading + logo_title
       html += `<div class="subgroups-mid-top">\n`;
       sg.content.logo_title.forEach((logo, i) => {
         const heading = sg.content.logo_heading[i];
@@ -1103,7 +1211,29 @@ function convertToFormat(JsonData) {
 
       html += `</div>\n`;
 
-      // ▶️ On-line content
+      // Above-line content
+      if (sg.content.above_line_content?.content?.length) {
+        html += `<div class="${uniqueClassName}-above-line-content-${
+          idx + 1
+        } above-line-content">\n`;
+
+        sg.content.above_line_content.content.forEach((txt, i) => {
+          if (txt && txt.trim() !== "") {
+            const color = sg.content.above_line_content.color?.[i] || "#000";
+            const detail =
+              sg.content.above_line_content.content_details?.[i] || txt;
+
+            html += `<p 
+        class="above-line-text above-line-text-${i + 1}" 
+        title="${limitText(detail, 280)}" 
+        style="color:${resolveColor(color, colors)};"
+      >${limitText(txt, 10)}</p>\n`;
+          }
+        });
+
+        html += `</div>\n`;
+      }
+      // On-line content
       html += `<div class="subgroups-on-line">\n`;
 
       sg.content.on_line_content_configuration.content.forEach((c, i) => {
@@ -1118,12 +1248,17 @@ function convertToFormat(JsonData) {
         const contentDetail =
           sg.content.on_line_content_configuration.content_details?.[i] || "";
 
-        html += `<h6 title="${limitText(
-          contentDetail,
-          280
-        )}" class="box-shadow-box${hasLink ? " Div-link" : ""}"${
-          hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""
-        }>${limitText(c, 10)}</h6>\n`;
+        const isStriped =
+          sg.content.on_line_content_configuration.striping?.[i]?.stripped;
+
+        html += `<h6
+      title="${limitText(contentDetail, 280)}"
+      class="box-shadow-box${hasLink ? " Div-link" : ""}${
+          isStriped ? " striped" : ""
+        }"
+      ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}>
+  ${limitText(c, 10)}
+</h6>\n`;
 
         html += `</div>\n`;
       });
@@ -1227,10 +1362,9 @@ function convertToFormat(JsonData) {
   .${uniqueClassName} .icon_plus_name::after{
     content: "";
     position: absolute;
-    height: 140px;
     width: 1px;
-    top: 55px;
     left: 50%;
+    top:55px;
     padding: 0;
     margin: 0;
     z-index: 1;
@@ -1241,7 +1375,6 @@ function convertToFormat(JsonData) {
     position: absolute;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    top: 195px;
     left: 50%;
     z-index:2;
     transform: translateX(-50%);
@@ -1279,12 +1412,25 @@ function convertToFormat(JsonData) {
     text-align: center;
     transition:0.1s all;
   }
+  .${uniqueClassName} .above-line-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 117px;
+    position: relative;
+  }
+  .${uniqueClassName} .above-line-content p {
+    font-size: 10px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
   .${uniqueClassName} .subgroups-on-line {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
-    margin-top: 135px;
     z-index: 3;
   }
   .${uniqueClassName} .subgroups-on-line-content{
@@ -1293,8 +1439,6 @@ function convertToFormat(JsonData) {
   .${uniqueClassName} .subgroups-on-line-content h6{
     margin: 0;
     font-size: 9px;
-    border-radius: 5px;
-    border-bottom-right-radius: 18px;
     padding: 10px 15px;
     position: relative;
     transition:0.1s all;
@@ -1342,7 +1486,23 @@ function convertToFormat(JsonData) {
 
     sub_groups.forEach((sg, idx) => {
       const logoLength = sg.content?.logo_title?.filter(Boolean)?.length || 0;
+      const hasAboveLine = sg.content.above_line_content?.content?.some(
+        (c) => c && c.trim() !== ""
+      );
       const dynamicWidth = 110 + (logoLength - 1) * 50;
+
+      css += `
+.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+        idx + 1
+      } .icon_plus_name::after {
+      height: ${hasAboveLine ? "120px" : "140px"};
+}
+.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+        idx + 1
+      } .icon_plus_name::before {
+      top: ${hasAboveLine ? "175px" : "190px"};
+}
+`;
 
       css += `
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} {
@@ -1361,7 +1521,6 @@ function convertToFormat(JsonData) {
   width: ${dynamicWidth}px;
 }
 `;
-
       if (sg.content.line_right === "true" || sg.content.line_right === true) {
         css += `
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1}::after {
@@ -1391,6 +1550,8 @@ function convertToFormat(JsonData) {
       const onLine = sg.content.on_line_content_configuration;
 
       (onLine?.content_id || []).forEach((id, index) => {
+        const stripeConfig = onLine.striping?.[index];
+        const showBorder = onLine.bordered?.[index];
         const bgColor =
           resolveColor(onLine.background_color?.[index], colors) || "#e6fffc";
         const fontColor = resolveColor(onLine.color?.[index], colors) || "#000";
@@ -1403,22 +1564,51 @@ function convertToFormat(JsonData) {
         const bottomShape =
           resolveColor(onLine.bottom_shape_color?.[index], colors) ||
           "linear-gradient(to top, #1375af 5%, #45d0cb)";
+        const shapeMap = {
+          rectangle: "border-radius: 0 0 0 0;",
+          default: "border-radius: 5px 5px 18px 5px;",
+          rounded_sm: "border-radius: 5px;",
+          rounded_lg: "border-radius: 15px;",
+          rounded_bottom_left: "border-radius: 0 0 0 18px;",
+          rounded_bottom_right: "border-radius: 0 0 18px 0;",
+          rounded_top_left: "border-radius: 18px 0 0 0;",
+          rounded_top_right: "border-radius: 0 18px 0 0;",
+          rounded_top: "border-radius: 18px 18px 0 0;",
+          rounded_bottom: "border-radius: 0 0 18px 18px;",
+          rounded_left: "border-radius: 18px 0 0 18px;",
+          rounded_right: "border-radius: 0 18px 18px 0;",
+          rounded_vertices: "border-radius: 18px 0px 18px 0;",
+          rounded_reverse_vertices: "border-radius: 0 18px 0 18px;",
+        };
+
+        const rawShape = onLine.shapes?.[index] || "default";
+        const shapeStyle =
+          shapeMap[rawShape.toLowerCase()] || shapeMap["default"];
+
+        const borderConfig = onLine.bordered?.[index] || {};
+        const borderEnabled = borderConfig.border ?? false;
+        const borderColor = resolveColor(borderConfig.color,colors) || "black";
+        const borderStyle = borderEnabled
+          ? `border: 1px solid ${borderColor};`
+          : "border: none;";
 
         css += `
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} {
-    background: ${bgColor};
-    color: ${fontColor};
-    border-radius: 5px;
-    border-bottom-right-radius: 18px;
-  }
+    .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} {
+        background: ${bgColor};
+        color: ${fontColor};
+        
+        ${shapeStyle}
+    }
 
-
-.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+    .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 {
+        ${shapeStyle}
+        ${borderStyle}
+    }
+    .${uniqueClassName} .${uniqueClassName}-sub-group-div${
           idx + 1
         } #${id} h6::after {
-  background: ${bottomPoint};
-}
-
+        background: ${bottomPoint};
+    }
 
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${
           idx + 1
@@ -1432,9 +1622,40 @@ function convertToFormat(JsonData) {
     background: ${bottomLine};
   }
   `;
+        if (stripeConfig?.stripped) {
+          let degree = 0;
+          const [c1, c2, c3, c4] = stripeConfig.colors || [
+            "rgba(255,255,255,0.5)",
+            "rgba(255,255,255,0.5)",
+            "rgba(0,191,255,0.15)",
+            "rgba(0,191,255,0.15)",
+          ];
+          if (stripeConfig?.reversed) {
+            degree = 45;
+          } else {
+            degree = -45;
+          }
+
+          css += `
+  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+            idx + 1
+          } #${id} .striped {
+    background: repeating-linear-gradient(
+        ${degree}deg,
+      ${c1},
+      ${c2} 4px,
+      ${c3} 4px,
+      ${c4} 8px
+    );
+  }
+  `;
+        }
       });
 
       sub_groups.forEach((sg, subGroupIdx) => {
+        const hasAboveLineInner = sg.content.above_line_content?.content?.some(
+          (c) => c && c.trim() !== ""
+        );
         const inlineContentArray =
           sg.content.on_line_content_configuration.bottom_shape_postion || [];
 
@@ -1466,7 +1687,14 @@ function convertToFormat(JsonData) {
               break;
           }
 
-          css += ` .${uniqueClassName}-sub-group-div${
+          css += `
+          .${uniqueClassName}-sub-group-div${
+            subGroupIdx + 1
+          } .${uniqueClassName}-on-line-content${inlineIdx + 1}{
+            margin-top: ${hasAboveLineInner ? "4px" : "132px"};
+          }
+
+           .${uniqueClassName}-sub-group-div${
             subGroupIdx + 1
           } .${uniqueClassName}-on-line-content${inlineIdx + 1}::after {
         content: "";
@@ -1496,6 +1724,30 @@ function convertToFormat(JsonData) {
     `;
         });
       });
+    });
+
+    sub_groups.forEach((sg, idx) => {
+      const justify =
+        sg.content.above_line_content?.justify_content?.toLowerCase();
+
+      // default fallback handling
+      const validValues = ["evenly", "between"];
+      const finalJustify = validValues.includes(justify) ? justify : "evenly";
+
+      // convert to actual CSS value
+      const justifyMap = {
+        evenly: "space-evenly",
+        between: "space-between",
+      };
+
+      css += `
+  .${uniqueClassName} .${uniqueClassName}-above-line-content-${idx + 1} {
+    display: flex;
+    justify-content: ${justifyMap[finalJustify]};
+    align-items: center;
+    gap: 10px;
+  }
+  `;
     });
 
     // Handling Colors Dynamically
@@ -1927,6 +2179,10 @@ function drawConnectingLines(JSON_Data) {
       const parentItem = collapsibleData.find(
         (p) => p.parent_class === section.unique_class
       );
+
+      const hasAboveLine = sg.content?.above_line_content?.content?.some(
+        (c) => c && c.trim() !== ""
+      );
       if (parentItem && parentItem.collapsed) return;
 
       if (
@@ -1973,7 +2229,7 @@ function drawConnectingLines(JSON_Data) {
           const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
           const left = startRect.left - pptRect.left + startRect.width / 2;
-          const top = startRect.top - pptRect.top;
+          const top = startRect.top - pptRect.top + (hasAboveLine ? -11 : 0);
 
           const lineClass = `connecting-line-sec${sectionIdx}-sub${idx}-line${i}`;
           const dynamicStyle = `
@@ -2002,7 +2258,7 @@ function drawConnectingLines(JSON_Data) {
               .${lineClass}::after {
                 content: "";
                 position: absolute;
-                top: 90%;
+                bottom:0px;
                 right: 0px;
                 transform: translateX(50%);
                 border-top: 6px solid ${
@@ -2190,7 +2446,7 @@ function drawConnectingRectangle(JSON_Data) {
     section.sub_groups.forEach((sg, idx) => {
       const rectangleData = sg.content?.connecting_Rectangle;
 
-      // If this subgroup doesn't have rectangle config or is turned off, remove any existing rects for it
+      // If not enabled → remove old and skip
       if (
         !rectangleData ||
         !(rectangleData.display === "true" || rectangleData.display === true)
@@ -2205,24 +2461,20 @@ function drawConnectingRectangle(JSON_Data) {
       rectangleData.connections.forEach((connection, i) => {
         const className = `connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}`;
 
-        // Always clear any prior instance of this connection first
+        // Remove any prior one
         const oldRect = pptBox.querySelector(`.${className}`);
         if (oldRect) oldRect.remove();
 
         // look up endpoints
         const startEl = document.getElementById(connection.starting);
         const endEl = document.getElementById(connection.ending);
-
-        // require BOTH present AND visible; otherwise skip (and since we removed oldRect above, it disappears)
-        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl)) {
+        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
           return;
-        }
 
         // measurements
         const pptRect = pptBox.getBoundingClientRect();
         const startRect = startEl.getBoundingClientRect();
         const endRect = endEl.getBoundingClientRect();
-
         const distant_Space = 5;
 
         const startX =
@@ -2240,7 +2492,6 @@ function drawConnectingRectangle(JSON_Data) {
         const left = Math.min(startX, endX) - pptRect.left - distant_Space;
         const width = Math.abs(endX - startX);
 
-        // height level
         const heightLevelNum =
           parseInt((connection.height || "Level_1").split("_")[1]) || 1;
         const height = Math.min(
@@ -2248,7 +2499,6 @@ function drawConnectingRectangle(JSON_Data) {
           95
         );
 
-        // border thickness level
         const borderLevelNum =
           parseInt((connection.border_thickness || "Level_1").split("_")[1]) ||
           1;
@@ -2259,10 +2509,51 @@ function drawConnectingRectangle(JSON_Data) {
 
         const color =
           resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
-        const borderRadius = "8px";
         const topOffset = 397;
 
-        // inject style for this instance
+        // ---- Handle Config ----
+        const config = connection.config;
+        const hasConfig = !!config;
+
+        const icons = config?.fontAwsomeicons || config?.fontAwsomeicon || [];
+        const colors = config?.iconColors || config?.iconColor || [];
+        const iconSizes = config?.iconSize || config?.iconSizes || [];
+        const iconCount = icons.length;
+
+        // justify_content mapping
+        const justifyMap = {
+          center: "center",
+          between: "space-between",
+          evenly: "space-evenly",
+        };
+        const justifyValue =
+          justifyMap[config?.justify_content?.toLowerCase()] || "center";
+
+        // width calculation from start_end_gaps
+        const startEndGapsLevel =
+          parseInt((config?.start_end_gaps || "Level_0").split("_")[1]) || 0;
+        const widthPercent = Math.max(0, 100 - startEndGapsLevel * 5);
+
+        // 🔶 Shape mapping (NEW PART)
+        const shapeMap = {
+          rectangle: "border-radius: 0 0 0 0;",
+          rounded_sm: "border-radius: 5px;",
+          rounded_lg: "border-radius: 15px;",
+          rounded_x_lg: "border-radius: 25px;",
+          rounded_xx_lg: "border-radius: 35px;",
+          rounded_xxx_lg: "border-radius: 50px;",
+          rounded_bottom_left: "border-radius: 0 0 0 20px;",
+          rounded_bottom_right: "border-radius: 0 0 20px 0;",
+          rounded_top_left: "border-radius: 12px 0 0 0;",
+          rounded_top_right: "border-radius: 0 12px 0 0;",
+          rounded_top: "border-radius: 12px 12px 0 0;",
+          rounded_bottom: "border-radius: 0 0 12px 12px;",
+        };
+
+        const shapeStyle =
+          shapeMap[config?.shape?.toLowerCase()] || shapeMap["rectangle"];
+
+        // inject style for rectangle
         const styleEl = document.createElement("style");
         styleEl.textContent = `
           .${className} {
@@ -2273,17 +2564,61 @@ function drawConnectingRectangle(JSON_Data) {
             border-bottom: ${borderSize}px solid ${color};
             border-left: ${borderSize}px solid ${color};
             border-right: ${borderSize}px solid ${color};
-            border-bottom-left-radius: ${borderRadius};
-            border-bottom-right-radius: ${borderRadius};
+            ${shapeStyle}
             box-sizing: border-box;
             top: ${topOffset}px;
             z-index: 2;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .${className} .icon-row {
+            display: flex;
+            justify-content: ${justifyValue};
+            width: ${widthPercent}%;
+            align-items: center;
+            position: absolute;
+            margin: 0;
+            bottom: -${borderSize / 2}px;
+            transform: translateY(50%);
+          }
+
+          .${className} .icon-row i {
+            transition: font-size 0.2s ease;
           }
         `;
         document.head.appendChild(styleEl);
 
+        // create main rect container
         const rectDiv = document.createElement("div");
         rectDiv.className = className;
+
+        // if config present → add icon row
+        if (hasConfig && iconCount > 0) {
+          const iconRow = document.createElement("div");
+          iconRow.className = "icon-row";
+
+          icons.forEach((iconClass, iconIdx) => {
+            const iconEl = document.createElement("i");
+            iconEl.className = iconClass;
+            iconEl.style.color =
+              resolveColor(colors[iconIdx], JSON_Data.colors) || "black";
+
+            // dynamic icon size
+            const sizeLevel =
+              parseInt((iconSizes[iconIdx] || "Size_0").split("_")[1]) || 0;
+            const baseSize = 8;
+            const fontSize = Math.min(baseSize + sizeLevel * 2, 20);
+            iconEl.style.fontSize = `${fontSize}px`;
+
+            iconRow.appendChild(iconEl);
+          });
+
+          rectDiv.appendChild(iconRow);
+        }
+
         pptBox.appendChild(rectDiv);
       });
     });
