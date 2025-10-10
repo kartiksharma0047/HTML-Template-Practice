@@ -3,24 +3,18 @@ JSON_Data = {
   footer: {
     footer_label: {
       footer_1_label: "Ambulatorio",
-      footer_2_label: "Centro di Senologia/Ospedale",
-      footer_3_label: "Casa",
-      footer_4_label: "Altra struttura",
-      footer_5_label: "Earmacia ospedaliera",
+      footer_2_label: "CS / Ospedale",
+      footer_3_label: "Altra struttura",
     },
     footer_label_position_left: {
-      footer_1_left: "Level_5",
-      footer_2_left: "Level_0",
-      footer_3_left: "Level_7",
-      footer_4_left: "Level_4",
-      footer_5_left: "Level_2",
+      footer_1_left: "Level_12",
+      footer_2_left: "Level_12",
+      footer_3_left: "Level_12",
     },
     label_width: {
-      footer_1_width: "92",
-      footer_2_width: "85",
-      footer_3_width: "67",
-      footer_4_width: "50",
-      footer_5_width: "20",
+      footer_1_width: "100",
+      footer_2_width: "100",
+      footer_3_width: "100",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
     footer_width: "auto",
@@ -28,7 +22,7 @@ JSON_Data = {
   Page_Configuration: {
     background_color: "#f6fcfc",
     border_color: "black",
-    scroll_horizontal: true,
+    scroll_horizontal: false,
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -63,224 +57,90 @@ JSON_Data = {
     Common_timeLineSeries_Background:
       "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
     Common_timeLineSeries_Border: "#ffc100",
+    Common_transparent:"transparent"
+  },
+  fontConfig: {
+    fontsize: "small",
   },
   body: [
     {
       component: "Start-Header",
-      title: "Pre-diagnosi",
+      title: "Prev",
       configurations: {
         title_color: "#515151",
-        line_right: "True",
+        line_right: true,
         line_color: "#adafaf",
         circle_color: "#767979",
+        alignment: "vertical",
+        vertical_config: {
+          boxColor: "linear-gradient(to right, #d5d6d8, #ebebebff)",
+          boxShape: "blob_soft",
+        },
       },
       start_content: {
         logo_title: "Paziente",
-        link: "https://www.youtube.com/",
-        steps: ["SINTOMI", "REPERTO INCIDENTALE", "SCREENING I LIVELLO"],
-        stepsLink: ["https://www.youtube.com/", "", "https://www.youtube.com/"],
-        title_detail: "Hello World!",
-        steps_details: [
-          "Hello World!",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.",
-          "Hello World!",
-        ],
+        link: "",
+        steps: [],
+        stepsLink: [""],
+        title_detail: "Paziente",
+        steps_details: [],
         configurations: {
           logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           logo_border_color: "#2394b9",
           logo_para_color:
             "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           mid_line_color: "#58e3d2",
-          background_color: ["white_color", "white_color", "white_color"],
-          font_color: ["black_color", "black_color", "black_color"],
+          background_color: ["white_color"],
+          font_color: ["black_color"],
           logo_font_color: "white_color",
         },
       },
     },
     {
       component: "Header",
-      title: "Diagnosi e pre-treatment",
+      title: "Treatment",
       configurations: {
         title_color: "Common_Header_title",
-        line_right: "true",
+        line_right: true,
         line_color: "Common_Header_Line",
+        collapsabile: true,
       },
       sub_groups: [
         {
           component: "Sub-Header",
-          title: "Diagnosi a presa in carico",
+          title: "Terapia neoadiuvante",
           configurations: {
             title_color: "Common_SubHeader_title",
+            collapsabile: true,
           },
           content: {
-            logo_heading: ["", "GOM", "GOM"],
-            logo_heading_color: [
-              "Common_logo_heading",
-              "linear-gradient(to right top, #340046ff 20%, #bb0000ff)",
-              "linear-gradient(to right top, #bf00ffff 20%, #ff8f8fff)",
-            ],
-            logo_heading_border_color: [
-              "Common_logo_border",
-              "Common_logo_border",
-              "Common_logo_border",
-            ],
-            logo_color: ["Common_logo", "Common_logo", "Common_logo"],
-            logo_title: ["MMG", "Chirurgo Senologo", "Radiologo"],
-            link: ["https://www.youtube.com", "", "www.google.com"],
-            logo_id_names: [
-              "logo_title_id1",
-              "logo_title_id2",
-              "logo_title_id3",
-            ],
-            logo_detail: [
-              "Hello World!",
-              "Hello World!",
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.",
-            ],
-            logo_title_color: [
-              "Common_logo_title",
-              "Common_logo_title",
-              "linear-gradient(to right top, #a334c8 20%, #530000ff)",
-            ],
+            logo_heading: ["GOM"],
+            logo_heading_color: ["Common_logo_heading"],
+            logo_heading_border_color: ["Common_logo_border"],
+            logo_color: ["Common_logo"],
+            logo_title: ["Oncologo"],
+            link: [""],
+            logo_id_names: ["logo_title_id1"],
+            logo_detail: ["Oncologo"],
+            logo_title_color: ["Common_logo_title"],
             top_down_arrow: {
               display: "true",
-              arrow_color: [
-                "Common_TopDown_arror",
-                "Common_TopDown_arror",
-                "Common_TopDown_arror",
-              ],
-              line_color: [
-                "Common_TopDown_Line",
-                "Common_TopDown_Line",
-                "Common_TopDown_Line",
-              ],
+              arrow_color: ["Common_TopDown_arror"],
+              line_color: ["Common_TopDown_Line"],
             },
-            connecting_Line: {
-              display: "true",
-              connections: [
-                {
-                  starting: "logo_title_id1",
-                  ending: "logo_title_id2",
-                  height: "Level_1",
-                },
-                {
-                  starting: "logo_title_id2",
-                  ending: "logo_title_id4",
-                  height: "Level_1",
-                },
-              ],
-              arrow_color: [
-                "Common_ConnectingLine_arrow",
-                "Common_ConnectingLine_arrow",
-              ],
-              line_color: [
-                "Common_ConnectingLine_line",
-                "Common_ConnectingLine_line",
-              ],
-            },
-            connecting_Rectangle: {
-              display: "true",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                    ],
-                    iconColors: [
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                    ],
-                    iconSize: [
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                    ],
-                    justify_content: "center",
-                    start_end_gaps: "Level_0",
-                    shape: "rounded_x_lg",
-                  },
-                },
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "true",
-                  ending: "on_line_content_10",
-                  end_from_ending: "true",
-                  height: "Level_15",
-                  border_thickness: "Level_4",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                    ],
-                    iconColors: [
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                    ],
-                    iconSize: [
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                    ],
-                    justify_content: "evenly",
-                    start_end_gaps: "Level_5",
-                    shape: "rounded_bottom",
-                  },
-                },
-              ],
-              color: ["Common_ConnectingRectangle", "#9f30cb"],
-            },
-            line_right: "true",
+            line_right: "false",
             line_color: "Common_SubHeader_lineRight",
             above_line_content: {
-              content: ["effettua", "effettua", "effettua"],
-              color: [
-                "Common_AboveLine_Text",
-                "Common_AboveLine_Text",
-                "Common_AboveLine_Text",
-              ],
-              content_details: [
-                "effettuaastag",
-                "effettuaastag",
-                "effettuaastag",
-              ],
+              content: ["effettuaa"],
+              color: ["Common_AboveLine_Text"],
+              content_details: ["effettuaa"],
               justify_content: "evenly",
             },
             on_line_content_configuration: {
-              content: ["VISITA", "VISITA", "ESAMI"],
-              shapes: ["rounded_vertices", "Default", "Rounded_sm"],
+              content: ["COMUNICAZIONE PERCORSO TERAPIA"],
               striping: [
-                { striped: false },
                 {
-                  stripped: true,
+                  stripped: false,
                   reversed: false,
                   colors: [
                     "rgba(255, 255, 255, 0.6)",
@@ -289,504 +149,34 @@ JSON_Data = {
                     "rgba(0, 191, 255, 0.35)",
                   ],
                 },
-                {
-                  stripped: true,
-                  reversed: true,
-                  colors: [
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(0, 191, 255, 0.35)",
-                    "rgba(0, 191, 255, 0.35)",
-                  ],
-                },
               ],
-              bordered: [
-                { border: true, color: "black_color" },
-                { border: false },
-                { border: false },
-              ],
-              link: ["www.google.com", "", "www.google.com"],
-              content_id: [
-                "on_line_content_1",
-                "on_line_content_2",
-                "on_line_content_3",
-              ],
-              content_details: [
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius suscipit luctus. Aliquam mattis ornare ipsum, nec fermentum diam volutpat quis. Donec posuere et mauris id lobortis. Morbi sit amet posuere augue. Proin id risus neque. Cras blandit elit eget nisl porta tincidunt. Pellentesque blandit, enim at mattis porta, quam elit tincidunt nunc, pellentesque efficitur velit ante vehicula tellus. Mauris lacus sapien, mollis sit amet semper non, blandit vitae metus. Suspendisse et eros lectus. Sed sodales orci cursus, viverra elit sed, mattis magna. Aenean nec quam magna. In fermentum dolor quis velit volutpat, ac egestas nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra justo at vehicula.",
-                "Hello World!",
-                "Hello World!",
-              ],
-              color: [
-                "Common_onLineContent_font",
-                "Common_onLineContent_font",
-                "Common_onLineContent_font",
-              ],
-              background_color: [
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
-              ],
-              bottom_point_color: [
-                "Common_onLineContent_Point",
-                "Common_onLineContent_Point",
-                "Common_onLineContent_Point",
-              ],
-              bottom_line_color: [
-                "Common_onLineContent_Line",
-                "Common_onLineContent_Line",
-                "Common_onLineContent_Line",
-              ],
-              bottom_shape_color: [
-                "Common_onLineContent_Shape",
-                "Common_onLineContent_Shape",
-                "Common_onLineContent_Shape",
-              ],
-              bottom_shape_postion: ["Level_1", "Level_2", "Level_2"],
-            },
-            BottomtimelineSeries: {
-              background_color: "Common_timeLineSeries_Background",
-              border_color: "Common_timeLineSeries_Border",
-              timlines: [
-                {
-                  content: "<10 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_1",
-                  ending: "on_line_content_2",
-                },
-                {
-                  content: "<10 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_2",
-                  ending: "on_line_content_3",
-                },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Decisione Terapeutica",
-          configurations: {
-            title_color: "Common_SubHeader_title",
-          },
-          content: {
-            logo_heading: [""],
-            logo_heading_color: ["Common_logo_heading"],
-            logo_heading_border_color: ["Common_logo_border"],
-            logo_color: ["Common_logo"],
-            logo_title: ["GOM"],
-            logo_id_names: ["logo_title_id4"],
-            logo_detail: ["Hello World!"],
-            link: ["www.google.com"],
-            logo_title_color: ["Common_logo_title"],
-            top_down_arrow: {
-              display: "true",
-              arrow_color: ["Common_TopDown_arror"],
-              line_color: ["Common_TopDown_Line"],
-            },
-            connecting_Line: {
-              display: "true",
-              connections: [
-                {
-                  starting: "logo_title_id4",
-                  ending: "logo_title_id6",
-                  height: "Level_1",
-                },
-                {
-                  starting: "logo_title_id4",
-                  ending: "logo_title_id5",
-                  height: "Level_3",
-                },
-              ],
-              arrow_color: ["#ffc305", "#ffc305"],
-              line_color: ["#ffc305", "#ffc305"],
-            },
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_4",
-                  start_from_starting: "true",
-                  ending: "on_line_content_7",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["Common_ConnectingRectangle"],
-            },
-            line_right: "false",
-            line_color: "Common_SubHeader_lineRight",
-            above_line_content: {
-              content: ["effettua"],
-              color: ["Common_AboveLine_Text"],
-              content_details: ["effettuaastag"],
-              justify_content: "evenly",
-            },
-            on_line_content_configuration: {
-              content: ["DIAGNOSI"],
-              content_id: ["on_line_content_4"],
-              content_details: ["Hello World!"],
-              link: ["www.google.com"],
+              link: [""],
+              content_id: ["on_line_content_1"],
+              content_details: ["COMUNICAZIONE PERCORSO TERAPIA"],
               color: ["Common_onLineContent_font"],
               background_color: ["Common_onLineContent_Background"],
               bottom_point_color: ["Common_onLineContent_Point"],
               bottom_line_color: ["Common_onLineContent_Line"],
               bottom_shape_color: ["Common_onLineContent_Shape"],
-              bottom_shape_postion: ["Level_2"],
-            },
-            BottomtimelineSeries: {
-              background_color: "Common_timeLineSeries_Background",
-              border_color: "Common_timeLineSeries_Border",
-              timlines: [
-                {
-                  content: "<30 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_3",
-                  ending: "on_line_content_4",
-                },
-              ],
-            },
-          },
-        },
-      ],
-    },
-
-    {
-      component: "Header",
-      title: "Treatment",
-      configurations: {
-        title_color: "#515151",
-        line_right: "true",
-        line_color: "#adafaf",
-      },
-      sub_groups: [
-        {
-          component: "Sub-Header",
-          title: "Terapia Neo-Adiuvante",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-          },
-          content: {
-            logo_heading: ["GOM", "GOM"],
-            logo_heading_color: [
-              "linear-gradient(to right top, #000000ff 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #000000ff)",
-            ],
-            logo_heading_border_color: ["#a334c8", "#a334c8"],
-            logo_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_title: ["Oncologo", "Infermiere"],
-            logo_id_names: ["logo_title_id5", "logo_title_id6"],
-            logo_detail: ["Hello World", ""],
-            link: ["www.google.com", ""],
-            logo_title_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            top_down_arrow: {
-              display: "true",
-              arrow_color: ["#a334c8", "#a334c8"],
-              line_color: [
-                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
-                "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              ],
-            },
-            connecting_Line: {
-              display: "true",
-              connections: [
-                {
-                  starting: "logo_title_id5",
-                  ending: "logo_title_id8",
-                  height: "Level_5",
-                },
-                {
-                  starting: "logo_title_id6",
-                  ending: "logo_title_id11",
-                  height: "Level_6",
-                },
-                {
-                  starting: "logo_title_id6",
-                  ending: "logo_title_id12",
-                  height: "Level_6",
-                },
-              ],
-              arrow_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
-              line_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
-            },
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            line_right: "true",
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["ET", "TT", "CT"],
-              content_id: [
-                "on_line_content_5",
-                "on_line_content_6",
-                "on_line_content_7",
-              ],
-              content_details: ["Hello", "hi", "World"],
-              link: ["www.google.com", "", "www.google.com"],
-              color: ["black", "black", "black"],
-              background_color: ["#e6fffc", "#e6fffc", "#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_shape_color: [
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
-              ],
-              bottom_shape_postion: ["Level_3", "Level_3", "Level_2"],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<30 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_4",
-                  ending: "on_line_content_7",
-                },
-              ],
+              bottom_shape_postion: ["Level_1"],
             },
           },
         },
         {
           component: "Sub-Header",
-          title: "Chirurgia",
+          title: "",
           configurations: {
             title_color: "rgb(81, 81, 81)",
           },
           content: {
-            logo_heading: ["GOM", ""],
-            logo_heading_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_heading_border_color: ["#a334c8", "#a334c8"],
-            logo_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_title: ["Chirurgo/ Senologo", "Chirurgo Plastico"],
-            logo_id_names: ["logo_title_id7", "logo_title_id8"],
-            link: ["www.google.com", ""],
-            logo_title_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            top_down_arrow: {
-              display: "false",
-              arrow_color: ["#a334c8", "#a334c8"],
-              line_color: [
-                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
-                "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
-              ],
-            },
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            line_right: "true",
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["INTERVENTO"],
-              content_id: ["on_line_content_8"],
-              link: ["www.google.com"],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_shape_color: [
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
-              ],
-              bottom_shape_postion: ["Level_2"],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<30 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_7",
-                  ending: "on_line_content_8",
-                },
-                {
-                  content: "<60 gg da",
-                  height: "Level_6",
-                  show_border: "false",
-                  starting: "on_line_content_3",
-                  ending: "on_line_content_8",
-                },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Chemioterapia",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-          },
-          content: {
-            logo_heading: ["", ""],
-            logo_heading_color: [
-              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
-              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
-            ],
-            logo_heading_border_color: ["#a334c801", "#a334c801"],
-            logo_title: ["GOM", "DOM"],
-            logo_id_names: ["logo_title_id9", "logo_title_id10"],
-            link: ["", ""],
-            logo_color: [
-              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
-              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
-            ],
-            logo_title_color: [
-              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
-              "linear-gradient(to right top, #a334c801 20%, #f6546701)",
-            ],
-            top_down_arrow: {
-              display: "false",
-              arrow_color: ["#ffc100", "#ffc100"],
-              line_color: [
-                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-                "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-              ],
-            },
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            connecting_Circle: {
-              display: true,
-              connections: [
-                {
-                  starting: "on_line_content_8",
-                  ending: "on_line_content_10",
-                  start_from: "middle",
-                  end_from: "middle",
-                  border_thickness: "Level_2",
-                },
-                {
-                  starting: "on_line_content_9",
-                  ending: "on_line_content_10",
-                  start_from: "start",
-                  end_from: "end",
-                  border_thickness: "Level_2",
-                }
-              ],
-              color: ["#c140a5","#58e3d2"],
-            },
-            line_right: "true",
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["DICT", "CTDI"],
-              content_id: ["on_line_content_9", "on_line_content_10"],
-              link: ["www.google.com", ""],
-              color: ["black", "black"],
-              background_color: ["#e6fffc", "#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_shape_color: [
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
-              ],
-              bottom_shape_postion: ["Level_2", "Level_2"],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<60 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_8",
-                  ending: "on_line_content_10",
-                },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Radioterapia",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-          },
-          content: {
-            logo_heading: ["ROM"],
-            logo_heading_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
+            logo_heading: ["GOM"],
+            logo_heading_color: ["Common_logo_heading"],
             logo_heading_border_color: ["#a334c8"],
             logo_color: ["linear-gradient(to right top, #a334c8 20%, #f65467)"],
-            logo_title: ["MMG"],
-            logo_id_names: ["logo_title_id11"],
-            link: ["www.google.com"],
+            logo_title: ["Radiology"],
+            logo_id_names: ["logo_title_id2"],
+            logo_detail: ["Radiology"],
+            link: [""],
             logo_title_color: [
               "linear-gradient(to right top, #a334c8 20%, #f65467)",
             ],
@@ -795,26 +185,48 @@ JSON_Data = {
               arrow_color: ["#a334c8"],
               line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
             },
-            connecting_Rectangle: {
-              display: "false",
+            above_line_content: {
+              content: ["effettuaa"],
+              color: ["Common_AboveLine_Text"],
+              content_details: ["effettuaa"],
+              justify_content: "evenly",
+            },
+            connecting_Line: {
+              display: true,
               connections: [
                 {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
+                  starting: "logo_title_id2",
+                  ending: "logo_title_id3",
+                  height: "Level_1",
                 },
               ],
-              color: ["#58e3d2"],
+              arrow_color: ["#9f30cb"],
+              line_color: ["#9f30cb"],
             },
-            line_right: "false",
+            connecting_Text_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_2",
+                  ending: "on_line_content_4",
+                  start_from: "start",
+                  end_from: "end",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text: "procedure pre-trettamento",
+                  text_Position: "middle",
+                  text_color: "black",
+                  line_color: "black",
+                },
+              ],
+            },
+            line_right: false,
             line_color: "#c4c9ca",
             on_line_content_configuration: {
-              content: ["VISITA"],
-              content_id: ["on_line_content_11"],
-              link: ["www.google.com"],
+              content: ["MAMMOGRAFIA"],
+              content_id: ["on_line_content_2"],
+              content_details: ["MAMMOGRAFIA"],
+              link: [""],
               color: ["black"],
               background_color: ["#e6fffc"],
               bottom_point_color: [
@@ -837,45 +249,35 @@ JSON_Data = {
             title_color: "rgb(81, 81, 81)",
           },
           content: {
-            logo_heading: [""],
-            logo_heading_color: [
-              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
-            ],
-            logo_heading_border_color: ["#ffc100"],
-            logo_color: [
-              "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
-            ],
-            logo_title: ["GOM"],
-            logo_id_names: ["logo_title_id12"],
-            link: ["www.google.com"],
+            logo_heading: ["GOM"],
+            logo_heading_color: ["linear-gradient(to right top, #e45f65 20%, #d84987)"],
+            logo_heading_border_color: ["#e45f65"],
+            logo_color: ["linear-gradient(to right top, #e45f65 20%, #d84987)"],
+            logo_title: ["Anatomopatologo"],
+            logo_id_names: ["logo_title_id3"],
+            logo_detail: ["Anatomopatologo"],
+            link: [""],
             logo_title_color: [
-              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+              "linear-gradient(to right top, #e45f65 20%, #d84987)",
             ],
             top_down_arrow: {
               display: "true",
-              arrow_color: ["#ffc100"],
-              line_color: ["linear-gradient(to right, #f6f4dc60 10%, #ffc305)"],
+              arrow_color: ["#feb151"],
+              line_color: ["linear-gradient(to bottom, #e98f53 50%, #f79142)"],
             },
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
+            above_line_content: {
+              content: ["effettuaa"],
+              color: ["#feb151"],
+              content_details: ["effettuaa"],
+              justify_content: "evenly",
             },
-            line_right: "false",
+            line_right: false,
             line_color: "#c4c9ca",
             on_line_content_configuration: {
-              content: ["RT"],
-              content_id: ["on_line_content_12"],
-              link: ["www.google.com"],
+              content: ["BIOSIA + STADAZIONE"],
+              content_id: ["on_line_content_3"],
+              content_details: ["BIOSIA + STADAZIONE"],
+              link: [""],
               color: ["black"],
               background_color: ["#e6fffc"],
               bottom_point_color: [
@@ -887,21 +289,93 @@ JSON_Data = {
               bottom_shape_color: [
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               ],
-              bottom_shape_postion: ["Level_4"],
+              bottom_shape_postion: ["Level_3"],
             },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<60 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_10",
-                  ending: "on_line_content_12",
-                },
-              ],
+          },
+        },
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "rgb(81, 81, 81)",
+          },
+          content: {
+            logo_heading: ["GOM"],
+            logo_heading_color: ["Common_logo_heading"],
+            logo_heading_border_color: ["Common_logo_border"],
+            logo_color: ["Common_logo"],
+            logo_title: ["Oncologo"],
+            logo_id_names: ["logo_title_id4"],
+            logo_detail: ["Oncologo"],
+            link: [""],
+            logo_title_color: ["Common_logo_title"],
+            top_down_arrow: {
+              display: true,
+              arrow_color: ["#a334c8"],
+              line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
+            },
+            above_line_content: {
+              content: ["effettuaa"],
+              color: ["Common_AboveLine_Text"],
+              content_details: ["effettuaa"],
+              justify_content: "evenly",
+            },
+            line_right: false,
+            line_color: "#c4c9ca",
+            on_line_content_configuration: {
+              content: ["VALUTAZIONE FATTORI PROGNOSTICI"],
+              content_id: ["on_line_content_4"],
+              content_details: ["VALUTAZIONE FATTORI PROGNOSTICI"],
+              link: [""],
+              color: ["black"],
+              background_color: ["#e6fffc"],
+              bottom_point_color: ["Common_transparent"],
+              bottom_line_color: ["Common_transparent"],
+              bottom_shape_color: ["Common_transparent"],
+              bottom_shape_postion: ["Level_2"],
+            },
+          },
+        },
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "rgb(81, 81, 81)",
+          },
+          content: {
+            logo_heading: ["GOM"],
+            logo_heading_color: ["Common_logo_heading"],
+            logo_heading_border_color: ["Common_logo_border"],
+            logo_color: ["Common_logo"],
+            logo_title: ["Oncologo"],
+            logo_id_names: ["logo_title_id5"],
+            logo_detail: ["Oncologo"],
+            link: [""],
+            logo_title_color: ["Common_logo_title"],
+            top_down_arrow: {
+              display: true,
+              arrow_color: ["#a334c8"],
+              line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
+            },
+            above_line_content: {
+              content: ["sceglie"],
+              color: ["Common_AboveLine_Text"],
+              content_details: ["sceglie"],
+              justify_content: "evenly",
+            },
+            line_right: false,
+            line_color: "#c4c9ca",
+            on_line_content_configuration: {
+              content: ["TERPAIA NEO-ADIUVANTE"],
+              content_id: ["on_line_content_5"],
+              content_details: ["TERPAIA NEO-ADIUVANTE"],
+              link: [""],
+              color: ["black"],
+              background_color: ["#e6fffc"],
+              bottom_point_color: ["Common_transparent"],
+              bottom_line_color: ["Common_transparent"],
+              bottom_shape_color: ["Common_transparent"],
+              bottom_shape_postion: ["Level_2"],
             },
           },
         },
@@ -923,6 +397,25 @@ const resolveColor = (value, colorMap) => {
   return value;
 };
 
+const getFontSize = (sm, md, lg) => {
+  const fontType = JSON_Data?.fontConfig?.fontsize?.toLowerCase?.() || "small";
+
+  switch (fontType) {
+    case "small":
+      return sm;
+    case "medium":
+      return md;
+    case "large":
+      return lg;
+    default:
+      return sm;
+  }
+};
+// Util Function
+function limitText(text, limit) {
+  return text.length > limit ? text.slice(0, limit) + "..." : text;
+}
+
 // Function to return predefined HTML and CSS
 function convertToFormat(JsonData) {
   let HTML = ``;
@@ -939,22 +432,27 @@ function convertToFormat(JsonData) {
     return `${key}-${componentCount[key]}-${timestamp}-${random}`;
   };
 
-  // Util Function
-  function limitText(text, maxLength) {
-    if (!text) return "";
-    return text.length > maxLength
-      ? text.slice(0, maxLength - 3) + "..."
-      : text;
-  }
-
   const generateStartHeader = (component, className) => {
     const { title, configurations, start_content } = component;
-
+    const hasSteps = start_content.steps && start_content.steps.length > 0;
+    const has2Steps = start_content.steps && start_content.steps.length >= 2;
+    const alignment = configurations?.alignment || "horizontal";
+    const alignment_boxColor =
+      configurations?.vertical_config?.boxColor ||
+      "linear-gradient(to right, #d5d6d8, #ebebebff)";
+    const titleLimit = hasSteps ? 20 : 12;
     let html = `
   <div class="start slide-div ${className}">
-    <div class="start-mid-back-line"></div>
+    ${
+      alignment === "horizontal"
+        ? '<div class="start-mid-back-line"></div>'
+        : ""
+    }
     <div class="top">
-      <h2 class="div-title">${limitText(title, 20)}</h2>
+      <h2 class="div-title" title="${limitText(title, 280)}">${limitText(
+      title,
+      titleLimit
+    )}</h2>
     </div>
     <div class="mid-top">
       <div class="icon_plus_name">
@@ -971,7 +469,7 @@ function convertToFormat(JsonData) {
         </p>
       </div>
       <div class="mid-top-on-line">
-`;
+  `;
 
     // Loop steps
     start_content.steps.slice(0, 3).forEach((step, index) => {
@@ -996,7 +494,7 @@ function convertToFormat(JsonData) {
       title="${limitText(stepDetail, 280)}"
       style="background-color: ${bg}; color: ${font};"
       ${hasStepLink ? `onclick="window.open('${stepLink}', '_blank')"` : ""}
-    >${limitText(step, 20)}</h5>\n`;
+    >${limitText(step, 8)}</h5>\n`;
     });
 
     html += `
@@ -1009,7 +507,10 @@ function convertToFormat(JsonData) {
     const titleColor =
       resolveColor(configurations?.title_color, JsonData.colors) || "#515151";
 
-    const lineRight = configurations?.line_right === "True";
+    const lineRight =
+      configurations?.line_right === "True" ||
+      configurations?.line_right === "true" ||
+      configurations?.line_right === true;
 
     const logoGradient =
       resolveColor(
@@ -1051,6 +552,33 @@ function convertToFormat(JsonData) {
     const circle_color =
       resolveColor(configurations?.circle_color, JsonData.colors) || "#767979";
 
+    const containerWidth =
+      alignment === "horizontal" ? 120 : hasSteps ? 200 : 90;
+    const boxMap = {
+      default: "border-radius:50% 40px 40px 50%;",
+      rectangle: "border-radius:0 0 0 0;",
+      circle: "border-radius:50%;",
+      left_circle: "border-radius:50% 0px 0px 50%;",
+      right_circle: "border-radius:0 50% 50% 0;",
+      rounded_sm: "border-radius:10px;",
+      rounded_md: "border-radius:25px;",
+      rounded_lg: "border-radius:50px;",
+      rounded_x_lg: "border-radius:70px;",
+      rounded_right_circle: "border-radius:40px 50% 50% 40px;",
+      rounded_top: "border-radius:50px 50px 0 0;",
+      rounded_bottom: "border-radius:0 0 50px 50px;",
+      rounded_diagonal: "border-radius:50px 0 50px 0;",
+      reverse_rounded_diagonal: "border-radius:0 50px 0 50px;",
+      blob_soft: "border-radius:60% 40% 35% 65% / 55% 30% 40% 45%;",
+      pill_horizontal: "border-radius:100px / 50px;",
+      pill_vertical: "border-radius:50px / 100px;",
+      squircle: "border-radius:30%;",
+      inverted_corner: "border-radius:100% 0 100% 0 / 50% 0 50% 0;",
+    };
+    const boxShapeRaw = configurations?.vertical_config?.boxShape || "default";
+    const boxShapeKey = boxShapeRaw.toLowerCase();
+    const boxShapeStyle = boxMap[boxShapeKey] || boxMap["default"];
+
     // ✅ Build dynamic CSS
     let css = `
   .${className} {
@@ -1058,23 +586,47 @@ function convertToFormat(JsonData) {
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    width: 120px;
+    width: ${containerWidth}px;
     padding-right:10px;
     height: 100%;
     position: relative;
   }
 
   .${className} .top {
-    margin-right: 10%;
+    ${
+      alignment === "vertical"
+        ? "width:100%; margin-left: 17%;"
+        : "margin-right: 10%;"
+    }
   }
 
   .${className} .top h2 {
-    font-size: 12px;
+    font-size: ${getFontSize(12, 13, 14)}px;
     color: ${titleColor};
+    text-wrap:no-wrap;
   }
 
   .${className} .mid-top {
     margin-top: 140px;
+    ${
+      alignment === "vertical"
+        ? `
+      display:flex;
+      align-items:center;
+      justify-content:${hasSteps ? "space-evenly" : "center"};
+      margin-top: ${getFontSize(260, 255, 250)}px;
+      ${boxShapeStyle}
+      left:5px;
+      height:200px;
+      width:200px !important;
+      ${
+        hasSteps
+          ? `background: ${resolveColor(alignment_boxColor, JsonData.colors)};`
+          : ""
+      }
+      `
+        : `margin-top: 140px;`
+    }
     position: relative;
     z-index: 10;
     width: max-content;
@@ -1123,13 +675,14 @@ function convertToFormat(JsonData) {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    ${alignment === "vertical" ? "margin-bottom:30px;" : ""}
   }
 
   .${className} .mid-top .icon_plus_name .fa-user {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    font-size: ${getFontSize(15, 16, 17)}px;
     background: ${logoGradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1144,11 +697,49 @@ function convertToFormat(JsonData) {
     display: inline;
     background: ${logo_background};
     padding: 8px 11px;
-    font-size:9px;
+    white-space: nowrap;
+    font-size:${getFontSize(9, 10, 11)}px;
     border-radius: 23px;
     position: absolute;
     top: 21px;
     color: ${logo_font_color};
+  }
+  
+  ${
+    hasSteps
+      ? `.${className} .mid-top .icon_plus_name p::after{
+      display:block;
+      position:absolute;
+      content:" ";
+      width:${getFontSize(22, 17, 15)}px;
+      height:0px;
+      border:1px dashed black;
+      top:${has2Steps ? "50" : "54"}%;
+      transform:translateY(50%);
+      right:-${getFontSize(24, 20, 18)}px;
+    } 
+    .${className} .mid-top .start-step::after{
+      position:absolute;
+      content:" ";
+      border:1px dashed black;
+      width:20px;
+      left:-22px;
+      top:50%;
+      transform:translateY(50%);
+    }
+    .${className} .mid-top .start-step::before{
+      position:absolute;
+      content:" ";
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 5px solid black;
+      width:0px;
+      height:0px;
+      left:-4px;
+      top:50%;
+      transform:translateY(-35%);
+  }  `
+      : ""
   }
 
   .${className} .mid-top .start-step {
@@ -1156,52 +747,82 @@ function convertToFormat(JsonData) {
     padding: 7px;
     margin: 0;
     margin-left: 35px;
+    white-space: nowrap;       
+    text-overflow: ellipsis;
     border-radius: 7px;
     max-width:65px;
     min-width:45px;
-    font-size: 9px;
+    font-size:${getFontSize(9, 10, 11)}px;
     color:${font_color};
+    position:relative;
     border-bottom-right-radius: 23px;
   }
+
   .${className} .mid-top-on-line{
     margin: 0;
     padding: 0;
     display: flex;
     align-items: start;
-    justify-content: space-evenly;
+    justify-content: ${
+      alignment === "vertical"
+        ? `${has2Steps ? "space-between" : "center"}`
+        : "space-evenly"
+    };
     flex-direction: column;
     height: 135px;
+    position:relative;
   }
+    ${
+      has2Steps
+        ? `.${className} .mid-top-on-line::after{
+    position:absolute;
+    content:" ";
+    border:1px dashed black;
+    height:79%;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+    width:0;
+    }`
+        : ""
+    }
   `;
 
     return { html, css };
   };
 
   /**
-   * Helper to limit text length
-   */
-  function limitText(text, limit) {
-    return text.length > limit ? text.slice(0, limit) + "..." : text;
-  }
-
-  /**
    * Generate unique Header + Sub-Headers HTML + scoped CSS
    */
   function generateHeaderHTMLandCSS(component, uniqueClassName, colors) {
     const { title, configurations, sub_groups } = component;
+    // === Header Section ===
+    const showParentCollapse = configurations?.collapsabile === true;
+    const parentIconStyle = showParentCollapse
+      ? ""
+      : "style='opacity:0; pointer-events:none;'";
 
     let html = `<div class="Slide-box ${uniqueClassName}">\n`;
-    html += `<h1><i class="fa-regular fa-square-caret-right"></i>${title}</h1>\n`;
+    html += `<h1 title="${title}">
+    <i class="fa-regular fa-square-caret-right" ${parentIconStyle}></i> 
+    ${limitText(title, 10)}
+  </h1>\n`;
 
     html += `<div class="sub-groups">\n`;
 
     sub_groups.forEach((sg, idx) => {
+      const showChildCollapse = sg.configurations?.collapsabile === true;
+      const childIconStyle = showChildCollapse
+        ? ""
+        : "style='opacity:0; pointer-events:none;'";
+
       html += `<div class="sub-group-div ${uniqueClassName}-sub-group-div${
         idx + 1
       }">\n`;
-      html += `<h2>
-      <i class="fa-regular fa-square-caret-right"></i>
-      ${sg.title}</h2>\n`;
+      html += `<h2 title="${sg.title}">
+      <i class="fa-regular fa-square-caret-right" ${childIconStyle}></i> 
+      ${limitText(sg.title, 15)}
+    </h2>\n`;
 
       // Top icons with logo_heading + logo_title
       html += `<div class="subgroups-mid-top">\n`;
@@ -1240,8 +861,7 @@ function convertToFormat(JsonData) {
         sg.content.above_line_content.content.forEach((txt, i) => {
           if (txt && txt.trim() !== "") {
             const color = sg.content.above_line_content.color?.[i] || "#000";
-            const detail =
-              sg.content.above_line_content.content_details?.[i] || txt;
+            const detail = sg.content.above_line_content.content_details?.[i];
 
             html += `<p 
         class="above-line-text above-line-text-${i + 1}" 
@@ -1264,6 +884,9 @@ function convertToFormat(JsonData) {
           i + 1
         }" id="${contentId}">\n`;
         const link = sg.content.on_line_content_configuration.link?.[i];
+        const hasShadow =
+          sg.content.on_line_content_configuration.background_shadow?.[i] ??
+          true;
         const hasLink = link && link.trim() !== "";
         const contentDetail =
           sg.content.on_line_content_configuration.content_details?.[i] || "";
@@ -1273,11 +896,11 @@ function convertToFormat(JsonData) {
 
         html += `<h6
       title="${limitText(contentDetail, 280)}"
-      class="box-shadow-box${hasLink ? " Div-link" : ""}${
+      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
           isStriped ? " striped" : ""
         }"
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}>
-  ${limitText(c, 10)}
+  ${limitText(c, 6)}
 </h6>\n`;
 
         html += `</div>\n`;
@@ -1300,7 +923,7 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} h1 {
     color: ${resolveColor(configurations?.title_color, colors) || "#515151"};
-    font-size: 12px;
+    font-size:${getFontSize(12, 13, 14)}px;
     margin-top: 10px;
     margin-bottom: 20px;
     position:relative;
@@ -1335,7 +958,7 @@ function convertToFormat(JsonData) {
   }
     
   .${uniqueClassName} h2 {
-    font-size: 10px;
+    font-size:${getFontSize(10, 11, 12)}px;
     color: ${
       resolveColor(
         configurations?.sub_title_color || configurations?.title_color,
@@ -1358,7 +981,7 @@ function convertToFormat(JsonData) {
   .${uniqueClassName} .sub-group-div h2 {
     height:15px;
     margin:0;
-    margin-bottom: 115px;
+    margin-bottom: ${getFontSize(115, 110, 108)}px;
   }
   .${uniqueClassName} .subgroups-mid-top {
     display: flex;
@@ -1389,7 +1012,7 @@ function convertToFormat(JsonData) {
     position: absolute;
     width: 1px;
     left: 50%;
-    top:55px;
+    top:${getFontSize(55, 58, 60)}px;
     padding: 0;
     margin: 0;
     z-index: 1;
@@ -1408,13 +1031,13 @@ function convertToFormat(JsonData) {
     }
   .${uniqueClassName} .icon_plus_name span {
     position: absolute;
-    top: -12px;
-    font-size:10px;
+    top: -${getFontSize(12, 13, 14)}px;
+    font-size:${getFontSize(10, 11, 12)}px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .${uniqueClassName} .icon_plus_name .fa-user{
-    font-size: 15px;
+    font-size:${getFontSize(15, 16, 17)}px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: flex;
@@ -1427,11 +1050,12 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} .icon_plus_name p {
     display: inline;
-    padding: 8px 11px;
+    padding: 8px ${getFontSize(11, 14, 17)}px;
     border-radius: 23px;
     position: absolute;
     top: 21px;
-    font-size: 9px;
+    white-space: nowrap;
+    font-size:${getFontSize(9, 10, 11)}px;
     color: white;
     width: 40px;
     text-align: center;
@@ -1445,7 +1069,7 @@ function convertToFormat(JsonData) {
     position: relative;
   }
   .${uniqueClassName} .above-line-content p {
-    font-size: 10px;
+    font-size:${getFontSize(10, 11, 12)}px;
     font-weight: 600;
     margin: 0;
     padding: 0;
@@ -1463,7 +1087,7 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} .subgroups-on-line-content h6{
     margin: 0;
-    font-size: 9px;
+    font-size:${getFontSize(9, 10, 11)}px;
     padding: 10px 15px;
     position: relative;
     transition:0.1s all;
@@ -1514,13 +1138,13 @@ function convertToFormat(JsonData) {
       const hasAboveLine = sg.content.above_line_content?.content?.some(
         (c) => c && c.trim() !== ""
       );
-      const dynamicWidth = 110 + (logoLength - 1) * 50;
+      const dynamicWidth = getFontSize(110, 125, 140) + (logoLength - 1) * 60;
 
       css += `
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
       } .icon_plus_name::after {
-      height: ${hasAboveLine ? "120px" : "140px"};
+      height: ${hasAboveLine ? "120px" : `${getFontSize(140, 132, 132)}px`};
 }
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
@@ -1532,13 +1156,13 @@ function convertToFormat(JsonData) {
       css += `
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} {
   margin: 0px;
-  padding: 0 10px;
+  padding: 0 ${getFontSize(10, 12, 14)}px;
 }
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} h2 {
   color: ${
     resolveColor(sg.configurations?.title_color, colors) || "rgb(81, 81, 81)"
   };
-  font-size: 10px;
+  font-size:${getFontSize(10, 11, 12)}px;
 }
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
@@ -1691,24 +1315,24 @@ function convertToFormat(JsonData) {
 
           switch (level) {
             case "Level_2":
-              beforeTop = "265px";
+              beforeTop = `${getFontSize(264, 266, 266)}px`;
               afterTop = "30px";
-              afterHeight = "230px";
+              afterHeight = "233px";
               break;
             case "Level_3":
-              beforeTop = "285px";
+              beforeTop = `${getFontSize(285, 287, 288)}px`;
               afterTop = "30px";
-              afterHeight = "250px";
+              afterHeight = `${getFontSize(250, 250, 252)}px`;
               break;
             case "Level_4":
-              beforeTop = "305px";
+              beforeTop = `${getFontSize(305, 308, 308)}px`;
               afterTop = "30px";
-              afterHeight = "270px";
+              afterHeight = `${getFontSize(270, 273, 273)}px`;
               break;
             case "Level_5":
-              beforeTop = "325px";
+              beforeTop = `${getFontSize(325, 328, 329)}px`;
               afterTop = "30px";
-              afterHeight = "290px";
+              afterHeight = `${getFontSize(290, 293, 295)}px`;
               break;
           }
 
@@ -1770,7 +1394,6 @@ function convertToFormat(JsonData) {
     display: flex;
     justify-content: ${justifyMap[finalJustify]};
     align-items: center;
-    gap: 10px;
   }
   `;
     });
@@ -1967,7 +1590,7 @@ body {
 }
 .footer-dark-five-lines div h4 {
   margin: 0;
-  font-size: 9px;
+  font-size:${getFontSize(9, 10, 11)}px;
   text-align: right;
   color: #333;
   position:absolute;
@@ -1979,14 +1602,8 @@ let dynamicFooterCSS = "";
 // Add widths for each footer div
 Object.keys(JSON_Data.footer.label_width).forEach((key, idx) => {
   let widthValue = parseFloat(JSON_Data.footer.label_width[key]);
-
-  // If the value is NaN (like if user passes "abc"), default to 70
   if (isNaN(widthValue)) widthValue = 70;
-
-  // Clamp the value between 0 and 100
   widthValue = Math.max(0, Math.min(200, widthValue));
-
-  // Add % at the end for CSS
   dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${
     idx + 1
   }) { width: ${widthValue}%; }\n`;
@@ -1995,7 +1612,7 @@ Object.keys(JSON_Data.footer.label_width).forEach((key, idx) => {
 const levelToPixel = (levelString) => {
   const defaultLevel = 10;
   const totalLevels = 20;
-  const maxOffset = 140;
+  const maxOffset = getFontSize(140, 150, 160);
   let level = parseInt(levelString?.replace("Level_", ""), 10);
   if (isNaN(level)) level = defaultLevel;
   level = Math.max(0, Math.min(totalLevels, level));
@@ -2017,14 +1634,15 @@ Object.keys(JSON_Data.footer.footer_label_position_left).forEach((key, idx) => {
 let footerHTML = "";
 const labels = JSON_Data.footer.footer_label;
 Object.keys(labels).forEach((key, idx) => {
-  footerHTML += `<div><h4 class="footer-label-${idx + 1}">${
-    labels[key]
-  }</h4></div>\n`;
+  footerHTML += `<div><h4 class="footer-label-${idx + 1}">${limitText(
+    labels[key],
+    30
+  )}</h4></div>\n`;
 });
 
 let userScale = parseFloat(JSON_Data.scaling);
 if (isNaN(userScale)) {
-  userScale = 1; // default
+  userScale = 1;
 } else if (userScale > 1) {
   userScale = 1;
 } else if (userScale < 0) {
@@ -2089,13 +1707,13 @@ function adjustMidLineWidth(JSON_Data) {
   }
 
   // 3. Decide offset base (by logo count)
-  let offset = 20;
-  if (logoCount === 1) offset = 42;
-  else if (logoCount === 2) offset = 26;
+  let offset = getFontSize(22, 23, 24);
+  if (logoCount === 1) offset = getFontSize(42, 46, 53);
+  else if (logoCount === 2) offset = getFontSize(26, 29, 32);
 
   // 4. Add *extra* 20px if last parent is NOT visible
   if (lastParentId && lastVisibleId !== lastParentId) {
-    offset += 46; // hardcoded extra width
+    offset += getFontSize(35, 40, 45); // hardcoded extra width
   }
 
   // 5. Apply width logic
@@ -2157,9 +1775,9 @@ function adjustFooterWidth(JSON_Data) {
   }
 
   // 3. Decide base padding by logo count
-  let padding_border_width_add = 20; // default >2
-  if (logoCount === 1) padding_border_width_add = 40;
-  else if (logoCount === 2) padding_border_width_add = 24;
+  let padding_border_width_add = getFontSize(20, 23, 26); // default >2
+  if (logoCount === 1) padding_border_width_add = getFontSize(40, 43, 46);
+  else if (logoCount === 2) padding_border_width_add = getFontSize(24, 26, 28);
 
   // 4. Add extra 20px if last parent is NOT visible
   if (lastParentId && lastVisibleId !== lastParentId) {
@@ -2260,7 +1878,7 @@ function drawConnectingLines(JSON_Data) {
           const dynamicStyle = `
               .${lineClass} {
                 position: absolute;
-                z-index: 1;
+                z-index: 2;
                 top: ${topH + top}px;
                 left: ${left}px;
                 width: ${width}px;
@@ -2411,15 +2029,20 @@ function drawBottomTimelineSeries(JSON_Data) {
             display: flex;
             align-items: center;
             justify-content: end;
+            text-align:right;
             padding-right: 5px;
             color: black;
           }
           .${timelineClass} p{
-            font-size: 7px;
+            width:70%;
+            font-size:${getFontSize(7, 8, 9)}px;
             font-weight:bold;
+            white-space: nowrap;        
+            overflow: hidden;           
+            text-overflow: ellipsis;
           }
           .${timelineClass} i{
-            font-size: 10px;
+            font-size:${getFontSize(10, 11, 12)}px;
             margin-top:1px;
             margin-left: 5px;
           }
@@ -2450,7 +2073,12 @@ function drawBottomTimelineSeries(JSON_Data) {
         // --- Add timeline div ---
         const div = document.createElement("div");
         div.className = timelineClass;
-        div.innerHTML = `<p>${item.content}</p><i class="fa-regular fa-clock"></i>`;
+        div.innerHTML =
+          "<p title='" +
+          item.content +
+          "'>" +
+          item.content +
+          "</p><i class='fa-regular fa-clock'></i>";
         pptBox.appendChild(div);
       });
     });
@@ -2559,7 +2187,7 @@ function drawConnectingRectangle(JSON_Data) {
           parseInt((config?.start_end_gaps || "Level_0").split("_")[1]) || 0;
         const widthPercent = Math.max(0, 100 - startEndGapsLevel * 5);
 
-        // 🔶 Shape mapping (NEW PART)
+        // Shape mapping (NEW PART)
         const shapeMap = {
           rectangle: "border-radius: 0 0 0 0;",
           rounded_sm: "border-radius: 5px;",
@@ -2716,10 +2344,6 @@ function drawConnectingCircle(JSON_Data) {
         const startFrom = normalize(connection.start_from);
         const endFrom = normalize(connection.end_from);
 
-        // compute X coordinate using the same outward spacing convention you used in rectangle:
-        //   start -> rect.left - distant_Space
-        //   middle -> rect.left + rect.width/2
-        //   end -> rect.left + rect.width + distant_Space
         const computeX = (rect, part) => {
           if (part === "start") return rect.left - distant_Space;
           if (part === "end") return rect.left + rect.width + distant_Space;
@@ -2752,7 +2376,14 @@ function drawConnectingCircle(JSON_Data) {
           resolveColor(circleData.color?.[i], JSON_Data.colors) || "#58e3d2";
 
         const minTop = Math.min(startRect.top, endRect.top);
-        const topOffset = minTop - pptRect.top - diameter + borderSize / 2 +diameter/2;        
+        const topOffset =
+          minTop -
+          pptRect.top -
+          diameter +
+          borderSize / 2 +
+          diameter / 2 +
+          getFontSize(0, 5, 5);
+
         const styleEl = document.createElement("style");
         styleEl.setAttribute("data-conn", className);
         styleEl.textContent = `
@@ -2760,7 +2391,7 @@ function drawConnectingCircle(JSON_Data) {
             position: absolute;
             left: ${leftAbs - pptRect.left - distant_Space}px;
             width: ${diameter}px;
-            height: ${radius}px;
+            height: ${radius}px; /* show top half only */
             overflow: hidden;
             top: ${topOffset}px;
             z-index: 1;
@@ -2780,6 +2411,18 @@ function drawConnectingCircle(JSON_Data) {
             border: ${borderSize}px solid ${color};
             background: transparent;
           }
+
+          /* optional helper so icons inside container can sit above the stroke */
+          .${className} .conn-icon {
+            position: absolute;
+            transform-origin: center;
+            pointer-events: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            line-height: 1;
+          }
         `;
         document.head.appendChild(styleEl);
 
@@ -2791,12 +2434,365 @@ function drawConnectingCircle(JSON_Data) {
         circle.className = "inner-circle";
 
         container.appendChild(circle);
+
+        const cfg = connection.config || {};
+        // don't crash for very small circles
+        const MIN_DIAMETER_FOR_ICONS = 40;
+        if (cfg && diameter >= MIN_DIAMETER_FOR_ICONS) {
+          // Accept either single string or array for icon classes
+          let iconClasses = [];
+          if (Array.isArray(cfg.fontAwsomeicons)) {
+            iconClasses = cfg.fontAwsomeicons;
+          } else if (typeof cfg.fontAwsomeicon === "string") {
+            iconClasses = [
+              cfg.fontAwsomeicon,
+              cfg.fontAwsomeicon,
+              cfg.fontAwsomeicon,
+            ];
+          }
+
+          // Colors can be array or single value
+          const iconColors = Array.isArray(cfg.iconColor)
+            ? cfg.iconColor
+            : [cfg.iconColor, cfg.iconColor, cfg.iconColor].map(
+                (c) => c || "black"
+              );
+
+          // iconSize may be single Level_N or array; follow your sizing logic
+          const iconSizeArr = Array.isArray(cfg.iconSize)
+            ? cfg.iconSize
+            : [cfg.iconSize, cfg.iconSize, cfg.iconSize];
+
+          // circle geometry for icon placement:
+          const D = diameter;
+          const cx = D / 2; // center x (relative to container left)
+          const cy = D / 2; // center y (relative to container top: note container height == cy)
+          const ringRadius = Math.max(6, cx - borderSize / 2); // place icon center on ring midline
+
+          // angles (degrees) for [top, left-up, right-up]
+          const anglesDeg = [-90, -155, -25];
+
+          for (let iconIdx = 0; iconIdx < 3; iconIdx++) {
+            const deg = anglesDeg[iconIdx];
+            const theta = (deg * Math.PI) / 180;
+            const iconClass = iconClasses[iconIdx] || iconClasses[0];
+            const iconColor = iconColors[iconIdx] || iconColors[0] || "black";
+
+            // parse Level_N -> N
+            const sizeLevel =
+              parseInt((iconSizeArr[iconIdx] || "Level_0").split("_")[1]) || 0;
+            const baseSize = 8;
+            const fontSize = Math.min(baseSize + sizeLevel * 2, 20);
+
+            // compute center position on full-circle coordinates
+            const iconCenterX = cx + ringRadius * Math.cos(theta);
+            const iconCenterY = cy + ringRadius * Math.sin(theta);
+
+            // create element (Font Awesome <i> expected)
+            const iconEl = document.createElement("i");
+            iconEl.className = iconClass + " conn-icon";
+            iconEl.setAttribute("aria-hidden", "true");
+
+            // inline styles for exact placement and appearance
+            iconEl.style.left = `${iconCenterX}px`;
+            iconEl.style.top = `${iconCenterY}px`;
+            iconEl.style.transform = `translate(-50%, -50%) ${
+              iconIdx === 1 ? "rotateZ(-60deg)" : iconIdx === 2 ? "rotateZ(60deg)" : ""
+            }`;
+            iconEl.style.fontSize = `${fontSize}px`;
+            iconEl.style.color = iconColor;
+            iconEl.style.zIndex = "3";
+            iconEl.style.pointerEvents = "none";
+            container.appendChild(iconEl);
+          }
+        }
         pptBox.appendChild(container);
       });
     });
   });
 }
+
 drawConnectingCircle(JSON_Data);
+
+function drawConnectingTextLine(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("PPT-Box not found.");
+    return;
+  }
+
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, idx) => {
+      const textLineData = sg.content?.connecting_Text_Line;
+
+      // Remove old text-lines for this sub-group if display disabled or config missing
+      if (
+        !textLineData ||
+        !(textLineData.display === "true" || textLineData.display === true)
+      ) {
+        const oldEls = pptBox.querySelectorAll(
+          `[class*="connection-TextLine-sec${sectionIdx}-sub${idx}-line"]`
+        );
+        oldEls.forEach((el) => {
+          const styleTag = document.querySelector(
+            `style[data-conn="${el.className}"]`
+          );
+          if (styleTag) styleTag.remove();
+          el.remove();
+        });
+        return;
+      }
+
+      (textLineData.connections || []).forEach((connection, i) => {
+        const className = `connection-TextLine-sec${sectionIdx}-sub${idx}-line${i}`;
+
+        // remove any prior one + its style
+        const old = pptBox.querySelector(`.${className}`);
+        const oldStyle = document.querySelector(
+          `style[data-conn="${className}"]`
+        );
+        if (old) old.remove();
+        if (oldStyle) oldStyle.remove();
+
+        // look up endpoints
+        const startEl = document.getElementById(connection.starting);
+        const endEl = document.getElementById(connection.ending);
+        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
+          return;
+
+        // measurements
+        const pptRect = pptBox.getBoundingClientRect();
+        const startRect = startEl.getBoundingClientRect();
+        const endRect = endEl.getBoundingClientRect();
+
+        // normalize start_from / end_from to "start" | "middle" | "end"
+        const normalize = (v) => {
+          if (v === undefined || v === null) return "middle";
+          const s = String(v).toLowerCase();
+          return s === "start" || s === "end" || s === "middle" ? s : "middle";
+        };
+        const startFrom = normalize(connection.start_from);
+        const endFrom = normalize(connection.end_from);
+
+        const computeX = (rect, part) => {
+          if (part === "start") return rect.left;
+          if (part === "end") return rect.left + rect.width;
+          return rect.left + rect.width / 2;
+        };
+
+        const startX = computeX(startRect, startFrom);
+        const endX = computeX(endRect, endFrom);
+
+        const leftAbs = Math.min(startX, endX);
+        const distance = Math.abs(endX - startX);
+
+        // nothing or too small to draw
+        if (distance <= 1) return;
+
+        // line position level -> top offset (static baseline + 2px per level)
+        const linePosLevel = Math.min(
+          Math.max(
+            parseInt((connection.line_Position || "Level_1").split("_")[1]) ||
+              1,
+            1
+          ),
+          20
+        );
+        const topOffset = 415 + (linePosLevel - 1) * 2; // relative to PPT-Box top
+
+        // line thickness mapping (Level_1|2|3)
+        const thicknessLevel = Math.min(
+          Math.max(
+            parseInt((connection.line_Thickness || "Level_1").split("_")[1]) ||
+              1,
+            1
+          ),
+          3
+        );
+        const thicknessMap = { 1: 1, 2: 2, 3: 3 };
+        const lineThickness = thicknessMap[thicknessLevel] || 1;
+
+        // colors
+        const lineColor =
+          resolveColor(connection.line_color, JSON_Data.colors) ||
+          resolveColor(textLineData.line_color, JSON_Data.colors) ||
+          "#000";
+        const textColor =
+          resolveColor(connection.text_color, JSON_Data.colors) || "#000";
+
+        // text position
+        const textPos = String(
+          connection.text_Position || "middle"
+        ).toLowerCase();
+        const textRaw = connection.text || "";
+
+        // tri size (caps) derived from thickness
+        const triSize = Math.max(4, Math.min(12, Math.floor(lineThickness)));
+
+        // compute text max widths
+        const centerTextMax = Math.floor(distance * 0.8);
+        const fullTextMax = Math.floor(distance * 0.99);
+
+        // create style (tagged so we can remove it later)
+        const styleEl = document.createElement("style");
+        styleEl.setAttribute("data-conn", className);
+
+        // CSS (scoped to this unique className)
+        styleEl.textContent = `
+          .${className} {
+            position: absolute;
+            left: ${leftAbs - pptRect.left}px;
+            width: ${distance}px;
+            top: ${topOffset}px;
+            z-index: 3;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: inherit;
+          }
+          .${className}__row {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .${className}__line {
+            flex: 1 1 0;
+            height: ${lineThickness}px;
+            background: ${lineColor};
+            position: relative;
+            min-width: 0;
+          }
+
+          .${className}__line.left::before {
+            content: "";
+            position: absolute;
+            left: -${triSize}px;
+            top: 50%;
+            left:0px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: ${triSize}px solid transparent;
+            border-bottom: ${triSize}px solid transparent;
+            border-right: ${triSize}px solid ${lineColor};
+          }
+
+          .${className}__line.right::after {
+            content: "";
+            position: absolute;
+            right: -${triSize}px;
+            top: 50%;
+            right:0px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: ${triSize}px solid transparent;
+            border-bottom: ${triSize}px solid transparent;
+            border-left: ${triSize}px solid ${lineColor};
+          }
+
+          .${className}__textwrap {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 8px;
+            box-sizing: border-box;
+            max-width: ${
+              textPos === "middle" ? centerTextMax + "px" : fullTextMax + "px"
+            };
+            min-width: 0;
+          }
+
+          .${className}__text {
+            margin: 0;
+            color: ${textColor};
+            font-size:${getFontSize(11, 12, 13)}px;
+            line-height: 1;
+            display: inline-block;
+            box-sizing: border-box;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+          }
+
+          /* when text is above/below, stack vertically */
+          .${className}--col {
+            flex-direction: column;
+          }
+          .${className}--col .${className}__row {
+            margin-top: 4px;
+          }
+        `;
+        document.head.appendChild(styleEl);
+
+        // build DOM structure
+        const container = document.createElement("div");
+        container.className = className;
+
+        // if above/below -> column layout (text then row)
+        if (textPos === "above" || textPos === "below") {
+          container.classList.add(`${className}--col`);
+        }
+
+        // text element
+        const textEl = document.createElement("p");
+        textEl.className = `${className}__text`;
+        textEl.textContent = textRaw;
+
+        // the row with left-line / textwrap / right-line
+        const row = document.createElement("div");
+        row.className = `${className}__row`;
+        row.title = textRaw;
+
+        const leftLine = document.createElement("div");
+        leftLine.className = `${className}__line left`;
+
+        const rightLine = document.createElement("div");
+        rightLine.className = `${className}__line right`;
+
+        const textWrap = document.createElement("div");
+        textWrap.className = `${className}__textwrap`;
+
+        // Append children in the order depending on text position
+        if (textPos === "above") {
+          // text above row
+          const textAbove = textEl;
+          textWrap.appendChild(textAbove);
+          row.appendChild(leftLine);
+          row.appendChild(rightLine);
+          container.appendChild(textWrap);
+          container.appendChild(row);
+        } else if (textPos === "below") {
+          // text below row
+          row.appendChild(leftLine);
+          row.appendChild(rightLine);
+          textWrap.appendChild(textEl);
+          container.appendChild(row);
+          container.appendChild(textWrap);
+        } else {
+          // middle: left-line | text-wrap | right-line
+          textWrap.appendChild(textEl);
+          row.appendChild(leftLine);
+          row.appendChild(textWrap);
+          row.appendChild(rightLine);
+          container.appendChild(row);
+        }
+
+        // append to PPT box
+        pptBox.appendChild(container);
+      });
+    });
+  });
+}
+
+drawConnectingTextLine(JSON_Data);
 
 function collapsabile() {
   const parents = document.querySelectorAll(".Slide-box");
@@ -2868,7 +2864,6 @@ function collapsabile() {
         (n) => n.nodeType === Node.TEXT_NODE
       );
       const originalTitle = parentBox.getAttribute("data-title") || "";
-
       const subGroups = parentBox.querySelector(".sub-groups");
 
       if (!parentItem.collapsed) {
@@ -2892,6 +2887,7 @@ function collapsabile() {
       // redraw after any toggle
       drawBottomTimelineSeries(JSON_Data);
       drawConnectingLines(JSON_Data);
+      drawConnectingTextLine(JSON_Data);
       drawConnectingRectangle(JSON_Data);
       drawConnectingCircle(JSON_Data);
       adjustFooterWidth(JSON_Data);
@@ -2933,6 +2929,7 @@ function collapsabile() {
         const labelText = labelSpan ? labelSpan.textContent.trim() : "";
         const midTop = childDiv.querySelector(".subgroups-mid-top");
         const onLine = childDiv.querySelector(".subgroups-on-line");
+        const aboveLine = childDiv.querySelector(".above-line-content");
 
         if (!childItem.collapsed) {
           // Collapse subgroup
@@ -2941,7 +2938,7 @@ function collapsabile() {
           icon.title = labelText; // Tooltip now matches label
           if (midTop) midTop.style.display = "none";
           if (onLine) onLine.style.display = "none";
-          icon.classList.remove("fa-square-caret-right");
+          if (aboveLine) aboveLine.style.display = "none";
           icon.classList.add("fa-square-caret-down");
         } else {
           // Expand subgroup
@@ -2950,6 +2947,7 @@ function collapsabile() {
           icon.removeAttribute("title");
           if (midTop) midTop.style.display = "";
           if (onLine) onLine.style.display = "";
+          if (aboveLine) aboveLine.style.display = "";
           icon.classList.remove("fa-square-caret-down");
           icon.classList.add("fa-square-caret-right");
         }
@@ -2957,6 +2955,7 @@ function collapsabile() {
         // redraw after any toggle
         drawBottomTimelineSeries(JSON_Data);
         drawConnectingLines(JSON_Data);
+        drawConnectingTextLine(JSON_Data);
         drawConnectingRectangle(JSON_Data);
         drawConnectingCircle(JSON_Data);
         adjustFooterWidth(JSON_Data);

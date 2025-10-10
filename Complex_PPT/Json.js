@@ -1786,20 +1786,28 @@ JSON_Data4 = {
       "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
     Common_timeLineSeries_Border: "#ffc100",
   },
+  fontConfig: {
+    fontsize: "small",
+  },
   body: [
     {
       component: "Start-Header",
       title: "Pre-diagnosi",
       configurations: {
         title_color: "#515151",
-        line_right: "True",
+        line_right: ture,
         line_color: "#adafaf",
         circle_color: "#767979",
+        alignment: "vertical",
+        vertical_config: {
+          boxColor: "linear-gradient(to right, #d5d6d8, #ebebebff)",
+          boxShape: "blob_soft",
+        },
       },
       start_content: {
         logo_title: "Paziente",
         link: "https://www.youtube.com/",
-        steps: ["SINTOMI", "REPERTO INCIDENTALE", "SCREENING I LIVELLO"],
+        steps: ["SCREENING", "YUDHJCS CDSVYUCUD", "HADH CBSDHJBVG"],
         stepsLink: ["https://www.youtube.com/", "", "https://www.youtube.com/"],
         title_detail: "Hello World!",
         steps_details: [
@@ -1824,7 +1832,7 @@ JSON_Data4 = {
       title: "Diagnosi e pre-treatment",
       configurations: {
         title_color: "Common_Header_title",
-        line_right: "true",
+        line_right: true,
         line_color: "Common_Header_Line",
       },
       sub_groups: [
@@ -1980,10 +1988,10 @@ JSON_Data4 = {
               ],
               color: ["Common_ConnectingRectangle", "#9f30cb"],
             },
-            line_right: "true",
+            line_right: true,
             line_color: "Common_SubHeader_lineRight",
             above_line_content: {
-              content: ["effettua", "effettua", "effettua"],
+              content: ["effettuaa", "effettua", "effettua"],
               color: [
                 "Common_AboveLine_Text",
                 "Common_AboveLine_Text",
@@ -2089,7 +2097,7 @@ JSON_Data4 = {
         },
         {
           component: "Sub-Header",
-          title: "Decisione Terapeutica",
+          title: "Decisione Tera",
           configurations: {
             title_color: "Common_SubHeader_title",
           },
@@ -2139,7 +2147,7 @@ JSON_Data4 = {
               ],
               color: ["Common_ConnectingRectangle"],
             },
-            line_right: "false",
+            line_right: false,
             line_color: "Common_SubHeader_lineRight",
             above_line_content: {
               content: ["effettua"],
@@ -2176,13 +2184,12 @@ JSON_Data4 = {
         },
       ],
     },
-
     {
       component: "Header",
       title: "Treatment",
       configurations: {
         title_color: "#515151",
-        line_right: "true",
+        line_right: true,
         line_color: "#adafaf",
       },
       sub_groups: [
@@ -2255,7 +2262,7 @@ JSON_Data4 = {
               ],
               color: ["#58e3d2"],
             },
-            line_right: "true",
+            line_right: true,
             line_color: "#c4c9ca",
             on_line_content_configuration: {
               content: ["ET", "TT", "CT"],
@@ -2435,6 +2442,43 @@ JSON_Data4 = {
               ],
               color: ["#58e3d2"],
             },
+            connecting_Circle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_7",
+                  ending: "on_line_content_10",
+                  start_from: "middle",
+                  end_from: "middle",
+                  border_thickness: "Level_2",
+                },
+                {
+                  starting: "on_line_content_9",
+                  ending: "on_line_content_10",
+                  start_from: "start",
+                  end_from: "end",
+                  border_thickness: "Level_2",
+                },
+              ],
+              color: ["#c140a5", "#58e3d2"],
+            },
+            connecting_Text_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_7",
+                  ending: "on_line_content_10",
+                  start_from: "start",
+                  end_from: "end",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text: "procedure pre-dskfdsfdsfdsfjfsdfsdffdffdf",
+                  text_Position: "middle",
+                  text_color: "black",
+                  line_color: "black",
+                },
+              ],
+            },
             line_right: "true",
             line_color: "#c4c9ca",
             on_line_content_configuration: {
@@ -2455,7 +2499,7 @@ JSON_Data4 = {
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               ],
-              bottom_shape_postion: ["Level_2", "Level_2"],
+              bottom_shape_postion: ["Level_2", "Level_4"],
             },
             BottomtimelineSeries: {
               background_color:
@@ -2607,7 +2651,9 @@ JSON_Data4 = {
             },
           },
         },
+        
       ],
     },
   ],
 };
+
