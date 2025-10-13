@@ -23,6 +23,7 @@ JSON_Data = {
     background_color: "#f6fcfc",
     border_color: "black",
     scroll_horizontal: false,
+    direction:"reverse"
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -57,7 +58,7 @@ JSON_Data = {
     Common_timeLineSeries_Background:
       "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
     Common_timeLineSeries_Border: "#ffc100",
-    Common_transparent:"transparent"
+    Common_transparent: "transparent",
   },
   fontConfig: {
     fontsize: "small",
@@ -203,23 +204,6 @@ JSON_Data = {
               arrow_color: ["#9f30cb"],
               line_color: ["#9f30cb"],
             },
-            connecting_Text_Line: {
-              display: true,
-              connections: [
-                {
-                  starting: "on_line_content_2",
-                  ending: "on_line_content_4",
-                  start_from: "start",
-                  end_from: "end",
-                  line_Thickness: "Level_1",
-                  line_Position: "Level_1",
-                  text: "procedure pre-trettamento",
-                  text_Position: "middle",
-                  text_color: "black",
-                  line_color: "black",
-                },
-              ],
-            },
             line_right: false,
             line_color: "#c4c9ca",
             on_line_content_configuration: {
@@ -250,7 +234,9 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["GOM"],
-            logo_heading_color: ["linear-gradient(to right top, #e45f65 20%, #d84987)"],
+            logo_heading_color: [
+              "linear-gradient(to right top, #e45f65 20%, #d84987)",
+            ],
             logo_heading_border_color: ["#e45f65"],
             logo_color: ["linear-gradient(to right top, #e45f65 20%, #d84987)"],
             logo_title: ["Anatomopatologo"],
@@ -327,11 +313,11 @@ JSON_Data = {
               content_id: ["on_line_content_4"],
               content_details: ["VALUTAZIONE FATTORI PROGNOSTICI"],
               link: [""],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: ["Common_transparent"],
-              bottom_line_color: ["Common_transparent"],
-              bottom_shape_color: ["Common_transparent"],
+              color: ["Common_onLineContent_font"],
+              background_color: ["Common_onLineContent_Background"],
+              bottom_point_color: ["Common_onLineContent_Point"],
+              bottom_line_color: ["Common_onLineContent_Line"],
+              bottom_shape_color: ["Common_onLineContent_Shape"],
               bottom_shape_postion: ["Level_2"],
             },
           },
@@ -370,12 +356,12 @@ JSON_Data = {
               content_id: ["on_line_content_5"],
               content_details: ["TERPAIA NEO-ADIUVANTE"],
               link: [""],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: ["Common_transparent"],
-              bottom_line_color: ["Common_transparent"],
-              bottom_shape_color: ["Common_transparent"],
-              bottom_shape_postion: ["Level_2"],
+              color: ["Common_onLineContent_font"],
+              background_color: ["Common_onLineContent_Background"],
+              bottom_point_color: ["Common_onLineContent_Point"],
+              bottom_line_color: ["Common_onLineContent_Line"],
+              bottom_shape_color: ["Common_onLineContent_Shape"],
+              bottom_shape_postion: ["Level_3"],
             },
           },
         },
@@ -383,6 +369,7 @@ JSON_Data = {
     },
   ],
 };
+
 // Color Map Function
 const resolveColor = (value, colorMap) => {
   if (colorMap[value]) return colorMap[value]; // if it's a key in colors
@@ -411,9 +398,20 @@ const getFontSize = (sm, md, lg) => {
       return sm;
   }
 };
+
 // Util Function
 function limitText(text, limit) {
   return text.length > limit ? text.slice(0, limit) + "..." : text;
+}
+
+// Direction
+function alignmentDirection(JSON_Portion) {
+  const allowedDirection = ["reverse", "default"];
+  if (allowedDirection.includes(JSON_Portion)) {
+    return JSON_Portion.toLowerCase();
+  } else {
+    return "default";
+  }
 }
 
 // Function to return predefined HTML and CSS
@@ -2163,6 +2161,7 @@ function drawConnectingRectangle(JSON_Data) {
         const color =
           resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
         const topOffset = 397;
+        const reverseTopOffset = 312;
 
         // ---- Handle Config ----
         const config = connection.config;
@@ -2186,6 +2185,9 @@ function drawConnectingRectangle(JSON_Data) {
         const startEndGapsLevel =
           parseInt((config?.start_end_gaps || "Level_0").split("_")[1]) || 0;
         const widthPercent = Math.max(0, 100 - startEndGapsLevel * 5);
+
+        const midLineHeight = 14;
+        const currentDirection = alignmentDirection(config.direction);
 
         // Shape mapping (NEW PART)
         const shapeMap = {
@@ -2219,12 +2221,18 @@ function drawConnectingRectangle(JSON_Data) {
             border-right: ${borderSize}px solid ${color};
             ${shapeStyle}
             box-sizing: border-box;
-            top: ${topOffset}px;
             z-index: 2;
             overflow: visible;
             display: flex;
             justify-content: center;
             align-items: center;
+            ${
+              currentDirection === "reverse"
+                ? `bottom: ${reverseTopOffset + midLineHeight}px;
+               transform:rotateZ(180deg);
+              `
+                : `top: ${topOffset}px;`
+            }
           }
 
           .${className} .icon-row {
@@ -2371,6 +2379,12 @@ function drawConnectingCircle(JSON_Data) {
           20
         );
 
+        // Mid Line Height static
+        const midLineHeight = 14;
+        const currentDirection = alignmentDirection(
+          connection.config.direction
+        );
+
         // color resolution (use the i-th color if provided)
         const color =
           resolveColor(circleData.color?.[i], JSON_Data.colors) || "#58e3d2";
@@ -2391,9 +2405,18 @@ function drawConnectingCircle(JSON_Data) {
             position: absolute;
             left: ${leftAbs - pptRect.left - distant_Space}px;
             width: ${diameter}px;
-            height: ${radius}px; /* show top half only */
+            height: ${radius}px;
             overflow: hidden;
-            top: ${topOffset}px;
+            ${
+              currentDirection === "reverse"
+                ? `
+              transform: rotateZ(180deg);
+              top: ${topOffset + midLineHeight + diameter / 2}px;
+            `
+                : `
+              top: ${topOffset}px;
+            `
+            }
             z-index: 1;
             pointer-events: none;
             display: block;
@@ -2497,7 +2520,11 @@ function drawConnectingCircle(JSON_Data) {
             iconEl.style.left = `${iconCenterX}px`;
             iconEl.style.top = `${iconCenterY}px`;
             iconEl.style.transform = `translate(-50%, -50%) ${
-              iconIdx === 1 ? "rotateZ(-60deg)" : iconIdx === 2 ? "rotateZ(60deg)" : ""
+              iconIdx === 1
+                ? "rotateZ(-60deg)"
+                : iconIdx === 2
+                ? "rotateZ(60deg)"
+                : ""
             }`;
             iconEl.style.fontSize = `${fontSize}px`;
             iconEl.style.color = iconColor;

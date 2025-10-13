@@ -56,7 +56,7 @@ JSON_Data5 = {
     Common_timeLineSeries_Background:
       "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
     Common_timeLineSeries_Border: "#ffc100",
-    Common_transparent:"transparent"
+    Common_transparent: "transparent",
   },
   fontConfig: {
     fontsize: "small",
@@ -249,7 +249,9 @@ JSON_Data5 = {
           },
           content: {
             logo_heading: ["GOM"],
-            logo_heading_color: ["linear-gradient(to right top, #e45f65 20%, #d84987)"],
+            logo_heading_color: [
+              "linear-gradient(to right top, #e45f65 20%, #d84987)",
+            ],
             logo_heading_border_color: ["#e45f65"],
             logo_color: ["linear-gradient(to right top, #e45f65 20%, #d84987)"],
             logo_title: ["Anatomopatologo"],
@@ -1301,6 +1303,7 @@ JSON_Data3 = {
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
+                    direction: "reverse",
                   },
                 },
               ],
@@ -1489,6 +1492,7 @@ JSON_Data3 = {
                     fontAwsomeicon: "fa-solid fa-angles-left",
                     iconColor: "white",
                     iconSize: "Level_2",
+                    direction: "reverse",
                   },
                 },
               ],

@@ -1795,7 +1795,7 @@ JSON_Data4 = {
       title: "Pre-diagnosi",
       configurations: {
         title_color: "#515151",
-        line_right: ture,
+        line_right: true,
         line_color: "#adafaf",
         circle_color: "#767979",
         alignment: "vertical",
