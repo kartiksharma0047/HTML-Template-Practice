@@ -5,16 +5,22 @@ JSON_Data = {
       footer_1_label: "Ambulatorio",
       footer_2_label: "CS / Ospedale",
       footer_3_label: "Altra struttura",
+      footer_4_label: "CS / Ospedale",
+      footer_5_label: "Altra struttura",
     },
     footer_label_position_left: {
       footer_1_left: "Level_12",
       footer_2_left: "Level_12",
       footer_3_left: "Level_12",
+      footer_4_left: "Level_12",
+      footer_5_left: "Level_12",
     },
     label_width: {
       footer_1_width: "100",
       footer_2_width: "100",
       footer_3_width: "100",
+      footer_4_width: "100",
+      footer_5_width: "100",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
     footer_width: "auto",
@@ -23,7 +29,7 @@ JSON_Data = {
     background_color: "#f6fcfc",
     border_color: "black",
     scroll_horizontal: false,
-    direction:"reverse"
+    direction: "reverse",
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -81,7 +87,7 @@ JSON_Data = {
       start_content: {
         logo_title: "Paziente",
         link: "",
-        steps: [],
+        steps: ["Hi", "there", "Byee"],
         stepsLink: [""],
         title_detail: "Paziente",
         steps_details: [],
@@ -116,18 +122,18 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["GOM"],
-            logo_heading_color: ["Common_logo_heading"],
-            logo_heading_border_color: ["Common_logo_border"],
-            logo_color: ["Common_logo"],
+            logo_heading_color: ["Common_transparent"],
+            logo_heading_border_color: ["Common_transparent"],
+            logo_color: ["Common_transparent"],
             logo_title: ["Oncologo"],
             link: [""],
             logo_id_names: ["logo_title_id1"],
             logo_detail: ["Oncologo"],
-            logo_title_color: ["Common_logo_title"],
+            logo_title_color: ["Common_transparent"],
             top_down_arrow: {
               display: "true",
-              arrow_color: ["Common_TopDown_arror"],
-              line_color: ["Common_TopDown_Line"],
+              arrow_color: ["Common_transparent"],
+              line_color: ["Common_transparent"],
             },
             line_right: "false",
             line_color: "Common_SubHeader_lineRight",
@@ -136,6 +142,25 @@ JSON_Data = {
               color: ["Common_AboveLine_Text"],
               content_details: ["effettuaa"],
               justify_content: "evenly",
+            },
+            connecting_Circle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_2",
+                  ending: "on_line_content_4",
+                  start_from: "start",
+                  end_from: "start",
+                  border_thickness: "Level_4",
+                  config: {
+                    fontAwsomeicon: "fa-solid fa-angles-left",
+                    iconColor: "white",
+                    iconSize: "Level_2",
+                    direction: "reverse",
+                  },
+                },
+              ],
+              color: ["#58e3d2"],
             },
             on_line_content_configuration: {
               content: ["COMUNICAZIONE PERCORSO TERAPIA"],
@@ -157,9 +182,10 @@ JSON_Data = {
               color: ["Common_onLineContent_font"],
               background_color: ["Common_onLineContent_Background"],
               bottom_point_color: ["Common_onLineContent_Point"],
+              bottom_point_position_onLine: [true],
               bottom_line_color: ["Common_onLineContent_Line"],
               bottom_shape_color: ["Common_onLineContent_Shape"],
-              bottom_shape_postion: ["Level_1"],
+              bottom_shape_postion: ["Level_4"],
             },
           },
         },
@@ -343,12 +369,6 @@ JSON_Data = {
               arrow_color: ["#a334c8"],
               line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
             },
-            above_line_content: {
-              content: ["sceglie"],
-              color: ["Common_AboveLine_Text"],
-              content_details: ["sceglie"],
-              justify_content: "evenly",
-            },
             line_right: false,
             line_color: "#c4c9ca",
             on_line_content_configuration: {
@@ -412,6 +432,20 @@ function alignmentDirection(JSON_Portion) {
   } else {
     return "default";
   }
+}
+const direction =
+  alignmentDirection(JSON_Data.Page_Configuration.direction) === "reverse";
+
+function isVisible(el) {
+  if (!el) return false;
+  const rect = el.getBoundingClientRect();
+  const style = window.getComputedStyle(el);
+  return (
+    style.display !== "none" &&
+    style.visibility !== "hidden" &&
+    rect.width > 0 &&
+    rect.height > 0
+  );
 }
 
 // Function to return predefined HTML and CSS
@@ -605,14 +639,17 @@ function convertToFormat(JsonData) {
   }
 
   .${className} .mid-top {
-    margin-top: 140px;
     ${
       alignment === "vertical"
         ? `
       display:flex;
       align-items:center;
       justify-content:${hasSteps ? "space-evenly" : "center"};
-      margin-top: ${getFontSize(260, 255, 250)}px;
+      margin-top: ${
+        direction
+          ? getFontSize(hasSteps ? 86 : 81, 78, hasSteps ? 70 : 73)
+          : getFontSize(260, 255, 250)
+      }px;
       ${boxShapeStyle}
       left:5px;
       height:200px;
@@ -623,7 +660,9 @@ function convertToFormat(JsonData) {
           : ""
       }
       `
-        : `margin-top: 140px;`
+        : `margin-top: ${
+            direction ? getFontSize(138, 132, 128) : getFontSize(142, 136, 132)
+          }px;`
     }
     position: relative;
     z-index: 10;
@@ -658,6 +697,7 @@ function convertToFormat(JsonData) {
   }
   
   .${className} .start-mid-back-line {
+    ${direction ? "display: none;" : "display: flex; "}
     position: absolute;
     z-index: 1;
     top: 208px;
@@ -673,7 +713,11 @@ function convertToFormat(JsonData) {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    ${alignment === "vertical" ? "margin-bottom:30px;" : ""}
+    ${
+      alignment === "vertical"
+        ? `margin-bottom:${getFontSize(30, 32, 35)}px;`
+        : ""
+    }
   }
 
   .${className} .mid-top .icon_plus_name .fa-user {
@@ -702,10 +746,12 @@ function convertToFormat(JsonData) {
     top: 21px;
     color: ${logo_font_color};
   }
-  
+
   ${
-    hasSteps
-      ? `.${className} .mid-top .icon_plus_name p::after{
+    alignment === "vertical"
+      ? `${
+          hasSteps
+            ? `.${className} .mid-top .icon_plus_name p::after{
       display:block;
       position:absolute;
       content:" ";
@@ -714,7 +760,7 @@ function convertToFormat(JsonData) {
       border:1px dashed black;
       top:${has2Steps ? "50" : "54"}%;
       transform:translateY(50%);
-      right:-${getFontSize(24, 20, 18)}px;
+      right:-${getFontSize(24, 23, 21)}px;
     } 
     .${className} .mid-top .start-step::after{
       position:absolute;
@@ -736,7 +782,24 @@ function convertToFormat(JsonData) {
       left:-4px;
       top:50%;
       transform:translateY(-35%);
-  }  `
+  }
+      ${
+        has2Steps
+          ? `.${className} .mid-top-on-line::after{
+    position:absolute;
+    content:" ";
+    border:1px dashed black;
+    height:79%;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+    width:0;
+    }`
+          : ""
+      }  
+      `
+            : ""
+        }`
       : ""
   }
 
@@ -759,7 +822,11 @@ function convertToFormat(JsonData) {
   .${className} .mid-top-on-line{
     margin: 0;
     padding: 0;
-    display: flex;
+    ${
+      direction && alignment !== "vertical"
+        ? "display: none;"
+        : "display: flex; "
+    }
     align-items: start;
     justify-content: ${
       alignment === "vertical"
@@ -770,20 +837,6 @@ function convertToFormat(JsonData) {
     height: 135px;
     position:relative;
   }
-    ${
-      has2Steps
-        ? `.${className} .mid-top-on-line::after{
-    position:absolute;
-    content:" ";
-    border:1px dashed black;
-    height:79%;
-    left:10px;
-    top:50%;
-    transform:translateY(-50%);
-    width:0;
-    }`
-        : ""
-    }
   `;
 
     return { html, css };
@@ -822,6 +875,64 @@ function convertToFormat(JsonData) {
       ${limitText(sg.title, 15)}
     </h2>\n`;
 
+      if (direction) {
+        // Above-line content
+        if (sg.content.above_line_content?.content?.length) {
+          html += `<div class="${uniqueClassName}-above-line-content-${
+            idx + 1
+          } above-line-content">\n`;
+
+          sg.content.above_line_content.content.forEach((txt, i) => {
+            if (txt && txt.trim() !== "") {
+              const color = sg.content.above_line_content.color?.[i] || "#000";
+              const detail = sg.content.above_line_content.content_details?.[i];
+
+              html += `<p 
+        class="above-line-text above-line-text-${i + 1}" 
+        title="${limitText(detail, 280)}" 
+        style="color:${resolveColor(color, colors)};"
+      >${limitText(txt, 10)}</p>\n`;
+            }
+          });
+
+          html += `</div>\n`;
+        }
+        // On-line content
+        html += `<div class="subgroups-on-line">\n`;
+
+        sg.content.on_line_content_configuration.content.forEach((c, i) => {
+          const contentId =
+            sg.content.on_line_content_configuration.content_id?.[i] || "";
+
+          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
+            i + 1
+          }" id="${contentId}">\n`;
+          const link = sg.content.on_line_content_configuration.link?.[i];
+          const hasShadow =
+            sg.content.on_line_content_configuration.background_shadow?.[i] ??
+            true;
+          const hasLink = link && link.trim() !== "";
+          const contentDetail =
+            sg.content.on_line_content_configuration.content_details?.[i] || "";
+
+          const isStriped =
+            sg.content.on_line_content_configuration.striping?.[i]?.stripped;
+
+          html += `<h6
+      title="${limitText(contentDetail, 280)}"
+      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
+            isStriped ? " striped" : ""
+          }"
+      ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}>
+  ${limitText(c, 6)}
+</h6>\n`;
+
+          html += `</div>\n`;
+        });
+
+        html += `</div>\n`;
+      }
+
       // Top icons with logo_heading + logo_title
       html += `<div class="subgroups-mid-top">\n`;
       sg.content.logo_title.forEach((logo, i) => {
@@ -847,64 +958,67 @@ function convertToFormat(JsonData) {
 
         html += `</div>\n`;
       });
-
       html += `</div>\n`;
 
-      // Above-line content
-      if (sg.content.above_line_content?.content?.length) {
-        html += `<div class="${uniqueClassName}-above-line-content-${
-          idx + 1
-        } above-line-content">\n`;
+      if (
+        alignmentDirection(JSON_Data.Page_Configuration.direction) !== "reverse"
+      ) {
+        // Above-line content
+        if (sg.content.above_line_content?.content?.length) {
+          html += `<div class="${uniqueClassName}-above-line-content-${
+            idx + 1
+          } above-line-content">\n`;
 
-        sg.content.above_line_content.content.forEach((txt, i) => {
-          if (txt && txt.trim() !== "") {
-            const color = sg.content.above_line_content.color?.[i] || "#000";
-            const detail = sg.content.above_line_content.content_details?.[i];
+          sg.content.above_line_content.content.forEach((txt, i) => {
+            if (txt && txt.trim() !== "") {
+              const color = sg.content.above_line_content.color?.[i] || "#000";
+              const detail = sg.content.above_line_content.content_details?.[i];
 
-            html += `<p 
+              html += `<p 
         class="above-line-text above-line-text-${i + 1}" 
         title="${limitText(detail, 280)}" 
         style="color:${resolveColor(color, colors)};"
       >${limitText(txt, 10)}</p>\n`;
-          }
-        });
+            }
+          });
 
-        html += `</div>\n`;
-      }
-      // On-line content
-      html += `<div class="subgroups-on-line">\n`;
+          html += `</div>\n`;
+        }
+        // On-line content
+        html += `<div class="subgroups-on-line">\n`;
 
-      sg.content.on_line_content_configuration.content.forEach((c, i) => {
-        const contentId =
-          sg.content.on_line_content_configuration.content_id?.[i] || "";
+        sg.content.on_line_content_configuration.content.forEach((c, i) => {
+          const contentId =
+            sg.content.on_line_content_configuration.content_id?.[i] || "";
 
-        html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
-          i + 1
-        }" id="${contentId}">\n`;
-        const link = sg.content.on_line_content_configuration.link?.[i];
-        const hasShadow =
-          sg.content.on_line_content_configuration.background_shadow?.[i] ??
-          true;
-        const hasLink = link && link.trim() !== "";
-        const contentDetail =
-          sg.content.on_line_content_configuration.content_details?.[i] || "";
+          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
+            i + 1
+          }" id="${contentId}">\n`;
+          const link = sg.content.on_line_content_configuration.link?.[i];
+          const hasShadow =
+            sg.content.on_line_content_configuration.background_shadow?.[i] ??
+            true;
+          const hasLink = link && link.trim() !== "";
+          const contentDetail =
+            sg.content.on_line_content_configuration.content_details?.[i] || "";
 
-        const isStriped =
-          sg.content.on_line_content_configuration.striping?.[i]?.stripped;
+          const isStriped =
+            sg.content.on_line_content_configuration.striping?.[i]?.stripped;
 
-        html += `<h6
+          html += `<h6
       title="${limitText(contentDetail, 280)}"
       class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
-          isStriped ? " striped" : ""
-        }"
+            isStriped ? " striped" : ""
+          }"
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}>
   ${limitText(c, 6)}
 </h6>\n`;
 
-        html += `</div>\n`;
-      });
+          html += `</div>\n`;
+        });
 
-      html += `</div>\n`;
+        html += `</div>\n`;
+      }
 
       html += `</div>\n`; // End sub-group-div
     });
@@ -979,7 +1093,11 @@ function convertToFormat(JsonData) {
   .${uniqueClassName} .sub-group-div h2 {
     height:15px;
     margin:0;
-    margin-bottom: ${getFontSize(115, 110, 108)}px;
+    ${
+      direction
+        ? `margin-bottom: ${getFontSize(122, 110, 108)}px;`
+        : `margin-bottom: ${getFontSize(115, 110, 108)}px;`
+    }
   }
   .${uniqueClassName} .subgroups-mid-top {
     display: flex;
@@ -999,6 +1117,7 @@ function convertToFormat(JsonData) {
     justify-content: center;
     flex-direction: column;
     position: relative;
+    ${direction ? "margin-top:150px;" : ""}
     width: 100%;
     z-index:10;
   }
@@ -1010,7 +1129,7 @@ function convertToFormat(JsonData) {
     position: absolute;
     width: 1px;
     left: 50%;
-    top:${getFontSize(55, 58, 60)}px;
+    ${direction ? `top:-144px;` : `top:${getFontSize(55, 58, 60)}px;`}
     padding: 0;
     margin: 0;
     z-index: 1;
@@ -1048,14 +1167,14 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} .icon_plus_name p {
     display: inline;
-    padding: 8px ${getFontSize(11, 14, 17)}px;
+    padding: 8px ${getFontSize(6, 8, 12)}px;
     border-radius: 23px;
     position: absolute;
     top: 21px;
     white-space: nowrap;
     font-size:${getFontSize(9, 10, 11)}px;
     color: white;
-    width: 40px;
+    width: ${getFontSize(50, 55, 60)}px;
     text-align: center;
     transition:0.1s all;
   }
@@ -1090,17 +1209,6 @@ function convertToFormat(JsonData) {
     position: relative;
     transition:0.1s all;
   }
-  .${uniqueClassName} .subgroups-on-line-content h6::after {
-    content: "";
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    bottom: 0px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    z-index: 4;
-  }
   /* === Right Line example === */
   ${
     configurations.line_right
@@ -1131,6 +1239,163 @@ function convertToFormat(JsonData) {
   }
   `;
 
+    sub_groups.forEach((sg, subGroupIdx) => {
+      const hasAboveLineInner = sg.content.above_line_content?.content?.some(
+        (c) => c && c.trim() !== ""
+      );
+
+      const inlineContentArray =
+        sg.content.on_line_content_configuration.bottom_shape_postion || [];
+      const bottomPointArray =
+        sg.content.on_line_content_configuration.bottom_point_position_onLine ||
+        [];
+      const bottomPointColorArray =
+        sg.content.on_line_content_configuration?.bottom_point_color || [];
+
+      inlineContentArray.forEach((level, inlineIdx) => {
+        const revAfterTop = "235px";
+        const normAfterTop = "30px";
+
+        const levels = {
+          Level_2: [443, [264, 266, 266], 202, [233]],
+          Level_3: [462, [285, 287, 288], 222, [250, 250, 252]],
+          Level_4: [482, [305, 308, 308], 242, [270, 273, 273]],
+          Level_5: [502, [325, 328, 329], 262, [290, 293, 295]],
+        };
+
+        // 👇 new — define alternate afterTop / afterHeight values
+        const levelsWithBottomPoint = {
+          Level_1: [30, 386],
+          Level_2: [30, 408],
+          Level_3: [30, 428],
+          Level_4: [30, 450],
+          Level_5: [30, 466],
+        };
+
+        const [revBefore, normArgs, revHeight, normArgs2] = levels[level] || [
+          422,
+          [245],
+          182,
+          [210],
+        ];
+
+        let beforeTop = `${direction ? revBefore : getFontSize(...normArgs)}px`;
+        let afterTop = `${direction ? revAfterTop : normAfterTop}`;
+        let afterHeight = `${
+          direction ? revHeight : getFontSize(...normArgs2)
+        }px`;
+
+        if (direction && bottomPointArray?.[inlineIdx] === true) {
+          const overrideVals = levelsWithBottomPoint[level];
+          if (overrideVals) {
+            afterTop = `${overrideVals[0]}px`;
+            afterHeight = `${overrideVals[1]}px`;
+          }
+        }
+
+        css += `
+      .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+      .${uniqueClassName}-on-line-content${inlineIdx + 1}{
+      margin-top: ${
+        hasAboveLineInner
+          ? "4px"
+          : `${direction ? getFontSize(15, 23, 26) : "132"}px`
+      };
+    }
+
+    .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+      .${uniqueClassName}-on-line-content${inlineIdx + 1}::after {
+      content: "";
+      position: absolute;
+      height: ${afterHeight};
+      width: 1px !important;
+      top: ${afterTop};
+      left: 50%;
+      padding: 0;
+      margin: 0;
+      z-index: 1;
+      transform: translateX(-50%);
+    }
+
+         .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+      .${uniqueClassName}-on-line-content${inlineIdx + 1}::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 11px;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      top: ${beforeTop};
+      left: 50%;
+      transform: translate(-50%, -50%) rotateZ(30deg);
+      z-index: 2;
+    }
+    `;
+
+        // ✅ Declare color outside so it's accessible in both cases
+        const bottomPointColor =
+          resolveColor(bottomPointColorArray?.[inlineIdx], colors) ||
+          "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
+
+        // ✅ bottom point logic (depends on direction)
+        if (direction) {
+          const showBottomPoint = bottomPointArray?.[inlineIdx] === true;
+
+          if (showBottomPoint) {
+            // When true → show dot under h6
+            css += `
+          .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+            .${uniqueClassName}-on-line-content${inlineIdx + 1} h6::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background:${bottomPointColor};
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            z-index: 4;
+          }
+        `;
+          } else {
+            // When false → show dot under paragraph
+            css += `
+          .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+            .icon_plus_name .icon-plus-name-paragraph-${inlineIdx + 1}::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background:${bottomPointColor};
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            z-index: 4;
+          }
+        `;
+          }
+        } else {
+          // direction == false → always show on h6
+          css += `
+        .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+          .${uniqueClassName}-on-line-content${inlineIdx + 1} h6::after {
+          content: "";
+          position: absolute;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background:${bottomPointColor};
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 50%);
+          z-index: 4;
+        }
+      `;
+        }
+      });
+    });
+
     sub_groups.forEach((sg, idx) => {
       const logoLength = sg.content?.logo_title?.filter(Boolean)?.length || 0;
       const hasAboveLine = sg.content.above_line_content?.content?.some(
@@ -1142,12 +1407,26 @@ function convertToFormat(JsonData) {
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
       } .icon_plus_name::after {
-      height: ${hasAboveLine ? "120px" : `${getFontSize(140, 132, 132)}px`};
+      height: ${(() => {
+        return `${
+          hasAboveLine
+            ? direction
+              ? 144
+              : 120
+            : direction
+            ? 144
+            : getFontSize(140, 132, 132)
+        }px`;
+      })()};
 }
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
       } .icon_plus_name::before {
-      top: ${hasAboveLine ? "175px" : "190px"};
+      top: ${
+        hasAboveLine
+          ? `${direction ? "-150" : "175"}px`
+          : `${direction ? "-150" : "190"}px`
+      };
 }
 `;
 
@@ -1298,79 +1577,6 @@ function convertToFormat(JsonData) {
   `;
         }
       });
-
-      sub_groups.forEach((sg, subGroupIdx) => {
-        const hasAboveLineInner = sg.content.above_line_content?.content?.some(
-          (c) => c && c.trim() !== ""
-        );
-        const inlineContentArray =
-          sg.content.on_line_content_configuration.bottom_shape_postion || [];
-
-        inlineContentArray.forEach((level, inlineIdx) => {
-          let beforeTop = "245px";
-          let afterTop = "30px";
-          let afterHeight = "210px";
-
-          switch (level) {
-            case "Level_2":
-              beforeTop = `${getFontSize(264, 266, 266)}px`;
-              afterTop = "30px";
-              afterHeight = "233px";
-              break;
-            case "Level_3":
-              beforeTop = `${getFontSize(285, 287, 288)}px`;
-              afterTop = "30px";
-              afterHeight = `${getFontSize(250, 250, 252)}px`;
-              break;
-            case "Level_4":
-              beforeTop = `${getFontSize(305, 308, 308)}px`;
-              afterTop = "30px";
-              afterHeight = `${getFontSize(270, 273, 273)}px`;
-              break;
-            case "Level_5":
-              beforeTop = `${getFontSize(325, 328, 329)}px`;
-              afterTop = "30px";
-              afterHeight = `${getFontSize(290, 293, 295)}px`;
-              break;
-          }
-
-          css += `
-          .${uniqueClassName}-sub-group-div${
-            subGroupIdx + 1
-          } .${uniqueClassName}-on-line-content${inlineIdx + 1}{
-            margin-top: ${hasAboveLineInner ? "4px" : "132px"};
-          }
-
-           .${uniqueClassName}-sub-group-div${
-            subGroupIdx + 1
-          } .${uniqueClassName}-on-line-content${inlineIdx + 1}::after {
-        content: "";
-        position: absolute;
-        height: ${afterHeight};
-        width: 1px !important;
-        top: ${afterTop};
-        left: 50%;
-        padding: 0;
-        margin: 0;
-        z-index: 1;
-        transform: translateX(-50%);
-      }
-      .${uniqueClassName}-sub-group-div${
-            subGroupIdx + 1
-          } .${uniqueClassName}-on-line-content${inlineIdx + 1}::before {
-        content: "";
-        position: absolute;
-        width: 13px;
-        height: 11px;
-        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        top: ${beforeTop};
-        left: 50%;
-        transform: translate(-50%, -50%) rotateZ(30deg);
-        z-index: 2;
-      }
-    `;
-        });
-      });
     });
 
     sub_groups.forEach((sg, idx) => {
@@ -1475,7 +1681,12 @@ function convertToFormat(JsonData) {
           css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
             subGroupIdx + 1
           } .icon_plus_name_${idx + 1}::before {
-  border-top: 7px solid ${resolveColor(color, colors) || "#a334c8"};
+            ${(() => {
+              const side = direction ? "bottom" : "top";
+              return `border-${side}: 7px solid ${
+                resolveColor(color, colors) || "#a334c8"
+              };`;
+            })()}
 }\n`;
         });
       }
@@ -1549,7 +1760,7 @@ body {
 }
 .mid-Line {
   position: absolute;
-  top: 55%;
+  top: ${direction ? 30 : 55}%;
   left: 55px;
   transform: translateY(-50%);
   height: 15px;
@@ -1852,6 +2063,7 @@ function drawConnectingLines(JSON_Data) {
 
           const baseHeight = 30;
           const baseTopH = 130;
+          const baseBottomH = 165;
           const increment = 5;
 
           let rawHeight = baseHeight + (levelNum - 1) * increment;
@@ -1877,7 +2089,6 @@ function drawConnectingLines(JSON_Data) {
               .${lineClass} {
                 position: absolute;
                 z-index: 2;
-                top: ${topH + top}px;
                 left: ${left}px;
                 width: ${width}px;
                 height: ${height}px;
@@ -1894,7 +2105,13 @@ function drawConnectingLines(JSON_Data) {
                   ) || "#9f30cb"
                 };
                 border-top-right-radius: 20px;
-                transform: rotate(${angle}deg);
+                ${
+                  direction
+                    ? `transform: rotateX(180deg);
+                   top: ${top - baseBottomH}px;
+                  `
+                    : `top: ${topH + top}px;`
+                }
               }
               .${lineClass}::after {
                 content: "";
@@ -1926,19 +2143,6 @@ function drawConnectingLines(JSON_Data) {
   });
 }
 drawConnectingLines(JSON_Data);
-
-// Rendering Timeline Series
-function isVisible(el) {
-  if (!el) return false;
-  const rect = el.getBoundingClientRect();
-  const style = window.getComputedStyle(el);
-  return (
-    style.display !== "none" &&
-    style.visibility !== "hidden" &&
-    rect.width > 0 &&
-    rect.height > 0
-  );
-}
 
 function drawBottomTimelineSeries(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
@@ -2187,7 +2391,6 @@ function drawConnectingRectangle(JSON_Data) {
         const widthPercent = Math.max(0, 100 - startEndGapsLevel * 5);
 
         const midLineHeight = 14;
-        const currentDirection = alignmentDirection(config.direction);
 
         // Shape mapping (NEW PART)
         const shapeMap = {
@@ -2227,7 +2430,7 @@ function drawConnectingRectangle(JSON_Data) {
             justify-content: center;
             align-items: center;
             ${
-              currentDirection === "reverse"
+              direction
                 ? `bottom: ${reverseTopOffset + midLineHeight}px;
                transform:rotateZ(180deg);
               `
@@ -2381,9 +2584,6 @@ function drawConnectingCircle(JSON_Data) {
 
         // Mid Line Height static
         const midLineHeight = 14;
-        const currentDirection = alignmentDirection(
-          connection.config.direction
-        );
 
         // color resolution (use the i-th color if provided)
         const color =
@@ -2408,7 +2608,7 @@ function drawConnectingCircle(JSON_Data) {
             height: ${radius}px;
             overflow: hidden;
             ${
-              currentDirection === "reverse"
+              alignmentDirection(connection.config.direction)==="reverse"
                 ? `
               transform: rotateZ(180deg);
               top: ${topOffset + midLineHeight + diameter / 2}px;
