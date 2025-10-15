@@ -29,7 +29,7 @@ JSON_Data = {
     background_color: "#f6fcfc",
     border_color: "black",
     scroll_horizontal: false,
-    direction: "reverse",
+    // direction: "reverse",
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -122,18 +122,29 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["GOM"],
-            logo_heading_color: ["Common_transparent"],
-            logo_heading_border_color: ["Common_transparent"],
-            logo_color: ["Common_transparent"],
+            logo_heading_color: ["#a334c8"],
+            logo_heading_border_color: ["#a334c8"],
+            logo_color: ["#a334c8"],
             logo_title: ["Oncologo"],
+            logo_titles_config: [
+              {
+                logo_title: ["Oncologog","Oncologog","Oncologog","Onco"],
+                links: ["", "", "", ""],
+                logo_id_name: "logo_title_id1",
+                logo_detail: ["O", "A", "R", "O"],
+                logo_title_background_color: ["#78069eff", "#78069eff", "#78069eff","#310e3cff"],
+                logo_title_color: ["white", "white", "white","white"],
+              },
+              {},
+              {},
+            ],
             link: [""],
             logo_id_names: ["logo_title_id1"],
             logo_detail: ["Oncologo"],
-            logo_title_color: ["Common_transparent"],
             top_down_arrow: {
               display: "true",
-              arrow_color: ["Common_transparent"],
-              line_color: ["Common_transparent"],
+              arrow_color: ["#a334c8"],
+              line_color: ["#a334c8"],
             },
             line_right: "false",
             line_color: "Common_SubHeader_lineRight",
@@ -148,19 +159,63 @@ JSON_Data = {
               connections: [
                 {
                   starting: "on_line_content_2",
-                  ending: "on_line_content_4",
+                  ending: "on_line_content_3",
                   start_from: "start",
-                  end_from: "start",
+                  end_from: "end",
                   border_thickness: "Level_4",
                   config: {
                     fontAwsomeicon: "fa-solid fa-angles-left",
                     iconColor: "white",
                     iconSize: "Level_2",
-                    direction: "reverse",
+                    direction: "default",
                   },
                 },
               ],
               color: ["#58e3d2"],
+            },
+            connecting_Text_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_4",
+                  ending: "on_line_content_5",
+                  start_from: "start",
+                  end_from: "end",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text: "procedure pre-trettamento",
+                  text_Position: "middle",
+                  text_color: "black",
+                  line_color: "black",
+                },
+              ],
+            },
+            connecting_Rectangle: {
+              display: "true",
+              connections: [
+                {
+                  starting: "on_line_content_1",
+                  start_from_starting: "true",
+                  ending: "on_line_content_4",
+                  end_from_ending: "true",
+                  height: "Level_13",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    // direction: "reverse",
+                  },
+                },
+              ],
+              color: ["Common_ConnectingRectangle"],
             },
             on_line_content_configuration: {
               content: ["COMUNICAZIONE PERCORSO TERAPIA"],
@@ -189,202 +244,202 @@ JSON_Data = {
             },
           },
         },
-        {
-          component: "Sub-Header",
-          title: "",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-          },
-          content: {
-            logo_heading: ["GOM"],
-            logo_heading_color: ["Common_logo_heading"],
-            logo_heading_border_color: ["#a334c8"],
-            logo_color: ["linear-gradient(to right top, #a334c8 20%, #f65467)"],
-            logo_title: ["Radiology"],
-            logo_id_names: ["logo_title_id2"],
-            logo_detail: ["Radiology"],
-            link: [""],
-            logo_title_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            top_down_arrow: {
-              display: "true",
-              arrow_color: ["#a334c8"],
-              line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
-            },
-            above_line_content: {
-              content: ["effettuaa"],
-              color: ["Common_AboveLine_Text"],
-              content_details: ["effettuaa"],
-              justify_content: "evenly",
-            },
-            connecting_Line: {
-              display: true,
-              connections: [
-                {
-                  starting: "logo_title_id2",
-                  ending: "logo_title_id3",
-                  height: "Level_1",
-                },
-              ],
-              arrow_color: ["#9f30cb"],
-              line_color: ["#9f30cb"],
-            },
-            line_right: false,
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["MAMMOGRAFIA"],
-              content_id: ["on_line_content_2"],
-              content_details: ["MAMMOGRAFIA"],
-              link: [""],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_shape_color: [
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
-              ],
-              bottom_shape_postion: ["Level_3"],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-          },
-          content: {
-            logo_heading: ["GOM"],
-            logo_heading_color: [
-              "linear-gradient(to right top, #e45f65 20%, #d84987)",
-            ],
-            logo_heading_border_color: ["#e45f65"],
-            logo_color: ["linear-gradient(to right top, #e45f65 20%, #d84987)"],
-            logo_title: ["Anatomopatologo"],
-            logo_id_names: ["logo_title_id3"],
-            logo_detail: ["Anatomopatologo"],
-            link: [""],
-            logo_title_color: [
-              "linear-gradient(to right top, #e45f65 20%, #d84987)",
-            ],
-            top_down_arrow: {
-              display: "true",
-              arrow_color: ["#feb151"],
-              line_color: ["linear-gradient(to bottom, #e98f53 50%, #f79142)"],
-            },
-            above_line_content: {
-              content: ["effettuaa"],
-              color: ["#feb151"],
-              content_details: ["effettuaa"],
-              justify_content: "evenly",
-            },
-            line_right: false,
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["BIOSIA + STADAZIONE"],
-              content_id: ["on_line_content_3"],
-              content_details: ["BIOSIA + STADAZIONE"],
-              link: [""],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_shape_color: [
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
-              ],
-              bottom_shape_postion: ["Level_3"],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-          },
-          content: {
-            logo_heading: ["GOM"],
-            logo_heading_color: ["Common_logo_heading"],
-            logo_heading_border_color: ["Common_logo_border"],
-            logo_color: ["Common_logo"],
-            logo_title: ["Oncologo"],
-            logo_id_names: ["logo_title_id4"],
-            logo_detail: ["Oncologo"],
-            link: [""],
-            logo_title_color: ["Common_logo_title"],
-            top_down_arrow: {
-              display: true,
-              arrow_color: ["#a334c8"],
-              line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
-            },
-            above_line_content: {
-              content: ["effettuaa"],
-              color: ["Common_AboveLine_Text"],
-              content_details: ["effettuaa"],
-              justify_content: "evenly",
-            },
-            line_right: false,
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["VALUTAZIONE FATTORI PROGNOSTICI"],
-              content_id: ["on_line_content_4"],
-              content_details: ["VALUTAZIONE FATTORI PROGNOSTICI"],
-              link: [""],
-              color: ["Common_onLineContent_font"],
-              background_color: ["Common_onLineContent_Background"],
-              bottom_point_color: ["Common_onLineContent_Point"],
-              bottom_line_color: ["Common_onLineContent_Line"],
-              bottom_shape_color: ["Common_onLineContent_Shape"],
-              bottom_shape_postion: ["Level_2"],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-          },
-          content: {
-            logo_heading: ["GOM"],
-            logo_heading_color: ["Common_logo_heading"],
-            logo_heading_border_color: ["Common_logo_border"],
-            logo_color: ["Common_logo"],
-            logo_title: ["Oncologo"],
-            logo_id_names: ["logo_title_id5"],
-            logo_detail: ["Oncologo"],
-            link: [""],
-            logo_title_color: ["Common_logo_title"],
-            top_down_arrow: {
-              display: true,
-              arrow_color: ["#a334c8"],
-              line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
-            },
-            line_right: false,
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["TERPAIA NEO-ADIUVANTE"],
-              content_id: ["on_line_content_5"],
-              content_details: ["TERPAIA NEO-ADIUVANTE"],
-              link: [""],
-              color: ["Common_onLineContent_font"],
-              background_color: ["Common_onLineContent_Background"],
-              bottom_point_color: ["Common_onLineContent_Point"],
-              bottom_line_color: ["Common_onLineContent_Line"],
-              bottom_shape_color: ["Common_onLineContent_Shape"],
-              bottom_shape_postion: ["Level_3"],
-            },
-          },
-        },
+        // {
+        //   component: "Sub-Header",
+        //   title: "",
+        //   configurations: {
+        //     title_color: "rgb(81, 81, 81)",
+        //   },
+        //   content: {
+        //     logo_heading: ["GOM"],
+        //     logo_heading_color: ["Common_logo_heading"],
+        //     logo_heading_border_color: ["#a334c8"],
+        //     logo_color: ["linear-gradient(to right top, #a334c8 20%, #f65467)"],
+        //     logo_title: ["Radiology"],
+        //     logo_id_names: ["logo_title_id2"],
+        //     logo_detail: ["Radiology"],
+        //     link: [""],
+        //     logo_title_color: [
+        //       "linear-gradient(to right top, #a334c8 20%, #f65467)",
+        //     ],
+        //     top_down_arrow: {
+        //       display: "true",
+        //       arrow_color: ["#a334c8"],
+        //       line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
+        //     },
+        //     above_line_content: {
+        //       content: ["effettuaa"],
+        //       color: ["Common_AboveLine_Text"],
+        //       content_details: ["effettuaa"],
+        //       justify_content: "evenly",
+        //     },
+        //     connecting_Line: {
+        //       display: true,
+        //       connections: [
+        //         {
+        //           starting: "logo_title_id2",
+        //           ending: "logo_title_id3",
+        //           height: "Level_1",
+        //         },
+        //       ],
+        //       arrow_color: ["#9f30cb"],
+        //       line_color: ["#9f30cb"],
+        //     },
+        //     line_right: false,
+        //     line_color: "#c4c9ca",
+        //     on_line_content_configuration: {
+        //       content: ["MAMMOGRAFIA"],
+        //       content_id: ["on_line_content_2"],
+        //       content_details: ["MAMMOGRAFIA"],
+        //       link: [""],
+        //       color: ["black"],
+        //       background_color: ["#e6fffc"],
+        //       bottom_point_color: [
+        //         "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+        //       ],
+        //       bottom_line_color: [
+        //         "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+        //       ],
+        //       bottom_shape_color: [
+        //         "linear-gradient(to top, #1375af 5%, #45d0cb)",
+        //       ],
+        //       bottom_shape_postion: ["Level_3"],
+        //     },
+        //   },
+        // },
+        // {
+        //   component: "Sub-Header",
+        //   title: "",
+        //   configurations: {
+        //     title_color: "rgb(81, 81, 81)",
+        //   },
+        //   content: {
+        //     logo_heading: ["GOM"],
+        //     logo_heading_color: [
+        //       "linear-gradient(to right top, #e45f65 20%, #d84987)",
+        //     ],
+        //     logo_heading_border_color: ["#e45f65"],
+        //     logo_color: ["linear-gradient(to right top, #e45f65 20%, #d84987)"],
+        //     logo_title: ["Anatomopatologo"],
+        //     logo_id_names: ["logo_title_id3"],
+        //     logo_detail: ["Anatomopatologo"],
+        //     link: [""],
+        //     logo_title_color: [
+        //       "linear-gradient(to right top, #e45f65 20%, #d84987)",
+        //     ],
+        //     top_down_arrow: {
+        //       display: "true",
+        //       arrow_color: ["#feb151"],
+        //       line_color: ["linear-gradient(to bottom, #e98f53 50%, #f79142)"],
+        //     },
+        //     above_line_content: {
+        //       content: ["effettuaa"],
+        //       color: ["#feb151"],
+        //       content_details: ["effettuaa"],
+        //       justify_content: "evenly",
+        //     },
+        //     line_right: false,
+        //     line_color: "#c4c9ca",
+        //     on_line_content_configuration: {
+        //       content: ["BIOSIA + STADAZIONE"],
+        //       content_id: ["on_line_content_3"],
+        //       content_details: ["BIOSIA + STADAZIONE"],
+        //       link: [""],
+        //       color: ["black"],
+        //       background_color: ["#e6fffc"],
+        //       bottom_point_color: [
+        //         "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+        //       ],
+        //       bottom_line_color: [
+        //         "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+        //       ],
+        //       bottom_shape_color: [
+        //         "linear-gradient(to top, #1375af 5%, #45d0cb)",
+        //       ],
+        //       bottom_shape_postion: ["Level_3"],
+        //     },
+        //   },
+        // },
+        // {
+        //   component: "Sub-Header",
+        //   title: "",
+        //   configurations: {
+        //     title_color: "rgb(81, 81, 81)",
+        //   },
+        //   content: {
+        //     logo_heading: ["GOM"],
+        //     logo_heading_color: ["Common_logo_heading"],
+        //     logo_heading_border_color: ["Common_logo_border"],
+        //     logo_color: ["Common_logo"],
+        //     logo_title: ["Oncologo"],
+        //     logo_id_names: ["logo_title_id4"],
+        //     logo_detail: ["Oncologo"],
+        //     link: [""],
+        //     logo_title_color: ["Common_logo_title"],
+        //     top_down_arrow: {
+        //       display: true,
+        //       arrow_color: ["#a334c8"],
+        //       line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
+        //     },
+        //     above_line_content: {
+        //       content: ["effettuaa"],
+        //       color: ["Common_AboveLine_Text"],
+        //       content_details: ["effettuaa"],
+        //       justify_content: "evenly",
+        //     },
+        //     line_right: false,
+        //     line_color: "#c4c9ca",
+        //     on_line_content_configuration: {
+        //       content: ["VALUTAZIONE FATTORI PROGNOSTICI"],
+        //       content_id: ["on_line_content_4"],
+        //       content_details: ["VALUTAZIONE FATTORI PROGNOSTICI"],
+        //       link: [""],
+        //       color: ["Common_onLineContent_font"],
+        //       background_color: ["Common_onLineContent_Background"],
+        //       bottom_point_color: ["Common_onLineContent_Point"],
+        //       bottom_line_color: ["Common_onLineContent_Line"],
+        //       bottom_shape_color: ["Common_onLineContent_Shape"],
+        //       bottom_shape_postion: ["Level_2"],
+        //     },
+        //   },
+        // },
+        // {
+        //   component: "Sub-Header",
+        //   title: "",
+        //   configurations: {
+        //     title_color: "rgb(81, 81, 81)",
+        //   },
+        //   content: {
+        //     logo_heading: ["GOM"],
+        //     logo_heading_color: ["Common_logo_heading"],
+        //     logo_heading_border_color: ["Common_logo_border"],
+        //     logo_color: ["Common_logo"],
+        //     logo_title: ["Oncologo"],
+        //     logo_id_names: ["logo_title_id5"],
+        //     logo_detail: ["Oncologo"],
+        //     link: [""],
+        //     logo_title_color: ["Common_logo_title"],
+        //     top_down_arrow: {
+        //       display: true,
+        //       arrow_color: ["#a334c8"],
+        //       line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
+        //     },
+        //     line_right: false,
+        //     line_color: "#c4c9ca",
+        //     on_line_content_configuration: {
+        //       content: ["TERPAIA NEO-ADIUVANTE"],
+        //       content_id: ["on_line_content_5"],
+        //       content_details: ["TERPAIA NEO-ADIUVANTE"],
+        //       link: [""],
+        //       color: ["Common_onLineContent_font"],
+        //       background_color: ["Common_onLineContent_Background"],
+        //       bottom_point_color: ["Common_onLineContent_Point"],
+        //       bottom_line_color: ["Common_onLineContent_Line"],
+        //       bottom_shape_color: ["Common_onLineContent_Shape"],
+        //       bottom_shape_postion: ["Level_3"],
+        //     },
+        //   },
+        // },
       ],
     },
   ],
@@ -933,6 +988,94 @@ function convertToFormat(JsonData) {
         html += `</div>\n`;
       }
 
+      // Top Icons with logo heading + logo title
+html += `<div class="subgroups-mid-top">\n`;
+
+sg.content.logo_titles_config.forEach((config, i) => {
+  if (
+    !config ||
+    !config.logo_title ||
+    !Array.isArray(config.logo_title) ||
+    config.logo_title.length === 0 ||
+    config.logo_title.every((t) => !t || t.trim() === "")
+  ) {
+    return;
+  }
+
+  const logoHeading = sg.content.logo_heading[i];
+  const headings = config.logo_title.filter((h) => h && h.trim() !== ""); // skip empty
+  const logoId = config.logo_id_name;
+  const links = config.links;
+  const logoDetails = config.logo_detail;
+
+  html += `<div class="icon_plus_name icon_plus_name_${i + 1}">\n`;
+
+  if (logoHeading) {
+    html += `<span class="span-${i + 1}">${limitText(logoHeading, 5)}</span>\n`;
+  }
+
+  html += `<i class="fa-solid fa-user fa-user-${i + 1}"></i>\n`;
+
+  // 🧩 Determine wrapper class
+  let wrapperClass = "";
+  if (headings.length === 1) wrapperClass = "icon-plus-name-box-for-one";
+  else if (headings.length === 2) wrapperClass = "icon-plus-name-box-for-two";
+  else if (headings.length === 3) wrapperClass = "icon-plus-name-box-for-three";
+  else wrapperClass = "icon-plus-name-box-for-four"; 
+
+  html += `<div ${logoId ? `id="${logoId}"` : ""} class="${wrapperClass}">\n`;
+
+  // 🏗 Layout for 3 and 4
+  // 🏗 Layout for 3 and 4
+if (headings.length === 3) {
+  // first two in one enclosed
+  html += `<div class="icon-plus-name-box-enclosed">\n`;
+  for (let j = 0; j < 2; j++) {
+    const detail = limitText(logoDetails?.[j] || "", 280);
+    const link = links?.[j] || "";
+    const hasLink = link && link.trim() !== "";
+    html += `<p title="${detail}" class="icon-plus-name-paragraph-${j + 1}" ${hasLink ? "Div-link" : ""} ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${headings[j]}</p>\n`;
+  }
+  html += `</div>\n`; // close first enclosed
+
+  // third in its own enclosed div
+  html += `<div class="icon-plus-name-box-enclosed">\n`;
+  const detail = limitText(logoDetails?.[2] || "", 280);
+  const link = links?.[2] || "";
+  const hasLink = link && link.trim() !== "";
+  html += `<p title="${detail}" class="icon-plus-name-paragraph-3" ${hasLink ? "Div-link" : ""} ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${headings[2]}</p>\n`;
+  html += `</div>\n`; // close second enclosed
+} else if (headings.length === 4) {
+  for (let group = 0; group < 2; group++) {
+    html += `<div class="icon-plus-name-box-enclosed">\n`;
+    for (let j = 0; j < 2; j++) {
+      const idx = group * 2 + j;
+      const detail = limitText(logoDetails?.[idx] || "", 280);
+      const link = links?.[idx] || "";
+      const hasLink = link && link.trim() !== "";
+      html += `<p title="${detail}" class="icon-plus-name-paragraph-${idx + 1}" ${hasLink ? "Div-link" : ""} ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${headings[idx]}</p>\n`;
+    }
+    html += `</div>\n`;
+  }
+
+
+  } else {
+    // 1 or 2 headings, normal
+    headings.forEach((logo, idx) => {
+      const detail = limitText(logoDetails?.[idx] || "", 280);
+      const link = links?.[idx] || "";
+      const hasLink = link && link.trim() !== "";
+      html += `<p title="${detail}" class="icon-plus-name-paragraph-${idx + 1}" ${hasLink ? "Div-link" : ""} ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${logo}</p>\n`;
+    });
+  }
+
+  html += `</div>\n`; // close wrapper
+  html += `</div>\n`; // close main box
+});
+
+html += `</div>\n`;
+
+
       // Top icons with logo_heading + logo_title
       html += `<div class="subgroups-mid-top">\n`;
       sg.content.logo_title.forEach((logo, i) => {
@@ -1027,6 +1170,54 @@ function convertToFormat(JsonData) {
 
     // === CSS ===
     let css = `
+
+  .${uniqueClassName} .icon-plus-name-box-for-one{
+    width:100px;
+    height:26px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 27px;
+  }
+  .${uniqueClassName} .icon-plus-name-box-enclosed{
+    width:100%;
+    height:49%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .${uniqueClassName} .icon-plus-name-box-for-two{
+    width:100px;
+    height:26px;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 27px;
+  }
+  .${uniqueClassName}  .icon-plus-name-box-for-three{
+    width:100px;
+    height:52px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 27px;
+  }
+  .${uniqueClassName}  .icon-plus-name-box-for-four{
+    width:100px;
+    height:52px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 27px;
+  }
+
+
   .${uniqueClassName} {
     width: max-content;
     height: 100%;
@@ -1166,18 +1357,19 @@ function convertToFormat(JsonData) {
     margin-bottom: 30px; 
   }
   .${uniqueClassName} .icon_plus_name p {
-    display: inline;
     padding: 8px ${getFontSize(6, 8, 12)}px;
     border-radius: 23px;
-    position: absolute;
-    top: 21px;
     white-space: nowrap;
-    font-size:${getFontSize(9, 10, 11)}px;
-    color: white;
-    width: ${getFontSize(50, 55, 60)}px;
+    font-size: ${getFontSize(9, 10, 11)}px;
+    width: auto;
+    max-width: 49%;
     text-align: center;
-    transition:0.1s all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    transition: 0.1s all;
   }
+
   .${uniqueClassName} .above-line-content {
     display: flex;
     align-items: center;
@@ -1603,94 +1795,124 @@ function convertToFormat(JsonData) {
     });
 
     // Handling Colors Dynamically
-    sub_groups.forEach((sg, subGroupIdx) => {
-      const styleConfigs = [
-        {
-          array: sg.content.logo_heading_color || [],
-          classPrefix: "span-",
-          selector: ".icon_plus_name",
-          styles: (color) => {
-            const resolved =
-              resolveColor(color, colors) ||
-              "linear-gradient(to right top, #a334c8 20%, #f65467)";
-            return `
+// Handling Colors Dynamically
+sub_groups.forEach((sg, subGroupIdx) => {
+  const styleConfigs = [
+    {
+      array: sg.content.logo_heading_color || [],
+      classPrefix: "span-",
+      selector: ".icon_plus_name",
+      styles: (color) => {
+        const resolved =
+          resolveColor(color, colors) ||
+          "linear-gradient(to right top, #a334c8 20%, #f65467)";
+        return `
         background: ${resolved};
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       `;
-          },
-        },
-        {
-          array: sg.content.logo_heading_border_color || [],
-          classPrefix: "fa-user-",
-          selector: ".icon_plus_name",
-          styles: (color, idx) => {
-            const resolvedBorder = resolveColor(color, colors) || "#a334c8";
-            const resolvedBg =
-              resolveColor((sg.content.logo_color || [])[idx], colors) ||
-              "linear-gradient(to right top, #a334c8 20%, #f65467)";
-            return `
+      },
+    },
+    {
+      array: sg.content.logo_heading_border_color || [],
+      classPrefix: "fa-user-",
+      selector: ".icon_plus_name",
+      styles: (color, idx) => {
+        const resolvedBorder = resolveColor(color, colors) || "#a334c8";
+        const resolvedBg =
+          resolveColor((sg.content.logo_color || [])[idx], colors) ||
+          "linear-gradient(to right top, #a334c8 20%, #f65467)";
+        return `
         border: 2px solid ${resolvedBorder};
         background: ${resolvedBg};
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       `;
-          },
-        },
-        {
-          array: sg.content.logo_title_color || [],
-          classPrefix: "icon-plus-name-paragraph-",
-          selector: ".icon_plus_name",
-          styles: (color) => {
-            const resolved =
-              resolveColor(color, colors) ||
-              "linear-gradient(to right top, #a334c8 20%, #f65467)";
-            return `background: ${resolved};`;
-          },
-        },
-      ];
+      },
+    },
+    {
+      array: sg.content.logo_title_color || [],
+      classPrefix: "icon-plus-name-paragraph-",
+      selector: ".icon_plus_name",
+      styles: (color) => {
+        const resolved =
+          resolveColor(color, colors) ||
+          "linear-gradient(to right top, #a334c8 20%, #f65467)";
+        return `background: ${resolved};`;
+      },
+    },
+  ];
 
-      styleConfigs.forEach(({ array, classPrefix, selector, styles }) => {
-        array.forEach((color, inlineIdx) => {
-          css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
-            subGroupIdx + 1
-          } ${selector} .${classPrefix}${inlineIdx + 1} {${styles(
-            color,
-            inlineIdx
-          )}
+  // 🎨 Existing color config handling
+  styleConfigs.forEach(({ array, classPrefix, selector, styles }) => {
+    array.forEach((color, inlineIdx) => {
+      css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+        subGroupIdx + 1
+      } ${selector} .${classPrefix}${inlineIdx + 1} {${styles(
+        color,
+        inlineIdx
+      )}
 }\n`;
-        });
-      });
+    });
+  });
 
-      if (
-        sg.content.top_down_arrow?.display === "true" ||
-        sg.content.top_down_arrow?.display === true
-      ) {
-        (sg.content.top_down_arrow.line_color || []).forEach((color, idx) => {
-          css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
-            subGroupIdx + 1
-          } .icon_plus_name_${idx + 1}::after {
+  // 🆕 New handling for nested logo_titles_config colors
+  (sg.content.logo_titles_config || []).forEach((config, logoIdx) => {
+    if (!config || !Array.isArray(config.logo_title)) return;
+
+    const bgColors = config.logo_title_background_color || [];
+    const textColors = config.logo_title_color || [];
+
+    bgColors.forEach((bgColor, titleIdx) => {
+      const resolvedBg =
+        resolveColor(bgColor, colors) ||
+        "linear-gradient(to right top, #a334c8 20%, #f65467)";
+      const resolvedText =
+        resolveColor(textColors[titleIdx], colors) || "white";
+
+      css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+        subGroupIdx + 1
+      } .icon_plus_name_${logoIdx + 1} .icon-plus-name-paragraph-${
+        titleIdx + 1
+      } {
+        background: ${resolvedBg};
+        color: ${resolvedText};
+        -webkit-text-fill-color: ${resolvedText};
+      }\n`;
+    });
+  });
+
+  // 🔻 Keep your existing top_down_arrow logic intact
+  if (
+    sg.content.top_down_arrow?.display === "true" ||
+    sg.content.top_down_arrow?.display === true
+  ) {
+    (sg.content.top_down_arrow.line_color || []).forEach((color, idx) => {
+      css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+        subGroupIdx + 1
+      } .icon_plus_name_${idx + 1}::after {
   background: ${
     resolveColor(color, colors) ||
     "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"
   };
 }\n`;
-        });
-
-        (sg.content.top_down_arrow.arrow_color || []).forEach((color, idx) => {
-          css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
-            subGroupIdx + 1
-          } .icon_plus_name_${idx + 1}::before {
-            ${(() => {
-              const side = direction ? "bottom" : "top";
-              return `border-${side}: 7px solid ${
-                resolveColor(color, colors) || "#a334c8"
-              };`;
-            })()}
-}\n`;
-        });
-      }
     });
+
+    (sg.content.top_down_arrow.arrow_color || []).forEach((color, idx) => {
+      css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+        subGroupIdx + 1
+      } .icon_plus_name_${idx + 1}::before {
+        ${(() => {
+          const side = direction ? "bottom" : "top";
+          return `border-${side}: 7px solid ${
+            resolveColor(color, colors) || "#a334c8"
+          };`;
+        })()}
+}\n`;
+    });
+  }
+});
+
 
     return { html, css };
   }
@@ -2366,6 +2588,8 @@ function drawConnectingRectangle(JSON_Data) {
           resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
         const topOffset = 397;
         const reverseTopOffset = 312;
+        const topOffsetPageReverse = 220;
+        const topOffsetrReversePageReverse = 490;
 
         // ---- Handle Config ----
         const config = connection.config;
@@ -2430,11 +2654,15 @@ function drawConnectingRectangle(JSON_Data) {
             justify-content: center;
             align-items: center;
             ${
-              direction
-                ? `bottom: ${reverseTopOffset + midLineHeight}px;
+              alignmentDirection(config.direction) === "reverse"
+                ? `bottom: ${
+                    direction
+                      ? topOffsetrReversePageReverse + midLineHeight
+                      : reverseTopOffset + midLineHeight
+                  }px;
                transform:rotateZ(180deg);
               `
-                : `top: ${topOffset}px;`
+                : `top: ${direction ? topOffsetPageReverse : topOffset}px;`
             }
           }
 
@@ -2608,7 +2836,7 @@ function drawConnectingCircle(JSON_Data) {
             height: ${radius}px;
             overflow: hidden;
             ${
-              alignmentDirection(connection.config.direction)==="reverse"
+              alignmentDirection(connection.config.direction) === "reverse"
                 ? `
               transform: rotateZ(180deg);
               top: ${topOffset + midLineHeight + diameter / 2}px;
@@ -2827,7 +3055,7 @@ function drawConnectingTextLine(JSON_Data) {
           ),
           20
         );
-        const topOffset = 415 + (linePosLevel - 1) * 2; // relative to PPT-Box top
+        const topOffset = (direction ? 238 : 415) + (linePosLevel - 1) * 2; // relative to PPT-Box top
 
         // line thickness mapping (Level_1|2|3)
         const thicknessLevel = Math.min(
@@ -2838,7 +3066,7 @@ function drawConnectingTextLine(JSON_Data) {
           ),
           3
         );
-        const thicknessMap = { 1: 1, 2: 2, 3: 3 };
+        const thicknessMap = { 1: 1, 2: 2, 3: 4 };
         const lineThickness = thicknessMap[thicknessLevel] || 1;
 
         // colors
@@ -2898,9 +3126,8 @@ function drawConnectingTextLine(JSON_Data) {
           .${className}__line.left::before {
             content: "";
             position: absolute;
-            left: -${triSize}px;
             top: 50%;
-            left:0px;
+            left:-3px;
             transform: translateY(-50%);
             width: 0;
             height: 0;
@@ -2912,9 +3139,8 @@ function drawConnectingTextLine(JSON_Data) {
           .${className}__line.right::after {
             content: "";
             position: absolute;
-            right: -${triSize}px;
             top: 50%;
-            right:0px;
+            right:-3px;
             transform: translateY(-50%);
             width: 0;
             height: 0;
