@@ -3,24 +3,24 @@ JSON_Data = {
   footer: {
     footer_label: {
       footer_1_label: "Ambulatorio",
-      footer_2_label: "CS / Ospedale",
+      footer_2_label: "Ospedale",
       footer_3_label: "Altra struttura",
-      footer_4_label: "CS / Ospedale",
-      footer_5_label: "Altra struttura",
+      footer_4_label: "Casa",
+      footer_5_label: "Farmacia Ospedaliera",
     },
     footer_label_position_left: {
-      footer_1_left: "Level_12",
-      footer_2_left: "Level_12",
-      footer_3_left: "Level_12",
-      footer_4_left: "Level_12",
-      footer_5_left: "Level_12",
+      footer_1_left: "Level_5",
+      footer_2_left: "Level_6",
+      footer_3_left: "Level_5",
+      footer_4_left: "Level_7",
+      footer_5_left: "Level_2 ",
     },
     label_width: {
-      footer_1_width: "100",
-      footer_2_width: "100",
-      footer_3_width: "100",
-      footer_4_width: "100",
-      footer_5_width: "100",
+      footer_1_width: "85",
+      footer_2_width: "85",
+      footer_3_width: "85",
+      footer_4_width: "85",
+      footer_5_width: "85",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
     footer_width: "auto",
@@ -28,8 +28,7 @@ JSON_Data = {
   Page_Configuration: {
     background_color: "#f6fcfc",
     border_color: "black",
-    scroll_horizontal: false,
-    // direction: "reverse",
+    scroll_horizontal: false
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -72,7 +71,7 @@ JSON_Data = {
   body: [
     {
       component: "Start-Header",
-      title: "Prev",
+      title: "Trattamento",
       configurations: {
         title_color: "#515151",
         line_right: true,
@@ -87,8 +86,8 @@ JSON_Data = {
       start_content: {
         logo_title: "Paziente",
         link: "",
-        steps: ["Hi", "there", "Byee"],
-        stepsLink: [""],
+        steps: [],
+        stepsLink: [],
         title_detail: "Paziente",
         steps_details: [],
         configurations: {
@@ -97,108 +96,112 @@ JSON_Data = {
           logo_para_color:
             "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           mid_line_color: "#58e3d2",
-          background_color: ["white_color"],
-          font_color: ["black_color"],
+          background_color: [],
+          font_color: [],
           logo_font_color: "white_color",
         },
       },
     },
     {
       component: "Header",
-      title: "Treatment",
+      title: "Follow-up",
       configurations: {
         title_color: "Common_Header_title",
-        line_right: true,
+        line_right: false,
         line_color: "Common_Header_Line",
         collapsabile: true,
       },
       sub_groups: [
         {
           component: "Sub-Header",
-          title: "Terapia neoadiuvante",
+          title: "Follow-up",
           configurations: {
             title_color: "Common_SubHeader_title",
             collapsabile: true,
           },
           content: {
-            logo_heading: ["GOM"],
-            logo_heading_color: ["#a334c8"],
-            logo_heading_border_color: ["#a334c8"],
-            logo_color: ["#a334c8"],
-            logo_title: ["Oncologo"],
+            logo_heading: [""],
+            logo_heading_color: ["Common_logo_heading"],
+            logo_heading_border_color: ["Common_logo_border"],
+            logo_color: ["Common_logo"],
             logo_titles_config: [
               {
-                logo_title: ["Oncologog","Oncologog","Oncologog","Onco"],
-                links: ["", "", "", ""],
+                logo_title: ["Neurologo"],
+                links: [""],
                 logo_id_name: "logo_title_id1",
-                logo_detail: ["O", "A", "R", "O"],
-                logo_title_background_color: ["#78069eff", "#78069eff", "#78069eff","#310e3cff"],
-                logo_title_color: ["white", "white", "white","white"],
+                logo_detail: ["Neurologo"],
+                logo_title_background_color: ["Common_logo_title"],
+                logo_title_border: [true],
+                logo_title_border_color: ["#a334c8"],
+                logo_title_color: ["white"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: ["Common_transparent"],
+                  line_color: ["Common_TopDown_Line"],
+                },
               },
-              {},
-              {},
             ],
-            link: [""],
-            logo_id_names: ["logo_title_id1"],
-            logo_detail: ["Oncologo"],
-            top_down_arrow: {
-              display: "true",
-              arrow_color: ["#a334c8"],
-              line_color: ["#a334c8"],
-            },
-            line_right: "false",
-            line_color: "Common_SubHeader_lineRight",
             above_line_content: {
-              content: ["effettuaa"],
-              color: ["Common_AboveLine_Text"],
-              content_details: ["effettuaa"],
+              content: ["hidden"],
+              color: ["Common_transparent"],
+              content_details: [""],
               justify_content: "evenly",
             },
-            connecting_Circle: {
-              display: true,
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: "true",
               connections: [
                 {
-                  starting: "on_line_content_2",
-                  ending: "on_line_content_3",
-                  start_from: "start",
-                  end_from: "end",
-                  border_thickness: "Level_4",
-                  config: {
-                    fontAwsomeicon: "fa-solid fa-angles-left",
-                    iconColor: "white",
-                    iconSize: "Level_2",
-                    direction: "default",
-                  },
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id4",
+                  height: "Level_10",
+                },
+                {
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id8",
+                  height: "Level_10",
+                },
+                {
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id2",
+                  height: "Level_1",
+                },
+                {
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id5",
+                  height: "Level_1",
+                },
+                {
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id7",
+                  height: "Level_1",
                 },
               ],
-              color: ["#58e3d2"],
-            },
-            connecting_Text_Line: {
-              display: true,
-              connections: [
-                {
-                  starting: "on_line_content_4",
-                  ending: "on_line_content_5",
-                  start_from: "start",
-                  end_from: "end",
-                  line_Thickness: "Level_1",
-                  line_Position: "Level_1",
-                  text: "procedure pre-trettamento",
-                  text_Position: "middle",
-                  text_color: "black",
-                  line_color: "black",
-                },
+              arrow_color: [
+                "Common_ConnectingLine_arrow",
+                "Common_ConnectingLine_arrow",
+                "#8c9091",
+                "#8c9091",
+                "#8c9091",
+              ],
+              line_color: [
+                "Common_ConnectingLine_line",
+                "Common_ConnectingLine_line",
+                "#8c9091",
+                "#8c9091",
+                "#8c9091",
               ],
             },
             connecting_Rectangle: {
-              display: "true",
+              display: true,
               connections: [
                 {
                   starting: "on_line_content_1",
                   start_from_starting: "true",
-                  ending: "on_line_content_4",
+                  ending: "on_line_content_7",
                   end_from_ending: "true",
-                  height: "Level_13",
+                  height: "Level_10",
                   border_thickness: "Level_6",
                   config: {
                     fontAwsomeicons: [
@@ -211,239 +214,403 @@ JSON_Data = {
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
-                    // direction: "reverse",
+                    direction: "default",
                   },
                 },
               ],
               color: ["Common_ConnectingRectangle"],
             },
             on_line_content_configuration: {
-              content: ["COMUNICAZIONE PERCORSO TERAPIA"],
-              striping: [
-                {
-                  stripped: false,
-                  reversed: false,
-                  colors: [
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(0, 191, 255, 0.35)",
-                    "rgba(0, 191, 255, 0.35)",
-                  ],
-                },
-              ],
-              link: [""],
+              content: ["Hidden----"],
+              link: [],
               content_id: ["on_line_content_1"],
-              content_details: ["COMUNICAZIONE PERCORSO TERAPIA"],
-              color: ["Common_onLineContent_font"],
-              background_color: ["Common_onLineContent_Background"],
-              bottom_point_color: ["Common_onLineContent_Point"],
-              bottom_point_position_onLine: [true],
-              bottom_line_color: ["Common_onLineContent_Line"],
-              bottom_shape_color: ["Common_onLineContent_Shape"],
-              bottom_shape_postion: ["Level_4"],
+              content_details: [],
+              color: ["Common_transparent"],
+              background_color: ["Common_transparent"],
+              background_shadow: [false],
+              bottom_point_color: ["Common_transparent"],
+              bottom_line_color: ["Common_transparent"],
+              bottom_shape_color: ["Common_transparent"],
+              bottom_Line_postion: ["Level_1"],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_1"],
+                  color: ["Common_transparent"],
+                },
+              ]
             },
           },
         },
-        // {
-        //   component: "Sub-Header",
-        //   title: "",
-        //   configurations: {
-        //     title_color: "rgb(81, 81, 81)",
-        //   },
-        //   content: {
-        //     logo_heading: ["GOM"],
-        //     logo_heading_color: ["Common_logo_heading"],
-        //     logo_heading_border_color: ["#a334c8"],
-        //     logo_color: ["linear-gradient(to right top, #a334c8 20%, #f65467)"],
-        //     logo_title: ["Radiology"],
-        //     logo_id_names: ["logo_title_id2"],
-        //     logo_detail: ["Radiology"],
-        //     link: [""],
-        //     logo_title_color: [
-        //       "linear-gradient(to right top, #a334c8 20%, #f65467)",
-        //     ],
-        //     top_down_arrow: {
-        //       display: "true",
-        //       arrow_color: ["#a334c8"],
-        //       line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
-        //     },
-        //     above_line_content: {
-        //       content: ["effettuaa"],
-        //       color: ["Common_AboveLine_Text"],
-        //       content_details: ["effettuaa"],
-        //       justify_content: "evenly",
-        //     },
-        //     connecting_Line: {
-        //       display: true,
-        //       connections: [
-        //         {
-        //           starting: "logo_title_id2",
-        //           ending: "logo_title_id3",
-        //           height: "Level_1",
-        //         },
-        //       ],
-        //       arrow_color: ["#9f30cb"],
-        //       line_color: ["#9f30cb"],
-        //     },
-        //     line_right: false,
-        //     line_color: "#c4c9ca",
-        //     on_line_content_configuration: {
-        //       content: ["MAMMOGRAFIA"],
-        //       content_id: ["on_line_content_2"],
-        //       content_details: ["MAMMOGRAFIA"],
-        //       link: [""],
-        //       color: ["black"],
-        //       background_color: ["#e6fffc"],
-        //       bottom_point_color: [
-        //         "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-        //       ],
-        //       bottom_line_color: [
-        //         "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-        //       ],
-        //       bottom_shape_color: [
-        //         "linear-gradient(to top, #1375af 5%, #45d0cb)",
-        //       ],
-        //       bottom_shape_postion: ["Level_3"],
-        //     },
-        //   },
-        // },
-        // {
-        //   component: "Sub-Header",
-        //   title: "",
-        //   configurations: {
-        //     title_color: "rgb(81, 81, 81)",
-        //   },
-        //   content: {
-        //     logo_heading: ["GOM"],
-        //     logo_heading_color: [
-        //       "linear-gradient(to right top, #e45f65 20%, #d84987)",
-        //     ],
-        //     logo_heading_border_color: ["#e45f65"],
-        //     logo_color: ["linear-gradient(to right top, #e45f65 20%, #d84987)"],
-        //     logo_title: ["Anatomopatologo"],
-        //     logo_id_names: ["logo_title_id3"],
-        //     logo_detail: ["Anatomopatologo"],
-        //     link: [""],
-        //     logo_title_color: [
-        //       "linear-gradient(to right top, #e45f65 20%, #d84987)",
-        //     ],
-        //     top_down_arrow: {
-        //       display: "true",
-        //       arrow_color: ["#feb151"],
-        //       line_color: ["linear-gradient(to bottom, #e98f53 50%, #f79142)"],
-        //     },
-        //     above_line_content: {
-        //       content: ["effettuaa"],
-        //       color: ["#feb151"],
-        //       content_details: ["effettuaa"],
-        //       justify_content: "evenly",
-        //     },
-        //     line_right: false,
-        //     line_color: "#c4c9ca",
-        //     on_line_content_configuration: {
-        //       content: ["BIOSIA + STADAZIONE"],
-        //       content_id: ["on_line_content_3"],
-        //       content_details: ["BIOSIA + STADAZIONE"],
-        //       link: [""],
-        //       color: ["black"],
-        //       background_color: ["#e6fffc"],
-        //       bottom_point_color: [
-        //         "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-        //       ],
-        //       bottom_line_color: [
-        //         "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-        //       ],
-        //       bottom_shape_color: [
-        //         "linear-gradient(to top, #1375af 5%, #45d0cb)",
-        //       ],
-        //       bottom_shape_postion: ["Level_3"],
-        //     },
-        //   },
-        // },
-        // {
-        //   component: "Sub-Header",
-        //   title: "",
-        //   configurations: {
-        //     title_color: "rgb(81, 81, 81)",
-        //   },
-        //   content: {
-        //     logo_heading: ["GOM"],
-        //     logo_heading_color: ["Common_logo_heading"],
-        //     logo_heading_border_color: ["Common_logo_border"],
-        //     logo_color: ["Common_logo"],
-        //     logo_title: ["Oncologo"],
-        //     logo_id_names: ["logo_title_id4"],
-        //     logo_detail: ["Oncologo"],
-        //     link: [""],
-        //     logo_title_color: ["Common_logo_title"],
-        //     top_down_arrow: {
-        //       display: true,
-        //       arrow_color: ["#a334c8"],
-        //       line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
-        //     },
-        //     above_line_content: {
-        //       content: ["effettuaa"],
-        //       color: ["Common_AboveLine_Text"],
-        //       content_details: ["effettuaa"],
-        //       justify_content: "evenly",
-        //     },
-        //     line_right: false,
-        //     line_color: "#c4c9ca",
-        //     on_line_content_configuration: {
-        //       content: ["VALUTAZIONE FATTORI PROGNOSTICI"],
-        //       content_id: ["on_line_content_4"],
-        //       content_details: ["VALUTAZIONE FATTORI PROGNOSTICI"],
-        //       link: [""],
-        //       color: ["Common_onLineContent_font"],
-        //       background_color: ["Common_onLineContent_Background"],
-        //       bottom_point_color: ["Common_onLineContent_Point"],
-        //       bottom_line_color: ["Common_onLineContent_Line"],
-        //       bottom_shape_color: ["Common_onLineContent_Shape"],
-        //       bottom_shape_postion: ["Level_2"],
-        //     },
-        //   },
-        // },
-        // {
-        //   component: "Sub-Header",
-        //   title: "",
-        //   configurations: {
-        //     title_color: "rgb(81, 81, 81)",
-        //   },
-        //   content: {
-        //     logo_heading: ["GOM"],
-        //     logo_heading_color: ["Common_logo_heading"],
-        //     logo_heading_border_color: ["Common_logo_border"],
-        //     logo_color: ["Common_logo"],
-        //     logo_title: ["Oncologo"],
-        //     logo_id_names: ["logo_title_id5"],
-        //     logo_detail: ["Oncologo"],
-        //     link: [""],
-        //     logo_title_color: ["Common_logo_title"],
-        //     top_down_arrow: {
-        //       display: true,
-        //       arrow_color: ["#a334c8"],
-        //       line_color: ["linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"],
-        //     },
-        //     line_right: false,
-        //     line_color: "#c4c9ca",
-        //     on_line_content_configuration: {
-        //       content: ["TERPAIA NEO-ADIUVANTE"],
-        //       content_id: ["on_line_content_5"],
-        //       content_details: ["TERPAIA NEO-ADIUVANTE"],
-        //       link: [""],
-        //       color: ["Common_onLineContent_font"],
-        //       background_color: ["Common_onLineContent_Background"],
-        //       bottom_point_color: ["Common_onLineContent_Point"],
-        //       bottom_line_color: ["Common_onLineContent_Line"],
-        //       bottom_shape_color: ["Common_onLineContent_Shape"],
-        //       bottom_shape_postion: ["Level_3"],
-        //     },
-        //   },
-        // },
+      ],
+    },
+    {
+      component: "Header",
+      title: "",
+      configurations: {
+        title_color: "#515151",
+        line_right: false,
+        line_color: "#adafaf",
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "rgb(81, 81, 81)",
+          },
+          content: {
+            logo_heading: ["", "", ""],
+            logo_heading_color: [
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+            ],
+            logo_heading_border_color: [
+              "Common_transparent",
+              "#e7636b",
+              "Common_transparent",
+            ],
+            logo_color: [
+              "Common_transparent",
+              "linear-gradient(to top right, #e7636b 40%, #de7883)",
+              "Common_transparent",
+            ],
+            logo_titles_config: [
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id2",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                },
+              },
+              {
+                logo_title: ["Alongside Coordinator"],
+                links: [""],
+                logo_id_name: "logo_title_id3",
+                logo_detail: [""],
+                logo_title_background_color: ["white"],
+                logo_title_border: [true],
+                logo_title_border_color: ["#e7636b"],
+                logo_title_color: ["linear-gradient(to top right, #e7636b 40%, #de7883)"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: ["#e7636b"],
+                  line_color: ["linear-gradient(to top right, #e7636b 40%, #de7883)"],
+                },
+              },
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id4",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                },
+              },
+            ],
+            above_line_content: {
+              content: ["prescrive", "assiste", "effettua"],
+              color: ["#8c9091", "#e7636b", "Common_AboveLine_Text"],
+              content_details: ["prescrive", "assiste", "effettua"],
+              justify_content: "evenly",
+            },
+            line_right: false,
+            line_color: "#c4c9ca",
+            connecting_Line: {
+              display: "true",
+              connections: [
+                {
+                  starting: "logo_title_id3",
+                  ending: "logo_title_id6",
+                  height: "Level_5",
+                },
+              ],
+              arrow_color: ["#e7636b"],
+              line_color: ["#e7636b"],
+            },
+            on_line_content_configuration: {
+              content: ["KESIMPTA", "KESIMPTA ASSUNZIONE", "VISITA CONTROLLO"],
+              content_id: [
+                "on_line_content_2",
+                "on_line_content_3",
+                "on_line_content_4",
+              ],
+              content_details: [
+                "KESIMPTA",
+                "KESIMPTA ASSUNZIONE",
+                "VISITA CONTROLLO",
+              ],
+              link: ["", "", ""],
+              color: ["white", "white", "black"],
+              background_color: ["#0460a9", "#0460a9", "#e6fffc"],
+              bottom_point_color: [
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+              ],
+              bottom_line_color: [
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+              ],
+              bottom_Line_postion: ["Level_5", "Level_4", "Level_3"],
+              bottom_point_position_onLine: [true, false, true],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_5"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_4"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_3"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+              ]
+            },
+          },
+        },
+      ],
+    },
+    {
+      component: "Header",
+      title: "",
+      configurations: {
+        title_color: "#515151",
+        line_right: false,
+        line_color: "#adafaf",
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "rgb(81, 81, 81)",
+          },
+          content: {
+            logo_heading: ["", ""],
+            logo_heading_color: ["Common_transparent", "Common_transparent"],
+            logo_heading_border_color: [
+              "Common_transparent",
+              "Common_transparent",
+            ],
+            logo_color: ["Common_transparent", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id5",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                },
+              },
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id6",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                },
+              },
+            ],
+            above_line_content: {
+              content: ["prescrive", "assiste"],
+              color: ["#8c9091", "#e7636b"],
+              content_details: ["prescrive", "assiste"],
+              justify_content: "evenly",
+            },
+            line_right: false,
+            line_color: "#c4c9ca",
+            connecting_Circle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_6",
+                  ending: "on_line_content_4",
+                  start_from: "end",
+                  end_from: "start",
+                  border_thickness: "Level_4",
+                  config: {
+                    fontAwsomeicon: "fa-solid fa-angles-left",
+                    iconColor: "white",
+                    iconSize: "Level_2",
+                    direction: "default",
+                  },
+                },
+              ],
+              color: ["#58e3d2"],
+            },
+            on_line_content_configuration: {
+              content: ["KESIMPTA", "KESIMPTA ASSUNZIONE"],
+              content_id: ["on_line_content_5", "on_line_content_6"],
+              content_details: ["KESIMPTA", "KESIMPTA ASSUNZIONE"],
+              link: ["", ""],
+              color: ["white", "white"],
+              background_color: ["#0460a9", "#0460a9"],
+              bottom_point_position_onLine: [false, false],
+              bottom_point_color: [
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+              ],
+              bottom_line_color: [
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+              ],
+              bottom_point_position_onLine: [true, true],
+              bottom_Line_postion: ["Level_5", "Level_4"],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_5"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_4"],
+                  color: ["Common_onLineContent_Shape"],
+                }
+              ]
+            },
+          },
+        },
+      ],
+    },
+    {
+      component: "Header",
+      title: "",
+      configurations: {
+        title_color: "#515151",
+        line_right: true,
+        line_color: "#adafaf",
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "rgb(81, 81, 81)",
+          },
+          content: {
+            logo_heading: ["", ""],
+            logo_heading_color: ["Common_transparent", "Common_transparent"],
+            logo_heading_border_color: [
+              "Common_transparent",
+              "Common_transparent",
+            ],
+            logo_color: ["Common_transparent", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id7",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                },
+              },
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id8",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                },
+              },
+            ],
+            above_line_content: {
+              content: ["hidden--", "assiste"],
+              color: ["Common_transparent", "Common_AboveLine_Text"],
+              content_details: ["", "assiste"],
+              justify_content: "evenly",
+            },
+            line_right: false,
+            line_color: "#c4c9ca",
+            connecting_Circle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_7",
+                  ending: "on_line_content_8",
+                  start_from: "start",
+                  end_from: "end",
+                  border_thickness: "Level_4",
+                  config: {
+                    fontAwsomeicon: "fa-solid fa-angles-left",
+                    iconColor: "white",
+                    iconSize: "Level_0",
+                  },
+                },
+              ],
+              color: ["#58e3d2"],
+            },
+            on_line_content_configuration: {
+              content: ["ALTRO FARMACO", "VISITA CONTROLLO"],
+              content_id: ["on_line_content_7", "on_line_content_8"],
+              content_details: ["ALTRO FARMACO", "VISITA CONTROLLO"],
+              link: ["", ""],
+              color: ["black", "black"],
+              background_color: ["#e6fffc", "#e6fffc"],
+              bottom_point_color: [
+                "Common_transparent",
+                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+              ],
+              bottom_line_color: [
+                "Common_transparent",
+                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+              ],
+              bottom_shape_color: [
+                "Common_transparent",
+                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              ],
+              bottom_Line_postion: ["Level_1","Level_3"],
+              bottom_point_position_onLine: [false, true],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_1"],
+                  color: ["Common_transparent"],
+                },
+                {
+                  levels: ["Level_3"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+              ],
+            },
+          },
+        },
       ],
     },
   ],
 };
+
 
 // Color Map Function
 const resolveColor = (value, colorMap) => {
@@ -474,10 +641,38 @@ const getFontSize = (sm, md, lg) => {
   }
 };
 
+// Util Function -  Safe normalize function for Appian string input
+function normalizeAppianString(str) {
+  if (typeof str !== "string") return "";
+  // Remove wrapping quotes/backticks if any accidentally passed
+  str = str.trim().replace(/^`+|`+$/g, "");
+  // Decode escaped newline and quotes (Appian sometimes escapes them)
+  try {
+    str = JSON.parse(`"${str.replace(/"/g, '\\"')}"`);
+  } catch {
+    // fallback if JSON parse fails
+    str = str.replace(/\\n/g, "\n").replace(/\\"/g, '"');
+  }
+  return str.trim();
+}
+
 // Util Function
 function limitText(text, limit) {
   return text.length > limit ? text.slice(0, limit) + "..." : text;
 }
+
+const levelToPixel = (levelString) => {
+  const defaultLevel = 10;
+  const totalLevels = 20;
+  const maxOffset = getFontSize(140, 150, 160);
+  let level = parseInt(levelString?.replace("Level_", ""), 10);
+  if (isNaN(level)) level = defaultLevel;
+  level = Math.max(0, Math.min(totalLevels, level));
+  const offsetFromCenter = level - defaultLevel;
+  const pixelValue = (offsetFromCenter / defaultLevel) * maxOffset;
+
+  return `${pixelValue}px`;
+};
 
 // Direction
 function alignmentDirection(JSON_Portion) {
@@ -665,6 +860,8 @@ function convertToFormat(JsonData) {
     const boxShapeRaw = configurations?.vertical_config?.boxShape || "default";
     const boxShapeKey = boxShapeRaw.toLowerCase();
     const boxShapeStyle = boxMap[boxShapeKey] || boxMap["default"];
+    const boxShapeLineColor =
+      configurations?.vertical_config?.lineColor || "black";
 
     // ✅ Build dynamic CSS
     let css = `
@@ -702,7 +899,7 @@ function convertToFormat(JsonData) {
       justify-content:${hasSteps ? "space-evenly" : "center"};
       margin-top: ${
         direction
-          ? getFontSize(hasSteps ? 86 : 81, 78, hasSteps ? 70 : 73)
+          ? getFontSize(hasSteps ? 81 : 82, 78, hasSteps ? 70 : 64)
           : getFontSize(260, 255, 250)
       }px;
       ${boxShapeStyle}
@@ -812,15 +1009,15 @@ function convertToFormat(JsonData) {
       content:" ";
       width:${getFontSize(22, 17, 15)}px;
       height:0px;
-      border:1px dashed black;
-      top:${has2Steps ? "50" : "54"}%;
+      border:1px dashed ${resolveColor(boxShapeLineColor, JsonData.colors)};
+      top:${has2Steps ? "50" : "56"}%;
       transform:translateY(50%);
       right:-${getFontSize(24, 23, 21)}px;
     } 
     .${className} .mid-top .start-step::after{
       position:absolute;
       content:" ";
-      border:1px dashed black;
+      border:1px dashed ${resolveColor(boxShapeLineColor, JsonData.colors)};
       width:20px;
       left:-22px;
       top:50%;
@@ -831,7 +1028,10 @@ function convertToFormat(JsonData) {
       content:" ";
       border-top: 4px solid transparent;
       border-bottom: 4px solid transparent;
-      border-left: 5px solid black;
+      border-left: 5px solid ${resolveColor(
+        boxShapeLineColor,
+        JsonData.colors
+      )};
       width:0px;
       height:0px;
       left:-4px;
@@ -843,7 +1043,7 @@ function convertToFormat(JsonData) {
           ? `.${className} .mid-top-on-line::after{
     position:absolute;
     content:" ";
-    border:1px dashed black;
+    border:1px dashed ${resolveColor(boxShapeLineColor, JsonData.colors)};
     height:79%;
     left:10px;
     top:50%;
@@ -940,13 +1140,15 @@ function convertToFormat(JsonData) {
           sg.content.above_line_content.content.forEach((txt, i) => {
             if (txt && txt.trim() !== "") {
               const color = sg.content.above_line_content.color?.[i] || "#000";
-              const detail = sg.content.above_line_content.content_details?.[i];
+              const detail =
+                (sg.content.above_line_content.content_details?.[i] ?? "") ||
+                "";
 
               html += `<p 
-        class="above-line-text above-line-text-${i + 1}" 
-        title="${limitText(detail, 280)}" 
-        style="color:${resolveColor(color, colors)};"
-      >${limitText(txt, 10)}</p>\n`;
+              class="above-line-text above-line-text-${i + 1}" 
+              title="${limitText(detail || "", 280)}" 
+              style="color:${resolveColor(color, colors)};"
+              >${limitText(txt || "", 10)}</p>\n`;
             }
           });
 
@@ -959,9 +1161,6 @@ function convertToFormat(JsonData) {
           const contentId =
             sg.content.on_line_content_configuration.content_id?.[i] || "";
 
-          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
-            i + 1
-          }" id="${contentId}">\n`;
           const link = sg.content.on_line_content_configuration.link?.[i];
           const hasShadow =
             sg.content.on_line_content_configuration.background_shadow?.[i] ??
@@ -969,138 +1168,240 @@ function convertToFormat(JsonData) {
           const hasLink = link && link.trim() !== "";
           const contentDetail =
             sg.content.on_line_content_configuration.content_details?.[i] || "";
-
           const isStriped =
             sg.content.on_line_content_configuration.striping?.[i]?.stripped;
+          const contentDetailHTML =
+            sg.content.on_line_content_configuration.content_details_HTML?.[
+              i
+            ] || null;
+          if (contentDetailHTML) {
+            if (typeof contentDetailHTML.content_HTML === "string") {
+              contentDetailHTML.content_HTML = normalizeAppianString(
+                contentDetailHTML.content_HTML
+              );
+            }
+            if (typeof contentDetailHTML.content_CSS === "string") {
+              contentDetailHTML.content_CSS = normalizeAppianString(
+                contentDetailHTML.content_CSS
+              );
+            }
+          }
 
+          // ✅ Detect valid HTML/CSS for popup
+          const hasValidHTML =
+            contentDetailHTML &&
+            typeof contentDetailHTML === "object" &&
+            contentDetailHTML.content_HTML &&
+            contentDetailHTML.content_HTML.trim() !== "";
+
+          const hasValidCSS =
+            contentDetailHTML &&
+            typeof contentDetailHTML === "object" &&
+            contentDetailHTML.content_CSS &&
+            contentDetailHTML.content_CSS.trim() !== "";
+
+          const shouldShowPopup = hasValidHTML;
+
+          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
+            i + 1
+          }" id="${contentId}" style="position:relative;">\n`;
+
+          // ✅ Render title h6
           html += `<h6
-      title="${limitText(contentDetail, 280)}"
+      title="${shouldShowPopup ? "" : limitText(contentDetail, 280)}"
       class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
             isStriped ? " striped" : ""
           }"
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}>
-  ${limitText(c, 6)}
-</h6>\n`;
+      ${limitText(c, 10)}
+  </h6>\n`;
+
+          // ✅ Add hover popup (if HTML valid)
+          if (shouldShowPopup) {
+            html += `
+      <div class="${contentId}-hover-popup" 
+           style="display:none; position:absolute; top:0; transform:translate(25%,-70%); left:0; z-index:9999;">
+        ${contentDetailHTML.content_HTML}
+      </div>
+      <style>
+        .${contentId}-hover-popup {
+          ${hasValidCSS ? contentDetailHTML.content_CSS : ""}
+        }
+      </style>
+      <script>
+        (function(){
+          try {
+            const container = document.querySelector('#${contentId}');
+            const h6 = container?.querySelector('h6');
+            const popup = container?.querySelector('.${contentId}-hover-popup');
+            if (!h6 || !popup) return;
+
+            h6.addEventListener('mouseenter', () => {
+              popup.style.display = 'block';
+            });
+            h6.addEventListener('mouseleave', () => {
+              setTimeout(() => {
+                if (!popup.matches(':hover')) popup.style.display = 'none';
+              }, 100);
+            });
+            popup.addEventListener('mouseleave', () => {
+              popup.style.display = 'none';
+            });
+          } catch (e) {
+            console.error('Hover popup error for ${contentId}:', e);
+          }
+        })();
+      </script>
+    `;
+          }
 
           html += `</div>\n`;
         });
+
+        // ✅ Attach hover listeners after DOM insert (backup)
+        setTimeout(() => {
+          sg.content.on_line_content_configuration.content.forEach((c, i) => {
+            const contentId =
+              sg.content.on_line_content_configuration.content_id?.[i];
+            if (!contentId) return;
+
+            const h6 = document.querySelector(`#${contentId} h6`);
+            const popup = document.querySelector(
+              `#${contentId} .${contentId}-hover-popup`
+            );
+            if (h6 && popup) {
+              h6.addEventListener("mouseenter", () => {
+                popup.style.display = "block";
+              });
+              h6.addEventListener("mouseleave", () => {
+                setTimeout(() => {
+                  if (!popup.matches(":hover")) popup.style.display = "none";
+                }, 100);
+              });
+              popup.addEventListener("mouseleave", () => {
+                popup.style.display = "none";
+              });
+            }
+          });
+        }, 100);
 
         html += `</div>\n`;
       }
 
       // Top Icons with logo heading + logo title
-html += `<div class="subgroups-mid-top">\n`;
-
-sg.content.logo_titles_config.forEach((config, i) => {
-  if (
-    !config ||
-    !config.logo_title ||
-    !Array.isArray(config.logo_title) ||
-    config.logo_title.length === 0 ||
-    config.logo_title.every((t) => !t || t.trim() === "")
-  ) {
-    return;
-  }
-
-  const logoHeading = sg.content.logo_heading[i];
-  const headings = config.logo_title.filter((h) => h && h.trim() !== ""); // skip empty
-  const logoId = config.logo_id_name;
-  const links = config.links;
-  const logoDetails = config.logo_detail;
-
-  html += `<div class="icon_plus_name icon_plus_name_${i + 1}">\n`;
-
-  if (logoHeading) {
-    html += `<span class="span-${i + 1}">${limitText(logoHeading, 5)}</span>\n`;
-  }
-
-  html += `<i class="fa-solid fa-user fa-user-${i + 1}"></i>\n`;
-
-  // 🧩 Determine wrapper class
-  let wrapperClass = "";
-  if (headings.length === 1) wrapperClass = "icon-plus-name-box-for-one";
-  else if (headings.length === 2) wrapperClass = "icon-plus-name-box-for-two";
-  else if (headings.length === 3) wrapperClass = "icon-plus-name-box-for-three";
-  else wrapperClass = "icon-plus-name-box-for-four"; 
-
-  html += `<div ${logoId ? `id="${logoId}"` : ""} class="${wrapperClass}">\n`;
-
-  // 🏗 Layout for 3 and 4
-  // 🏗 Layout for 3 and 4
-if (headings.length === 3) {
-  // first two in one enclosed
-  html += `<div class="icon-plus-name-box-enclosed">\n`;
-  for (let j = 0; j < 2; j++) {
-    const detail = limitText(logoDetails?.[j] || "", 280);
-    const link = links?.[j] || "";
-    const hasLink = link && link.trim() !== "";
-    html += `<p title="${detail}" class="icon-plus-name-paragraph-${j + 1}" ${hasLink ? "Div-link" : ""} ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${headings[j]}</p>\n`;
-  }
-  html += `</div>\n`; // close first enclosed
-
-  // third in its own enclosed div
-  html += `<div class="icon-plus-name-box-enclosed">\n`;
-  const detail = limitText(logoDetails?.[2] || "", 280);
-  const link = links?.[2] || "";
-  const hasLink = link && link.trim() !== "";
-  html += `<p title="${detail}" class="icon-plus-name-paragraph-3" ${hasLink ? "Div-link" : ""} ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${headings[2]}</p>\n`;
-  html += `</div>\n`; // close second enclosed
-} else if (headings.length === 4) {
-  for (let group = 0; group < 2; group++) {
-    html += `<div class="icon-plus-name-box-enclosed">\n`;
-    for (let j = 0; j < 2; j++) {
-      const idx = group * 2 + j;
-      const detail = limitText(logoDetails?.[idx] || "", 280);
-      const link = links?.[idx] || "";
-      const hasLink = link && link.trim() !== "";
-      html += `<p title="${detail}" class="icon-plus-name-paragraph-${idx + 1}" ${hasLink ? "Div-link" : ""} ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${headings[idx]}</p>\n`;
-    }
-    html += `</div>\n`;
-  }
-
-
-  } else {
-    // 1 or 2 headings, normal
-    headings.forEach((logo, idx) => {
-      const detail = limitText(logoDetails?.[idx] || "", 280);
-      const link = links?.[idx] || "";
-      const hasLink = link && link.trim() !== "";
-      html += `<p title="${detail}" class="icon-plus-name-paragraph-${idx + 1}" ${hasLink ? "Div-link" : ""} ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${logo}</p>\n`;
-    });
-  }
-
-  html += `</div>\n`; // close wrapper
-  html += `</div>\n`; // close main box
-});
-
-html += `</div>\n`;
-
-
-      // Top icons with logo_heading + logo_title
       html += `<div class="subgroups-mid-top">\n`;
-      sg.content.logo_title.forEach((logo, i) => {
-        const heading = sg.content.logo_heading[i];
-        const logoId = sg.content.logo_id_names?.[i] || "";
-        const link = sg.content.link?.[i];
-        const logoDetail = sg.content.logo_detail?.[i] || "";
-        const hasLink = link && link.trim() !== "";
+
+      sg.content.logo_titles_config.forEach((config, i) => {
+        if (
+          !config ||
+          !config.logo_title ||
+          !Array.isArray(config.logo_title) ||
+          config.logo_title.length === 0 ||
+          config.logo_title.every((t) => !t || t.trim() === "")
+        ) {
+          return;
+        }
+
+        const logoHeading = sg.content.logo_heading[i];
+        const headings = config.logo_title;
+        const logoId = config.logo_id_name;
+        const links = config.links;
+        const logoDetails = config.logo_detail;
 
         html += `<div class="icon_plus_name icon_plus_name_${i + 1}">\n`;
 
-        if (heading)
+        if (logoHeading) {
           html += `<span class="span-${i + 1}">${limitText(
-            heading,
+            logoHeading,
             5
           )}</span>\n`;
-        html += `<i class="fa-solid fa-user fa-user-${i + 1}"></i>\n`;
-        html += `<p title="${limitText(logoDetail, 280)}" ${
-          hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""
-        }${logoId ? ` id="${logoId}"` : ""} class="icon-plus-name-paragraph-${
-          i + 1
-        }${hasLink ? " Div-link" : ""}">${limitText(logo, 8)}</p>\n`;
+        }
 
-        html += `</div>\n`;
+        html += `<i class="fa-solid fa-user fa-user-${i + 1}"></i>\n`;
+
+        // 🧩 Wrapper class
+        let wrapperClass = "";
+        if (headings.length === 1)
+          wrapperClass = "icon-plus-name-box icon-plus-name-box-for-one";
+        else if (headings.length === 2)
+          wrapperClass = "icon-plus-name-box icon-plus-name-box-for-two";
+        else if (headings.length === 3)
+          wrapperClass = "icon-plus-name-box icon-plus-name-box-for-three";
+        else wrapperClass = "icon-plus-name-box icon-plus-name-box-for-four";
+
+        html += `<div ${
+          logoId ? `id="${logoId}"` : ""
+        } class="${wrapperClass}">\n`;
+
+        // ✅ helper to render <p> safely
+        const renderParagraph = (text, detail, link, className) => {
+          const hasLink = link && link.trim() !== "";
+          const hasText = text && text.trim() !== "";
+
+          // if empty, no styling class
+          const classes = hasText
+            ? className
+            : "icon-plus-name-paragraph-hidden";
+          const titleAttr = hasText ? `title="${limitText(detail, 280)}"` : "";
+
+          return `<p ${titleAttr} class="${classes}" ${
+            hasLink ? "Div-link" : ""
+          } ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${
+            hasText ? text : ""
+          }</p>\n`;
+        };
+
+        // 🧩 Layout logic
+        if (headings.length === 3) {
+          html += `<div class="icon-plus-name-box-enclosed">\n`;
+          for (let j = 0; j < 2; j++) {
+            html += renderParagraph(
+              headings[j],
+              logoDetails?.[j],
+              links?.[j],
+              `icon-plus-name-paragraph-${j + 1}`
+            );
+          }
+          html += `</div>\n`;
+
+          html += `<div class="icon-plus-name-box-enclosed">\n`;
+          html += renderParagraph(
+            headings[2],
+            logoDetails?.[2],
+            links?.[2],
+            `icon-plus-name-paragraph-3`
+          );
+          html += `</div>\n`;
+        } else if (headings.length === 4) {
+          for (let group = 0; group < 2; group++) {
+            html += `<div class="icon-plus-name-box-enclosed">\n`;
+            for (let j = 0; j < 2; j++) {
+              const idx = group * 2 + j;
+              html += renderParagraph(
+                headings[idx],
+                logoDetails?.[idx],
+                links?.[idx],
+                `icon-plus-name-paragraph-${idx + 1}`
+              );
+            }
+            html += `</div>\n`;
+          }
+        } else {
+          // 1 or 2 headings
+          headings.forEach((logo, idx) => {
+            html += renderParagraph(
+              logo,
+              logoDetails?.[idx],
+              links?.[idx],
+              `icon-plus-name-paragraph-${idx + 1}`
+            );
+          });
+        }
+
+        html += `</div>\n`; // close wrapper
+        html += `</div>\n`; // close main box
       });
+
       html += `</div>\n`;
 
       if (
@@ -1134,9 +1435,6 @@ html += `</div>\n`;
           const contentId =
             sg.content.on_line_content_configuration.content_id?.[i] || "";
 
-          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
-            i + 1
-          }" id="${contentId}">\n`;
           const link = sg.content.on_line_content_configuration.link?.[i];
           const hasShadow =
             sg.content.on_line_content_configuration.background_shadow?.[i] ??
@@ -1144,21 +1442,126 @@ html += `</div>\n`;
           const hasLink = link && link.trim() !== "";
           const contentDetail =
             sg.content.on_line_content_configuration.content_details?.[i] || "";
-
           const isStriped =
             sg.content.on_line_content_configuration.striping?.[i]?.stripped;
+          const contentDetailHTML =
+            sg.content.on_line_content_configuration.content_details_HTML?.[
+              i
+            ] || null;
+          if (contentDetailHTML) {
+            if (typeof contentDetailHTML.content_HTML === "string") {
+              contentDetailHTML.content_HTML = normalizeAppianString(
+                contentDetailHTML.content_HTML
+              );
+            }
+            if (typeof contentDetailHTML.content_CSS === "string") {
+              contentDetailHTML.content_CSS = normalizeAppianString(
+                contentDetailHTML.content_CSS
+              );
+            }
+          }
 
+          // ✅ Detect invalid / empty HTML or CSS objects
+          const hasValidHTML =
+            contentDetailHTML &&
+            typeof contentDetailHTML === "object" &&
+            contentDetailHTML.content_HTML &&
+            contentDetailHTML.content_HTML.trim() !== "";
+
+          const hasValidCSS =
+            contentDetailHTML &&
+            typeof contentDetailHTML === "object" &&
+            contentDetailHTML.content_CSS &&
+            contentDetailHTML.content_CSS.trim() !== "";
+
+          const shouldShowPopup = hasValidHTML;
+
+          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
+            i + 1
+          }" id="${contentId}" style="position:relative;">\n`;
+
+          // ✅ Always render h6 — if popup invalid, title appears
           html += `<h6
-      title="${limitText(contentDetail, 280)}"
-      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
-            isStriped ? " striped" : ""
-          }"
-      ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}>
-  ${limitText(c, 6)}
-</h6>\n`;
+      title="${shouldShowPopup ? "" : limitText(contentDetail, 280)}"
+      class="${hasShadow ? "box-shadow-box" : ""} ${
+            hasLink ? "Div-link" : ""
+          } ${isStriped ? "striped" : ""}"
+      style="position:relative; cursor:pointer; z-index:1;"
+      ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>
+      ${limitText(c, 10)}
+  </h6>\n`;
+
+          if (shouldShowPopup) {
+            html += `
+      <div class="${contentId}-hover-popup" 
+           style="display:none; position:absolute; top:0; transform:translate(25%,5%); left:0; z-index:2;">
+        ${contentDetailHTML.content_HTML}
+      </div>
+      <style>
+        .${contentId}-hover-popup {
+          ${hasValidCSS ? contentDetailHTML.content_CSS : ""}
+        }
+      </style>
+      <script>
+        (function(){
+          try {
+            const container = document.querySelector('#${contentId}');
+            const h6 = container.querySelector('h6');
+            const popup = container.querySelector('.${contentId}-hover-popup');
+            if (!h6 || !popup) {
+              console.warn(' Missing h6 or popup for', '${contentId}');
+              return;
+            }
+
+            h6.addEventListener('mouseenter', () => {
+              popup.style.display = 'block';
+            });
+            h6.addEventListener('mouseleave', () => {
+              setTimeout(() => {
+                if (!popup.matches(':hover')) popup.style.display = 'none';
+              }, 100);
+            });
+            popup.addEventListener('mouseleave', () => {
+              popup.style.display = 'none';
+            });
+
+          } catch (e) {
+            console.error('Hover popup error for ${contentId}:', e);
+          }
+        })();
+      </script>
+    `;
+          }
 
           html += `</div>\n`;
         });
+
+        // --- After HTML is added to DOM, add hover functionality ---
+        setTimeout(() => {
+          sg.content.on_line_content_configuration.content.forEach((c, i) => {
+            const contentId =
+              sg.content.on_line_content_configuration.content_id?.[i];
+            if (!contentId) return;
+
+            const h6 = document.querySelector(`#${contentId} h6`);
+            const popup = document.querySelector(
+              `#${contentId} .${contentId}-hover-popup`
+            );
+            if (h6 && popup) {
+              h6.addEventListener("mouseenter", () => {
+                popup.style.display = "block";
+              });
+              h6.addEventListener("mouseleave", () => {
+                setTimeout(() => {
+                  if (!popup.matches(":hover")) popup.style.display = "none";
+                }, 100);
+              });
+              popup.addEventListener("mouseleave", () => {
+                popup.style.display = "none";
+              });
+            }
+          });
+        }, 100);
 
         html += `</div>\n`;
       }
@@ -1172,12 +1575,8 @@ html += `</div>\n`;
     let css = `
 
   .${uniqueClassName} .icon-plus-name-box-for-one{
-    width:100px;
     height:26px;
-    display:flex;
-    align-items: center;
     justify-content: center;
-    position: absolute;
     top: 27px;
   }
   .${uniqueClassName} .icon-plus-name-box-enclosed{
@@ -1188,33 +1587,31 @@ html += `</div>\n`;
     justify-content: center;
   }
   .${uniqueClassName} .icon-plus-name-box-for-two{
-    width:100px;
     height:26px;
-    display:flex;
-    align-items: center;
     justify-content: space-evenly;
-    position: absolute;
     top: 27px;
   }
   .${uniqueClassName}  .icon-plus-name-box-for-three{
-    width:100px;
     height:52px;
-    display:flex;
     flex-direction:column;
-    align-items: center;
     justify-content: space-between;
-    position: absolute;
     top: 27px;
   }
   .${uniqueClassName}  .icon-plus-name-box-for-four{
-    width:100px;
     height:52px;
-    display:flex;
     flex-direction:column;
-    align-items: center;
     justify-content: space-between;
-    position: absolute;
     top: 27px;
+  }
+  .${uniqueClassName} .icon-plus-name-paragraph-hidden{
+    display:none;
+  }
+  .${uniqueClassName} .icon-plus-name-box{
+    width:100px;
+    position: absolute;
+    display:flex;
+    align-items: center;
+    z-index:0;
   }
 
 
@@ -1271,7 +1668,7 @@ html += `</div>\n`;
     margin-bottom: 10px;
     padding-bottom: 3px;
     position:relative;
-    z-index:10;
+    z-index:2;
   }
   .${uniqueClassName} .sub-groups {
     display: flex;
@@ -1309,34 +1706,9 @@ html += `</div>\n`;
     flex-direction: column;
     position: relative;
     ${direction ? "margin-top:150px;" : ""}
-    width: 100%;
-    z-index:10;
-  }
-    ${
-      sub_groups[0].content.top_down_arrow.display
-        ? `
-  .${uniqueClassName} .icon_plus_name::after{
-    content: "";
-    position: absolute;
-    width: 1px;
-    left: 50%;
-    ${direction ? `top:-144px;` : `top:${getFontSize(55, 58, 60)}px;`}
-    padding: 0;
-    margin: 0;
-    z-index: 1;
-    transform: translateX(-50%);
-  }
-  .${uniqueClassName} .icon_plus_name::before{
-    content: "";
-    position: absolute;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    left: 50%;
+    width: 100px;
     z-index:2;
-    transform: translateX(-50%);
-  }`
-        : ""
-    }
+  }
   .${uniqueClassName} .icon_plus_name span {
     position: absolute;
     top: -${getFontSize(12, 13, 14)}px;
@@ -1368,6 +1740,8 @@ html += `</div>\n`;
     text-overflow: ellipsis;
     vertical-align: middle;
     transition: 0.1s all;
+    position:relative;
+    z-index:3;
   }
 
   .${uniqueClassName} .above-line-content {
@@ -1397,7 +1771,9 @@ html += `</div>\n`;
   .${uniqueClassName} .subgroups-on-line-content h6{
     margin: 0;
     font-size:${getFontSize(9, 10, 11)}px;
-    padding: 10px 15px;
+    padding: 10px;
+    width:${getFontSize(77, 77, 77)}px;
+    text-align:center;
     position: relative;
     transition:0.1s all;
   }
@@ -1437,164 +1813,187 @@ html += `</div>\n`;
       );
 
       const inlineContentArray =
-        sg.content.on_line_content_configuration.bottom_shape_postion || [];
+        sg.content.on_line_content_configuration.bottom_Line_postion || [];
       const bottomPointArray =
         sg.content.on_line_content_configuration.bottom_point_position_onLine ||
         [];
       const bottomPointColorArray =
         sg.content.on_line_content_configuration?.bottom_point_color || [];
+      const onLineContentCount = [];
+      sg.content.logo_titles_config.forEach((ele, i) => {
+        onLineContentCount.push(ele.logo_title.length);
+      });
 
       inlineContentArray.forEach((level, inlineIdx) => {
-        const revAfterTop = "235px";
+        let ReverseRow = 1;
+        const ReverseRowContent = Number(onLineContentCount?.[inlineIdx]) || 0;
+
+        if (direction && ReverseRowContent === 2) {
+          ReverseRow = 2;
+        } else if (direction && ReverseRowContent === 3) {
+          ReverseRow = 3;
+        }
+
+        const revAfterTop =
+          ReverseRow === 2 ? "221px" : ReverseRow === 3 ? "259px" : "235px";
         const normAfterTop = "30px";
 
-        const levels = {
-          Level_2: [443, [264, 266, 266], 202, [233]],
-          Level_3: [462, [285, 287, 288], 222, [250, 250, 252]],
-          Level_4: [482, [305, 308, 308], 242, [270, 273, 273]],
-          Level_5: [502, [325, 328, 329], 262, [290, 293, 295]],
+        // Define top and height values for each level (reverse + normal)
+        const levelConfig = {
+          Level_1: {
+            revHeight: ReverseRow === 2 ? 196 : ReverseRow === 3 ? 160 : 182,
+            normHeight: [210, 212, 210],
+          },
+          Level_2: {
+            revHeight: ReverseRow === 2 ? 218 : ReverseRow === 3 ? 180 : 202,
+            normHeight: [233, 233, 233],
+          },
+          Level_3: {
+            revHeight: ReverseRow === 2 ? 236 : ReverseRow === 3 ? 200 : 222,
+            normHeight: [250, 252, 252],
+          },
+          Level_4: {
+            revHeight: ReverseRow === 2 ? 256 : ReverseRow === 3 ? 220 : 242,
+            normHeight: [270, 273, 272],
+          },
+          Level_5: {
+            revHeight: ReverseRow === 2 ? 276 : ReverseRow === 3 ? 240 : 262,
+            normHeight: [290, 293, 295],
+          },
         };
 
-        // 👇 new — define alternate afterTop / afterHeight values
-        const levelsWithBottomPoint = {
-          Level_1: [30, 386],
-          Level_2: [30, 408],
-          Level_3: [30, 428],
-          Level_4: [30, 450],
-          Level_5: [30, 466],
+        // Bottom-point overrides
+        const bottomOverrides = {
+          Level_1: { top: 30, height: 388 },
+          Level_2: { top: 30, height: 408 },
+          Level_3: { top: 30, height: 428 },
+          Level_4: { top: 30, height: 450 },
+          Level_5: { top: 30, height: 468 },
         };
 
-        const [revBefore, normArgs, revHeight, normArgs2] = levels[level] || [
-          422,
-          [245],
-          182,
-          [210],
-        ];
+        // Get current level config or fallback
+        const config = levelConfig[level] || levelConfig.Level_1;
 
-        let beforeTop = `${direction ? revBefore : getFontSize(...normArgs)}px`;
-        let afterTop = `${direction ? revAfterTop : normAfterTop}`;
+        // Choose base values based on direction
+
+        let afterTop = direction ? revAfterTop : normAfterTop;
         let afterHeight = `${
-          direction ? revHeight : getFontSize(...normArgs2)
+          direction ? config.revHeight : getFontSize(...config.normHeight)
         }px`;
 
-        if (direction && bottomPointArray?.[inlineIdx] === true) {
-          const overrideVals = levelsWithBottomPoint[level];
-          if (overrideVals) {
-            afterTop = `${overrideVals[0]}px`;
-            afterHeight = `${overrideVals[1]}px`;
+        // Apply bottom-point overrides (if needed)
+        if (direction && bottomPointArray?.[inlineIdx]) {
+          const override = bottomOverrides[level];
+          if (override) {
+            afterTop = `${override.top}px`;
+            afterHeight = `${override.height}px`;
           }
         }
 
         css += `
-      .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
-      .${uniqueClassName}-on-line-content${inlineIdx + 1}{
-      margin-top: ${
-        hasAboveLineInner
-          ? "4px"
-          : `${direction ? getFontSize(15, 23, 26) : "132"}px`
-      };
-    }
+.${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+.${uniqueClassName}-on-line-content${inlineIdx + 1}{
+  margin-top: ${
+    hasAboveLineInner
+      ? "4px"
+      : `${direction ? getFontSize(15, 23, 26) : "132"}px`
+  };
+}
 
-    .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
-      .${uniqueClassName}-on-line-content${inlineIdx + 1}::after {
-      content: "";
-      position: absolute;
-      height: ${afterHeight};
-      width: 1px !important;
-      top: ${afterTop};
-      left: 50%;
-      padding: 0;
-      margin: 0;
-      z-index: 1;
-      transform: translateX(-50%);
-    }
+.${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+.${uniqueClassName}-on-line-content${inlineIdx + 1}::after {
+  content: "";
+  position: absolute;
+  height: ${afterHeight};
+  width: 1px !important;
+  top: ${afterTop};
+  left: 50%;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+`;
 
-         .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
-      .${uniqueClassName}-on-line-content${inlineIdx + 1}::before {
-      content: "";
-      position: absolute;
-      width: 13px;
-      height: 11px;
-      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-      top: ${beforeTop};
-      left: 50%;
-      transform: translate(-50%, -50%) rotateZ(30deg);
-      z-index: 2;
-    }
-    `;
-
-        // ✅ Declare color outside so it's accessible in both cases
+        // compute color
         const bottomPointColor =
           resolveColor(bottomPointColorArray?.[inlineIdx], colors) ||
           "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
 
-        // ✅ bottom point logic (depends on direction)
-        if (direction) {
-          const showBottomPoint = bottomPointArray?.[inlineIdx] === true;
+        // whether this particular inline content wants the dot on-line (true) or on the icon (false)
+        const showBottomPoint = bottomPointArray?.[inlineIdx] === true;
 
-          if (showBottomPoint) {
-            // When true → show dot under h6
-            css += `
-          .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
-            .${uniqueClassName}-on-line-content${inlineIdx + 1} h6::after {
-            content: "";
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background:${bottomPointColor};
-            bottom: 0;
-            left: 50%;
-            transform: translate(-50%, 50%);
-            z-index: 4;
-          }
-        `;
-          } else {
-            // When false → show dot under paragraph
-            css += `
-          .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
-            .icon_plus_name .icon-plus-name-paragraph-${inlineIdx + 1}::after {
-            content: "";
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background:${bottomPointColor};
-            bottom: 0;
-            left: 50%;
-            transform: translate(-50%, 50%);
-            z-index: 4;
-          }
-        `;
-          }
+        let bottomPointPosition = 15;
+        if (onLineContentCount[inlineIdx] == 2) {
+          bottomPointPosition = 28;
+        } else if (onLineContentCount[inlineIdx] == 3) {
+          bottomPointPosition = -11;
+        } else if (onLineContentCount[inlineIdx] == 4) {
+          bottomPointPosition = 15;
         } else {
-          // direction == false → always show on h6
-          css += `
-        .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
-          .${uniqueClassName}-on-line-content${inlineIdx + 1} h6::after {
-          content: "";
-          position: absolute;
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          background:${bottomPointColor};
-          bottom: 0;
-          left: 50%;
-          transform: translate(-50%, 50%);
-          z-index: 4;
+          bottomPointPosition = 15;
         }
-      `;
+
+        if (direction && showBottomPoint) {
+          css += `
+
+
+.${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+  .${uniqueClassName}-on-line-content${inlineIdx + 1} h6::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: ${bottomPointColor};
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+`;
+        } else if (direction) {
+          css += `
+.${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+  .icon_plus_name:nth-of-type(${inlineIdx + 1}) .fa-user::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: ${bottomPointColor};
+  bottom: ${bottomPointPosition}px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 4;
+}
+`;
+        } else {
+          css += `
+      .${uniqueClassName}-sub-group-div${subGroupIdx + 1} 
+  .${uniqueClassName}-on-line-content${inlineIdx + 1} h6::after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: ${bottomPointColor};
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        z-index: 4;
+      }
+    `;
         }
       });
     });
 
     sub_groups.forEach((sg, idx) => {
-      const logoLength = sg.content?.logo_title?.filter(Boolean)?.length || 0;
+      const logoLength = sg.content?.logo_titles_config?.length || 0;
       const hasAboveLine = sg.content.above_line_content?.content?.some(
         (c) => c && c.trim() !== ""
       );
-      const dynamicWidth = getFontSize(110, 125, 140) + (logoLength - 1) * 60;
-
+      const dynamicWidth = logoLength * getFontSize(115, 125, 135);
       css += `
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
@@ -1669,7 +2068,6 @@ html += `</div>\n`;
 
       (onLine?.content_id || []).forEach((id, index) => {
         const stripeConfig = onLine.striping?.[index];
-        const showBorder = onLine.bordered?.[index];
         const bgColor =
           resolveColor(onLine.background_color?.[index], colors) || "#e6fffc";
         const fontColor = resolveColor(onLine.color?.[index], colors) || "#000";
@@ -1679,9 +2077,7 @@ html += `</div>\n`;
         const bottomLine =
           resolveColor(onLine.bottom_line_color?.[index], colors) ||
           "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
-        const bottomShape =
-          resolveColor(onLine.bottom_shape_color?.[index], colors) ||
-          "linear-gradient(to top, #1375af 5%, #45d0cb)";
+
         const shapeMap = {
           rectangle: "border-radius: 0 0 0 0;",
           default: "border-radius: 5px 5px 18px 5px;",
@@ -1727,12 +2123,6 @@ html += `</div>\n`;
         } #${id} h6::after {
         background: ${bottomPoint};
     }
-
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-          idx + 1
-        } #${id}::before {
-    background: ${bottomShape};
-  }
 
   .${uniqueClassName} .${uniqueClassName}-sub-group-div${
           idx + 1
@@ -1795,124 +2185,177 @@ html += `</div>\n`;
     });
 
     // Handling Colors Dynamically
-// Handling Colors Dynamically
-sub_groups.forEach((sg, subGroupIdx) => {
-  const styleConfigs = [
-    {
-      array: sg.content.logo_heading_color || [],
-      classPrefix: "span-",
-      selector: ".icon_plus_name",
-      styles: (color) => {
-        const resolved =
-          resolveColor(color, colors) ||
-          "linear-gradient(to right top, #a334c8 20%, #f65467)";
-        return `
+    sub_groups.forEach((sg, subGroupIdx) => {
+      const styleConfigs = [
+        {
+          array: sg.content.logo_heading_color || [],
+          classPrefix: "span-",
+          selector: ".icon_plus_name",
+          styles: (color) => {
+            const resolved =
+              resolveColor(color, colors) ||
+              "linear-gradient(to right top, #a334c8 20%, #f65467)";
+            return `
         background: ${resolved};
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       `;
-      },
-    },
-    {
-      array: sg.content.logo_heading_border_color || [],
-      classPrefix: "fa-user-",
-      selector: ".icon_plus_name",
-      styles: (color, idx) => {
-        const resolvedBorder = resolveColor(color, colors) || "#a334c8";
-        const resolvedBg =
-          resolveColor((sg.content.logo_color || [])[idx], colors) ||
-          "linear-gradient(to right top, #a334c8 20%, #f65467)";
-        return `
+          },
+        },
+        {
+          array: sg.content.logo_heading_border_color || [],
+          classPrefix: "fa-user-",
+          selector: ".icon_plus_name",
+          styles: (color, idx) => {
+            const resolvedBorder = resolveColor(color, colors) || "#a334c8";
+            const resolvedBg =
+              resolveColor((sg.content.logo_color || [])[idx], colors) ||
+              "linear-gradient(to right top, #a334c8 20%, #f65467)";
+            return `
         border: 2px solid ${resolvedBorder};
         background: ${resolvedBg};
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       `;
-      },
-    },
-    {
-      array: sg.content.logo_title_color || [],
-      classPrefix: "icon-plus-name-paragraph-",
-      selector: ".icon_plus_name",
-      styles: (color) => {
-        const resolved =
-          resolveColor(color, colors) ||
-          "linear-gradient(to right top, #a334c8 20%, #f65467)";
-        return `background: ${resolved};`;
-      },
-    },
-  ];
+          },
+        },
+        {
+          array: sg.content.logo_title_color || [],
+          classPrefix: "icon-plus-name-paragraph-",
+          selector: ".icon_plus_name",
+          styles: (color) => {
+            const resolved =
+              resolveColor(color, colors) ||
+              "linear-gradient(to right top, #a334c8 20%, #f65467)";
+            return `background: ${resolved};`;
+          },
+        },
+      ];
 
-  // 🎨 Existing color config handling
-  styleConfigs.forEach(({ array, classPrefix, selector, styles }) => {
-    array.forEach((color, inlineIdx) => {
-      css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        subGroupIdx + 1
-      } ${selector} .${classPrefix}${inlineIdx + 1} {${styles(
-        color,
-        inlineIdx
-      )}
+      // 🎨 Existing color config handling
+      styleConfigs.forEach(({ array, classPrefix, selector, styles }) => {
+        array.forEach((color, inlineIdx) => {
+          css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+            subGroupIdx + 1
+          } ${selector} .${classPrefix}${inlineIdx + 1} {${styles(
+            color,
+            inlineIdx
+          )}
 }\n`;
-    });
-  });
+        });
+      });
 
-  // 🆕 New handling for nested logo_titles_config colors
-  (sg.content.logo_titles_config || []).forEach((config, logoIdx) => {
-    if (!config || !Array.isArray(config.logo_title)) return;
+      // 🆕 New handling for nested logo_titles_config colors
+      (sg.content.logo_titles_config || []).forEach((config, logoIdx) => {
+        if (!config || !Array.isArray(config.logo_title)) return;
 
-    const bgColors = config.logo_title_background_color || [];
-    const textColors = config.logo_title_color || [];
+        const bgColors = config.logo_title_background_color || [];
+        const textColors = config.logo_title_color || [];
+        const bgBorder = config.logo_title_border || [];
+        const bgBorderColor = config.logo_title_border_color || [];
 
-    bgColors.forEach((bgColor, titleIdx) => {
-      const resolvedBg =
-        resolveColor(bgColor, colors) ||
-        "linear-gradient(to right top, #a334c8 20%, #f65467)";
-      const resolvedText =
-        resolveColor(textColors[titleIdx], colors) || "white";
+        bgColors.forEach((bgColor, titleIdx) => {
+          const resolvedBg =
+            resolveColor(bgColor, colors) ||
+            "linear-gradient(to right top, #a334c8 20%, #f65467)";
+          const resolvedText =
+            resolveColor(textColors[titleIdx], colors) || "white";
 
-      css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        subGroupIdx + 1
-      } .icon_plus_name_${logoIdx + 1} .icon-plus-name-paragraph-${
-        titleIdx + 1
-      } {
+          const resolvedBorderColor =
+            resolveColor(bgBorderColor[titleIdx], colors) || "black";
+
+          css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
+            subGroupIdx + 1
+          } .icon_plus_name_${logoIdx + 1} .icon-plus-name-paragraph-${
+            titleIdx + 1
+          } {
         background: ${resolvedBg};
         color: ${resolvedText};
         -webkit-text-fill-color: ${resolvedText};
+        min-width:30px;
+        ${bgBorder[titleIdx] ? `border:1px solid ${resolvedBorderColor}` : ""}
       }\n`;
-    });
-  });
+        });
+      });
 
-  // 🔻 Keep your existing top_down_arrow logic intact
-  if (
-    sg.content.top_down_arrow?.display === "true" ||
-    sg.content.top_down_arrow?.display === true
-  ) {
-    (sg.content.top_down_arrow.line_color || []).forEach((color, idx) => {
-      css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        subGroupIdx + 1
-      } .icon_plus_name_${idx + 1}::after {
-  background: ${
-    resolveColor(color, colors) ||
-    "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)"
-  };
-}\n`;
-    });
+      // Keep your existing top_down_arrow logic intact
+      sub_groups.forEach((sg, subGroupIdx) => {
+        const aboveLineContent = sg.content?.above_line_content || null;
+        const hasAboveLine = !!(
+          aboveLineContent &&
+          aboveLineContent.content &&
+          aboveLineContent.content.length
+        );
+        const logoTitleCount = [];
+        sg.content.logo_titles_config.forEach((ele) => {
+          logoTitleCount.push(ele.logo_title.length);
+        });
 
-    (sg.content.top_down_arrow.arrow_color || []).forEach((color, idx) => {
-      css += `.${uniqueClassName} .${uniqueClassName}-sub-group-div${
-        subGroupIdx + 1
-      } .icon_plus_name_${idx + 1}::before {
-        ${(() => {
-          const side = direction ? "bottom" : "top";
-          return `border-${side}: 7px solid ${
-            resolveColor(color, colors) || "#a334c8"
-          };`;
-        })()}
-}\n`;
-    });
+        sg.content.logo_titles_config.forEach((config, i) => {
+          const arrowCfg = config.top_down_arrow || {};
+          if (!arrowCfg.display) return;
+
+          const lineColor =
+            resolveColor(arrowCfg.line_color, colors) ||
+            "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)";
+          const arrowColor =
+            resolveColor(arrowCfg.arrow_color, colors) || "#a334c8";
+
+          const lineHeight = hasAboveLine ? 138 : direction ? 138 : 152;
+          const arrowTop = hasAboveLine
+            ? getFontSize(148, 148, 148)
+            : getFontSize(162, 162, 162);
+
+          let linePosition = 53;
+          if (logoTitleCount[i] == 2 || logoTitleCount[i] == 1) {
+            linePosition = 53;
+          } else if (logoTitleCount[i] == 3 || logoTitleCount[i] == 4) {
+            linePosition = 78;
+          }
+
+          let arrowPosition = 190;
+          if (logoTitleCount[i] == 2 || logoTitleCount[i] == 1) {
+            arrowPosition = 190;
+          } else if (logoTitleCount[i] == 3 || logoTitleCount[i] == 4) {
+            arrowPosition = 214;
+          }
+
+          css += `
+.${uniqueClassName} .${uniqueClassName}-sub-group-div${subGroupIdx + 1}
+  .icon_plus_name_${i + 1} .icon-plus-name-box::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      left: 50%;
+      ${
+        direction
+          ? `bottom: ${linePosition}px;`
+          : `top: ${getFontSize(11, 11, 11)}px;`
+      }
+      height: ${lineHeight}px;
+      padding: 0;
+      margin: 0;
+      z-index: -1 !important;
+      transform: translateX(-50%);
+      background: ${lineColor};
   }
-});
 
+.${uniqueClassName} .${uniqueClassName}-sub-group-div${subGroupIdx + 1}
+  .icon_plus_name_${i + 1} .icon-plus-name-box::before {
+      content: "";
+      position: absolute;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      left: 50%;
+      ${direction ? `bottom:${arrowPosition}px;` : `top: ${arrowTop}px;`}
+      z-index: -1 !important;
+      transform: translateX(-50%);
+      border-${direction ? "bottom" : "top"}: 7px solid ${arrowColor};
+  }
+`;
+        });
+      });
+    });
 
     return { html, css };
   }
@@ -1966,9 +2409,7 @@ body {
   border: 1px solid ${JSON_Data.Page_Configuration.border_color || "#000000"};
   width:1520px;
   height:710px;
-  background-color: ${
-    JSON_Data.Page_Configuration.background_color || "#f6fcfc"
-  };
+  background: ${JSON_Data.Page_Configuration.background_color || "#f6fcfc"};
   position: relative;
   display: flex;
   overflow-x:${
@@ -2040,19 +2481,6 @@ Object.keys(JSON_Data.footer.label_width).forEach((key, idx) => {
   }) { width: ${widthValue}%; }\n`;
 });
 
-const levelToPixel = (levelString) => {
-  const defaultLevel = 10;
-  const totalLevels = 20;
-  const maxOffset = getFontSize(140, 150, 160);
-  let level = parseInt(levelString?.replace("Level_", ""), 10);
-  if (isNaN(level)) level = defaultLevel;
-  level = Math.max(0, Math.min(totalLevels, level));
-  const offsetFromCenter = level - defaultLevel;
-  const pixelValue = (offsetFromCenter / defaultLevel) * maxOffset;
-
-  return `${pixelValue}px`;
-};
-
 // Add left positions for each h4
 Object.keys(JSON_Data.footer.footer_label_position_left).forEach((key, idx) => {
   const levelString = JSON_Data.footer.footer_label_position_left[key];
@@ -2093,24 +2521,99 @@ const styleTag = document.createElement("style");
 styleTag.textContent = Final_CSS;
 document.head.appendChild(styleTag);
 
+function applyFontConfig(JSON_Data) {
+  const { fontConfig } = JSON_Data || {};
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox || !fontConfig) return;
+
+  try {
+    //  Handle CDN font loading
+    if (fontConfig.fontFamilyCDN) {
+      const cdnHTML = fontConfig.fontFamilyCDN.trim();
+
+      // Case 1: Full <link> tag string (escaped or raw)
+      if (cdnHTML.startsWith("<")) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(cdnHTML, "text/html");
+
+        doc.querySelectorAll("link").forEach((link) => {
+          const href = link.getAttribute("href");
+          if (href && !document.querySelector(`link[href="${href}"]`)) {
+            const newLink = document.createElement("link");
+            newLink.rel = link.rel || "stylesheet";
+            newLink.href = href;
+            document.head.appendChild(newLink);
+          }
+        });
+      }
+
+      // Case 2: Plain Google Fonts URL string
+      else if (cdnHTML.startsWith("http")) {
+        if (!document.querySelector(`link[href="${cdnHTML}"]`)) {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = cdnHTML;
+          document.head.appendChild(link);
+        }
+      }
+    }
+
+    //  Apply font-family only to PPT-Box
+    if (fontConfig.fontFamily) {
+      // Normalize to array (Appian may pass single or multiple)
+      const fontFamilies = Array.isArray(fontConfig.fontFamily)
+        ? fontConfig.fontFamily
+        : [fontConfig.fontFamily];
+
+      // Quote fonts with spaces and join into CSS string
+      const familyString = fontFamilies
+        .map((f) => (f.includes(" ") ? `"${f}"` : f))
+        .join(", ");
+
+      // Remove any prior style tag
+      const existing = document.querySelector(
+        "style[data-font-family='ppt-font']"
+      );
+      if (existing) existing.remove();
+
+      // Create a new style tag scoped to PPT-Box
+      const styleTag = document.createElement("style");
+      styleTag.setAttribute("data-font-family", "ppt-font");
+      styleTag.textContent = `
+#PPT-Box,
+#PPT-Box *:not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands) {
+  font-family: ${familyString};
+  font-weight: 400;
+  line-height: 1;
+}
+      `;
+      document.head.appendChild(styleTag);
+    }
+  } catch (err) {
+    console.error("Error applying font configuration:", err);
+  }
+}
+
+applyFontConfig(JSON_Data);
+
 //  Adjust Mid-Line Width Dynamically
 function adjustMidLineWidth(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
   const midLine = pptBox?.querySelector(".mid-Line");
   if (!pptBox || !midLine) return;
 
+  // 🧩 Find all logo title containers by id prefix
   const allChildren = pptBox.querySelectorAll("*[id^='logo_title_id']");
   const pptRect = pptBox.getBoundingClientRect();
 
   let maxRight = 0;
   let lastVisibleId = null;
 
-  // 1. Track farthest visible element only
+  // 🔍 Step 1: Track farthest visible logo_title_id element within PPT box
   allChildren.forEach((el) => {
     const rect = el.getBoundingClientRect();
-
-    // Check visibility within PPT box (not full screen)
-    const isVisible = rect.right > pptRect.left && rect.left < pptRect.right;
+    const isVisible =
+      rect.right > pptRect.left && rect.left < pptRect.right && rect.width > 0;
     if (isVisible) {
       const relativeRight = rect.right - pptRect.left;
       if (relativeRight > maxRight) {
@@ -2120,34 +2623,55 @@ function adjustMidLineWidth(JSON_Data) {
     }
   });
 
-  // 2. Determine last parent's logos
+  // 🧩 Step 2: Find last valid logo_titles_config entry with a real logo_title
+  let lastParentConfig = null;
+  try {
+    const configs =
+      JSON_Data.body?.[JSON_Data.body.length - 1]?.sub_groups?.[
+        JSON_Data.body?.[JSON_Data.body.length - 1]?.sub_groups?.length - 1
+      ]?.content?.logo_titles_config || [];
+
+    // Get last config that actually has logo_title array with non-empty entries
+    lastParentConfig = configs
+      .slice()
+      .reverse()
+      .find(
+        (cfg) =>
+          cfg &&
+          Array.isArray(cfg.logo_title) &&
+          cfg.logo_title.some((t) => t && t.trim() !== "")
+      );
+  } catch (err) {
+    console.warn("Could not extract lastParentConfig:", err);
+  }
+
   let logoCount = 0;
   let lastParentId = null;
-  try {
-    const array = JSON_Data.body;
-    const lastSubGroups = array[array.length - 1].sub_groups;
-    const lastContent = lastSubGroups[lastSubGroups.length - 1]?.content;
-    const lastLogoIds = lastContent?.logo_id_names || [];
-    logoCount = lastLogoIds.length;
 
-    if (lastLogoIds.length > 0) {
-      lastParentId = lastLogoIds[lastLogoIds.length - 1]; // last element's id
-    }
-  } catch (err) {
-    console.warn("Could not determine logo count from JSON_Data:", err);
-  }
+  const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
+  const configs = lastSubGroup?.content?.logo_titles_config || [];
 
-  // 3. Decide offset base (by logo count)
-  let offset = getFontSize(22, 23, 24);
-  if (logoCount === 1) offset = getFontSize(42, 46, 53);
-  else if (logoCount === 2) offset = getFontSize(26, 29, 32);
+  const validTitles = configs.flatMap((cfg) =>
+    (cfg.logo_title || []).filter((t) => t && t.trim() !== "")
+  );
+  logoCount = validTitles.length;
 
-  // 4. Add *extra* 20px if last parent is NOT visible
+  // last id from last config
+  const lastConfigWithId = configs.filter((c) => c.logo_id_name).at(-1);
+  lastParentId = lastConfigWithId?.logo_id_name || null;
+
+  // ⚙️ Step 4: Decide base offset based on logo count
+  let offset = getFontSize(24, 23, 24);
+  if (logoCount === 1) offset = getFontSize(52, 46, 53);
+  else if (logoCount === 2) offset = getFontSize(24, 29, 32);
+  else if (logoCount >= 3) offset = getFontSize(16, 24, 26);
+
+  // 🧮 Step 5: Add extra if last logo_title_id not visible
   if (lastParentId && lastVisibleId !== lastParentId) {
-    offset += getFontSize(35, 40, 45); // hardcoded extra width
+    offset += getFontSize(35, 40, 45);
   }
 
-  // 5. Apply width logic
+  // ⚡ Step 6: Calculate and apply width
   const midLineWidthSetting = (
     JSON_Data.mid_line_config?.width || "auto"
   ).toLowerCase();
@@ -2174,11 +2698,11 @@ function adjustFooterWidth(JSON_Data) {
   let maxRight = 0;
   let lastVisibleId = null;
 
-  // 1. Track farthest visible element only
+  // 1️⃣ Find farthest visible element
   allChildren.forEach((el) => {
     const rect = el.getBoundingClientRect();
-
     const isVisible = rect.right > pptRect.left && rect.left < pptRect.right;
+
     if (isVisible) {
       const relativeRight = rect.right - pptRect.left;
       if (relativeRight > maxRight) {
@@ -2188,40 +2712,42 @@ function adjustFooterWidth(JSON_Data) {
     }
   });
 
-  // 2. Determine last parent's logos
+  // 2️⃣ Extract logo IDs from the last subgroup’s logo_titles_config
   let logoCount = 0;
   let lastParentId = null;
-  try {
-    const array = JSON_Data.body;
-    const lastSubGroups = array[array.length - 1].sub_groups;
-    const lastContent = lastSubGroups[lastSubGroups.length - 1]?.content;
-    const lastLogoIds = lastContent?.logo_id_names || [];
-    logoCount = lastLogoIds.length;
 
-    if (lastLogoIds.length > 0) {
-      lastParentId = lastLogoIds[lastLogoIds.length - 1]; // last element's id
-    }
+  try {
+    const lastBody = JSON_Data.body?.[JSON_Data.body.length - 1];
+    const lastSubGroup = lastBody?.sub_groups?.[lastBody.sub_groups.length - 1];
+
+    const configs = lastSubGroup?.content?.logo_titles_config || [];
+    const logoIds = configs
+      .map((cfg) => cfg.logo_id_name)
+      .filter((id) => id && id.trim() !== "");
+
+    logoCount = logoIds.length;
+    lastParentId = logoIds[logoIds.length - 1] || null;
   } catch (err) {
     console.warn("Could not determine logo count from JSON_Data:", err);
   }
 
-  // 3. Decide base padding by logo count
-  let padding_border_width_add = getFontSize(20, 23, 26); // default >2
+  // 3️⃣ Base padding adjustment by logo count
+  let padding_border_width_add = getFontSize(20, 23, 26); // default
   if (logoCount === 1) padding_border_width_add = getFontSize(40, 43, 46);
   else if (logoCount === 2) padding_border_width_add = getFontSize(24, 26, 28);
 
-  // 4. Add extra 20px if last parent is NOT visible
+  // 4️⃣ Add extra offset if last ID not visible
   if (lastParentId && lastVisibleId !== lastParentId) {
     padding_border_width_add += 48;
   }
 
-  // 5. Apply width logic
+  // 5️⃣ Apply footer width logic
   const footerWidthSetting = (
     JSON_Data.footer?.footer_width || "auto"
   ).toLowerCase();
 
   if (footerWidthSetting === "default") {
-    footer.style.width = `100%`;
+    footer.style.width = "100%";
   } else {
     const dynamicWidth = maxRight + padding_border_width_add;
     footer.style.width = `${dynamicWidth}px`;
@@ -2414,7 +2940,7 @@ function drawBottomTimelineSeries(JSON_Data) {
         const baseTopH = 160;
         const increment = 5;
         const rawTopH = baseTopH + (levelNum - 1) * increment;
-        const topH = Math.min(Math.max(rawTopH, 30), 210);
+        const topH = Math.min(Math.max(rawTopH, 30), direction ? 280 : 210);
 
         const startRect = startEl.getBoundingClientRect();
         const endRect = endEl.getBoundingClientRect();
@@ -2425,7 +2951,7 @@ function drawBottomTimelineSeries(JSON_Data) {
         const endCenterX = endRect.left - pptRect.left + endRect.width / 2;
         const width2 = Math.abs(endCenterX - startCenterX);
         const left = startRect.left - pptRect.left + startRect.width / 2;
-        const top = startRect.top - pptRect.top;
+        const top = startRect.top - pptRect.top + (direction ? 105 : 0);
 
         const bg =
           resolveColor(timeline.background_color, JSON_Data.colors) ||
@@ -2573,7 +3099,7 @@ function drawConnectingRectangle(JSON_Data) {
           parseInt((connection.height || "Level_1").split("_")[1]) || 1;
         const height = Math.min(
           Math.max(20 + (heightLevelNum - 1) * 5, 10),
-          95
+          direction ? 140 : 95
         );
 
         const borderLevelNum =
@@ -2909,18 +3435,14 @@ function drawConnectingCircle(JSON_Data) {
                 (c) => c || "black"
               );
 
-          // iconSize may be single Level_N or array; follow your sizing logic
           const iconSizeArr = Array.isArray(cfg.iconSize)
             ? cfg.iconSize
             : [cfg.iconSize, cfg.iconSize, cfg.iconSize];
 
-          // circle geometry for icon placement:
           const D = diameter;
-          const cx = D / 2; // center x (relative to container left)
-          const cy = D / 2; // center y (relative to container top: note container height == cy)
-          const ringRadius = Math.max(6, cx - borderSize / 2); // place icon center on ring midline
-
-          // angles (degrees) for [top, left-up, right-up]
+          const cx = D / 2;
+          const cy = D / 2;
+          const ringRadius = Math.max(6, cx - borderSize / 2);
           const anglesDeg = [-90, -155, -25];
 
           for (let iconIdx = 0; iconIdx < 3; iconIdx++) {
@@ -2968,6 +3490,143 @@ function drawConnectingCircle(JSON_Data) {
 }
 
 drawConnectingCircle(JSON_Data);
+
+function connectingBottomText(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("connectingBottomText: PPT-Box not found.");
+    return;
+  }
+
+  const clamp = (v, a, b) => Math.min(Math.max(v, a), b);
+
+  // parses "Level_X" -> integer X (fallback 1)
+  const parseLevel = (levelStr, max = 10) => {
+    if (!levelStr) return 1;
+    const m = String(levelStr).match(/Level[_\- ]?(\d+)/i);
+    const n = m ? parseInt(m[1], 10) : 1;
+    return clamp(n || 1, 1, max);
+  };
+
+  JSON_Data.body?.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, subIdx) => {
+      const bottomArr = sg.content?.connectingBottomText;
+      if (!Array.isArray(bottomArr) || bottomArr.length === 0) {
+        const oldEls = pptBox.querySelectorAll(
+          `[class*="connection-BottomText-sec${sectionIdx}-sub${subIdx}-"]`
+        );
+        oldEls.forEach((el) => {
+          const styleTag = document.querySelector(
+            `style[data-conn="${el.className}"]`
+          );
+          if (styleTag) styleTag.remove();
+          el.remove();
+        });
+        return;
+      }
+
+      bottomArr.forEach((item, i) => {
+        const className = `connection-BottomText-sec${sectionIdx}-sub${subIdx}-${i}`;
+
+        // cleanup old
+        const old = pptBox.querySelector(`.${className}`);
+        const oldStyle = document.querySelector(
+          `style[data-conn="${className}"]`
+        );
+        if (old) old.remove();
+        if (oldStyle) oldStyle.remove();
+
+        const targetEl = document.getElementById(item.target_On_Line_Content);
+        if (!targetEl || !isVisible(targetEl)) return;
+
+        const pptRect = pptBox.getBoundingClientRect();
+        const targetRect = targetEl.getBoundingClientRect();
+        const level = parseLevel(item.height, 10);
+        const baseHeight = 15;
+        const rectHeight = baseHeight + (level - 1) * 5;
+        const rectWidth = 7;
+
+        const borderColor =
+          resolveColor(item.borderColor, JSON_Data.colors) || "#000";
+        const textColor =
+          resolveColor(item.textColor, JSON_Data.colors) || "#000";
+
+        const outset = 8;
+        const posRaw = String(item.position || "start").toLowerCase();
+        const elemLeft = targetRect.left - pptRect.left;
+        const elemRight = targetRect.left - pptRect.left + targetRect.width;
+        const elemCenter = elemLeft + targetRect.width / 2;
+
+        let leftPx;
+        if (posRaw === "middle") {
+          leftPx = elemCenter - rectWidth / 2 + 2;
+        } else if (posRaw === "end") {
+          leftPx = elemRight - rectWidth - outset;
+        } else {
+          leftPx = elemLeft + outset;
+        }
+
+        const topPx = targetRect.bottom - pptRect.top - 1;
+
+        const styleEl = document.createElement("style");
+        styleEl.setAttribute("data-conn", className);
+        styleEl.textContent = `
+          .${className} {
+            position: absolute;
+            left: ${Math.round(leftPx)}px;
+            top: ${Math.round(topPx)}px;
+            width: ${rectWidth}px;
+            height: ${rectHeight}px;
+            border-left:1px solid ${borderColor};
+            border-bottom:1px solid ${borderColor};
+            border-bottom-left-radius:10px;
+            box-sizing: border-box;
+            z-index: 3;
+            pointer-events: none;
+            display: block;
+          }
+          .${className} .bt-text {
+            position: absolute;
+            left: calc(100% + 3px);
+            bottom: 0px;
+            transform: translateY(50%);
+            white-space: nowrap;
+            pointer-events: auto;
+            font-family: inherit;
+            font-size: ${getFontSize(10, 11, 12)}px;
+            color: ${textColor};
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+          }
+        `;
+        document.head.appendChild(styleEl);
+
+        const container = document.createElement("div");
+        container.className = className;
+
+        const textWrap = document.createElement("div");
+        textWrap.className = "bt-text";
+        const pTitle = document.createElement("p");
+        pTitle.style.margin = "0";
+        pTitle.style.padding = "0";
+        pTitle.textContent = limitText(item.text, 15) || "";
+        textWrap.appendChild(pTitle);
+
+        container.appendChild(textWrap);
+
+        // tooltip on hover (only if text or detail exists)
+        container.title = item.textDetail || item.text || "";
+
+        pptBox.appendChild(container);
+      });
+    });
+  });
+}
+
+connectingBottomText(JSON_Data);
 
 function drawConnectingTextLine(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
@@ -3101,7 +3760,7 @@ function drawConnectingTextLine(JSON_Data) {
             left: ${leftAbs - pptRect.left}px;
             width: ${distance}px;
             top: ${topOffset}px;
-            z-index: 3;
+            z-index: 2;
             box-sizing: border-box;
             display: flex;
             align-items: center;
@@ -3247,6 +3906,397 @@ function drawConnectingTextLine(JSON_Data) {
 
 drawConnectingTextLine(JSON_Data);
 
+function drawMultiplePolygons(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("drawMultiplePolygons: PPT-Box not found.");
+    return;
+  }
+
+  // Allowed levels
+  const allowedLevels = ["Level_1", "Level_2", "Level_3", "Level_4", "Level_5"];
+  const compartmentTop = 611;
+  const compartmentHeight = 100;
+  const compartmentSize = 20;
+  const SHAPE_W = 13;
+  const SHAPE_H = 11;
+
+  // iterate body -> sub_groups
+  (JSON_Data.body || []).forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, subIdx) => {
+      const cfg = sg.content?.on_line_content_configuration;
+      if (
+        !cfg ||
+        !Array.isArray(cfg.bottom_shape_positions) ||
+        cfg.bottom_shape_positions.length === 0
+      ) {
+        // remove old containers
+        const oldEls = pptBox.querySelectorAll(
+          `[class*="connection-Polygons-sec${sectionIdx}-sub${subIdx}-grp"]`
+        );
+        oldEls.forEach((el) => {
+          const styleTag = document.querySelector(
+            `style[data-conn="${el.className}"]`
+          );
+          if (styleTag) styleTag.remove();
+          el.remove();
+        });
+        return;
+      }
+
+      const contentIds = Array.isArray(cfg.content_id) ? cfg.content_id : [];
+
+      cfg.bottom_shape_positions.forEach((group, groupIdx) => {
+        // Determine target element
+        let targetId;
+        if (contentIds.length === cfg.bottom_shape_positions.length) {
+          targetId = contentIds[groupIdx];
+        } else {
+          targetId =
+            contentIds[groupIdx] || contentIds[0] || "on_line_content_1";
+        }
+
+        const subGroupContainer =
+          document.getElementById(`sub_group_${sectionIdx}_${subIdx}`) ||
+          sg.el ||
+          null;
+
+        // --- NEW: if sub-group exists but is not visible, remove any previously rendered container for this group and skip ---
+        const className = `connection-Polygons-sec${sectionIdx}-sub${subIdx}-grp${groupIdx}`;
+        if (subGroupContainer && !isVisible(subGroupContainer)) {
+          const old = pptBox.querySelector(`.${className}`);
+          if (old) old.remove();
+          const oldStyle = document.querySelector(
+            `style[data-conn="${className}"]`
+          );
+          if (oldStyle) oldStyle.remove();
+          return;
+        }
+        // --- end NEW ---
+
+        const targetEl = document.getElementById(targetId);
+
+        // --- NEW: If target missing or not visible, ensure cleanup of previous container/style then skip ---
+        if (!targetEl || !isVisible(targetEl)) {
+          const old = pptBox.querySelector(`.${className}`);
+          if (old) old.remove();
+          const oldStyle = document.querySelector(
+            `style[data-conn="${className}"]`
+          );
+          if (oldStyle) oldStyle.remove();
+          return;
+        }
+        // --- end NEW ---
+
+        const pptRect = pptBox.getBoundingClientRect();
+        const targetRect = targetEl.getBoundingClientRect();
+        const midpointX = targetRect.left + targetRect.width / 2;
+        const leftRelativeToPPT = Math.round(midpointX - pptRect.left);
+
+        // Unique container class
+        const prev = pptBox.querySelector(`.${className}`);
+        if (prev) prev.remove();
+        const prevStyle = document.querySelector(
+          `style[data-conn="${className}"]`
+        );
+        if (prevStyle) prevStyle.remove();
+
+        let rawLevels = Array.isArray(group.levels) ? group.levels : [];
+        let levelsArr = rawLevels
+          .map((lv) => lv.trim())
+          .filter(
+            (lv, i, self) =>
+              allowedLevels.includes(lv) && self.indexOf(lv) === i
+          );
+
+        if (!levelsArr.length) return;
+
+        // Style
+        const styleEl = document.createElement("style");
+        styleEl.setAttribute("data-conn", className);
+        styleEl.textContent = `
+.${className} {
+  position: absolute;
+  left: ${leftRelativeToPPT - Math.round(SHAPE_W / 2)}px;
+  top: ${compartmentTop}px;
+  width: ${SHAPE_W}px;
+  height: ${compartmentHeight}px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.${className} .polygon-inner {
+  width: ${SHAPE_W}px;
+  height: ${SHAPE_H}px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transform: translateY(0) rotateZ(30deg);
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 0px;
+  visibility: hidden;
+  position: absolute;
+}
+`;
+        document.head.appendChild(styleEl);
+
+        // container
+        const container = document.createElement("div");
+        container.className = className;
+
+        // Create 5 compartments
+        for (let i = 1; i <= 5; i++) {
+          const inner = document.createElement("div");
+          inner.className = "polygon-inner";
+          inner.style.top = `${
+            (i - 1) * compartmentSize + (compartmentSize - SHAPE_H) / 2
+          }px`; // centered in compartment
+
+          // If JSON has this level, make it visible and set color
+          const levelName = `Level_${i}`;
+          if (levelsArr.includes(levelName)) {
+            inner.style.visibility = "visible";
+
+            // resolve color
+            let colorVal = null;
+            if (Array.isArray(group.color) && group.color[i - 1])
+              colorVal = group.color[i - 1];
+            else if (Array.isArray(group.color) && group.color[0])
+              colorVal = group.color[0];
+            else if (group.color) colorVal = group.color;
+
+            let resolvedColor = null;
+            try {
+              if (typeof resolveColor === "function" && colorVal)
+                resolvedColor = resolveColor(colorVal, JSON_Data.colors);
+            } catch (e) {
+              resolvedColor = null;
+            }
+            inner.style.background = resolvedColor || colorVal || "#dcdcdc";
+          }
+
+          container.appendChild(inner);
+        }
+
+        pptBox.appendChild(container);
+      });
+    });
+  });
+}
+
+drawMultiplePolygons(JSON_Data);
+
+function drawLogoOnMidLine(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("drawLogoOnMidLine: PPT-Box not found.");
+    return;
+  }
+
+  const cfg = JSON_Data?.mid_line_config;
+  if (!cfg || !Array.isArray(cfg.logo_config)) {
+    // nothing to draw (graceful)
+    // remove any lingering midline logos from previous renders
+    const oldAll = pptBox.querySelectorAll(`[class*="midline-logo-"]`);
+    oldAll.forEach((el) => {
+      const styleTag = document.querySelector(
+        `style[data-conn="${el.className}"]`
+      );
+      if (styleTag) styleTag.remove();
+      el.remove();
+    });
+    return;
+  }
+
+  // helper: parse Level_N -> int
+  const parseLevel = (levelStr, max = 3) => {
+    if (!levelStr) return 1;
+    const m = String(levelStr).match(/Level[_\- ]?(\d+)/i);
+    const n = m ? parseInt(m[1], 10) : 1;
+    return Math.min(Math.max(n || 1, 1), max);
+  };
+
+  // font size map for Level 1..3 (adjust pixels if you want)
+  const fontSizeFromLevel = (lvl) => {
+    const map = { 1: 12, 2: 14, 3: 16 };
+    return map[lvl] || map[1];
+  };
+
+  // cleanup any previous midline logos/styles
+  const prev = pptBox.querySelectorAll(`[class*="midline-logo-"]`);
+  prev.forEach((el) => {
+    const styleTag = document.querySelector(
+      `style[data-conn="${el.className}"]`
+    );
+    if (styleTag) styleTag.remove();
+    el.remove();
+  });
+
+  // config-level shared values
+  const globalColor =
+    resolveColor(cfg.color, JSON_Data.colors) || cfg.color || "#000";
+
+  cfg.logo_config.forEach((logoCfg, idx) => {
+    // skip if it's empty or not an object
+    if (
+      !logoCfg ||
+      typeof logoCfg !== "object" ||
+      Object.keys(logoCfg).length === 0
+    ) {
+      return;
+    }
+
+    // type must exist
+    const typeRaw = String(logoCfg.type || "").toLowerCase();
+    if (!typeRaw) return;
+
+    const className = `midline-logo-sec-${idx}`;
+
+    // create and remove old if present (safety)
+    const oldEl = pptBox.querySelector(`.${className}`);
+    const oldStyle = document.querySelector(`style[data-conn="${className}"]`);
+    if (oldEl) oldEl.remove();
+    if (oldStyle) oldStyle.remove();
+
+    // determine endpoints depending on type
+    let startEl = null;
+    let endEl = null;
+    if (typeRaw === "between") {
+      if (!logoCfg.on_line_id_start || !logoCfg.on_line_id_end) return;
+      startEl = document.getElementById(logoCfg.on_line_id_start);
+      endEl = document.getElementById(logoCfg.on_line_id_end);
+      if (!startEl || !endEl) return;
+      if (!isVisible(startEl) || !isVisible(endEl)) return;
+    } else if (typeRaw === "start") {
+      if (!logoCfg.on_line_id_start) return;
+      startEl = document.getElementById(logoCfg.on_line_id_start);
+      if (!startEl) return;
+      if (!isVisible(startEl)) return;
+    } else if (typeRaw === "end") {
+      if (!logoCfg.on_line_id_end) return;
+      endEl = document.getElementById(logoCfg.on_line_id_end);
+      if (!endEl) return;
+      if (!isVisible(endEl)) return;
+    } else {
+      // unknown type: skip
+      return;
+    }
+
+    // get bounding rects relative to PPT-Box
+    const pptRect = pptBox.getBoundingClientRect();
+    const sRect = startEl ? startEl.getBoundingClientRect() : null;
+    const eRect = endEl ? endEl.getBoundingClientRect() : null;
+
+    // compute icon center coordinates (left, top) relative to PPT-Box
+    let iconCenterX = 0;
+    let iconCenterY = 0;
+    const offsetBetween = 10;
+    if (typeRaw === "between") {
+      // x1 = start.right, x2 = end.left
+      const x1 = sRect.left - pptRect.left + sRect.width;
+      const x2 = eRect.left - pptRect.left;
+      const midX = x1 + (x2 - x1) / 2;
+      iconCenterX = midX;
+      // y: midpoint between vertical centers of the two elements (so "mid line")
+      const sCenterY = sRect.top - pptRect.top + sRect.height / 2;
+      const eCenterY = eRect.top - pptRect.top + eRect.height / 2;
+      iconCenterY = (sCenterY + eCenterY) / 2;
+    } else if (typeRaw === "start") {
+      // place left of element (so icon to left of element)
+      const elemLeft = sRect.left - pptRect.left;
+      const elemCenterY = sRect.top - pptRect.top + sRect.height / 2;
+      iconCenterX = elemLeft - offsetBetween;
+      iconCenterY = elemCenterY;
+    } else if (typeRaw === "end") {
+      // place right of element
+      const elemRight = eRect.left - pptRect.left + eRect.width;
+      const elemCenterY = eRect.top - pptRect.top + eRect.height / 2;
+      iconCenterX = elemRight + offsetBetween;
+      iconCenterY = elemCenterY;
+    }
+
+    // icon size from fontSize Level_1..3
+    const level = parseLevel(logoCfg.fontSize || "Level_1", 3);
+    const iconFontPx = fontSizeFromLevel(level);
+
+    // colors
+    const fontColor =
+      resolveColor(logoCfg.fontColor, JSON_Data.colors) ||
+      logoCfg.fontColor ||
+      globalColor;
+
+    // build style for this logo
+    const styleEl = document.createElement("style");
+    styleEl.setAttribute("data-conn", className);
+
+    // We'll create an icon container centered at (iconCenterX, iconCenterY)
+    // container size is based on font size (square)
+    const containerSize = Math.round(iconFontPx * 1.6); // padding around icon
+    const leftPx = Math.round(iconCenterX - containerSize / 2);
+    const topPx = Math.round(iconCenterY - containerSize / 2);
+
+    styleEl.textContent = `
+      .${className} {
+        position: absolute;
+        left: ${leftPx}px;
+        top: ${topPx + getFontSize(0, 3, direction ? 0 : 3)}px;
+        width: ${containerSize}px;
+        height: ${containerSize}px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        pointer-events: none;
+        background-color:transparent;
+      }
+      .${className} .midline-icon {
+        font-size: ${iconFontPx}px;
+        line-height: 1;
+        color: ${fontColor};
+        width: ${containerSize}px;
+        height: ${containerSize}px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        pointer-events: none;
+      }
+    `;
+    document.head.appendChild(styleEl);
+
+    // build DOM node
+    const wrapper = document.createElement("div");
+    wrapper.className = className;
+
+    const iEl = document.createElement("i");
+    // ensure any icon class provided is added
+    if (logoCfg.fontAwsomeIcon) {
+      const faClasses = String(logoCfg.fontAwsomeIcon).trim().split(/\s+/);
+      faClasses.forEach((c) => iEl.classList.add(c));
+    } else {
+      // fallback to a simple pseudo-circle if no icon class passed
+      iEl.textContent = "•";
+    }
+    iEl.classList.add("midline-icon");
+
+    // apply inline style color if needed (safety)
+    iEl.style.color = fontColor;
+
+    wrapper.appendChild(iEl);
+    // set title for accessibility if any label provided
+    wrapper.title = logoCfg.title || logoCfg.tooltip || "";
+
+    pptBox.appendChild(wrapper);
+  });
+}
+
+drawLogoOnMidLine(JSON_Data);
+
 function collapsabile() {
   const parents = document.querySelectorAll(".Slide-box");
 
@@ -3345,6 +4395,9 @@ function collapsabile() {
       drawConnectingCircle(JSON_Data);
       adjustFooterWidth(JSON_Data);
       adjustMidLineWidth(JSON_Data);
+      drawMultiplePolygons(JSON_Data);
+      connectingBottomText(JSON_Data);
+      drawLogoOnMidLine(JSON_Data);
     }
 
     // ===== SUBGROUP COLLAPSE =====
@@ -3413,6 +4466,9 @@ function collapsabile() {
         drawConnectingCircle(JSON_Data);
         adjustFooterWidth(JSON_Data);
         adjustMidLineWidth(JSON_Data);
+        drawMultiplePolygons(JSON_Data);
+        connectingBottomText(JSON_Data);
+        drawLogoOnMidLine(JSON_Data);
       });
     }
   });

@@ -1,19 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./ppt_index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <script src="./ppt_index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./ppt_index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <script src="./html2canvas.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+</head>
+
+<body>
+  <script src="./ppt_index.js"></script>
+
+  <!-- <button onclick="downloadImage()">Download Image</button>
+  <script>
+    function downloadImage() {
+      const element = document.getElementById('PPT-Box');
+      if (!element) {
+        alert("PPT-Box not found!");
+        return;
+      }
+
+      // Export to PNG
+      htmlToImage.toPng(element, {
+        quality: 1,              
+        backgroundColor: null,   
+        pixelRatio: 2,           
+        style: {
+          transform: 'scale(1)',
+          transformOrigin: 'top left'
+        }
+      })
+        .then((dataUrl) => {
+          const link = document.createElement('a');
+          link.download = 'exported-image.png';
+          link.href = dataUrl;
+          link.click();
+        })
+        .catch((error) => {
+          console.error('Export failed:', error);
+        });
+    }
+  </script>
+  <button onclick="downloadJpg()">Download JPG</button>
+  <script>
+    function downloadJpg() {
+      const element = document.getElementById('PPT-Box');
+      htmlToImage.toJpeg(element, {
+        quality: 0.95,
+        pixelRatio: 2
+      }).then((dataUrl) => {
+        const link = document.createElement('a');
+        link.download = 'exported-image.jpg';
+        link.href = dataUrl;
+        link.click();
+      });
+    }
+  </script> -->
+
+</body>
+
 </html>
