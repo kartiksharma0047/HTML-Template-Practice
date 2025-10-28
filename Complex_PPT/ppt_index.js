@@ -2,39 +2,86 @@ let collapsibleData = [];
 JSON_Data = {
   footer: {
     footer_label: {
-      footer_1_label: "Ambulatorio",
-      footer_2_label: "Ospedale",
-      footer_3_label: "Altra struttura",
-      footer_4_label: "Casa",
-      footer_5_label: "Farmacia Ospedaliera",
+      footer_1_label: "Ambulatory",
+      footer_2_label: "Hospital",
+      footer_3_label: "Other structure",
+      footer_4_label: "Home",
+      footer_5_label: "Hospital Drugstore",
     },
     footer_label_position_left: {
-      footer_1_left: "Level_5",
-      footer_2_left: "Level_6",
+      footer_1_left: "Level_6",
+      footer_2_left: "Level_7",
       footer_3_left: "Level_5",
       footer_4_left: "Level_7",
-      footer_5_left: "Level_2 ",
+      footer_5_left: "Level_4",
     },
     label_width: {
-      footer_1_width: "85",
-      footer_2_width: "85",
-      footer_3_width: "85",
-      footer_4_width: "85",
-      footer_5_width: "85",
+      footer_1_width: "90",
+      footer_2_width: "90",
+      footer_3_width: "90",
+      footer_4_width: "90",
+      footer_5_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
-    footer_width: "auto",
+    footer_width: "default",
   },
   Page_Configuration: {
-    background_color: "#f6fcfc",
+    background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
     border_color: "black",
-    scroll_horizontal: false
+    scroll_horizontal: true,
+    direction: "reverse",
+    bottomShapesConfig:{
+      shapes:["circle","trapezium","circle","trapezium"],
+      shapesColor:["#ffc130","#00a9bd","#ffc130","#00a9bd"],
+      text:["Timings","Locus","Timings","Locus"],
+      textColor:["white","white","white","white"]
+    }
   },
   mid_line_config: {
     color: "#58e3d2",
     shadow:
       "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
-    width: "auto",
+    width: "default",
+    logo_config: [
+      {
+        type: "Between",
+        on_line_id_start: "on_line_content_4",
+        on_line_id_end: "on_line_content_5",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "Between",
+        on_line_id_start: "on_line_content_6",
+        on_line_id_end: "on_line_content_7",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "Between",
+        on_line_id_start: "on_line_content_8",
+        on_line_id_end: "on_line_content_9",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "Start",
+        on_line_id_start: "on_line_content_1",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "End",
+        on_line_id_end: "on_line_content_10",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+    ],
   },
   colors: {
     white_color: "#ffffff",
@@ -67,26 +114,30 @@ JSON_Data = {
   },
   fontConfig: {
     fontsize: "small",
+    fontFamilyCDN:
+      "https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap",
+    fontFamily: ["sans-serif"],
   },
   body: [
     {
       component: "Start-Header",
-      title: "Trattamento",
+      title: "Pre-Diagnosis",
       configurations: {
-        title_color: "#515151",
+        title_color: "#304c8c",
         line_right: true,
-        line_color: "#adafaf",
-        circle_color: "#767979",
+        line_color: "white",
+        circle_color: "white",
         alignment: "vertical",
         vertical_config: {
           boxColor: "linear-gradient(to right, #d5d6d8, #ebebebff)",
           boxShape: "blob_soft",
+          lineColor: "black",
         },
       },
       start_content: {
-        logo_title: "Paziente",
+        logo_title: "Patient",
         link: "",
-        steps: [],
+        steps: ["GPC", "DIAGNOS", "PREMENTO"],
         stepsLink: [],
         title_detail: "Paziente",
         steps_details: [],
@@ -96,289 +147,281 @@ JSON_Data = {
           logo_para_color:
             "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           mid_line_color: "#58e3d2",
-          background_color: [],
-          font_color: [],
+          background_color: ["white_color"],
+          font_color: ["black_color"],
           logo_font_color: "white_color",
         },
       },
     },
     {
       component: "Header",
-      title: "Follow-up",
+      title: "Diagnosis",
       configurations: {
-        title_color: "Common_Header_title",
-        line_right: false,
-        line_color: "Common_Header_Line",
+        title_color: "#304c8c",
+        line_right: true,
+        line_color: "white",
         collapsabile: true,
-      },
-      sub_groups: [
-        {
-          component: "Sub-Header",
-          title: "Follow-up",
-          configurations: {
-            title_color: "Common_SubHeader_title",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: [""],
-            logo_heading_color: ["Common_logo_heading"],
-            logo_heading_border_color: ["Common_logo_border"],
-            logo_color: ["Common_logo"],
-            logo_titles_config: [
-              {
-                logo_title: ["Neurologo"],
-                links: [""],
-                logo_id_name: "logo_title_id1",
-                logo_detail: ["Neurologo"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [true],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: ["Common_transparent"],
-                  line_color: ["Common_TopDown_Line"],
-                },
-              },
-            ],
-            above_line_content: {
-              content: ["hidden"],
-              color: ["Common_transparent"],
-              content_details: [""],
-              justify_content: "evenly",
-            },
-            line_right: false,
-            line_color: "Common_SubHeader_lineRight",
-            connecting_Line: {
-              display: "true",
-              connections: [
-                {
-                  starting: "logo_title_id1",
-                  ending: "logo_title_id4",
-                  height: "Level_10",
-                },
-                {
-                  starting: "logo_title_id1",
-                  ending: "logo_title_id8",
-                  height: "Level_10",
-                },
-                {
-                  starting: "logo_title_id1",
-                  ending: "logo_title_id2",
-                  height: "Level_1",
-                },
-                {
-                  starting: "logo_title_id1",
-                  ending: "logo_title_id5",
-                  height: "Level_1",
-                },
-                {
-                  starting: "logo_title_id1",
-                  ending: "logo_title_id7",
-                  height: "Level_1",
-                },
-              ],
-              arrow_color: [
-                "Common_ConnectingLine_arrow",
-                "Common_ConnectingLine_arrow",
-                "#8c9091",
-                "#8c9091",
-                "#8c9091",
-              ],
-              line_color: [
-                "Common_ConnectingLine_line",
-                "Common_ConnectingLine_line",
-                "#8c9091",
-                "#8c9091",
-                "#8c9091",
-              ],
-            },
-            connecting_Rectangle: {
-              display: true,
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "true",
-                  ending: "on_line_content_7",
-                  end_from_ending: "true",
-                  height: "Level_10",
-                  border_thickness: "Level_6",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                    ],
-                    iconColors: ["white_color", "white_color", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3"],
-                    justify_content: "between",
-                    start_end_gaps: "Level_2",
-                    shape: "rounded_bottom",
-                    direction: "default",
-                  },
-                },
-              ],
-              color: ["Common_ConnectingRectangle"],
-            },
-            on_line_content_configuration: {
-              content: ["Hidden----"],
-              link: [],
-              content_id: ["on_line_content_1"],
-              content_details: [],
-              color: ["Common_transparent"],
-              background_color: ["Common_transparent"],
-              background_shadow: [false],
-              bottom_point_color: ["Common_transparent"],
-              bottom_line_color: ["Common_transparent"],
-              bottom_shape_color: ["Common_transparent"],
-              bottom_Line_postion: ["Level_1"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_1"],
-                  color: ["Common_transparent"],
-                },
-              ]
-            },
-          },
-        },
-      ],
-    },
-    {
-      component: "Header",
-      title: "",
-      configurations: {
-        title_color: "#515151",
-        line_right: false,
-        line_color: "#adafaf",
       },
       sub_groups: [
         {
           component: "Sub-Header",
           title: "",
           configurations: {
-            title_color: "rgb(81, 81, 81)",
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
           },
           content: {
-            logo_heading: ["", "", ""],
+            logo_heading: ["", ""],
             logo_heading_color: [
-              "Common_transparent",
-              "Common_transparent",
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
               "Common_transparent",
             ],
             logo_heading_border_color: [
-              "Common_transparent",
-              "#e7636b",
-              "Common_transparent",
-            ],
-            logo_color: [
-              "Common_transparent",
-              "linear-gradient(to top right, #e7636b 40%, #de7883)",
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
               "Common_transparent",
             ],
+            logo_color: ["#a334c8", "#a334c8", "#a334c8", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: ["hidden"],
+                logo_title: ["GP"],
                 links: [""],
-                logo_id_name: "logo_title_id2",
-                logo_detail: [""],
-                logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [true],
-                logo_title_border_color: ["Common_transparent"],
-                logo_title_color: ["Common_transparent"],
-                top_down_arrow: {
-                  display: false,
-                },
-              },
-              {
-                logo_title: ["Alongside Coordinator"],
-                links: [""],
-                logo_id_name: "logo_title_id3",
-                logo_detail: [""],
+                logo_id_name: "logo_title_id1",
+                logo_detail: ["GP"],
                 logo_title_background_color: ["white"],
                 logo_title_border: [true],
-                logo_title_border_color: ["#e7636b"],
-                logo_title_color: ["linear-gradient(to top right, #e7636b 40%, #de7883)"],
+                logo_title_border_color: ["#a334c8"],
+                logo_title_color: ["#a334c8"],
                 top_down_arrow: {
                   display: true,
-                  arrow_color: ["#e7636b"],
-                  line_color: ["linear-gradient(to top right, #e7636b 40%, #de7883)"],
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
               },
               {
-                logo_title: ["hidden"],
+                logo_title: ["Neurologist", "", "Nurse"],
+                links: [""],
+                logo_id_name: "logo_title_id2",
+                logo_detail: ["Neurologist", "", "Nurse"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Radiologist", "", "Bio & Other"],
+                links: [""],
+                logo_id_name: "logo_title_id3",
+                logo_detail: ["Radiologist", "", "Bio & Other"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["GP"],
                 links: [""],
                 logo_id_name: "logo_title_id4",
                 logo_detail: [""],
                 logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [true],
-                logo_title_border_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["black"],
                 logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
                   display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
               },
             ],
-            above_line_content: {
-              content: ["prescrive", "assiste", "effettua"],
-              color: ["#8c9091", "#e7636b", "Common_AboveLine_Text"],
-              content_details: ["prescrive", "assiste", "effettua"],
-              justify_content: "evenly",
-            },
-            line_right: false,
-            line_color: "#c4c9ca",
+            line_right: "false",
+            line_color: "Common_SubHeader_lineRight",
             connecting_Line: {
-              display: "true",
+              display: true,
               connections: [
                 {
-                  starting: "logo_title_id3",
-                  ending: "logo_title_id6",
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id2",
+                  height: "Level_5",
+                },
+                {
+                  starting: "logo_title_id2",
+                  ending: "logo_title_id4",
                   height: "Level_5",
                 },
               ],
-              arrow_color: ["#e7636b"],
-              line_color: ["#e7636b"],
+              arrow_color: ["#9f30cb", "#9f30cb"],
+              line_color: ["#9f30cb", "#9f30cb"],
+            },
+            connecting_Text_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_6",
+                  start_from: "start",
+                  end_from: "mid",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text_Position: "above",
+                  text: "Process",
+                  text_color: "black",
+                  line_color: "black",
+                },
+              ],
             },
             on_line_content_configuration: {
-              content: ["KESIMPTA", "KESIMPTA ASSUNZIONE", "VISITA CONTROLLO"],
+              content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
+              bordered: [{}, { border: true }],
+              striping: [
+                {
+                  stripped: true,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+                {
+                  stripped: false,
+                },
+                {
+                  stripped: false,
+                },
+                {
+                  stripped: true,
+                  reversed: true,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: [
+                "rounded_right",
+                "rounded_vertices",
+                "rounded_left",
+                "rounded_bottom",
+              ],
               content_id: [
+                "on_line_content_1",
                 "on_line_content_2",
                 "on_line_content_3",
                 "on_line_content_4",
               ],
               content_details: [
-                "KESIMPTA",
-                "KESIMPTA ASSUNZIONE",
-                "VISITA CONTROLLO",
+                "SYMPTOMS",
+                "VISIT",
+                "DIAGNOSTIC TESTS",
+                "DIAGNOSIS",
               ],
-              link: ["", "", ""],
-              color: ["white", "white", "black"],
-              background_color: ["#0460a9", "#0460a9", "#e6fffc"],
+              content_details_HTML: [
+                {
+                  content_HTML:
+                    "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+
+                  content_CSS:
+                    ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+                },
+                {},
+              ],
+              color: [
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+              ],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
               bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
               ],
+              bottom_point_position_onLine: [false, false, false, true],
               bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
               ],
-              bottom_Line_postion: ["Level_5", "Level_4", "Level_3"],
-              bottom_point_position_onLine: [true, false, true],
+              bottom_Line_postion: ["Level_1", "Level_2", "Level_3", "Level_2"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_5"],
+                  levels: ["Level_1"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_4"],
+                  levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+                {
+                  levels: ["Level_2"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from symptoms",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_1",
+                  ending: "on_line_content_2",
+                },
+                {
+                  content: "_?? days from results",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_2",
+                  ending: "on_line_content_3",
+                },
+                {
+                  content: "_?? days from results",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_4",
+                },
+                {
+                  content: "_?? days from symptoms",
+                  height: "Level_18",
+                  show_border: false,
+                  starting: "on_line_content_1",
+                  ending: "on_line_content_4",
+                },
+              ],
             },
           },
         },
@@ -386,110 +429,273 @@ JSON_Data = {
     },
     {
       component: "Header",
-      title: "",
+      title: "Diagnosis",
       configurations: {
-        title_color: "#515151",
-        line_right: false,
-        line_color: "#adafaf",
+        title_color: "#304c8c",
+        line_right: true,
+        line_color: "white",
+        collapsabile: true,
       },
       sub_groups: [
         {
           component: "Sub-Header",
           title: "",
           configurations: {
-            title_color: "rgb(81, 81, 81)",
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
           },
           content: {
             logo_heading: ["", ""],
-            logo_heading_color: ["Common_transparent", "Common_transparent"],
-            logo_heading_border_color: [
-              "Common_transparent",
+            logo_heading_color: [
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
               "Common_transparent",
             ],
-            logo_color: ["Common_transparent", "Common_transparent"],
+            logo_heading_border_color: [
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
+              "Common_transparent",
+            ],
+            logo_color: ["#a334c8", "#a334c8", "#a334c8", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: ["hidden"],
+                logo_title: ["GP"],
                 links: [""],
-                logo_id_name: "logo_title_id5",
-                logo_detail: [""],
-                logo_title_background_color: ["Common_transparent"],
+                logo_id_name: "logo_title_id1",
+                logo_detail: ["GP"],
+                logo_title_background_color: ["white"],
                 logo_title_border: [true],
-                logo_title_border_color: ["Common_transparent"],
-                logo_title_color: ["Common_transparent"],
+                logo_title_border_color: ["#a334c8"],
+                logo_title_color: ["#a334c8"],
                 top_down_arrow: {
-                  display: false,
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
               },
               {
-                logo_title: ["hidden"],
+                logo_title: ["Neurologist", "", "Nurse"],
                 links: [""],
-                logo_id_name: "logo_title_id6",
+                logo_id_name: "logo_title_id2",
+                logo_detail: ["Neurologist", "", "Nurse"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Radiologist", "", "Bio & Other"],
+                links: [""],
+                logo_id_name: "logo_title_id3",
+                logo_detail: ["Radiologist", "", "Bio & Other"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["GP"],
+                links: [""],
+                logo_id_name: "logo_title_id4",
                 logo_detail: [""],
                 logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [true],
-                logo_title_border_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["black"],
                 logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
                   display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
               },
             ],
-            above_line_content: {
-              content: ["prescrive", "assiste"],
-              color: ["#8c9091", "#e7636b"],
-              content_details: ["prescrive", "assiste"],
-              justify_content: "evenly",
-            },
-            line_right: false,
-            line_color: "#c4c9ca",
-            connecting_Circle: {
+            line_right: "false",
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
               display: true,
               connections: [
                 {
-                  starting: "on_line_content_6",
-                  ending: "on_line_content_4",
-                  start_from: "end",
-                  end_from: "start",
-                  border_thickness: "Level_4",
-                  config: {
-                    fontAwsomeicon: "fa-solid fa-angles-left",
-                    iconColor: "white",
-                    iconSize: "Level_2",
-                    direction: "default",
-                  },
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id2",
+                  height: "Level_5",
+                },
+                {
+                  starting: "logo_title_id2",
+                  ending: "logo_title_id4",
+                  height: "Level_5",
                 },
               ],
-              color: ["#58e3d2"],
+              arrow_color: ["#9f30cb", "#9f30cb"],
+              line_color: ["#9f30cb", "#9f30cb"],
+            },
+            connecting_Text_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_6",
+                  start_from: "start",
+                  end_from: "mid",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text_Position: "above",
+                  text: "Process",
+                  text_color: "black",
+                  line_color: "black",
+                },
+              ],
             },
             on_line_content_configuration: {
-              content: ["KESIMPTA", "KESIMPTA ASSUNZIONE"],
-              content_id: ["on_line_content_5", "on_line_content_6"],
-              content_details: ["KESIMPTA", "KESIMPTA ASSUNZIONE"],
-              link: ["", ""],
-              color: ["white", "white"],
-              background_color: ["#0460a9", "#0460a9"],
-              bottom_point_position_onLine: [false, false],
+              content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
+              bordered: [{}, { border: true }],
+              striping: [
+                {
+                  stripped: true,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+                {
+                  stripped: false,
+                },
+                {
+                  stripped: false,
+                },
+                {
+                  stripped: true,
+                  reversed: true,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: [
+                "rounded_right",
+                "rounded_vertices",
+                "rounded_left",
+                "rounded_bottom",
+              ],
+              content_id: [
+                "on_line_content_1",
+                "on_line_content_2",
+                "on_line_content_3",
+                "on_line_content_4",
+              ],
+              content_details: [
+                "SYMPTOMS",
+                "VISIT",
+                "DIAGNOSTIC TESTS",
+                "DIAGNOSIS",
+              ],
+              content_details_HTML: [
+                {
+                  content_HTML:
+                    "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+
+                  content_CSS:
+                    ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+                },
+                {},
+              ],
+              color: [
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+              ],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
               bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
               ],
+              bottom_point_position_onLine: [false, false, false, true],
               bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
               ],
-              bottom_point_position_onLine: [true, true],
-              bottom_Line_postion: ["Level_5", "Level_4"],
+              bottom_Line_postion: ["Level_1", "Level_2", "Level_3", "Level_2"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_5"],
+                  levels: ["Level_1"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_4"],
+                  levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
-                }
-              ]
+                },
+                {
+                  levels: ["Level_3"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_2"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from symptoms",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_1",
+                  ending: "on_line_content_2",
+                },
+                {
+                  content: "_?? days from results",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_2",
+                  ending: "on_line_content_3",
+                },
+                {
+                  content: "_?? days from results",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_4",
+                },
+                {
+                  content: "_?? days from symptoms",
+                  height: "Level_18",
+                  show_border: false,
+                  starting: "on_line_content_1",
+                  ending: "on_line_content_4",
+                },
+              ],
             },
           },
         },
@@ -497,18 +703,205 @@ JSON_Data = {
     },
     {
       component: "Header",
-      title: "",
+      title: "Treatment",
       configurations: {
-        title_color: "#515151",
+        title_color: "#304c8c",
         line_right: true,
-        line_color: "#adafaf",
+        line_color: "white",
+        collapsabile: true,
       },
       sub_groups: [
         {
           component: "Sub-Header",
           title: "",
           configurations: {
-            title_color: "rgb(81, 81, 81)",
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
+          },
+          content: {
+            logo_heading: ["", ""],
+            logo_heading_color: ["#a334c8", "Common_transparent"],
+            logo_heading_border_color: ["#a334c8", "Common_transparent"],
+            logo_color: ["#a334c8", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
+                links: [""],
+                logo_id_name: "logo_title_id5",
+                logo_detail: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
+                logo_title_background_color: [
+                  "white",
+                  "white",
+                  "white",
+                  "white",
+                ],
+                logo_title_border: [true, true, true, true],
+                logo_title_border_color: [
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                ],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Neurologist"],
+                links: [""],
+                logo_id_name: "logo_title_id6",
+                logo_detail: ["Neurologist"],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+            ],
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "logo_title_id5",
+                  ending: "logo_title_id7",
+                  height: "Level_5",
+                },
+              ],
+              arrow_color: ["#9f30cb"],
+              line_color: ["#9f30cb"],
+            },
+            warning_logos: [
+              {
+                target_On_Line_Content: "on_line_content_5",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "end",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "1",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                },
+                Tooltip_content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                Tooltip_content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+            ],
+            on_line_content_configuration: {
+              content: ["ST DMT SELECTION", "DMT INITIATION"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_sm", "rounded_reverse_vertices"],
+              content_id: ["on_line_content_5", "on_line_content_6"],
+              content_details: ["ST DMT SELECTION", "DMT INITIATION"],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
+              bottom_point_color: [
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+              ],
+              bottom_point_position_onLine: [false, true],
+              bottom_line_color: [
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+              ],
+              bottom_Line_color: [
+                "Common_onLineContent_Shape",
+                "Common_onLineContent_Shape",
+              ],
+              bottom_Line_postion: ["Level_2", "Level_5"],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_2"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_2", "Level_4", "Level_5"],
+                  color: [
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                  ],
+                },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from diagnosis",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_4",
+                  ending: "on_line_content_5",
+                },
+                {
+                  content: "_?? days from DMT choice",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_5",
+                  ending: "on_line_content_6",
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+    {
+      component: "Header",
+      title: "Follow-Up",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: true,
+        line_color: "white",
+        collapsabile: true,
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
           },
           content: {
             logo_heading: ["", ""],
@@ -530,6 +923,8 @@ JSON_Data = {
                 logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
                   display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
               },
               {
@@ -543,17 +938,24 @@ JSON_Data = {
                 logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
                   display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
               },
             ],
-            above_line_content: {
-              content: ["hidden--", "assiste"],
-              color: ["Common_transparent", "Common_AboveLine_Text"],
-              content_details: ["", "assiste"],
-              justify_content: "evenly",
-            },
             line_right: false,
-            line_color: "#c4c9ca",
+            line_color: "Common_SubHeader_lineRight",
+            connectingBottomText: [
+              {
+                target_On_Line_Content: "on_line_content_8",
+                position: "start",
+                text: "1 alla settimana",
+                textDetail: "1 alla settimana x 3 settimane",
+                textColor: "black",
+                borderColor: "black",
+                height: "Level_1",
+              },
+            ],
             connecting_Circle: {
               display: true,
               connections: [
@@ -562,45 +964,369 @@ JSON_Data = {
                   ending: "on_line_content_8",
                   start_from: "start",
                   end_from: "end",
-                  border_thickness: "Level_4",
+                  border_thickness: "Level_10",
                   config: {
                     fontAwsomeicon: "fa-solid fa-angles-left",
                     iconColor: "white",
-                    iconSize: "Level_0",
+                    iconSize: "Level_2",
+                    direction: "default",
                   },
                 },
               ],
               color: ["#58e3d2"],
             },
+            warning_logos: [
+              {
+                target_On_Line_Content: "on_line_content_7",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "end",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "2",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                }
+              },
+            ],
+            connecting_Text_Line: {
+              display: false,
+              connections: [
+                {
+                  starting: "on_line_content_4",
+                  ending: "on_line_content_5",
+                  start_from: "start",
+                  end_from: "end",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text: "procedure pre-trettamento",
+                  text_Position: "middle",
+                  text_color: "black",
+                  line_color: "black",
+                },
+              ],
+            },
             on_line_content_configuration: {
-              content: ["ALTRO FARMACO", "VISITA CONTROLLO"],
+              content: ["VISIT", "TX CONTINUES"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_top", "rounded_top_right"],
               content_id: ["on_line_content_7", "on_line_content_8"],
-              content_details: ["ALTRO FARMACO", "VISITA CONTROLLO"],
-              link: ["", ""],
-              color: ["black", "black"],
-              background_color: ["#e6fffc", "#e6fffc"],
+              content_details: ["ST DMT SELECTION", "DMT INITIATION"],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
               bottom_point_color: [
-                "Common_transparent",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
               ],
+              bottom_point_position_onLine: [true, true],
               bottom_line_color: [
-                "Common_transparent",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
               ],
-              bottom_shape_color: [
-                "Common_transparent",
-                "linear-gradient(to top, #1375af 5%, #45d0cb)",
+              bottom_Line_color: [
+                "Common_onLineContent_Shape",
+                "Common_onLineContent_Shape",
               ],
-              bottom_Line_postion: ["Level_1","Level_3"],
-              bottom_point_position_onLine: [false, true],
+              bottom_Line_postion: ["Level_2", "Level_4"],
               bottom_shape_positions: [
+                {
+                  levels: ["Level_2"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
+                  color: [
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                  ],
+                },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from DMT initiation",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_5",
+                  ending: "on_line_content_7",
+                },
+                {
+                  content: "6 months wihout events",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_7",
+                  ending: "on_line_content_8",
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+    {
+      component: "Header",
+      title: "Treatment",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: false,
+        line_color: "white",
+        collapsabile: true,
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
+          },
+          content: {
+            logo_heading: ["", ""],
+            logo_heading_color: ["#a334c8", "Common_transparent"],
+            logo_heading_border_color: ["#a334c8", "Common_transparent"],
+            logo_color: ["#a334c8", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
+                links: [""],
+                logo_id_name: "logo_title_id9",
+                logo_detail: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
+                logo_title_background_color: [
+                  "white",
+                  "white",
+                  "white",
+                  "white",
+                ],
+                logo_title_border: [true, true, true, true],
+                logo_title_border_color: [
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                ],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Neurologist"],
+                links: [""],
+                logo_id_name: "logo_title_id10",
+                logo_detail: ["Neurologist"],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+            ],
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "logo_title_id5",
+                  ending: "logo_title_id7",
+                  height: "Level_5",
+                },
+              ],
+              arrow_color: ["#9f30cb"],
+              line_color: ["#9f30cb"],
+            },
+            connecting_Rectangle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content:[
+                      {
+                        text:"RELAPSE",
+                        textColor:"white",
+                        textDetail:"RELAPSE",
+                        text_Details_HTML:"<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                        text_Details_CSS:".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }"
+                      },
+                      {},
+                      {}
+                    ]
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_23",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content:[
+                      {
+                        text:"PROGRESSION SUSPICION",
+                        textColor:"white",
+                        textDetail:"PROGRESSION SUSPICION",
+                        text_Details_HTML:"<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                        text_Details_CSS:".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }"
+                      },
+                      {},
+                      {}
+                    ]
+                  },
+                },
+                {
+                  starting: "on_line_content_8",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    direction: "reverse",
+                  },
+                },
+              ],
+              color: ["#58e3d2", "#58e3d2", "#58e3d2"],
+            },
+            on_line_content_configuration: {
+              content: ["HET DMT SELECTION", "TX CONTINUES"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_bottom_right", "rounded_lg"],
+              content_id: ["on_line_content_9", "on_line_content_10"],
+              content_details: ["HET DMT SELECTION", "TX CONTINUES"],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
+              bottom_point_color: [
+                "Common_onLineContent_Point",
+                "Common_transparent",
+              ],
+              bottom_point_position_onLine: [false, true],
+              bottom_line_color: [
+                "Common_onLineContent_Line",
+                "Common_transparent",
+              ],
+              bottom_Line_color: [
+                "Common_onLineContent_Shape",
+                "Common_transparent",
+              ],
+              bottom_Line_postion: ["Level_4", "Level_1"],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
+                  color: [
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                  ],
+                },
                 {
                   levels: ["Level_1"],
                   color: ["Common_transparent"],
                 },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
                 {
-                  levels: ["Level_3"],
-                  color: ["Common_onLineContent_Shape"],
+                  content: "2.3 - 3.6 years with some DMT",
+                  height: "Level_18",
+                  show_border: false,
+                  starting: "on_line_content_6",
+                  ending: "on_line_content_9",
                 },
               ],
             },
@@ -610,7 +1336,6 @@ JSON_Data = {
     },
   ],
 };
-
 
 // Color Map Function
 const resolveColor = (value, colorMap) => {
@@ -3215,10 +3940,12 @@ function drawConnectingRectangle(JSON_Data) {
 
         // if config present → add icon row
         if (hasConfig && iconCount > 0) {
-          const iconRow = document.createElement("div");
-          iconRow.className = "icon-row";
+  const iconRow = document.createElement("div");
+  iconRow.className = "icon-row";
 
-          icons.forEach((iconClass, iconIdx) => {
+  const contents = Array.isArray(config?.content) ? config.content : [];
+
+  icons.forEach((iconClass, iconIdx) => {
             const iconEl = document.createElement("i");
             iconEl.className = iconClass;
             iconEl.style.color =
@@ -3231,11 +3958,123 @@ function drawConnectingRectangle(JSON_Data) {
             const fontSize = Math.min(baseSize + sizeLevel * 2, 20);
             iconEl.style.fontSize = `${fontSize}px`;
 
-            iconRow.appendChild(iconEl);
+            const contentItem = contents[iconIdx] || {};
+
+            // If content object is empty, append icon only
+            if (!Object.keys(contentItem).length) {
+              iconRow.appendChild(iconEl);
+              return;
+            }
+
+            // normalize content keys (support provided keys)
+            const text = contentItem.text || "";
+            const textDetail = contentItem.textDetail || text;
+            // your JSON keys used earlier: text_Details_HTML and text_Details_CSS
+            // accept either spelling if needed
+            const textHTML =
+              contentItem.text_Details_HTML?.toString?.() ||
+              contentItem.textDetailsHTML?.toString?.() ||
+              "";
+            const textCSS =
+              contentItem.text_Details_CSS?.toString?.() ||
+              contentItem.textDetailsCSS?.toString?.() ||
+              "";
+
+            // wrapper that contains icon + text
+            const wrapper = document.createElement("div");
+            wrapper.style.display = "flex";
+            wrapper.style.alignItems = "center";
+            wrapper.style.justifyContent = "space-between";
+            wrapper.style.gap = "4px";
+
+            // If no rich html/css → simple native tooltip via title
+            if (!textHTML.trim() && !textCSS.trim()) {
+              const p = document.createElement("p");
+              p.textContent = typeof limitText === "function" ? limitText(text, 10) : text;
+              p.style.color = contentItem.textColor || "white";
+              p.style.margin = "0";
+              p.style.fontSize = `${getFontSize ? getFontSize(9,10,11) : 11}px`;
+              p.title = textDetail || text;
+              // append icon then p
+              wrapper.appendChild(iconEl);
+              wrapper.appendChild(p);
+              iconRow.appendChild(wrapper);
+              return;
+            }
+
+            // If we have rich HTML/CSS — create popup element inside rectDiv and attach hover handlers
+            // create paragraph visible label
+            const p = document.createElement("p");
+            p.textContent = limitText(text, 10);
+            p.style.color = contentItem.textColor || "white";
+            p.style.margin = "0";
+            p.style.fontSize = `${getFontSize(9,10,11)}px`;
+
+            // build popup container (hidden by default)
+            const popupClass = `${className}-icon${iconIdx}-popup`;
+            const popup = document.createElement("div");
+            popup.className = popupClass;
+            // inline styles mirror your existing popup style
+            popup.style.display = "none";
+            popup.style.position = "absolute";
+            popup.style.top = "0";
+            popup.style.left = "0";
+            popup.style.transform = "translate(25%,10%)";
+            popup.style.zIndex = "3";
+
+            // If HTML needs normalization (Appian), use normalizeAppianString if present
+            let popupHTML = textHTML;
+            let popupCSS = textCSS;
+            if (typeof normalizeAppianString === "function" && popupHTML && popupHTML.trim()) {
+              try {
+                popupHTML = normalizeAppianString(popupHTML);
+              } catch (e) {
+                // ignore normalization errors — fallback to raw
+              }
+            }
+            // set popup content
+            if (popupHTML && popupHTML.trim()) {
+              popup.innerHTML = popupHTML;
+            } else {
+              // fallback to textDetail
+              popup.textContent = textDetail || text || "";
+            }
+
+            // inject scoped CSS for popup (if provided)
+            if (popupCSS && popupCSS.trim()) {
+              const popupStyle = document.createElement("style");
+              popupStyle.setAttribute("data-conn", `${popupClass}-style`);
+              popupStyle.textContent = `#${pptBox.id} .${popupClass} { ${popupCSS} }`;
+              document.head.appendChild(popupStyle);
+            }
+
+            // append popup to rectDiv (so queries like pptBox.querySelector work)
+            rectDiv.appendChild(popup);
+
+            // Hover bindings exactly like your other code
+            // Show popup on mouseenter of the visible <p>
+            p.addEventListener("mouseenter", () => {
+              popup.style.display = "block";
+            });
+            p.addEventListener("mouseleave", () => {
+              setTimeout(() => {
+                if (!popup.matches(":hover")) popup.style.display = "none";
+              }, 100);
+            });
+            // Hide when mouse leaves popup
+            popup.addEventListener("mouseleave", () => {
+              popup.style.display = "none";
+            });
+
+            // assemble wrapper
+            wrapper.appendChild(iconEl);
+            wrapper.appendChild(p);
+            iconRow.appendChild(wrapper);
           });
 
-          rectDiv.appendChild(iconRow);
-        }
+  rectDiv.appendChild(iconRow);
+}
+
 
         pptBox.appendChild(rectDiv);
       });
@@ -4250,7 +5089,7 @@ function drawLogoOnMidLine(JSON_Data) {
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 5;
+        z-index: 3;
         pointer-events: none;
         background-color:transparent;
       }
@@ -4296,6 +5135,393 @@ function drawLogoOnMidLine(JSON_Data) {
 }
 
 drawLogoOnMidLine(JSON_Data);
+
+function warning_Logo(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("warning_Logo: PPT-Box not found.");
+    return;
+  }
+
+  // Iterate body sections (same structure as connectingTextLine)
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, subIdx) => {
+      const warns = sg.content?.warning_logos;
+      if (!warns || warns.length === 0) {
+        // Cleanup old warning badges for this subgroup if no display data
+        const oldEls = pptBox.querySelectorAll(
+          `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`
+        );
+        oldEls.forEach((el) => {
+          const styleTag = document.querySelector(
+            `style[data-warn="${el.className}"]`
+          );
+          if (styleTag) styleTag.remove();
+          el.remove();
+        });
+        return;
+      }
+
+      const oldBadges = pptBox.querySelectorAll(
+        `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`
+      );
+      oldBadges.forEach((el) => {
+        const styleTag = document.querySelector(
+          `style[data-warn="${el.className}"]`
+        );
+        if (styleTag) styleTag.remove();
+        el.remove();
+      });
+
+      warns.forEach((warn, warnIdx) => {
+        try {
+          if (!warn || typeof warn !== "object") return;
+          const targetId = warn.target_On_Line_Content;
+          if (!targetId) return;
+
+          const targetEl = document.getElementById(targetId);
+          if (!targetEl) return;
+          if (!isVisible(targetEl)) return;
+
+          // Build unique scoped base
+          const base = `warning-logo-sec${sectionIdx}-sub${subIdx}-${warnIdx}-${targetId}`;
+          const pptRect = pptBox.getBoundingClientRect();
+          const tgtRect = targetEl.getBoundingClientRect();
+
+          // cleanup previous with same class
+          const old = pptBox.querySelector(`.${base}`);
+          const oldStyle = document.querySelector(`style[data-warn="${base}"]`);
+          if (old) old.remove();
+          if (oldStyle) oldStyle.remove();
+
+          // colors
+          const triColor =
+            resolveColor(warn.warningColor, JSON_Data.colors) ||
+            warn.warningColor ||
+            "fb2932";
+          const iconColor =
+            resolveColor(warn.fontAwsomeIconColor, JSON_Data.colors) ||
+            warn.fontAwsomeIconColor ||
+            "#fff";
+          const circleColor = warn.warningCircleConfig?.circleColor
+            ? resolveColor(
+                warn.warningCircleConfig.circleColor,
+                JSON_Data.colors
+              )
+            : "#ffeb3b";
+          const circleBorderColor = warn.warningCircleConfig?.circleBorder
+            ? resolveColor(
+                warn.warningCircleConfig?.circleBorder,
+                JSON_Data.colors
+              )
+            : "black";
+          const circleNumberColor = warn.warningCircleConfig?.circleNumberColor
+            ? resolveColor(
+                warn.warningCircleConfig.circleNumberColor,
+                JSON_Data.colors
+              )
+            : "#000";
+          const circleLineColor = warn.warningCircleConfig?.circleLineColor
+            ? resolveColor(
+                warn.warningCircleConfig.circleLineColor,
+                JSON_Data.colors
+              )
+            : "#fb2932";
+          const circlePointColor = warn.warningCircleConfig?.circlePointColor
+            ? resolveColor(
+                warn.warningCircleConfig.circlePointColor,
+                JSON_Data.colors
+              )
+            : "#fb2932";
+
+          // validate number
+          let circleNumber = null;
+          if (warn.warningCircleConfig?.display) {
+            const parsed = parseInt(warn.warningCircleConfig.circleNumber, 10);
+            if (!isNaN(parsed) && parsed >= 1 && parsed <= 99)
+              circleNumber = String(parsed);
+          }
+
+          // compute anchor X
+          const pos = String(warn.position || "middle").toLowerCase();
+          const computeAnchorX = (rect, part) => {
+            if (part === "start") return rect.left - pptRect.left + 20;
+            if (part === "end")
+              return rect.left - pptRect.left + rect.width - 20;
+            return rect.left - pptRect.left + rect.width / 2;
+          };
+          const anchorX = computeAnchorX(tgtRect, pos);
+
+          // geometry
+          const badgeWidth = 34;
+          const halfBase = Math.round(badgeWidth / 2.2);
+          const triangleHeight = 28;
+          const gapAbove = 20;
+
+          const badgeTop = Math.round(
+            tgtRect.top - pptRect.top - triangleHeight - gapAbove
+          );
+          const badgeLeft = Math.round(anchorX);
+
+          // create style scoped
+          const styleEl = document.createElement("style");
+          styleEl.setAttribute("data-warn", base);
+          const iconFs =
+            typeof getFontSize === "function" ? getFontSize(12, 13, 14) : 13;
+          const circleFs =
+            typeof getFontSize === "function" ? getFontSize(8, 9, 10) : 9;
+
+          styleEl.textContent = `
+            .${base} {
+              position: absolute;
+              left: ${badgeLeft}px;
+              top: ${badgeTop}px;
+              transform: translate(-50%, 0);
+              width: ${badgeWidth}px;
+              height: ${triangleHeight}px;
+              pointer-events: auto;
+              z-index: 3;
+              box-sizing: border-box;
+            }
+            .${base}::after{
+              content:"";
+              position:absolute;
+              height:5px;
+              width:5px;
+              border-radius:50%;
+              left:50%;
+              bottom:0px;
+              background:${circlePointColor};
+              transform:translate(-50%,50%);
+            }
+            .${base}::before{
+              content:"";
+              position:absolute;
+              left:50%;
+              bottom:0px;
+              border-left:2px solid ${circleLineColor};
+              height:19px;
+              transform:translate(-50%,100%);
+            }
+            .${base}__triangle {
+              width: 0;
+              height: 0;
+              margin: 0 auto;
+              border-left: ${halfBase}px solid transparent;
+              border-right: ${halfBase}px solid transparent;
+              border-bottom: ${triangleHeight}px solid ${triColor};
+              position: relative;
+              pointer-events: auto;
+            }
+            .${base}__fa {
+              position: absolute;
+              left: 50%;
+              top: ${Math.round(triangleHeight * 0.6)}px;
+              transform: translate(-50%, -50%);
+              font-size: ${iconFs}px;
+              color: ${iconColor};
+              pointer-events: none;
+            }
+            .${base}__circle {
+              position: absolute;
+              right: -8px;
+              top: 16px;
+              width: 18px;
+              height: 18px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              border:1px solid ${circleBorderColor};
+              justify-content: center;
+              font-size: ${circleFs}px;
+              font-weight: 600;
+              color: ${circleNumberColor};
+              background: ${circleColor};
+              pointer-events: none;
+            }
+            .${base}__popup {
+              display: none;
+              position: absolute;
+              left: 0%;
+              top: calc(100% + 6px);
+              z-index: 250;
+              pointer-events: auto;
+            }
+          `;
+          document.head.appendChild(styleEl);
+
+          // main badge DOM
+          const badgeWrap = document.createElement("div");
+          badgeWrap.className = base;
+
+          const triDiv = document.createElement("div");
+          triDiv.className = `${base}__triangle`;
+
+          const iEl = document.createElement("i");
+          (warn.fontAwsomeIcon || "fa-solid fa-exclamation")
+            .trim()
+            .split(/\s+/)
+            .forEach((c) => iEl.classList.add(c));
+          iEl.classList.add(`${base}__fa`);
+
+          badgeWrap.appendChild(triDiv);
+          badgeWrap.appendChild(iEl);
+          if (circleNumber) {
+            const circ = document.createElement("div");
+            circ.className = `${base}__circle`;
+            circ.textContent = circleNumber;
+            badgeWrap.appendChild(circ);
+          }
+          // popup
+          const hasPopupHTML = warn.Tooltip_content_HTML?.trim();
+          if (hasPopupHTML) {
+            const popup = document.createElement("div");
+            popup.className = `${base}__popup`;
+            popup.innerHTML =
+              typeof normalizeAppianString === "function"
+                ? normalizeAppianString(warn.Tooltip_content_HTML)
+                : warn.Tooltip_content_HTML;
+
+            if (warn.Tooltip_content_CSS) {
+              const popupStyle = document.createElement("style");
+              popupStyle.setAttribute("data-warn", `${base}-popup`);
+              popupStyle.textContent = `#${pptBox.id} .${base}__popup { ${warn.Tooltip_content_CSS} }`;
+              document.head.appendChild(popupStyle);
+            }
+            badgeWrap.appendChild(popup);
+
+            setTimeout(() => {
+              const triNode = pptBox.querySelector(`.${base}__triangle`);
+              const popupNode = pptBox.querySelector(`.${base}__popup`);
+              if (!triNode || !popupNode) return;
+
+              triNode.addEventListener(
+                "mouseenter",
+                () => (popupNode.style.display = "block")
+              );
+              triNode.addEventListener("mouseleave", () => {
+                setTimeout(() => {
+                  if (!popupNode.matches(":hover"))
+                    popupNode.style.display = "none";
+                }, 100);
+              });
+              popupNode.addEventListener(
+                "mouseleave",
+                () => (popupNode.style.display = "none")
+              );
+            }, 100);
+          }
+
+          // append to pptBox (like connecting lines)
+          pptBox.appendChild(badgeWrap);
+
+          // connector length adjust
+          const badgeBottomAbsY = pptRect.top + badgeTop + triangleHeight;
+          const targetTopAbsY = tgtRect.top;
+          const gap = Math.max(
+            0,
+            Math.round(targetTopAbsY - badgeBottomAbsY - 2)
+          );
+        } catch (e) {
+          console.error("warning_Logo error for", warnIdx, e);
+        }
+      });
+    });
+  });
+}
+
+warning_Logo(JSON_Data);
+
+
+function drawPageBottomShapes(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("drawPageBottomShapes: PPT-Box not found.");
+    return;
+  }
+
+  const config = JSON_Data?.Page_Configuration?.bottomShapesConfig;
+  if (!config || !config.shapes || config.shapes.length === 0) {
+    console.warn("drawPageBottomShapes: bottomShapesConfig missing or empty.");
+    return;
+  }
+
+  // Clean up any previous shapes
+  const oldShapes = pptBox.querySelectorAll(".page-bottom-shapes-wrapper");
+  oldShapes.forEach(el => el.remove());
+
+  const shapes = config.shapes;
+  const colors = config.shapesColor || [];
+  const texts = config.text || [];
+  const textColors = config.textColor || [];
+
+  // Create left and right wrapper divs
+  const leftWrapper = document.createElement("div");
+  const rightWrapper = document.createElement("div");
+
+  [leftWrapper, rightWrapper].forEach((wrap, idx) => {
+    wrap.className = `page-bottom-shapes-wrapper side-${idx === 0 ? "left" : "right"}`;
+    wrap.style.position = `${idx===0?'fixed':'sticky'}`;
+    wrap.style.bottom = `${idx===0?125:0}px`;
+    wrap.style.display = "flex";
+    wrap.style.flexDirection = "column";
+    wrap.style.gap = "50px";
+    wrap.style.zIndex = 9999;
+  });
+
+  leftWrapper.style.transform = "translateX(-25%)";
+  rightWrapper.style.right = "-20px";
+  rightWrapper.style.transform = "translateY(145%)";
+
+  // Generate up to 4 shapes
+  for (let i = 0; i < 4; i++) {
+    const shapeType = shapes[i] || "circle";
+    const bgColor = resolveColor(colors[i], "#888");
+    const label = texts[i] || "";
+    const labelColor = resolveColor(textColors[i], "white");
+
+    const shape = document.createElement("div");
+    shape.className = `bottom-shape-${i}-${shapeType}`;
+    shape.innerText = label;
+    shape.style.color = labelColor;
+    shape.style.fontSize = "10px";
+    shape.style.fontWeight = "600";
+    shape.style.textAlign = "center";
+    shape.style.display = "flex";
+    shape.style.alignItems = "center";
+    shape.style.justifyContent = "center";
+    shape.style.width = "80px";
+    shape.style.height = "40px";
+    shape.style.background = bgColor;
+
+    // Shape styling
+    if (shapeType === "circle") {
+      shape.style.borderTopLeftRadius = "80px";
+      shape.style.borderTopRightRadius = "80px";
+      shape.style.borderBottomLeftRadius = "0";
+      shape.style.borderBottomRightRadius = "0";
+    } else if (shapeType === "trapezium") {
+      shape.style.clipPath = "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)";
+    }
+
+    // Left (index 0–1) → rotate +90deg; Right (index 2–3) → rotate -90deg
+    if (i < 2) {
+      shape.style.transform = "rotateZ(90deg)";
+      leftWrapper.appendChild(shape);
+    } else {
+      shape.style.transform = "rotateZ(-90deg)";
+      rightWrapper.appendChild(shape);
+    }
+  }
+
+  pptBox.appendChild(leftWrapper);
+  pptBox.appendChild(rightWrapper);
+}
+
+
+drawPageBottomShapes(JSON_Data);
 
 function collapsabile() {
   const parents = document.querySelectorAll(".Slide-box");
@@ -4398,6 +5624,7 @@ function collapsabile() {
       drawMultiplePolygons(JSON_Data);
       connectingBottomText(JSON_Data);
       drawLogoOnMidLine(JSON_Data);
+      warning_Logo(JSON_Data);
     }
 
     // ===== SUBGROUP COLLAPSE =====
@@ -4469,6 +5696,7 @@ function collapsabile() {
         drawMultiplePolygons(JSON_Data);
         connectingBottomText(JSON_Data);
         drawLogoOnMidLine(JSON_Data);
+        warning_Logo(JSON_Data);
       });
     }
   });
