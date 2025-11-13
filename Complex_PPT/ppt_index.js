@@ -1429,7 +1429,7 @@ function convertToFormat(JsonData) {
           }px;`
     }
     position: relative;
-    z-index: 10;
+    z-index: 2;
     width: max-content;
   }
 
@@ -1623,7 +1623,7 @@ function convertToFormat(JsonData) {
     let html = `<div class="Slide-box ${uniqueClassName}">\n`;
     html += `<h1 title="${title}">
     <i class="fa-regular fa-square-caret-right" ${parentIconStyle}></i> 
-    ${limitText(title, 10)}
+    ${title}
   </h1>\n`;
 
     html += `<div class="sub-groups">\n`;
@@ -1732,7 +1732,7 @@ function convertToFormat(JsonData) {
           if (shouldShowPopup) {
             html += `
       <div class="${contentId}-hover-popup" 
-           style="display:none; position:absolute; top:0; transform:translate(25%,-70%); left:0; z-index:9999;">
+           style="display:none; position:absolute; top:0; transform:translate(25%,-70%); left:0; z-index:50;">
         ${contentDetailHTML.content_HTML}
       </div>
       <style>
@@ -1998,7 +1998,7 @@ function convertToFormat(JsonData) {
       class="${hasShadow ? "box-shadow-box" : ""} ${
             hasLink ? "Div-link" : ""
           } ${isStriped ? "striped" : ""}"
-      style="position:relative; cursor:pointer; z-index:1;"
+      style="position:relative; cursor:pointer; z-index:3;"
       ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>
       ${limitText(c, 10)}
   </h6>\n`;
@@ -2006,7 +2006,7 @@ function convertToFormat(JsonData) {
           if (shouldShowPopup) {
             html += `
       <div class="${contentId}-hover-popup" 
-           style="display:none; position:absolute; top:0; transform:translate(25%,5%); left:0; z-index:2;">
+           style="display:none; position:absolute; top:0; transform:translate(25%,5%); left:0; z-index:50;">
         ${contentDetailHTML.content_HTML}
       </div>
       <style>
@@ -2123,7 +2123,7 @@ function convertToFormat(JsonData) {
     position: absolute;
     display:flex;
     align-items: center;
-    z-index:0;
+    z-index:1;
   }
 
 
@@ -2138,8 +2138,7 @@ function convertToFormat(JsonData) {
     font-size:${getFontSize(12, 13, 14)}px;
     margin-top: 10px;
     margin-bottom: 20px;
-    position:relative;
-    z-index:10;
+    position:relative; 
   }
   .${uniqueClassName} h1 .fa-square-caret-right,
   .${uniqueClassName} h1 .fa-square-caret-down{
@@ -2180,7 +2179,7 @@ function convertToFormat(JsonData) {
     margin-bottom: 10px;
     padding-bottom: 3px;
     position:relative;
-    z-index:2;
+    z-index:1;
   }
   .${uniqueClassName} .sub-groups {
     display: flex;
@@ -2219,7 +2218,7 @@ function convertToFormat(JsonData) {
     position: relative;
     ${direction ? "margin-top:150px;" : ""}
     width: 100px;
-    z-index:2;
+    z-index:4;
   }
   .${uniqueClassName} .icon_plus_name span {
     position: absolute;
@@ -2275,7 +2274,7 @@ function convertToFormat(JsonData) {
     align-items: center;
     justify-content: space-evenly;
     position: relative;
-    z-index: 3;
+    z-index: 5;
   }
   .${uniqueClassName} .subgroups-on-line-content{
     position: relative;
@@ -2302,6 +2301,7 @@ function convertToFormat(JsonData) {
     height: 367px;
     right: -8px;
     bottom: 325px;
+    z-index:1;
   }
   .${uniqueClassName}::before {
     content: "";
@@ -2314,6 +2314,7 @@ function convertToFormat(JsonData) {
     border-radius: 50%;
     right: -9.5px;
     top: 18px;
+    z-index:1;
   } `
       : ""
   }
@@ -2477,7 +2478,7 @@ function convertToFormat(JsonData) {
   bottom: ${bottomPointPosition}px;
   left: 50%;
   transform: translate(-50%, 50%);
-  z-index: 4;
+  z-index: 2;
 }
 `;
         } else {
@@ -2493,7 +2494,7 @@ function convertToFormat(JsonData) {
         bottom: 0px;
         left: 50%;
         transform: translate(-50%, 50%);
-        z-index: 4;
+        z-index: 3;
       }
     `;
         }
@@ -2847,7 +2848,7 @@ function convertToFormat(JsonData) {
       height: ${lineHeight}px;
       padding: 0;
       margin: 0;
-      z-index: -1 !important;
+      z-index: 1;
       transform: translateX(-50%);
       background: ${lineColor};
   }
@@ -2860,7 +2861,7 @@ function convertToFormat(JsonData) {
       border-right: 4px solid transparent;
       left: 50%;
       ${direction ? `bottom:${arrowPosition}px;` : `top: ${arrowTop}px;`}
-      z-index: -1 !important;
+      z-index: 1;
       transform: translateX(-50%);
       border-${direction ? "bottom" : "top"}: 7px solid ${arrowColor};
   }
@@ -2932,6 +2933,7 @@ body {
   justify-content: start;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  z-index:50;
 }
 .mid-Line {
   position: absolute;
@@ -2944,7 +2946,7 @@ body {
     "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb"
   };
   background-color: ${JSON_Data.mid_line_config.color || "#58e3d2"};
-  z-index: 3;
+  z-index: 2;
   border-bottom-left-radius:10px;
 }
 .box-shadow-box {
@@ -3114,86 +3116,121 @@ function adjustMidLineWidth(JSON_Data) {
   const midLine = pptBox?.querySelector(".mid-Line");
   if (!pptBox || !midLine) return;
 
-  // 🧩 Find all logo title containers by id prefix
-  const allChildren = pptBox.querySelectorAll("*[id^='logo_title_id']");
-  const pptRect = pptBox.getBoundingClientRect();
+  // all logo elements (DOM nodes). Adjust selector if your ids differ.
+  const allChildren = Array.from(pptBox.querySelectorAll("[id^='logo_title_id']"));
+  if (!allChildren.length) {
+    // nothing to measure
+    midLine.style.width = "0px";
+    return;
+  }
 
-  let maxRight = 0;
-  let lastVisibleId = null;
+  // container scroll coordinates (relative to container content)
+  const containerScrollLeft = pptBox.scrollLeft;
+  const containerWidth = pptBox.clientWidth;
+  const containerLeft = containerScrollLeft;
+  const containerRight = containerScrollLeft + containerWidth;
 
-  // 🔍 Step 1: Track farthest visible logo_title_id element within PPT box
-  allChildren.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    const isVisible =
-      rect.right > pptRect.left && rect.left < pptRect.right && rect.width > 0;
-    if (isVisible) {
-      const relativeRight = rect.right - pptRect.left;
-      if (relativeRight > maxRight) {
-        maxRight = relativeRight;
-        lastVisibleId = el.id;
-      }
+  const nodesInfo = allChildren.map((el) => {
+    let x = 0;
+    let node = el;
+    while (node && node !== pptBox && node.offsetParent) {
+      x += node.offsetLeft;
+      node = node.offsetParent;
     }
+    if (node !== pptBox) {
+      const elRect = el.getBoundingClientRect();
+      const pptRect = pptBox.getBoundingClientRect();
+      x = (elRect.left - pptRect.left) + pptBox.scrollLeft;
+    }
+    const w = el.offsetWidth || el.getBoundingClientRect().width || 0;
+    return { el, left: x, right: x + w, width: w };
   });
 
-  // 🧩 Step 2: Find last valid logo_titles_config entry with a real logo_title
-  let lastParentConfig = null;
-  try {
-    const configs =
-      JSON_Data.body?.[JSON_Data.body.length - 1]?.sub_groups?.[
-        JSON_Data.body?.[JSON_Data.body.length - 1]?.sub_groups?.length - 1
-      ]?.content?.logo_titles_config || [];
-
-    // Get last config that actually has logo_title array with non-empty entries
-    lastParentConfig = configs
-      .slice()
-      .reverse()
-      .find(
-        (cfg) =>
-          cfg &&
-          Array.isArray(cfg.logo_title) &&
-          cfg.logo_title.some((t) => t && t.trim() !== "")
-      );
-  } catch (err) {
-    console.warn("Could not extract lastParentConfig:", err);
-  }
-
-  let logoCount = 0;
-  let lastParentId = null;
-
-  const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
-  const configs = lastSubGroup?.content?.logo_titles_config || [];
-
-  const validTitles = configs.flatMap((cfg) =>
-    (cfg.logo_title || []).filter((t) => t && t.trim() !== "")
-  );
-  logoCount = validTitles.length;
-
-  // last id from last config
-  const lastConfigWithId = configs.filter((c) => c.logo_id_name).at(-1);
-  lastParentId = lastConfigWithId?.logo_id_name || null;
-
-  // ⚙️ Step 4: Decide base offset based on logo count
-  let offset = getFontSize(24, 23, 24);
-  if (logoCount === 1) offset = getFontSize(52, 46, 53);
-  else if (logoCount === 2) offset = getFontSize(24, 29, 32);
-  else if (logoCount >= 3) offset = getFontSize(16, 24, 26);
-
-  // 🧮 Step 5: Add extra if last logo_title_id not visible
-  if (lastParentId && lastVisibleId !== lastParentId) {
-    offset += getFontSize(35, 40, 45);
-  }
-
-  // ⚡ Step 6: Calculate and apply width
-  const midLineWidthSetting = (
-    JSON_Data.mid_line_config?.width || "auto"
-  ).toLowerCase();
-
-  if (midLineWidthSetting === "default") {
-    midLine.style.width = `100%`;
+  // 1) Prefer the right-most element that is currently visible in the container viewport
+  const visibleNodes = nodesInfo.filter((n) => (n.right > containerLeft && n.left < containerRight && n.width > 0));
+  let targetNodeInfo = null;
+  if (visibleNodes.length) {
+    targetNodeInfo = visibleNodes.reduce((a, b) => (b.right > a.right ? b : a), visibleNodes[0]);
   } else {
-    const dynamicWidth = maxRight ? maxRight - 55 + offset : 0;
-    midLine.style.width = `${dynamicWidth}px`;
+    try {
+      const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
+      const configs = lastSubGroup?.content?.logo_titles_config || [];
+      const lastConfigWithId = configs.filter((c) => c.logo_id_name).at(-1);
+      const lastParentId = lastConfigWithId?.logo_id_name || null;
+
+      if (lastParentId) {
+        const elById = pptBox.querySelector(`#${CSS.escape(lastParentId)}`);
+        if (elById) {
+          // find nodeInfo for this element if present
+          targetNodeInfo = nodesInfo.find((n) => n.el === elById) || null;
+        }
+      }
+    } catch (err) {
+      // ignore and fallback below
+      console.warn("adjustMidLineWidth: safe JSON parse failed", err);
+    }
+
+    // 3) If still no target, pick the furthest-right element in DOM (max right)
+    if (!targetNodeInfo) {
+      targetNodeInfo = nodesInfo.reduce((a, b) => (b.right > a.right ? b : a), nodesInfo[0]);
+    }
   }
+
+  if (!targetNodeInfo) {
+    midLine.style.width = "0px";
+    return;
+  }
+
+  // midLine offsetLeft relative to container: similar strategy as above
+  let midLeft = 0;
+  {
+    let node = midLine;
+    while (node && node !== pptBox && node.offsetParent) {
+      midLeft += node.offsetLeft;
+      node = node.offsetParent;
+    }
+    if (node !== pptBox) {
+      // fallback to rect-based correction
+      const elRect = midLine.getBoundingClientRect();
+      const pptRect = pptBox.getBoundingClientRect();
+      midLeft = (elRect.left - pptRect.left) + pptBox.scrollLeft;
+    }
+  }
+
+  // compute width we need so that midLine reaches the right edge of targetNode relative to container content
+  // optionally subtract small right padding if you want a bit of breathing room (0-10 px)
+  const rightPadding = 0;
+
+  // width in pixels relative to container content
+  let desiredWidth = Math.max(0, targetNodeInfo.right - midLeft - rightPadding);
+
+  // clamp width between 0 and the full content width starting from midLeft.
+  // Need maximum possible content width: you can use the furthest right node in nodesInfo.
+  const furthestRight = nodesInfo.reduce((a, b) => (b.right > a ? b.right : a), 0);
+  const maxPossibleWidth = Math.max(0, furthestRight - midLeft);
+
+  if (desiredWidth > maxPossibleWidth) desiredWidth = maxPossibleWidth;
+  if (desiredWidth < 0) desiredWidth = 0;
+
+  const offset=getFontSize(25,30,35)
+
+  desiredWidth = Math.max(0, desiredWidth+offset);
+  midLine.style.width = `${Math.round(desiredWidth)}px`;
+}
+
+// Usage: call on load and whenever the container scrolls/resizes or content changes
+adjustMidLineWidth(JSON_Data);
+
+const pptBoxEl = document.getElementById("PPT-Box");
+if (pptBoxEl) {
+  // debounce helper to avoid too many layout recalcs
+  let _timer = null;
+  const debouncedAdjust = () => {
+    clearTimeout(_timer);
+    _timer = setTimeout(() => adjustMidLineWidth(JSON_Data), 40);
+  };
+  pptBoxEl.addEventListener("scroll", debouncedAdjust, { passive: true });
+  window.addEventListener("resize", debouncedAdjust);
 }
 
 adjustMidLineWidth(JSON_Data);
@@ -3204,67 +3241,128 @@ function adjustFooterWidth(JSON_Data) {
   const footer = pptBox?.querySelector(".footer-dark-five-lines");
   if (!pptBox || !footer) return;
 
-  const allChildren = pptBox.querySelectorAll("*[id^='logo_title_id']");
-  const pptRect = pptBox.getBoundingClientRect();
+  // one-time binding guard on pptBox to avoid multiple listeners
+  if (!pptBox.__footerWidthBinderAttached) {
+    // debounced runner
+    let t;
+    const runner = () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        try { adjustFooterWidth(JSON_Data); } catch (e) { console.warn("adjustFooterWidth runner error", e); }
+      }, 40);
+    };
+    pptBox.addEventListener("scroll", runner, { passive: true });
+    window.addEventListener("resize", runner);
+    pptBox.__footerWidthBinderAttached = true;
+  }
 
-  let maxRight = 0;
-  let lastVisibleId = null;
+  // gather logo nodes (those with id starting with logo_title_id) - as a stable array
+  const allChildren = Array.from(pptBox.querySelectorAll("[id^='logo_title_id']"));
+  if (!allChildren.length) {
+    footer.style.width = "0px";
+    return;
+  }
 
-  // 1️⃣ Find farthest visible element
-  allChildren.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    const isVisible = rect.right > pptRect.left && rect.left < pptRect.right;
+  // container coords for viewport (in content coordinate space)
+  const containerScrollLeft = pptBox.scrollLeft;
+  const containerWidth = pptBox.clientWidth;
+  const viewportLeft = containerScrollLeft;
+  const viewportRight = containerScrollLeft + containerWidth;
 
-    if (isVisible) {
-      const relativeRight = rect.right - pptRect.left;
-      if (relativeRight > maxRight) {
-        maxRight = relativeRight;
-        lastVisibleId = el.id;
-      }
+  // build nodesInfo with left/right relative to container content (offsetLeft accumulation, fallback to rect)
+  const nodesInfo = allChildren.map((el) => {
+    let left = 0;
+    let node = el;
+    while (node && node !== pptBox && node.offsetParent) {
+      left += node.offsetLeft;
+      node = node.offsetParent;
     }
+    if (node !== pptBox) {
+      // fallback to bounding rect correction
+      const elRect = el.getBoundingClientRect();
+      const pptRect = pptBox.getBoundingClientRect();
+      left = (elRect.left - pptRect.left) + pptBox.scrollLeft;
+    }
+    const width = el.offsetWidth || (el.getBoundingClientRect && el.getBoundingClientRect().width) || 0;
+    return { el, left, right: left + width, width };
   });
 
-  // 2️⃣ Extract logo IDs from the last subgroup’s logo_titles_config
+  // find right-most visible node
+  const visibleNodes = nodesInfo.filter(n => n.right > viewportLeft && n.left < viewportRight && n.width > 0);
+  let targetNode = null;
+
+  if (visibleNodes.length) {
+    targetNode = visibleNodes.reduce((a, b) => (b.right > a.right ? b : a));
+  } else {
+    try {
+      const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
+      const configs = lastSubGroup?.content?.logo_titles_config || [];
+      const logoIds = configs.map(c => c.logo_id_name).filter(id => id && id.trim() !== "");
+      const lastParentId = logoIds.at(-1) || null;
+      if (lastParentId) {
+        // safe id selector (use CSS.escape if available)
+        const safeId = (typeof CSS !== "undefined" && CSS.escape) ? CSS.escape(lastParentId) : lastParentId.replace(/([#.;?+*~\[\]()>:@!^$\\,{}|\/<>])/g, "\\$1");
+        const elById = pptBox.querySelector(`#${safeId}`);
+        if (elById) {
+          targetNode = nodesInfo.find(n => n.el === elById) || null;
+        }
+      }
+    } catch (err) {
+      // ignore and fallback below
+      console.warn("adjustFooterWidth: JSON parse fallback failed", err);
+    }
+
+    if (!targetNode) {
+      targetNode = nodesInfo.reduce((a, b) => (b.right > a.right ? b : a), nodesInfo[0]);
+    }
+  }
+
+  if (!targetNode) {
+    footer.style.width = "0px";
+    return;
+  }
+
+  // compute footerLeft relative to container
+  let footerLeft = 0;
+  {
+    let node = footer;
+    while (node && node !== pptBox && node.offsetParent) {
+      footerLeft += node.offsetLeft;
+      node = node.offsetParent;
+    }
+    if (node !== pptBox) {
+      const fRect = footer.getBoundingClientRect();
+      const pRect = pptBox.getBoundingClientRect();
+      footerLeft = (fRect.left - pRect.left) + pptBox.scrollLeft;
+    }
+  }
+
+  // compute logoCount and lastParentId for padding logic (safe)
   let logoCount = 0;
-  let lastParentId = null;
-
+  let lastParentIdForCheck = null;
   try {
-    const lastBody = JSON_Data.body?.[JSON_Data.body.length - 1];
-    const lastSubGroup = lastBody?.sub_groups?.[lastBody.sub_groups.length - 1];
-
+    const lastBody = JSON_Data.body?.at(-1);
+    const lastSubGroup = lastBody?.sub_groups?.at(-1);
     const configs = lastSubGroup?.content?.logo_titles_config || [];
-    const logoIds = configs
-      .map((cfg) => cfg.logo_id_name)
-      .filter((id) => id && id.trim() !== "");
-
+    const logoIds = configs.map(cfg => cfg.logo_id_name).filter(id => id && id.trim() !== "");
     logoCount = logoIds.length;
-    lastParentId = logoIds[logoIds.length - 1] || null;
+    lastParentIdForCheck = logoIds.at(-1) || null;
   } catch (err) {
-    console.warn("Could not determine logo count from JSON_Data:", err);
+    console.warn("adjustFooterWidth: logo count parse failed", err);
   }
 
-  // 3️⃣ Base padding adjustment by logo count
-  let padding_border_width_add = getFontSize(20, 23, 26); // default
-  if (logoCount === 1) padding_border_width_add = getFontSize(40, 43, 46);
-  else if (logoCount === 2) padding_border_width_add = getFontSize(24, 26, 28);
-
-  // 4️⃣ Add extra offset if last ID not visible
-  if (lastParentId && lastVisibleId !== lastParentId) {
-    padding_border_width_add += 48;
-  }
-
-  // 5️⃣ Apply footer width logic
-  const footerWidthSetting = (
-    JSON_Data.footer?.footer_width || "auto"
-  ).toLowerCase();
-
+  // decide footer width setting and calculate desired width clamped to content bounds
+  const footerWidthSetting = (JSON_Data.footer?.footer_width || "auto").toLowerCase();
   if (footerWidthSetting === "default") {
     footer.style.width = "100%";
   } else {
-    const dynamicWidth = maxRight + padding_border_width_add;
-    footer.style.width = `${dynamicWidth}px`;
+    const rightMost = targetNode.right;
+    const offset=getFontSize(20,30,36)
+    let desiredWidth = Math.max(0, rightMost+offset);
+    footer.style.width = `${Math.round(desiredWidth)}px`;
   }
 }
+
 
 adjustFooterWidth(JSON_Data);
 
@@ -3348,7 +3446,7 @@ function drawConnectingLines(JSON_Data) {
           const dynamicStyle = `
               .${lineClass} {
                 position: absolute;
-                z-index: 2;
+                z-index: 3;
                 left: ${left}px;
                 width: ${width}px;
                 height: ${height}px;
@@ -3480,7 +3578,7 @@ function drawBottomTimelineSeries(JSON_Data) {
         style.textContent = `
           .${timelineClass} {
             position: absolute;
-            z-index: 3;
+            z-index: 4;
             top: ${topH + top}px;
             left: ${left}px;
             width: ${width2 + 4}px;
@@ -4014,8 +4112,6 @@ function drawConnectingCircle(JSON_Data) {
             border: ${borderSize}px solid ${color};
             background: transparent;
           }
-
-          /* optional helper so icons inside container can sit above the stroke */
           .${className} .conn-icon {
             position: absolute;
             transform-origin: center;
@@ -4386,7 +4482,7 @@ function drawConnectingTextLine(JSON_Data) {
             left: ${leftAbs - pptRect.left}px;
             width: ${distance}px;
             top: ${topOffset}px;
-            z-index: 2;
+            z-index: 3;
             box-sizing: border-box;
             display: flex;
             align-items: center;
@@ -4649,7 +4745,7 @@ function drawMultiplePolygons(JSON_Data) {
   top: ${compartmentTop}px;
   width: ${SHAPE_W}px;
   height: ${compartmentHeight}px;
-  z-index: 6;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5069,7 +5165,7 @@ function warning_Logo(JSON_Data) {
               width: ${badgeWidth}px;
               height: ${triangleHeight}px;
               pointer-events: auto;
-              z-index: 3;
+              z-index: 50;
               box-sizing: border-box;
             }
             .${base}::after{
@@ -5133,7 +5229,7 @@ function warning_Logo(JSON_Data) {
               position: absolute;
               left: 0%;
               top: calc(100% + 6px);
-              z-index: 250;
+              z-index: 50;
               pointer-events: auto;
             }
           `;
