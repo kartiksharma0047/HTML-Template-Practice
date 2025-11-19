@@ -1155,12 +1155,12 @@ JSON_Data7 = {
     border_color: "black",
     scroll_horizontal: false,
     direction: "reverse",
-    bottomShapesConfig:{
-      shapes:["circle","trapezium","circle","trapezium"],
-      shapesColor:["#ffc130","#00a9bd","#ffc130","#00a9bd"],
-      text:["Timings","Locus","Timings","Locus"],
-      textColor:["white","white","white","white"]
-    }
+    bottomShapesConfig: {
+      shapes: ["circle", "trapezium", "circle", "trapezium"],
+      shapesColor: ["#ffc130", "#00a9bd", "#ffc130", "#00a9bd"],
+      text: ["Timings", "Locus", "Timings", "Locus"],
+      textColor: ["white", "white", "white", "white"],
+    },
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -1408,6 +1408,19 @@ JSON_Data7 = {
                 },
               ],
             },
+            ToolTip_Creation: [
+              {
+                display: true,
+                location: "on_midline",
+                content_id: "on_line_content_4",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+            ],
             on_line_content_configuration: {
               content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
               bordered: [{}, { border: true }],
@@ -1457,16 +1470,6 @@ JSON_Data7 = {
                 "VISIT",
                 "DIAGNOSTIC TESTS",
                 "DIAGNOSIS",
-              ],
-              content_details_HTML: [
-                {
-                  content_HTML:
-                    "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-
-                  content_CSS:
-                    ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
-                },
-                {},
               ],
               color: [
                 "Common_onLineContent_font",
@@ -1839,7 +1842,7 @@ JSON_Data7 = {
                   circleNumber: "2",
                   circleBorder: "#2323239c",
                   circleNumberColor: "white",
-                }
+                },
               },
             ],
             connecting_Text_Line: {
@@ -2046,17 +2049,19 @@ JSON_Data7 = {
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
-                    content:[
+                    content: [
                       {
-                        text:"RELAPSE",
-                        textColor:"white",
-                        textDetail:"RELAPSE",
-                        text_Details_HTML:"<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-                        text_Details_CSS:".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }"
+                        text: "RELAPSE",
+                        textColor: "white",
+                        textDetail: "RELAPSE",
+                        text_Details_HTML:
+                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                        text_Details_CSS:
+                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
                       },
                       {},
-                      {}
-                    ]
+                      {},
+                    ],
                   },
                 },
                 {
@@ -2077,17 +2082,19 @@ JSON_Data7 = {
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
-                    content:[
+                    content: [
                       {
-                        text:"PROGRESSION SUSPICION",
-                        textColor:"white",
-                        textDetail:"PROGRESSION SUSPICION",
-                        text_Details_HTML:"<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-                        text_Details_CSS:".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }"
+                        text: "PROGRESSION SUSPICION",
+                        textColor: "white",
+                        textDetail: "PROGRESSION SUSPICION",
+                        text_Details_HTML:
+                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                        text_Details_CSS:
+                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
                       },
                       {},
-                      {}
-                    ]
+                      {},
+                    ],
                   },
                 },
                 {
