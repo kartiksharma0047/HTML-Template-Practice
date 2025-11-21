@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <link rel="stylesheet" href="./ppt_index.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
 </head>
-
 <body>
-  <script src="./ppt_index.js"></script>
-
+  <script src="./ppt_index.js"></script>  
+<!-- 
   <button onclick="downloadImage()">Download Image (Full Page PNG)</button>
   <button onclick="downloadJpg()">Download JPG (Full Page)</button>
 
@@ -43,9 +42,6 @@
       if (typeof adjustMidLineWidth === 'function') adjustMidLineWidth(window.JSON_Data || {});
       if (typeof adjustFooterWidth === 'function') adjustFooterWidth(window.JSON_Data || {});
 
-      // wait 1 second to allow DOM to fully reflow and redraw
-      await new Promise(r => setTimeout(r, 500));
-
       return original;
     }
 
@@ -60,6 +56,7 @@
       if (typeof adjustMidLineWidth === 'function') adjustMidLineWidth(window.JSON_Data || {});
       if (typeof adjustFooterWidth === 'function') adjustFooterWidth(window.JSON_Data || {});
     }
+    const name= JSON_Data.Page_Configuration?.exportName || 'Process_Journey'
 
     async function downloadImage() {
       const element = document.getElementById('PPT-Box');
@@ -72,9 +69,8 @@
           pixelRatio: 2,
           style: { transform: 'scale(1)', transformOrigin: 'top left' },
         });
-
         const link = document.createElement('a');
-        link.download = 'exported-fullpage.png';
+        link.download = `${name}.png`;
         link.href = dataUrl;
         link.click();
       } catch (error) {
@@ -96,7 +92,7 @@
         });
 
         const link = document.createElement('a');
-        link.download = 'exported-fullpage.jpg';
+        link.download = `${name}.png`;
         link.href = dataUrl;
         link.click();
       } catch (error) {
@@ -105,7 +101,6 @@
         restoreAfterCapture(element, original);
       }
     }
-  </script>
+  </script>  -->
 </body>
-
 </html>

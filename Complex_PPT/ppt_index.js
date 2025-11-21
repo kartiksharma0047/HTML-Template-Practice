@@ -2,48 +2,46 @@ let collapsibleData = [];
 JSON_Data = {
   footer: {
     footer_label: {
-      footer_1_label: "Ambulatorio",
-      footer_2_label: "Centro di Senologia/Ospedale",
-      footer_3_label: "Casa",
-      footer_4_label: "Altra struttura",
-      footer_5_label: "Earmacia ospedaliera",
+      footer_1_label: "Ambulatory",
+      footer_2_label: "Hospital",
+      footer_3_label: "Other structure",
+      footer_4_label: "Home",
+      footer_5_label: "Hospital Drugstore",
     },
     footer_label_position_left: {
-      footer_1_left: "Level_5",
-      footer_2_left: "Level_0",
-      footer_3_left: "Level_7",
-      footer_4_left: "Level_4",
-      footer_5_left: "Level_2",
+      footer_1_left: "Level_6",
+      footer_2_left: "Level_7",
+      footer_3_left: "Level_5",
+      footer_4_left: "Level_7",
+      footer_5_left: "Level_4",
     },
     label_width: {
-      footer_1_width: "92",
-      footer_2_width: "85",
-      footer_3_width: "67",
-      footer_4_width: "50",
-      footer_5_width: "20",
+      footer_1_width: "90",
+      footer_2_width: "90",
+      footer_3_width: "90",
+      footer_4_width: "90",
+      footer_5_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
-    footer_width: "auto",
   },
   Page_Configuration: {
-    background_color: "#f6fcfc",
+    background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
     border_color: "black",
     scroll_horizontal: true,
-    direction: "default",
+    direction: "reverse",
+    exportName: "Process_Journey",
+    bottomShapesConfig: {
+      shapes: ["circle", "trapezium", "circle", "trapezium"],
+      shapesColor: ["#ffc130", "#00a9bd", "#ffc130", "#00a9bd"],
+      text: ["Timings", "Locus", "Timings", "Locus"],
+      textColor: ["white", "white", "white", "white"],
+    },
   },
   mid_line_config: {
     color: "#58e3d2",
     shadow:
       "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
-    width: "auto",
     logo_config: [
-      {
-        type: "Start",
-        on_line_id_start: "on_line_content_1",
-        fontAwsomeIcon: "fa-solid fa-angles-right",
-        fontColor: "white",
-        fontSize: "Level_1",
-      },
       {
         type: "Between",
         on_line_id_start: "on_line_content_4",
@@ -54,16 +52,8 @@ JSON_Data = {
       },
       {
         type: "Between",
-        on_line_id_start: "on_line_content_3",
-        on_line_id_end: "on_line_content_4",
-        fontAwsomeIcon: "fa-solid fa-angles-right",
-        fontColor: "white",
-        fontSize: "Level_1",
-      },
-      {
-        type: "Between",
-        on_line_id_start: "on_line_content_7",
-        on_line_id_end: "on_line_content_8",
+        on_line_id_start: "on_line_content_6",
+        on_line_id_end: "on_line_content_7",
         fontAwsomeIcon: "fa-solid fa-angles-right",
         fontColor: "white",
         fontSize: "Level_1",
@@ -77,9 +67,15 @@ JSON_Data = {
         fontSize: "Level_1",
       },
       {
-        type: "Between",
-        on_line_id_start: "on_line_content_10",
-        on_line_id_end: "on_line_content_11",
+        type: "Start",
+        on_line_id_start: "on_line_content_1",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "End",
+        on_line_id_end: "on_line_content_10",
         fontAwsomeIcon: "fa-solid fa-angles-right",
         fontColor: "white",
         fontSize: "Level_1",
@@ -124,76 +120,80 @@ JSON_Data = {
   body: [
     {
       component: "Start-Header",
-      title: "Pre-diagnosi",
+      title: "Pre-Diagnosis",
       configurations: {
-        title_color: "#515151",
+        title_color: "#304c8c",
         line_right: true,
-        line_color: "#adafaf",
-        circle_color: "#767979",
+        line_color: "white",
+        circle_color: "white",
+        alignment: "vertical",
+        vertical_config: {
+          boxColor: "linear-gradient(to right, #d5d6d8, #ebebebff)",
+          boxShape: "blob_soft",
+          lineColor: "black",
+        },
       },
       start_content: {
-        logo_title: "Paziente",
-        link: "https://www.youtube.com/",
-        steps: ["SCREENING", "YUDHJCS CDSVYUCUD", "HADH CBSDHJBVG"],
-        stepsLink: ["https://www.youtube.com/", "", "https://www.youtube.com/"],
-        title_detail: "Hello World!",
-        steps_details: [
-          "Hello World!",
-          "Lorem ipsum dolor sit amet,",
-          "Hello World!",
-        ],
+        logo_title: "Patient",
+        link: "",
+        steps: ["GPC", "DIAGNOS", "PREMENTO"],
+        stepsLink: [],
+        title_detail: "Paziente",
+        steps_details: [],
         configurations: {
           logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           logo_border_color: "#2394b9",
           logo_para_color:
             "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           mid_line_color: "#58e3d2",
-          background_color: ["white_color", "white_color", "white_color"],
-          font_color: ["black_color", "black_color", "black_color"],
+          background_color: ["white_color"],
+          font_color: ["black_color"],
           logo_font_color: "white_color",
         },
       },
     },
     {
       component: "Header",
-      title: "Diagnosi e pre-treatment",
+      title: "Diagnosis",
       configurations: {
-        title_color: "Common_Header_title",
+        title_color: "#304c8c",
         line_right: true,
-        line_color: "Common_Header_Line",
+        line_color: "white",
         collapsabile: true,
       },
       sub_groups: [
         {
           component: "Sub-Header",
-          title: "Diagnosi a presa in carico",
+          title: "",
           configurations: {
             title_color: "Common_SubHeader_title",
-            collapsabile: true,
+            collapsabile: false,
           },
           content: {
-            logo_heading: ["", "GOM", "GOM"],
+            logo_heading: ["", ""],
             logo_heading_color: [
-              "Common_logo_heading",
-              "linear-gradient(to right top, #340046ff 20%, #bb0000ff)",
-              "linear-gradient(to right top, #bf00ffff 20%, #ff8f8fff)",
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
+              "Common_transparent",
             ],
             logo_heading_border_color: [
-              "Common_logo_border",
-              "Common_logo_border",
-              "Common_logo_border",
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
+              "Common_transparent",
             ],
-            logo_color: ["Common_logo", "Common_logo", "Common_logo"],
+            logo_color: ["#a334c8", "#a334c8", "#a334c8", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: ["MMG"],
+                logo_title: ["GP"],
                 links: [""],
                 logo_id_name: "logo_title_id1",
-                logo_detail: ["MMG"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
+                logo_detail: ["GP"],
+                logo_title_background_color: ["white"],
+                logo_title_border: [true],
                 logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
+                logo_title_color: ["#a334c8"],
                 top_down_arrow: {
                   display: true,
                   arrow_color: "#a334c8",
@@ -201,14 +201,14 @@ JSON_Data = {
                 },
               },
               {
-                logo_title: ["Chirurgo Senologo"],
+                logo_title: ["Neurologist", "", "Nurse"],
                 links: [""],
                 logo_id_name: "logo_title_id2",
-                logo_detail: ["Chirurgo Senologo"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
+                logo_detail: ["Neurologist", "", "Nurse"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
                 top_down_arrow: {
                   display: true,
                   arrow_color: "#a334c8",
@@ -216,145 +216,89 @@ JSON_Data = {
                 },
               },
               {
-                logo_title: ["Radiologo"],
+                logo_title: ["Radiologist", "", "Bio & Other"],
                 links: [""],
                 logo_id_name: "logo_title_id3",
-                logo_detail: ["Radiologo"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
+                logo_detail: ["Radiologist", "", "Bio & Other"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
                 top_down_arrow: {
                   display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["GP"],
+                links: [""],
+                logo_id_name: "logo_title_id4",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["black"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
                   arrow_color: "#a334c8",
                   line_color: "#a334c8",
                 },
               },
             ],
+            line_right: "false",
+            line_color: "Common_SubHeader_lineRight",
             connecting_Line: {
-              display: "true",
+              display: true,
               connections: [
                 {
                   starting: "logo_title_id1",
                   ending: "logo_title_id2",
-                  height: "Level_1",
+                  height: "Level_5",
                 },
                 {
                   starting: "logo_title_id2",
                   ending: "logo_title_id4",
-                  height: "Level_1",
+                  height: "Level_5",
                 },
               ],
-              arrow_color: [
-                "Common_ConnectingLine_arrow",
-                "Common_ConnectingLine_arrow",
-              ],
-              line_color: [
-                "Common_ConnectingLine_line",
-                "Common_ConnectingLine_line",
-              ],
+              arrow_color: ["#9f30cb", "#9f30cb"],
+              line_color: ["#9f30cb", "#9f30cb"],
             },
-            connecting_Rectangle: {
-              display: "true",
+            connecting_Text_Line: {
+              display: true,
               connections: [
                 {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                    ],
-                    iconColors: [
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                    ],
-                    iconSize: [
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                    ],
-                    justify_content: "center",
-                    start_end_gaps: "Level_0",
-                    shape: "rounded_x_lg",
-                  },
-                },
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "true",
-                  ending: "on_line_content_10",
-                  end_from_ending: "true",
-                  height: "Level_15",
-                  border_thickness: "Level_4",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                    ],
-                    iconColors: [
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                    ],
-                    iconSize: [
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                    ],
-                    justify_content: "evenly",
-                    start_end_gaps: "Level_5",
-                    shape: "rounded_bottom",
-                  },
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_6",
+                  start_from: "start",
+                  end_from: "mid",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text_Position: "above",
+                  text: "Process",
+                  text_color: "black",
+                  line_color: "black",
                 },
               ],
-              color: ["Common_ConnectingRectangle", "#9f30cb"],
             },
-            line_right: true,
-            line_color: "Common_SubHeader_lineRight",
-            above_line_content: {
-              content: ["effettuaa", "effettua", "effettua"],
-              color: [
-                "Common_AboveLine_Text",
-                "Common_AboveLine_Text",
-                "Common_AboveLine_Text",
-              ],
-              content_details: [
-                "effettuaastag",
-                "effettuaastag",
-                "effettuaastag",
-              ],
-              justify_content: "evenly",
-            },
+            ToolTip_Creation: [
+              {
+                display: true,
+                location: "on_midline",
+                content_id: "on_line_content_4",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+            ],
             on_line_content_configuration: {
-              content: ["VISITA", "VISITA", "ESAMI"],
-              shapes: ["rounded_vertices", "Default", "Rounded_sm"],
+              content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
+              bordered: [{}, { border: true }],
               striping: [
-                { striped: false },
                 {
                   stripped: true,
                   reversed: false,
@@ -364,6 +308,12 @@ JSON_Data = {
                     "rgba(0, 191, 255, 0.35)",
                     "rgba(0, 191, 255, 0.35)",
                   ],
+                },
+                {
+                  stripped: false,
+                },
+                {
+                  stripped: false,
                 },
                 {
                   stripped: true,
@@ -376,23 +326,27 @@ JSON_Data = {
                   ],
                 },
               ],
-              bordered: [
-                { border: true, color: "black_color" },
-                { border: false },
-                { border: false },
+              link: [""],
+              shapes: [
+                "rounded_right",
+                "rounded_vertices",
+                "rounded_left",
+                "rounded_bottom",
               ],
-              link: ["www.google.com", "", "www.google.com"],
               content_id: [
                 "on_line_content_1",
                 "on_line_content_2",
                 "on_line_content_3",
+                "on_line_content_4",
               ],
               content_details: [
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "Hello World!",
-                "Hello World!",
+                "SYMPTOMS",
+                "VISIT",
+                "DIAGNOSTIC TESTS",
+                "DIAGNOSIS",
               ],
               color: [
+                "Common_onLineContent_font",
                 "Common_onLineContent_font",
                 "Common_onLineContent_font",
                 "Common_onLineContent_font",
@@ -401,18 +355,22 @@ JSON_Data = {
                 "Common_onLineContent_Background",
                 "Common_onLineContent_Background",
                 "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
               ],
               bottom_point_color: [
                 "Common_onLineContent_Point",
                 "Common_onLineContent_Point",
                 "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
               ],
+              bottom_point_position_onLine: [false, false, false, true],
               bottom_line_color: [
                 "Common_onLineContent_Line",
                 "Common_onLineContent_Line",
                 "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
               ],
-              bottom_Line_postion: ["Level_1", "Level_2", "Level_2"],
+              bottom_Line_postion: ["Level_1", "Level_2", "Level_3", "Level_2"],
               bottom_shape_positions: [
                 {
                   levels: ["Level_1"],
@@ -423,127 +381,46 @@ JSON_Data = {
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
+                  levels: ["Level_3"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
                   levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
                 },
               ],
             },
             BottomtimelineSeries: {
-              background_color: "Common_timeLineSeries_Background",
-              border_color: "Common_timeLineSeries_Border",
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
               timlines: [
                 {
-                  content: "<10 gg da",
-                  height: "Level_1",
-                  show_border: "true",
+                  content: "_?? days from symptoms",
+                  height: "Level_3",
+                  show_border: false,
                   starting: "on_line_content_1",
                   ending: "on_line_content_2",
                 },
                 {
-                  content: "<10 gg da",
-                  height: "Level_1",
-                  show_border: "true",
+                  content: "_?? days from results",
+                  height: "Level_10",
+                  show_border: false,
                   starting: "on_line_content_2",
                   ending: "on_line_content_3",
                 },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Decisione Tera",
-          configurations: {
-            title_color: "Common_SubHeader_title",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: [""],
-            logo_heading_color: ["Common_logo_heading"],
-            logo_heading_border_color: ["Common_logo_border"],
-            logo_color: ["Common_logo"],
-            logo_titles_config: [
-              {
-                logo_title: ["GOM"],
-                links: [""],
-                logo_id_name: "logo_title_id4",
-                logo_detail: ["GOM"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              }
-            ],
-            connecting_Line: {
-              display: "true",
-              connections: [
                 {
-                  starting: "logo_title_id4",
-                  ending: "logo_title_id6",
-                  height: "Level_1",
-                },
-                {
-                  starting: "logo_title_id4",
-                  ending: "logo_title_id5",
+                  content: "_?? days from results",
                   height: "Level_3",
-                },
-              ],
-              arrow_color: ["#ffc305", "#ffc305"],
-              line_color: ["#ffc305", "#ffc305"],
-            },
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_4",
-                  start_from_starting: "true",
-                  ending: "on_line_content_7",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["Common_ConnectingRectangle"],
-            },
-            line_right: false,
-            line_color: "Common_SubHeader_lineRight",
-            above_line_content: {
-              content: ["effettua"],
-              color: ["Common_AboveLine_Text"],
-              content_details: ["effettuaastag"],
-              justify_content: "evenly",
-            },
-            on_line_content_configuration: {
-              content: ["DIAGNOSI"],
-              content_id: ["on_line_content_4"],
-              content_details: ["Hello World!"],
-              link: ["www.google.com"],
-              color: ["Common_onLineContent_font"],
-              background_color: ["Common_onLineContent_Background"],
-              bottom_point_color: ["Common_onLineContent_Point"],
-              bottom_line_color: ["Common_onLineContent_Line"],
-              bottom_Line_postion: ["Level_2"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_2"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color: "Common_timeLineSeries_Background",
-              border_color: "Common_timeLineSeries_Border",
-              timlines: [
-                {
-                  content: "<30 gg da",
-                  height: "Level_1",
-                  show_border: "true",
+                  show_border: false,
                   starting: "on_line_content_3",
+                  ending: "on_line_content_4",
+                },
+                {
+                  content: "_?? days from symptoms",
+                  height: "Level_18",
+                  show_border: false,
+                  starting: "on_line_content_1",
                   ending: "on_line_content_4",
                 },
               ],
@@ -556,344 +433,266 @@ JSON_Data = {
       component: "Header",
       title: "Treatment",
       configurations: {
-        title_color: "#515151",
+        title_color: "#304c8c",
         line_right: true,
-        line_color: "#adafaf",
+        line_color: "white",
         collapsabile: true,
       },
       sub_groups: [
         {
           component: "Sub-Header",
-          title: "Terapia Neo-Adiuvante",
+          title: "",
           configurations: {
-            title_color: "rgb(81, 81, 81)",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: ["GOM", "GOM"],
-            logo_heading_color: [
-              "linear-gradient(to right top, #000000ff 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #000000ff)",
-            ],
-            logo_heading_border_color: ["#a334c8", "#a334c8"],
-            logo_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_titles_config: [
-              {
-                logo_title: ["Oncologo"],
-                links: [""],
-                logo_id_name: "logo_title_id5",
-                logo_detail: ["Oncologo"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["Infermiere"],
-                links: [""],
-                logo_id_name: "logo_title_id6",
-                logo_detail: ["Infermiere"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              }
-            ],
-            connecting_Line: {
-              display: "true",
-              connections: [
-                {
-                  starting: "logo_title_id5",
-                  ending: "logo_title_id8",
-                  height: "Level_5",
-                },
-                {
-                  starting: "logo_title_id6",
-                  ending: "logo_title_id11",
-                  height: "Level_6",
-                },
-                {
-                  starting: "logo_title_id6",
-                  ending: "logo_title_id12",
-                  height: "Level_6",
-                },
-              ],
-              arrow_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
-              line_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
-            },
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            line_right: true,
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["ET", "TT", "CT"],
-              content_id: [
-                "on_line_content_5",
-                "on_line_content_6",
-                "on_line_content_7",
-              ],
-              content_details: ["Hello", "hi", "World"],
-              link: ["www.google.com", "", "www.google.com"],
-              color: ["black", "black", "black"],
-              background_color: ["#e6fffc", "#e6fffc", "#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_Line_postion: ["Level_3","Level_3","Level_2"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_3"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_3"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_2"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<30 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_4",
-                  ending: "on_line_content_7",
-                },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Chirurgia",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: ["GOM", ""],
-            logo_heading_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_heading_border_color: ["#a334c8", "#a334c8"],
-            logo_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_titles_config: [
-              {
-                logo_title: ["Chirurgo/ Senologo"],
-                links: [""],
-                logo_id_name: "logo_title_id7",
-                logo_detail: ["Chirurgo/ Senologo"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["Chirurgo Plastico"],
-                links: [""],
-                logo_id_name: "logo_title_id8",
-                logo_detail: ["Chirurgo Plastico"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              }
-            ],
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            line_right: "true",
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["INTERVENTO"],
-              content_id: ["on_line_content_8"],
-              link: ["www.google.com"],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_Line_postion: ["Level_2"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_2"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<30 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_7",
-                  ending: "on_line_content_8",
-                },
-                {
-                  content: "<60 gg da",
-                  height: "Level_6",
-                  show_border: "false",
-                  starting: "on_line_content_3",
-                  ending: "on_line_content_8",
-                },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Chemioterapia",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-            collapsabile: true,
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
           },
           content: {
             logo_heading: ["", ""],
-            logo_heading_color: [
-              "Common_transparent",
-              "Common_transparent",
-            ],
-            logo_heading_border_color: ["Common_transparent", "Common_transparent"],
-            logo_color: [
-              "Common_transparent",
-              "Common_transparent",
-            ],
+            logo_heading_color: ["#a334c8", "Common_transparent"],
+            logo_heading_border_color: ["#a334c8", "Common_transparent"],
+            logo_color: ["#a334c8", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: ["GOM"],
+                logo_title: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
                 links: [""],
-                logo_id_name: "logo_title_id9",
-                logo_detail: ["GOM"],
-                logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [false],
-                logo_title_border_color: ["Common_transparent"],
-                logo_title_color: ["Common_transparent"],
+                logo_id_name: "logo_title_id5",
+                logo_detail: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
+                logo_title_background_color: [
+                  "white",
+                  "white",
+                  "white",
+                  "white",
+                ],
+                logo_title_border: [true, true, true, true],
+                logo_title_border_color: [
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                ],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
                 top_down_arrow: {
-                  display: false,
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
               },
               {
-                logo_title: ["DOM"],
+                logo_title: ["Neurologist"],
                 links: [""],
-                logo_id_name: "logo_title_id10",
-                logo_detail: ["DOM"],
+                logo_id_name: "logo_title_id6",
+                logo_detail: ["Neurologist"],
                 logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [false],
+                logo_title_border: [true],
                 logo_title_border_color: ["Common_transparent"],
                 logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
                   display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
-              }
+              },
             ],
-            connecting_Rectangle: {
-              display: false,
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: true,
               connections: [
                 {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
+                  starting: "logo_title_id5",
+                  ending: "logo_title_id7",
                   height: "Level_5",
-                  border_thickness: "Level_2",
                 },
               ],
-              color: ["#58e3d2"],
+              arrow_color: ["#9f30cb"],
+              line_color: ["#9f30cb"],
             },
+            warning_logos: [
+              {
+                target_On_Line_Content: "on_line_content_5",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "end",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "1",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                },
+                Tooltip_content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                Tooltip_content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+            ],
+            on_line_content_configuration: {
+              content: ["ST DMT SELECTION", "DMT INITIATION"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_sm", "rounded_reverse_vertices"],
+              content_id: ["on_line_content_5", "on_line_content_6"],
+              content_details: ["ST DMT SELECTION", "DMT INITIATION"],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
+              bottom_point_color: [
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+              ],
+              bottom_point_position_onLine: [false, true],
+              bottom_line_color: [
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+              ],
+              bottom_Line_color: [
+                "Common_onLineContent_Shape",
+                "Common_onLineContent_Shape",
+              ],
+              bottom_Line_postion: ["Level_2", "Level_5"],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_2"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_2", "Level_4", "Level_5"],
+                  color: [
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                  ],
+                },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from diagnosis",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_4",
+                  ending: "on_line_content_5",
+                },
+                {
+                  content: "_?? days from DMT choice",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_5",
+                  ending: "on_line_content_6",
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+    {
+      component: "Header",
+      title: "Follow-Up",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: true,
+        line_color: "white",
+        collapsabile: true,
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
+          },
+          content: {
+            logo_heading: ["", ""],
+            logo_heading_color: ["Common_transparent", "Common_transparent"],
+            logo_heading_border_color: [
+              "Common_transparent",
+              "Common_transparent",
+            ],
+            logo_color: ["Common_transparent", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id7",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id8",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+            ],
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connectingBottomText: [
+              {
+                target_On_Line_Content: "on_line_content_8",
+                position: "start",
+                text: "1 alla settimana",
+                textDetail: "1 alla settimana x 3 settimane",
+                textColor: "black",
+                borderColor: "black",
+                height: "Level_1",
+              },
+            ],
             connecting_Circle: {
               display: true,
               connections: [
                 {
                   starting: "on_line_content_7",
-                  ending: "on_line_content_10",
-                  start_from: "middle",
-                  end_from: "middle",
-                  border_thickness: "Level_2",
-                  config: {
-                    fontAwsomeicon: "fa-solid fa-angles-left",
-                    iconColor: "white",
-                    iconSize: "Level_2",
-                    direction: "default",
-                  },
-                },
-                {
-                  starting: "on_line_content_9",
-                  ending: "on_line_content_10",
+                  ending: "on_line_content_8",
                   start_from: "start",
                   end_from: "end",
-                  border_thickness: "Level_2",
+                  border_thickness: "Level_10",
                   config: {
                     fontAwsomeicon: "fa-solid fa-angles-left",
                     iconColor: "white",
@@ -902,301 +701,616 @@ JSON_Data = {
                   },
                 },
               ],
-              color: ["#c140a5", "#58e3d2"],
+              color: ["#58e3d2"],
             },
+            warning_logos: [
+              {
+                target_On_Line_Content: "on_line_content_7",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "end",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "2",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                },
+              },
+            ],
             connecting_Text_Line: {
-              display: true,
+              display: false,
               connections: [
                 {
-                  starting: "on_line_content_7",
-                  ending: "on_line_content_10",
+                  starting: "on_line_content_4",
+                  ending: "on_line_content_5",
                   start_from: "start",
                   end_from: "end",
                   line_Thickness: "Level_1",
                   line_Position: "Level_1",
-                  text: "procedure pre-dskfdsfdsfdsfjfsdfsdffdffdf",
+                  text: "procedure pre-trettamento",
                   text_Position: "middle",
                   text_color: "black",
                   line_color: "black",
                 },
               ],
             },
-            line_right: "true",
-            line_color: "#c4c9ca",
             on_line_content_configuration: {
-              content: ["DICT", "CTDI"],
-              content_id: ["on_line_content_9", "on_line_content_10"],
-              link: ["www.google.com", ""],
-              color: ["black", "black"],
-              background_color: ["#e6fffc", "#e6fffc"],
+              content: ["VISIT", "TX CONTINUES"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_top", "rounded_top_right"],
+              content_id: ["on_line_content_7", "on_line_content_8"],
+              content_details: ["ST DMT SELECTION", "DMT INITIATION"],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
               bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
               ],
+              bottom_point_position_onLine: [true, true],
               bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
               ],
-              bottom_Line_postion: ["Level_2","Level_4"],
+              bottom_Line_color: [
+                "Common_onLineContent_Shape",
+                "Common_onLineContent_Shape",
+              ],
+              bottom_Line_postion: ["Level_2", "Level_4"],
               bottom_shape_positions: [
                 {
                   levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_4"],
-                  color: ["Common_onLineContent_Shape"],
-                }
+                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
+                  color: [
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                  ],
+                },
               ],
             },
             BottomtimelineSeries: {
               background_color:
                 "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
+              border_color: "#ffc305",
               timlines: [
                 {
-                  content: "<60 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_8",
-                  ending: "on_line_content_10",
+                  content: "_?? days from DMT initiation",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_5",
+                  ending: "on_line_content_7",
+                },
+                {
+                  content: "6 months wihout events",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_7",
+                  ending: "on_line_content_8",
                 },
               ],
             },
           },
         },
+      ],
+    },
+    {
+      component: "Header",
+      title: "Treatment",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: false,
+        line_color: "white",
+        collapsabile: true,
+      },
+      sub_groups: [
         {
           component: "Sub-Header",
-          title: "Radioterapia",
+          title: "",
           configurations: {
-            title_color: "rgb(81, 81, 81)",
-            collapsabile: true,
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
           },
           content: {
-            logo_heading: ["ROM"],
-            logo_heading_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_heading_border_color: ["#a334c8"],
-            logo_color: ["linear-gradient(to right top, #a334c8 20%, #f65467)"],
+            logo_heading: ["", ""],
+            logo_heading_color: ["#a334c8", "Common_transparent"],
+            logo_heading_border_color: ["#a334c8", "Common_transparent"],
+            logo_color: ["#a334c8", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: ["MMG"],
+                logo_title: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
                 links: [""],
-                logo_id_name: "logo_title_id11",
-                logo_detail: ["MMG"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
+                logo_id_name: "logo_title_id9",
+                logo_detail: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
+                logo_title_background_color: [
+                  "white",
+                  "white",
+                  "white",
+                  "white",
+                ],
+                logo_title_border: [true, true, true, true],
+                logo_title_border_color: [
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                ],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
                 top_down_arrow: {
                   display: true,
                   arrow_color: "#a334c8",
                   line_color: "#a334c8",
                 },
-              }
-            ],
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            line_right: "false",
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["VISITA"],
-              content_id: ["on_line_content_11"],
-              link: ["www.google.com"],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_Line_postion: ["Level_3"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_3"],
-                  color: ["Common_onLineContent_Shape"],
-                }
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-          },
-          content: {
-            logo_heading: [""],
-            logo_heading_color: [
-              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
-            ],
-            logo_heading_border_color: ["#ffc100"],
-            logo_color: [
-              "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
-            ],
-            logo_titles_config: [
+              },
               {
-                logo_title: ["GOM"],
+                logo_title: ["Neurologist"],
                 links: [""],
-                logo_id_name: "logo_title_id12",
-                logo_detail: ["GOM"],
-                logo_title_background_color: ["linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#ffc100"],
-                logo_title_color: ["white"],
+                logo_id_name: "logo_title_id10",
+                logo_detail: ["Neurologist"],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
-                  display: true,
-                  arrow_color: "#ffc100",
-                  line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
-              }
+              },
             ],
-            connecting_Rectangle: {
-              display: "false",
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: true,
               connections: [
                 {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
+                  starting: "logo_title_id5",
+                  ending: "logo_title_id7",
                   height: "Level_5",
-                  border_thickness: "Level_2",
                 },
               ],
-              color: ["#58e3d2"],
+              arrow_color: ["#9f30cb"],
+              line_color: ["#9f30cb"],
             },
-            line_right: "false",
-            line_color: "#c4c9ca",
+            connecting_Rectangle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "RELAPSE",
+                        textColor: "white",
+                        textDetail: "RELAPSE",
+                        text_Details_HTML:
+                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                        text_Details_CSS:
+                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+                      },
+                      {},
+                      {},
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_23",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "PROGRESSION SUSPICION",
+                        textColor: "white",
+                        textDetail: "PROGRESSION SUSPICION",
+                        text_Details_HTML:
+                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                        text_Details_CSS:
+                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+                      },
+                      {},
+                      {},
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_8",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    direction: "reverse",
+                  },
+                },
+              ],
+              color: ["#58e3d2", "#58e3d2", "#58e3d2"],
+            },
             on_line_content_configuration: {
-              content: ["RT"],
-              content_id: ["on_line_content_12"],
-              link: ["www.google.com"],
-              color: ["black"],
-              background_color: ["#e6fffc"],
+              content: ["HET DMT SELECTION", "TX CONTINUES"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_bottom_right", "rounded_lg"],
+              content_id: ["on_line_content_9", "on_line_content_10"],
+              content_details: ["HET DMT SELECTION", "TX CONTINUES"],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
               bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "Common_onLineContent_Point",
+                "Common_transparent",
               ],
+              bottom_point_position_onLine: [false, true],
               bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "Common_onLineContent_Line",
+                "Common_transparent",
               ],
-              bottom_Line_postion: ["Level_4"],
+              bottom_Line_color: [
+                "Common_onLineContent_Shape",
+                "Common_transparent",
+              ],
+              bottom_Line_postion: ["Level_4", "Level_1"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_4"],
-                  color: ["Common_onLineContent_Shape"],
-                }
+                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
+                  color: [
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                  ],
+                },
+                {
+                  levels: ["Level_1"],
+                  color: ["Common_transparent"],
+                },
               ],
             },
             BottomtimelineSeries: {
               background_color:
                 "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
+              border_color: "#ffc305",
               timlines: [
                 {
-                  content: "<60 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_10",
-                  ending: "on_line_content_12",
+                  content: "2.3 - 3.6 years with some DMT",
+                  height: "Level_18",
+                  show_border: false,
+                  starting: "on_line_content_6",
+                  ending: "on_line_content_9",
                 },
               ],
             },
           },
         },
+      ],
+    },
+    {
+      component: "Header",
+      title: "Treatment",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: false,
+        line_color: "white",
+        collapsabile: true,
+      },
+      sub_groups: [
         {
           component: "Sub-Header",
           title: "",
           configurations: {
-            title_color: "rgb(81, 81, 81)",
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
           },
           content: {
-            logo_heading: [""],
-            logo_heading_color: [
-              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
-            ],
-            logo_heading_border_color: ["#ffc100"],
-            logo_color: [
-              "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
-            ],
+            logo_heading: ["", ""],
+            logo_heading_color: ["#a334c8", "Common_transparent"],
+            logo_heading_border_color: ["#a334c8", "Common_transparent"],
+            logo_color: ["#a334c8", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: ["GOM"],
+                logo_title: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
                 links: [""],
-                logo_id_name: "logo_title_id13",
-                logo_detail: ["GOM"],
-                logo_title_background_color: ["linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#ffc100"],
-                logo_title_color: ["white"],
+                logo_id_name: "logo_title_id9",
+                logo_detail: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
+                logo_title_background_color: [
+                  "white",
+                  "white",
+                  "white",
+                  "white",
+                ],
+                logo_title_border: [true, true, true, true],
+                logo_title_border_color: [
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                ],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
                 top_down_arrow: {
                   display: true,
-                  arrow_color: "#ffc100",
-                  line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
                 },
-              }
+              },
+              {
+                logo_title: ["Neurologist"],
+                links: [""],
+                logo_id_name: "logo_title_id10",
+                logo_detail: ["Neurologist"],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
             ],
-            connecting_Rectangle: {
-              display: "false",
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: true,
               connections: [
                 {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
+                  starting: "logo_title_id5",
+                  ending: "logo_title_id7",
                   height: "Level_5",
-                  border_thickness: "Level_2",
                 },
               ],
-              color: ["#58e3d2"],
+              arrow_color: ["#9f30cb"],
+              line_color: ["#9f30cb"],
             },
-            line_right: "false",
-            line_color: "#c4c9ca",
+            connecting_Rectangle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "RELAPSE",
+                        textColor: "white",
+                        textDetail: "RELAPSE",
+                        text_Details_HTML:
+                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                        text_Details_CSS:
+                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+                      },
+                      {},
+                      {},
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_23",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "PROGRESSION SUSPICION",
+                        textColor: "white",
+                        textDetail: "PROGRESSION SUSPICION",
+                        text_Details_HTML:
+                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                        text_Details_CSS:
+                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+                      },
+                      {},
+                      {},
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_8",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    direction: "reverse",
+                  },
+                },
+              ],
+              color: ["#58e3d2", "#58e3d2", "#58e3d2"],
+            },
             on_line_content_configuration: {
-              content: ["RT"],
-              content_id: ["on_line_content_13"],
-              link: ["www.google.com"],
-              color: ["black"],
-              background_color: ["#e6fffc"],
+              content: ["HET DMT SELECTION", "TX CONTINUES"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_bottom_right", "rounded_lg"],
+              content_id: ["on_line_content_9", "on_line_content_10"],
+              content_details: ["HET DMT SELECTION", "TX CONTINUES"],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
               bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                "Common_onLineContent_Point",
+                "Common_transparent",
               ],
+              bottom_point_position_onLine: [false, true],
               bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                "Common_onLineContent_Line",
+                "Common_transparent",
               ],
-              bottom_Line_postion: ["Level_4"],
+              bottom_Line_color: [
+                "Common_onLineContent_Shape",
+                "Common_transparent",
+              ],
+              bottom_Line_postion: ["Level_4", "Level_1"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_4"],
-                  color: ["Common_onLineContent_Shape"],
-                }
+                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
+                  color: [
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                  ],
+                },
+                {
+                  levels: ["Level_1"],
+                  color: ["Common_transparent"],
+                },
               ],
             },
             BottomtimelineSeries: {
               background_color:
                 "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
+              border_color: "#ffc305",
               timlines: [
                 {
-                  content: "<60 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_10",
-                  ending: "on_line_content_12",
+                  content: "2.3 - 3.6 years with some DMT",
+                  height: "Level_18",
+                  show_border: false,
+                  starting: "on_line_content_6",
+                  ending: "on_line_content_9",
                 },
               ],
             },
@@ -2920,7 +3034,6 @@ body {
 }
 .PPT-Box {
   border: 1px solid ${JSON_Data.Page_Configuration.border_color || "#000000"};
-  max-width:1520px;
   height:710px;
   background: ${JSON_Data.Page_Configuration.background_color || "#f6fcfc"};
   position: relative;
@@ -5373,155 +5486,90 @@ function ToolTip_Creation(JSON_Data) {
 
     section.sub_groups.forEach((sg, subIdx) => {
       const tips = sg.content?.ToolTip_Creation;
-      if (!tips || tips.length === 0) {
-        const oldEls = pptBox.querySelectorAll(
-          `[class*="tooltip-sec${sectionIdx}-sub${subIdx}-"]`
-        );
-        oldEls.forEach((el) => {
-          const styleTag = document.querySelector(
-            `style[data-tooltip="${el.className}"]`
-          );
-          if (styleTag) styleTag.remove();
-          el.remove();
-        });
-        return;
-      }
+      if (!tips || tips.length === 0) return;
 
-      // cleanup previous group tooltips
-      const existing = pptBox.querySelectorAll(
-        `[class*="tooltip-sec${sectionIdx}-sub${subIdx}-"]`
-      );
-      existing.forEach((el) => {
-        const styleTag = document.querySelector(
-          `style[data-tooltip="${el.className}"]`
-        );
-        if (styleTag) styleTag.remove();
-        el.remove();
-      });
+      const tooltipPrefix = `tooltip-sec${sectionIdx}-sub${subIdx}-`;
 
       tips.forEach((tip, tipIdx) => {
-        try {
-          if (!tip || typeof tip !== "object") return;
-          if (!tip.display) return;
+        if (!tip || typeof tip !== "object" || !tip.display) return;
 
-          const targetId = tip.content_id;
-          const targetEl = document.getElementById(targetId);
-          if (!targetId || !targetEl || !isVisible(targetEl)) return;
+        const targetId = tip.content_id;
+        const targetEl = document.getElementById(targetId);
+        if (!targetId || !targetEl || !isVisible(targetEl)) return;
 
-          const base = `tooltip-sec${sectionIdx}-sub${subIdx}-${tipIdx}-${targetId}`;
+        const base = `${tooltipPrefix}${tipIdx}-${targetId}`;
+        const vPos = (tip.vertical_position || "top").toLowerCase();
+        const hPos = (tip.horizontal_position || "right").toLowerCase();
+
+        const createTooltip = () => {
           const pptRect = pptBox.getBoundingClientRect();
           const tgtRect = targetEl.getBoundingClientRect();
-
-          // normalize positions (case-insensitive)
-          const vPos = (tip.vertical_position || "Top")
-            .toString()
-            .toLowerCase();
-          const hPos = (tip.horizontal_position || "Right")
-            .toString()
-            .toLowerCase();
 
           const styleEl = document.createElement("style");
           styleEl.setAttribute("data-tooltip", base);
           styleEl.textContent = `
-      .${base} {
-        position: absolute;
-        z-index: 50;
-        pointer-events: auto;
-        /* visual defaults for tooltip wrapper (no display:none) */
-      }
-    `;
+            .${base} {
+              position: absolute;
+              z-index: 50;
+              pointer-events: auto;
+            }
+          `;
           document.head.appendChild(styleEl);
 
-          // Create wrapper
           const wrapper = document.createElement("div");
           wrapper.className = base;
-
-          // Add content (normalize if helper exists)
           const htmlContent = tip.content_HTML || "";
           wrapper.innerHTML =
             typeof normalizeAppianString === "function"
               ? normalizeAppianString(htmlContent)
               : htmlContent;
-
-          // Hide initially by inline style (so CSS rules are applied but element doesn't show)
           wrapper.style.display = "none";
           wrapper.style.visibility = "hidden";
-          // append to pptBox (wrapper is absolutely positioned relative to pptBox)
           pptBox.appendChild(wrapper);
 
-          // Inject custom CSS for tooltip HTML if provided
           if (tip.content_CSS) {
             const popupStyle = document.createElement("style");
             popupStyle.setAttribute("data-tooltip", `${base}-popup`);
-            // scope CSS to the container optionally; keeping raw CSS as given
             popupStyle.textContent = tip.content_CSS;
             document.head.appendChild(popupStyle);
           }
 
-          // measure and position AFTER CSS has applied
           const measureAndPosition = () => {
-            try {
-              // Make visible for measurement (don't leave it visible)
-              wrapper.style.display = "block";
-              // ensure browser has layouted the element; getBoundingClientRect will now be correct
-              const popupRect = wrapper.getBoundingClientRect();
-              const TW = popupRect.width;
-              const TH = popupRect.height;
-              const CW = tgtRect.width;
-              const CH = tgtRect.height;
-              let wrapperY, wrapperX;
+            const popupRect = wrapper.getBoundingClientRect();
+            const TW = popupRect.width,
+              TH = popupRect.height;
+            const CW = tgtRect.width,
+              CH = tgtRect.height;
+            let wrapperY, wrapperX;
 
-              // Vertical
-              if (vPos === "top") {
-                wrapperY = tgtRect.top - TH + CH / 3;
-              } else if (vPos === "middle") {
-                wrapperY = tgtRect.top + CH / 2 - TH / 2;
-              } else if (vPos === "bottom") {
-                wrapperY = tgtRect.top + CH / 3;
-              } else {
-                wrapperY = tgtRect.top - TH + CH / 3;
-              }
+            if (vPos === "top") wrapperY = tgtRect.top - TH + CH / 3;
+            else if (vPos === "middle")
+              wrapperY = tgtRect.top + CH / 2 - TH / 2;
+            else if (vPos === "bottom") wrapperY = tgtRect.top + CH / 3;
+            else wrapperY = tgtRect.top - TH + CH / 3;
 
-              // Horizontal
-              if (hPos === "left") {
-                wrapperX = tgtRect.left + CW / 3 - TW;
-              } else if (hPos === "middle") {
-                wrapperX = tgtRect.left -TW/2 + CW/2 ; 
-              } else if (hPos === "right") {
-                wrapperX = tgtRect.left+tgtRect.width - CW / 3;
-              } else {
-                wrapperX = tgtRect.left - CW / 3 + TW;
-              }
+            if (hPos === "left") wrapperX = tgtRect.left + CW / 3 - TW;
+            else if (hPos === "middle")
+              wrapperX = tgtRect.left - TW / 2 + CW / 2;
+            else if (hPos === "right")
+              wrapperX = tgtRect.left + tgtRect.width - CW / 3;
+            else wrapperX = tgtRect.left - CW / 3 + TW;
 
-              const finalTop = Math.round(wrapperY - pptRect.top);
-              const finalLeft = Math.round(wrapperX - pptRect.left);
-
-              // Apply position
-              wrapper.style.top = `${finalTop}px`;
-              wrapper.style.left = `${finalLeft}px`;
-
-              // Hide after measuring (so it only shows on hover)
-              wrapper.style.display = "none";
-              wrapper.style.visibility = "visible"; // allow it to be visible later without reflow issues
-            } catch (e) {
-              console.error("ToolTip positioning failed for", base, e);
-            }
+            const finalTop = Math.round(wrapperY - pptRect.top);
+            const finalLeft = Math.round(wrapperX - pptRect.left);
+            wrapper.style.top = `${finalTop}px`;
+            wrapper.style.left = `${finalLeft}px`;
+            wrapper.style.visibility = "visible";
+            wrapper.style.display = "none";
           };
 
-          // Use requestAnimationFrame to ensure CSS has applied; fallback to setTimeout
-          if (typeof requestAnimationFrame === "function") {
-            requestAnimationFrame(() => {
-              // micro delay to allow font metrics/resources apply in some browsers
-              setTimeout(measureAndPosition, 0);
-            });
-          } else {
-            setTimeout(measureAndPosition, 20);
-          }
+          setTimeout(measureAndPosition, 0);
 
-          // ---------------- Hover Interaction ----------------
           const showTooltip = () => {
+            measureAndPosition();
             wrapper.style.display = "block";
           };
+
           const hideTooltipWithDelay = () => {
             setTimeout(() => {
               if (!wrapper.matches(":hover")) wrapper.style.display = "none";
@@ -5530,58 +5578,34 @@ function ToolTip_Creation(JSON_Data) {
 
           targetEl.addEventListener("mouseenter", showTooltip);
           targetEl.addEventListener("mouseleave", hideTooltipWithDelay);
-          wrapper.addEventListener("mouseleave", () => {
-            wrapper.style.display = "none";
-          });
+          wrapper.addEventListener(
+            "mouseleave",
+            () => (wrapper.style.display = "none")
+          );
 
-          // Reposition on scroll/resize (keeps tooltip in correct place)
           const repositionOnScrollOrResize = () => {
-            try {
-              const updatedPptRect = pptBox.getBoundingClientRect();
-              const updatedTgtRect = targetEl.getBoundingClientRect();
-              // temporarily show to measure (if it's display:none)
-              const prevDisplay = wrapper.style.display;
-              wrapper.style.display = "block";
-              const popupRect = wrapper.getBoundingClientRect();
-              const TW = popupRect.width;
-              const TH = popupRect.height;
-              const CW = updatedTgtRect.width;
-              const CH = updatedTgtRect.height;
-
-              let wrapperY, wrapperX;
-              if (vPos === "top") wrapperY = updatedTgtRect.top - TH + CH / 2;
-              else if (vPos === "middle")
-                wrapperY = updatedTgtRect.top + CH / 2 - TH / 2;
-              else if (vPos === "bottom")
-                wrapperY = updatedTgtRect.top + CH / 2;
-              else wrapperY = updatedTgtRect.top - TH + CH / 2;
-
-              if (hPos === "left") wrapperX = updatedTgtRect.left + CW / 3 - TW;
-              else if (hPos === "middle") wrapperX = updatedTgtRect.left;
-              else if (hPos === "right")
-                wrapperX = updatedTgtRect.left - CW / 3 + TW;
-              else wrapperX = updatedTgtRect.left - CW / 3 + TW;
-
-              const finalTop = Math.round(wrapperY - updatedPptRect.top);
-              const finalLeft = Math.round(wrapperX - updatedPptRect.left);
-              wrapper.style.top = `${finalTop}px`;
-              wrapper.style.left = `${finalLeft}px`;
-
-              // restore display state
-              wrapper.style.display = prevDisplay;
-            } catch (e) {
-              // ignore reposition failures
-            }
+            const prevDisplay = wrapper.style.display;
+            wrapper.style.display = "block";
+            measureAndPosition();
+            wrapper.style.display = prevDisplay;
           };
 
           window.addEventListener("resize", repositionOnScrollOrResize);
           window.addEventListener("scroll", repositionOnScrollOrResize, true);
 
-          // NOTE: If you later remove tooltips, remember to remove the added event listeners
-          // and style tags to avoid leaks.
-        } catch (e) {
-          console.error("ToolTip_Creation error for", tipIdx, e);
-        }
+          return wrapper;
+        };
+
+        // Always reset previous tooltip before creating a new one
+        const cleanup = () => {
+          const old = pptBox.querySelector(`.${base}`);
+          const style = document.querySelector(`style[data-tooltip="${base}"]`);
+          if (old) old.remove();
+          if (style) style.remove();
+        };
+
+        cleanup();
+        createTooltip();
       });
     });
   });

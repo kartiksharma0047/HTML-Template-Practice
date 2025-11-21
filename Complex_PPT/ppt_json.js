@@ -1,1128 +1,1221 @@
 // Latest JSON at the Top
-JSON_Data8={
-  footer: {
-    footer_label: {
-      footer_1_label: "Ambulatorio",
-      footer_2_label: "Centro di Senologia/Ospedale",
-      footer_3_label: "Casa",
-      footer_4_label: "Altra struttura",
-      footer_5_label: "Earmacia ospedaliera",
+JSON_Data8 = {
+    footer: {
+      footer_label: {
+        footer_1_label: "Ambulatorio",
+        footer_2_label: "Centro di Senologia/Ospedale",
+        footer_3_label: "Casa",
+        footer_4_label: "Altra struttura",
+        footer_5_label: "Earmacia ospedaliera",
+      },
+      footer_label_position_left: {
+        footer_1_left: "Level_5",
+        footer_2_left: "Level_0",
+        footer_3_left: "Level_7",
+        footer_4_left: "Level_4",
+        footer_5_left: "Level_2",
+      },
+      label_width: {
+        footer_1_width: "92",
+        footer_2_width: "85",
+        footer_3_width: "67",
+        footer_4_width: "50",
+        footer_5_width: "20",
+      },
+      footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
+      footer_width: "auto",
     },
-    footer_label_position_left: {
-      footer_1_left: "Level_5",
-      footer_2_left: "Level_0",
-      footer_3_left: "Level_7",
-      footer_4_left: "Level_4",
-      footer_5_left: "Level_2",
+    Page_Configuration: {
+      background_color: "#f6fcfc",
+      border_color: "black",
+      scroll_horizontal: true,
+      direction: "default",
+      exportName: "Process_Journey",
     },
-    label_width: {
-      footer_1_width: "92",
-      footer_2_width: "85",
-      footer_3_width: "67",
-      footer_4_width: "50",
-      footer_5_width: "20",
+    mid_line_config: {
+      color: "#58e3d2",
+      shadow:
+        "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
+      width: "auto",
+      logo_config: [
+        {
+          type: "Start",
+          on_line_id_start: "on_line_content_1",
+          fontAwsomeIcon: "fa-solid fa-angles-right",
+          fontColor: "white",
+          fontSize: "Level_1",
+        },
+        {
+          type: "Between",
+          on_line_id_start: "on_line_content_4",
+          on_line_id_end: "on_line_content_5",
+          fontAwsomeIcon: "fa-solid fa-angles-right",
+          fontColor: "white",
+          fontSize: "Level_1",
+        },
+        {
+          type: "Between",
+          on_line_id_start: "on_line_content_3",
+          on_line_id_end: "on_line_content_4",
+          fontAwsomeIcon: "fa-solid fa-angles-right",
+          fontColor: "white",
+          fontSize: "Level_1",
+        },
+        {
+          type: "Between",
+          on_line_id_start: "on_line_content_7",
+          on_line_id_end: "on_line_content_8",
+          fontAwsomeIcon: "fa-solid fa-angles-right",
+          fontColor: "white",
+          fontSize: "Level_1",
+        },
+        {
+          type: "Between",
+          on_line_id_start: "on_line_content_8",
+          on_line_id_end: "on_line_content_9",
+          fontAwsomeIcon: "fa-solid fa-angles-right",
+          fontColor: "white",
+          fontSize: "Level_1",
+        },
+        {
+          type: "Between",
+          on_line_id_start: "on_line_content_10",
+          on_line_id_end: "on_line_content_11",
+          fontAwsomeIcon: "fa-solid fa-angles-right",
+          fontColor: "white",
+          fontSize: "Level_1",
+        },
+      ],
     },
-    footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
-    footer_width: "auto",
-  },
-  Page_Configuration: {
-    background_color: "#f6fcfc",
-    border_color: "black",
-    scroll_horizontal: true,
-    direction: "default",
-  },
-  mid_line_config: {
-    color: "#58e3d2",
-    shadow:
-      "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
-    width: "auto",
-    logo_config: [
+    colors: {
+      white_color: "#ffffff",
+      black_color: "#000000",
+      Common_Header_title: "#515151",
+      Common_Header_Line: "#adafaf",
+      Common_SubHeader_title: "rgb(81, 81, 81)",
+      Common_SubHeader_lineRight: "#c4c9ca",
+      Common_logo_heading:
+        "linear-gradient(to right top, #a334c8 20%, #f65467)",
+      Common_logo_border: "#a334c8",
+      Common_logo: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+      Common_logo_title: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+      Common_TopDown_arror: "#a334c8",
+      Common_TopDown_Line: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+      Common_ConnectingLine_arrow: "#a334c8",
+      Common_ConnectingLine_line: "#9f30cb",
+      Common_ConnectingRectangle: "#58e3d2",
+      Common_AboveLine_Text: "#7a1bffff",
+      Common_onLineContent_font: "#000000",
+      Common_onLineContent_Background: "#e6fffc",
+      Common_onLineContent_Point:
+        "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+      Common_onLineContent_Line:
+        "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+      Common_onLineContent_Shape:
+        "linear-gradient(to top, #1375af 5%, #45d0cb)",
+      Common_timeLineSeries_Background:
+        "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+      Common_timeLineSeries_Border: "#ffc100",
+      Common_transparent: "transparent",
+    },
+    fontConfig: {
+      fontsize: "small",
+      fontFamily: ["Poppins", "sans-serif"],
+    },
+    body: [
       {
-        type: "Start",
-        on_line_id_start: "on_line_content_1",
-        fontAwsomeIcon: "fa-solid fa-angles-right",
-        fontColor: "white",
-        fontSize: "Level_1",
+        component: "Start-Header",
+        title: "Pre-diagnosi",
+        configurations: {
+          title_color: "#515151",
+          line_right: true,
+          line_color: "#adafaf",
+          circle_color: "#767979",
+        },
+        start_content: {
+          logo_title: "Paziente",
+          link: "https://www.youtube.com/",
+          steps: ["SCREENING", "YUDHJCS CDSVYUCUD", "HADH CBSDHJBVG"],
+          stepsLink: [
+            "https://www.youtube.com/",
+            "",
+            "https://www.youtube.com/",
+          ],
+          title_detail: "Hello World!",
+          steps_details: [
+            "Hello World!",
+            "Lorem ipsum dolor sit amet,",
+            "Hello World!",
+          ],
+          configurations: {
+            logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
+            logo_border_color: "#2394b9",
+            logo_para_color:
+              "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
+            mid_line_color: "#58e3d2",
+            background_color: ["white_color", "white_color", "white_color"],
+            font_color: ["black_color", "black_color", "black_color"],
+            logo_font_color: "white_color",
+          },
+        },
       },
       {
-        type: "Between",
-        on_line_id_start: "on_line_content_4",
-        on_line_id_end: "on_line_content_5",
-        fontAwsomeIcon: "fa-solid fa-angles-right",
-        fontColor: "white",
-        fontSize: "Level_1",
+        component: "Header",
+        title: "Diagnosi e pre-treatment",
+        configurations: {
+          title_color: "Common_Header_title",
+          line_right: true,
+          line_color: "Common_Header_Line",
+          collapsabile: true,
+        },
+        sub_groups: [
+          {
+            component: "Sub-Header",
+            title: "Diagnosi a presa in carico",
+            configurations: {
+              title_color: "Common_SubHeader_title",
+              collapsabile: true,
+            },
+            content: {
+              logo_heading: ["", "GOM", "GOM"],
+              logo_heading_color: [
+                "Common_logo_heading",
+                "linear-gradient(to right top, #340046ff 20%, #bb0000ff)",
+                "linear-gradient(to right top, #bf00ffff 20%, #ff8f8fff)",
+              ],
+              logo_heading_border_color: [
+                "Common_logo_border",
+                "Common_logo_border",
+                "Common_logo_border",
+              ],
+              logo_color: ["Common_logo", "Common_logo", "Common_logo"],
+              logo_titles_config: [
+                {
+                  logo_title: ["MMG"],
+                  links: [""],
+                  logo_id_name: "logo_title_id1",
+                  logo_detail: ["MMG"],
+                  logo_title_background_color: ["Common_logo_title"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#a334c8"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#a334c8",
+                    line_color: "#a334c8",
+                  },
+                },
+                {
+                  logo_title: ["Chirurgo Senologo"],
+                  links: [""],
+                  logo_id_name: "logo_title_id2",
+                  logo_detail: ["Chirurgo Senologo"],
+                  logo_title_background_color: ["Common_logo_title"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#a334c8"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#a334c8",
+                    line_color: "#a334c8",
+                  },
+                },
+                {
+                  logo_title: ["Radiologo"],
+                  links: [""],
+                  logo_id_name: "logo_title_id3",
+                  logo_detail: ["Radiologo"],
+                  logo_title_background_color: ["Common_logo_title"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#a334c8"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#a334c8",
+                    line_color: "#a334c8",
+                  },
+                },
+              ],
+              connecting_Line: {
+                display: "true",
+                connections: [
+                  {
+                    starting: "logo_title_id1",
+                    ending: "logo_title_id2",
+                    height: "Level_1",
+                  },
+                  {
+                    starting: "logo_title_id2",
+                    ending: "logo_title_id4",
+                    height: "Level_1",
+                  },
+                ],
+                arrow_color: [
+                  "Common_ConnectingLine_arrow",
+                  "Common_ConnectingLine_arrow",
+                ],
+                line_color: [
+                  "Common_ConnectingLine_line",
+                  "Common_ConnectingLine_line",
+                ],
+              },
+              connecting_Rectangle: {
+                display: "true",
+                connections: [
+                  {
+                    starting: "on_line_content_1",
+                    start_from_starting: "false",
+                    ending: "on_line_content_3",
+                    end_from_ending: "true",
+                    height: "Level_5",
+                    border_thickness: "Level_2",
+                    config: {
+                      fontAwsomeicons: [
+                        "fa-solid fa-angles-left",
+                        "fa-solid fa-angles-left",
+                        "fa-solid fa-angles-left",
+                        "fa-solid fa-angles-left",
+                        "fa-solid fa-angles-left",
+                        "fa-solid fa-angles-left",
+                      ],
+                      iconColors: [
+                        "black_color",
+                        "black_color",
+                        "black_color",
+                        "black_color",
+                        "black_color",
+                        "black_color",
+                      ],
+                      iconSize: [
+                        "Size_0",
+                        "Size_0",
+                        "Size_0",
+                        "Size_0",
+                        "Size_0",
+                        "Size_0",
+                      ],
+                      justify_content: "center",
+                      start_end_gaps: "Level_0",
+                      shape: "rounded_x_lg",
+                    },
+                  },
+                  {
+                    starting: "on_line_content_1",
+                    start_from_starting: "true",
+                    ending: "on_line_content_10",
+                    end_from_ending: "true",
+                    height: "Level_15",
+                    border_thickness: "Level_4",
+                    config: {
+                      fontAwsomeicons: [
+                        "fa-solid fa-caret-right",
+                        "fa-solid fa-caret-right",
+                        "fa-solid fa-caret-right",
+                        "fa-solid fa-caret-right",
+                        "fa-solid fa-caret-right",
+                        "fa-solid fa-caret-right",
+                      ],
+                      iconColors: [
+                        "white_color",
+                        "white_color",
+                        "white_color",
+                        "white_color",
+                        "white_color",
+                        "white_color",
+                      ],
+                      iconSize: [
+                        "Size_2",
+                        "Size_2",
+                        "Size_2",
+                        "Size_2",
+                        "Size_2",
+                        "Size_2",
+                      ],
+                      justify_content: "evenly",
+                      start_end_gaps: "Level_5",
+                      shape: "rounded_bottom",
+                    },
+                  },
+                ],
+                color: ["Common_ConnectingRectangle", "#9f30cb"],
+              },
+              line_right: true,
+              line_color: "Common_SubHeader_lineRight",
+              above_line_content: {
+                content: ["effettuaa", "effettua", "effettua"],
+                color: [
+                  "Common_AboveLine_Text",
+                  "Common_AboveLine_Text",
+                  "Common_AboveLine_Text",
+                ],
+                content_details: [
+                  "effettuaastag",
+                  "effettuaastag",
+                  "effettuaastag",
+                ],
+                justify_content: "evenly",
+              },
+              on_line_content_configuration: {
+                content: ["VISITA", "VISITA", "ESAMI"],
+                shapes: ["rounded_vertices", "Default", "Rounded_sm"],
+                striping: [
+                  { striped: false },
+                  {
+                    stripped: true,
+                    reversed: false,
+                    colors: [
+                      "rgba(255, 255, 255, 0.6)",
+                      "rgba(255, 255, 255, 0.6)",
+                      "rgba(0, 191, 255, 0.35)",
+                      "rgba(0, 191, 255, 0.35)",
+                    ],
+                  },
+                  {
+                    stripped: true,
+                    reversed: true,
+                    colors: [
+                      "rgba(255, 255, 255, 0.6)",
+                      "rgba(255, 255, 255, 0.6)",
+                      "rgba(0, 191, 255, 0.35)",
+                      "rgba(0, 191, 255, 0.35)",
+                    ],
+                  },
+                ],
+                bordered: [
+                  { border: true, color: "black_color" },
+                  { border: false },
+                  { border: false },
+                ],
+                link: ["www.google.com", "", "www.google.com"],
+                content_id: [
+                  "on_line_content_1",
+                  "on_line_content_2",
+                  "on_line_content_3",
+                ],
+                content_details: [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                  "Hello World!",
+                  "Hello World!",
+                ],
+                color: [
+                  "Common_onLineContent_font",
+                  "Common_onLineContent_font",
+                  "Common_onLineContent_font",
+                ],
+                background_color: [
+                  "Common_onLineContent_Background",
+                  "Common_onLineContent_Background",
+                  "Common_onLineContent_Background",
+                ],
+                bottom_point_color: [
+                  "Common_onLineContent_Point",
+                  "Common_onLineContent_Point",
+                  "Common_onLineContent_Point",
+                ],
+                bottom_line_color: [
+                  "Common_onLineContent_Line",
+                  "Common_onLineContent_Line",
+                  "Common_onLineContent_Line",
+                ],
+                bottom_Line_postion: ["Level_1", "Level_2", "Level_2"],
+                bottom_shape_positions: [
+                  {
+                    levels: ["Level_1"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                  {
+                    levels: ["Level_2"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                  {
+                    levels: ["Level_2"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                ],
+              },
+              BottomtimelineSeries: {
+                background_color: "Common_timeLineSeries_Background",
+                border_color: "Common_timeLineSeries_Border",
+                timlines: [
+                  {
+                    content: "<10 gg da",
+                    height: "Level_1",
+                    show_border: "true",
+                    starting: "on_line_content_1",
+                    ending: "on_line_content_2",
+                  },
+                  {
+                    content: "<10 gg da",
+                    height: "Level_1",
+                    show_border: "true",
+                    starting: "on_line_content_2",
+                    ending: "on_line_content_3",
+                  },
+                ],
+              },
+            },
+          },
+          {
+            component: "Sub-Header",
+            title: "Decisione Tera",
+            configurations: {
+              title_color: "Common_SubHeader_title",
+              collapsabile: true,
+            },
+            content: {
+              logo_heading: [""],
+              logo_heading_color: ["Common_logo_heading"],
+              logo_heading_border_color: ["Common_logo_border"],
+              logo_color: ["Common_logo"],
+              logo_titles_config: [
+                {
+                  logo_title: ["GOM"],
+                  links: [""],
+                  logo_id_name: "logo_title_id4",
+                  logo_detail: ["GOM"],
+                  logo_title_background_color: ["Common_logo_title"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#a334c8"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#a334c8",
+                    line_color: "#a334c8",
+                  },
+                },
+              ],
+              connecting_Line: {
+                display: "true",
+                connections: [
+                  {
+                    starting: "logo_title_id4",
+                    ending: "logo_title_id6",
+                    height: "Level_1",
+                  },
+                  {
+                    starting: "logo_title_id4",
+                    ending: "logo_title_id5",
+                    height: "Level_3",
+                  },
+                ],
+                arrow_color: ["#ffc305", "#ffc305"],
+                line_color: ["#ffc305", "#ffc305"],
+              },
+              connecting_Rectangle: {
+                display: "false",
+                connections: [
+                  {
+                    starting: "on_line_content_4",
+                    start_from_starting: "true",
+                    ending: "on_line_content_7",
+                    end_from_ending: "true",
+                    height: "Level_5",
+                    border_thickness: "Level_2",
+                  },
+                ],
+                color: ["Common_ConnectingRectangle"],
+              },
+              line_right: false,
+              line_color: "Common_SubHeader_lineRight",
+              above_line_content: {
+                content: ["effettua"],
+                color: ["Common_AboveLine_Text"],
+                content_details: ["effettuaastag"],
+                justify_content: "evenly",
+              },
+              on_line_content_configuration: {
+                content: ["DIAGNOSI"],
+                content_id: ["on_line_content_4"],
+                content_details: ["Hello World!"],
+                link: ["www.google.com"],
+                color: ["Common_onLineContent_font"],
+                background_color: ["Common_onLineContent_Background"],
+                bottom_point_color: ["Common_onLineContent_Point"],
+                bottom_line_color: ["Common_onLineContent_Line"],
+                bottom_Line_postion: ["Level_2"],
+                bottom_shape_positions: [
+                  {
+                    levels: ["Level_2"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                ],
+              },
+              BottomtimelineSeries: {
+                background_color: "Common_timeLineSeries_Background",
+                border_color: "Common_timeLineSeries_Border",
+                timlines: [
+                  {
+                    content: "<30 gg da",
+                    height: "Level_1",
+                    show_border: "true",
+                    starting: "on_line_content_3",
+                    ending: "on_line_content_4",
+                  },
+                ],
+              },
+            },
+          },
+        ],
       },
       {
-        type: "Between",
-        on_line_id_start: "on_line_content_3",
-        on_line_id_end: "on_line_content_4",
-        fontAwsomeIcon: "fa-solid fa-angles-right",
-        fontColor: "white",
-        fontSize: "Level_1",
-      },
-      {
-        type: "Between",
-        on_line_id_start: "on_line_content_7",
-        on_line_id_end: "on_line_content_8",
-        fontAwsomeIcon: "fa-solid fa-angles-right",
-        fontColor: "white",
-        fontSize: "Level_1",
-      },
-      {
-        type: "Between",
-        on_line_id_start: "on_line_content_8",
-        on_line_id_end: "on_line_content_9",
-        fontAwsomeIcon: "fa-solid fa-angles-right",
-        fontColor: "white",
-        fontSize: "Level_1",
-      },
-      {
-        type: "Between",
-        on_line_id_start: "on_line_content_10",
-        on_line_id_end: "on_line_content_11",
-        fontAwsomeIcon: "fa-solid fa-angles-right",
-        fontColor: "white",
-        fontSize: "Level_1",
+        component: "Header",
+        title: "Treatment",
+        configurations: {
+          title_color: "#515151",
+          line_right: true,
+          line_color: "#adafaf",
+          collapsabile: true,
+        },
+        sub_groups: [
+          {
+            component: "Sub-Header",
+            title: "Terapia Neo-Adiuvante",
+            configurations: {
+              title_color: "rgb(81, 81, 81)",
+              collapsabile: true,
+            },
+            content: {
+              logo_heading: ["GOM", "GOM"],
+              logo_heading_color: [
+                "linear-gradient(to right top, #000000ff 20%, #f65467)",
+                "linear-gradient(to right top, #a334c8 20%, #000000ff)",
+              ],
+              logo_heading_border_color: ["#a334c8", "#a334c8"],
+              logo_color: [
+                "linear-gradient(to right top, #a334c8 20%, #f65467)",
+                "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              ],
+              logo_titles_config: [
+                {
+                  logo_title: ["Oncologo"],
+                  links: [""],
+                  logo_id_name: "logo_title_id5",
+                  logo_detail: ["Oncologo"],
+                  logo_title_background_color: ["Common_logo_title"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#a334c8"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#a334c8",
+                    line_color: "#a334c8",
+                  },
+                },
+                {
+                  logo_title: ["Infermiere"],
+                  links: [""],
+                  logo_id_name: "logo_title_id6",
+                  logo_detail: ["Infermiere"],
+                  logo_title_background_color: ["Common_logo_title"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#a334c8"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#a334c8",
+                    line_color: "#a334c8",
+                  },
+                },
+              ],
+              connecting_Line: {
+                display: "true",
+                connections: [
+                  {
+                    starting: "logo_title_id5",
+                    ending: "logo_title_id8",
+                    height: "Level_5",
+                  },
+                  {
+                    starting: "logo_title_id6",
+                    ending: "logo_title_id11",
+                    height: "Level_6",
+                  },
+                  {
+                    starting: "logo_title_id6",
+                    ending: "logo_title_id12",
+                    height: "Level_6",
+                  },
+                ],
+                arrow_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
+                line_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
+              },
+              connecting_Rectangle: {
+                display: "false",
+                connections: [
+                  {
+                    starting: "on_line_content_1",
+                    start_from_starting: "false",
+                    ending: "on_line_content_3",
+                    end_from_ending: "true",
+                    height: "Level_5",
+                    border_thickness: "Level_2",
+                  },
+                ],
+                color: ["#58e3d2"],
+              },
+              line_right: true,
+              line_color: "#c4c9ca",
+              on_line_content_configuration: {
+                content: ["ET", "TT", "CT"],
+                content_id: [
+                  "on_line_content_5",
+                  "on_line_content_6",
+                  "on_line_content_7",
+                ],
+                content_details: ["Hello", "hi", "World"],
+                link: ["www.google.com", "", "www.google.com"],
+                color: ["black", "black", "black"],
+                background_color: ["#e6fffc", "#e6fffc", "#e6fffc"],
+                bottom_point_color: [
+                  "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                  "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                  "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                ],
+                bottom_line_color: [
+                  "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                  "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                  "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                ],
+                bottom_Line_postion: ["Level_3", "Level_3", "Level_2"],
+                bottom_shape_positions: [
+                  {
+                    levels: ["Level_3"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                  {
+                    levels: ["Level_3"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                  {
+                    levels: ["Level_2"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                ],
+              },
+              BottomtimelineSeries: {
+                background_color:
+                  "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+                border_color: "#ffc100",
+                timlines: [
+                  {
+                    content: "<30 gg da",
+                    height: "Level_1",
+                    show_border: "true",
+                    starting: "on_line_content_4",
+                    ending: "on_line_content_7",
+                  },
+                ],
+              },
+            },
+          },
+          {
+            component: "Sub-Header",
+            title: "Chirurgia",
+            configurations: {
+              title_color: "rgb(81, 81, 81)",
+              collapsabile: true,
+            },
+            content: {
+              logo_heading: ["GOM", ""],
+              logo_heading_color: [
+                "linear-gradient(to right top, #a334c8 20%, #f65467)",
+                "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              ],
+              logo_heading_border_color: ["#a334c8", "#a334c8"],
+              logo_color: [
+                "linear-gradient(to right top, #a334c8 20%, #f65467)",
+                "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              ],
+              logo_titles_config: [
+                {
+                  logo_title: ["Chirurgo/ Senologo"],
+                  links: [""],
+                  logo_id_name: "logo_title_id7",
+                  logo_detail: ["Chirurgo/ Senologo"],
+                  logo_title_background_color: ["Common_logo_title"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#a334c8"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#a334c8",
+                    line_color: "#a334c8",
+                  },
+                },
+                {
+                  logo_title: ["Chirurgo Plastico"],
+                  links: [""],
+                  logo_id_name: "logo_title_id8",
+                  logo_detail: ["Chirurgo Plastico"],
+                  logo_title_background_color: ["Common_logo_title"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#a334c8"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#a334c8",
+                    line_color: "#a334c8",
+                  },
+                },
+              ],
+              connecting_Rectangle: {
+                display: "false",
+                connections: [
+                  {
+                    starting: "on_line_content_1",
+                    start_from_starting: "false",
+                    ending: "on_line_content_3",
+                    end_from_ending: "true",
+                    height: "Level_5",
+                    border_thickness: "Level_2",
+                  },
+                ],
+                color: ["#58e3d2"],
+              },
+              line_right: "true",
+              line_color: "#c4c9ca",
+              on_line_content_configuration: {
+                content: ["INTERVENTO"],
+                content_id: ["on_line_content_8"],
+                link: ["www.google.com"],
+                color: ["black"],
+                background_color: ["#e6fffc"],
+                bottom_point_color: [
+                  "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                ],
+                bottom_line_color: [
+                  "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                ],
+                bottom_Line_postion: ["Level_2"],
+                bottom_shape_positions: [
+                  {
+                    levels: ["Level_2"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                ],
+              },
+              BottomtimelineSeries: {
+                background_color:
+                  "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+                border_color: "#ffc100",
+                timlines: [
+                  {
+                    content: "<30 gg da",
+                    height: "Level_1",
+                    show_border: "true",
+                    starting: "on_line_content_7",
+                    ending: "on_line_content_8",
+                  },
+                  {
+                    content: "<60 gg da",
+                    height: "Level_6",
+                    show_border: "false",
+                    starting: "on_line_content_3",
+                    ending: "on_line_content_8",
+                  },
+                ],
+              },
+            },
+          },
+          {
+            component: "Sub-Header",
+            title: "Chemioterapia",
+            configurations: {
+              title_color: "rgb(81, 81, 81)",
+              collapsabile: true,
+            },
+            content: {
+              logo_heading: ["", ""],
+              logo_heading_color: ["Common_transparent", "Common_transparent"],
+              logo_heading_border_color: [
+                "Common_transparent",
+                "Common_transparent",
+              ],
+              logo_color: ["Common_transparent", "Common_transparent"],
+              logo_titles_config: [
+                {
+                  logo_title: ["GOM"],
+                  links: [""],
+                  logo_id_name: "logo_title_id9",
+                  logo_detail: ["GOM"],
+                  logo_title_background_color: ["Common_transparent"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["Common_transparent"],
+                  logo_title_color: ["Common_transparent"],
+                  top_down_arrow: {
+                    display: false,
+                  },
+                },
+                {
+                  logo_title: ["DOM"],
+                  links: [""],
+                  logo_id_name: "logo_title_id10",
+                  logo_detail: ["DOM"],
+                  logo_title_background_color: ["Common_transparent"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["Common_transparent"],
+                  logo_title_color: ["Common_transparent"],
+                  top_down_arrow: {
+                    display: false,
+                  },
+                },
+              ],
+              connecting_Rectangle: {
+                display: false,
+                connections: [
+                  {
+                    starting: "on_line_content_1",
+                    start_from_starting: "false",
+                    ending: "on_line_content_3",
+                    end_from_ending: "true",
+                    height: "Level_5",
+                    border_thickness: "Level_2",
+                  },
+                ],
+                color: ["#58e3d2"],
+              },
+              connecting_Circle: {
+                display: true,
+                connections: [
+                  {
+                    starting: "on_line_content_7",
+                    ending: "on_line_content_10",
+                    start_from: "middle",
+                    end_from: "middle",
+                    border_thickness: "Level_2",
+                    config: {
+                      fontAwsomeicon: "fa-solid fa-angles-left",
+                      iconColor: "white",
+                      iconSize: "Level_2",
+                      direction: "default",
+                    },
+                  },
+                  {
+                    starting: "on_line_content_9",
+                    ending: "on_line_content_10",
+                    start_from: "start",
+                    end_from: "end",
+                    border_thickness: "Level_2",
+                    config: {
+                      fontAwsomeicon: "fa-solid fa-angles-left",
+                      iconColor: "white",
+                      iconSize: "Level_2",
+                      direction: "default",
+                    },
+                  },
+                ],
+                color: ["#c140a5", "#58e3d2"],
+              },
+              connecting_Text_Line: {
+                display: true,
+                connections: [
+                  {
+                    starting: "on_line_content_7",
+                    ending: "on_line_content_10",
+                    start_from: "start",
+                    end_from: "end",
+                    line_Thickness: "Level_1",
+                    line_Position: "Level_1",
+                    text: "procedure pre-dskfdsfdsfdsfjfsdfsdffdffdf",
+                    text_Position: "middle",
+                    text_color: "black",
+                    line_color: "black",
+                  },
+                ],
+              },
+              line_right: "true",
+              line_color: "#c4c9ca",
+              on_line_content_configuration: {
+                content: ["DICT", "CTDI"],
+                content_id: ["on_line_content_9", "on_line_content_10"],
+                link: ["www.google.com", ""],
+                color: ["black", "black"],
+                background_color: ["#e6fffc", "#e6fffc"],
+                bottom_point_color: [
+                  "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                  "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                ],
+                bottom_line_color: [
+                  "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                  "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                ],
+                bottom_Line_postion: ["Level_2", "Level_4"],
+                bottom_shape_positions: [
+                  {
+                    levels: ["Level_2"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                  {
+                    levels: ["Level_4"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                ],
+              },
+              BottomtimelineSeries: {
+                background_color:
+                  "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+                border_color: "#ffc100",
+                timlines: [
+                  {
+                    content: "<60 gg da",
+                    height: "Level_1",
+                    show_border: "true",
+                    starting: "on_line_content_8",
+                    ending: "on_line_content_10",
+                  },
+                ],
+              },
+            },
+          },
+          {
+            component: "Sub-Header",
+            title: "Radioterapia",
+            configurations: {
+              title_color: "rgb(81, 81, 81)",
+              collapsabile: true,
+            },
+            content: {
+              logo_heading: ["ROM"],
+              logo_heading_color: [
+                "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              ],
+              logo_heading_border_color: ["#a334c8"],
+              logo_color: [
+                "linear-gradient(to right top, #a334c8 20%, #f65467)",
+              ],
+              logo_titles_config: [
+                {
+                  logo_title: ["MMG"],
+                  links: [""],
+                  logo_id_name: "logo_title_id11",
+                  logo_detail: ["MMG"],
+                  logo_title_background_color: ["Common_logo_title"],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#a334c8"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#a334c8",
+                    line_color: "#a334c8",
+                  },
+                },
+              ],
+              connecting_Rectangle: {
+                display: "false",
+                connections: [
+                  {
+                    starting: "on_line_content_1",
+                    start_from_starting: "false",
+                    ending: "on_line_content_3",
+                    end_from_ending: "true",
+                    height: "Level_5",
+                    border_thickness: "Level_2",
+                  },
+                ],
+                color: ["#58e3d2"],
+              },
+              line_right: "false",
+              line_color: "#c4c9ca",
+              on_line_content_configuration: {
+                content: ["VISITA"],
+                content_id: ["on_line_content_11"],
+                link: ["www.google.com"],
+                color: ["black"],
+                background_color: ["#e6fffc"],
+                bottom_point_color: [
+                  "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                ],
+                bottom_line_color: [
+                  "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                ],
+                bottom_Line_postion: ["Level_3"],
+                bottom_shape_positions: [
+                  {
+                    levels: ["Level_3"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                ],
+              },
+            },
+          },
+          {
+            component: "Sub-Header",
+            title: "",
+            configurations: {
+              title_color: "rgb(81, 81, 81)",
+            },
+            content: {
+              logo_heading: [""],
+              logo_heading_color: [
+                "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+              ],
+              logo_heading_border_color: ["#ffc100"],
+              logo_color: [
+                "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
+              ],
+              logo_titles_config: [
+                {
+                  logo_title: ["GOM"],
+                  links: [""],
+                  logo_id_name: "logo_title_id12",
+                  logo_detail: ["GOM"],
+                  logo_title_background_color: [
+                    "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+                  ],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#ffc100"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#ffc100",
+                    line_color:
+                      "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+                  },
+                },
+              ],
+              connecting_Rectangle: {
+                display: "false",
+                connections: [
+                  {
+                    starting: "on_line_content_1",
+                    start_from_starting: "false",
+                    ending: "on_line_content_3",
+                    end_from_ending: "true",
+                    height: "Level_5",
+                    border_thickness: "Level_2",
+                  },
+                ],
+                color: ["#58e3d2"],
+              },
+              line_right: "false",
+              line_color: "#c4c9ca",
+              on_line_content_configuration: {
+                content: ["RT"],
+                content_id: ["on_line_content_12"],
+                link: ["www.google.com"],
+                color: ["black"],
+                background_color: ["#e6fffc"],
+                bottom_point_color: [
+                  "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                ],
+                bottom_line_color: [
+                  "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                ],
+                bottom_Line_postion: ["Level_4"],
+                bottom_shape_positions: [
+                  {
+                    levels: ["Level_4"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                ],
+              },
+              BottomtimelineSeries: {
+                background_color:
+                  "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+                border_color: "#ffc100",
+                timlines: [
+                  {
+                    content: "<60 gg da",
+                    height: "Level_1",
+                    show_border: "true",
+                    starting: "on_line_content_10",
+                    ending: "on_line_content_12",
+                  },
+                ],
+              },
+            },
+          },
+          {
+            component: "Sub-Header",
+            title: "",
+            configurations: {
+              title_color: "rgb(81, 81, 81)",
+            },
+            content: {
+              logo_heading: [""],
+              logo_heading_color: [
+                "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+              ],
+              logo_heading_border_color: ["#ffc100"],
+              logo_color: [
+                "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
+              ],
+              logo_titles_config: [
+                {
+                  logo_title: ["GOM"],
+                  links: [""],
+                  logo_id_name: "logo_title_id13",
+                  logo_detail: ["GOM"],
+                  logo_title_background_color: [
+                    "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
+                  ],
+                  logo_title_border: [false],
+                  logo_title_border_color: ["#ffc100"],
+                  logo_title_color: ["white"],
+                  top_down_arrow: {
+                    display: true,
+                    arrow_color: "#ffc100",
+                    line_color:
+                      "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
+                  },
+                },
+              ],
+              connecting_Rectangle: {
+                display: "false",
+                connections: [
+                  {
+                    starting: "on_line_content_1",
+                    start_from_starting: "false",
+                    ending: "on_line_content_3",
+                    end_from_ending: "true",
+                    height: "Level_5",
+                    border_thickness: "Level_2",
+                  },
+                ],
+                color: ["#58e3d2"],
+              },
+              line_right: "false",
+              line_color: "#c4c9ca",
+              on_line_content_configuration: {
+                content: ["RT"],
+                content_id: ["on_line_content_13"],
+                link: ["www.google.com"],
+                color: ["black"],
+                background_color: ["#e6fffc"],
+                bottom_point_color: [
+                  "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+                ],
+                bottom_line_color: [
+                  "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+                ],
+                bottom_Line_postion: ["Level_4"],
+                bottom_shape_positions: [
+                  {
+                    levels: ["Level_4"],
+                    color: ["Common_onLineContent_Shape"],
+                  },
+                ],
+              },
+              BottomtimelineSeries: {
+                background_color:
+                  "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+                border_color: "#ffc100",
+                timlines: [
+                  {
+                    content: "<60 gg da",
+                    height: "Level_1",
+                    show_border: "true",
+                    starting: "on_line_content_10",
+                    ending: "on_line_content_12",
+                  },
+                ],
+              },
+            },
+          },
+        ],
       },
     ],
-  },
-  colors: {
-    white_color: "#ffffff",
-    black_color: "#000000",
-    Common_Header_title: "#515151",
-    Common_Header_Line: "#adafaf",
-    Common_SubHeader_title: "rgb(81, 81, 81)",
-    Common_SubHeader_lineRight: "#c4c9ca",
-    Common_logo_heading: "linear-gradient(to right top, #a334c8 20%, #f65467)",
-    Common_logo_border: "#a334c8",
-    Common_logo: "linear-gradient(to right top, #a334c8 20%, #f65467)",
-    Common_logo_title: "linear-gradient(to right top, #a334c8 20%, #f65467)",
-    Common_TopDown_arror: "#a334c8",
-    Common_TopDown_Line: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
-    Common_ConnectingLine_arrow: "#a334c8",
-    Common_ConnectingLine_line: "#9f30cb",
-    Common_ConnectingRectangle: "#58e3d2",
-    Common_AboveLine_Text: "#7a1bffff",
-    Common_onLineContent_font: "#000000",
-    Common_onLineContent_Background: "#e6fffc",
-    Common_onLineContent_Point:
-      "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-    Common_onLineContent_Line:
-      "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-    Common_onLineContent_Shape: "linear-gradient(to top, #1375af 5%, #45d0cb)",
-    Common_timeLineSeries_Background:
-      "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-    Common_timeLineSeries_Border: "#ffc100",
-    Common_transparent: "transparent",
-  },
-  fontConfig: {
-    fontsize: "small",
-    fontFamilyCDN:
-      "https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap",
-    fontFamily: ["sans-serif"],
-  },
-  body: [
-    {
-      component: "Start-Header",
-      title: "Pre-diagnosi",
-      configurations: {
-        title_color: "#515151",
-        line_right: true,
-        line_color: "#adafaf",
-        circle_color: "#767979",
-      },
-      start_content: {
-        logo_title: "Paziente",
-        link: "https://www.youtube.com/",
-        steps: ["SCREENING", "YUDHJCS CDSVYUCUD", "HADH CBSDHJBVG"],
-        stepsLink: ["https://www.youtube.com/", "", "https://www.youtube.com/"],
-        title_detail: "Hello World!",
-        steps_details: [
-          "Hello World!",
-          "Lorem ipsum dolor sit amet,",
-          "Hello World!",
-        ],
-        configurations: {
-          logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
-          logo_border_color: "#2394b9",
-          logo_para_color:
-            "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
-          mid_line_color: "#58e3d2",
-          background_color: ["white_color", "white_color", "white_color"],
-          font_color: ["black_color", "black_color", "black_color"],
-          logo_font_color: "white_color",
-        },
-      },
-    },
-    {
-      component: "Header",
-      title: "Diagnosi e pre-treatment",
-      configurations: {
-        title_color: "Common_Header_title",
-        line_right: true,
-        line_color: "Common_Header_Line",
-        collapsabile: true,
-      },
-      sub_groups: [
-        {
-          component: "Sub-Header",
-          title: "Diagnosi a presa in carico",
-          configurations: {
-            title_color: "Common_SubHeader_title",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: ["", "GOM", "GOM"],
-            logo_heading_color: [
-              "Common_logo_heading",
-              "linear-gradient(to right top, #340046ff 20%, #bb0000ff)",
-              "linear-gradient(to right top, #bf00ffff 20%, #ff8f8fff)",
-            ],
-            logo_heading_border_color: [
-              "Common_logo_border",
-              "Common_logo_border",
-              "Common_logo_border",
-            ],
-            logo_color: ["Common_logo", "Common_logo", "Common_logo"],
-            logo_titles_config: [
-              {
-                logo_title: ["MMG"],
-                links: [""],
-                logo_id_name: "logo_title_id1",
-                logo_detail: ["MMG"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["Chirurgo Senologo"],
-                links: [""],
-                logo_id_name: "logo_title_id2",
-                logo_detail: ["Chirurgo Senologo"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["Radiologo"],
-                links: [""],
-                logo_id_name: "logo_title_id3",
-                logo_detail: ["Radiologo"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-            ],
-            connecting_Line: {
-              display: "true",
-              connections: [
-                {
-                  starting: "logo_title_id1",
-                  ending: "logo_title_id2",
-                  height: "Level_1",
-                },
-                {
-                  starting: "logo_title_id2",
-                  ending: "logo_title_id4",
-                  height: "Level_1",
-                },
-              ],
-              arrow_color: [
-                "Common_ConnectingLine_arrow",
-                "Common_ConnectingLine_arrow",
-              ],
-              line_color: [
-                "Common_ConnectingLine_line",
-                "Common_ConnectingLine_line",
-              ],
-            },
-            connecting_Rectangle: {
-              display: "true",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                      "fa-solid fa-angles-left",
-                    ],
-                    iconColors: [
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                      "black_color",
-                    ],
-                    iconSize: [
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                      "Size_0",
-                    ],
-                    justify_content: "center",
-                    start_end_gaps: "Level_0",
-                    shape: "rounded_x_lg",
-                  },
-                },
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "true",
-                  ending: "on_line_content_10",
-                  end_from_ending: "true",
-                  height: "Level_15",
-                  border_thickness: "Level_4",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                      "fa-solid fa-caret-right",
-                    ],
-                    iconColors: [
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                      "white_color",
-                    ],
-                    iconSize: [
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                      "Size_2",
-                    ],
-                    justify_content: "evenly",
-                    start_end_gaps: "Level_5",
-                    shape: "rounded_bottom",
-                  },
-                },
-              ],
-              color: ["Common_ConnectingRectangle", "#9f30cb"],
-            },
-            line_right: true,
-            line_color: "Common_SubHeader_lineRight",
-            above_line_content: {
-              content: ["effettuaa", "effettua", "effettua"],
-              color: [
-                "Common_AboveLine_Text",
-                "Common_AboveLine_Text",
-                "Common_AboveLine_Text",
-              ],
-              content_details: [
-                "effettuaastag",
-                "effettuaastag",
-                "effettuaastag",
-              ],
-              justify_content: "evenly",
-            },
-            on_line_content_configuration: {
-              content: ["VISITA", "VISITA", "ESAMI"],
-              shapes: ["rounded_vertices", "Default", "Rounded_sm"],
-              striping: [
-                { striped: false },
-                {
-                  stripped: true,
-                  reversed: false,
-                  colors: [
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(0, 191, 255, 0.35)",
-                    "rgba(0, 191, 255, 0.35)",
-                  ],
-                },
-                {
-                  stripped: true,
-                  reversed: true,
-                  colors: [
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(0, 191, 255, 0.35)",
-                    "rgba(0, 191, 255, 0.35)",
-                  ],
-                },
-              ],
-              bordered: [
-                { border: true, color: "black_color" },
-                { border: false },
-                { border: false },
-              ],
-              link: ["www.google.com", "", "www.google.com"],
-              content_id: [
-                "on_line_content_1",
-                "on_line_content_2",
-                "on_line_content_3",
-              ],
-              content_details: [
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                "Hello World!",
-                "Hello World!",
-              ],
-              color: [
-                "Common_onLineContent_font",
-                "Common_onLineContent_font",
-                "Common_onLineContent_font",
-              ],
-              background_color: [
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
-              ],
-              bottom_point_color: [
-                "Common_onLineContent_Point",
-                "Common_onLineContent_Point",
-                "Common_onLineContent_Point",
-              ],
-              bottom_line_color: [
-                "Common_onLineContent_Line",
-                "Common_onLineContent_Line",
-                "Common_onLineContent_Line",
-              ],
-              bottom_Line_postion: ["Level_1", "Level_2", "Level_2"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_1"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_2"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_2"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color: "Common_timeLineSeries_Background",
-              border_color: "Common_timeLineSeries_Border",
-              timlines: [
-                {
-                  content: "<10 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_1",
-                  ending: "on_line_content_2",
-                },
-                {
-                  content: "<10 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_2",
-                  ending: "on_line_content_3",
-                },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Decisione Tera",
-          configurations: {
-            title_color: "Common_SubHeader_title",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: [""],
-            logo_heading_color: ["Common_logo_heading"],
-            logo_heading_border_color: ["Common_logo_border"],
-            logo_color: ["Common_logo"],
-            logo_titles_config: [
-              {
-                logo_title: ["GOM"],
-                links: [""],
-                logo_id_name: "logo_title_id4",
-                logo_detail: ["GOM"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              }
-            ],
-            connecting_Line: {
-              display: "true",
-              connections: [
-                {
-                  starting: "logo_title_id4",
-                  ending: "logo_title_id6",
-                  height: "Level_1",
-                },
-                {
-                  starting: "logo_title_id4",
-                  ending: "logo_title_id5",
-                  height: "Level_3",
-                },
-              ],
-              arrow_color: ["#ffc305", "#ffc305"],
-              line_color: ["#ffc305", "#ffc305"],
-            },
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_4",
-                  start_from_starting: "true",
-                  ending: "on_line_content_7",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["Common_ConnectingRectangle"],
-            },
-            line_right: false,
-            line_color: "Common_SubHeader_lineRight",
-            above_line_content: {
-              content: ["effettua"],
-              color: ["Common_AboveLine_Text"],
-              content_details: ["effettuaastag"],
-              justify_content: "evenly",
-            },
-            on_line_content_configuration: {
-              content: ["DIAGNOSI"],
-              content_id: ["on_line_content_4"],
-              content_details: ["Hello World!"],
-              link: ["www.google.com"],
-              color: ["Common_onLineContent_font"],
-              background_color: ["Common_onLineContent_Background"],
-              bottom_point_color: ["Common_onLineContent_Point"],
-              bottom_line_color: ["Common_onLineContent_Line"],
-              bottom_Line_postion: ["Level_2"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_2"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color: "Common_timeLineSeries_Background",
-              border_color: "Common_timeLineSeries_Border",
-              timlines: [
-                {
-                  content: "<30 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_3",
-                  ending: "on_line_content_4",
-                },
-              ],
-            },
-          },
-        },
-      ],
-    },
-    {
-      component: "Header",
-      title: "Treatment",
-      configurations: {
-        title_color: "#515151",
-        line_right: true,
-        line_color: "#adafaf",
-        collapsabile: true,
-      },
-      sub_groups: [
-        {
-          component: "Sub-Header",
-          title: "Terapia Neo-Adiuvante",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: ["GOM", "GOM"],
-            logo_heading_color: [
-              "linear-gradient(to right top, #000000ff 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #000000ff)",
-            ],
-            logo_heading_border_color: ["#a334c8", "#a334c8"],
-            logo_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_titles_config: [
-              {
-                logo_title: ["Oncologo"],
-                links: [""],
-                logo_id_name: "logo_title_id5",
-                logo_detail: ["Oncologo"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["Infermiere"],
-                links: [""],
-                logo_id_name: "logo_title_id6",
-                logo_detail: ["Infermiere"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              }
-            ],
-            connecting_Line: {
-              display: "true",
-              connections: [
-                {
-                  starting: "logo_title_id5",
-                  ending: "logo_title_id8",
-                  height: "Level_5",
-                },
-                {
-                  starting: "logo_title_id6",
-                  ending: "logo_title_id11",
-                  height: "Level_6",
-                },
-                {
-                  starting: "logo_title_id6",
-                  ending: "logo_title_id12",
-                  height: "Level_6",
-                },
-              ],
-              arrow_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
-              line_color: ["#9f30cb", "#9f30cb", "#9f30cb"],
-            },
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            line_right: true,
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["ET", "TT", "CT"],
-              content_id: [
-                "on_line_content_5",
-                "on_line_content_6",
-                "on_line_content_7",
-              ],
-              content_details: ["Hello", "hi", "World"],
-              link: ["www.google.com", "", "www.google.com"],
-              color: ["black", "black", "black"],
-              background_color: ["#e6fffc", "#e6fffc", "#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_Line_postion: ["Level_3","Level_3","Level_2"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_3"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_3"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_2"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<30 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_4",
-                  ending: "on_line_content_7",
-                },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Chirurgia",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: ["GOM", ""],
-            logo_heading_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_heading_border_color: ["#a334c8", "#a334c8"],
-            logo_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_titles_config: [
-              {
-                logo_title: ["Chirurgo/ Senologo"],
-                links: [""],
-                logo_id_name: "logo_title_id7",
-                logo_detail: ["Chirurgo/ Senologo"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["Chirurgo Plastico"],
-                links: [""],
-                logo_id_name: "logo_title_id8",
-                logo_detail: ["Chirurgo Plastico"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              }
-            ],
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            line_right: "true",
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["INTERVENTO"],
-              content_id: ["on_line_content_8"],
-              link: ["www.google.com"],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_Line_postion: ["Level_2"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_2"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<30 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_7",
-                  ending: "on_line_content_8",
-                },
-                {
-                  content: "<60 gg da",
-                  height: "Level_6",
-                  show_border: "false",
-                  starting: "on_line_content_3",
-                  ending: "on_line_content_8",
-                },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Chemioterapia",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: ["", ""],
-            logo_heading_color: [
-              "Common_transparent",
-              "Common_transparent",
-            ],
-            logo_heading_border_color: ["Common_transparent", "Common_transparent"],
-            logo_color: [
-              "Common_transparent",
-              "Common_transparent",
-            ],
-            logo_titles_config: [
-              {
-                logo_title: ["GOM"],
-                links: [""],
-                logo_id_name: "logo_title_id9",
-                logo_detail: ["GOM"],
-                logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [false],
-                logo_title_border_color: ["Common_transparent"],
-                logo_title_color: ["Common_transparent"],
-                top_down_arrow: {
-                  display: false,
-                },
-              },
-              {
-                logo_title: ["DOM"],
-                links: [""],
-                logo_id_name: "logo_title_id10",
-                logo_detail: ["DOM"],
-                logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [false],
-                logo_title_border_color: ["Common_transparent"],
-                logo_title_color: ["Common_transparent"],
-                top_down_arrow: {
-                  display: false,
-                },
-              }
-            ],
-            connecting_Rectangle: {
-              display: false,
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            connecting_Circle: {
-              display: true,
-              connections: [
-                {
-                  starting: "on_line_content_7",
-                  ending: "on_line_content_10",
-                  start_from: "middle",
-                  end_from: "middle",
-                  border_thickness: "Level_2",
-                  config: {
-                    fontAwsomeicon: "fa-solid fa-angles-left",
-                    iconColor: "white",
-                    iconSize: "Level_2",
-                    direction: "default",
-                  },
-                },
-                {
-                  starting: "on_line_content_9",
-                  ending: "on_line_content_10",
-                  start_from: "start",
-                  end_from: "end",
-                  border_thickness: "Level_2",
-                  config: {
-                    fontAwsomeicon: "fa-solid fa-angles-left",
-                    iconColor: "white",
-                    iconSize: "Level_2",
-                    direction: "default",
-                  },
-                },
-              ],
-              color: ["#c140a5", "#58e3d2"],
-            },
-            connecting_Text_Line: {
-              display: true,
-              connections: [
-                {
-                  starting: "on_line_content_7",
-                  ending: "on_line_content_10",
-                  start_from: "start",
-                  end_from: "end",
-                  line_Thickness: "Level_1",
-                  line_Position: "Level_1",
-                  text: "procedure pre-dskfdsfdsfdsfjfsdfsdffdffdf",
-                  text_Position: "middle",
-                  text_color: "black",
-                  line_color: "black",
-                },
-              ],
-            },
-            line_right: "true",
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["DICT", "CTDI"],
-              content_id: ["on_line_content_9", "on_line_content_10"],
-              link: ["www.google.com", ""],
-              color: ["black", "black"],
-              background_color: ["#e6fffc", "#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_Line_postion: ["Level_2","Level_4"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_2"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_4"],
-                  color: ["Common_onLineContent_Shape"],
-                }
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<60 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_8",
-                  ending: "on_line_content_10",
-                },
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "Radioterapia",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-            collapsabile: true,
-          },
-          content: {
-            logo_heading: ["ROM"],
-            logo_heading_color: [
-              "linear-gradient(to right top, #a334c8 20%, #f65467)",
-            ],
-            logo_heading_border_color: ["#a334c8"],
-            logo_color: ["linear-gradient(to right top, #a334c8 20%, #f65467)"],
-            logo_titles_config: [
-              {
-                logo_title: ["MMG"],
-                links: [""],
-                logo_id_name: "logo_title_id11",
-                logo_detail: ["MMG"],
-                logo_title_background_color: ["Common_logo_title"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              }
-            ],
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            line_right: "false",
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["VISITA"],
-              content_id: ["on_line_content_11"],
-              link: ["www.google.com"],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_Line_postion: ["Level_3"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_3"],
-                  color: ["Common_onLineContent_Shape"],
-                }
-              ],
-            },
-          },
-        },
-        {
-          component: "Sub-Header",
-          title: "",
-          configurations: {
-            title_color: "rgb(81, 81, 81)",
-          },
-          content: {
-            logo_heading: [""],
-            logo_heading_color: [
-              "linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)",
-            ],
-            logo_heading_border_color: ["#ffc100"],
-            logo_color: [
-              "linear-gradient(to right top, #ffc100 1%, #ff5e58 80%)",
-            ],
-            logo_titles_config: [
-              {
-                logo_title: ["GOM"],
-                links: [""],
-                logo_id_name: "logo_title_id12",
-                logo_detail: ["GOM"],
-                logo_title_background_color: ["linear-gradient(to right top, #ff5e58 1%, #ffc100 55%)"],
-                logo_title_border: [false],
-                logo_title_border_color: ["#ffc100"],
-                logo_title_color: ["white"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#ffc100",
-                  line_color: "linear-gradient(to right, #f6f4dc60 10%, #ffc305)",
-                },
-              }
-            ],
-            connecting_Rectangle: {
-              display: "false",
-              connections: [
-                {
-                  starting: "on_line_content_1",
-                  start_from_starting: "false",
-                  ending: "on_line_content_3",
-                  end_from_ending: "true",
-                  height: "Level_5",
-                  border_thickness: "Level_2",
-                },
-              ],
-              color: ["#58e3d2"],
-            },
-            line_right: "false",
-            line_color: "#c4c9ca",
-            on_line_content_configuration: {
-              content: ["RT"],
-              content_id: ["on_line_content_12"],
-              link: ["www.google.com"],
-              color: ["black"],
-              background_color: ["#e6fffc"],
-              bottom_point_color: [
-                "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
-              ],
-              bottom_line_color: [
-                "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
-              ],
-              bottom_Line_postion: ["Level_4"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_4"],
-                  color: ["Common_onLineContent_Shape"],
-                }
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc100",
-              timlines: [
-                {
-                  content: "<60 gg da",
-                  height: "Level_1",
-                  show_border: "true",
-                  starting: "on_line_content_10",
-                  ending: "on_line_content_12",
-                },
-              ],
-            },
-          },
-        },
-        
-      ],
-    },
-  ],
-};
+  };
 
 JSON_Data7 = {
   footer: {
@@ -1155,6 +1248,7 @@ JSON_Data7 = {
     border_color: "black",
     scroll_horizontal: false,
     direction: "reverse",
+    exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
       shapesColor: ["#ffc130", "#00a9bd", "#ffc130", "#00a9bd"],
@@ -2225,6 +2319,7 @@ JSON_Data6 = {
     background_color: "#f6fcfc",
     border_color: "black",
     scroll_horizontal: false,
+    exportName: "Process_Journey",
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -2279,7 +2374,8 @@ JSON_Data6 = {
   },
   fontConfig: {
     fontsize: "small",
-    fontFamilyCDN:"https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap",
+    fontFamilyCDN:
+      "https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap",
     fontFamily: ["sans-serif"],
   },
   body: [
@@ -2409,7 +2505,7 @@ JSON_Data6 = {
                   levels: ["Level_4"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -2480,7 +2576,7 @@ JSON_Data6 = {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -2541,7 +2637,7 @@ JSON_Data6 = {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -2596,7 +2692,7 @@ JSON_Data6 = {
                   levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -2651,7 +2747,7 @@ JSON_Data6 = {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -2683,6 +2779,7 @@ JSON_Data5 = {
   Page_Configuration: {
     background_color: "#f6fcfc",
     border_color: "black",
+    exportName:"Process_Journey",
     scroll_horizontal: false,
   },
   mid_line_config: {
@@ -2738,7 +2835,8 @@ JSON_Data5 = {
   },
   fontConfig: {
     fontsize: "small",
-    fontFamilyCDN:"https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap",
+    fontFamilyCDN:
+      "https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap",
     fontFamily: ["sans-serif"],
   },
   body: [
@@ -2849,7 +2947,7 @@ JSON_Data5 = {
                   levels: ["Level_1"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -2937,7 +3035,7 @@ JSON_Data5 = {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -2998,7 +3096,7 @@ JSON_Data5 = {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -3053,7 +3151,7 @@ JSON_Data5 = {
                   levels: ["Level_2"],
                   color: ["Common_transparent"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -3108,7 +3206,7 @@ JSON_Data5 = {
                   levels: ["Level_2"],
                   color: ["Common_transparent"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -3141,6 +3239,7 @@ JSON_Data4 = {
     background_color: "#f6fcfc",
     border_color: "black",
     scroll_horizontal: false,
+    exportName:"Process_Journey",
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -3305,7 +3404,7 @@ JSON_Data4 = {
                   levels: ["Level_1"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
             BottomtimelineSeries: {
               background_color: "Common_timeLineSeries_Background",
@@ -3470,7 +3569,7 @@ JSON_Data4 = {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
             BottomtimelineSeries: {
               background_color:
@@ -3565,7 +3664,7 @@ JSON_Data4 = {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
             BottomtimelineSeries: {
               background_color:
@@ -3639,7 +3738,7 @@ JSON_Data4 = {
                   levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -3711,7 +3810,7 @@ JSON_Data4 = {
                   levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -3797,7 +3896,7 @@ JSON_Data4 = {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
             BottomtimelineSeries: {
               background_color:
@@ -3887,7 +3986,7 @@ JSON_Data4 = {
                   levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
             BottomtimelineSeries: {
               background_color:
@@ -3939,7 +4038,8 @@ JSON_Data3 = {
   Page_Configuration: {
     background_color: "#f6fcfc",
     border_color: "black",
-    scroll_horizontal: false
+    scroll_horizontal: false,
+    exportName:"Process_Journey",
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -4148,7 +4248,7 @@ JSON_Data3 = {
                   levels: ["Level_1"],
                   color: ["Common_transparent"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -4208,11 +4308,15 @@ JSON_Data3 = {
                 logo_title_background_color: ["white"],
                 logo_title_border: [true],
                 logo_title_border_color: ["#e7636b"],
-                logo_title_color: ["linear-gradient(to top right, #e7636b 40%, #de7883)"],
+                logo_title_color: [
+                  "linear-gradient(to top right, #e7636b 40%, #de7883)",
+                ],
                 top_down_arrow: {
                   display: true,
                   arrow_color: ["#e7636b"],
-                  line_color: ["linear-gradient(to top right, #e7636b 40%, #de7883)"],
+                  line_color: [
+                    "linear-gradient(to top right, #e7636b 40%, #de7883)",
+                  ],
                 },
               },
               {
@@ -4289,7 +4393,7 @@ JSON_Data3 = {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
                 },
-              ]
+              ],
             },
           },
         },
@@ -4398,8 +4502,8 @@ JSON_Data3 = {
                 {
                   levels: ["Level_4"],
                   color: ["Common_onLineContent_Shape"],
-                }
-              ]
+                },
+              ],
             },
           },
         },
@@ -4501,7 +4605,7 @@ JSON_Data3 = {
                 "Common_transparent",
                 "linear-gradient(to top, #1375af 5%, #45d0cb)",
               ],
-              bottom_Line_postion: ["Level_1","Level_3"],
+              bottom_Line_postion: ["Level_1", "Level_3"],
               bottom_point_position_onLine: [false, true],
               bottom_shape_positions: [
                 {
@@ -4545,13 +4649,13 @@ JSON_Data2 = {
     background_color: "#f6fcfc",
     border_color: "black",
     scroll_horizontal: false,
+    exportName:"Process_Journey",
   },
   mid_line_config: {
     color: "#58e3d2",
     shadow:
       "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
     width: "auto",
-    
   },
   colors: {
     white_color: "#ffffff",
@@ -4738,7 +4842,7 @@ JSON_Data2 = {
                 {
                   levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
-                }
+                },
               ],
             },
           },
@@ -4798,7 +4902,7 @@ JSON_Data2 = {
                 {
                   levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
-                }
+                },
               ],
             },
           },
@@ -4884,7 +4988,7 @@ JSON_Data2 = {
                 {
                   levels: ["Level_2"],
                   color: ["Common_onLineContent_Shape"],
-                }
+                },
               ],
             },
           },
@@ -4974,7 +5078,7 @@ JSON_Data2 = {
                 {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
-                }
+                },
               ],
             },
           },
@@ -5048,7 +5152,7 @@ JSON_Data2 = {
                 {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
-                }
+                },
               ],
             },
           },
@@ -5122,7 +5226,7 @@ JSON_Data2 = {
                 {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
-                }
+                },
               ],
             },
           },
@@ -5196,7 +5300,7 @@ JSON_Data2 = {
                 {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
-                }
+                },
               ],
             },
           },
@@ -5270,7 +5374,7 @@ JSON_Data2 = {
                 {
                   levels: ["Level_3"],
                   color: ["Common_onLineContent_Shape"],
-                }
+                },
               ],
             },
           },
@@ -5304,6 +5408,7 @@ JSON_Data1 = {
     background_color: "#f6fcfc",
     border_color: "black",
     scroll_horizontal: false,
+    exportName:"Process_Journey",
   },
   mid_line_config: {
     color: "#58e3d2",
@@ -5885,7 +5990,7 @@ JSON_Data1 = {
             logo_heading_border_color: ["#a334c8"],
             logo_color: ["linear-gradient(to right top, #a334c8 20%, #f65467)"],
             logo_detail: ["Neuroimmunologo"],
-                        logo_titles_config: [
+            logo_titles_config: [
               {
                 logo_title: ["Neuroimmunologo"],
                 links: [""],
