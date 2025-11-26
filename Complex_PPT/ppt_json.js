@@ -1225,6 +1225,11 @@ JSON_Data7 = {
       footer_3_label: "Other structure",
       footer_4_label: "Home",
       footer_5_label: "Hospital Drugstore",
+      footer_6_label: "Ambulatory",
+      footer_7_label: "Hospital",
+      footer_8_label: "Other structure",
+      footer_9_label: "Home",
+      footer_10_label: "Hospital Drugstore",
     },
     footer_label_position_left: {
       footer_1_left: "Level_6",
@@ -1232,6 +1237,11 @@ JSON_Data7 = {
       footer_3_left: "Level_5",
       footer_4_left: "Level_7",
       footer_5_left: "Level_4",
+      footer_6_left: "Level_6",
+      footer_7_left: "Level_7",
+      footer_8_left: "Level_5",
+      footer_9_left: "Level_7",
+      footer_10_left: "Level_4",
     },
     label_width: {
       footer_1_width: "90",
@@ -1239,6 +1249,11 @@ JSON_Data7 = {
       footer_3_width: "90",
       footer_4_width: "90",
       footer_5_width: "90",
+      footer_6_width: "90",
+      footer_7_width: "90",
+      footer_8_width: "90",
+      footer_9_width: "90",
+      footer_10_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
     footer_width: "default",
@@ -1590,22 +1605,22 @@ JSON_Data7 = {
                 "Common_onLineContent_Line",
                 "Common_onLineContent_Line",
               ],
-              bottom_Line_postion: ["Level_1", "Level_2", "Level_3", "Level_2"],
+              bottom_Line_postion: ["Level_6", "Level_7", "Level_8", "Level_7"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_1"],
+                  levels: ["Level_6"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_2"],
+                  levels: ["Level_7"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_3"],
+                  levels: ["Level_8"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_2"],
+                  levels: ["Level_7"],
                   color: ["Common_onLineContent_Shape"],
                 },
               ],
@@ -1793,14 +1808,14 @@ JSON_Data7 = {
                 "Common_onLineContent_Shape",
                 "Common_onLineContent_Shape",
               ],
-              bottom_Line_postion: ["Level_2", "Level_5"],
+              bottom_Line_postion: ["Level_7", "Level_10"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_2"],
+                  levels: ["Level_7"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_2", "Level_4", "Level_5"],
+                  levels: ["Level_7", "Level_9", "Level_10"],
                   color: [
                     "Common_onLineContent_Shape",
                     "Common_onLineContent_Shape",
@@ -1992,14 +2007,14 @@ JSON_Data7 = {
                 "Common_onLineContent_Shape",
                 "Common_onLineContent_Shape",
               ],
-              bottom_Line_postion: ["Level_2", "Level_4"],
+              bottom_Line_postion: ["Level_7", "Level_9"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_2"],
+                  levels: ["Level_7"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
+                  levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
                   color: [
                     "Common_onLineContent_Shape",
                     "Common_onLineContent_Shape",
@@ -2251,10 +2266,10 @@ JSON_Data7 = {
                 "Common_onLineContent_Shape",
                 "Common_transparent",
               ],
-              bottom_Line_postion: ["Level_4", "Level_1"],
+              bottom_Line_postion: ["Level_9", "Level_6"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
+                  levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
                   color: [
                     "Common_onLineContent_Shape",
                     "Common_onLineContent_Shape",
@@ -2263,7 +2278,7 @@ JSON_Data7 = {
                   ],
                 },
                 {
-                  levels: ["Level_1"],
+                  levels: ["Level_6"],
                   color: ["Common_transparent"],
                 },
               ],

@@ -7,6 +7,11 @@ JSON_Data = {
       footer_3_label: "Other structure",
       footer_4_label: "Home",
       footer_5_label: "Hospital Drugstore",
+      footer_6_label: "Ambulatory",
+      footer_7_label: "Hospital",
+      footer_8_label: "Other structure",
+      footer_9_label: "Home",
+      footer_10_label: "Hospital Drugstore",
     },
     footer_label_position_left: {
       footer_1_left: "Level_6",
@@ -14,6 +19,11 @@ JSON_Data = {
       footer_3_left: "Level_5",
       footer_4_left: "Level_7",
       footer_5_left: "Level_4",
+      footer_6_left: "Level_6",
+      footer_7_left: "Level_7",
+      footer_8_left: "Level_5",
+      footer_9_left: "Level_7",
+      footer_10_left: "Level_4",
     },
     label_width: {
       footer_1_width: "90",
@@ -21,13 +31,19 @@ JSON_Data = {
       footer_3_width: "90",
       footer_4_width: "90",
       footer_5_width: "90",
+      footer_6_width: "90",
+      footer_7_width: "90",
+      footer_8_width: "90",
+      footer_9_width: "90",
+      footer_10_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
+    footer_width: "default",
   },
   Page_Configuration: {
     background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
     border_color: "black",
-    scroll_horizontal: true,
+    scroll_horizontal: false,
     direction: "reverse",
     exportName: "Process_Journey",
     bottomShapesConfig: {
@@ -41,6 +57,7 @@ JSON_Data = {
     color: "#58e3d2",
     shadow:
       "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
+    width: "default",
     logo_config: [
       {
         type: "Between",
@@ -370,22 +387,22 @@ JSON_Data = {
                 "Common_onLineContent_Line",
                 "Common_onLineContent_Line",
               ],
-              bottom_Line_postion: ["Level_1", "Level_2", "Level_3", "Level_2"],
+              bottom_Line_postion: ["Level_6", "Level_7", "Level_8", "Level_7"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_1"],
+                  levels: ["Level_6"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_2"],
+                  levels: ["Level_7"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_3"],
+                  levels: ["Level_8"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_2"],
+                  levels: ["Level_7"],
                   color: ["Common_onLineContent_Shape"],
                 },
               ],
@@ -573,14 +590,14 @@ JSON_Data = {
                 "Common_onLineContent_Shape",
                 "Common_onLineContent_Shape",
               ],
-              bottom_Line_postion: ["Level_2", "Level_5"],
+              bottom_Line_postion: ["Level_7", "Level_10"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_2"],
+                  levels: ["Level_7"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_2", "Level_4", "Level_5"],
+                  levels: ["Level_7", "Level_9", "Level_10"],
                   color: [
                     "Common_onLineContent_Shape",
                     "Common_onLineContent_Shape",
@@ -772,14 +789,14 @@ JSON_Data = {
                 "Common_onLineContent_Shape",
                 "Common_onLineContent_Shape",
               ],
-              bottom_Line_postion: ["Level_2", "Level_4"],
+              bottom_Line_postion: ["Level_7", "Level_9"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_2"],
+                  levels: ["Level_7"],
                   color: ["Common_onLineContent_Shape"],
                 },
                 {
-                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
+                  levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
                   color: [
                     "Common_onLineContent_Shape",
                     "Common_onLineContent_Shape",
@@ -1031,10 +1048,10 @@ JSON_Data = {
                 "Common_onLineContent_Shape",
                 "Common_transparent",
               ],
-              bottom_Line_postion: ["Level_4", "Level_1"],
+              bottom_Line_postion: ["Level_9", "Level_6"],
               bottom_shape_positions: [
                 {
-                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
+                  levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
                   color: [
                     "Common_onLineContent_Shape",
                     "Common_onLineContent_Shape",
@@ -1043,259 +1060,7 @@ JSON_Data = {
                   ],
                 },
                 {
-                  levels: ["Level_1"],
-                  color: ["Common_transparent"],
-                },
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc305",
-              timlines: [
-                {
-                  content: "2.3 - 3.6 years with some DMT",
-                  height: "Level_18",
-                  show_border: false,
-                  starting: "on_line_content_6",
-                  ending: "on_line_content_9",
-                },
-              ],
-            },
-          },
-        },
-      ],
-    },
-    {
-      component: "Header",
-      title: "Treatment",
-      configurations: {
-        title_color: "#304c8c",
-        line_right: false,
-        line_color: "white",
-        collapsabile: true,
-      },
-      sub_groups: [
-        {
-          component: "Sub-Header",
-          title: "",
-          configurations: {
-            title_color: "Common_SubHeader_title",
-            collapsabile: false,
-          },
-          content: {
-            logo_heading: ["", ""],
-            logo_heading_color: ["#a334c8", "Common_transparent"],
-            logo_heading_border_color: ["#a334c8", "Common_transparent"],
-            logo_color: ["#a334c8", "Common_transparent"],
-            logo_titles_config: [
-              {
-                logo_title: [
-                  "Neurologist",
-                  "Gynecologist",
-                  "Nurse",
-                  "Other Specialists",
-                ],
-                links: [""],
-                logo_id_name: "logo_title_id9",
-                logo_detail: [
-                  "Neurologist",
-                  "Gynecologist",
-                  "Nurse",
-                  "Other Specialists",
-                ],
-                logo_title_background_color: [
-                  "white",
-                  "white",
-                  "white",
-                  "white",
-                ],
-                logo_title_border: [true, true, true, true],
-                logo_title_border_color: [
-                  "#a334c8",
-                  "#a334c8",
-                  "#a334c8",
-                  "#a334c8",
-                ],
-                logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["Neurologist"],
-                links: [""],
-                logo_id_name: "logo_title_id10",
-                logo_detail: ["Neurologist"],
-                logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [true],
-                logo_title_border_color: ["Common_transparent"],
-                logo_title_color: ["Common_transparent"],
-                top_down_arrow: {
-                  display: false,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-            ],
-            line_right: false,
-            line_color: "Common_SubHeader_lineRight",
-            connecting_Line: {
-              display: true,
-              connections: [
-                {
-                  starting: "logo_title_id5",
-                  ending: "logo_title_id7",
-                  height: "Level_5",
-                },
-              ],
-              arrow_color: ["#9f30cb"],
-              line_color: ["#9f30cb"],
-            },
-            connecting_Rectangle: {
-              display: true,
-              connections: [
-                {
-                  starting: "on_line_content_7",
-                  start_from_starting: false,
-                  ending: "on_line_content_10",
-                  end_from_ending: true,
-                  height: "Level_10",
-                  border_thickness: "Level_6",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                    ],
-                    iconColors: ["white_color", "white_color", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3"],
-                    justify_content: "between",
-                    start_end_gaps: "Level_2",
-                    shape: "rounded_bottom",
-                    content: [
-                      {
-                        text: "RELAPSE",
-                        textColor: "white",
-                        textDetail: "RELAPSE",
-                        text_Details_HTML:
-                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-                        text_Details_CSS:
-                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
-                      },
-                      {},
-                      {},
-                    ],
-                  },
-                },
-                {
-                  starting: "on_line_content_7",
-                  start_from_starting: false,
-                  ending: "on_line_content_10",
-                  end_from_ending: true,
-                  height: "Level_23",
-                  border_thickness: "Level_6",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                    ],
-                    iconColors: ["white_color", "white_color", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3"],
-                    justify_content: "between",
-                    start_end_gaps: "Level_2",
-                    shape: "rounded_bottom",
-                    content: [
-                      {
-                        text: "PROGRESSION SUSPICION",
-                        textColor: "white",
-                        textDetail: "PROGRESSION SUSPICION",
-                        text_Details_HTML:
-                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-                        text_Details_CSS:
-                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
-                      },
-                      {},
-                      {},
-                    ],
-                  },
-                },
-                {
-                  starting: "on_line_content_8",
-                  start_from_starting: false,
-                  ending: "on_line_content_10",
-                  end_from_ending: true,
-                  height: "Level_10",
-                  border_thickness: "Level_6",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                    ],
-                    iconColors: ["white_color", "white_color", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3"],
-                    justify_content: "between",
-                    start_end_gaps: "Level_2",
-                    shape: "rounded_bottom",
-                    direction: "reverse",
-                  },
-                },
-              ],
-              color: ["#58e3d2", "#58e3d2", "#58e3d2"],
-            },
-            on_line_content_configuration: {
-              content: ["HET DMT SELECTION", "TX CONTINUES"],
-              striping: [
-                {
-                  stripped: false,
-                  reversed: false,
-                  colors: [
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(0, 191, 255, 0.35)",
-                    "rgba(0, 191, 255, 0.35)",
-                  ],
-                },
-              ],
-              link: [""],
-              shapes: ["rounded_bottom_right", "rounded_lg"],
-              content_id: ["on_line_content_9", "on_line_content_10"],
-              content_details: ["HET DMT SELECTION", "TX CONTINUES"],
-              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
-              background_color: [
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
-              ],
-              bottom_point_color: [
-                "Common_onLineContent_Point",
-                "Common_transparent",
-              ],
-              bottom_point_position_onLine: [false, true],
-              bottom_line_color: [
-                "Common_onLineContent_Line",
-                "Common_transparent",
-              ],
-              bottom_Line_color: [
-                "Common_onLineContent_Shape",
-                "Common_transparent",
-              ],
-              bottom_Line_postion: ["Level_4", "Level_1"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_1", "Level_2", "Level_3", "Level_4"],
-                  color: [
-                    "Common_onLineContent_Shape",
-                    "Common_onLineContent_Shape",
-                    "Common_onLineContent_Shape",
-                    "Common_onLineContent_Shape",
-                  ],
-                },
-                {
-                  levels: ["Level_1"],
+                  levels: ["Level_6"],
                   color: ["Common_transparent"],
                 },
               ],
@@ -1407,7 +1172,21 @@ function isVisible(el) {
   );
 }
 
-// Function to return predefined HTML and CSS
+const footerLabels = JSON_Data.footer.footer_label;
+const footerKeys = Object.keys(footerLabels)
+  .filter((key) => {
+    const index = parseInt(key.replace("footer_", "").replace("_label", ""));
+    return index >= 1 && index <= 10;
+  })
+  .sort((a, b) => {
+    const ia = parseInt(a.replace("footer_", "").replace("_label", ""));
+    const ib = parseInt(b.replace("footer_", "").replace("_label", ""));
+    return ia - ib;
+  });
+
+const footerLineCount = footerKeys.length;
+
+
 function convertToFormat(JsonData) {
   let HTML = ``;
   let CSS = ``;
@@ -2468,22 +2247,42 @@ function convertToFormat(JsonData) {
         // Define top and height values for each level (reverse + normal)
         const levelConfig = {
           Level_1: {
-            revHeight: ReverseRow === 2 ? 196 : ReverseRow === 3 ? 160 : 182,
-            normHeight: [210, 212, 210],
+            revHeight: ReverseRow === 2 ? 76 : ReverseRow === 3 ? 60 : 82,
+            normHeight: [110, 112, 110],
           },
           Level_2: {
+            revHeight: ReverseRow === 2 ? 118 : ReverseRow === 3 ? 80 : 102,
+            normHeight: [133, 133, 133],
+          },
+          Level_3: {
+            revHeight: ReverseRow === 2 ? 136 : ReverseRow === 3 ? 100 : 122,
+            normHeight: [150, 152, 152],
+          },
+          Level_4: {
+            revHeight: ReverseRow === 2 ? 156 : ReverseRow === 3 ? 120 : 142,
+            normHeight: [170, 173, 172],
+          },
+          Level_5: {
+            revHeight: ReverseRow === 2 ? 176 : ReverseRow === 3 ? 140 : 162,
+            normHeight: [190, 193, 195],
+          },
+          Level_6: {
+            revHeight: ReverseRow === 2 ? 176 : ReverseRow === 3 ? 160 : 182,
+            normHeight: [210, 212, 210],
+          },
+          Level_7: {
             revHeight: ReverseRow === 2 ? 218 : ReverseRow === 3 ? 180 : 202,
             normHeight: [233, 233, 233],
           },
-          Level_3: {
+          Level_8: {
             revHeight: ReverseRow === 2 ? 236 : ReverseRow === 3 ? 200 : 222,
             normHeight: [250, 252, 252],
           },
-          Level_4: {
+          Level_9: {
             revHeight: ReverseRow === 2 ? 256 : ReverseRow === 3 ? 220 : 242,
             normHeight: [270, 273, 272],
           },
-          Level_5: {
+          Level_10: {
             revHeight: ReverseRow === 2 ? 276 : ReverseRow === 3 ? 240 : 262,
             normHeight: [290, 293, 295],
           },
@@ -2491,11 +2290,16 @@ function convertToFormat(JsonData) {
 
         // Bottom-point overrides
         const bottomOverrides = {
-          Level_1: { top: 30, height: 388 },
-          Level_2: { top: 30, height: 408 },
-          Level_3: { top: 30, height: 428 },
-          Level_4: { top: 30, height: 450 },
-          Level_5: { top: 30, height: 468 },
+          Level_1: { top: 30, height: 288 },
+          Level_2: { top: 30, height: 308 },
+          Level_3: { top: 30, height: 328 },
+          Level_4: { top: 30, height: 350 },
+          Level_5: { top: 30, height: 368 },
+          Level_6: { top: 30, height: 388 },
+          Level_7: { top: 30, height: 408 },
+          Level_8: { top: 30, height: 428 },
+          Level_9: { top: 30, height: 450 },
+          Level_10: { top: 30, height: 468 },
         };
 
         // Get current level config or fallback
@@ -3069,7 +2873,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 100px;
+  height: ${footerLineCount * 20}px;
   display: flex;
   flex-direction: column;
   align-items: end; 
@@ -3079,7 +2883,7 @@ body {
     JSON_Data.footer.footer_lines_color ||
     "linear-gradient(to bottom, #f5fbfb, #eaf0f0)"
   };
-  height: calc(100px / 5);
+  height: 20px;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
   position:relative;
@@ -3099,31 +2903,46 @@ body {
 let dynamicFooterCSS = "";
 
 // Add widths for each footer div
-Object.keys(JSON_Data.footer.label_width).forEach((key, idx) => {
-  let widthValue = parseFloat(JSON_Data.footer.label_width[key]);
+footerKeys.forEach((labelKey, idx) => {
+  const index = idx + 1;
+  const widthKey = `footer_${index}_width`;
+
+  let widthValue = parseFloat(JSON_Data.footer.label_width[widthKey]);
   if (isNaN(widthValue)) widthValue = 70;
+
   widthValue = Math.max(0, Math.min(200, widthValue));
-  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${
-    idx + 1
-  }) { width: ${widthValue}%; }\n`;
+
+  dynamicFooterCSS += `
+    .footer-dark-five-lines > div:nth-child(${index}) {
+      width: ${widthValue}%;
+    }
+  `;
 });
+
 
 // Add left positions for each h4
-Object.keys(JSON_Data.footer.footer_label_position_left).forEach((key, idx) => {
-  const levelString = JSON_Data.footer.footer_label_position_left[key];
+footerKeys.forEach((labelKey, idx) => {
+  const index = idx + 1;
+  const leftKey = `footer_${index}_left`;
+  const levelString = JSON_Data.footer.footer_label_position_left[leftKey];
   const leftValue = levelToPixel(levelString);
-  dynamicFooterCSS += `.footer-dark-five-lines > div:nth-child(${
-    idx + 1
-  }) h4 { left: ${leftValue}; }\n`;
+  dynamicFooterCSS += `
+    .footer-dark-five-lines > div:nth-child(${index}) h4 {
+      left: ${leftValue};
+    }
+  `;
 });
 
+
 let footerHTML = "";
-const labels = JSON_Data.footer.footer_label;
-Object.keys(labels).forEach((key, idx) => {
-  footerHTML += `<div><h4 class="footer-label-${idx + 1}">${limitText(
-    labels[key],
-    30
-  )}</h4></div>\n`;
+footerKeys.forEach((key, index) => {
+  footerHTML += `
+    <div>
+      <h4 class="footer-label-${index + 1}">
+        ${limitText(footerLabels[key], 30)}
+      </h4>
+    </div>
+  `;
 });
 
 let userScale = parseFloat(JSON_Data.scaling);
@@ -3142,6 +2961,7 @@ const Final_HTML = PreDefined_HTML.replace(
   footerHTML
 ).replace("<!-- Add Here -->", result.HTML);
 
+console.log(Final_HTML);
 document.body.innerHTML = Final_HTML;
 
 const styleTag = document.createElement("style");
@@ -4794,9 +4614,9 @@ function drawMultiplePolygons(JSON_Data) {
   }
 
   // Allowed levels
-  const allowedLevels = ["Level_1", "Level_2", "Level_3", "Level_4", "Level_5"];
-  const compartmentTop = 611;
-  const compartmentHeight = 100;
+  const allowedLevels = ["Level_1", "Level_2", "Level_3", "Level_4", "Level_5","Level_6", "Level_7", "Level_8", "Level_9", "Level_10"];
+  const compartmentTop = 510;
+  const compartmentHeight = 200;
   const compartmentSize = 20;
   const SHAPE_W = 13;
   const SHAPE_H = 11;
@@ -4930,7 +4750,7 @@ function drawMultiplePolygons(JSON_Data) {
         container.className = className;
 
         // Create 5 compartments
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i <= 10; i++) {
           const inner = document.createElement("div");
           inner.className = "polygon-inner";
           inner.style.top = `${
