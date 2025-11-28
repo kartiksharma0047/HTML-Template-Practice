@@ -13,18 +13,6 @@ JSON_Data = {
       footer_9_label: "Home",
       footer_10_label: "Hospital Drugstore",
     },
-    footer_label_position_left: {
-      footer_1_left: "Level_6",
-      footer_2_left: "Level_7",
-      footer_3_left: "Level_5",
-      footer_4_left: "Level_7",
-      footer_5_left: "Level_4",
-      footer_6_left: "Level_6",
-      footer_7_left: "Level_7",
-      footer_8_left: "Level_5",
-      footer_9_left: "Level_7",
-      footer_10_left: "Level_4",
-    },
     label_width: {
       footer_1_width: "90",
       footer_2_width: "90",
@@ -38,12 +26,11 @@ JSON_Data = {
       footer_10_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
-    footer_width: "default",
   },
   Page_Configuration: {
     background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
     border_color: "black",
-    scroll_horizontal: false,
+    scroll_horizontal: true,
     direction: "reverse",
     exportName: "Process_Journey",
     bottomShapesConfig: {
@@ -57,7 +44,6 @@ JSON_Data = {
     color: "#58e3d2",
     shadow:
       "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
-    width: "default",
     logo_config: [
       {
         type: "Between",
@@ -306,6 +292,31 @@ JSON_Data = {
                 content_id: "on_line_content_4",
                 vertical_position: "bottom",
                 horizontal_position: "right",
+                openBy:'click',
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+              {
+                display: true,
+                location: "on_midline",
+                content_id: "on_line_content_3",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy:'click',
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+              {
+                display: true,
+                location: "on_midline",
+                content_id: "on_line_content_1",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy:'hover',
                 content_HTML:
                   "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
                 content_CSS:
@@ -315,6 +326,29 @@ JSON_Data = {
             on_line_content_configuration: {
               content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
               bordered: [{}, { border: true }],
+              logo:[
+                {
+                  display:true,
+                  logoPosition:"Start",
+                  logo:"fa-solid fa-location-dot",
+                  logoColor:"black"
+                },
+                {
+                  display:true,
+                  logoPosition:"End",
+                  logo:"fa-solid fa-link",
+                  logoColor:"blue"
+                },
+                {
+                  display:true,
+                  logoPosition:"Both",
+                  logo:["fa-solid fa-code-branch","fa-solid fa-hexagon-nodes"],
+                  logoColor:["purple","green"]
+                },
+                {
+                  display:false,
+                },
+              ],
               striping: [
                 {
                   stripped: true,
@@ -1186,7 +1220,6 @@ const footerKeys = Object.keys(footerLabels)
 
 const footerLineCount = footerKeys.length;
 
-
 function convertToFormat(JsonData) {
   let HTML = ``;
   let CSS = ``;
@@ -1625,20 +1658,57 @@ function convertToFormat(JsonData) {
             idx + 1
           } above-line-content">\n`;
 
-          sg.content.above_line_content.content.forEach((txt, i) => {
-            if (txt && txt.trim() !== "") {
-              const color = sg.content.above_line_content.color?.[i] || "#000";
-              const detail =
-                (sg.content.above_line_content.content_details?.[i] ?? "") ||
-                "";
+sg.content.on_line_content_configuration.content.forEach((c, i) => {
 
-              html += `<p 
-              class="above-line-text above-line-text-${i + 1}" 
-              title="${limitText(detail || "", 280)}" 
-              style="color:${resolveColor(color, colors)};"
-              >${limitText(txt || "", 10)}</p>\n`;
-            }
-          });
+  const onLine = sg.content.on_line_content_configuration;
+  const contentId = onLine.content_id?.[i] || "";
+  const link = onLine.link?.[i];
+  const hasShadow = onLine.background_shadow?.[i] ?? true;
+  const hasLink = link && link.trim() !== "";
+  const contentDetail = onLine.content_details?.[i] || "";
+  const isStriped = onLine.striping?.[i]?.stripped;
+
+  // 🔥 Logo config (safe & simple)
+  const logoCfg = onLine.logo?.[i] || {};  
+  const displayLogo = logoCfg.display === true && logoCfg.logo;  
+
+  let logoStart = "";
+  let logoEnd = "";
+
+  if (displayLogo) {
+    if (logoCfg.logoPosition === "Start") {
+      logoStart = `<i class="${logoCfg.logo}" style="color:${ resolveColor(logoCfg.logoColor,"black")}"></i>`;
+    }
+    if (logoCfg.logoPosition === "End") {
+      logoEnd = `<i class="${logoCfg.logo}" style="color:${resolveColor(logoCfg.logoColor,"black")}"></i>`;
+    }
+    if (logoCfg.logoPosition === "Both") {
+      const first = Array.isArray(logoCfg.logo) ? logoCfg.logo[0] : logoCfg.logo;
+      const second = Array.isArray(logoCfg.logo) ? logoCfg.logo[1] : logoCfg.logo;
+
+      const firstColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[0] : logoCfg.logoColor || "black";
+      const secondColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[1] : logoCfg.logoColor || "black";
+
+      logoStart = `<i class="${first}" style="color:${firstColor}"></i>`;
+      logoEnd = `<i class="${second}" style="color:${secondColor}"></i>`;
+    }
+  }
+
+  html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${i + 1}" id="${contentId}" style="position:relative;">`;
+
+html += `<h6
+  title="${limitText(contentDetail, 280)}"
+  class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${isStriped ? " striped" : ""}"
+  ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
+>
+  ${logoStart}
+  <span>${limitText(c, 10)}</span>
+  ${logoEnd}
+</h6>`;
+
+html += `</div>`;
+});
+
 
           html += `</div>\n`;
         }
@@ -1646,92 +1716,57 @@ function convertToFormat(JsonData) {
         html += `<div class="subgroups-on-line">\n`;
 
         sg.content.on_line_content_configuration.content.forEach((c, i) => {
-          const contentId =
-            sg.content.on_line_content_configuration.content_id?.[i] || "";
 
-          const link = sg.content.on_line_content_configuration.link?.[i];
-          const hasShadow =
-            sg.content.on_line_content_configuration.background_shadow?.[i] ??
-            true;
-          const hasLink = link && link.trim() !== "";
-          const contentDetail =
-            sg.content.on_line_content_configuration.content_details?.[i] || "";
-          const isStriped =
-            sg.content.on_line_content_configuration.striping?.[i]?.stripped;
-          const contentDetailHTML =
-            sg.content.on_line_content_configuration.content_details_HTML?.[
-              i
-            ] || null;
-          if (contentDetailHTML) {
-            if (typeof contentDetailHTML.content_HTML === "string") {
-              contentDetailHTML.content_HTML = normalizeAppianString(
-                contentDetailHTML.content_HTML
-              );
-            }
-            if (typeof contentDetailHTML.content_CSS === "string") {
-              contentDetailHTML.content_CSS = normalizeAppianString(
-                contentDetailHTML.content_CSS
-              );
-            }
-          }
+  const onLine = sg.content.on_line_content_configuration;
+  const contentId = onLine.content_id?.[i] || "";
+  const link = onLine.link?.[i];
+  const hasShadow = onLine.background_shadow?.[i] ?? true;
+  const hasLink = link && link.trim() !== "";
+  const contentDetail = onLine.content_details?.[i] || "";
+  const isStriped = onLine.striping?.[i]?.stripped;
 
-          // ✅ Detect valid HTML/CSS for popup
-          const hasValidHTML =
-            contentDetailHTML &&
-            typeof contentDetailHTML === "object" &&
-            contentDetailHTML.content_HTML &&
-            contentDetailHTML.content_HTML.trim() !== "";
+  // 🔥 Logo config (safe & simple)
+  const logoCfg = onLine.logo?.[i] || {};  
+  const displayLogo = logoCfg.display === true && logoCfg.logo;  
 
-          const hasValidCSS =
-            contentDetailHTML &&
-            typeof contentDetailHTML === "object" &&
-            contentDetailHTML.content_CSS &&
-            contentDetailHTML.content_CSS.trim() !== "";
+  let logoStart = "";
+  let logoEnd = "";
 
-          const shouldShowPopup = hasValidHTML;
+  if (displayLogo) {
+    if (logoCfg.logoPosition === "Start") {
+      logoStart = `<i class="${logoCfg.logo}" style="color:${logoCfg.logoColor || "black"}"></i>`;
+    }
+    if (logoCfg.logoPosition === "End") {
+      logoEnd = `<i class="${logoCfg.logo}" style="color:${logoCfg.logoColor || "black"}"></i>`;
+    }
+    if (logoCfg.logoPosition === "Both") {
+      const first = Array.isArray(logoCfg.logo) ? logoCfg.logo[0] : logoCfg.logo;
+      const second = Array.isArray(logoCfg.logo) ? logoCfg.logo[1] : logoCfg.logo;
 
-          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
-            i + 1
-          }" id="${contentId}" style="position:relative;">\n`;
+      const firstColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[0] : logoCfg.logoColor || "black";
+      const secondColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[1] : logoCfg.logoColor || "black";
 
-          // ✅ Render title h6
-          html += `<h6
-      title="${shouldShowPopup ? "" : limitText(contentDetail, 280)}"
-      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
-            isStriped ? " striped" : ""
-          }"
-      ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}>
-      ${limitText(c, 10)}
-  </h6>\n`;
-          html += `</div>\n`;
-        });
+      logoStart = `<i class="${first}" style="color:${firstColor}"></i>`;
+      logoEnd = `<i class="${second}" style="color:${secondColor}"></i>`;
+    }
+  }
 
-        // ✅ Attach hover listeners after DOM insert (backup)
-        setTimeout(() => {
-          sg.content.on_line_content_configuration.content.forEach((c, i) => {
-            const contentId =
-              sg.content.on_line_content_configuration.content_id?.[i];
-            if (!contentId) return;
+  html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${i + 1}" id="${contentId}" style="position:relative;">\n`;
 
-            const h6 = document.querySelector(`#${contentId} h6`);
-            const popup = document.querySelector(
-              `#${contentId} .${contentId}-hover-popup`
-            );
-            if (h6 && popup) {
-              h6.addEventListener("mouseenter", () => {
-                popup.style.display = "block";
-              });
-              h6.addEventListener("mouseleave", () => {
-                setTimeout(() => {
-                  if (!popup.matches(":hover")) popup.style.display = "none";
-                }, 100);
-              });
-              popup.addEventListener("mouseleave", () => {
-                popup.style.display = "none";
-              });
-            }
-          });
-        }, 100);
+  html += `
+    <h6
+      title="${limitText(contentDetail, 280)}"
+      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${isStriped ? " striped" : ""}"
+      ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
+    >
+      ${logoStart}
+      <span>${limitText(c, 10)}</span>
+      ${logoEnd}
+    </h6>
+  `;
+
+  html += `</div>\n`;
+});
 
         html += `</div>\n`;
       }
@@ -1880,93 +1915,57 @@ function convertToFormat(JsonData) {
         html += `<div class="subgroups-on-line">\n`;
 
         sg.content.on_line_content_configuration.content.forEach((c, i) => {
-          const contentId =
-            sg.content.on_line_content_configuration.content_id?.[i] || "";
 
-          const link = sg.content.on_line_content_configuration.link?.[i];
-          const hasShadow =
-            sg.content.on_line_content_configuration.background_shadow?.[i] ??
-            true;
-          const hasLink = link && link.trim() !== "";
-          const contentDetail =
-            sg.content.on_line_content_configuration.content_details?.[i] || "";
-          const isStriped =
-            sg.content.on_line_content_configuration.striping?.[i]?.stripped;
-          const contentDetailHTML =
-            sg.content.on_line_content_configuration.content_details_HTML?.[
-              i
-            ] || null;
-          if (contentDetailHTML) {
-            if (typeof contentDetailHTML.content_HTML === "string") {
-              contentDetailHTML.content_HTML = normalizeAppianString(
-                contentDetailHTML.content_HTML
-              );
-            }
-            if (typeof contentDetailHTML.content_CSS === "string") {
-              contentDetailHTML.content_CSS = normalizeAppianString(
-                contentDetailHTML.content_CSS
-              );
-            }
-          }
+  const onLine = sg.content.on_line_content_configuration;
+  const contentId = onLine.content_id?.[i] || "";
+  const link = onLine.link?.[i];
+  const hasShadow = onLine.background_shadow?.[i] ?? true;
+  const hasLink = link && link.trim() !== "";
+  const contentDetail = onLine.content_details?.[i] || "";
+  const isStriped = onLine.striping?.[i]?.stripped;
 
-          // ✅ Detect invalid / empty HTML or CSS objects
-          const hasValidHTML =
-            contentDetailHTML &&
-            typeof contentDetailHTML === "object" &&
-            contentDetailHTML.content_HTML &&
-            contentDetailHTML.content_HTML.trim() !== "";
+  // 🔥 Logo config (safe & simple)
+  const logoCfg = onLine.logo?.[i] || {};  
+  const displayLogo = logoCfg.display === true && logoCfg.logo;  
 
-          const hasValidCSS =
-            contentDetailHTML &&
-            typeof contentDetailHTML === "object" &&
-            contentDetailHTML.content_CSS &&
-            contentDetailHTML.content_CSS.trim() !== "";
+  let logoStart = "";
+  let logoEnd = "";
 
-          const shouldShowPopup = hasValidHTML;
+  if (displayLogo) {
+    if (logoCfg.logoPosition === "Start") {
+      logoStart = `<i class="${logoCfg.logo}" style="color:${resolveColor(logoCfg.logoColor, "black")}"></i>`;
+    }
+    if (logoCfg.logoPosition === "End") {
+      logoEnd = `<i class="${logoCfg.logo}" style="color:${resolveColor(logoCfg.logoColor, "black")}"></i>`;
+    }
+    if (logoCfg.logoPosition === "Both") {
+      const first = Array.isArray(logoCfg.logo) ? logoCfg.logo[0] : logoCfg.logo;
+      const second = Array.isArray(logoCfg.logo) ? logoCfg.logo[1] : logoCfg.logo;
 
-          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
-            i + 1
-          }" id="${contentId}" style="position:relative;">\n`;
+      const firstColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[0] : resolveColor(logoCfg.logoColor, "black");
+      const secondColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[1] : resolveColor(logoCfg.logoColor, "black");
 
-          // ✅ Always render h6 — if popup invalid, title appears
-          html += `<h6
-      title="${shouldShowPopup ? "" : limitText(contentDetail, 280)}"
-      class="${hasShadow ? "box-shadow-box" : ""} ${
-            hasLink ? "Div-link" : ""
-          } ${isStriped ? "striped" : ""}"
-      style="position:relative; cursor:pointer; z-index:3;"
-      ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>
-      ${limitText(c, 10)}
-  </h6>\n`;
-          html += `</div>\n`;
-        });
+      logoStart = `<i class="${first}" style="color:${resolveColor(firstColor,"black")}"></i>`;
+      logoEnd = `<i class="${second}" style="color:${resolveColor(secondColor,"black")}"></i>`;
+    }
+  }
 
-        // --- After HTML is added to DOM, add hover functionality ---
-        setTimeout(() => {
-          sg.content.on_line_content_configuration.content.forEach((c, i) => {
-            const contentId =
-              sg.content.on_line_content_configuration.content_id?.[i];
-            if (!contentId) return;
+  html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${i + 1}" id="${contentId}" style="position:relative;">\n`;
 
-            const h6 = document.querySelector(`#${contentId} h6`);
-            const popup = document.querySelector(
-              `#${contentId} .${contentId}-hover-popup`
-            );
-            if (h6 && popup) {
-              h6.addEventListener("mouseenter", () => {
-                popup.style.display = "block";
-              });
-              h6.addEventListener("mouseleave", () => {
-                setTimeout(() => {
-                  if (!popup.matches(":hover")) popup.style.display = "none";
-                }, 100);
-              });
-              popup.addEventListener("mouseleave", () => {
-                popup.style.display = "none";
-              });
-            }
-          });
-        }, 100);
+  html += `
+    <h6
+      title="${limitText(contentDetail, 280)}"
+      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${isStriped ? " striped" : ""}"
+      ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
+    >
+      ${logoStart}
+      <span>${limitText(c, 10)}</span>
+      ${logoEnd}
+    </h6>
+  `;
+
+  html += `</div>\n`;
+});
 
         html += `</div>\n`;
       }
@@ -2180,6 +2179,14 @@ function convertToFormat(JsonData) {
     text-align:center;
     position: relative;
     transition:0.1s all;
+  }
+  .${uniqueClassName} .subgroups-on-line-content h6 i {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: ${getFontSize(15, 15, 15)}px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   /* === Right Line example === */
   ${
@@ -2498,98 +2505,134 @@ function convertToFormat(JsonData) {
       const onLine = sg.content.on_line_content_configuration;
 
       (onLine?.content_id || []).forEach((id, index) => {
-        const stripeConfig = onLine.striping?.[index];
-        const bgColor =
-          resolveColor(onLine.background_color?.[index], colors) || "#e6fffc";
-        const fontColor = resolveColor(onLine.color?.[index], colors) || "#000";
-        const bottomPoint =
-          resolveColor(onLine.bottom_point_color?.[index], colors) ||
-          "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
-        const bottomLine =
-          resolveColor(onLine.bottom_line_color?.[index], colors) ||
-          "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
+  const stripeConfig = onLine.striping?.[index];
+  const bgColor =
+    resolveColor(onLine.background_color?.[index], colors) || "#e6fffc";
+  const fontColor = resolveColor(onLine.color?.[index], colors) || "#000";
+  const bottomPoint =
+    resolveColor(onLine.bottom_point_color?.[index], colors) ||
+    "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
+  const bottomLine =
+    resolveColor(onLine.bottom_line_color?.[index], colors) ||
+    "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
 
-        const shapeMap = {
-          rectangle: "border-radius: 0 0 0 0;",
-          default: "border-radius: 5px 5px 18px 5px;",
-          rounded_sm: "border-radius: 5px;",
-          rounded_lg: "border-radius: 15px;",
-          rounded_bottom_left: "border-radius: 0 0 0 18px;",
-          rounded_bottom_right: "border-radius: 0 0 18px 0;",
-          rounded_top_left: "border-radius: 18px 0 0 0;",
-          rounded_top_right: "border-radius: 0 18px 0 0;",
-          rounded_top: "border-radius: 18px 18px 0 0;",
-          rounded_bottom: "border-radius: 0 0 18px 18px;",
-          rounded_left: "border-radius: 18px 0 0 18px;",
-          rounded_right: "border-radius: 0 18px 18px 0;",
-          rounded_vertices: "border-radius: 18px 0px 18px 0;",
-          rounded_reverse_vertices: "border-radius: 0 18px 0 18px;",
-        };
+  const shapeMap = {
+    rectangle: "border-radius: 0 0 0 0;",
+    default: "border-radius: 5px 5px 18px 5px;",
+    rounded_sm: "border-radius: 5px;",
+    rounded_lg: "border-radius: 15px;",
+    rounded_bottom_left: "border-radius: 0 0 0 18px;",
+    rounded_bottom_right: "border-radius: 0 0 18px 0;",
+    rounded_top_left: "border-radius: 18px 0 0 0;",
+    rounded_top_right: "border-radius: 0 18px 0 0;",
+    rounded_top: "border-radius: 18px 18px 0 0;",
+    rounded_bottom: "border-radius: 0 0 18px 18px;",
+    rounded_left: "border-radius: 18px 0 0 18px;",
+    rounded_right: "border-radius: 0 18px 18px 0;",
+    rounded_vertices: "border-radius: 18px 0px 18px 0;",
+    rounded_reverse_vertices: "border-radius: 0 18px 0 18px;",
+  };
 
-        const rawShape = onLine.shapes?.[index] || "default";
-        const shapeStyle =
-          shapeMap[rawShape.toLowerCase()] || shapeMap["default"];
+  const rawShape = onLine.shapes?.[index] || "default";
+  const shapeStyle = shapeMap[rawShape.toLowerCase()] || shapeMap["default"];
 
-        const borderConfig = onLine.bordered?.[index] || {};
-        const borderEnabled = borderConfig.border ?? false;
-        const borderColor = resolveColor(borderConfig.color, colors) || "black";
-        const borderStyle = borderEnabled
-          ? `border: 1px solid ${borderColor};`
-          : "border: none;";
+  const borderConfig = onLine.bordered?.[index] || {};
+  const borderEnabled = borderConfig.border ?? false;
+  const borderColor = resolveColor(borderConfig.color, colors) || "black";
+  const borderStyle = borderEnabled
+    ? `border: 1px solid ${borderColor};`
+    : "border: none;";
 
-        css += `
-    .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} {
-        background: ${bgColor};
-        color: ${fontColor};
-        
-        ${shapeStyle}
-    }
+  css += `
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} {
+          background: ${bgColor};
+          color: ${fontColor};
+          ${shapeStyle}
+      }
 
-    .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 {
-        ${shapeStyle}
-        ${borderStyle}
-    }
-    .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-          idx + 1
-        } #${id} h6::after {
-        background: ${bottomPoint};
-    }
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 {
+          ${shapeStyle}
+          ${borderStyle}
+          position: relative;
+          overflow: visible !important;
+      }
 
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-          idx + 1
-        } #${id}.subgroups-on-line-content::after {
-    background: ${bottomLine};
-  }
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6::after {
+          background: ${bottomPoint};
+      }
+
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id}.subgroups-on-line-content::after {
+          background: ${bottomLine};
+      }
   `;
-        if (stripeConfig?.stripped) {
-          let degree = 0;
-          const [c1, c2, c3, c4] = stripeConfig.colors || [
-            "rgba(255,255,255,0.5)",
-            "rgba(255,255,255,0.5)",
-            "rgba(0,191,255,0.15)",
-            "rgba(0,191,255,0.15)",
-          ];
-          if (stripeConfig?.reversed) {
-            degree = 45;
-          } else {
-            degree = -45;
-          }
 
-          css += `
-  .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-            idx + 1
-          } #${id} .striped {
-    background: repeating-linear-gradient(
-        ${degree}deg,
-      ${c1},
-      ${c2} 4px,
-      ${c3} 4px,
-      ${c4} 8px
-    );
+  // ---------------------------
+  // ⭐ LOGO POSITION LOGIC HERE
+  // ---------------------------
+
+  const logoCfg = onLine.logo?.[index] || {};
+  const displayLogo = logoCfg.display === true && logoCfg.logo;
+  const logoPosition = (logoCfg.logoPosition || "").toLowerCase();
+  const iconSize = getFontSize(15, 16, 17); 
+  const iconOffset = Math.round(iconSize / 2)-getFontSize(5,7,7);
+
+  // Base icon style for this element
+  if (displayLogo) {
+    if (logoPosition === "start") {
+      css += `
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 i:first-of-type {
+          left: ${iconOffset}px;
+      }
+      `;
+    }
+
+    if (logoPosition === "end") {
+      css += `
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 i:first-of-type {
+          right: ${iconOffset}px;
+      }
+      `;
+    }
+
+    if (logoPosition === "both") {
+      css += `
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 i:first-of-type {
+          left: ${iconOffset}px;
+      }
+
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 i:last-of-type {
+          right: ${iconOffset}px;
+      }
+      `;
+    }
   }
-  `;
-        }
-      });
+
+  // ---------------------------
+  // Striped logic (unchanged)
+  // ---------------------------
+  if (stripeConfig?.stripped) {
+    let degree = stripeConfig?.reversed ? 45 : -45;
+    const [c1, c2, c3, c4] = stripeConfig.colors || [
+      "rgba(255,255,255,0.5)",
+      "rgba(255,255,255,0.5)",
+      "rgba(0,191,255,0.15)",
+      "rgba(0,191,255,0.15)",
+    ];
+
+    css += `
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} .striped {
+        background: repeating-linear-gradient(
+          ${degree}deg,
+          ${c1},
+          ${c2} 4px,
+          ${c3} 4px,
+          ${c4} 8px
+        );
+      }
+    `;
+  }
+});
+
     });
 
     sub_groups.forEach((sg, idx) => {
@@ -2895,8 +2938,10 @@ body {
   margin: 0;
   font-size:${getFontSize(9, 10, 11)}px;
   text-align: right;
+  width:100px;
   color: #333;
   position:absolute;
+  left: -105px;
 }
 `;
 
@@ -2918,21 +2963,6 @@ footerKeys.forEach((labelKey, idx) => {
     }
   `;
 });
-
-
-// Add left positions for each h4
-footerKeys.forEach((labelKey, idx) => {
-  const index = idx + 1;
-  const leftKey = `footer_${index}_left`;
-  const levelString = JSON_Data.footer.footer_label_position_left[leftKey];
-  const leftValue = levelToPixel(levelString);
-  dynamicFooterCSS += `
-    .footer-dark-five-lines > div:nth-child(${index}) h4 {
-      left: ${leftValue};
-    }
-  `;
-});
-
 
 let footerHTML = "";
 footerKeys.forEach((key, index) => {
@@ -2961,7 +2991,6 @@ const Final_HTML = PreDefined_HTML.replace(
   footerHTML
 ).replace("<!-- Add Here -->", result.HTML);
 
-console.log(Final_HTML);
 document.body.innerHTML = Final_HTML;
 
 const styleTag = document.createElement("style");
@@ -4614,7 +4643,18 @@ function drawMultiplePolygons(JSON_Data) {
   }
 
   // Allowed levels
-  const allowedLevels = ["Level_1", "Level_2", "Level_3", "Level_4", "Level_5","Level_6", "Level_7", "Level_8", "Level_9", "Level_10"];
+  const allowedLevels = [
+    "Level_1",
+    "Level_2",
+    "Level_3",
+    "Level_4",
+    "Level_5",
+    "Level_6",
+    "Level_7",
+    "Level_8",
+    "Level_9",
+    "Level_10",
+  ];
   const compartmentTop = 510;
   const compartmentHeight = 200;
   const compartmentSize = 20;
@@ -5301,6 +5341,16 @@ function ToolTip_Creation(JSON_Data) {
     return;
   }
 
+  // WeakMap to store handlers for cleanup: targetEl -> { handlers..., styleEls..., wrapperClass }
+  const tooltipRegistry = new WeakMap();
+
+  // Fallback isVisible if your codebase already has one you can remove this
+  function isVisible(el) {
+    if (!el) return false;
+    const style = window.getComputedStyle(el);
+    return style.display !== "none" && style.visibility !== "hidden" && el.offsetParent !== null;
+  }
+
   JSON_Data.body.forEach((section, sectionIdx) => {
     if (!section.sub_groups) return;
 
@@ -5318,13 +5368,59 @@ function ToolTip_Creation(JSON_Data) {
         if (!targetId || !targetEl || !isVisible(targetEl)) return;
 
         const base = `${tooltipPrefix}${tipIdx}-${targetId}`;
+
+        // Normalize positions
         const vPos = (tip.vertical_position || "top").toLowerCase();
         const hPos = (tip.horizontal_position || "right").toLowerCase();
 
+        // openBy: "click" or "hover"; default to "click"
+        const openByRaw = (tip.openBy || "click").toString().toLowerCase();
+        const openBy = openByRaw === "hover" ? "hover" : "click";
+
+        // CLEANUP any previous tooltip tied to this target
+        const cleanup = () => {
+          const prev = tooltipRegistry.get(targetEl);
+          if (!prev) {
+            // still remove any existing DOM/style by class just in case
+            const oldWrapper = pptBox.querySelector(`.${base}`);
+            if (oldWrapper) oldWrapper.remove();
+            const style = document.querySelector(`style[data-tooltip="${base}"]`);
+            if (style) style.remove();
+            const popupStyle = document.querySelector(`style[data-tooltip="${base}-popup"]`);
+            if (popupStyle) popupStyle.remove();
+            return;
+          }
+
+          // remove DOM
+          try {
+            if (prev.wrapper && prev.wrapper.parentNode) prev.wrapper.parentNode.removeChild(prev.wrapper);
+          } catch (e) {}
+          // remove style nodes
+          if (prev.styleEls && prev.styleEls.length) {
+            prev.styleEls.forEach((el) => {
+              if (el && el.parentNode) el.parentNode.removeChild(el);
+            });
+          }
+          // remove event listeners
+          if (prev.handlers) {
+            prev.handlers.forEach(({ el, type, fn, options }) => {
+              try {
+                el.removeEventListener(type, fn, options);
+              } catch (e) {}
+            });
+          }
+          // remove registry entry
+          tooltipRegistry.delete(targetEl);
+        };
+
+        cleanup();
+
+        // create tooltip
         const createTooltip = () => {
           const pptRect = pptBox.getBoundingClientRect();
           const tgtRect = targetEl.getBoundingClientRect();
 
+          // basic container style
           const styleEl = document.createElement("style");
           styleEl.setAttribute("data-tooltip", base);
           styleEl.textContent = `
@@ -5336,6 +5432,7 @@ function ToolTip_Creation(JSON_Data) {
           `;
           document.head.appendChild(styleEl);
 
+          // wrapper
           const wrapper = document.createElement("div");
           wrapper.className = base;
           const htmlContent = tip.content_HTML || "";
@@ -5343,93 +5440,188 @@ function ToolTip_Creation(JSON_Data) {
             typeof normalizeAppianString === "function"
               ? normalizeAppianString(htmlContent)
               : htmlContent;
+          // hide initially
           wrapper.style.display = "none";
           wrapper.style.visibility = "hidden";
           pptBox.appendChild(wrapper);
 
+          // optional popup CSS
+          const styleEls = [styleEl];
           if (tip.content_CSS) {
             const popupStyle = document.createElement("style");
             popupStyle.setAttribute("data-tooltip", `${base}-popup`);
             popupStyle.textContent = tip.content_CSS;
             document.head.appendChild(popupStyle);
+            styleEls.push(popupStyle);
           }
 
+          // measure & position function (reads current rectangles)
           const measureAndPosition = () => {
+            // re-query to ensure fresh DOM geometry
+            const pptRectNow = pptBox.getBoundingClientRect();
+            const tgtRectNow = targetEl.getBoundingClientRect();
             const popupRect = wrapper.getBoundingClientRect();
             const TW = popupRect.width,
               TH = popupRect.height;
-            const CW = tgtRect.width,
-              CH = tgtRect.height;
+            const CW = tgtRectNow.width,
+              CH = tgtRectNow.height;
             let wrapperY, wrapperX;
 
-            if (vPos === "top") wrapperY = tgtRect.top - TH + CH / 3;
-            else if (vPos === "middle")
-              wrapperY = tgtRect.top + CH / 2 - TH / 2;
-            else if (vPos === "bottom") wrapperY = tgtRect.top + CH / 3;
-            else wrapperY = tgtRect.top - TH + CH / 3;
+            if (vPos === "top") wrapperY = tgtRectNow.top - TH + CH / 3;
+            else if (vPos === "middle") wrapperY = tgtRectNow.top + CH / 2 - TH / 2;
+            else if (vPos === "bottom") wrapperY = tgtRectNow.top + CH / 3;
+            else wrapperY = tgtRectNow.top - TH + CH / 3;
 
-            if (hPos === "left") wrapperX = tgtRect.left + CW / 3 - TW;
-            else if (hPos === "middle")
-              wrapperX = tgtRect.left - TW / 2 + CW / 2;
-            else if (hPos === "right")
-              wrapperX = tgtRect.left + tgtRect.width - CW / 3;
-            else wrapperX = tgtRect.left - CW / 3 + TW;
+            if (hPos === "left") wrapperX = tgtRectNow.left + CW / 3 - TW;
+            else if (hPos === "middle") wrapperX = tgtRectNow.left - TW / 2 + CW / 2;
+            else if (hPos === "right") wrapperX = tgtRectNow.left + tgtRectNow.width - CW / 3;
+            else wrapperX = tgtRectNow.left - CW / 3 + TW;
 
-            const finalTop = Math.round(wrapperY - pptRect.top);
-            const finalLeft = Math.round(wrapperX - pptRect.left);
+            const finalTop = Math.round(wrapperY - pptRectNow.top);
+            const finalLeft = Math.round(wrapperX - pptRectNow.left);
+
             wrapper.style.top = `${finalTop}px`;
             wrapper.style.left = `${finalLeft}px`;
             wrapper.style.visibility = "visible";
+            // keep display toggled by show/hide logic
+          };
+
+          // show/hide helpers
+          const showTooltip = () => {
+            // ensure measurement is accurate before showing
+            wrapper.style.display = "block";
+            // measure after next paint so widths/heights are correct
+            requestAnimationFrame(() => {
+              measureAndPosition();
+            });
+          };
+          const hideTooltip = () => {
             wrapper.style.display = "none";
           };
 
-          setTimeout(measureAndPosition, 0);
+          // handlers to attach and store for cleanup
+          const handlers = [];
 
-          const showTooltip = () => {
-            measureAndPosition();
-            wrapper.style.display = "block";
-          };
-
-          const hideTooltipWithDelay = () => {
-            setTimeout(() => {
-              if (!wrapper.matches(":hover")) wrapper.style.display = "none";
-            }, 120);
-          };
-
-          targetEl.addEventListener("mouseenter", showTooltip);
-          targetEl.addEventListener("mouseleave", hideTooltipWithDelay);
-          wrapper.addEventListener(
-            "mouseleave",
-            () => (wrapper.style.display = "none")
-          );
-
+          // common reposition on scroll/resize
           const repositionOnScrollOrResize = () => {
             const prevDisplay = wrapper.style.display;
             wrapper.style.display = "block";
             measureAndPosition();
-            wrapper.style.display = prevDisplay;
+            wrapper.style.display = prevDisplay || "none";
           };
 
+          // add global listeners for repositioning
           window.addEventListener("resize", repositionOnScrollOrResize);
           window.addEventListener("scroll", repositionOnScrollOrResize, true);
+          handlers.push({ el: window, type: "resize", fn: repositionOnScrollOrResize });
+          handlers.push({ el: window, type: "scroll", fn: repositionOnScrollOrResize, options: true });
+
+          if (openBy === "hover") {
+            // hover: target mouseenter shows, mouseleave delays hide; wrapper mouseleave hides
+            const onEnter = () => {
+              showTooltip();
+            };
+            const onLeaveTarget = () => {
+              // small delay so moving into wrapper keeps it open
+              setTimeout(() => {
+                if (!wrapper.matches(":hover") && !targetEl.matches(":hover")) hideTooltip();
+              }, 120);
+            };
+            const onLeaveWrapper = () => {
+              hideTooltip();
+            };
+
+            targetEl.addEventListener("mouseenter", onEnter);
+            targetEl.addEventListener("mouseleave", onLeaveTarget);
+            wrapper.addEventListener("mouseleave", onLeaveWrapper);
+
+            handlers.push({ el: targetEl, type: "mouseenter", fn: onEnter });
+            handlers.push({ el: targetEl, type: "mouseleave", fn: onLeaveTarget });
+            handlers.push({ el: wrapper, type: "mouseleave", fn: onLeaveWrapper });
+          } else {
+            // click: toggle on target click, close when clicking outside, close on ESC
+            let isOpen = false;
+            const onTargetClick = (ev) => {
+              ev.stopPropagation();
+              isOpen = !isOpen;
+              if (isOpen) {
+                showTooltip();
+                // reposition immediately
+                measureAndPosition();
+                // attach outside click listener
+                document.addEventListener("click", onDocClick);
+                document.addEventListener("keydown", onEsc);
+              } else {
+                hideTooltip();
+                document.removeEventListener("click", onDocClick);
+                document.removeEventListener("keydown", onEsc);
+              }
+            };
+
+            const onDocClick = (ev) => {
+              // if click is outside both target and wrapper -> close
+              if (!wrapper.contains(ev.target) && !targetEl.contains(ev.target)) {
+                isOpen = false;
+                hideTooltip();
+                document.removeEventListener("click", onDocClick);
+                document.removeEventListener("keydown", onEsc);
+              }
+            };
+
+            const onEsc = (ev) => {
+              if (ev.key === "Escape" || ev.key === "Esc") {
+                isOpen = false;
+                hideTooltip();
+                document.removeEventListener("click", onDocClick);
+                document.removeEventListener("keydown", onEsc);
+              }
+            };
+
+            // also keep tooltip open if mouse enters wrapper (so links can be clicked)
+            const onWrapperMouseLeave = () => {
+              // no auto close when mouse leaves wrapper for click mode; user must click outside or Esc
+            };
+
+            targetEl.addEventListener("click", onTargetClick);
+            wrapper.addEventListener("mouseleave", onWrapperMouseLeave);
+
+            handlers.push({ el: targetEl, type: "click", fn: onTargetClick });
+            handlers.push({ el: wrapper, type: "mouseleave", fn: onWrapperMouseLeave });
+            // document listeners are added/removed dynamically when tooltip opens; we don't add them to handlers here
+            // (they'll be removed by the onTargetClick/onDocClick handlers themselves)
+          }
+
+          // store registry for cleanup
+          tooltipRegistry.set(targetEl, {
+            wrapper,
+            styleEls,
+            handlers,
+            wrapperClass: base,
+          });
+
+          // measure once after creation to set initial coordinates (invisible measurement)
+          // Show/measure briefly offscreen to compute sizes, then hide again
+          wrapper.style.display = "block";
+          wrapper.style.visibility = "hidden";
+          // allow browser to layout
+          requestAnimationFrame(() => {
+            measureAndPosition();
+            wrapper.style.display = "none";
+            wrapper.style.visibility = "visible";
+          });
 
           return wrapper;
         };
 
-        // Always reset previous tooltip before creating a new one
-        const cleanup = () => {
-          const old = pptBox.querySelector(`.${base}`);
-          const style = document.querySelector(`style[data-tooltip="${base}"]`);
-          if (old) old.remove();
-          if (style) style.remove();
-        };
-
-        cleanup();
         createTooltip();
       });
     });
   });
 }
+
+// call it (like you had)
+ToolTip_Creation(JSON_Data);
+
 
 ToolTip_Creation(JSON_Data);
 
@@ -5446,41 +5638,79 @@ function drawPageBottomShapes(JSON_Data) {
     return;
   }
 
-  // Clean up any previous shapes
-  const oldShapes = pptBox.querySelectorAll(".page-bottom-shapes-wrapper");
-  oldShapes.forEach((el) => el.remove());
+  // Ensure pptBox is positioned so absolute children align to it
+  const computedPosition = window.getComputedStyle(pptBox).position;
+  if (!computedPosition || computedPosition === "static") {
+    pptBox.style.position = "relative";
+  }
+
+  // Cleanup previous elements / handlers
+  const prevParent = pptBox.querySelector(".page-bottom-shapes-parent");
+  if (prevParent) prevParent.remove();
+  if (window._pptBottomShapesResizeHandler) {
+    window.removeEventListener("resize", window._pptBottomShapesResizeHandler);
+    window._pptBottomShapesResizeHandler = null;
+  }
+  if (window._pptBottomShapesScrollHandler) {
+    pptBox.removeEventListener("scroll", window._pptBottomShapesScrollHandler);
+    window._pptBottomShapesScrollHandler = null;
+  }
 
   const shapes = config.shapes;
   const colors = config.shapesColor || [];
   const texts = config.text || [];
   const textColors = config.textColor || [];
 
-  // Create left and right wrapper divs
-  const leftWrapper = document.createElement("div");
-  const rightWrapper = document.createElement("div");
+  // Create parent container that will span content width
+  const parent = document.createElement("div");
+  parent.className = "page-bottom-shapes-parent";
+  parent.style.position = "absolute";
+  parent.style.left = "0px";
+  parent.style.bottom = "100px";
+  // parent.style.height = "170px";
+  parent.style.zIndex = "3";
+  // parent.style.overflow = "hidden";
+  parent.style.pointerEvents = "none";
+  parent.style.display = "flex";
+  parent.style.justifyContent = "space-between";
+  parent.style.alignItems = "center";
 
-  [leftWrapper, rightWrapper].forEach((wrap, idx) => {
-    wrap.className = `page-bottom-shapes-wrapper side-${
-      idx === 0 ? "left" : "right"
-    }`;
-    wrap.style.position = `${idx === 0 ? "fixed" : "sticky"}`;
-    wrap.style.bottom = `${idx === 0 ? 125 : 0}px`;
-    wrap.style.display = "flex";
-    wrap.style.flexDirection = "column";
-    wrap.style.gap = "50px";
-    wrap.style.zIndex = 49;
+  // Create two child wrappers (left and right)
+  const leftChild = document.createElement("div");
+  const rightChild = document.createElement("div");
+  [leftChild, rightChild].forEach((c) => {
+    c.style.display = "flex";
+    c.style.flexDirection = "row";
+    c.style.gap = "15px";
+    c.style.padding = "0";
+    c.style.margin = "0";
+    c.style.width="40px";
+    c.style.position = "relative";
+    c.style.pointerEvents = "auto";
   });
+  leftChild.style.transform="rotate(90deg)";
+  leftChild.style.top="-135px";
+  rightChild.style.transform="rotate(-90deg)";
+  leftChild.className = "page-bottom-shapes-wrapper side-left";
+  rightChild.className = "page-bottom-shapes-wrapper side-right";
 
-  leftWrapper.style.transform = "translateX(-25%)";
-  rightWrapper.style.right = "-20px";
-  rightWrapper.style.transform = "translateY(145%)";
-
-  // Generate up to 4 shapes
-  for (let i = 0; i < 4; i++) {
+  // Create shape wrapper + rotated inner shape (prevents layout gap)
+  function createShape(i, sideIndex) {
     const shapeType = shapes[i] || "circle";
     const bgColor = resolveColor(colors[i], "#888");
     const label = texts[i] || "";
     const labelColor = resolveColor(textColors[i], "white");
+
+    // outer wrapper takes the rotated footprint so layout doesn't leave gaps
+    const wrapper = document.createElement("div");
+    wrapper.style.display = "flex";
+    wrapper.style.alignItems = "center";
+    wrapper.style.justifyContent = "center";
+    wrapper.style.overflow = "visible";
+    wrapper.style.height = "40px";
+    wrapper.style.pointerEvents = "none";
+    // wrapper.style.transform =
+    //   sideIndex === 0 ? "rotate(90deg)" : "rotate(-90deg)";
 
     const shape = document.createElement("div");
     shape.className = `bottom-shape-${i}-${shapeType}`;
@@ -5488,15 +5718,14 @@ function drawPageBottomShapes(JSON_Data) {
     shape.style.color = labelColor;
     shape.style.fontSize = "10px";
     shape.style.fontWeight = "600";
-    shape.style.textAlign = "center";
     shape.style.display = "flex";
     shape.style.alignItems = "center";
     shape.style.justifyContent = "center";
     shape.style.width = "80px";
     shape.style.height = "40px";
     shape.style.background = bgColor;
+    shape.style.pointerEvents = "auto";
 
-    // Shape styling
     if (shapeType === "circle") {
       shape.style.borderTopLeftRadius = "80px";
       shape.style.borderTopRightRadius = "80px";
@@ -5505,19 +5734,74 @@ function drawPageBottomShapes(JSON_Data) {
     } else if (shapeType === "trapezium") {
       shape.style.clipPath = "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)";
     }
+    wrapper.appendChild(shape);
+    return wrapper;
+  }
 
-    // Left (index 0–1) → rotate +90deg; Right (index 2–3) → rotate -90deg
-    if (i < 2) {
-      shape.style.transform = "rotateZ(90deg)";
-      leftWrapper.appendChild(shape);
-    } else {
-      shape.style.transform = "rotateZ(-90deg)";
-      rightWrapper.appendChild(shape);
+  // place shapes (1-2 -> left, 3-4 -> right)
+  const leftShapesCount = Math.min(2, shapes.length);
+  for (let i = 0; i < leftShapesCount; i++) {
+    leftChild.appendChild(createShape(i, 0));
+  }
+  for (let i = 2; i < Math.min(4, shapes.length); i++) {
+    rightChild.appendChild(createShape(i, 1));
+  }
+
+  parent.appendChild(leftChild);
+  parent.appendChild(rightChild);
+  pptBox.appendChild(parent);
+
+  function computeContentWidth() {
+    try {
+      // selector used in your adjustMidLineWidth
+      const allChildren = Array.from(
+        pptBox.querySelectorAll("[id^='logo_title_id']")
+      );
+      if (!allChildren.length) {
+        // fallback to scrollWidth (includes full content width)
+        return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
+      }
+
+      const pptRect = pptBox.getBoundingClientRect();
+      const nodesInfo = allChildren.map((el) => {
+        const elRect = el.getBoundingClientRect();
+        const left = elRect.left - pptRect.left + pptBox.scrollLeft;
+        const w = el.offsetWidth || elRect.width || 0;
+        return { el, left, right: left + w, width: w };
+      });
+
+      // find furthest-right node
+      const furthest = nodesInfo.reduce(
+        (acc, n) => (n.right > acc ? n.right : acc),
+        0
+      );
+      if (furthest > 0) {
+        return Math.max(Math.ceil(furthest + 4), pptBox.clientWidth);
+      }
+
+      // fallback
+      return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
+    } catch (err) {
+      console.warn("computeContentWidth failed:", err);
+      return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
     }
   }
 
-  pptBox.appendChild(leftWrapper);
-  pptBox.appendChild(rightWrapper);
+  // size parent to content width
+  function sizeParentToContent() {
+    const contentW = computeContentWidth();
+    parent.style.width = contentW + "px";
+  }
+  sizeParentToContent();
+  parent.recalcBottomShapes = sizeParentToContent;
+  window._pptBottomShapesResizeHandler = function () {
+    sizeParentToContent();
+  };
+  window.addEventListener("resize", window._pptBottomShapesResizeHandler);
+  window._pptBottomShapesScrollHandler = function () {
+    sizeParentToContent();
+  };
+  pptBox.addEventListener("scroll", window._pptBottomShapesScrollHandler);
 }
 
 drawPageBottomShapes(JSON_Data);
