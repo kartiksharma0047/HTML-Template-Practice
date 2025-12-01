@@ -14,16 +14,16 @@ JSON_Data = {
       footer_10_label: "Hospital Drugstore",
     },
     label_width: {
-      footer_1_width: "90",
-      footer_2_width: "90",
-      footer_3_width: "90",
-      footer_4_width: "90",
-      footer_5_width: "90",
-      footer_6_width: "90",
-      footer_7_width: "90",
-      footer_8_width: "90",
-      footer_9_width: "90",
-      footer_10_width: "90",
+      footer_1_width: "92",
+      footer_2_width: "92",
+      footer_3_width: "92",
+      footer_4_width: "92",
+      footer_5_width: "92",
+      footer_6_width: "92",
+      footer_7_width: "92",
+      footer_8_width: "92",
+      footer_9_width: "92",
+      footer_10_width: "92",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
   },
@@ -122,40 +122,6 @@ JSON_Data = {
   },
   body: [
     {
-      component: "Start-Header",
-      title: "Pre-Diagnosis",
-      configurations: {
-        title_color: "#304c8c",
-        line_right: true,
-        line_color: "white",
-        circle_color: "white",
-        alignment: "vertical",
-        vertical_config: {
-          boxColor: "linear-gradient(to right, #d5d6d8, #ebebebff)",
-          boxShape: "blob_soft",
-          lineColor: "black",
-        },
-      },
-      start_content: {
-        logo_title: "Patient",
-        link: "",
-        steps: ["GPC", "DIAGNOS", "PREMENTO"],
-        stepsLink: [],
-        title_detail: "Paziente",
-        steps_details: [],
-        configurations: {
-          logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
-          logo_border_color: "#2394b9",
-          logo_para_color:
-            "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
-          mid_line_color: "#58e3d2",
-          background_color: ["white_color"],
-          font_color: ["black_color"],
-          logo_font_color: "white_color",
-        },
-      },
-    },
-    {
       component: "Header",
       title: "Diagnosis",
       configurations: {
@@ -163,6 +129,18 @@ JSON_Data = {
         line_right: true,
         line_color: "white",
         collapsabile: true,
+      },
+      start_content:{
+        display:true,
+        logo_title:"Patient",
+        link:"www.youtube.com",
+        logo_title_detail:"Patients",
+        configurations:{
+          logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
+          logo_border_color: "#2394b9",
+          logo_title_color:"white_color",
+          logo_background_color:"linear-gradient(to right top, #2394b9 10%, #5df3e4)"
+        }
       },
       sub_groups: [
         {
@@ -574,6 +552,7 @@ JSON_Data = {
                 fontAwsomeIcon: "fa-solid fa-exclamation",
                 fontAwsomeIconColor: "white",
                 position: "end",
+                openBy:'click',
                 warningColor: "#fb2932",
                 warningCircleConfig: {
                   display: true,
@@ -1220,6 +1199,18 @@ const footerKeys = Object.keys(footerLabels)
 
 const footerLineCount = footerKeys.length;
 
+let currentlyOpenTooltip = null;
+
+function closeAllTooltips() {
+  if (currentlyOpenTooltip && typeof currentlyOpenTooltip.hide === "function") {
+    try {
+      currentlyOpenTooltip.hide();
+      currentlyOpenTooltip.isOpen = false;
+    } catch (e) {}
+  }
+  currentlyOpenTooltip = null;
+}
+
 function convertToFormat(JsonData) {
   let HTML = ``;
   let CSS = ``;
@@ -1622,13 +1613,19 @@ function convertToFormat(JsonData) {
    * Generate unique Header + Sub-Headers HTML + scoped CSS
    */
   function generateHeaderHTMLandCSS(component, uniqueClassName, colors) {
-    const { title, configurations, sub_groups } = component;
+    const { title, configurations, sub_groups,start_content } = component;
     // === Header Section ===
     const showParentCollapse = configurations?.collapsabile === true;
     const parentIconStyle = showParentCollapse
       ? ""
       : "style='opacity:0; pointer-events:none;'";
-
+  
+    const displayStart =  start_content?.display === true;
+    const logoGradient = resolveColor(start_content?.configurations?.logo_color,colors)||"linear-gradient(to right top, #2394b9 10%, #5df3e4)";
+    const logoBorder = resolveColor(start_content?.configurations?.logo_border_color, colors)||"#2394b9";
+    const logoTitleColor = resolveColor(start_content?.configurations?.logo_title_color, colors)||"white";
+    const logoBackground = resolveColor(start_content?.configurations?.logo_background_color, colors)||"linear-gradient(to right top, #2394b9 10%, #5df3e4)";
+  
     let html = `<div class="Slide-box ${uniqueClassName}">\n`;
     html += `<h1 title="${title}">
     <i class="fa-regular fa-square-caret-right" ${parentIconStyle}></i> 
@@ -1636,6 +1633,19 @@ function convertToFormat(JsonData) {
   </h1>\n`;
 
     html += `<div class="sub-groups">\n`;
+
+    if (displayStart) {
+      html += `
+        <div class="${uniqueClassName}-start-block">
+          <div class="icon-plus-name-inner">
+            <i class="fa-solid fa-user start-avatar" aria-hidden="true"></i>
+            <p class="start-pill ${start_content.link ? "Div-link":''}" ${start_content.link ? `onclick="window.open('${start_content.link}', '_blank')"` : ""} title="${limitText(start_content?.logo_title_detail, 280)}">
+              ${limitText(start_content?.logo_title, 12)}
+            </p>
+          </div>
+        </div>
+      `;
+    }
 
     sub_groups.forEach((sg, idx) => {
       const showChildCollapse = sg.configurations?.collapsabile === true;
@@ -1650,6 +1660,7 @@ function convertToFormat(JsonData) {
       <i class="fa-regular fa-square-caret-right" ${childIconStyle}></i> 
       ${limitText(sg.title, 15)}
     </h2>\n`;
+    
 
       if (direction) {
         // Above-line content
@@ -1702,7 +1713,7 @@ html += `<h6
   ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
 >
   ${logoStart}
-  <span>${limitText(c, 10)}</span>
+  <span>${limitText(c, 15)}</span>
   ${logoEnd}
 </h6>`;
 
@@ -1760,7 +1771,7 @@ html += `</div>`;
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
     >
       ${logoStart}
-      <span>${limitText(c, 10)}</span>
+      <span>${limitText(c, 15)}</span>
       ${logoEnd}
     </h6>
   `;
@@ -1820,7 +1831,6 @@ html += `</div>`;
         const renderParagraph = (text, detail, link, className) => {
           const hasLink = link && link.trim() !== "";
           const hasText = text && text.trim() !== "";
-
           // if empty, no styling class
           const classes = hasText
             ? className
@@ -2011,13 +2021,61 @@ html += `</div>`;
     display:none;
   }
   .${uniqueClassName} .icon-plus-name-box{
-    width:100px;
+    width:125px;
     position: absolute;
     display:flex;
     align-items: center;
     z-index:1;
   }
 
+
+  .${uniqueClassName}-start-block {
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    top:${direction?getFontSize(128,126,123):getFontSize(307,304,301)}px;
+    left:10px;
+    z-index:2;
+  }
+
+  .${uniqueClassName}-start-block .icon-plus-name-inner {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    width: max-content;
+  }
+
+  .${uniqueClassName}-start-block .start-avatar {
+    font-size: ${getFontSize(15, 16, 17)}px;
+    background: ${logoGradient};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid ${logoBorder};
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .${uniqueClassName}-start-block .start-pill {
+    display:inline;
+    background: ${logoBackground};
+    padding: 6px 10px;
+    white-space: nowrap;
+    font-size:${getFontSize(9, 10, 11)}px;
+    border-radius: 20px;
+    color: ${logoTitleColor};
+    cursor: ${start_content?.link ? "pointer" : "default"};
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    user-select: none;
+    position: relative;
+    top: -17px;
+  }
 
   .${uniqueClassName} {
     width: max-content;
@@ -2109,7 +2167,7 @@ html += `</div>`;
     flex-direction: column;
     position: relative;
     ${direction ? "margin-top:150px;" : ""}
-    width: 100px;
+    width: 125px;
     z-index:4;
   }
   .${uniqueClassName} .icon_plus_name span {
@@ -2175,7 +2233,7 @@ html += `</div>`;
     margin: 0;
     font-size:${getFontSize(9, 10, 11)}px;
     padding: 10px;
-    width:${getFontSize(77, 77, 77)}px;
+    width:${getFontSize(105, 105, 105)}px;
     text-align:center;
     position: relative;
     transition:0.1s all;
@@ -2431,7 +2489,7 @@ html += `</div>`;
       const hasAboveLine = sg.content.above_line_content?.content?.some(
         (c) => c && c.trim() !== ""
       );
-      const dynamicWidth = logoLength * getFontSize(115, 125, 135);
+      const dynamicWidth = logoLength * getFontSize(135, 145, 155) + (displayStart?70:0);
       css += `
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
@@ -2565,10 +2623,6 @@ html += `</div>`;
           background: ${bottomLine};
       }
   `;
-
-  // ---------------------------
-  // ⭐ LOGO POSITION LOGIC HERE
-  // ---------------------------
 
   const logoCfg = onLine.logo?.[index] || {};
   const displayLogo = logoCfg.display === true && logoCfg.logo;
@@ -5044,7 +5098,7 @@ function warning_Logo(JSON_Data) {
     return;
   }
 
-  // Iterate body sections (same structure as connectingTextLine)
+  // iterate sections
   JSON_Data.body.forEach((section, sectionIdx) => {
     if (!section.sub_groups) return;
 
@@ -5056,22 +5110,19 @@ function warning_Logo(JSON_Data) {
           `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`
         );
         oldEls.forEach((el) => {
-          const styleTag = document.querySelector(
-            `style[data-warn="${el.className}"]`
-          );
+          const styleTag = document.querySelector(`style[data-warn="${el.className}"]`);
           if (styleTag) styleTag.remove();
           el.remove();
         });
         return;
       }
 
+      // Remove previous badges for this subgroup first
       const oldBadges = pptBox.querySelectorAll(
         `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`
       );
       oldBadges.forEach((el) => {
-        const styleTag = document.querySelector(
-          `style[data-warn="${el.className}"]`
-        );
+        const styleTag = document.querySelector(`style[data-warn="${el.className}"]`);
         if (styleTag) styleTag.remove();
         el.remove();
       });
@@ -5097,60 +5148,43 @@ function warning_Logo(JSON_Data) {
           if (old) old.remove();
           if (oldStyle) oldStyle.remove();
 
-          // colors
+          // colors (fall back safely)
           const triColor =
-            resolveColor(warn.warningColor, JSON_Data.colors) ||
+            (typeof resolveColor === "function" && resolveColor(warn.warningColor, JSON_Data.colors)) ||
             warn.warningColor ||
-            "fb2932";
+            "#fb2932";
           const iconColor =
-            resolveColor(warn.fontAwsomeIconColor, JSON_Data.colors) ||
+            (typeof resolveColor === "function" && resolveColor(warn.fontAwsomeIconColor, JSON_Data.colors)) ||
             warn.fontAwsomeIconColor ||
             "#fff";
           const circleColor = warn.warningCircleConfig?.circleColor
-            ? resolveColor(
-                warn.warningCircleConfig.circleColor,
-                JSON_Data.colors
-              )
+            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circleColor, JSON_Data.colors) : warn.warningCircleConfig.circleColor)
             : "#ffeb3b";
           const circleBorderColor = warn.warningCircleConfig?.circleBorder
-            ? resolveColor(
-                warn.warningCircleConfig?.circleBorder,
-                JSON_Data.colors
-              )
-            : "black";
+            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circleBorder, JSON_Data.colors) : warn.warningCircleConfig.circleBorder)
+            : "#000";
           const circleNumberColor = warn.warningCircleConfig?.circleNumberColor
-            ? resolveColor(
-                warn.warningCircleConfig.circleNumberColor,
-                JSON_Data.colors
-              )
+            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circleNumberColor, JSON_Data.colors) : warn.warningCircleConfig.circleNumberColor)
             : "#000";
           const circleLineColor = warn.warningCircleConfig?.circleLineColor
-            ? resolveColor(
-                warn.warningCircleConfig.circleLineColor,
-                JSON_Data.colors
-              )
+            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circleLineColor, JSON_Data.colors) : warn.warningCircleConfig.circleLineColor)
             : "#fb2932";
           const circlePointColor = warn.warningCircleConfig?.circlePointColor
-            ? resolveColor(
-                warn.warningCircleConfig.circlePointColor,
-                JSON_Data.colors
-              )
+            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circlePointColor, JSON_Data.colors) : warn.warningCircleConfig.circlePointColor)
             : "#fb2932";
 
           // validate number
           let circleNumber = null;
           if (warn.warningCircleConfig?.display) {
             const parsed = parseInt(warn.warningCircleConfig.circleNumber, 10);
-            if (!isNaN(parsed) && parsed >= 1 && parsed <= 99)
-              circleNumber = String(parsed);
+            if (!isNaN(parsed) && parsed >= 1 && parsed <= 99) circleNumber = String(parsed);
           }
 
           // compute anchor X
           const pos = String(warn.position || "middle").toLowerCase();
           const computeAnchorX = (rect, part) => {
             if (part === "start") return rect.left - pptRect.left + 20;
-            if (part === "end")
-              return rect.left - pptRect.left + rect.width - 20;
+            if (part === "end") return rect.left - pptRect.left + rect.width - 20;
             return rect.left - pptRect.left + rect.width / 2;
           };
           const anchorX = computeAnchorX(tgtRect, pos);
@@ -5161,18 +5195,14 @@ function warning_Logo(JSON_Data) {
           const triangleHeight = 28;
           const gapAbove = 20;
 
-          const badgeTop = Math.round(
-            tgtRect.top - pptRect.top - triangleHeight - gapAbove
-          );
+          const badgeTop = Math.round(tgtRect.top - pptRect.top - triangleHeight - gapAbove);
           const badgeLeft = Math.round(anchorX);
 
           // create style scoped
           const styleEl = document.createElement("style");
           styleEl.setAttribute("data-warn", base);
-          const iconFs =
-            typeof getFontSize === "function" ? getFontSize(12, 13, 14) : 13;
-          const circleFs =
-            typeof getFontSize === "function" ? getFontSize(8, 9, 10) : 9;
+          const iconFs = typeof getFontSize === "function" ? getFontSize(12, 13, 14) : 13;
+          const circleFs = typeof getFontSize === "function" ? getFontSize(8, 9, 10) : 9;
 
           styleEl.textContent = `
             .${base} {
@@ -5247,8 +5277,10 @@ function warning_Logo(JSON_Data) {
               position: absolute;
               left: 0%;
               top: calc(100% + 6px);
-              z-index: 50;
+              z-index: 60;
               pointer-events: auto;
+              /* popup initial basic box-sizing so user CSS can override */
+              box-sizing: border-box;
             }
           `;
           document.head.appendChild(styleEl);
@@ -5275,8 +5307,10 @@ function warning_Logo(JSON_Data) {
             circ.textContent = circleNumber;
             badgeWrap.appendChild(circ);
           }
-          // popup
-          const hasPopupHTML = warn.Tooltip_content_HTML?.trim();
+
+          // popup content
+          const hasPopupHTML = !!(warn.Tooltip_content_HTML && String(warn.Tooltip_content_HTML).trim());
+          let popupNode = null;
           if (hasPopupHTML) {
             const popup = document.createElement("div");
             popup.className = `${base}__popup`;
@@ -5288,43 +5322,146 @@ function warning_Logo(JSON_Data) {
             if (warn.Tooltip_content_CSS) {
               const popupStyle = document.createElement("style");
               popupStyle.setAttribute("data-warn", `${base}-popup`);
+              // scope this css to the PPT box + popup
               popupStyle.textContent = `#${pptBox.id} .${base}__popup { ${warn.Tooltip_content_CSS} }`;
               document.head.appendChild(popupStyle);
             }
             badgeWrap.appendChild(popup);
-
-            setTimeout(() => {
-              const triNode = pptBox.querySelector(`.${base}__triangle`);
-              const popupNode = pptBox.querySelector(`.${base}__popup`);
-              if (!triNode || !popupNode) return;
-
-              triNode.addEventListener(
-                "mouseenter",
-                () => (popupNode.style.display = "block")
-              );
-              triNode.addEventListener("mouseleave", () => {
-                setTimeout(() => {
-                  if (!popupNode.matches(":hover"))
-                    popupNode.style.display = "none";
-                }, 100);
-              });
-              popupNode.addEventListener(
-                "mouseleave",
-                () => (popupNode.style.display = "none")
-              );
-            }, 100);
+            popupNode = popup;
           }
 
-          // append to pptBox (like connecting lines)
+          // append to pptBox
           pptBox.appendChild(badgeWrap);
 
-          // connector length adjust
-          const badgeBottomAbsY = pptRect.top + badgeTop + triangleHeight;
-          const targetTopAbsY = tgtRect.top;
-          const gap = Math.max(
-            0,
-            Math.round(targetTopAbsY - badgeBottomAbsY - 2)
-          );
+          // popup API and handlers
+          const handlers = [];
+          let api = null;
+
+          const showPopup = () => {
+            closeAllTooltips();
+            if (popupNode) {
+              popupNode.style.display = "block";
+              // measure or reposition if needed in future - currently absolute positioned relative to badgeWrap
+            }
+            api.isOpen = true;
+            currentlyOpenTooltip = api;
+          };
+
+          const hidePopup = () => {
+            if (popupNode) popupNode.style.display = "none";
+            api.isOpen = false;
+            if (currentlyOpenTooltip === api) currentlyOpenTooltip = null;
+          };
+
+          // default openBy handling: click unless explicitly "hover"
+          const openByRaw = (warn.openBy || "click").toString().toLowerCase();
+          const openBy = openByRaw === "hover" ? "hover" : "click";
+
+          if (openBy === "hover") {
+            // Hover: show on tri or badge hover, keep open when cursor is over popup
+            const onEnter = (ev) => {
+              // close other tooltips/popups and open this
+              closeAllTooltips();
+              showPopup();
+            };
+            const onLeaveBadge = (ev) => {
+              setTimeout(() => {
+                if (popupNode) {
+                  if (!popupNode.matches(":hover") && !badgeWrap.matches(":hover")) hidePopup();
+                } else {
+                  // no popup → nothing to keep open
+                  hidePopup();
+                }
+              }, 120);
+            };
+            const onPopupLeave = () => {
+              hidePopup();
+            };
+
+            triDiv.addEventListener("mouseenter", onEnter);
+            badgeWrap.addEventListener("mouseenter", onEnter);
+            triDiv.addEventListener("mouseleave", onLeaveBadge);
+            badgeWrap.addEventListener("mouseleave", onLeaveBadge);
+            if (popupNode) {
+              popupNode.addEventListener("mouseleave", onPopupLeave);
+              popupNode.addEventListener("mouseenter", () => {
+                // keep open while hovered
+              });
+              handlers.push({ el: popupNode, type: "mouseleave", fn: onPopupLeave });
+              handlers.push({ el: popupNode, type: "mouseenter", fn: () => {} });
+            }
+
+            handlers.push({ el: triDiv, type: "mouseenter", fn: onEnter });
+            handlers.push({ el: badgeWrap, type: "mouseenter", fn: onEnter });
+            handlers.push({ el: triDiv, type: "mouseleave", fn: onLeaveBadge });
+            handlers.push({ el: badgeWrap, type: "mouseleave", fn: onLeaveBadge });
+          } else {
+            // Click mode: toggle popup on badge click. Clicking outside closes it. Clicking inside popup should not close it.
+            let isOpen = false;
+
+            const onDocClick = (ev) => {
+              if (!badgeWrap.contains(ev.target) && !(popupNode && popupNode.contains(ev.target))) {
+                isOpen = false;
+                hidePopup();
+                document.removeEventListener("click", onDocClick);
+                document.removeEventListener("keydown", onEsc);
+              }
+            };
+
+            const onEsc = (ev) => {
+              if (ev.key === "Escape" || ev.key === "Esc") {
+                isOpen = false;
+                hidePopup();
+                document.removeEventListener("click", onDocClick);
+                document.removeEventListener("keydown", onEsc);
+              }
+            };
+
+            const onBadgeClick = (ev) => {
+              // prevent document click from closing immediately
+              ev.stopPropagation();
+
+              // close other open tooltip/popup (but not self if toggling)
+              if (currentlyOpenTooltip && currentlyOpenTooltip !== api) {
+                closeAllTooltips();
+              }
+
+              isOpen = !isOpen;
+              if (isOpen) {
+                showPopup();
+                document.addEventListener("click", onDocClick);
+                document.addEventListener("keydown", onEsc);
+              } else {
+                hidePopup();
+                document.removeEventListener("click", onDocClick);
+                document.removeEventListener("keydown", onEsc);
+              }
+            };
+
+            // allow clicking triangle or entire badgeWrap to toggle
+            triDiv.addEventListener("click", onBadgeClick);
+            badgeWrap.addEventListener("click", onBadgeClick);
+
+            handlers.push({ el: triDiv, type: "click", fn: onBadgeClick });
+            handlers.push({ el: badgeWrap, type: "click", fn: onBadgeClick });
+          }
+
+          // Expose API so global closeAllTooltips can call hide()
+          api = {
+            hide: hidePopup,
+            show: showPopup,
+            get isOpen() {
+              return this._isOpen || false;
+            },
+            set isOpen(v) {
+              this._isOpen = !!v;
+            }
+          };
+
+          // store a small reference on the DOM node (useful for debugging / external control)
+          badgeWrap.__warningApi = api;
+
+          // Done - no need to return, but created popup will now behave as required
         } catch (e) {
           console.error("warning_Logo error for", warnIdx, e);
         }
@@ -5332,6 +5469,7 @@ function warning_Logo(JSON_Data) {
     });
   });
 }
+
 warning_Logo(JSON_Data);
 
 function ToolTip_Creation(JSON_Data) {
@@ -5340,16 +5478,7 @@ function ToolTip_Creation(JSON_Data) {
     console.warn("ToolTip_Creation: PPT-Box not found.");
     return;
   }
-
-  // WeakMap to store handlers for cleanup: targetEl -> { handlers..., styleEls..., wrapperClass }
   const tooltipRegistry = new WeakMap();
-
-  // Fallback isVisible if your codebase already has one you can remove this
-  function isVisible(el) {
-    if (!el) return false;
-    const style = window.getComputedStyle(el);
-    return style.display !== "none" && style.visibility !== "hidden" && el.offsetParent !== null;
-  }
 
   JSON_Data.body.forEach((section, sectionIdx) => {
     if (!section.sub_groups) return;
@@ -5377,11 +5506,10 @@ function ToolTip_Creation(JSON_Data) {
         const openByRaw = (tip.openBy || "click").toString().toLowerCase();
         const openBy = openByRaw === "hover" ? "hover" : "click";
 
-        // CLEANUP any previous tooltip tied to this target
+        // CLEANUP previous tooltip tied to this target
         const cleanup = () => {
           const prev = tooltipRegistry.get(targetEl);
           if (!prev) {
-            // still remove any existing DOM/style by class just in case
             const oldWrapper = pptBox.querySelector(`.${base}`);
             if (oldWrapper) oldWrapper.remove();
             const style = document.querySelector(`style[data-tooltip="${base}"]`);
@@ -5391,17 +5519,14 @@ function ToolTip_Creation(JSON_Data) {
             return;
           }
 
-          // remove DOM
           try {
             if (prev.wrapper && prev.wrapper.parentNode) prev.wrapper.parentNode.removeChild(prev.wrapper);
           } catch (e) {}
-          // remove style nodes
           if (prev.styleEls && prev.styleEls.length) {
             prev.styleEls.forEach((el) => {
               if (el && el.parentNode) el.parentNode.removeChild(el);
             });
           }
-          // remove event listeners
           if (prev.handlers) {
             prev.handlers.forEach(({ el, type, fn, options }) => {
               try {
@@ -5409,7 +5534,6 @@ function ToolTip_Creation(JSON_Data) {
               } catch (e) {}
             });
           }
-          // remove registry entry
           tooltipRegistry.delete(targetEl);
         };
 
@@ -5417,10 +5541,6 @@ function ToolTip_Creation(JSON_Data) {
 
         // create tooltip
         const createTooltip = () => {
-          const pptRect = pptBox.getBoundingClientRect();
-          const tgtRect = targetEl.getBoundingClientRect();
-
-          // basic container style
           const styleEl = document.createElement("style");
           styleEl.setAttribute("data-tooltip", base);
           styleEl.textContent = `
@@ -5432,7 +5552,6 @@ function ToolTip_Creation(JSON_Data) {
           `;
           document.head.appendChild(styleEl);
 
-          // wrapper
           const wrapper = document.createElement("div");
           wrapper.className = base;
           const htmlContent = tip.content_HTML || "";
@@ -5440,6 +5559,7 @@ function ToolTip_Creation(JSON_Data) {
             typeof normalizeAppianString === "function"
               ? normalizeAppianString(htmlContent)
               : htmlContent;
+
           // hide initially
           wrapper.style.display = "none";
           wrapper.style.visibility = "hidden";
@@ -5457,7 +5577,6 @@ function ToolTip_Creation(JSON_Data) {
 
           // measure & position function (reads current rectangles)
           const measureAndPosition = () => {
-            // re-query to ensure fresh DOM geometry
             const pptRectNow = pptBox.getBoundingClientRect();
             const tgtRectNow = targetEl.getBoundingClientRect();
             const popupRect = wrapper.getBoundingClientRect();
@@ -5483,26 +5602,32 @@ function ToolTip_Creation(JSON_Data) {
             wrapper.style.top = `${finalTop}px`;
             wrapper.style.left = `${finalLeft}px`;
             wrapper.style.visibility = "visible";
-            // keep display toggled by show/hide logic
           };
 
           // show/hide helpers
-          const showTooltip = () => {
-            // ensure measurement is accurate before showing
+          const show = () => {
+            // Before showing this tooltip, close any other tooltip
+            closeAllTooltips();
+
             wrapper.style.display = "block";
-            // measure after next paint so widths/heights are correct
             requestAnimationFrame(() => {
               measureAndPosition();
             });
+            // mark as currently open for global tracking
+            api.isOpen = true;
+            currentlyOpenTooltip = api;
           };
-          const hideTooltip = () => {
+          const hide = () => {
             wrapper.style.display = "none";
+            api.isOpen = false;
+            // if this is the current global tooltip, clear it
+            if (currentlyOpenTooltip === api) currentlyOpenTooltip = null;
           };
 
           // handlers to attach and store for cleanup
           const handlers = [];
 
-          // common reposition on scroll/resize
+          // reposition helper
           const repositionOnScrollOrResize = () => {
             const prevDisplay = wrapper.style.display;
             wrapper.style.display = "block";
@@ -5517,18 +5642,19 @@ function ToolTip_Creation(JSON_Data) {
           handlers.push({ el: window, type: "scroll", fn: repositionOnScrollOrResize, options: true });
 
           if (openBy === "hover") {
-            // hover: target mouseenter shows, mouseleave delays hide; wrapper mouseleave hides
-            const onEnter = () => {
-              showTooltip();
+            const onEnter = (ev) => {
+              // stop propagation not required for hover
+              // ensure only this tooltip opens
+              closeAllTooltips();
+              show();
             };
             const onLeaveTarget = () => {
-              // small delay so moving into wrapper keeps it open
               setTimeout(() => {
-                if (!wrapper.matches(":hover") && !targetEl.matches(":hover")) hideTooltip();
+                if (!wrapper.matches(":hover") && !targetEl.matches(":hover")) hide();
               }, 120);
             };
             const onLeaveWrapper = () => {
-              hideTooltip();
+              hide();
             };
 
             targetEl.addEventListener("mouseenter", onEnter);
@@ -5539,30 +5665,14 @@ function ToolTip_Creation(JSON_Data) {
             handlers.push({ el: targetEl, type: "mouseleave", fn: onLeaveTarget });
             handlers.push({ el: wrapper, type: "mouseleave", fn: onLeaveWrapper });
           } else {
-            // click: toggle on target click, close when clicking outside, close on ESC
+            // click mode
             let isOpen = false;
-            const onTargetClick = (ev) => {
-              ev.stopPropagation();
-              isOpen = !isOpen;
-              if (isOpen) {
-                showTooltip();
-                // reposition immediately
-                measureAndPosition();
-                // attach outside click listener
-                document.addEventListener("click", onDocClick);
-                document.addEventListener("keydown", onEsc);
-              } else {
-                hideTooltip();
-                document.removeEventListener("click", onDocClick);
-                document.removeEventListener("keydown", onEsc);
-              }
-            };
 
             const onDocClick = (ev) => {
               // if click is outside both target and wrapper -> close
               if (!wrapper.contains(ev.target) && !targetEl.contains(ev.target)) {
                 isOpen = false;
-                hideTooltip();
+                hide();
                 document.removeEventListener("click", onDocClick);
                 document.removeEventListener("keydown", onEsc);
               }
@@ -5571,15 +5681,38 @@ function ToolTip_Creation(JSON_Data) {
             const onEsc = (ev) => {
               if (ev.key === "Escape" || ev.key === "Esc") {
                 isOpen = false;
-                hideTooltip();
+                hide();
                 document.removeEventListener("click", onDocClick);
                 document.removeEventListener("keydown", onEsc);
               }
             };
 
-            // also keep tooltip open if mouse enters wrapper (so links can be clicked)
             const onWrapperMouseLeave = () => {
-              // no auto close when mouse leaves wrapper for click mode; user must click outside or Esc
+              // no auto close on wrapper mouseleave for click mode
+            };
+
+            const onTargetClick = (ev) => {
+              // Stop propagation so the click that opened the tooltip doesn't immediately bubble to document click handler
+              ev.stopPropagation();
+
+              // If some other tooltip is open, close it (note: don't close self - will toggle)
+              if (currentlyOpenTooltip && currentlyOpenTooltip !== api) {
+                closeAllTooltips();
+              }
+
+              isOpen = !isOpen;
+              if (isOpen) {
+                show();
+                measureAndPosition();
+                // Attach global listeners to detect outside click / ESC only when open
+                // Use capturing=false so clicks inside wrapper are seen by contains() check
+                document.addEventListener("click", onDocClick);
+                document.addEventListener("keydown", onEsc);
+              } else {
+                hide();
+                document.removeEventListener("click", onDocClick);
+                document.removeEventListener("keydown", onEsc);
+              }
             };
 
             targetEl.addEventListener("click", onTargetClick);
@@ -5587,9 +5720,19 @@ function ToolTip_Creation(JSON_Data) {
 
             handlers.push({ el: targetEl, type: "click", fn: onTargetClick });
             handlers.push({ el: wrapper, type: "mouseleave", fn: onWrapperMouseLeave });
-            // document listeners are added/removed dynamically when tooltip opens; we don't add them to handlers here
-            // (they'll be removed by the onTargetClick/onDocClick handlers themselves)
           }
+
+          // expose a small api for global control
+          const api = {
+            hide,
+            show,
+            get isOpen() {
+              return this._isOpen || false;
+            },
+            set isOpen(v) {
+              this._isOpen = !!v;
+            }
+          };
 
           // store registry for cleanup
           tooltipRegistry.set(targetEl, {
@@ -5600,27 +5743,24 @@ function ToolTip_Creation(JSON_Data) {
           });
 
           // measure once after creation to set initial coordinates (invisible measurement)
-          // Show/measure briefly offscreen to compute sizes, then hide again
           wrapper.style.display = "block";
           wrapper.style.visibility = "hidden";
-          // allow browser to layout
           requestAnimationFrame(() => {
             measureAndPosition();
             wrapper.style.display = "none";
             wrapper.style.visibility = "visible";
           });
 
-          return wrapper;
+          return api;
         };
 
+        // create tooltip and ignore returned API (internally it stores itself in currentlyOpenTooltip when shown)
         createTooltip();
       });
     });
   });
 }
 
-// call it (like you had)
-ToolTip_Creation(JSON_Data);
 
 
 ToolTip_Creation(JSON_Data);
