@@ -266,7 +266,6 @@ JSON_Data = {
             ToolTip_Creation: [
               {
                 display: true,
-                location: "on_midline",
                 content_id: "on_line_content_4",
                 vertical_position: "bottom",
                 horizontal_position: "right",
@@ -278,7 +277,6 @@ JSON_Data = {
               },
               {
                 display: true,
-                location: "on_midline",
                 content_id: "on_line_content_3",
                 vertical_position: "bottom",
                 horizontal_position: "right",
@@ -290,7 +288,6 @@ JSON_Data = {
               },
               {
                 display: true,
-                location: "on_midline",
                 content_id: "on_line_content_1",
                 vertical_position: "bottom",
                 horizontal_position: "right",
@@ -932,42 +929,22 @@ JSON_Data = {
               arrow_color: ["#9f30cb"],
               line_color: ["#9f30cb"],
             },
+            ToolTip_Creation: [
+              {
+                display: true,
+                content_id: "on_line_rectangle_1",
+                vertical_position: "bottom",
+                horizontal_position: "left",
+                openBy:'hover',
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+            ],
             connecting_Rectangle: {
               display: true,
               connections: [
-                {
-                  starting: "on_line_content_7",
-                  start_from_starting: false,
-                  ending: "on_line_content_10",
-                  end_from_ending: true,
-                  height: "Level_10",
-                  border_thickness: "Level_6",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                    ],
-                    iconColors: ["white_color", "white_color", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3"],
-                    justify_content: "between",
-                    start_end_gaps: "Level_2",
-                    shape: "rounded_bottom",
-                    content: [
-                      {
-                        text: "RELAPSE",
-                        textColor: "white",
-                        textDetail: "RELAPSE",
-                        text_Details_HTML:
-                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-                        text_Details_CSS:
-                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
-                      },
-                      {},
-                      {},
-                    ],
-                  },
-                },
                 {
                   starting: "on_line_content_7",
                   start_from_starting: false,
@@ -991,10 +968,36 @@ JSON_Data = {
                         text: "PROGRESSION SUSPICION",
                         textColor: "white",
                         textDetail: "PROGRESSION SUSPICION",
-                        text_Details_HTML:
-                          "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-                        text_Details_CSS:
-                          ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+                      },
+                      {},
+                      {},
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "RELAPSE",
+                        textColor: "white",
+                        textDetail: "RELAPSE",
+                        rectangleTooltipId:'on_line_rectangle_1'
                       },
                       {},
                       {},
@@ -3728,7 +3731,6 @@ function drawConnectingRectangle(JSON_Data) {
 
       rectangleData.connections.forEach((connection, i) => {
         const className = `connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}`;
-
         // Remove any prior one
         const oldRect = pptBox.querySelector(`.${className}`);
         if (oldRect) oldRect.remove();
@@ -3909,16 +3911,7 @@ function drawConnectingRectangle(JSON_Data) {
             // normalize content keys (support provided keys)
             const text = contentItem.text || "";
             const textDetail = contentItem.textDetail || text;
-            // your JSON keys used earlier: text_Details_HTML and text_Details_CSS
-            // accept either spelling if needed
-            const textHTML =
-              contentItem.text_Details_HTML?.toString?.() ||
-              contentItem.textDetailsHTML?.toString?.() ||
-              "";
-            const textCSS =
-              contentItem.text_Details_CSS?.toString?.() ||
-              contentItem.textDetailsCSS?.toString?.() ||
-              "";
+            const IdName = contentItem?.rectangleTooltipId
 
             // wrapper that contains icon + text
             const wrapper = document.createElement("div");
@@ -3927,91 +3920,13 @@ function drawConnectingRectangle(JSON_Data) {
             wrapper.style.justifyContent = "space-between";
             wrapper.style.gap = "4px";
 
-            // If no rich html/css → simple native tooltip via title
-            if (!textHTML.trim() && !textCSS.trim()) {
-              const p = document.createElement("p");
-              p.textContent =
-                typeof limitText === "function" ? limitText(text, 10) : text;
-              p.style.color = contentItem.textColor || "white";
-              p.style.margin = "0";
-              p.style.fontSize = `${
-                getFontSize ? getFontSize(9, 10, 11) : 11
-              }px`;
-              p.title = textDetail || text;
-              // append icon then p
-              wrapper.appendChild(iconEl);
-              wrapper.appendChild(p);
-              iconRow.appendChild(wrapper);
-              return;
-            }
-
-            // If we have rich HTML/CSS — create popup element inside rectDiv and attach hover handlers
-            // create paragraph visible label
             const p = document.createElement("p");
             p.textContent = limitText(text, 10);
             p.style.color = contentItem.textColor || "white";
             p.style.margin = "0";
             p.style.fontSize = `${getFontSize(9, 10, 11)}px`;
-
-            // build popup container (hidden by default)
-            const popupClass = `${className}-icon${iconIdx}-popup`;
-            const popup = document.createElement("div");
-            popup.className = popupClass;
-            // inline styles mirror your existing popup style
-            popup.style.display = "none";
-            popup.style.position = "absolute";
-            popup.style.top = "0";
-            popup.style.left = "0";
-            popup.style.transform = "translate(25%,10%)";
-            popup.style.zIndex = "3";
-
-            // If HTML needs normalization (Appian), use normalizeAppianString if present
-            let popupHTML = textHTML;
-            let popupCSS = textCSS;
-            if (
-              typeof normalizeAppianString === "function" &&
-              popupHTML &&
-              popupHTML.trim()
-            ) {
-              try {
-                popupHTML = normalizeAppianString(popupHTML);
-              } catch (e) {
-                // ignore normalization errors — fallback to raw
-              }
-            }
-            // set popup content
-            if (popupHTML && popupHTML.trim()) {
-              popup.innerHTML = popupHTML;
-            } else {
-              // fallback to textDetail
-              popup.textContent = textDetail || text || "";
-            }
-
-            // inject scoped CSS for popup (if provided)
-            if (popupCSS && popupCSS.trim()) {
-              const popupStyle = document.createElement("style");
-              popupStyle.setAttribute("data-conn", `${popupClass}-style`);
-              popupStyle.textContent = `#${pptBox.id} .${popupClass} { ${popupCSS} }`;
-              document.head.appendChild(popupStyle);
-            }
-
-            // append popup to rectDiv (so queries like pptBox.querySelector work)
-            rectDiv.appendChild(popup);
-
-            // Hover bindings exactly like your other code
-            // Show popup on mouseenter of the visible <p>
-            p.addEventListener("mouseenter", () => {
-              popup.style.display = "block";
-            });
-            p.addEventListener("mouseleave", () => {
-              setTimeout(() => {
-                if (!popup.matches(":hover")) popup.style.display = "none";
-              }, 100);
-            });
-            // Hide when mouse leaves popup
-            popup.addEventListener("mouseleave", () => {
-              popup.style.display = "none";
-            });
+            p.title = textDetail || text;
+            if (IdName) p.id=IdName
 
             // assemble wrapper
             wrapper.appendChild(iconEl);
@@ -5545,7 +5460,7 @@ function ToolTip_Creation(JSON_Data) {
           styleEl.setAttribute("data-tooltip", base);
           styleEl.textContent = `
             .${base} {
-              position: absolute;
+              position: fixed;
               z-index: 50;
               pointer-events: auto;
             }
