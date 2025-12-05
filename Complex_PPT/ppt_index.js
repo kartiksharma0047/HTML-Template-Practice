@@ -31,7 +31,7 @@ JSON_Data = {
     background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
     border_color: "black",
     scroll_horizontal: true,
-    direction: "reverse",
+    // direction: "reverse",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -121,340 +121,6 @@ JSON_Data = {
     fontFamily: ["sans-serif"],
   },
   body: [
-    {
-      component: "Header",
-      title: "Diagnosis",
-      configurations: {
-        title_color: "#304c8c",
-        line_right: true,
-        line_color: "white",
-        collapsabile: true,
-      },
-      start_content:{
-        display:true,
-        logo_title:"Patient",
-        link:"www.youtube.com",
-        logo_title_detail:"Patients",
-        configurations:{
-          logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
-          logo_border_color: "#2394b9",
-          logo_title_color:"white_color",
-          logo_background_color:"linear-gradient(to right top, #2394b9 10%, #5df3e4)"
-        }
-      },
-      sub_groups: [
-        {
-          component: "Sub-Header",
-          title: "",
-          configurations: {
-            title_color: "Common_SubHeader_title",
-            collapsabile: false,
-          },
-          content: {
-            logo_heading: ["", ""],
-            logo_heading_color: [
-              "#a334c8",
-              "#a334c8",
-              "#a334c8",
-              "Common_transparent",
-            ],
-            logo_heading_border_color: [
-              "#a334c8",
-              "#a334c8",
-              "#a334c8",
-              "Common_transparent",
-            ],
-            logo_color: ["#a334c8", "#a334c8", "#a334c8", "Common_transparent"],
-            logo_titles_config: [
-              {
-                logo_title: ["GP"],
-                links: [""],
-                logo_id_name: "logo_title_id1",
-                logo_detail: ["GP"],
-                logo_title_background_color: ["white"],
-                logo_title_border: [true],
-                logo_title_border_color: ["#a334c8"],
-                logo_title_color: ["#a334c8"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["Neurologist", "", "Nurse"],
-                links: [""],
-                logo_id_name: "logo_title_id2",
-                logo_detail: ["Neurologist", "", "Nurse"],
-                logo_title_background_color: ["white", "white", "white"],
-                logo_title_border: [true, true, true],
-                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
-                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["Radiologist", "", "Bio & Other"],
-                links: [""],
-                logo_id_name: "logo_title_id3",
-                logo_detail: ["Radiologist", "", "Bio & Other"],
-                logo_title_background_color: ["white", "white", "white"],
-                logo_title_border: [true, true, true],
-                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
-                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
-                top_down_arrow: {
-                  display: true,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-              {
-                logo_title: ["GP"],
-                links: [""],
-                logo_id_name: "logo_title_id4",
-                logo_detail: [""],
-                logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [false],
-                logo_title_border_color: ["black"],
-                logo_title_color: ["Common_transparent"],
-                top_down_arrow: {
-                  display: false,
-                  arrow_color: "#a334c8",
-                  line_color: "#a334c8",
-                },
-              },
-            ],
-            line_right: "false",
-            line_color: "Common_SubHeader_lineRight",
-            connecting_Line: {
-              display: true,
-              connections: [
-                {
-                  starting: "logo_title_id1",
-                  ending: "logo_title_id2",
-                  height: "Level_5",
-                },
-                {
-                  starting: "logo_title_id2",
-                  ending: "logo_title_id4",
-                  height: "Level_5",
-                },
-              ],
-              arrow_color: ["#9f30cb", "#9f30cb"],
-              line_color: ["#9f30cb", "#9f30cb"],
-            },
-            connecting_Text_Line: {
-              display: true,
-              connections: [
-                {
-                  starting: "on_line_content_3",
-                  ending: "on_line_content_6",
-                  start_from: "start",
-                  end_from: "mid",
-                  line_Thickness: "Level_1",
-                  line_Position: "Level_1",
-                  text_Position: "above",
-                  text: "Process",
-                  text_color: "black",
-                  line_color: "black",
-                },
-              ],
-            },
-            ToolTip_Creation: [
-              {
-                display: true,
-                content_id: "on_line_content_4",
-                vertical_position: "bottom",
-                horizontal_position: "right",
-                openBy:'click',
-                content_HTML:
-                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-                content_CSS:
-                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
-              },
-              {
-                display: true,
-                content_id: "on_line_content_3",
-                vertical_position: "bottom",
-                horizontal_position: "right",
-                openBy:'click',
-                content_HTML:
-                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-                content_CSS:
-                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
-              },
-              {
-                display: true,
-                content_id: "on_line_content_1",
-                vertical_position: "bottom",
-                horizontal_position: "right",
-                openBy:'hover',
-                content_HTML:
-                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
-                content_CSS:
-                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
-              },
-            ],
-            on_line_content_configuration: {
-              content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
-              bordered: [{}, { border: true }],
-              logo:[
-                {
-                  display:true,
-                  logoPosition:"Start",
-                  logo:"fa-solid fa-location-dot",
-                  logoColor:"black"
-                },
-                {
-                  display:true,
-                  logoPosition:"End",
-                  logo:"fa-solid fa-link",
-                  logoColor:"blue"
-                },
-                {
-                  display:true,
-                  logoPosition:"Both",
-                  logo:["fa-solid fa-code-branch","fa-solid fa-hexagon-nodes"],
-                  logoColor:["purple","green"]
-                },
-                {
-                  display:false,
-                },
-              ],
-              striping: [
-                {
-                  stripped: true,
-                  reversed: false,
-                  colors: [
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(0, 191, 255, 0.35)",
-                    "rgba(0, 191, 255, 0.35)",
-                  ],
-                },
-                {
-                  stripped: false,
-                },
-                {
-                  stripped: false,
-                },
-                {
-                  stripped: true,
-                  reversed: true,
-                  colors: [
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(255, 255, 255, 0.6)",
-                    "rgba(0, 191, 255, 0.35)",
-                    "rgba(0, 191, 255, 0.35)",
-                  ],
-                },
-              ],
-              link: [""],
-              shapes: [
-                "rounded_right",
-                "rounded_vertices",
-                "rounded_left",
-                "rounded_bottom",
-              ],
-              content_id: [
-                "on_line_content_1",
-                "on_line_content_2",
-                "on_line_content_3",
-                "on_line_content_4",
-              ],
-              content_details: [
-                "SYMPTOMS",
-                "VISIT",
-                "DIAGNOSTIC TESTS",
-                "DIAGNOSIS",
-              ],
-              color: [
-                "Common_onLineContent_font",
-                "Common_onLineContent_font",
-                "Common_onLineContent_font",
-                "Common_onLineContent_font",
-              ],
-              background_color: [
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
-              ],
-              bottom_point_color: [
-                "Common_onLineContent_Point",
-                "Common_onLineContent_Point",
-                "Common_onLineContent_Point",
-                "Common_onLineContent_Point",
-              ],
-              bottom_point_position_onLine: [false, false, false, true],
-              bottom_line_color: [
-                "Common_onLineContent_Line",
-                "Common_onLineContent_Line",
-                "Common_onLineContent_Line",
-                "Common_onLineContent_Line",
-              ],
-              bottom_Line_postion: ["Level_6", "Level_7", "Level_8", "Level_7"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_6"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_7"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_8"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-                {
-                  levels: ["Level_7"],
-                  color: ["Common_onLineContent_Shape"],
-                },
-              ],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc305",
-              timlines: [
-                {
-                  content: "_?? days from symptoms",
-                  height: "Level_3",
-                  show_border: false,
-                  starting: "on_line_content_1",
-                  ending: "on_line_content_2",
-                },
-                {
-                  content: "_?? days from results",
-                  height: "Level_10",
-                  show_border: false,
-                  starting: "on_line_content_2",
-                  ending: "on_line_content_3",
-                },
-                {
-                  content: "_?? days from results",
-                  height: "Level_3",
-                  show_border: false,
-                  starting: "on_line_content_3",
-                  ending: "on_line_content_4",
-                },
-                {
-                  content: "_?? days from symptoms",
-                  height: "Level_18",
-                  show_border: false,
-                  starting: "on_line_content_1",
-                  ending: "on_line_content_4",
-                },
-              ],
-            },
-          },
-        },
-      ],
-    },
     {
       component: "Header",
       title: "Treatment",
@@ -595,10 +261,6 @@ JSON_Data = {
               bottom_line_color: [
                 "Common_onLineContent_Line",
                 "Common_onLineContent_Line",
-              ],
-              bottom_Line_color: [
-                "Common_onLineContent_Shape",
-                "Common_onLineContent_Shape",
               ],
               bottom_Line_postion: ["Level_7", "Level_10"],
               bottom_shape_positions: [
@@ -794,10 +456,6 @@ JSON_Data = {
               bottom_line_color: [
                 "Common_onLineContent_Line",
                 "Common_onLineContent_Line",
-              ],
-              bottom_Line_color: [
-                "Common_onLineContent_Shape",
-                "Common_onLineContent_Shape",
               ],
               bottom_Line_postion: ["Level_7", "Level_9"],
               bottom_shape_positions: [
@@ -1000,7 +658,63 @@ JSON_Data = {
                         rectangleTooltipId:'on_line_rectangle_1'
                       },
                       {},
-                      {},
+                      {
+                        text:"HET DMT SELECTION",
+                        textColor: "black",
+                        textDetail: "HET DMT SELECTION",
+                        rectangleTooltipId:'on_line_rectangle_3',
+                        content_conversion:{
+                          display:true,
+                          background_color:"Common_onLineContent_Background",
+                          bottom_point_color:"Common_onLineContent_Point",
+                          bottom_line_color:"Common_onLineContent_Line",
+                          bottom_Line_postion:"Level_9",
+                          bottom_shape_positions:{
+                            levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading:"GOM",
+                          logo_heading_color:"#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config:{
+                            logo_title: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists"
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id1",
+                            logo_detail: [
+                              "Neurologist",
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                              "white"
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: ["#a334c8", "#a334c8", "#a334c8","#a334c8",],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          }
+                        }
+                      },
                     ],
                   },
                 },
@@ -1058,10 +772,6 @@ JSON_Data = {
               bottom_point_position_onLine: [false, true],
               bottom_line_color: [
                 "Common_onLineContent_Line",
-                "Common_transparent",
-              ],
-              bottom_Line_color: [
-                "Common_onLineContent_Shape",
                 "Common_transparent",
               ],
               bottom_Line_postion: ["Level_9", "Level_6"],
@@ -1661,7 +1371,7 @@ function convertToFormat(JsonData) {
       }">\n`;
       html += `<h2 title="${sg.title}">
       <i class="fa-regular fa-square-caret-right" ${childIconStyle}></i> 
-      ${limitText(sg.title, 15)}
+      ${limitText(sg.title, 20)}
     </h2>\n`;
     
 
@@ -1774,7 +1484,7 @@ html += `</div>`;
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
     >
       ${logoStart}
-      <span>${limitText(c, 15)}</span>
+      <span>${limitText(c, 20)}</span>
       ${logoEnd}
     </h6>
   `;
@@ -1810,7 +1520,7 @@ html += `</div>`;
         if (logoHeading) {
           html += `<span class="span-${i + 1}">${limitText(
             logoHeading,
-            5
+            10
           )}</span>\n`;
         }
 
@@ -1918,7 +1628,7 @@ html += `</div>`;
         class="above-line-text above-line-text-${i + 1}" 
         title="${limitText(detail, 280)}" 
         style="color:${resolveColor(color, colors)};"
-      >${limitText(txt, 10)}</p>\n`;
+      >${limitText(txt, 20)}</p>\n`;
             }
           });
 
@@ -1972,7 +1682,7 @@ html += `</div>`;
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
     >
       ${logoStart}
-      <span>${limitText(c, 10)}</span>
+      <span>${limitText(c, 20)}</span>
       ${logoEnd}
     </h6>
   `;
@@ -2024,7 +1734,7 @@ html += `</div>`;
     display:none;
   }
   .${uniqueClassName} .icon-plus-name-box{
-    width:125px;
+    width:145px;
     position: absolute;
     display:flex;
     align-items: center;
@@ -2170,7 +1880,7 @@ html += `</div>`;
     flex-direction: column;
     position: relative;
     ${direction ? "margin-top:150px;" : ""}
-    width: 125px;
+    width: 145px;
     z-index:4;
   }
   .${uniqueClassName} .icon_plus_name span {
@@ -2236,7 +1946,7 @@ html += `</div>`;
     margin: 0;
     font-size:${getFontSize(9, 10, 11)}px;
     padding: 10px;
-    width:${getFontSize(105, 105, 105)}px;
+    width:${getFontSize(125, 125, 125)}px;
     text-align:center;
     position: relative;
     transition:0.1s all;
@@ -2492,7 +2202,7 @@ html += `</div>`;
       const hasAboveLine = sg.content.above_line_content?.content?.some(
         (c) => c && c.trim() !== ""
       );
-      const dynamicWidth = logoLength * getFontSize(135, 145, 155) + (displayStart?70:0);
+      const dynamicWidth = logoLength * getFontSize(160, 170, 180) + (displayStart?50:0);
       css += `
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
@@ -3726,6 +3436,13 @@ function drawConnectingRectangle(JSON_Data) {
           `[class*="connection-Rectangle-sec${sectionIdx}-sub${idx}-rect"]`
         );
         oldRects.forEach((rect) => rect.remove());
+
+        // also remove any conversion rectangles for this section/sub
+        const oldConvRects = pptBox.querySelectorAll(
+          `[class*="conversion-rect-sec${sectionIdx}-sub${idx}-"]`
+        );
+        oldConvRects.forEach((c) => c.remove());
+
         return;
       }
 
@@ -3800,7 +3517,7 @@ function drawConnectingRectangle(JSON_Data) {
           evenly: "space-evenly",
         };
         const justifyValue =
-          justifyMap[config?.justify_content?.toLowerCase()] || "center";
+          justifyMap[(config?.justify_content || "").toLowerCase()] || "center";
 
         // width calculation from start_end_gaps
         const startEndGapsLevel =
@@ -3826,7 +3543,7 @@ function drawConnectingRectangle(JSON_Data) {
         };
 
         const shapeStyle =
-          shapeMap[config?.shape?.toLowerCase()] || shapeMap["rectangle"];
+          shapeMap[(config?.shape || "").toLowerCase()] || shapeMap["rectangle"];
 
         // inject style for rectangle
         const styleEl = document.createElement("style");
@@ -3880,6 +3597,9 @@ function drawConnectingRectangle(JSON_Data) {
         const rectDiv = document.createElement("div");
         rectDiv.className = className;
 
+        // Prepare a list to track conversion tasks that must be created AFTER rectDiv is appended
+        const conversionTasks = [];
+
         // if config present → add icon row
         if (hasConfig && iconCount > 0) {
           const iconRow = document.createElement("div");
@@ -3911,7 +3631,10 @@ function drawConnectingRectangle(JSON_Data) {
             // normalize content keys (support provided keys)
             const text = contentItem.text || "";
             const textDetail = contentItem.textDetail || text;
-            const IdName = contentItem?.rectangleTooltipId
+            const IdName = contentItem?.rectangleTooltipId;
+            const contentConversionShow =
+              contentItem?.content_conversion?.display || false;
+            const contentConversion = contentItem?.content_conversion;
 
             // wrapper that contains icon + text
             const wrapper = document.createElement("div");
@@ -3924,23 +3647,257 @@ function drawConnectingRectangle(JSON_Data) {
             p.textContent = limitText(text, 10);
             p.style.color = contentItem.textColor || "white";
             p.style.margin = "0";
+
+            // If content conversion should show — style pill for conversion mode
+            if (contentConversionShow) {
+              p.textContent = limitText(text, 20);
+              p.style.padding = "10px";
+              p.classList.add("box-shadow-box");
+              p.style.textAlign = "center";
+              p.style.borderRadius = "20px";
+              p.style.width = "130px";
+              p.style.backgroundColor =
+                resolveColor(contentConversion?.background_color, JSON_Data.colors) ||
+                "white";
+              p.style.color = contentItem.textColor || "black";
+            }
+
             p.style.fontSize = `${getFontSize(9, 10, 11)}px`;
             p.title = textDetail || text;
-            if (IdName) p.id=IdName
-
-            // assemble wrapper
+            if (IdName) p.id = IdName;
             wrapper.appendChild(iconEl);
             wrapper.appendChild(p);
             iconRow.appendChild(wrapper);
+            if (contentConversionShow) {
+              conversionTasks.push({
+                contentConversion,
+                iconIdx,
+                targetId: IdName || null,
+                wrapperIndex: iconRow.children.length - 1,
+                connectionIndex: i,
+              });
+            }
           });
 
           rectDiv.appendChild(iconRow);
         }
-
         pptBox.appendChild(rectDiv);
-      });
+
+
+        // --- New Part ---
+  if (conversionTasks.length > 0) {
+    conversionTasks.forEach((task, tIndex) => {
+      const convClass = `conversion-rect-sec${sectionIdx}-sub${idx}-conn${i}-icon${task.iconIdx}`;
+      const oldConv = pptBox.querySelector(`.${convClass}`);
+      if (oldConv) oldConv.remove();
+
+      let targetEl = task.targetId ? document.getElementById(task.targetId) : null;
+
+      if (!targetEl) {
+        const iconRowEl = rectDiv.querySelector(".icon-row");
+        if (iconRowEl) {
+          const wrapperEl = iconRowEl.children[task.wrapperIndex];
+          if (wrapperEl) targetEl = wrapperEl.querySelector("p") || wrapperEl;
+        }
+      }
+      if (!targetEl) return;
+
+      const targetRect = targetEl.getBoundingClientRect();
+      const pptNowRect = pptBox.getBoundingClientRect();
+
+      // MAIN DIV
+      const convDiv = document.createElement("div");
+      convDiv.className = convClass;
+      convDiv.style.position = "absolute";
+      convDiv.style.zIndex = 10;
+
+      const convWidth = 145;
+      const offSet=6
+
+      convDiv.style.left =
+        Math.round(targetRect.left - pptNowRect.left + targetRect.width / 2 - convWidth / 2) + offSet + "px";
+      convDiv.style.top =`${direction?365:164}px`;
+
+      const cfg = task.contentConversion;
+      const logoCfg = cfg?.logo_titles_config || {};
+
+      const titles = logoCfg.logo_title || [];
+      const details = logoCfg.logo_detail || [];
+      const bgColors = logoCfg.logo_title_background_color || [];
+      const borderColors = logoCfg.logo_title_border_color || [];
+      const textColors = logoCfg.logo_title_color || [];
+      const idPrefix = logoCfg.logo_id_name || "";
+
+      // UNIQUE CLASS NAME FOR THIS RECTANGLE
+      const uniqueRectClass = `icon_plus_name_rectangle_${i}_${task.iconIdx}`;
+
+      const iconPlus = document.createElement("div");
+      iconPlus.className = `icon_plus_name ${uniqueRectClass}`;
+      iconPlus.style.display="flex";
+      iconPlus.style.flexDirection="column";
+      iconPlus.style.alignItems="center";
+
+      // USER ICON
+      const userIcon = document.createElement("i");
+      userIcon.className = `fa-solid fa-user fa-user-rectangle_${i}_${task.iconIdx}`;
+
+      // dynamic user icon colors
+      userIcon.style.border = `2px solid ${resolveColor(cfg.logo_heading_border_color,JSON_Data.colors)|| "#a334c8"}`;
+      userIcon.style.background = resolveColor(cfg.logo_color,JSON_Data.colors) || "#a334c8";
+      userIcon.style.position="relative";
+      userIcon.style.webkitBackgroundClip = "text";
+      userIcon.style.webkitTextFillColor = "transparent";
+      userIcon.style.display="flex";
+      userIcon.style.alignItems="center";
+      userIcon.style.justifyContent="center";
+      userIcon.style.width="35px"
+      userIcon.style.height="35px"
+      userIcon.style.borderRadius="50%";
+      userIcon.style.bottom="-10px";
+      userIcon.style.zIndex="3";
+
+
+      iconPlus.appendChild(userIcon);
+
+      // WRAPPER CLASS
+      let wrapperClass = "";
+      if (titles.length === 1) wrapperClass = "icon-plus-name-box icon-plus-name-box-for-one";
+      else if (titles.length === 2) wrapperClass = "icon-plus-name-box icon-plus-name-box-for-two";
+      else if (titles.length === 3) wrapperClass = "icon-plus-name-box icon-plus-name-box-for-three";
+      else wrapperClass = "icon-plus-name-box icon-plus-name-box-for-four";
+
+      const wrapper = document.createElement("div");
+      wrapper.className = wrapperClass;
+      wrapper.style.position="relative";
+      wrapper.style.zIndex="5";
+      if (idPrefix) wrapper.id = idPrefix;
+
+      // ==== 2×2 PILL GRID ====
+      function hasValue(v) {
+    return v !== null && v !== undefined && String(v).trim() !== "";
+  }
+
+  // Find how many actual items you have
+  const itemsCount = Math.max(
+    (titles && titles.length) || 0,
+    (details && details.length) || 0
+  );
+
+  for (let row = 0; row < 2; row++) {
+    const rowDiv = document.createElement("div");
+    rowDiv.className = "icon-plus-name-box-enclosed-rectangle";
+    rowDiv.style.width = "100%";
+    rowDiv.style.height = "49%";
+    rowDiv.style.display = "flex";
+    rowDiv.style.alignItems = "center";
+    rowDiv.style.justifyContent = "center";
+
+    for (let col = 0; col < 2; col++) {
+      const idx2 = row * 2 + col;
+
+      // ❌ If no data exists for this index → SKIP
+      if (idx2 >= itemsCount) continue;
+      const title = titles?.[idx2];
+      const detail = details?.[idx2];
+
+      // ❌ Skip if both title & detail are empty/undefined
+      if (!hasValue(title) && !hasValue(detail)) continue;
+
+      // Build pill
+      const pill = document.createElement("p");
+      pill.className = `icon-plus-name-paragraph-${i}-${task.iconIdx}-${idx2 + 1}`;
+      pill.title = hasValue(detail) ? detail : (hasValue(title) ? title : "");
+      pill.textContent = hasValue(title) ? title : (hasValue(detail) ? detail : "");
+
+      pill.style.fontSize = "9px";
+      pill.style.margin = "0";
+      pill.style.padding = "8px 6px";
+      pill.style.borderRadius = "16px";
+      pill.style.minWidth = "30px";
+      pill.style.whiteSpace = "nowrap";
+      pill.style.overflow = "hidden";
+      pill.style.textOverflow = "ellipsis";
+
+      pill.style.background =
+        resolveColor(bgColors[idx2], JSON_Data.colors) || "white";
+
+      pill.style.border =
+        `1px solid ${
+          resolveColor(borderColors[idx2], JSON_Data.colors) || "#a334c8"
+        }`;
+
+      pill.style.color = textColors[idx2] || "#000";
+
+      rowDiv.appendChild(pill);
+    }
+
+    wrapper.appendChild(rowDiv);
+  }
+
+
+    iconPlus.appendChild(wrapper);
+    convDiv.appendChild(iconPlus);
+    pptBox.appendChild(convDiv);
+
+      
+    const titleEl = document.getElementById(task.targetId);
+    const pptRect = pptBox.getBoundingClientRect();
+    const titleRect = titleEl.getBoundingClientRect();
+    const reactEl = convDiv.querySelector(".icon_plus_name");
+    const rectBoxRect = reactEl.getBoundingClientRect();
+
+    const titleBottomY = titleRect.bottom - pptRect.top;
+    const rectangleTopY = rectBoxRect.top - pptRect.top;
+    let verticalGap = rectangleTopY - titleBottomY;
+    if (!direction) {
+      verticalGap= titleRect.y-rectBoxRect.y-rectBoxRect.height+38
+    }
+
+  
+    console.log(verticalGap)
+    const styleId = `style-${convClass}`;
+    let oldStyle = document.getElementById(styleId);
+    if (oldStyle) oldStyle.remove();
+    const style = document.createElement("style");
+    style.id = styleId;
+    const safeClass = convClass.replace(/:/g, "\\:");
+
+// Inject CSS with dynamic height using verticalGap
+style.textContent = `
+  .${safeClass}::before {
+      content: "";
+      position: absolute;
+      top: ${direction?-verticalGap + 10:'45'}px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: ${verticalGap}px;
+      background: ${resolveColor(cfg.top_down_arrow?.line_color, JSON_Data.colors) || "#a334c8"};
+      z-index: 2;
+  }
+  .${safeClass}::after {
+      content: "";
+      position: absolute;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      left: 50%;
+      top: ${direction?-verticalGap + 5:verticalGap+40}px;
+      z-index: 1;
+      transform: translateX(-50%);
+      border-${direction?'bottom':'top'}: 7px solid ${resolveColor(cfg.top_down_arrow?.arrow_color, JSON_Data.colors) || "#a334c8"};;
+  }
+`;
+
+document.head.appendChild(style);
+
+
+
     });
-  });
+  }
+
+      }); 
+    });
+  }); 
 }
 
 drawConnectingRectangle(JSON_Data);
