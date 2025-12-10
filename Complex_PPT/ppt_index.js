@@ -31,7 +31,7 @@ JSON_Data = {
     background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
     border_color: "black",
     scroll_horizontal: true,
-    // direction: "reverse",
+    direction: "reverse",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -121,6 +121,350 @@ JSON_Data = {
     fontFamily: ["sans-serif"],
   },
   body: [
+    {
+      component: "Header",
+      title: "Diagnosis",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: true,
+        line_color: "white",
+        collapsabile: true,
+      },
+      start_content:{
+        display:true,
+        logo_title:"Patient",
+        link:"www.youtube.com",
+        logo_title_detail:"Patients",
+        configurations:{
+          logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
+          logo_border_color: "#2394b9",
+          logo_title_color:"white_color",
+          logo_background_color:"linear-gradient(to right top, #2394b9 10%, #5df3e4)"
+        }
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
+          },
+          content: {
+            logo_heading: ["", ""],
+            logo_heading_color: [
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
+              "Common_transparent",
+            ],
+            logo_heading_border_color: [
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
+              "Common_transparent",
+            ],
+            logo_color: ["#a334c8", "#a334c8", "#a334c8", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: ["GP"],
+                links: [""],
+                logo_id_name: "logo_title_id1",
+                logo_detail: ["GP"],
+                logo_title_background_color: ["white"],
+                logo_title_border: [true],
+                logo_title_border_color: ["#a334c8"],
+                logo_title_color: ["#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Neurologist", "", "Nurse"],
+                links: [""],
+                logo_id_name: "logo_title_id2",
+                logo_detail: ["Neurologist", "", "Nurse"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Radiologist", "", "Bio & Other"],
+                links: [""],
+                logo_id_name: "logo_title_id3",
+                logo_detail: ["Radiologist", "", "Bio & Other"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["GP"],
+                links: [""],
+                logo_id_name: "logo_title_id4",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["black"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+            ],
+            line_right: "false",
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id2",
+                  height: "Level_5",
+                },
+                {
+                  starting: "logo_title_id2",
+                  ending: "logo_title_id4",
+                  height: "Level_5",
+                },
+              ],
+              arrow_color: ["#9f30cb", "#9f30cb"],
+              line_color: ["#9f30cb", "#9f30cb"],
+            },
+            connecting_Text_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_6",
+                  start_from: "start",
+                  end_from: "mid",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text_Position: "above",
+                  text: "Process",
+                  text_color: "black",
+                  line_color: "black",
+                },
+              ],
+            },
+            ToolTip_Creation: [
+              {
+                display: true,
+                content_id: "on_line_content_4",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy:'click',
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+              {
+                display: true,
+                content_id: "on_line_content_3",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy:'click',
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+              {
+                display: true,
+                content_id: "on_line_content_1",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy:'hover',
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+            ],
+            on_line_content_configuration: {
+              content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
+              bordered: [{}, { border: true }],
+              showHideBtn:[
+                {
+                  display:true,
+                  OpenFontAwsomeicon:"fa-regular fa-user",
+                  CloseFontAwsomeicon:"fa-regular fa-ban",
+                  OpenFontAwsomeiconColor:"purple",
+                  CloseFontAwsomeiconColor:"red",
+                  ByDefaultBehaviour:"open"
+                },
+              ],
+              logo:[
+                {
+                  display:true,
+                  logoPosition:"Start",
+                  logo:"fa-solid fa-location-dot",
+                  logoColor:"black"
+                },
+                {
+                  display:true,
+                  logoPosition:"End",
+                  logo:"fa-solid fa-link",
+                  logoColor:"blue"
+                },
+                {
+                  display:true,
+                  logoPosition:"Both",
+                  logo:["fa-solid fa-code-branch","fa-solid fa-hexagon-nodes"],
+                  logoColor:["purple","green"]
+                },
+                {
+                  display:false,
+                },
+              ],
+              striping: [
+                {
+                  stripped: true,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+                {
+                  stripped: false,
+                },
+                {
+                  stripped: false,
+                },
+                {
+                  stripped: true,
+                  reversed: true,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: [
+                "rounded_right",
+                "rounded_vertices",
+                "rounded_left",
+                "rounded_bottom",
+              ],
+              content_id: [
+                "on_line_content_1",
+                "on_line_content_2",
+                "on_line_content_3",
+                "on_line_content_4",
+              ],
+              content_details: [
+                "SYMPTOMS",
+                "VISIT",
+                "DIAGNOSTIC TESTS",
+                "DIAGNOSIS",
+              ],
+              color: [
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+              ],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
+              bottom_point_color: [
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+              ],
+              bottom_point_position_onLine: [false, false, false, true],
+              bottom_line_color: [
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+              ],
+              bottom_Line_postion: ["Level_6", "Level_7", "Level_8", "Level_7"],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_6"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_7"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_8"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_7"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from symptoms",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_1",
+                  ending: "on_line_content_2",
+                },
+                {
+                  content: "_?? days from results",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_2",
+                  ending: "on_line_content_3",
+                },
+                {
+                  content: "_?? days from results",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_4",
+                },
+                {
+                  content: "_?? days from symptoms",
+                  height: "Level_18",
+                  show_border: false,
+                  starting: "on_line_content_1",
+                  ending: "on_line_content_4",
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
     {
       component: "Header",
       title: "Treatment",
@@ -518,52 +862,40 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["", ""],
-            logo_heading_color: ["#a334c8", "Common_transparent"],
-            logo_heading_border_color: ["#a334c8", "Common_transparent"],
-            logo_color: ["#a334c8", "Common_transparent"],
+            logo_heading_color: ["Common_transparent", "Common_transparent"],
+            logo_heading_border_color: ["Common_transparent", "Common_transparent"],
+            logo_color: ["Common_transparent", "Common_transparent"],
             logo_titles_config: [
               {
                 logo_title: [
-                  "Neurologist",
-                  "Gynecologist",
-                  "Nurse",
-                  "Other Specialists",
+                  "Hidden"
                 ],
                 links: [""],
                 logo_id_name: "logo_title_id9",
                 logo_detail: [
-                  "Neurologist",
-                  "Gynecologist",
-                  "Nurse",
-                  "Other Specialists",
+                  "Common_transparent"
                 ],
                 logo_title_background_color: [
-                  "white",
-                  "white",
-                  "white",
-                  "white",
+                  "Common_transparent"
                 ],
-                logo_title_border: [true, true, true, true],
+                logo_title_border: [false],
                 logo_title_border_color: [
-                  "#a334c8",
-                  "#a334c8",
-                  "#a334c8",
-                  "#a334c8",
+                  "Common_transparent",
                 ],
-                logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
-                  display: true,
+                  display: false,
                   arrow_color: "#a334c8",
                   line_color: "#a334c8",
                 },
               },
               {
-                logo_title: ["Neurologist"],
+                logo_title: ["Hidden"],
                 links: [""],
                 logo_id_name: "logo_title_id10",
-                logo_detail: ["Neurologist"],
+                logo_detail: [""],
                 logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [true],
+                logo_title_border: [false],
                 logo_title_border_color: ["Common_transparent"],
                 logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
@@ -627,7 +959,13 @@ JSON_Data = {
                         textColor: "white",
                         textDetail: "PROGRESSION SUSPICION",
                       },
-                      {},
+                      {
+                        text: "PROGRESSION DMT SELECTION",
+                        textColor: "black",
+                        textDetail: "PROGRESSION DMT SELECTION",
+                        rectangleTooltipId:'on_line_rectangle_2',
+                        background_color:"Common_onLineContent_Background",
+                      },
                       {},
                     ],
                   },
@@ -657,15 +995,22 @@ JSON_Data = {
                         textDetail: "RELAPSE",
                         rectangleTooltipId:'on_line_rectangle_1'
                       },
-                      {},
                       {
                         text:"HET DMT SELECTION",
                         textColor: "black",
                         textDetail: "HET DMT SELECTION",
                         rectangleTooltipId:'on_line_rectangle_3',
+                        background_color:"Common_onLineContent_Background",
+                        iconConfig:{
+                          display:true,
+                          OpenFontAwsomeicon:"fa-regular fa-user",
+                          CloseFontAwsomeicon:"fa-regular fa-ban",
+                          OpenFontAwsomeiconColor:"purple",
+                          CloseFontAwsomeiconColor:"red",
+                          ByDefaultBehaviour:"open"
+                        },
                         content_conversion:{
                           display:true,
-                          background_color:"Common_onLineContent_Background",
                           bottom_point_color:"Common_onLineContent_Point",
                           bottom_line_color:"Common_onLineContent_Line",
                           bottom_Line_postion:"Level_9",
@@ -678,7 +1023,7 @@ JSON_Data = {
                               "Common_onLineContent_Shape",
                             ],
                           },
-                          logo_heading:"GOM",
+                          logo_heading:"",
                           logo_heading_color:"#a334c8",
                           logo_heading_border_color: "#a334c8",
                           logo_color: "#a334c8",
@@ -693,12 +1038,73 @@ JSON_Data = {
                             logo_id_name: "on_line_rectangle_logo_title_id1",
                             logo_detail: [
                               "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists"
                             ],
                             logo_title_background_color: [
                               "white",
                               "white",
                               "white",
-                              "white"
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          }
+                        }
+                      },
+                      {
+                        text:"TX CONTINUES",
+                        textColor: "black",
+                        textDetail: "TX CONTINUES",
+                        rectangleTooltipId:'on_line_rectangle_4',
+                        background_color:"Common_onLineContent_Background",
+                        content_conversion:{
+                          display:false,
+                          bottom_point_color:"Common_onLineContent_Point",
+                          bottom_line_color:"Common_onLineContent_Line",
+                          bottom_Line_postion:"Level_9",
+                          bottom_shape_positions:{
+                            levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading:"",
+                          logo_heading_color:"#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config:{
+                            logo_title: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists",
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id1",
+                            logo_detail: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists",
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                              "white",
                             ],
                             logo_title_border_color: [
                               "#a334c8",
@@ -706,7 +1112,7 @@ JSON_Data = {
                               "#a334c8",
                               "#a334c8",
                             ],
-                            logo_title_color: ["#a334c8", "#a334c8", "#a334c8","#a334c8",],
+                            logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
                             top_down_arrow: {
                               display: true,
                               arrow_color: "#a334c8",
@@ -743,7 +1149,7 @@ JSON_Data = {
               color: ["#58e3d2", "#58e3d2", "#58e3d2"],
             },
             on_line_content_configuration: {
-              content: ["HET DMT SELECTION", "TX CONTINUES"],
+              content: ["Hidden", "Hidden"],
               striping: [
                 {
                   stripped: false,
@@ -759,37 +1165,24 @@ JSON_Data = {
               link: [""],
               shapes: ["rounded_bottom_right", "rounded_lg"],
               content_id: ["on_line_content_9", "on_line_content_10"],
-              content_details: ["HET DMT SELECTION", "TX CONTINUES"],
-              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              content_details: ["", ""],
+              color: ["Common_transparent", "Common_transparent"],
+              background_shadow:[false,false],
               background_color: [
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
+                "Common_transparent",
+                "Common_transparent",
               ],
               bottom_point_color: [
-                "Common_onLineContent_Point",
+                "Common_transparent",
                 "Common_transparent",
               ],
-              bottom_point_position_onLine: [false, true],
+              bottom_point_position_onLine: [false, false],
               bottom_line_color: [
-                "Common_onLineContent_Line",
+                "Common_transparent",
                 "Common_transparent",
               ],
-              bottom_Line_postion: ["Level_9", "Level_6"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
-                  color: [
-                    "Common_onLineContent_Shape",
-                    "Common_onLineContent_Shape",
-                    "Common_onLineContent_Shape",
-                    "Common_onLineContent_Shape",
-                  ],
-                },
-                {
-                  levels: ["Level_6"],
-                  color: ["Common_transparent"],
-                },
-              ],
+              bottom_Line_postion: ["Level_1", "Level_1"],
+              bottom_shape_positions: [],
             },
             BottomtimelineSeries: {
               background_color:
@@ -1326,19 +1719,29 @@ function convertToFormat(JsonData) {
    * Generate unique Header + Sub-Headers HTML + scoped CSS
    */
   function generateHeaderHTMLandCSS(component, uniqueClassName, colors) {
-    const { title, configurations, sub_groups,start_content } = component;
+    const { title, configurations, sub_groups, start_content } = component;
     // === Header Section ===
     const showParentCollapse = configurations?.collapsabile === true;
     const parentIconStyle = showParentCollapse
       ? ""
       : "style='opacity:0; pointer-events:none;'";
-  
-    const displayStart =  start_content?.display === true;
-    const logoGradient = resolveColor(start_content?.configurations?.logo_color,colors)||"linear-gradient(to right top, #2394b9 10%, #5df3e4)";
-    const logoBorder = resolveColor(start_content?.configurations?.logo_border_color, colors)||"#2394b9";
-    const logoTitleColor = resolveColor(start_content?.configurations?.logo_title_color, colors)||"white";
-    const logoBackground = resolveColor(start_content?.configurations?.logo_background_color, colors)||"linear-gradient(to right top, #2394b9 10%, #5df3e4)";
-  
+
+    const displayStart = start_content?.display === true;
+    const logoGradient =
+      resolveColor(start_content?.configurations?.logo_color, colors) ||
+      "linear-gradient(to right top, #2394b9 10%, #5df3e4)";
+    const logoBorder =
+      resolveColor(start_content?.configurations?.logo_border_color, colors) ||
+      "#2394b9";
+    const logoTitleColor =
+      resolveColor(start_content?.configurations?.logo_title_color, colors) ||
+      "white";
+    const logoBackground =
+      resolveColor(
+        start_content?.configurations?.logo_background_color,
+        colors
+      ) || "linear-gradient(to right top, #2394b9 10%, #5df3e4)";
+
     let html = `<div class="Slide-box ${uniqueClassName}">\n`;
     html += `<h1 title="${title}">
     <i class="fa-regular fa-square-caret-right" ${parentIconStyle}></i> 
@@ -1352,7 +1755,11 @@ function convertToFormat(JsonData) {
         <div class="${uniqueClassName}-start-block">
           <div class="icon-plus-name-inner">
             <i class="fa-solid fa-user start-avatar" aria-hidden="true"></i>
-            <p class="start-pill ${start_content.link ? "Div-link":''}" ${start_content.link ? `onclick="window.open('${start_content.link}', '_blank')"` : ""} title="${limitText(start_content?.logo_title_detail, 280)}">
+            <p class="start-pill ${start_content.link ? "Div-link" : ""}" ${
+        start_content.link
+          ? `onclick="window.open('${start_content.link}', '_blank')"`
+          : ""
+      } title="${limitText(start_content?.logo_title_detail, 280)}">
               ${limitText(start_content?.logo_title, 12)}
             </p>
           </div>
@@ -1373,7 +1780,6 @@ function convertToFormat(JsonData) {
       <i class="fa-regular fa-square-caret-right" ${childIconStyle}></i> 
       ${limitText(sg.title, 20)}
     </h2>\n`;
-    
 
       if (direction) {
         // Above-line content
@@ -1382,47 +1788,68 @@ function convertToFormat(JsonData) {
             idx + 1
           } above-line-content">\n`;
 
-sg.content.on_line_content_configuration.content.forEach((c, i) => {
+          sg.content.on_line_content_configuration.content.forEach((c, i) => {
+            const onLine = sg.content.on_line_content_configuration;
+            const contentId = onLine.content_id?.[i] || "";
+            const link = onLine.link?.[i];
+            const hasShadow = onLine.background_shadow?.[i] ?? true;
+            const hasLink = link && link.trim() !== "";
+            const contentDetail = onLine.content_details?.[i] || "";
+            const isStriped = onLine.striping?.[i]?.stripped;
 
-  const onLine = sg.content.on_line_content_configuration;
-  const contentId = onLine.content_id?.[i] || "";
-  const link = onLine.link?.[i];
-  const hasShadow = onLine.background_shadow?.[i] ?? true;
-  const hasLink = link && link.trim() !== "";
-  const contentDetail = onLine.content_details?.[i] || "";
-  const isStriped = onLine.striping?.[i]?.stripped;
+            // 🔥 Logo config (safe & simple)
+            const logoCfg = onLine.logo?.[i] || {};
+            const displayLogo = logoCfg.display === true && logoCfg.logo;
 
-  // 🔥 Logo config (safe & simple)
-  const logoCfg = onLine.logo?.[i] || {};  
-  const displayLogo = logoCfg.display === true && logoCfg.logo;  
+            let logoStart = "";
+            let logoEnd = "";
 
-  let logoStart = "";
-  let logoEnd = "";
+            if (displayLogo) {
+              if (logoCfg.logoPosition === "Start") {
+                logoStart = `<i class="${
+                  logoCfg.logo
+                }" style="color:${resolveColor(
+                  logoCfg.logoColor,
+                  "black"
+                )}"></i>`;
+              }
+              if (logoCfg.logoPosition === "End") {
+                logoEnd = `<i class="${
+                  logoCfg.logo
+                }" style="color:${resolveColor(
+                  logoCfg.logoColor,
+                  "black"
+                )}"></i>`;
+              }
+              if (logoCfg.logoPosition === "Both") {
+                const first = Array.isArray(logoCfg.logo)
+                  ? logoCfg.logo[0]
+                  : logoCfg.logo;
+                const second = Array.isArray(logoCfg.logo)
+                  ? logoCfg.logo[1]
+                  : logoCfg.logo;
 
-  if (displayLogo) {
-    if (logoCfg.logoPosition === "Start") {
-      logoStart = `<i class="${logoCfg.logo}" style="color:${ resolveColor(logoCfg.logoColor,"black")}"></i>`;
-    }
-    if (logoCfg.logoPosition === "End") {
-      logoEnd = `<i class="${logoCfg.logo}" style="color:${resolveColor(logoCfg.logoColor,"black")}"></i>`;
-    }
-    if (logoCfg.logoPosition === "Both") {
-      const first = Array.isArray(logoCfg.logo) ? logoCfg.logo[0] : logoCfg.logo;
-      const second = Array.isArray(logoCfg.logo) ? logoCfg.logo[1] : logoCfg.logo;
+                const firstColor = Array.isArray(logoCfg.logoColor)
+                  ? logoCfg.logoColor[0]
+                  : logoCfg.logoColor || "black";
+                const secondColor = Array.isArray(logoCfg.logoColor)
+                  ? logoCfg.logoColor[1]
+                  : logoCfg.logoColor || "black";
 
-      const firstColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[0] : logoCfg.logoColor || "black";
-      const secondColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[1] : logoCfg.logoColor || "black";
+                logoStart = `<i class="${first}" style="color:${firstColor}"></i>`;
+                logoEnd = `<i class="${second}" style="color:${secondColor}"></i>`;
+              }
+            }
 
-      logoStart = `<i class="${first}" style="color:${firstColor}"></i>`;
-      logoEnd = `<i class="${second}" style="color:${secondColor}"></i>`;
-    }
-  }
+            html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
+              i + 1
+            }" id="${contentId}" style="position:relative;">`;
 
-  html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${i + 1}" id="${contentId}" style="position:relative;">`;
-
-html += `<h6
+            html += `<h6
   title="${limitText(contentDetail, 280)}"
-  class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${isStriped ? " striped" : ""}"
+  class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
+              isStriped ? " striped" : ""
+            }"
   ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
 >
   ${logoStart}
@@ -1430,9 +1857,8 @@ html += `<h6
   ${logoEnd}
 </h6>`;
 
-html += `</div>`;
-});
-
+            html += `</div>`;
+          });
 
           html += `</div>\n`;
         }
@@ -1440,47 +1866,62 @@ html += `</div>`;
         html += `<div class="subgroups-on-line">\n`;
 
         sg.content.on_line_content_configuration.content.forEach((c, i) => {
+          const onLine = sg.content.on_line_content_configuration;
+          const contentId = onLine.content_id?.[i] || "";
+          const link = onLine.link?.[i];
+          const hasShadow = onLine.background_shadow?.[i] ?? true;
+          const hasLink = link && link.trim() !== "";
+          const contentDetail = onLine.content_details?.[i] || "";
+          const isStriped = onLine.striping?.[i]?.stripped;
 
-  const onLine = sg.content.on_line_content_configuration;
-  const contentId = onLine.content_id?.[i] || "";
-  const link = onLine.link?.[i];
-  const hasShadow = onLine.background_shadow?.[i] ?? true;
-  const hasLink = link && link.trim() !== "";
-  const contentDetail = onLine.content_details?.[i] || "";
-  const isStriped = onLine.striping?.[i]?.stripped;
+          // 🔥 Logo config (safe & simple)
+          const logoCfg = onLine.logo?.[i] || {};
+          const displayLogo = logoCfg.display === true && logoCfg.logo;
 
-  // 🔥 Logo config (safe & simple)
-  const logoCfg = onLine.logo?.[i] || {};  
-  const displayLogo = logoCfg.display === true && logoCfg.logo;  
+          let logoStart = "";
+          let logoEnd = "";
 
-  let logoStart = "";
-  let logoEnd = "";
+          if (displayLogo) {
+            if (logoCfg.logoPosition === "Start") {
+              logoStart = `<i class="${logoCfg.logo}" style="color:${
+                logoCfg.logoColor || "black"
+              }"></i>`;
+            }
+            if (logoCfg.logoPosition === "End") {
+              logoEnd = `<i class="${logoCfg.logo}" style="color:${
+                logoCfg.logoColor || "black"
+              }"></i>`;
+            }
+            if (logoCfg.logoPosition === "Both") {
+              const first = Array.isArray(logoCfg.logo)
+                ? logoCfg.logo[0]
+                : logoCfg.logo;
+              const second = Array.isArray(logoCfg.logo)
+                ? logoCfg.logo[1]
+                : logoCfg.logo;
 
-  if (displayLogo) {
-    if (logoCfg.logoPosition === "Start") {
-      logoStart = `<i class="${logoCfg.logo}" style="color:${logoCfg.logoColor || "black"}"></i>`;
-    }
-    if (logoCfg.logoPosition === "End") {
-      logoEnd = `<i class="${logoCfg.logo}" style="color:${logoCfg.logoColor || "black"}"></i>`;
-    }
-    if (logoCfg.logoPosition === "Both") {
-      const first = Array.isArray(logoCfg.logo) ? logoCfg.logo[0] : logoCfg.logo;
-      const second = Array.isArray(logoCfg.logo) ? logoCfg.logo[1] : logoCfg.logo;
+              const firstColor = Array.isArray(logoCfg.logoColor)
+                ? logoCfg.logoColor[0]
+                : logoCfg.logoColor || "black";
+              const secondColor = Array.isArray(logoCfg.logoColor)
+                ? logoCfg.logoColor[1]
+                : logoCfg.logoColor || "black";
 
-      const firstColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[0] : logoCfg.logoColor || "black";
-      const secondColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[1] : logoCfg.logoColor || "black";
+              logoStart = `<i class="${first}" style="color:${firstColor}"></i>`;
+              logoEnd = `<i class="${second}" style="color:${secondColor}"></i>`;
+            }
+          }
 
-      logoStart = `<i class="${first}" style="color:${firstColor}"></i>`;
-      logoEnd = `<i class="${second}" style="color:${secondColor}"></i>`;
-    }
-  }
+          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
+            i + 1
+          }" id="${contentId}" style="position:relative;">\n`;
 
-  html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${i + 1}" id="${contentId}" style="position:relative;">\n`;
-
-  html += `
+          html += `
     <h6
       title="${limitText(contentDetail, 280)}"
-      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${isStriped ? " striped" : ""}"
+      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
+            isStriped ? " striped" : ""
+          }"
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
     >
       ${logoStart}
@@ -1489,8 +1930,8 @@ html += `</div>`;
     </h6>
   `;
 
-  html += `</div>\n`;
-});
+          html += `</div>\n`;
+        });
 
         html += `</div>\n`;
       }
@@ -1638,47 +2079,72 @@ html += `</div>`;
         html += `<div class="subgroups-on-line">\n`;
 
         sg.content.on_line_content_configuration.content.forEach((c, i) => {
+          const onLine = sg.content.on_line_content_configuration;
+          const contentId = onLine.content_id?.[i] || "";
+          const link = onLine.link?.[i];
+          const hasShadow = onLine.background_shadow?.[i] ?? true;
+          const hasLink = link && link.trim() !== "";
+          const contentDetail = onLine.content_details?.[i] || "";
+          const isStriped = onLine.striping?.[i]?.stripped;
 
-  const onLine = sg.content.on_line_content_configuration;
-  const contentId = onLine.content_id?.[i] || "";
-  const link = onLine.link?.[i];
-  const hasShadow = onLine.background_shadow?.[i] ?? true;
-  const hasLink = link && link.trim() !== "";
-  const contentDetail = onLine.content_details?.[i] || "";
-  const isStriped = onLine.striping?.[i]?.stripped;
+          // 🔥 Logo config (safe & simple)
+          const logoCfg = onLine.logo?.[i] || {};
+          const displayLogo = logoCfg.display === true && logoCfg.logo;
 
-  // 🔥 Logo config (safe & simple)
-  const logoCfg = onLine.logo?.[i] || {};  
-  const displayLogo = logoCfg.display === true && logoCfg.logo;  
+          let logoStart = "";
+          let logoEnd = "";
 
-  let logoStart = "";
-  let logoEnd = "";
+          if (displayLogo) {
+            if (logoCfg.logoPosition === "Start") {
+              logoStart = `<i class="${
+                logoCfg.logo
+              }" style="color:${resolveColor(
+                logoCfg.logoColor,
+                "black"
+              )}"></i>`;
+            }
+            if (logoCfg.logoPosition === "End") {
+              logoEnd = `<i class="${logoCfg.logo}" style="color:${resolveColor(
+                logoCfg.logoColor,
+                "black"
+              )}"></i>`;
+            }
+            if (logoCfg.logoPosition === "Both") {
+              const first = Array.isArray(logoCfg.logo)
+                ? logoCfg.logo[0]
+                : logoCfg.logo;
+              const second = Array.isArray(logoCfg.logo)
+                ? logoCfg.logo[1]
+                : logoCfg.logo;
 
-  if (displayLogo) {
-    if (logoCfg.logoPosition === "Start") {
-      logoStart = `<i class="${logoCfg.logo}" style="color:${resolveColor(logoCfg.logoColor, "black")}"></i>`;
-    }
-    if (logoCfg.logoPosition === "End") {
-      logoEnd = `<i class="${logoCfg.logo}" style="color:${resolveColor(logoCfg.logoColor, "black")}"></i>`;
-    }
-    if (logoCfg.logoPosition === "Both") {
-      const first = Array.isArray(logoCfg.logo) ? logoCfg.logo[0] : logoCfg.logo;
-      const second = Array.isArray(logoCfg.logo) ? logoCfg.logo[1] : logoCfg.logo;
+              const firstColor = Array.isArray(logoCfg.logoColor)
+                ? logoCfg.logoColor[0]
+                : resolveColor(logoCfg.logoColor, "black");
+              const secondColor = Array.isArray(logoCfg.logoColor)
+                ? logoCfg.logoColor[1]
+                : resolveColor(logoCfg.logoColor, "black");
 
-      const firstColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[0] : resolveColor(logoCfg.logoColor, "black");
-      const secondColor = Array.isArray(logoCfg.logoColor) ? logoCfg.logoColor[1] : resolveColor(logoCfg.logoColor, "black");
+              logoStart = `<i class="${first}" style="color:${resolveColor(
+                firstColor,
+                "black"
+              )}"></i>`;
+              logoEnd = `<i class="${second}" style="color:${resolveColor(
+                secondColor,
+                "black"
+              )}"></i>`;
+            }
+          }
 
-      logoStart = `<i class="${first}" style="color:${resolveColor(firstColor,"black")}"></i>`;
-      logoEnd = `<i class="${second}" style="color:${resolveColor(secondColor,"black")}"></i>`;
-    }
-  }
+          html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${
+            i + 1
+          }" id="${contentId}" style="position:relative;">\n`;
 
-  html += `<div class="subgroups-on-line-content ${uniqueClassName}-on-line-content${i + 1}" id="${contentId}" style="position:relative;">\n`;
-
-  html += `
+          html += `
     <h6
       title="${limitText(contentDetail, 280)}"
-      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${isStriped ? " striped" : ""}"
+      class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
+            isStriped ? " striped" : ""
+          }"
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
     >
       ${logoStart}
@@ -1687,8 +2153,8 @@ html += `</div>`;
     </h6>
   `;
 
-  html += `</div>\n`;
-});
+          html += `</div>\n`;
+        });
 
         html += `</div>\n`;
       }
@@ -1748,7 +2214,9 @@ html += `</div>`;
     align-items: center;
     justify-content: center;
     pointer-events: auto;
-    top:${direction?getFontSize(128,126,123):getFontSize(307,304,301)}px;
+    top:${
+      direction ? getFontSize(128, 126, 123) : getFontSize(307, 304, 301)
+    }px;
     left:10px;
     z-index:2;
   }
@@ -2202,7 +2670,8 @@ html += `</div>`;
       const hasAboveLine = sg.content.above_line_content?.content?.some(
         (c) => c && c.trim() !== ""
       );
-      const dynamicWidth = logoLength * getFontSize(160, 170, 180) + (displayStart?50:0);
+      const dynamicWidth =
+        logoLength * getFontSize(160, 170, 180) + (displayStart ? 50 : 0);
       css += `
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
@@ -2276,118 +2745,135 @@ html += `</div>`;
       const onLine = sg.content.on_line_content_configuration;
 
       (onLine?.content_id || []).forEach((id, index) => {
-  const stripeConfig = onLine.striping?.[index];
-  const bgColor =
-    resolveColor(onLine.background_color?.[index], colors) || "#e6fffc";
-  const fontColor = resolveColor(onLine.color?.[index], colors) || "#000";
-  const bottomPoint =
-    resolveColor(onLine.bottom_point_color?.[index], colors) ||
-    "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
-  const bottomLine =
-    resolveColor(onLine.bottom_line_color?.[index], colors) ||
-    "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
+        const stripeConfig = onLine.striping?.[index];
+        const bgColor =
+          resolveColor(onLine.background_color?.[index], colors) || "#e6fffc";
+        const fontColor = resolveColor(onLine.color?.[index], colors) || "#000";
+        const bottomPoint =
+          resolveColor(onLine.bottom_point_color?.[index], colors) ||
+          "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
+        const bottomLine =
+          resolveColor(onLine.bottom_line_color?.[index], colors) ||
+          "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
 
-  const shapeMap = {
-    rectangle: "border-radius: 0 0 0 0;",
-    default: "border-radius: 5px 5px 18px 5px;",
-    rounded_sm: "border-radius: 5px;",
-    rounded_lg: "border-radius: 15px;",
-    rounded_bottom_left: "border-radius: 0 0 0 18px;",
-    rounded_bottom_right: "border-radius: 0 0 18px 0;",
-    rounded_top_left: "border-radius: 18px 0 0 0;",
-    rounded_top_right: "border-radius: 0 18px 0 0;",
-    rounded_top: "border-radius: 18px 18px 0 0;",
-    rounded_bottom: "border-radius: 0 0 18px 18px;",
-    rounded_left: "border-radius: 18px 0 0 18px;",
-    rounded_right: "border-radius: 0 18px 18px 0;",
-    rounded_vertices: "border-radius: 18px 0px 18px 0;",
-    rounded_reverse_vertices: "border-radius: 0 18px 0 18px;",
-  };
+        const shapeMap = {
+          rectangle: "border-radius: 0 0 0 0;",
+          default: "border-radius: 5px 5px 18px 5px;",
+          rounded_sm: "border-radius: 5px;",
+          rounded_lg: "border-radius: 15px;",
+          rounded_bottom_left: "border-radius: 0 0 0 18px;",
+          rounded_bottom_right: "border-radius: 0 0 18px 0;",
+          rounded_top_left: "border-radius: 18px 0 0 0;",
+          rounded_top_right: "border-radius: 0 18px 0 0;",
+          rounded_top: "border-radius: 18px 18px 0 0;",
+          rounded_bottom: "border-radius: 0 0 18px 18px;",
+          rounded_left: "border-radius: 18px 0 0 18px;",
+          rounded_right: "border-radius: 0 18px 18px 0;",
+          rounded_vertices: "border-radius: 18px 0px 18px 0;",
+          rounded_reverse_vertices: "border-radius: 0 18px 0 18px;",
+        };
 
-  const rawShape = onLine.shapes?.[index] || "default";
-  const shapeStyle = shapeMap[rawShape.toLowerCase()] || shapeMap["default"];
+        const rawShape = onLine.shapes?.[index] || "default";
+        const shapeStyle =
+          shapeMap[rawShape.toLowerCase()] || shapeMap["default"];
 
-  const borderConfig = onLine.bordered?.[index] || {};
-  const borderEnabled = borderConfig.border ?? false;
-  const borderColor = resolveColor(borderConfig.color, colors) || "black";
-  const borderStyle = borderEnabled
-    ? `border: 1px solid ${borderColor};`
-    : "border: none;";
+        const borderConfig = onLine.bordered?.[index] || {};
+        const borderEnabled = borderConfig.border ?? false;
+        const borderColor = resolveColor(borderConfig.color, colors) || "black";
+        const borderStyle = borderEnabled
+          ? `border: 1px solid ${borderColor};`
+          : "border: none;";
 
-  css += `
+        css += `
       .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} {
           background: ${bgColor};
           color: ${fontColor};
           ${shapeStyle}
       }
 
-      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 {
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+          idx + 1
+        } #${id} h6 {
           ${shapeStyle}
           ${borderStyle}
           position: relative;
           overflow: visible !important;
       }
 
-      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6::after {
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+          idx + 1
+        } #${id} h6::after {
           background: ${bottomPoint};
       }
 
-      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id}.subgroups-on-line-content::after {
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+          idx + 1
+        } #${id}.subgroups-on-line-content::after {
           background: ${bottomLine};
       }
   `;
 
-  const logoCfg = onLine.logo?.[index] || {};
-  const displayLogo = logoCfg.display === true && logoCfg.logo;
-  const logoPosition = (logoCfg.logoPosition || "").toLowerCase();
-  const iconSize = getFontSize(15, 16, 17); 
-  const iconOffset = Math.round(iconSize / 2)-getFontSize(5,7,7);
+        const logoCfg = onLine.logo?.[index] || {};
+        const displayLogo = logoCfg.display === true && logoCfg.logo;
+        const logoPosition = (logoCfg.logoPosition || "").toLowerCase();
+        const iconSize = getFontSize(15, 16, 17);
+        const iconOffset = Math.round(iconSize / 2) - getFontSize(5, 7, 7);
 
-  // Base icon style for this element
-  if (displayLogo) {
-    if (logoPosition === "start") {
-      css += `
-      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 i:first-of-type {
+        // Base icon style for this element
+        if (displayLogo) {
+          if (logoPosition === "start") {
+            css += `
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+              idx + 1
+            } #${id} h6 i:first-of-type {
           left: ${iconOffset}px;
       }
       `;
-    }
+          }
 
-    if (logoPosition === "end") {
-      css += `
-      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 i:first-of-type {
+          if (logoPosition === "end") {
+            css += `
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+              idx + 1
+            } #${id} h6 i:first-of-type {
           right: ${iconOffset}px;
       }
       `;
-    }
+          }
 
-    if (logoPosition === "both") {
-      css += `
-      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 i:first-of-type {
+          if (logoPosition === "both") {
+            css += `
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+              idx + 1
+            } #${id} h6 i:first-of-type {
           left: ${iconOffset}px;
       }
 
-      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} h6 i:last-of-type {
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+              idx + 1
+            } #${id} h6 i:last-of-type {
           right: ${iconOffset}px;
       }
       `;
-    }
-  }
+          }
+        }
 
-  // ---------------------------
-  // Striped logic (unchanged)
-  // ---------------------------
-  if (stripeConfig?.stripped) {
-    let degree = stripeConfig?.reversed ? 45 : -45;
-    const [c1, c2, c3, c4] = stripeConfig.colors || [
-      "rgba(255,255,255,0.5)",
-      "rgba(255,255,255,0.5)",
-      "rgba(0,191,255,0.15)",
-      "rgba(0,191,255,0.15)",
-    ];
+        // ---------------------------
+        // Striped logic (unchanged)
+        // ---------------------------
+        if (stripeConfig?.stripped) {
+          let degree = stripeConfig?.reversed ? 45 : -45;
+          const [c1, c2, c3, c4] = stripeConfig.colors || [
+            "rgba(255,255,255,0.5)",
+            "rgba(255,255,255,0.5)",
+            "rgba(0,191,255,0.15)",
+            "rgba(0,191,255,0.15)",
+          ];
 
-    css += `
-      .${uniqueClassName} .${uniqueClassName}-sub-group-div${idx + 1} #${id} .striped {
+          css += `
+      .${uniqueClassName} .${uniqueClassName}-sub-group-div${
+            idx + 1
+          } #${id} .striped {
         background: repeating-linear-gradient(
           ${degree}deg,
           ${c1},
@@ -2397,9 +2883,8 @@ html += `</div>`;
         );
       }
     `;
-  }
-});
-
+        }
+      });
     });
 
     sub_groups.forEach((sg, idx) => {
@@ -3543,7 +4028,8 @@ function drawConnectingRectangle(JSON_Data) {
         };
 
         const shapeStyle =
-          shapeMap[(config?.shape || "").toLowerCase()] || shapeMap["rectangle"];
+          shapeMap[(config?.shape || "").toLowerCase()] ||
+          shapeMap["rectangle"];
 
         // inject style for rectangle
         const styleEl = document.createElement("style");
@@ -3590,7 +4076,36 @@ function drawConnectingRectangle(JSON_Data) {
           .${className} .icon-row i {
             transition: font-size 0.2s ease;
           }
+            
         `;
+        // inject style for the small square logo above text (only once)
+        if (!document.getElementById('rect-icon-style')) {
+          const style = document.createElement('style');
+          style.id = 'rect-icon-style';
+          style.innerHTML = `
+            .rect-logo {
+              position: absolute;
+              top: -15px; 
+              right: 5px;
+              width: 15px;
+              height: 15px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 2px;
+              box-sizing: border-box;
+              cursor: pointer;
+              background: white;
+              z-index: 5;
+              transition: border-color .12s, transform .08s;
+            }
+            .rect-logo:active { transform: scale(.96); }
+            .rect-logo i { font-size: 10px; line-height: 1; margin-top:1px; }
+            .icon-row .wrapper-relative { position: relative; }
+          `;
+          document.head.appendChild(style);
+        }
+
         document.head.appendChild(styleEl);
 
         // create main rect container
@@ -3599,6 +4114,7 @@ function drawConnectingRectangle(JSON_Data) {
 
         // Prepare a list to track conversion tasks that must be created AFTER rectDiv is appended
         const conversionTasks = [];
+        const thingsToDisplay=[]
 
         // if config present → add icon row
         if (hasConfig && iconCount > 0) {
@@ -3647,26 +4163,116 @@ function drawConnectingRectangle(JSON_Data) {
             p.textContent = limitText(text, 10);
             p.style.color = contentItem.textColor || "white";
             p.style.margin = "0";
-
-            // If content conversion should show — style pill for conversion mode
-            if (contentConversionShow) {
-              p.textContent = limitText(text, 20);
+            direction?'':p.style.position ="relative";
+            if(contentItem?.background_color){
               p.style.padding = "10px";
               p.classList.add("box-shadow-box");
               p.style.textAlign = "center";
               p.style.borderRadius = "20px";
               p.style.width = "130px";
               p.style.backgroundColor =
-                resolveColor(contentConversion?.background_color, JSON_Data.colors) ||
-                "white";
+                resolveColor(
+                  contentItem?.background_color,JSON_Data.colors
+                ) || "white";
               p.style.color = contentItem.textColor || "black";
+              p.textContent = limitText(text, 20);
             }
+
 
             p.style.fontSize = `${getFontSize(9, 10, 11)}px`;
             p.title = textDetail || text;
             if (IdName) p.id = IdName;
+
             wrapper.appendChild(iconEl);
             wrapper.appendChild(p);
+            if (
+              contentItem?.iconConfig?.display == true &&
+              contentItem?.content_conversion?.display == true
+            ) {
+              const iconCfg = contentItem.iconConfig;
+
+              wrapper.classList.add("wrapper-relative");
+
+              // SET INITIAL TOGGLE STATE
+              const defaultState = (iconCfg.ByDefaultBehaviour || "Close").toLowerCase();
+              let isOpen = defaultState === "open";
+
+              // DEFINE UNIQUE RECTANGLE ID NOW (same format as conversionClass later)
+              const rectangle_id = contentItem.rectangleTooltipId;
+
+              // STORE INITIAL STATE IN thingsToDisplay
+              thingsToDisplay.push({
+                rectangle_id,
+                isOpen
+              });
+
+              // BUILD THE TOGGLE BUTTON
+              const logo = document.createElement("div");
+              logo.className = "rect-logo";
+
+              const icon = document.createElement("i");
+              logo.appendChild(icon);
+
+              // UPDATE UI FUNCTION
+              function updateLogoUI() {
+                if (isOpen) {
+                  icon.className = iconCfg.OpenFontAwsomeicon;
+                  icon.style.color =
+                    resolveColor(iconCfg.OpenFontAwsomeiconColor, JSON_Data.colors) || "black";
+                  logo.style.border =
+                    `1px solid ${resolveColor(iconCfg.OpenFontAwsomeiconColor, JSON_Data.colors) || "black"}`;
+                } else {
+                  icon.className = iconCfg.CloseFontAwsomeicon;
+                  icon.style.color =
+                    resolveColor(iconCfg.CloseFontAwsomeiconColor, JSON_Data.colors) || "black";
+                  logo.style.border =
+                    `1px solid ${resolveColor(iconCfg.CloseFontAwsomeiconColor, JSON_Data.colors) || "black"}`;
+                }
+              }
+
+              // INITIAL UPDATE
+              updateLogoUI();
+
+              // CLICK TOGGLE
+              logo.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    // 1) Toggle state
+    isOpen = !isOpen;
+
+    // 2) Update global array
+    const stored = thingsToDisplay.find(t => t.rectangle_id === rectangle_id);
+    if (stored) stored.isOpen = isOpen;
+
+    // 3) Find rectangle via ID and toggle it
+    const rectId = rectangle_id + "_rectangle";
+    const rectEl = document.getElementById(rectId);
+    if (rectEl) {
+        rectEl.style.display = isOpen ? "" : "none";
+    }
+
+     // 4) Toggle polygon stack using the new ID
+    const polygonId = rectangle_id + "_Polygon";
+    const polygonEl = document.getElementById(polygonId);
+    if (polygonEl) {
+        polygonEl.style.display = isOpen ? "" : "none";
+    }
+
+    const lineEl = document.getElementById(rectangle_id + "_Line");
+if (lineEl) lineEl.style.display = isOpen ? "" : "none";
+
+const pointEl = document.getElementById(rectangle_id + "_Line_Point");
+if (pointEl) pointEl.style.display = isOpen ? "" : "none";
+
+
+    // 5) Update icon UI
+    updateLogoUI();
+});
+
+
+              wrapper.appendChild(logo);
+            }
+
             iconRow.appendChild(wrapper);
             if (contentConversionShow) {
               conversionTasks.push({
@@ -3683,196 +4289,234 @@ function drawConnectingRectangle(JSON_Data) {
         }
         pptBox.appendChild(rectDiv);
 
-
+        let linkPairs = [];   
         // --- New Part ---
-  if (conversionTasks.length > 0) {
-    conversionTasks.forEach((task, tIndex) => {
-      const convClass = `conversion-rect-sec${sectionIdx}-sub${idx}-conn${i}-icon${task.iconIdx}`;
-      const oldConv = pptBox.querySelector(`.${convClass}`);
-      if (oldConv) oldConv.remove();
+        if (conversionTasks.length > 0) {
+          conversionTasks.forEach((task, tIndex) => {
+            const convClass = `conversion-rect-sec${sectionIdx}-sub${idx}-conn${i}-icon${task.iconIdx}`;
+            const oldConv = pptBox.querySelector(`.${convClass}`);
+            if (oldConv) oldConv.remove();
 
-      let targetEl = task.targetId ? document.getElementById(task.targetId) : null;
+            let targetEl = task.targetId
+              ? document.getElementById(task.targetId)
+              : null;
 
-      if (!targetEl) {
-        const iconRowEl = rectDiv.querySelector(".icon-row");
-        if (iconRowEl) {
-          const wrapperEl = iconRowEl.children[task.wrapperIndex];
-          if (wrapperEl) targetEl = wrapperEl.querySelector("p") || wrapperEl;
-        }
-      }
-      if (!targetEl) return;
+            if (!targetEl) {
+              const iconRowEl = rectDiv.querySelector(".icon-row");
+              if (iconRowEl) {
+                const wrapperEl = iconRowEl.children[task.wrapperIndex];
+                if (wrapperEl)
+                  targetEl = wrapperEl.querySelector("p") || wrapperEl;
+              }
+            }
+            if (!targetEl) return;
 
-      const targetRect = targetEl.getBoundingClientRect();
-      const pptNowRect = pptBox.getBoundingClientRect();
+            const targetRect = targetEl.getBoundingClientRect();
+            const pptNowRect = pptBox.getBoundingClientRect();
 
-      // MAIN DIV
-      const convDiv = document.createElement("div");
-      convDiv.className = convClass;
-      convDiv.style.position = "absolute";
-      convDiv.style.zIndex = 10;
-
-      const convWidth = 145;
-      const offSet=6
-
-      convDiv.style.left =
-        Math.round(targetRect.left - pptNowRect.left + targetRect.width / 2 - convWidth / 2) + offSet + "px";
-      convDiv.style.top =`${direction?365:164}px`;
-
-      const cfg = task.contentConversion;
-      const logoCfg = cfg?.logo_titles_config || {};
-
-      const titles = logoCfg.logo_title || [];
-      const details = logoCfg.logo_detail || [];
-      const bgColors = logoCfg.logo_title_background_color || [];
-      const borderColors = logoCfg.logo_title_border_color || [];
-      const textColors = logoCfg.logo_title_color || [];
-      const idPrefix = logoCfg.logo_id_name || "";
-
-      // UNIQUE CLASS NAME FOR THIS RECTANGLE
-      const uniqueRectClass = `icon_plus_name_rectangle_${i}_${task.iconIdx}`;
-
-      const iconPlus = document.createElement("div");
-      iconPlus.className = `icon_plus_name ${uniqueRectClass}`;
-      iconPlus.style.display="flex";
-      iconPlus.style.flexDirection="column";
-      iconPlus.style.alignItems="center";
-
-      // USER ICON
-      const userIcon = document.createElement("i");
-      userIcon.className = `fa-solid fa-user fa-user-rectangle_${i}_${task.iconIdx}`;
-
-      // dynamic user icon colors
-      userIcon.style.border = `2px solid ${resolveColor(cfg.logo_heading_border_color,JSON_Data.colors)|| "#a334c8"}`;
-      userIcon.style.background = resolveColor(cfg.logo_color,JSON_Data.colors) || "#a334c8";
-      userIcon.style.position="relative";
-      userIcon.style.webkitBackgroundClip = "text";
-      userIcon.style.webkitTextFillColor = "transparent";
-      userIcon.style.display="flex";
-      userIcon.style.alignItems="center";
-      userIcon.style.justifyContent="center";
-      userIcon.style.width="35px"
-      userIcon.style.height="35px"
-      userIcon.style.borderRadius="50%";
-      userIcon.style.bottom="-10px";
-      userIcon.style.zIndex="3";
+            // MAIN DIV
+            const convDiv = document.createElement("div");
+            convDiv.className = convClass;
+            convDiv.id = task.targetId + "_rectangle";
+            convDiv.style.position = "absolute";
+            convDiv.style.zIndex = 5;
+            linkPairs.push({
+              convClass,
+              polygonClass: null
+            });
 
 
-      iconPlus.appendChild(userIcon);
+            const convWidth = 145;
+            const offSet = 6;
 
-      // WRAPPER CLASS
-      let wrapperClass = "";
-      if (titles.length === 1) wrapperClass = "icon-plus-name-box icon-plus-name-box-for-one";
-      else if (titles.length === 2) wrapperClass = "icon-plus-name-box icon-plus-name-box-for-two";
-      else if (titles.length === 3) wrapperClass = "icon-plus-name-box icon-plus-name-box-for-three";
-      else wrapperClass = "icon-plus-name-box icon-plus-name-box-for-four";
+            convDiv.style.left =
+              Math.round(
+                targetRect.left -
+                  pptNowRect.left +
+                  targetRect.width / 2 -
+                  convWidth / 2
+              ) +
+              offSet +
+              "px";
+            convDiv.style.width="125px";
+            convDiv.style.top = `${direction ? 365 : 164}px`;
 
-      const wrapper = document.createElement("div");
-      wrapper.className = wrapperClass;
-      wrapper.style.position="relative";
-      wrapper.style.zIndex="5";
-      if (idPrefix) wrapper.id = idPrefix;
+            const cfg = task.contentConversion;
+            const logoCfg = cfg?.logo_titles_config || {};
 
-      // ==== 2×2 PILL GRID ====
-      function hasValue(v) {
-    return v !== null && v !== undefined && String(v).trim() !== "";
-  }
+            const titles = logoCfg.logo_title || [];
+            const details = logoCfg.logo_detail || [];
+            const bgColors = logoCfg.logo_title_background_color || [];
+            const borderColors = logoCfg.logo_title_border_color || [];
+            const textColors = logoCfg.logo_title_color || [];
+            const idPrefix = logoCfg.logo_id_name || "";
 
-  // Find how many actual items you have
-  const itemsCount = Math.max(
-    (titles && titles.length) || 0,
-    (details && details.length) || 0
-  );
+            // UNIQUE CLASS NAME FOR THIS RECTANGLE
+            const uniqueRectClass = `icon_plus_name_rectangle_${i}_${task.iconIdx}`;
 
-  for (let row = 0; row < 2; row++) {
-    const rowDiv = document.createElement("div");
-    rowDiv.className = "icon-plus-name-box-enclosed-rectangle";
-    rowDiv.style.width = "100%";
-    rowDiv.style.height = "49%";
-    rowDiv.style.display = "flex";
-    rowDiv.style.alignItems = "center";
-    rowDiv.style.justifyContent = "center";
+            const iconPlus = document.createElement("div");
+            iconPlus.className = `icon_plus_name ${uniqueRectClass}`;
+            iconPlus.style.display = "flex";
+            iconPlus.style.flexDirection = "column";
+            iconPlus.style.alignItems = "center";
 
-    for (let col = 0; col < 2; col++) {
-      const idx2 = row * 2 + col;
+            // USER ICON
+            const userIcon = document.createElement("i");
+            userIcon.className = `fa-solid fa-user fa-user-rectangle_${i}_${task.iconIdx}`;
 
-      // ❌ If no data exists for this index → SKIP
-      if (idx2 >= itemsCount) continue;
-      const title = titles?.[idx2];
-      const detail = details?.[idx2];
+            // dynamic user icon colors
+            userIcon.style.border = `2px solid ${
+              resolveColor(cfg.logo_heading_border_color, JSON_Data.colors) ||
+              "#a334c8"
+            }`;
+            userIcon.style.background =
+              resolveColor(cfg.logo_color, JSON_Data.colors) || "#a334c8";
+            userIcon.style.position = "relative";
+            userIcon.style.webkitBackgroundClip = "text";
+            userIcon.style.webkitTextFillColor = "transparent";
+            userIcon.style.display = "flex";
+            userIcon.style.alignItems = "center";
+            userIcon.style.justifyContent = "center";
+            userIcon.style.width = "35px";
+            userIcon.style.height = "35px";
+            userIcon.style.borderRadius = "50%";
+            userIcon.style.bottom = "-10px";
+            userIcon.style.zIndex = "3";
 
-      // ❌ Skip if both title & detail are empty/undefined
-      if (!hasValue(title) && !hasValue(detail)) continue;
+            iconPlus.appendChild(userIcon);
 
-      // Build pill
-      const pill = document.createElement("p");
-      pill.className = `icon-plus-name-paragraph-${i}-${task.iconIdx}-${idx2 + 1}`;
-      pill.title = hasValue(detail) ? detail : (hasValue(title) ? title : "");
-      pill.textContent = hasValue(title) ? title : (hasValue(detail) ? detail : "");
+            // WRAPPER CLASS
+            let wrapperClass = "";
+            if (titles.length === 1)
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-one";
+            else if (titles.length === 2)
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-two";
+            else if (titles.length === 3)
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-three";
+            else
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-four";
 
-      pill.style.fontSize = "9px";
-      pill.style.margin = "0";
-      pill.style.padding = "8px 6px";
-      pill.style.borderRadius = "16px";
-      pill.style.minWidth = "30px";
-      pill.style.whiteSpace = "nowrap";
-      pill.style.overflow = "hidden";
-      pill.style.textOverflow = "ellipsis";
+            const wrapper = document.createElement("div");
+            wrapper.className = wrapperClass;
+            wrapper.style.position = "relative";
+            wrapper.style.zIndex = "5";
+            if (idPrefix) wrapper.id = idPrefix;
 
-      pill.style.background =
-        resolveColor(bgColors[idx2], JSON_Data.colors) || "white";
+            // ==== 2×2 PILL GRID ====
+            function hasValue(v) {
+              return v !== null && v !== undefined && String(v).trim() !== "";
+            }
 
-      pill.style.border =
-        `1px solid ${
-          resolveColor(borderColors[idx2], JSON_Data.colors) || "#a334c8"
-        }`;
+            // Find how many actual items you have
+            const itemsCount = Math.max(
+              (titles && titles.length) || 0,
+              (details && details.length) || 0
+            );
 
-      pill.style.color = textColors[idx2] || "#000";
+            for (let row = 0; row < 2; row++) {
+              const rowDiv = document.createElement("div");
+              rowDiv.className = "icon-plus-name-box-enclosed-rectangle";
+              rowDiv.style.width = "100%";
+              rowDiv.style.height = "49%";
+              rowDiv.style.display = "flex";
+              rowDiv.style.alignItems = "center";
+              rowDiv.style.justifyContent = "center";
 
-      rowDiv.appendChild(pill);
-    }
+              for (let col = 0; col < 2; col++) {
+                const idx2 = row * 2 + col;
 
-    wrapper.appendChild(rowDiv);
-  }
+                //  If no data exists for this index → SKIP
+                if (idx2 >= itemsCount) continue;
+                const title = titles?.[idx2];
+                const detail = details?.[idx2];
 
+                //  Skip if both title & detail are empty/undefined
+                if (!hasValue(title) && !hasValue(detail)) continue;
 
-    iconPlus.appendChild(wrapper);
-    convDiv.appendChild(iconPlus);
-    pptBox.appendChild(convDiv);
+                // Build pill
+                const pill = document.createElement("p");
+                pill.className = `icon-plus-name-paragraph-${i}-${
+                  task.iconIdx
+                }-${idx2 + 1}`;
+                pill.title = hasValue(detail)
+                  ? detail
+                  : hasValue(title)
+                  ? title
+                  : "";
+                pill.textContent = hasValue(title)
+                  ? title
+                  : hasValue(detail)
+                  ? detail
+                  : "";
 
-      
-    const titleEl = document.getElementById(task.targetId);
-    const pptRect = pptBox.getBoundingClientRect();
-    const titleRect = titleEl.getBoundingClientRect();
-    const reactEl = convDiv.querySelector(".icon_plus_name");
-    const rectBoxRect = reactEl.getBoundingClientRect();
+                pill.style.fontSize = "9px";
+                pill.style.margin = "0";
+                pill.style.padding = "8px 6px";
+                pill.style.borderRadius = "16px";
+                pill.style.minWidth = "30px";
+                pill.style.whiteSpace = "nowrap";
+                pill.style.overflow = "hidden";
+                pill.style.textOverflow = "ellipsis";
 
-    const titleBottomY = titleRect.bottom - pptRect.top;
-    const rectangleTopY = rectBoxRect.top - pptRect.top;
-    let verticalGap = rectangleTopY - titleBottomY;
-    if (!direction) {
-      verticalGap= titleRect.y-rectBoxRect.y-rectBoxRect.height+38
-    }
+                pill.style.background =
+                  resolveColor(bgColors[idx2], JSON_Data.colors) || "white";
 
-  
-    console.log(verticalGap)
-    const styleId = `style-${convClass}`;
-    let oldStyle = document.getElementById(styleId);
-    if (oldStyle) oldStyle.remove();
-    const style = document.createElement("style");
-    style.id = styleId;
-    const safeClass = convClass.replace(/:/g, "\\:");
+                pill.style.border = `1px solid ${
+                  resolveColor(borderColors[idx2], JSON_Data.colors) ||
+                  "#a334c8"
+                }`;
 
-// Inject CSS with dynamic height using verticalGap
-style.textContent = `
+                pill.style.color = textColors[idx2] || "#000";
+
+                rowDiv.appendChild(pill);
+              }
+
+              wrapper.appendChild(rowDiv);
+            }
+
+            iconPlus.appendChild(wrapper);
+            convDiv.appendChild(iconPlus);
+            pptBox.appendChild(convDiv);
+
+            const titleEl = document.getElementById(task.targetId);
+            const pptRect = pptBox.getBoundingClientRect();
+            const titleRect = titleEl.getBoundingClientRect();
+            const reactEl = convDiv.querySelector(".icon_plus_name");
+            const rectBoxRect = reactEl.getBoundingClientRect();
+
+            const titleBottomY = titleRect.bottom - pptRect.top;
+            const rectangleTopY = rectBoxRect.top - pptRect.top;
+            let verticalGap = rectangleTopY - titleBottomY;
+            if (!direction) {
+              verticalGap =
+                titleRect.y - rectBoxRect.y - rectBoxRect.height + 38;
+            }
+            const styleId = `style-${convClass}`;
+            let oldStyle = document.getElementById(styleId);
+            if (oldStyle) oldStyle.remove();
+            const style = document.createElement("style");
+            style.id = styleId;
+            const safeClass = convClass.replace(/:/g, "\\:");
+
+            const state = thingsToDisplay.find(t => t.rectangle_id === task.targetId);
+            if (state && !state.isOpen) {
+              convDiv.style.display = "none";   
+            }
+
+            // Inject CSS with dynamic height using verticalGap
+            style.textContent = `
   .${safeClass}::before {
       content: "";
       position: absolute;
-      top: ${direction?-verticalGap + 10:'45'}px;
+      top: ${direction ? -verticalGap + 10 : "45"}px;
       left: 50%;
       transform: translateX(-50%);
       width: 1px;
       height: ${verticalGap}px;
-      background: ${resolveColor(cfg.top_down_arrow?.line_color, JSON_Data.colors) || "#a334c8"};
+      background: ${
+        resolveColor(cfg.top_down_arrow?.line_color, JSON_Data.colors) ||
+        "#a334c8"
+      };
       z-index: 2;
   }
   .${safeClass}::after {
@@ -3881,23 +4525,320 @@ style.textContent = `
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
       left: 50%;
-      top: ${direction?-verticalGap + 5:verticalGap+40}px;
+      top: ${direction ? -verticalGap + 5 : verticalGap + 40}px;
       z-index: 1;
       transform: translateX(-50%);
-      border-${direction?'bottom':'top'}: 7px solid ${resolveColor(cfg.top_down_arrow?.arrow_color, JSON_Data.colors) || "#a334c8"};;
+      border-${direction ? "bottom" : "top"}: 7px solid ${
+              resolveColor(cfg.top_down_arrow?.arrow_color, JSON_Data.colors) ||
+              "#a334c8"
+            };;
   }
 `;
 
-document.head.appendChild(style);
+            document.head.appendChild(style);
+          });
+        }
+        // New Part - Polygons
+        if (conversionTasks.length > 0) {
+          const allowedLevels = [
+            "Level_1",
+            "Level_2",
+            "Level_3",
+            "Level_4",
+            "Level_5",
+            "Level_6",
+            "Level_7",
+            "Level_8",
+            "Level_9",
+            "Level_10",
+          ];
+          const compartmentTop = 510; // vertical placement (tweak if you use different offsets)
+          const compartmentHeight = 200; // container height
+          const compartmentSize = 20; // distance between shapes vertically
+          const SHAPE_W = 13;
+          const SHAPE_H = 11;
 
+          // For this connection: look at content[] (each may carry content_conversion)
+          const contents = Array.isArray(connection.config?.content)
+  ? connection.config.content
+  : [];
 
+          contents.forEach((contentItem, contentIdx) => {
 
+            const conv = contentItem?.content_conversion;
+            if (!conv || !(conv.display === true || conv.display === "true"))
+              return;
+            const targetId = contentItem.rectangleTooltipId
+            
+
+            // bottom_shape_positions may be an object (single) or array (normalize to array)
+            let bottomShapePositions =
+              conv.bottom_shape_positions || conv.bottom_shape_positions;
+            // support both object and array-of-objects
+            if (!bottomShapePositions) return;
+            if (!Array.isArray(bottomShapePositions)) {
+              bottomShapePositions = [bottomShapePositions];
+            }
+            let targetEl = null;
+            const rectTooltipId = contentItem.rectangleTooltipId || null;
+            if (rectTooltipId)
+              targetEl = document.getElementById(rectTooltipId);
+
+            // fallback: try to find matching wrapper inside rectDiv (if it exists)
+            if (!targetEl) {
+              const iconRowEl = rectDiv
+                ? rectDiv.querySelector(".icon-row")
+                : null;
+              if (iconRowEl) {
+                const wrapper =
+                  iconRowEl.children[contentIdx] || iconRowEl.children[0];
+                if (wrapper) {
+                  targetEl = wrapper.querySelector("p") || wrapper;
+                }
+              }
+            }
+
+            if (!targetEl || !isVisible(targetEl)) {
+              const oldClassNamePrefix = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}`;
+              const oldEls = pptBox.querySelectorAll(
+                `[class*="${oldClassNamePrefix}"]`
+              );
+              oldEls.forEach((el) => {
+                const styleTag = document.querySelector(
+                  `style[data-conn="${el.className}"]`
+                );
+                if (styleTag) styleTag.remove();
+                el.remove();
+              });
+              return;
+            }
+
+            const pptNow = pptBox.getBoundingClientRect();
+            const targetRect = targetEl.getBoundingClientRect();
+            const midpointX = targetRect.left + targetRect.width / 2;
+            const leftRelativeToPPT = Math.round(midpointX - pptNow.left);
+
+            // For each bottomShapePositions group create a vertical polygon stack container
+            bottomShapePositions.forEach((group, groupIdx) => {
+              // className must be unique
+              const className = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}_grp${groupIdx}`;
+              linkPairs[linkPairs.length - 1].polygonClass = className;
+
+              // cleanup previous
+              const prev = pptBox.querySelector(`.${className}`);
+              if (prev) prev.remove();
+              const prevStyle = document.querySelector(
+                `style[data-conn="${className}"]`
+              );
+              if (prevStyle) prevStyle.remove();
+
+              // normalize levels array
+              let rawLevels = Array.isArray(group.levels) ? group.levels : [];
+              const levelsArr = rawLevels
+                .map((lv) => (lv || "").toString().trim())
+                .filter(
+                  (lv, p, self) =>
+                    allowedLevels.includes(lv) && self.indexOf(lv) === p
+                );
+
+              if (!levelsArr.length) return; // nothing to draw
+
+              const state = thingsToDisplay.find(t => t.rectangle_id === contentItem.rectangleTooltipId);
+              // prepare style (vertical container positioned by midpoint)
+              const styleEl = document.createElement("style");
+              styleEl.setAttribute("data-conn", className);
+              styleEl.textContent = `
+.${className} {
+  position: absolute;
+  left: ${leftRelativeToPPT - Math.round(SHAPE_W / 2)- (direction?3:0) }px;
+  top: ${compartmentTop}px;
+  width: ${SHAPE_W}px;
+  height: ${compartmentHeight}px;
+  z-index: 5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.${className} .polygon-inner {
+  width: ${SHAPE_W}px;
+  height: ${SHAPE_H}px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transform: translateY(0) rotateZ(30deg);
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 0px;
+  visibility: hidden;
+  position: absolute;
+}
+`;
+              document.head.appendChild(styleEl);
+
+              // build container
+              const container = document.createElement("div");
+              container.className = className;
+              container.id=targetId+'_Polygon'
+              // create up to 10 compartments (Level_1 .. Level_10)
+              for (let levelIndex = 1; levelIndex <= 10; levelIndex++) {
+                const inner = document.createElement("div");
+                inner.className = "polygon-inner";
+                inner.style.top = `${
+                  (levelIndex - 1) * compartmentSize +
+                  (compartmentSize - SHAPE_H) / 2
+                }px`;
+
+                const levelName = `Level_${levelIndex}`;
+                if (levelsArr.includes(levelName)) {
+                  inner.style.visibility = "visible";
+
+                  // color resolution: group.color can be array or single value
+                  let colorVal = null;
+                  if (
+                    Array.isArray(group.color) &&
+                    group.color[levelIndex - 1]
+                  ) {
+                    colorVal = group.color[levelIndex - 1];
+                  } else if (Array.isArray(group.color) && group.color[0]) {
+                    colorVal = group.color[0];
+                  } else if (group.color) {
+                    colorVal = group.color;
+                  }
+
+                  let resolvedColor = null;
+                  try {
+                    if (typeof resolveColor === "function" && colorVal)
+                      resolvedColor = resolveColor(colorVal, JSON_Data.colors);
+                  } catch (e) {
+                    resolvedColor = null;
+                  }
+                  inner.style.background =
+                    resolvedColor || colorVal || "#dcdcdc";
+                }
+
+                container.appendChild(inner);
+              }
+              if (state && !state.isOpen) {
+                container.style.display = "none";   
+              }
+              pptBox.appendChild(container);
+            });
+          });
+        };
+
+        if (conversionTasks.length > 0) {
+    conversionTasks.forEach((task, tIndex) => {
+        linkPairs.forEach(pair => {
+
+            const rectSelector = direction ? `.${pair.convClass}` : `#${task.targetId}`;
+            const rectEl = document.querySelector(rectSelector);
+            const polyEl = document.querySelector(`.${pair.polygonClass}`);
+
+            if (!rectEl || !polyEl) return;
+
+            // Temporarily show hidden elements for measurement
+            const wasRectHidden = rectEl.style.display === "none";
+            const wasPolyHidden = polyEl.style.display === "none";
+
+            if (wasRectHidden) rectEl.style.display = "";
+            if (wasPolyHidden) polyEl.style.display = "";
+
+            // Measure
+            const rectBox = rectEl.getBoundingClientRect();
+            const polyBox = polyEl.getBoundingClientRect();
+            const pptRect = pptBox.getBoundingClientRect();
+
+            // Restore original hidden state
+            if (wasRectHidden) rectEl.style.display = "none";
+            if (wasPolyHidden) polyEl.style.display = "none";
+
+            const top = rectBox.bottom - pptRect.top;
+            const bottom = polyBox.top - pptRect.top;
+            const height = bottom - top;
+
+            if (height <= 0) return;
+
+            // Unique IDs for line and point
+            const lineId = task.targetId + "_Line";
+            const pointId = task.targetId + "_Line_Point";
+
+            // Remove old line & point
+            const oldLine = document.getElementById(lineId);
+            if (oldLine) oldLine.remove();
+
+            const oldPoint = document.getElementById(pointId);
+            if (oldPoint) oldPoint.remove();
+
+            // Colors
+            const BottomLineColor = resolveColor(task.contentConversion.bottom_line_color, JSON_Data.colors)
+                || "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
+            const BottomPointColor = resolveColor(task.contentConversion.bottom_point_color, JSON_Data.colors)
+                || "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
+
+            // Height offset by levels
+            const offsets = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185];
+            const levelStr = task.contentConversion.bottom_Line_postion || "Level_1";
+            const levelNum = parseInt(levelStr.split("_")[1]);
+            let LineHeightOffset = offsets[levelNum - 1] ?? offsets[0];
+
+            // Point position adjustment
+            let logo_title_num = task.contentConversion.logo_titles_config.logo_title.length;
+            logo_title_num = Math.max(1, Math.min(logo_title_num, 4));
+
+            const topValues = { 1: 4, 2: 4, 3: 4, 4: 30 };
+            const topPx = topValues[logo_title_num] ?? 22;
+
+            // Calculate X position
+            const xCenter = rectBox.left + rectBox.width / 2 - pptRect.left;
+
+            // --- Create the vertical line ---
+            const lineDiv = document.createElement("div");
+            lineDiv.id = lineId;
+            lineDiv.style.position = "absolute";
+            lineDiv.style.left = xCenter + "px";
+            lineDiv.style.top = top + "px";
+            lineDiv.style.width = "1px";
+            lineDiv.style.height = (height + LineHeightOffset) + "px";
+            lineDiv.style.background = BottomLineColor;
+            lineDiv.style.transform = "translateX(-50%)";
+            lineDiv.style.zIndex = "3";
+
+            // --- Create the circle point ---
+            const pointDiv = document.createElement("div");
+            pointDiv.id = pointId;
+            pointDiv.style.position = "absolute";
+            pointDiv.style.left = xCenter + "px";
+            pointDiv.style.top = (top - topPx) + "px";
+            if(!direction){
+              pointDiv.style.top = (top-3) + "px";
+            }
+            pointDiv.style.width = "5px";
+            pointDiv.style.height = "5px";
+            pointDiv.style.borderRadius = "50%";
+            pointDiv.style.background = BottomPointColor;
+            pointDiv.style.transform = "translateX(-50%)";
+            pointDiv.style.zIndex = "5";
+
+            pptBox.appendChild(lineDiv);
+            pptBox.appendChild(pointDiv);
+
+            // Hide if default state = close
+            const state = thingsToDisplay.find(t => t.rectangle_id === task.targetId);
+            if (state && !state.isOpen) {
+                lineDiv.style.display = "none";
+                pointDiv.style.display = "none";
+            }
+
+        });
     });
-  }
+}
 
-      }); 
+
+
+
+      });
     });
-  }); 
+  });
 }
 
 drawConnectingRectangle(JSON_Data);
@@ -4982,7 +5923,9 @@ function warning_Logo(JSON_Data) {
           `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`
         );
         oldEls.forEach((el) => {
-          const styleTag = document.querySelector(`style[data-warn="${el.className}"]`);
+          const styleTag = document.querySelector(
+            `style[data-warn="${el.className}"]`
+          );
           if (styleTag) styleTag.remove();
           el.remove();
         });
@@ -4994,7 +5937,9 @@ function warning_Logo(JSON_Data) {
         `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`
       );
       oldBadges.forEach((el) => {
-        const styleTag = document.querySelector(`style[data-warn="${el.className}"]`);
+        const styleTag = document.querySelector(
+          `style[data-warn="${el.className}"]`
+        );
         if (styleTag) styleTag.remove();
         el.remove();
       });
@@ -5022,41 +5967,70 @@ function warning_Logo(JSON_Data) {
 
           // colors (fall back safely)
           const triColor =
-            (typeof resolveColor === "function" && resolveColor(warn.warningColor, JSON_Data.colors)) ||
+            (typeof resolveColor === "function" &&
+              resolveColor(warn.warningColor, JSON_Data.colors)) ||
             warn.warningColor ||
             "#fb2932";
           const iconColor =
-            (typeof resolveColor === "function" && resolveColor(warn.fontAwsomeIconColor, JSON_Data.colors)) ||
+            (typeof resolveColor === "function" &&
+              resolveColor(warn.fontAwsomeIconColor, JSON_Data.colors)) ||
             warn.fontAwsomeIconColor ||
             "#fff";
           const circleColor = warn.warningCircleConfig?.circleColor
-            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circleColor, JSON_Data.colors) : warn.warningCircleConfig.circleColor)
+            ? typeof resolveColor === "function"
+              ? resolveColor(
+                  warn.warningCircleConfig.circleColor,
+                  JSON_Data.colors
+                )
+              : warn.warningCircleConfig.circleColor
             : "#ffeb3b";
           const circleBorderColor = warn.warningCircleConfig?.circleBorder
-            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circleBorder, JSON_Data.colors) : warn.warningCircleConfig.circleBorder)
+            ? typeof resolveColor === "function"
+              ? resolveColor(
+                  warn.warningCircleConfig.circleBorder,
+                  JSON_Data.colors
+                )
+              : warn.warningCircleConfig.circleBorder
             : "#000";
           const circleNumberColor = warn.warningCircleConfig?.circleNumberColor
-            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circleNumberColor, JSON_Data.colors) : warn.warningCircleConfig.circleNumberColor)
+            ? typeof resolveColor === "function"
+              ? resolveColor(
+                  warn.warningCircleConfig.circleNumberColor,
+                  JSON_Data.colors
+                )
+              : warn.warningCircleConfig.circleNumberColor
             : "#000";
           const circleLineColor = warn.warningCircleConfig?.circleLineColor
-            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circleLineColor, JSON_Data.colors) : warn.warningCircleConfig.circleLineColor)
+            ? typeof resolveColor === "function"
+              ? resolveColor(
+                  warn.warningCircleConfig.circleLineColor,
+                  JSON_Data.colors
+                )
+              : warn.warningCircleConfig.circleLineColor
             : "#fb2932";
           const circlePointColor = warn.warningCircleConfig?.circlePointColor
-            ? (typeof resolveColor === "function" ? resolveColor(warn.warningCircleConfig.circlePointColor, JSON_Data.colors) : warn.warningCircleConfig.circlePointColor)
+            ? typeof resolveColor === "function"
+              ? resolveColor(
+                  warn.warningCircleConfig.circlePointColor,
+                  JSON_Data.colors
+                )
+              : warn.warningCircleConfig.circlePointColor
             : "#fb2932";
 
           // validate number
           let circleNumber = null;
           if (warn.warningCircleConfig?.display) {
             const parsed = parseInt(warn.warningCircleConfig.circleNumber, 10);
-            if (!isNaN(parsed) && parsed >= 1 && parsed <= 99) circleNumber = String(parsed);
+            if (!isNaN(parsed) && parsed >= 1 && parsed <= 99)
+              circleNumber = String(parsed);
           }
 
           // compute anchor X
           const pos = String(warn.position || "middle").toLowerCase();
           const computeAnchorX = (rect, part) => {
             if (part === "start") return rect.left - pptRect.left + 20;
-            if (part === "end") return rect.left - pptRect.left + rect.width - 20;
+            if (part === "end")
+              return rect.left - pptRect.left + rect.width - 20;
             return rect.left - pptRect.left + rect.width / 2;
           };
           const anchorX = computeAnchorX(tgtRect, pos);
@@ -5067,14 +6041,18 @@ function warning_Logo(JSON_Data) {
           const triangleHeight = 28;
           const gapAbove = 20;
 
-          const badgeTop = Math.round(tgtRect.top - pptRect.top - triangleHeight - gapAbove);
+          const badgeTop = Math.round(
+            tgtRect.top - pptRect.top - triangleHeight - gapAbove
+          );
           const badgeLeft = Math.round(anchorX);
 
           // create style scoped
           const styleEl = document.createElement("style");
           styleEl.setAttribute("data-warn", base);
-          const iconFs = typeof getFontSize === "function" ? getFontSize(12, 13, 14) : 13;
-          const circleFs = typeof getFontSize === "function" ? getFontSize(8, 9, 10) : 9;
+          const iconFs =
+            typeof getFontSize === "function" ? getFontSize(12, 13, 14) : 13;
+          const circleFs =
+            typeof getFontSize === "function" ? getFontSize(8, 9, 10) : 9;
 
           styleEl.textContent = `
             .${base} {
@@ -5181,7 +6159,10 @@ function warning_Logo(JSON_Data) {
           }
 
           // popup content
-          const hasPopupHTML = !!(warn.Tooltip_content_HTML && String(warn.Tooltip_content_HTML).trim());
+          const hasPopupHTML = !!(
+            warn.Tooltip_content_HTML &&
+            String(warn.Tooltip_content_HTML).trim()
+          );
           let popupNode = null;
           if (hasPopupHTML) {
             const popup = document.createElement("div");
@@ -5239,7 +6220,11 @@ function warning_Logo(JSON_Data) {
             const onLeaveBadge = (ev) => {
               setTimeout(() => {
                 if (popupNode) {
-                  if (!popupNode.matches(":hover") && !badgeWrap.matches(":hover")) hidePopup();
+                  if (
+                    !popupNode.matches(":hover") &&
+                    !badgeWrap.matches(":hover")
+                  )
+                    hidePopup();
                 } else {
                   // no popup → nothing to keep open
                   hidePopup();
@@ -5259,20 +6244,35 @@ function warning_Logo(JSON_Data) {
               popupNode.addEventListener("mouseenter", () => {
                 // keep open while hovered
               });
-              handlers.push({ el: popupNode, type: "mouseleave", fn: onPopupLeave });
-              handlers.push({ el: popupNode, type: "mouseenter", fn: () => {} });
+              handlers.push({
+                el: popupNode,
+                type: "mouseleave",
+                fn: onPopupLeave,
+              });
+              handlers.push({
+                el: popupNode,
+                type: "mouseenter",
+                fn: () => {},
+              });
             }
 
             handlers.push({ el: triDiv, type: "mouseenter", fn: onEnter });
             handlers.push({ el: badgeWrap, type: "mouseenter", fn: onEnter });
             handlers.push({ el: triDiv, type: "mouseleave", fn: onLeaveBadge });
-            handlers.push({ el: badgeWrap, type: "mouseleave", fn: onLeaveBadge });
+            handlers.push({
+              el: badgeWrap,
+              type: "mouseleave",
+              fn: onLeaveBadge,
+            });
           } else {
             // Click mode: toggle popup on badge click. Clicking outside closes it. Clicking inside popup should not close it.
             let isOpen = false;
 
             const onDocClick = (ev) => {
-              if (!badgeWrap.contains(ev.target) && !(popupNode && popupNode.contains(ev.target))) {
+              if (
+                !badgeWrap.contains(ev.target) &&
+                !(popupNode && popupNode.contains(ev.target))
+              ) {
                 isOpen = false;
                 hidePopup();
                 document.removeEventListener("click", onDocClick);
@@ -5327,7 +6327,7 @@ function warning_Logo(JSON_Data) {
             },
             set isOpen(v) {
               this._isOpen = !!v;
-            }
+            },
           };
 
           // store a small reference on the DOM node (useful for debugging / external control)
@@ -5384,15 +6384,20 @@ function ToolTip_Creation(JSON_Data) {
           if (!prev) {
             const oldWrapper = pptBox.querySelector(`.${base}`);
             if (oldWrapper) oldWrapper.remove();
-            const style = document.querySelector(`style[data-tooltip="${base}"]`);
+            const style = document.querySelector(
+              `style[data-tooltip="${base}"]`
+            );
             if (style) style.remove();
-            const popupStyle = document.querySelector(`style[data-tooltip="${base}-popup"]`);
+            const popupStyle = document.querySelector(
+              `style[data-tooltip="${base}-popup"]`
+            );
             if (popupStyle) popupStyle.remove();
             return;
           }
 
           try {
-            if (prev.wrapper && prev.wrapper.parentNode) prev.wrapper.parentNode.removeChild(prev.wrapper);
+            if (prev.wrapper && prev.wrapper.parentNode)
+              prev.wrapper.parentNode.removeChild(prev.wrapper);
           } catch (e) {}
           if (prev.styleEls && prev.styleEls.length) {
             prev.styleEls.forEach((el) => {
@@ -5459,13 +6464,16 @@ function ToolTip_Creation(JSON_Data) {
             let wrapperY, wrapperX;
 
             if (vPos === "top") wrapperY = tgtRectNow.top - TH + CH / 3;
-            else if (vPos === "middle") wrapperY = tgtRectNow.top + CH / 2 - TH / 2;
+            else if (vPos === "middle")
+              wrapperY = tgtRectNow.top + CH / 2 - TH / 2;
             else if (vPos === "bottom") wrapperY = tgtRectNow.top + CH / 3;
             else wrapperY = tgtRectNow.top - TH + CH / 3;
 
             if (hPos === "left") wrapperX = tgtRectNow.left + CW / 3 - TW;
-            else if (hPos === "middle") wrapperX = tgtRectNow.left - TW / 2 + CW / 2;
-            else if (hPos === "right") wrapperX = tgtRectNow.left + tgtRectNow.width - CW / 3;
+            else if (hPos === "middle")
+              wrapperX = tgtRectNow.left - TW / 2 + CW / 2;
+            else if (hPos === "right")
+              wrapperX = tgtRectNow.left + tgtRectNow.width - CW / 3;
             else wrapperX = tgtRectNow.left - CW / 3 + TW;
 
             const finalTop = Math.round(wrapperY - pptRectNow.top);
@@ -5510,8 +6518,17 @@ function ToolTip_Creation(JSON_Data) {
           // add global listeners for repositioning
           window.addEventListener("resize", repositionOnScrollOrResize);
           window.addEventListener("scroll", repositionOnScrollOrResize, true);
-          handlers.push({ el: window, type: "resize", fn: repositionOnScrollOrResize });
-          handlers.push({ el: window, type: "scroll", fn: repositionOnScrollOrResize, options: true });
+          handlers.push({
+            el: window,
+            type: "resize",
+            fn: repositionOnScrollOrResize,
+          });
+          handlers.push({
+            el: window,
+            type: "scroll",
+            fn: repositionOnScrollOrResize,
+            options: true,
+          });
 
           if (openBy === "hover") {
             const onEnter = (ev) => {
@@ -5522,7 +6539,8 @@ function ToolTip_Creation(JSON_Data) {
             };
             const onLeaveTarget = () => {
               setTimeout(() => {
-                if (!wrapper.matches(":hover") && !targetEl.matches(":hover")) hide();
+                if (!wrapper.matches(":hover") && !targetEl.matches(":hover"))
+                  hide();
               }, 120);
             };
             const onLeaveWrapper = () => {
@@ -5534,15 +6552,26 @@ function ToolTip_Creation(JSON_Data) {
             wrapper.addEventListener("mouseleave", onLeaveWrapper);
 
             handlers.push({ el: targetEl, type: "mouseenter", fn: onEnter });
-            handlers.push({ el: targetEl, type: "mouseleave", fn: onLeaveTarget });
-            handlers.push({ el: wrapper, type: "mouseleave", fn: onLeaveWrapper });
+            handlers.push({
+              el: targetEl,
+              type: "mouseleave",
+              fn: onLeaveTarget,
+            });
+            handlers.push({
+              el: wrapper,
+              type: "mouseleave",
+              fn: onLeaveWrapper,
+            });
           } else {
             // click mode
             let isOpen = false;
 
             const onDocClick = (ev) => {
               // if click is outside both target and wrapper -> close
-              if (!wrapper.contains(ev.target) && !targetEl.contains(ev.target)) {
+              if (
+                !wrapper.contains(ev.target) &&
+                !targetEl.contains(ev.target)
+              ) {
                 isOpen = false;
                 hide();
                 document.removeEventListener("click", onDocClick);
@@ -5591,7 +6620,11 @@ function ToolTip_Creation(JSON_Data) {
             wrapper.addEventListener("mouseleave", onWrapperMouseLeave);
 
             handlers.push({ el: targetEl, type: "click", fn: onTargetClick });
-            handlers.push({ el: wrapper, type: "mouseleave", fn: onWrapperMouseLeave });
+            handlers.push({
+              el: wrapper,
+              type: "mouseleave",
+              fn: onWrapperMouseLeave,
+            });
           }
 
           // expose a small api for global control
@@ -5603,7 +6636,7 @@ function ToolTip_Creation(JSON_Data) {
             },
             set isOpen(v) {
               this._isOpen = !!v;
-            }
+            },
           };
 
           // store registry for cleanup
@@ -5632,8 +6665,6 @@ function ToolTip_Creation(JSON_Data) {
     });
   });
 }
-
-
 
 ToolTip_Creation(JSON_Data);
 
@@ -5696,13 +6727,13 @@ function drawPageBottomShapes(JSON_Data) {
     c.style.gap = "15px";
     c.style.padding = "0";
     c.style.margin = "0";
-    c.style.width="40px";
+    c.style.width = "40px";
     c.style.position = "relative";
     c.style.pointerEvents = "auto";
   });
-  leftChild.style.transform="rotate(90deg)";
-  leftChild.style.top="-135px";
-  rightChild.style.transform="rotate(-90deg)";
+  leftChild.style.transform = "rotate(90deg)";
+  leftChild.style.top = "-135px";
+  rightChild.style.transform = "rotate(-90deg)";
   leftChild.className = "page-bottom-shapes-wrapper side-left";
   rightChild.className = "page-bottom-shapes-wrapper side-right";
 

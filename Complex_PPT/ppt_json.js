@@ -852,52 +852,40 @@ JSON_Data9 = {
           },
           content: {
             logo_heading: ["", ""],
-            logo_heading_color: ["#a334c8", "Common_transparent"],
-            logo_heading_border_color: ["#a334c8", "Common_transparent"],
-            logo_color: ["#a334c8", "Common_transparent"],
+            logo_heading_color: ["Common_transparent", "Common_transparent"],
+            logo_heading_border_color: ["Common_transparent", "Common_transparent"],
+            logo_color: ["Common_transparent", "Common_transparent"],
             logo_titles_config: [
               {
                 logo_title: [
-                  "Neurologist",
-                  "Gynecologist",
-                  "Nurse",
-                  "Other Specialists",
+                  "Hidden"
                 ],
                 links: [""],
                 logo_id_name: "logo_title_id9",
                 logo_detail: [
-                  "Neurologist",
-                  "Gynecologist",
-                  "Nurse",
-                  "Other Specialists",
+                  "Common_transparent"
                 ],
                 logo_title_background_color: [
-                  "white",
-                  "white",
-                  "white",
-                  "white",
+                  "Common_transparent"
                 ],
-                logo_title_border: [true, true, true, true],
+                logo_title_border: [false],
                 logo_title_border_color: [
-                  "#a334c8",
-                  "#a334c8",
-                  "#a334c8",
-                  "#a334c8",
+                  "Common_transparent",
                 ],
-                logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
-                  display: true,
+                  display: false,
                   arrow_color: "#a334c8",
                   line_color: "#a334c8",
                 },
               },
               {
-                logo_title: ["Neurologist"],
+                logo_title: ["Hidden"],
                 links: [""],
                 logo_id_name: "logo_title_id10",
-                logo_detail: ["Neurologist"],
+                logo_detail: [""],
                 logo_title_background_color: ["Common_transparent"],
-                logo_title_border: [true],
+                logo_title_border: [false],
                 logo_title_border_color: ["Common_transparent"],
                 logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
@@ -961,7 +949,13 @@ JSON_Data9 = {
                         textColor: "white",
                         textDetail: "PROGRESSION SUSPICION",
                       },
-                      {},
+                      {
+                        text: "PROGRESSION DMT SELECTION",
+                        textColor: "black",
+                        textDetail: "PROGRESSION DMT SELECTION",
+                        rectangleTooltipId:'on_line_rectangle_2',
+                        background_color:"Common_onLineContent_Background",
+                      },
                       {},
                     ],
                   },
@@ -994,11 +988,19 @@ JSON_Data9 = {
                       {
                         text:"HET DMT SELECTION",
                         textColor: "black",
-                        textDetail: "RELAPSE",
+                        textDetail: "HET DMT SELECTION",
                         rectangleTooltipId:'on_line_rectangle_3',
+                        background_color:"Common_onLineContent_Background",
+                        iconConfig:{
+                          display:true,
+                          OpenFontAwsomeicon:"fa-regular fa-user",
+                          CloseFontAwsomeicon:"fa-regular fa-ban",
+                          OpenFontAwsomeiconColor:"purple",
+                          CloseFontAwsomeiconColor:"red",
+                          ByDefaultBehaviour:"open"
+                        },
                         content_conversion:{
                           display:true,
-                          background_color:"Common_onLineContent_Background",
                           bottom_point_color:"Common_onLineContent_Point",
                           bottom_line_color:"Common_onLineContent_Line",
                           bottom_Line_postion:"Level_9",
@@ -1014,7 +1016,65 @@ JSON_Data9 = {
                           logo_heading:"",
                           logo_heading_color:"#a334c8",
                           logo_heading_border_color: "#a334c8",
-                          logo_color: "#000000ff",
+                          logo_color: "#a334c8",
+                          logo_titles_config:{
+                            logo_title: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists"
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id1",
+                            logo_detail: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists"
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          }
+                        }
+                      },
+                      {
+                        text:"TX CONTINUES",
+                        textColor: "black",
+                        textDetail: "TX CONTINUES",
+                        rectangleTooltipId:'on_line_rectangle_4',
+                        background_color:"Common_onLineContent_Background",
+                        content_conversion:{
+                          display:false,
+                          bottom_point_color:"Common_onLineContent_Point",
+                          bottom_line_color:"Common_onLineContent_Line",
+                          bottom_Line_postion:"Level_9",
+                          bottom_shape_positions:{
+                            levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading:"",
+                          logo_heading_color:"#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
                           logo_titles_config:{
                             logo_title: [
                               "Neurologist",
@@ -1051,7 +1111,6 @@ JSON_Data9 = {
                           }
                         }
                       },
-                      {},
                     ],
                   },
                 },
@@ -1080,7 +1139,7 @@ JSON_Data9 = {
               color: ["#58e3d2", "#58e3d2", "#58e3d2"],
             },
             on_line_content_configuration: {
-              content: ["HET DMT SELECTION", "TX CONTINUES"],
+              content: ["Hidden", "Hidden"],
               striping: [
                 {
                   stripped: false,
@@ -1096,37 +1155,24 @@ JSON_Data9 = {
               link: [""],
               shapes: ["rounded_bottom_right", "rounded_lg"],
               content_id: ["on_line_content_9", "on_line_content_10"],
-              content_details: ["HET DMT SELECTION", "TX CONTINUES"],
-              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              content_details: ["", ""],
+              color: ["Common_transparent", "Common_transparent"],
+              background_shadow:[false,false],
               background_color: [
-                "Common_onLineContent_Background",
-                "Common_onLineContent_Background",
+                "Common_transparent",
+                "Common_transparent",
               ],
               bottom_point_color: [
-                "Common_onLineContent_Point",
+                "Common_transparent",
                 "Common_transparent",
               ],
-              bottom_point_position_onLine: [false, true],
+              bottom_point_position_onLine: [false, false],
               bottom_line_color: [
-                "Common_onLineContent_Line",
+                "Common_transparent",
                 "Common_transparent",
               ],
-              bottom_Line_postion: ["Level_9", "Level_6"],
-              bottom_shape_positions: [
-                {
-                  levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
-                  color: [
-                    "Common_onLineContent_Shape",
-                    "Common_onLineContent_Shape",
-                    "Common_onLineContent_Shape",
-                    "Common_onLineContent_Shape",
-                  ],
-                },
-                {
-                  levels: ["Level_6"],
-                  color: ["Common_transparent"],
-                },
-              ],
+              bottom_Line_postion: ["Level_1", "Level_1"],
+              bottom_shape_positions: [],
             },
             BottomtimelineSeries: {
               background_color:
