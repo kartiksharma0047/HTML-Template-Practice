@@ -6448,7 +6448,7 @@ function ToolTip_Creation(JSON_Data) {
 
         const targetId = tip.content_id;
         if (!targetId) return;
-
+        
         const rawTargetEl = document.getElementById(targetId);
         if (!rawTargetEl) return;
 
@@ -7042,25 +7042,26 @@ function AddOrRemoveShowHideBtn(Json_Data) {
             // === NEW PART: toggle the specific icon row mapped to this content id ===
             const subgroupsOnLine = subgroupsOnLineContentDiv.parentElement;
             const SubGroupDiv = subgroupsOnLine.parentElement;
-            const subgroupsOnLineContentDivH6 =
-              subgroupsOnLineContentDiv.querySelector("h6");
+            const subgroupsOnLineContentDivH6 = subgroupsOnLineContentDiv.querySelector("h6");
 
             if (!direction && subgroupsOnLineContentDivH6) {
-              const uniqueId = subgroupsOnLineContentDiv.id;
+                const uniqueId = subgroupsOnLineContentDiv.id;
 
-              if (entry.currentDisplay) {
-                // SHOW → remove override
-                delete dynamicAfterCSS[uniqueId + "_h6"];
-              } else {
-                // HIDE → override pseudo-element background
-                dynamicAfterCSS[uniqueId + "_h6"] = `
+                if (entry.currentDisplay) {
+                    // SHOW → remove override
+                    delete dynamicAfterCSS[uniqueId + "_h6"];
+                } else {
+                    // HIDE → override pseudo-element background
+                    dynamicAfterCSS[uniqueId + "_h6"] = `
                         #${uniqueId} h6::after {
                             background: transparent !important;
                         }
                     `;
-              }
-              updateDynamicAfterCSS();
+                }
+                updateDynamicAfterCSS();
             }
+
+
 
             const iconBlock = SubGroupDiv.querySelector(
               `.icon_plus_name[data-midtop-for="${id}"]`

@@ -31,7 +31,7 @@ JSON_Data9 = {
     background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
     border_color: "black",
     scroll_horizontal: true,
-    direction: "reverse",
+    // direction: "reverse",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -130,17 +130,18 @@ JSON_Data9 = {
         line_color: "white",
         collapsabile: true,
       },
-      start_content:{
-        display:true,
-        logo_title:"Patient",
-        link:"www.youtube.com",
-        logo_title_detail:"Patients",
-        configurations:{
+      start_content: {
+        display: true,
+        logo_title: "Patient",
+        link: "www.youtube.com",
+        logo_title_detail: "Patients",
+        configurations: {
           logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
           logo_border_color: "#2394b9",
-          logo_title_color:"white_color",
-          logo_background_color:"linear-gradient(to right top, #2394b9 10%, #5df3e4)"
-        }
+          logo_title_color: "white_color",
+          logo_background_color:
+            "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
+        },
       },
       sub_groups: [
         {
@@ -269,7 +270,7 @@ JSON_Data9 = {
                 content_id: "on_line_content_4",
                 vertical_position: "bottom",
                 horizontal_position: "right",
-                openBy:'click',
+                openBy: "click",
                 content_HTML:
                   "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
                 content_CSS:
@@ -280,7 +281,7 @@ JSON_Data9 = {
                 content_id: "on_line_content_3",
                 vertical_position: "bottom",
                 horizontal_position: "right",
-                openBy:'click',
+                openBy: "click",
                 content_HTML:
                   "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
                 content_CSS:
@@ -291,7 +292,7 @@ JSON_Data9 = {
                 content_id: "on_line_content_1",
                 vertical_position: "bottom",
                 horizontal_position: "right",
-                openBy:'hover',
+                openBy: "hover",
                 content_HTML:
                   "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
                 content_CSS:
@@ -301,27 +302,64 @@ JSON_Data9 = {
             on_line_content_configuration: {
               content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
               bordered: [{}, { border: true }],
-              logo:[
+              showHideBtn: [
                 {
-                  display:true,
-                  logoPosition:"Start",
-                  logo:"fa-solid fa-location-dot",
-                  logoColor:"black"
+                  display: true,
+                  OpenFontAwsomeicon: "fa-regular fa-user",
+                  CloseFontAwsomeicon: "fa-regular fa-ban",
+                  OpenFontAwsomeiconColor: "purple",
+                  CloseFontAwsomeiconColor: "red",
+                  ByDefaultBehaviour: "open",
                 },
                 {
-                  display:true,
-                  logoPosition:"End",
-                  logo:"fa-solid fa-link",
-                  logoColor:"blue"
+                  display: true,
+                  OpenFontAwsomeicon: "fa-regular fa-user",
+                  CloseFontAwsomeicon: "fa-regular fa-ban",
+                  OpenFontAwsomeiconColor: "purple",
+                  CloseFontAwsomeiconColor: "red",
+                  ByDefaultBehaviour: "open",
                 },
                 {
-                  display:true,
-                  logoPosition:"Both",
-                  logo:["fa-solid fa-code-branch","fa-solid fa-hexagon-nodes"],
-                  logoColor:["purple","green"]
+                  display: true,
+                  OpenFontAwsomeicon: "fa-regular fa-user",
+                  CloseFontAwsomeicon: "fa-regular fa-ban",
+                  OpenFontAwsomeiconColor: "purple",
+                  CloseFontAwsomeiconColor: "red",
+                  ByDefaultBehaviour: "open",
                 },
                 {
-                  display:false,
+                  display: true,
+                  OpenFontAwsomeicon: "fa-regular fa-user",
+                  CloseFontAwsomeicon: "fa-regular fa-ban",
+                  OpenFontAwsomeiconColor: "purple",
+                  CloseFontAwsomeiconColor: "red",
+                  ByDefaultBehaviour: "open",
+                },
+              ],
+              logo: [
+                {
+                  display: true,
+                  logoPosition: "Start",
+                  logo: "fa-solid fa-location-dot",
+                  logoColor: "black",
+                },
+                {
+                  display: true,
+                  logoPosition: "End",
+                  logo: "fa-solid fa-link",
+                  logoColor: "blue",
+                },
+                {
+                  display: true,
+                  logoPosition: "Both",
+                  logo: [
+                    "fa-solid fa-code-branch",
+                    "fa-solid fa-hexagon-nodes",
+                  ],
+                  logoColor: ["purple", "green"],
+                },
+                {
+                  display: false,
                 },
               ],
               striping: [
@@ -549,7 +587,7 @@ JSON_Data9 = {
                 fontAwsomeIcon: "fa-solid fa-exclamation",
                 fontAwsomeIconColor: "white",
                 position: "end",
-                openBy:'click',
+                openBy: "click",
                 warningColor: "#fb2932",
                 warningCircleConfig: {
                   display: true,
@@ -853,25 +891,20 @@ JSON_Data9 = {
           content: {
             logo_heading: ["", ""],
             logo_heading_color: ["Common_transparent", "Common_transparent"],
-            logo_heading_border_color: ["Common_transparent", "Common_transparent"],
+            logo_heading_border_color: [
+              "Common_transparent",
+              "Common_transparent",
+            ],
             logo_color: ["Common_transparent", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: [
-                  "Hidden"
-                ],
+                logo_title: ["Hidden"],
                 links: [""],
                 logo_id_name: "logo_title_id9",
-                logo_detail: [
-                  "Common_transparent"
-                ],
-                logo_title_background_color: [
-                  "Common_transparent"
-                ],
+                logo_detail: ["Common_transparent"],
+                logo_title_background_color: ["Common_transparent"],
                 logo_title_border: [false],
-                logo_title_border_color: [
-                  "Common_transparent",
-                ],
+                logo_title_border_color: ["Common_transparent"],
                 logo_title_color: ["Common_transparent"],
                 top_down_arrow: {
                   display: false,
@@ -915,7 +948,7 @@ JSON_Data9 = {
                 content_id: "on_line_rectangle_1",
                 vertical_position: "bottom",
                 horizontal_position: "left",
-                openBy:'hover',
+                openBy: "hover",
                 content_HTML:
                   "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
                 content_CSS:
@@ -953,8 +986,8 @@ JSON_Data9 = {
                         text: "PROGRESSION DMT SELECTION",
                         textColor: "black",
                         textDetail: "PROGRESSION DMT SELECTION",
-                        rectangleTooltipId:'on_line_rectangle_2',
-                        background_color:"Common_onLineContent_Background",
+                        rectangleTooltipId: "on_line_rectangle_2",
+                        background_color: "Common_onLineContent_Background",
                       },
                       {},
                     ],
@@ -983,29 +1016,34 @@ JSON_Data9 = {
                         text: "RELAPSE",
                         textColor: "white",
                         textDetail: "RELAPSE",
-                        rectangleTooltipId:'on_line_rectangle_1'
+                        rectangleTooltipId: "on_line_rectangle_1",
                       },
                       {
-                        text:"HET DMT SELECTION",
+                        text: "HET DMT SELECTION",
                         textColor: "black",
                         textDetail: "HET DMT SELECTION",
-                        rectangleTooltipId:'on_line_rectangle_3',
-                        background_color:"Common_onLineContent_Background",
-                        iconConfig:{
-                          display:true,
-                          OpenFontAwsomeicon:"fa-regular fa-user",
-                          CloseFontAwsomeicon:"fa-regular fa-ban",
-                          OpenFontAwsomeiconColor:"purple",
-                          CloseFontAwsomeiconColor:"red",
-                          ByDefaultBehaviour:"open"
+                        rectangleTooltipId: "on_line_rectangle_3",
+                        background_color: "Common_onLineContent_Background",
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
                         },
-                        content_conversion:{
-                          display:true,
-                          bottom_point_color:"Common_onLineContent_Point",
-                          bottom_line_color:"Common_onLineContent_Line",
-                          bottom_Line_postion:"Level_9",
-                          bottom_shape_positions:{
-                            levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
+                        content_conversion: {
+                          display: true,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
                             color: [
                               "Common_onLineContent_Shape",
                               "Common_onLineContent_Shape",
@@ -1013,16 +1051,16 @@ JSON_Data9 = {
                               "Common_onLineContent_Shape",
                             ],
                           },
-                          logo_heading:"",
-                          logo_heading_color:"#a334c8",
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
                           logo_heading_border_color: "#a334c8",
                           logo_color: "#a334c8",
-                          logo_titles_config:{
+                          logo_titles_config: {
                             logo_title: [
                               "Neurologist",
                               "Gynecologist",
                               "Nurse",
-                              "Other Specialists"
+                              "Other Specialists",
                             ],
                             links: [""],
                             logo_id_name: "on_line_rectangle_logo_title_id1",
@@ -1030,7 +1068,7 @@ JSON_Data9 = {
                               "Neurologist",
                               "Gynecologist",
                               "Nurse",
-                              "Other Specialists"
+                              "Other Specialists",
                             ],
                             logo_title_background_color: [
                               "white",
@@ -1042,28 +1080,38 @@ JSON_Data9 = {
                               "#a334c8",
                               "#a334c8",
                             ],
-                            logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
                             top_down_arrow: {
                               display: true,
                               arrow_color: "#a334c8",
                               line_color: "#a334c8",
                             },
-                          }
-                        }
+                          },
+                        },
                       },
                       {
-                        text:"TX CONTINUES",
+                        text: "TX CONTINUES",
                         textColor: "black",
                         textDetail: "TX CONTINUES",
-                        rectangleTooltipId:'on_line_rectangle_4',
-                        background_color:"Common_onLineContent_Background",
-                        content_conversion:{
-                          display:false,
-                          bottom_point_color:"Common_onLineContent_Point",
-                          bottom_line_color:"Common_onLineContent_Line",
-                          bottom_Line_postion:"Level_9",
-                          bottom_shape_positions:{
-                            levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
+                        rectangleTooltipId: "on_line_rectangle_4",
+                        background_color: "Common_onLineContent_Background",
+                        content_conversion: {
+                          display: false,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
                             color: [
                               "Common_onLineContent_Shape",
                               "Common_onLineContent_Shape",
@@ -1071,11 +1119,11 @@ JSON_Data9 = {
                               "Common_onLineContent_Shape",
                             ],
                           },
-                          logo_heading:"",
-                          logo_heading_color:"#a334c8",
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
                           logo_heading_border_color: "#a334c8",
                           logo_color: "#a334c8",
-                          logo_titles_config:{
+                          logo_titles_config: {
                             logo_title: [
                               "Neurologist",
                               "Gynecologist",
@@ -1102,14 +1150,19 @@ JSON_Data9 = {
                               "#a334c8",
                               "#a334c8",
                             ],
-                            logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
                             top_down_arrow: {
                               display: true,
                               arrow_color: "#a334c8",
                               line_color: "#a334c8",
                             },
-                          }
-                        }
+                          },
+                        },
                       },
                     ],
                   },
@@ -1157,20 +1210,11 @@ JSON_Data9 = {
               content_id: ["on_line_content_9", "on_line_content_10"],
               content_details: ["", ""],
               color: ["Common_transparent", "Common_transparent"],
-              background_shadow:[false,false],
-              background_color: [
-                "Common_transparent",
-                "Common_transparent",
-              ],
-              bottom_point_color: [
-                "Common_transparent",
-                "Common_transparent",
-              ],
+              background_shadow: [false, false],
+              background_color: ["Common_transparent", "Common_transparent"],
+              bottom_point_color: ["Common_transparent", "Common_transparent"],
               bottom_point_position_onLine: [false, false],
-              bottom_line_color: [
-                "Common_transparent",
-                "Common_transparent",
-              ],
+              bottom_line_color: ["Common_transparent", "Common_transparent"],
               bottom_Line_postion: ["Level_1", "Level_1"],
               bottom_shape_positions: [],
             },
