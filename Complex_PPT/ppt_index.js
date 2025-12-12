@@ -14,16 +14,16 @@ JSON_Data = {
       footer_10_label: "Hospital Drugstore",
     },
     label_width: {
-      footer_1_width: "92",
-      footer_2_width: "92",
-      footer_3_width: "92",
-      footer_4_width: "92",
-      footer_5_width: "92",
-      footer_6_width: "92",
-      footer_7_width: "92",
-      footer_8_width: "92",
-      footer_9_width: "92",
-      footer_10_width: "92",
+      footer_1_width: "90",
+      footer_2_width: "90",
+      footer_3_width: "90",
+      footer_4_width: "90",
+      footer_5_width: "90",
+      footer_6_width: "90",
+      footer_7_width: "90",
+      footer_8_width: "90",
+      footer_9_width: "90",
+      footer_10_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
   },
@@ -31,7 +31,7 @@ JSON_Data = {
     background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
     border_color: "black",
     scroll_horizontal: true,
-    // direction: "reverse",
+    direction: "reverse",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -310,6 +310,7 @@ JSON_Data = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id1"]
                 },
                 {
                   display: true,
@@ -318,6 +319,7 @@ JSON_Data = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id2"]
                 },
                 {
                   display: true,
@@ -326,6 +328,7 @@ JSON_Data = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id3"]
                 },
                 {
                   display: true,
@@ -334,6 +337,7 @@ JSON_Data = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id4"]
                 },
               ],
               logo: [
@@ -935,7 +939,7 @@ JSON_Data = {
               connections: [
                 {
                   starting: "logo_title_id5",
-                  ending: "logo_title_id7",
+                  ending: "logo_title_id8",
                   height: "Level_5",
                 },
               ],
@@ -3809,6 +3813,7 @@ function drawConnectingLines(JSON_Data) {
 
           const lineDiv = document.createElement("div");
           lineDiv.className = lineClass;
+          lineDiv.setAttribute("data-starting-id", connection.starting);
           pptBox.appendChild(lineDiv);
         });
       }
@@ -6978,6 +6983,9 @@ function AddOrRemoveShowHideBtn(Json_Data) {
         const CloseFontAwsomeiconColor =
           resolveColor(sh?.CloseFontAwsomeiconColor, Json_Data.colors) ||
           "black";
+        const referencedLogoIDs = Array.isArray(sh?.ReferencedLogoID)
+          ? sh.ReferencedLogoID.slice()
+          : [];
 
         onLineContentData.push({
           onlineId: id,
@@ -6988,6 +6996,7 @@ function AddOrRemoveShowHideBtn(Json_Data) {
           OpenFontAwsomeiconColor,
           CloseFontAwsomeiconColor,
           ByDefaultBehaviour: sh?.ByDefaultBehaviour || "open",
+          ReferencedLogoID: referencedLogoIDs,
         });
 
         if (display) {
@@ -7011,6 +7020,17 @@ function AddOrRemoveShowHideBtn(Json_Data) {
 
           initialIcon.split(/\s+/).forEach((cls) => iEl.classList.add(cls));
           iEl.style.color = initialColor;
+
+          if (referencedLogoIDs.length) {
+            try {
+              btnWrapper.setAttribute(
+                "data-referenced-ids",
+                JSON.stringify(referencedLogoIDs)
+              );
+            } catch (e) {
+              console.warn(e)
+            }
+          }
 
           btnWrapper.appendChild(iEl);
 
@@ -7039,7 +7059,6 @@ function AddOrRemoveShowHideBtn(Json_Data) {
             btnWrapper.style.borderColor = newColor;
 
             // === NEW PART: toggle inside subgroups-mid-top ===
-            // === NEW PART: toggle the specific icon row mapped to this content id ===
             const subgroupsOnLine = subgroupsOnLineContentDiv.parentElement;
             const SubGroupDiv = subgroupsOnLine.parentElement;
             const subgroupsOnLineContentDivH6 =
@@ -7115,6 +7134,23 @@ function AddOrRemoveShowHideBtn(Json_Data) {
               }
             }
 
+            if (Array.isArray(entry.ReferencedLogoID) && entry.ReferencedLogoID.length) {
+              entry.ReferencedLogoID.forEach((refId) => {
+                document.querySelectorAll(`[data-starting-id="${refId}"]`).forEach((lineEl) => {
+                  if (entry.currentDisplay) {
+                    // show
+                    lineEl.style.display = "";
+                    lineEl.style.opacity = "";
+                    lineEl.style.pointerEvents = "";
+                  } else {
+                    // hide
+                    lineEl.style.opacity = "0";
+                    lineEl.style.pointerEvents = "none";
+                    lineEl.style.display = "none";
+                  }
+                });
+              });
+            }
             document.querySelectorAll(`[data-target="${id}"]`).forEach((el) => {
               if (entry.currentDisplay) {
                 el.style.opacity = "1";

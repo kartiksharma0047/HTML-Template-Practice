@@ -31,7 +31,7 @@ JSON_Data9 = {
     background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
     border_color: "black",
     scroll_horizontal: true,
-    // direction: "reverse",
+    direction: "reverse",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -310,6 +310,7 @@ JSON_Data9 = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id1"]
                 },
                 {
                   display: true,
@@ -318,6 +319,7 @@ JSON_Data9 = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id2"]
                 },
                 {
                   display: true,
@@ -326,6 +328,7 @@ JSON_Data9 = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id3"]
                 },
                 {
                   display: true,
@@ -334,6 +337,7 @@ JSON_Data9 = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id4"]
                 },
               ],
               logo: [
@@ -935,7 +939,7 @@ JSON_Data9 = {
               connections: [
                 {
                   starting: "logo_title_id5",
-                  ending: "logo_title_id7",
+                  ending: "logo_title_id8",
                   height: "Level_5",
                 },
               ],
