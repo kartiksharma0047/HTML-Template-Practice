@@ -6,12 +6,7 @@ JSON_Data = {
       footer_2_label: "Hospital",
       footer_3_label: "Other structure",
       footer_4_label: "Home",
-      footer_5_label: "Hospital Drugstore",
-      footer_6_label: "Ambulatory",
-      footer_7_label: "Hospital",
-      footer_8_label: "Other structure",
-      footer_9_label: "Home",
-      footer_10_label: "Hospital Drugstore",
+      footer_5_label: "Hospital Drugstore"
     },
     label_width: {
       footer_1_width: "90",
@@ -19,11 +14,6 @@ JSON_Data = {
       footer_3_width: "90",
       footer_4_width: "90",
       footer_5_width: "90",
-      footer_6_width: "90",
-      footer_7_width: "90",
-      footer_8_width: "90",
-      footer_9_width: "90",
-      footer_10_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
   },
@@ -32,6 +22,7 @@ JSON_Data = {
     border_color: "black",
     scroll_horizontal: true,
     direction: "reverse",
+    PageHeight:"extended",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -967,41 +958,6 @@ JSON_Data = {
                   start_from_starting: false,
                   ending: "on_line_content_10",
                   end_from_ending: true,
-                  height: "Level_23",
-                  border_thickness: "Level_6",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                    ],
-                    iconColors: ["white_color", "white_color", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3"],
-                    justify_content: "between",
-                    start_end_gaps: "Level_2",
-                    shape: "rounded_bottom",
-                    content: [
-                      {
-                        text: "PROGRESSION SUSPICION",
-                        textColor: "white",
-                        textDetail: "PROGRESSION SUSPICION",
-                      },
-                      {
-                        text: "PROGRESSION DMT SELECTION",
-                        textColor: "black",
-                        textDetail: "PROGRESSION DMT SELECTION",
-                        rectangleTooltipId: "on_line_rectangle_2",
-                        background_color: "Common_onLineContent_Background",
-                      },
-                      {},
-                    ],
-                  },
-                },
-                {
-                  starting: "on_line_content_7",
-                  start_from_starting: false,
-                  ending: "on_line_content_10",
-                  end_from_ending: true,
                   height: "Level_10",
                   border_thickness: "Level_6",
                   config: {
@@ -1172,6 +1128,41 @@ JSON_Data = {
                   },
                 },
                 {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_23",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "PROGRESSION SUSPICION",
+                        textColor: "white",
+                        textDetail: "PROGRESSION SUSPICION",
+                      },
+                      {
+                        text: "PROGRESSION DMT SELECTION",
+                        textColor: "black",
+                        textDetail: "PROGRESSION DMT SELECTION",
+                        rectangleTooltipId: "on_line_rectangle_2",
+                        background_color: "Common_onLineContent_Background",
+                      },
+                      {},
+                    ],
+                  },
+                },
+                {
                   starting: "on_line_content_8",
                   start_from_starting: false,
                   ending: "on_line_content_10",
@@ -1221,20 +1212,6 @@ JSON_Data = {
               bottom_line_color: ["Common_transparent", "Common_transparent"],
               bottom_Line_postion: ["Level_1", "Level_1"],
               bottom_shape_positions: [],
-            },
-            BottomtimelineSeries: {
-              background_color:
-                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
-              border_color: "#ffc305",
-              timlines: [
-                {
-                  content: "2.3 - 3.6 years with some DMT",
-                  height: "Level_18",
-                  show_border: false,
-                  starting: "on_line_content_6",
-                  ending: "on_line_content_9",
-                },
-              ],
             },
           },
         },
@@ -1314,6 +1291,18 @@ function alignmentDirection(JSON_Portion) {
     return "default";
   }
 }
+
+function alignmentHeight(JSON_Portion){
+  const allowedHight=["normal","extended"];
+  if(allowedHight.includes(JSON_Portion)){
+    return JSON_Portion.toLowerCase();
+  }else{
+    return "normal"
+  }
+}
+
+const height=alignmentHeight(JSON_Data.Page_Configuration.PageHeight)==="normal"
+
 const direction =
   alignmentDirection(JSON_Data.Page_Configuration.direction) === "reverse";
 
@@ -2413,7 +2402,7 @@ function convertToFormat(JsonData) {
     justify-content: center;
     flex-direction: column;
     position: relative;
-    ${direction ? "margin-top:150px;" : ""}
+    ${direction ? `margin-top: ${height?150:290}px;` : ""}
     width: 145px;
     z-index:4;
   }
@@ -2505,7 +2494,7 @@ function convertToFormat(JsonData) {
     };
     height: 367px;
     right: -8px;
-    bottom: 325px;
+    bottom:${height?325:472}px;
     z-index:1;
   }
   .${uniqueClassName}::before {
@@ -2553,65 +2542,65 @@ function convertToFormat(JsonData) {
         }
 
         const revAfterTop =
-          ReverseRow === 2 ? "221px" : ReverseRow === 3 ? "259px" : "235px";
+          ReverseRow === 2 ? "221px" : ReverseRow === 3 ? `${height?259:400}px` : `${height?235:372}px`;
         const normAfterTop = "30px";
 
         // Define top and height values for each level (reverse + normal)
         const levelConfig = {
           Level_1: {
-            revHeight: ReverseRow === 2 ? 76 : ReverseRow === 3 ? 60 : 82,
-            normHeight: [110, 112, 110],
+            revHeight: ReverseRow === 2 ? 76 : ReverseRow === 3 ? height?60:72 : height?82:98,
+            normHeight: height?[110, 112, 110]:[262,266,265],
           },
           Level_2: {
-            revHeight: ReverseRow === 2 ? 118 : ReverseRow === 3 ? 80 : 102,
-            normHeight: [133, 133, 133],
+            revHeight: ReverseRow === 2 ? 118 : ReverseRow === 3 ? height?80:92 : height?102:118,
+            normHeight: height?[133, 133, 133]:[282,286,285],
           },
           Level_3: {
-            revHeight: ReverseRow === 2 ? 136 : ReverseRow === 3 ? 100 : 122,
-            normHeight: [150, 152, 152],
+            revHeight: ReverseRow === 2 ? 136 : ReverseRow === 3 ? height?100:112 : height?122:138,
+            normHeight: height?[150, 152, 152]:[302,306,305],
           },
           Level_4: {
-            revHeight: ReverseRow === 2 ? 156 : ReverseRow === 3 ? 120 : 142,
-            normHeight: [170, 173, 172],
+            revHeight: ReverseRow === 2 ? 156 : ReverseRow === 3 ? height?120:132 : height?142:158,
+            normHeight: height?[170, 173, 172]:[322,326,325],
           },
           Level_5: {
-            revHeight: ReverseRow === 2 ? 176 : ReverseRow === 3 ? 140 : 162,
-            normHeight: [190, 193, 195],
+            revHeight: ReverseRow === 2 ? 176 : ReverseRow === 3 ? height?140:152 : height?162:178,
+            normHeight: height?[190, 193, 195]:[342,346,345],
           },
           Level_6: {
-            revHeight: ReverseRow === 2 ? 176 : ReverseRow === 3 ? 160 : 182,
-            normHeight: [210, 212, 210],
+            revHeight: ReverseRow === 2 ? 176 : ReverseRow === 3 ? height?160:172 : height?182:198,
+            normHeight: height?[210, 212, 210]:[362,366,365],
           },
           Level_7: {
-            revHeight: ReverseRow === 2 ? 218 : ReverseRow === 3 ? 180 : 202,
-            normHeight: [233, 233, 233],
+            revHeight: ReverseRow === 2 ? 218 : ReverseRow === 3 ? height?180:192 : height?202:218,
+            normHeight: height?[233, 233, 233]:[382,386,385],
           },
           Level_8: {
-            revHeight: ReverseRow === 2 ? 236 : ReverseRow === 3 ? 200 : 222,
-            normHeight: [250, 252, 252],
+            revHeight: ReverseRow === 2 ? 236 : ReverseRow === 3 ? height?200:212 : height?222:238,
+            normHeight: height?[250, 252, 252]:[402,406,405],
           },
           Level_9: {
-            revHeight: ReverseRow === 2 ? 256 : ReverseRow === 3 ? 220 : 242,
-            normHeight: [270, 273, 272],
+            revHeight: ReverseRow === 2 ? 256 : ReverseRow === 3 ? height?220:232 : height?242:258,
+            normHeight: height?[270, 273, 272]:[422,426,425],
           },
           Level_10: {
-            revHeight: ReverseRow === 2 ? 276 : ReverseRow === 3 ? 240 : 262,
-            normHeight: [290, 293, 295],
+            revHeight: ReverseRow === 2 ? 276 : ReverseRow === 3 ? height?240:252 : height?262:278,
+            normHeight: height?[290, 293, 295]:[442,446,445],
           },
         };
 
         // Bottom-point overrides
         const bottomOverrides = {
-          Level_1: { top: 30, height: 288 },
-          Level_2: { top: 30, height: 308 },
-          Level_3: { top: 30, height: 328 },
-          Level_4: { top: 30, height: 350 },
-          Level_5: { top: 30, height: 368 },
-          Level_6: { top: 30, height: 388 },
-          Level_7: { top: 30, height: 408 },
-          Level_8: { top: 30, height: 428 },
-          Level_9: { top: 30, height: 450 },
-          Level_10: { top: 30, height: 468 },
+          Level_1: { top: 30, height: height?288:440 },
+          Level_2: { top: 30, height: height?308:460 },
+          Level_3: { top: 30, height: height?328:480 },
+          Level_4: { top: 30, height: height?350:500 },
+          Level_5: { top: 30, height: height?368:520 },
+          Level_6: { top: 30, height: height?388:540 },
+          Level_7: { top: 30, height: height?408:560 },
+          Level_8: { top: 30, height: height?428:580 },
+          Level_9: { top: 30, height: height?450:600 },
+          Level_10: { top: 30, height: height?468:620 },
         };
 
         // Get current level config or fallback
@@ -3093,7 +3082,7 @@ function convertToFormat(JsonData) {
           const arrowColor =
             resolveColor(arrowCfg.arrow_color, colors) || "#a334c8";
 
-          const lineHeight = hasAboveLine ? 138 : direction ? 138 : 152;
+          const lineHeight = hasAboveLine ? 138 : direction ? (height?138:280) : 152;
           const arrowTop = hasAboveLine
             ? getFontSize(148, 148, 148)
             : getFontSize(162, 162, 162);
@@ -3105,11 +3094,11 @@ function convertToFormat(JsonData) {
             linePosition = 78;
           }
 
-          let arrowPosition = 190;
+          let arrowPosition = height?190:330;
           if (logoTitleCount[i] == 2 || logoTitleCount[i] == 1) {
-            arrowPosition = 190;
+            arrowPosition = height?190:330;
           } else if (logoTitleCount[i] == 3 || logoTitleCount[i] == 4) {
-            arrowPosition = 214;
+            arrowPosition = height?214:354;
           }
 
           css += `
@@ -3195,18 +3184,18 @@ body {
   align-items:center;
   justify-content: center;
   font-family: sans-serif;
-  overflow:hidden;
+  overflow:${height?'hidden':'auto'};
 }
 .PPT-Box {
   border: 1px solid ${JSON_Data.Page_Configuration.border_color || "#000000"};
-  height:710px;
+  height: ${height ? "710px" : "860px"};
   background: ${JSON_Data.Page_Configuration.background_color || "#f6fcfc"};
   position: relative;
   display: flex;
   overflow-x:${
     JSON_Data.Page_Configuration.scroll_horizontal ? "scroll" : "hidden"
   };
-  overflow-y:hidden;
+  overflow-y: ${height ? "hidden" : "auto"};
   align-items: center;
   justify-content: start;
   scrollbar-width: none;
@@ -3215,7 +3204,7 @@ body {
 }
 .mid-Line {
   position: absolute;
-  top: ${direction ? 30 : 55}%;
+  top: ${direction ? height?30:24.7 : height?55:45.5}%;
   left: 55px;
   transform: translateY(-50%);
   height: 15px;
@@ -3685,7 +3674,7 @@ function adjustFooterWidth(JSON_Data) {
 
 adjustFooterWidth(JSON_Data);
 
-function drawConnectingLines(JSON_Data) {
+function drawConnectingLines(JSON_Data,GlobalHeight) {
   const pptBox = document.getElementById("PPT-Box");
   if (!pptBox) {
     console.warn("PPT-Box not found.");
@@ -3756,7 +3745,7 @@ function drawConnectingLines(JSON_Data) {
           const deltaX = endRect.left - startRect.left;
           const deltaY = endRect.top - startRect.top;
           const width = Math.sqrt(deltaX * deltaX + deltaY * deltaY) - 10;
-          const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+          
 
           const left = startRect.left - pptRect.left + startRect.width / 2;
           const top = startRect.top - pptRect.top + (hasAboveLine ? -11 : 0);
@@ -3767,6 +3756,7 @@ function drawConnectingLines(JSON_Data) {
                 position: absolute;
                 z-index: 3;
                 left: ${left}px;
+                pointer-events: none;
                 width: ${width}px;
                 height: ${height}px;
                 border-top: 1px solid ${
@@ -3785,7 +3775,7 @@ function drawConnectingLines(JSON_Data) {
                 ${
                   direction
                     ? `transform: rotateX(180deg);
-                   top: ${top - baseBottomH}px;
+                   top: ${top - baseBottomH -(GlobalHeight?0:140)}px;
                   `
                     : `top: ${topH + top}px;`
                 }
@@ -3794,6 +3784,7 @@ function drawConnectingLines(JSON_Data) {
                 content: "";
                 position: absolute;
                 bottom:0px;
+                pointer-events: none;
                 right: 0px;
                 transform: translateX(50%);
                 border-top: 6px solid ${
@@ -3820,7 +3811,7 @@ function drawConnectingLines(JSON_Data) {
     });
   });
 }
-drawConnectingLines(JSON_Data);
+drawConnectingLines(JSON_Data,height);
 
 function drawBottomTimelineSeries(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
@@ -3867,10 +3858,10 @@ function drawBottomTimelineSeries(JSON_Data) {
         // --- Position + style calculations ---
         const levelStr = item.height || "Level_1";
         const levelNum = parseInt(levelStr.split("_")[1]) || 1;
-        const baseTopH = 160;
+        const baseTopH = direction?(height?160:300):height?160:260;
         const increment = 5;
         const rawTopH = baseTopH + (levelNum - 1) * increment;
-        const topH = Math.min(Math.max(rawTopH, 30), direction ? 280 : 210);
+        const topH = Math.min(Math.max(rawTopH, 30), direction ? height?280:430 : height?210:360);
 
         const startRect = startEl.getBoundingClientRect();
         const endRect = endEl.getBoundingClientRect();
@@ -3903,6 +3894,7 @@ function drawBottomTimelineSeries(JSON_Data) {
             left: ${left}px;
             width: ${width2 + 4}px;
             height:20px;
+            pointer-events: none;
             background: ${bg};
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
@@ -3917,6 +3909,7 @@ function drawBottomTimelineSeries(JSON_Data) {
             width:70%;
             font-size:${getFontSize(7, 8, 9)}px;
             font-weight:bold;
+            pointer-events: auto;
             white-space: nowrap;        
             overflow: hidden;           
             text-overflow: ellipsis;
@@ -3966,7 +3959,7 @@ function drawBottomTimelineSeries(JSON_Data) {
 }
 drawBottomTimelineSeries(JSON_Data);
 
-function drawConnectingRectangle(JSON_Data) {
+function drawConnectingRectangle(JSON_Data,GlobalHeight) {
   const pptBox = document.getElementById("PPT-Box");
   if (!pptBox) {
     console.warn("PPT-Box not found.");
@@ -3988,8 +3981,6 @@ function drawConnectingRectangle(JSON_Data) {
           `[class*="connection-Rectangle-sec${sectionIdx}-sub${idx}-rect"]`
         );
         oldRects.forEach((rect) => rect.remove());
-
-        // also remove any conversion rectangles for this section/sub
         const oldConvRects = pptBox.querySelectorAll(
           `[class*="conversion-rect-sec${sectionIdx}-sub${idx}-"]`
         );
@@ -4049,9 +4040,9 @@ function drawConnectingRectangle(JSON_Data) {
         const color =
           resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
         const topOffset = 397;
-        const reverseTopOffset = 312;
+        const reverseTopOffset = GlobalHeight?312:462;
         const topOffsetPageReverse = 220;
-        const topOffsetrReversePageReverse = 490;
+        const topOffsetrReversePageReverse = GlobalHeight?490:640;
 
         // ---- Handle Config ----
         const config = connection.config;
@@ -4111,6 +4102,8 @@ function drawConnectingRectangle(JSON_Data) {
             border-right: ${borderSize}px solid ${color};
             ${shapeStyle}
             box-sizing: border-box;
+            background:transparent;
+            pointer-events: none;
             z-index: 2;
             overflow: visible;
             display: flex;
@@ -4138,6 +4131,7 @@ function drawConnectingRectangle(JSON_Data) {
             margin: 0;
             bottom: -${borderSize / 2}px;
             transform: translateY(50%);
+            pointer-events: auto;
           }
 
           .${className} .icon-row i {
@@ -4464,6 +4458,7 @@ function drawConnectingRectangle(JSON_Data) {
             userIcon.style.borderRadius = "50%";
             userIcon.style.bottom = "-10px";
             userIcon.style.zIndex = "3";
+            userIcon.style.pointerEvents="auto"
 
             iconPlus.appendChild(userIcon);
 
@@ -4636,7 +4631,7 @@ function drawConnectingRectangle(JSON_Data) {
             "Level_9",
             "Level_10",
           ];
-          const compartmentTop = 510; // vertical placement (tweak if you use different offsets)
+          const compartmentTop = 510;
           const compartmentHeight = 200; // container height
           const compartmentSize = 20; // distance between shapes vertically
           const SHAPE_W = 13;
@@ -4931,7 +4926,7 @@ function drawConnectingRectangle(JSON_Data) {
   });
 }
 
-drawConnectingRectangle(JSON_Data);
+drawConnectingRectangle(JSON_Data,height);
 
 function drawConnectingCircle(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
@@ -5049,6 +5044,7 @@ function drawConnectingCircle(JSON_Data) {
             width: ${diameter}px;
             height: ${radius}px;
             overflow: hidden;
+            pointer-events: none;
             ${
               alignmentDirection(connection.config.direction) === "reverse"
                 ? `
@@ -5070,6 +5066,7 @@ function drawConnectingCircle(JSON_Data) {
             top: 0px;
             left: 0px;
             width: ${diameter}px;
+            pointer-events: none;
             height: ${diameter}px;
             border-radius: 50%;
             box-sizing: border-box;
@@ -5079,6 +5076,7 @@ function drawConnectingCircle(JSON_Data) {
           .${className} .conn-icon {
             position: absolute;
             transform-origin: center;
+            pointer-events: none;
             pointer-events: none;
             display: inline-flex;
             align-items: center;
@@ -5612,7 +5610,7 @@ function drawMultiplePolygons(JSON_Data) {
     "Level_9",
     "Level_10",
   ];
-  const compartmentTop = 510;
+  const compartmentTop = height?510:660;
   const compartmentHeight = 200;
   const compartmentSize = 20;
   const SHAPE_W = 13;
@@ -7165,7 +7163,6 @@ function AddOrRemoveShowHideBtn(Json_Data) {
       });
     });
   });
-  console.log(onLineContentData);
 }
 
 AddOrRemoveShowHideBtn(JSON_Data);

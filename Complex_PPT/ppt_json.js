@@ -1,4 +1,7 @@
 // Latest JSON at the Top
+
+JSON_Data10={}
+
 JSON_Data9 = {
   footer: {
     footer_label: {
@@ -14,16 +17,16 @@ JSON_Data9 = {
       footer_10_label: "Hospital Drugstore",
     },
     label_width: {
-      footer_1_width: "92",
-      footer_2_width: "92",
-      footer_3_width: "92",
-      footer_4_width: "92",
-      footer_5_width: "92",
-      footer_6_width: "92",
-      footer_7_width: "92",
-      footer_8_width: "92",
-      footer_9_width: "92",
-      footer_10_width: "92",
+      footer_1_width: "90",
+      footer_2_width: "90",
+      footer_3_width: "90",
+      footer_4_width: "90",
+      footer_5_width: "90",
+      footer_6_width: "90",
+      footer_7_width: "90",
+      footer_8_width: "90",
+      footer_9_width: "90",
+      footer_10_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
   },
@@ -32,6 +35,7 @@ JSON_Data9 = {
     border_color: "black",
     scroll_horizontal: true,
     direction: "reverse",
+    PageHeight:"normal",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -967,41 +971,6 @@ JSON_Data9 = {
                   start_from_starting: false,
                   ending: "on_line_content_10",
                   end_from_ending: true,
-                  height: "Level_23",
-                  border_thickness: "Level_6",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                    ],
-                    iconColors: ["white_color", "white_color", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3"],
-                    justify_content: "between",
-                    start_end_gaps: "Level_2",
-                    shape: "rounded_bottom",
-                    content: [
-                      {
-                        text: "PROGRESSION SUSPICION",
-                        textColor: "white",
-                        textDetail: "PROGRESSION SUSPICION",
-                      },
-                      {
-                        text: "PROGRESSION DMT SELECTION",
-                        textColor: "black",
-                        textDetail: "PROGRESSION DMT SELECTION",
-                        rectangleTooltipId: "on_line_rectangle_2",
-                        background_color: "Common_onLineContent_Background",
-                      },
-                      {},
-                    ],
-                  },
-                },
-                {
-                  starting: "on_line_content_7",
-                  start_from_starting: false,
-                  ending: "on_line_content_10",
-                  end_from_ending: true,
                   height: "Level_10",
                   border_thickness: "Level_6",
                   config: {
@@ -1168,6 +1137,41 @@ JSON_Data9 = {
                           },
                         },
                       },
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_10",
+                  end_from_ending: true,
+                  height: "Level_23",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "PROGRESSION SUSPICION",
+                        textColor: "white",
+                        textDetail: "PROGRESSION SUSPICION",
+                      },
+                      {
+                        text: "PROGRESSION DMT SELECTION",
+                        textColor: "black",
+                        textDetail: "PROGRESSION DMT SELECTION",
+                        rectangleTooltipId: "on_line_rectangle_2",
+                        background_color: "Common_onLineContent_Background",
+                      },
+                      {},
                     ],
                   },
                 },
