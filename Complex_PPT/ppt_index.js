@@ -61,6 +61,14 @@ JSON_Data = {
         fontSize: "Level_1",
       },
       {
+        type: "Between",
+        on_line_id_start: "on_line_content_10",
+        on_line_id_end: "on_line_content_11",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
         type: "Start",
         on_line_id_start: "on_line_content_1",
         fontAwsomeIcon: "fa-solid fa-angles-right",
@@ -69,7 +77,7 @@ JSON_Data = {
       },
       {
         type: "End",
-        on_line_id_end: "on_line_content_10",
+        on_line_id_end: "on_line_content_13",
         fontAwsomeIcon: "fa-solid fa-angles-right",
         fontColor: "white",
         fontSize: "Level_1",
@@ -884,13 +892,16 @@ JSON_Data = {
             collapsabile: false,
           },
           content: {
-            logo_heading: ["", ""],
-            logo_heading_color: ["Common_transparent", "Common_transparent"],
+            logo_heading: ["", "", "", "", ""],
+            logo_heading_color: ["Common_transparent","Common_transparent","Common_transparent","Common_transparent", "Common_transparent"],
             logo_heading_border_color: [
               "Common_transparent",
               "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent"
             ],
-            logo_color: ["Common_transparent", "Common_transparent"],
+            logo_color: ["Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent"],
             logo_titles_config: [
               {
                 logo_title: ["Hidden"],
@@ -911,6 +922,51 @@ JSON_Data = {
                 logo_title: ["Hidden"],
                 links: [""],
                 logo_id_name: "logo_title_id10",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id11",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id12",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id13",
                 logo_detail: [""],
                 logo_title_background_color: ["Common_transparent"],
                 logo_title_border: [false],
@@ -950,13 +1006,32 @@ JSON_Data = {
                   ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
               },
             ],
+            connecting_Circle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_rectangle_3",
+                  ending: "on_line_rectangle_4",
+                  start_from: "start",
+                  end_from: "end",
+                  border_thickness: "Level_4",
+                  config: {
+                    fontAwsomeicon: "fa-solid fa-angles-left",
+                    iconColor: "white",
+                    iconSize: "Level_2",
+                    direction: "default",
+                  },
+                },
+              ],
+              color: ["#c16fddb5"],
+            },
             connecting_Rectangle: {
               display: true,
               connections: [
                 {
-                  starting: "on_line_content_7",
+                  starting: "on_line_content_8",
                   start_from_starting: false,
-                  ending: "on_line_content_10",
+                  ending: "on_line_content_13",
                   end_from_ending: true,
                   height: "Level_10",
                   border_thickness: "Level_6",
@@ -971,6 +1046,31 @@ JSON_Data = {
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
+                    direction: "reverse",
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_13",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "Common_transparent","white_color", "Common_transparent","white_color", "Common_transparent"],
+                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3","Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
                     content: [
                       {
                         text: "RELAPSE",
@@ -982,7 +1082,7 @@ JSON_Data = {
                         text: "HET DMT SELECTION",
                         textColor: "black",
                         textDetail: "HET DMT SELECTION",
-                        rectangleTooltipId: "on_line_rectangle_3",
+                        rectangleTooltipId: "on_line_rectangle_2",
                         background_color: "Common_onLineContent_Background",
                         iconConfig: {
                           display: true,
@@ -1054,14 +1154,66 @@ JSON_Data = {
                           },
                         },
                       },
+                      {},
                       {
-                        text: "TX CONTINUES",
+                        text: "VISIT",
                         textColor: "black",
-                        textDetail: "TX CONTINUES",
+                        textDetail: "RELAPSE",
+                        rectangleTooltipId: "on_line_rectangle_3",
+                        background_color: "Common_onLineContent_Background",
+                      },
+                      {
+                        text: "DIAGNOSIS",
+                        textColor: "black",
+                        textDetail: "RELAPSE",
                         rectangleTooltipId: "on_line_rectangle_4",
                         background_color: "Common_onLineContent_Background",
+                      },
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_13",
+                  end_from_ending: true,
+                  height: "Level_23",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "Common_transparent","white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "PROGRESSION SUSPICION",
+                        textColor: "white",
+                        textDetail: "PROGRESSION SUSPICION",
+                        rectangleTooltipId: "on_line_rectangle_5",
+                      },
+                      {
+                        text: "PROGRESSION DMT SELECTION",
+                        textColor: "black",
+                        textDetail: "PROGRESSION DMT SELECTION",
+                        rectangleTooltipId: "on_line_rectangle_6",
+                        background_color: "Common_onLineContent_Background",
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
+                        },
                         content_conversion: {
-                          display: false,
+                          display: true,
                           bottom_point_color: "Common_onLineContent_Point",
                           bottom_line_color: "Common_onLineContent_Line",
                           bottom_Line_postion: "Level_9",
@@ -1085,18 +1237,117 @@ JSON_Data = {
                           logo_color: "#a334c8",
                           logo_titles_config: {
                             logo_title: [
-                              "Neurologist",
-                              "Gynecologist",
-                              "Nurse",
-                              "Other Specialists",
+                              "Dentist",
+                              "",
+                              "Animal Care",
+                              "",
                             ],
                             links: [""],
-                            logo_id_name: "on_line_rectangle_logo_title_id1",
+                            logo_id_name: "on_line_rectangle_logo_title_id2",
                             logo_detail: [
-                              "Neurologist",
-                              "Gynecologist",
-                              "Nurse",
-                              "Other Specialists",
+                              "Dentist",
+                              "",
+                              "Animal Care",
+                              "",
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          },
+                        },
+                      },
+                      {},
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_13",
+                  end_from_ending: true,
+                  height: "Level_35",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "Common_transparent", "white_color","Common_transparent", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {},
+                      {},
+                      {},
+                      {},
+                      {
+                        text: "TX CONTINUES",
+                        textColor: "black",
+                        textDetail: "TX CONTINUES",
+                        rectangleTooltipId: "on_line_rectangle_7",
+                        background_color: "Common_onLineContent_Background",
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
+                        },
+                        content_conversion: {
+                          display: true,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config: {
+                            logo_title: [
+                              "GP"
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id3",
+                            logo_detail: [
+                              "GP"
                             ],
                             logo_title_background_color: [
                               "white",
@@ -1130,64 +1381,111 @@ JSON_Data = {
                 {
                   starting: "on_line_content_7",
                   start_from_starting: false,
-                  ending: "on_line_content_10",
+                  ending: "on_line_content_13",
                   end_from_ending: true,
-                  height: "Level_23",
+                  height: "Level_48",
                   border_thickness: "Level_6",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
                     ],
-                    iconColors: ["white_color", "white_color", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    iconColors: ["white_color", "Common_transparent", "white_color","Common_transparent", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3"],
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
                     content: [
-                      {
-                        text: "PROGRESSION SUSPICION",
-                        textColor: "white",
-                        textDetail: "PROGRESSION SUSPICION",
-                      },
-                      {
-                        text: "PROGRESSION DMT SELECTION",
-                        textColor: "black",
-                        textDetail: "PROGRESSION DMT SELECTION",
-                        rectangleTooltipId: "on_line_rectangle_2",
-                        background_color: "Common_onLineContent_Background",
-                      },
                       {},
+                      {},
+                      {},
+                      {
+                        text: "TX CONTINUES",
+                        textColor: "black",
+                        textDetail: "TX CONTINUES",
+                        rectangleTooltipId: "on_line_rectangle_8",
+                        background_color: "Common_onLineContent_Background",
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
+                        },
+                        content_conversion: {
+                          display: true,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config: {
+                            logo_title: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id4",
+                            logo_detail: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                              "white",
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          },
+                        },
+                      },
                     ],
-                  },
-                },
-                {
-                  starting: "on_line_content_8",
-                  start_from_starting: false,
-                  ending: "on_line_content_10",
-                  end_from_ending: true,
-                  height: "Level_10",
-                  border_thickness: "Level_6",
-                  config: {
-                    fontAwsomeicons: [
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                      "fa-solid fa-angles-right",
-                    ],
-                    iconColors: ["white_color", "white_color", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3"],
-                    justify_content: "between",
-                    start_end_gaps: "Level_2",
-                    shape: "rounded_bottom",
-                    direction: "reverse",
                   },
                 },
               ],
               color: ["#58e3d2", "#58e3d2", "#58e3d2"],
             },
             on_line_content_configuration: {
-              content: ["Hidden", "Hidden"],
+              content: ["Hidden", "Hidden","Hidden","Hidden","Hidden"],
               striping: [
                 {
                   stripped: false,
@@ -1201,17 +1499,31 @@ JSON_Data = {
                 },
               ],
               link: [""],
-              shapes: ["rounded_bottom_right", "rounded_lg"],
-              content_id: ["on_line_content_9", "on_line_content_10"],
-              content_details: ["", ""],
-              color: ["Common_transparent", "Common_transparent"],
-              background_shadow: [false, false],
-              background_color: ["Common_transparent", "Common_transparent"],
-              bottom_point_color: ["Common_transparent", "Common_transparent"],
-              bottom_point_position_onLine: [false, false],
-              bottom_line_color: ["Common_transparent", "Common_transparent"],
-              bottom_Line_postion: ["Level_1", "Level_1"],
+              shapes: ["rounded_bottom_right", "rounded_lg","rounded_lg","rounded_lg","rounded_lg"],
+              content_id: ["on_line_content_9", "on_line_content_10","on_line_content_11","on_line_content_12","on_line_content_13"],
+              content_details: ["", "","","",""],
+              color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
+              background_shadow: [false, false,false,false,false],
+              background_color: ["Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent"],
+              bottom_point_color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
+              bottom_point_position_onLine: [false, false,false,false,false],
+              bottom_line_color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
+              bottom_Line_postion: ["Level_1","Level_1","Level_1","Level_1", "Level_1"],
               bottom_shape_positions: [],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from DMT initiation",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_8",
+                  ending: "on_line_rectangle_2",
+                }
+              ],
             },
           },
         },
@@ -3813,152 +4125,6 @@ function drawConnectingLines(JSON_Data,GlobalHeight) {
 }
 drawConnectingLines(JSON_Data,height);
 
-function drawBottomTimelineSeries(JSON_Data) {
-  const pptBox = document.getElementById("PPT-Box");
-  if (!pptBox) {
-    console.warn("PPT-Box not found.");
-    return;
-  }
-
-  JSON_Data.body.forEach((section, sectionIdx) => {
-    if (!section.sub_groups) return;
-
-    section.sub_groups.forEach((sg, idx) => {
-      const timeline = sg.content?.BottomtimelineSeries;
-
-      // If no timeline or no items, remove any previous lines for this subgroup
-      if (!timeline || !timeline.timlines || timeline.timlines.length === 0) {
-        const oldLines = pptBox.querySelectorAll(
-          `[class*="timeline-bottom-line-${sectionIdx}-${idx}-"]`
-        );
-        oldLines.forEach((line) => line.remove());
-        return;
-      }
-
-      timeline.timlines.forEach((item, i) => {
-        const timelineClass = `timeline-bottom-line-${sectionIdx}-${idx}-${i}`;
-
-        // Always remove any old instance first
-        const oldLine = pptBox.querySelector(`.${timelineClass}`);
-        if (oldLine) oldLine.remove();
-        const oldStyle = document.querySelector(
-          `style[data-timeline="${timelineClass}"]`
-        );
-        if (oldStyle) oldStyle.remove();
-
-        // --- Look up endpoints ---
-        const startEl = document.getElementById(item.starting);
-        const endEl = document.getElementById(item.ending);
-
-        // Require BOTH elements present AND visible
-        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl)) {
-          return; // skip if either is missing or hidden
-        }
-
-        // --- Position + style calculations ---
-        const levelStr = item.height || "Level_1";
-        const levelNum = parseInt(levelStr.split("_")[1]) || 1;
-        const baseTopH = direction?(height?160:300):height?160:260;
-        const increment = 5;
-        const rawTopH = baseTopH + (levelNum - 1) * increment;
-        const topH = Math.min(Math.max(rawTopH, 30), direction ? height?280:430 : height?210:360);
-
-        const startRect = startEl.getBoundingClientRect();
-        const endRect = endEl.getBoundingClientRect();
-        const pptRect = pptBox.getBoundingClientRect();
-
-        const startCenterX =
-          startRect.left - pptRect.left + startRect.width / 2;
-        const endCenterX = endRect.left - pptRect.left + endRect.width / 2;
-        const width2 = Math.abs(endCenterX - startCenterX);
-        const left = startRect.left - pptRect.left + startRect.width / 2;
-        const top = startRect.top - pptRect.top + (direction ? 105 : 0);
-
-        const bg =
-          resolveColor(timeline.background_color, JSON_Data.colors) ||
-          "linear-gradient(to right, #f6f4dc10 10%, #ffc305)";
-        const showBorder =
-          item.show_border === "true" || item.show_border === true;
-        const borderColor = showBorder
-          ? resolveColor(timeline.border_color, JSON_Data.colors) || "#ffc100"
-          : "transparent";
-
-        // --- Inject new style ---
-        const style = document.createElement("style");
-        style.setAttribute("data-timeline", timelineClass);
-        style.textContent = `
-          .${timelineClass} {
-            position: absolute;
-            z-index: 4;
-            top: ${topH + top}px;
-            left: ${left}px;
-            width: ${width2 + 4}px;
-            height:20px;
-            pointer-events: none;
-            background: ${bg};
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: end;
-            text-align:right;
-            padding-right: 5px;
-            color: black;
-          }
-          .${timelineClass} p{
-            width:70%;
-            font-size:${getFontSize(7, 8, 9)}px;
-            font-weight:bold;
-            pointer-events: auto;
-            white-space: nowrap;        
-            overflow: hidden;           
-            text-overflow: ellipsis;
-          }
-          .${timelineClass} i{
-            font-size:${getFontSize(10, 11, 12)}px;
-            margin-top:1px;
-            margin-left: 5px;
-          }
-          .${timelineClass}::after {
-            content: "";
-            position: absolute;
-            bottom: 55px;
-            left: -4px;
-            border-radius: 50%;
-            width: 6px;
-            height: 6px;
-            background: ${borderColor};
-          }
-          .${timelineClass}::before {
-            content: "";
-            position: absolute;
-            bottom: 20px;
-            border-top:1px solid ${borderColor};
-            border-right:1px solid ${borderColor};
-            width:${width2}px;
-            left: -3px;
-            height:38px;
-            border-top-right-radius:20px;
-          }
-        `;
-        document.head.appendChild(style);
-
-        // --- Add timeline div ---
-        const div = document.createElement("div");
-        div.className = timelineClass;
-        div.innerHTML =
-          "<p title='" +
-          item.content +
-          "'>" +
-          item.content +
-          "</p><i class='fa-regular fa-clock'></i>";
-        pptBox.appendChild(div);
-      });
-    });
-  });
-}
-drawBottomTimelineSeries(JSON_Data);
-
 function drawConnectingRectangle(JSON_Data,GlobalHeight) {
   const pptBox = document.getElementById("PPT-Box");
   if (!pptBox) {
@@ -4026,7 +4192,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
           parseInt((connection.height || "Level_1").split("_")[1]) || 1;
         const height = Math.min(
           Math.max(20 + (heightLevelNum - 1) * 5, 10),
-          direction ? 140 : 95
+          direction ? GlobalHeight?140:270 : GlobalHeight?95:235
         );
 
         const borderLevelNum =
@@ -4415,7 +4581,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
               offSet +
               "px";
             convDiv.style.width = "125px";
-            convDiv.style.top = `${direction ? 365 : 164}px`;
+            convDiv.style.top = `${direction ? GlobalHeight?365:505 : 164}px`;
 
             const cfg = task.contentConversion;
             const logoCfg = cfg?.logo_titles_config || {};
@@ -4530,6 +4696,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
                 pill.style.margin = "0";
                 pill.style.padding = "8px 6px";
                 pill.style.borderRadius = "16px";
+                pill.style.textAlign="center"
                 pill.style.minWidth = "30px";
                 pill.style.whiteSpace = "nowrap";
                 pill.style.overflow = "hidden";
@@ -4631,7 +4798,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
             "Level_9",
             "Level_10",
           ];
-          const compartmentTop = 510;
+          const compartmentTop = GlobalHeight?510:660;
           const compartmentHeight = 200; // container height
           const compartmentSize = 20; // distance between shapes vertically
           const SHAPE_W = 13;
@@ -6428,6 +6595,166 @@ function warning_Logo(JSON_Data) {
 }
 
 warning_Logo(JSON_Data);
+
+function drawBottomTimelineSeries(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("PPT-Box not found.");
+    return;
+  }
+
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, idx) => {
+      const timeline = sg.content?.BottomtimelineSeries;
+
+      // If no timeline or no items, remove any previous lines for this subgroup
+      if (!timeline || !timeline.timlines || timeline.timlines.length === 0) {
+        const oldLines = pptBox.querySelectorAll(
+          `[class*="timeline-bottom-line-${sectionIdx}-${idx}-"]`
+        );
+        oldLines.forEach((line) => line.remove());
+        return;
+      }
+      console.log(timeline)
+
+      timeline.timlines.forEach((item, i) => {
+        const timelineClass = `timeline-bottom-line-${sectionIdx}-${idx}-${i}`;
+
+        // Always remove any old instance first
+        const oldLine = pptBox.querySelector(`.${timelineClass}`);
+        if (oldLine) oldLine.remove();
+        const oldStyle = document.querySelector(
+          `style[data-timeline="${timelineClass}"]`
+        );
+        if (oldStyle) oldStyle.remove();
+
+        // --- Look up endpoints ---
+        const startEl = document.getElementById(item.starting);
+        const endEl = document.getElementById(item.ending);
+
+        // Require BOTH elements present AND visible
+        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl)) {
+          return; // skip if either is missing or hidden
+        }
+
+        // --- Position + style calculations ---
+        const levelStr = item.height || "Level_1";
+        const levelNum = parseInt(levelStr.split("_")[1]) || 1;
+        const baseTopH = direction?(height?160:300):height?160:260;
+        const increment = 5;
+        const rawTopH = baseTopH + (levelNum - 1) * increment;
+        const topH = Math.min(Math.max(rawTopH, 30), direction ? height?280:430 : height?210:360);
+
+        const startRect = startEl.getBoundingClientRect();
+        const endRect = endEl.getBoundingClientRect();
+        const pptRect = pptBox.getBoundingClientRect();
+
+        const startCenterX =
+        startRect.left - pptRect.left + startRect.width / 2;
+        const endCenterX =
+        endRect.left - pptRect.left + endRect.width / 2;
+
+        const startCenterY =
+        startRect.top - pptRect.top + startRect.height / 2;
+        const endCenterY =
+        endRect.top - pptRect.top + endRect.height / 2;
+
+        const leftX = Math.min(startCenterX, endCenterX);
+        const rightX = Math.max(startCenterX, endCenterX);
+        const width2 = Math.max(rightX - leftX, 10);
+        const midY = (startCenterY + endCenterY) / 2;
+
+        const left = startRect.left - pptRect.left + startRect.width / 2;
+        const top = midY + (direction ? 105 : 0);
+
+
+        const bg =
+          resolveColor(timeline.background_color, JSON_Data.colors) ||
+          "linear-gradient(to right, #f6f4dc10 10%, #ffc305)";
+        const showBorder =
+          item.show_border === "true" || item.show_border === true;
+        const borderColor = showBorder
+          ? resolveColor(timeline.border_color, JSON_Data.colors) || "#ffc100"
+          : "transparent";
+
+        // --- Inject new style ---
+        const style = document.createElement("style");
+        style.setAttribute("data-timeline", timelineClass);
+        style.textContent = `
+          .${timelineClass} {
+            position: absolute;
+            z-index: 4;
+            top: ${topH + top}px;
+            left: ${left}px;
+            width: ${width2 + 4}px;
+            height:20px;
+            pointer-events: none;
+            background: ${bg};
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            text-align:right;
+            padding-right: 5px;
+            color: black;
+          }
+          .${timelineClass} p{
+            width:70%;
+            font-size:${getFontSize(7, 8, 9)}px;
+            font-weight:bold;
+            pointer-events: auto;
+            white-space: nowrap;        
+            overflow: hidden;           
+            text-overflow: ellipsis;
+          }
+          .${timelineClass} i{
+            font-size:${getFontSize(10, 11, 12)}px;
+            margin-top:1px;
+            margin-left: 5px;
+          }
+          .${timelineClass}::after {
+            content: "";
+            position: absolute;
+            bottom: 55px;
+            left: -4px;
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            background: ${borderColor};
+          }
+          .${timelineClass}::before {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            border-top:1px solid ${borderColor};
+            border-right:1px solid ${borderColor};
+            width:${width2}px;
+            left: -3px;
+            height:38px;
+            border-top-right-radius:20px;
+          }
+        `;
+        document.head.appendChild(style);
+
+        // --- Add timeline div ---
+        const div = document.createElement("div");
+        div.className = timelineClass;
+        div.innerHTML =
+          "<p title='" +
+          item.content +
+          "'>" +
+          item.content +
+          "</p><i class='fa-regular fa-clock'></i>";
+        pptBox.appendChild(div);
+      });
+    });
+  });
+}
+drawBottomTimelineSeries(JSON_Data);
+
 
 function ToolTip_Creation(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
