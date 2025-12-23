@@ -6,7 +6,12 @@ JSON_Data = {
       footer_2_label: "Hospital",
       footer_3_label: "Other structure",
       footer_4_label: "Home",
-      footer_5_label: "Hospital Drugstore"
+      footer_5_label: "Hospital Drugstore",
+      footer_6_label: "Ambulatory",
+      footer_7_label: "Hospital",
+      footer_8_label: "Other structure",
+      footer_9_label: "Home",
+      footer_10_label: "Hospital Drugstore"
     },
     label_width: {
       footer_1_width: "90",
@@ -14,6 +19,11 @@ JSON_Data = {
       footer_3_width: "90",
       footer_4_width: "90",
       footer_5_width: "90",
+      footer_6_width: "90",
+      footer_7_width: "90",
+      footer_8_width: "90",
+      footer_9_width: "90",
+      footer_10_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
   },
@@ -1029,10 +1039,14 @@ JSON_Data = {
               display: true,
               connections: [
                 {
-                  starting: "on_line_content_8",
+                  starting: "on_line_content_1",
                   start_from_starting: false,
-                  ending: "on_line_content_13",
+                  ending: "on_line_content_6",
                   end_from_ending: true,
+                  skipSteps:2,
+                  skipPlacement:"start",
+                  starting_logo_ID:"logo_title_id1",
+                  ending_logo_ID:"logo_title_id6",
                   height: "Level_10",
                   border_thickness: "Level_6",
                   config: {
@@ -1604,17 +1618,6 @@ function alignmentDirection(JSON_Portion) {
   }
 }
 
-function alignmentHeight(JSON_Portion){
-  const allowedHight=["normal","extended"];
-  if(allowedHight.includes(JSON_Portion)){
-    return JSON_Portion.toLowerCase();
-  }else{
-    return "normal"
-  }
-}
-
-const height=alignmentHeight(JSON_Data.Page_Configuration.PageHeight)==="normal"
-
 const direction =
   alignmentDirection(JSON_Data.Page_Configuration.direction) === "reverse";
 
@@ -1655,6 +1658,18 @@ function closeAllTooltips() {
   }
   currentlyOpenTooltip = null;
 }
+
+function alignmentHeight(JSON_Portion){
+  const allowedHight=["normal","extended"];
+  if(allowedHight.includes(JSON_Portion)){
+    return JSON_Portion.toLowerCase();
+  }else{
+    return "normal"
+  }
+}
+
+const height=alignmentHeight(JSON_Data.Page_Configuration.PageHeight)==="normal"
+
 
 function convertToFormat(JsonData) {
   let HTML = ``;
@@ -4125,976 +4140,6 @@ function drawConnectingLines(JSON_Data,GlobalHeight) {
 }
 drawConnectingLines(JSON_Data,height);
 
-function drawConnectingRectangle(JSON_Data,GlobalHeight) {
-  const pptBox = document.getElementById("PPT-Box");
-  if (!pptBox) {
-    console.warn("PPT-Box not found.");
-    return;
-  }
-
-  JSON_Data.body.forEach((section, sectionIdx) => {
-    if (!section.sub_groups) return;
-
-    section.sub_groups.forEach((sg, idx) => {
-      const rectangleData = sg.content?.connecting_Rectangle;
-
-      // If not enabled → remove old and skip
-      if (
-        !rectangleData ||
-        !(rectangleData.display === "true" || rectangleData.display === true)
-      ) {
-        const oldRects = pptBox.querySelectorAll(
-          `[class*="connection-Rectangle-sec${sectionIdx}-sub${idx}-rect"]`
-        );
-        oldRects.forEach((rect) => rect.remove());
-        const oldConvRects = pptBox.querySelectorAll(
-          `[class*="conversion-rect-sec${sectionIdx}-sub${idx}-"]`
-        );
-        oldConvRects.forEach((c) => c.remove());
-
-        return;
-      }
-
-      rectangleData.connections.forEach((connection, i) => {
-        const className = `connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}`;
-        // Remove any prior one
-        const oldRect = pptBox.querySelector(`.${className}`);
-        if (oldRect) oldRect.remove();
-
-        // look up endpoints
-        const startEl = document.getElementById(connection.starting);
-        const endEl = document.getElementById(connection.ending);
-        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
-          return;
-
-        // measurements
-        const pptRect = pptBox.getBoundingClientRect();
-        const startRect = startEl.getBoundingClientRect();
-        const endRect = endEl.getBoundingClientRect();
-        const distant_Space = 5;
-
-        const startX =
-          connection.start_from_starting === "true" ||
-          connection.start_from_starting === true
-            ? startRect.left - distant_Space
-            : startRect.left + startRect.width + distant_Space;
-
-        const endX =
-          connection.end_from_ending === "true" ||
-          connection.end_from_ending === true
-            ? endRect.left + endRect.width + distant_Space
-            : endRect.left - distant_Space;
-
-        const left = Math.min(startX, endX) - pptRect.left - distant_Space;
-        const width = Math.abs(endX - startX);
-
-        const heightLevelNum =
-          parseInt((connection.height || "Level_1").split("_")[1]) || 1;
-        const height = Math.min(
-          Math.max(20 + (heightLevelNum - 1) * 5, 10),
-          direction ? GlobalHeight?140:270 : GlobalHeight?95:235
-        );
-
-        const borderLevelNum =
-          parseInt((connection.border_thickness || "Level_1").split("_")[1]) ||
-          1;
-        const borderSize = Math.min(
-          Math.max(6 + (borderLevelNum - 1) * 2, 4),
-          20
-        );
-
-        const color =
-          resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
-        const topOffset = 397;
-        const reverseTopOffset = GlobalHeight?312:462;
-        const topOffsetPageReverse = 220;
-        const topOffsetrReversePageReverse = GlobalHeight?490:640;
-
-        // ---- Handle Config ----
-        const config = connection.config;
-        const hasConfig = !!config;
-
-        const icons = config?.fontAwsomeicons || config?.fontAwsomeicon || [];
-        const colors = config?.iconColors || config?.iconColor || [];
-        const iconSizes = config?.iconSize || config?.iconSizes || [];
-        const iconCount = icons.length;
-
-        // justify_content mapping
-        const justifyMap = {
-          center: "center",
-          between: "space-between",
-          evenly: "space-evenly",
-        };
-        const justifyValue =
-          justifyMap[(config?.justify_content || "").toLowerCase()] || "center";
-
-        // width calculation from start_end_gaps
-        const startEndGapsLevel =
-          parseInt((config?.start_end_gaps || "Level_0").split("_")[1]) || 0;
-        const widthPercent = Math.max(0, 100 - startEndGapsLevel * 5);
-
-        const midLineHeight = 14;
-
-        // Shape mapping (NEW PART)
-        const shapeMap = {
-          rectangle: "border-radius: 0 0 0 0;",
-          rounded_sm: "border-radius: 5px;",
-          rounded_lg: "border-radius: 15px;",
-          rounded_x_lg: "border-radius: 25px;",
-          rounded_xx_lg: "border-radius: 35px;",
-          rounded_xxx_lg: "border-radius: 50px;",
-          rounded_bottom_left: "border-radius: 0 0 0 20px;",
-          rounded_bottom_right: "border-radius: 0 0 20px 0;",
-          rounded_top_left: "border-radius: 12px 0 0 0;",
-          rounded_top_right: "border-radius: 0 12px 0 0;",
-          rounded_top: "border-radius: 12px 12px 0 0;",
-          rounded_bottom: "border-radius: 0 0 12px 12px;",
-        };
-
-        const shapeStyle =
-          shapeMap[(config?.shape || "").toLowerCase()] ||
-          shapeMap["rectangle"];
-
-        // inject style for rectangle
-        const styleEl = document.createElement("style");
-        styleEl.textContent = `
-          .${className} {
-            position: absolute;
-            left: ${left}px;
-            width: ${width}px;
-            height: ${height}px;
-            border-bottom: ${borderSize}px solid ${color};
-            border-left: ${borderSize}px solid ${color};
-            border-right: ${borderSize}px solid ${color};
-            ${shapeStyle}
-            box-sizing: border-box;
-            background:transparent;
-            pointer-events: none;
-            z-index: 2;
-            overflow: visible;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            ${
-              alignmentDirection(config.direction) === "reverse"
-                ? `bottom: ${
-                    direction
-                      ? topOffsetrReversePageReverse + midLineHeight
-                      : reverseTopOffset + midLineHeight
-                  }px;
-               transform:rotateZ(180deg);
-              `
-                : `top: ${direction ? topOffsetPageReverse : topOffset}px;`
-            }
-          }
-
-          .${className} .icon-row {
-            display: flex;
-            justify-content: ${justifyValue};
-            width: ${widthPercent}%;
-            align-items: center;
-            position: absolute;
-            margin: 0;
-            bottom: -${borderSize / 2}px;
-            transform: translateY(50%);
-            pointer-events: auto;
-          }
-
-          .${className} .icon-row i {
-            transition: font-size 0.2s ease;
-          }
-            
-        `;
-        // inject style for the small square logo above text (only once)
-        if (!document.getElementById("rect-icon-style")) {
-          const style = document.createElement("style");
-          style.id = "rect-icon-style";
-          style.innerHTML = `
-            .rect-logo {
-              position: absolute;
-              top: -15px; 
-              right: 5px;
-              width: 15px;
-              height: 15px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border-radius: 2px;
-              box-sizing: border-box;
-              cursor: pointer;
-              background: white;
-              z-index: 5;
-              transition: border-color .12s, transform .08s;
-            }
-            .rect-logo:active { transform: scale(.96); }
-            .rect-logo i { font-size: 10px; line-height: 1; margin-top:1px; }
-            .icon-row .wrapper-relative { position: relative; }
-          `;
-          document.head.appendChild(style);
-        }
-
-        document.head.appendChild(styleEl);
-
-        // create main rect container
-        const rectDiv = document.createElement("div");
-        rectDiv.className = className;
-
-        // Prepare a list to track conversion tasks that must be created AFTER rectDiv is appended
-        const conversionTasks = [];
-        const thingsToDisplay = [];
-
-        // if config present → add icon row
-        if (hasConfig && iconCount > 0) {
-          const iconRow = document.createElement("div");
-          iconRow.className = "icon-row";
-
-          const contents = Array.isArray(config?.content) ? config.content : [];
-
-          icons.forEach((iconClass, iconIdx) => {
-            const iconEl = document.createElement("i");
-            iconEl.className = iconClass;
-            iconEl.style.color =
-              resolveColor(colors[iconIdx], JSON_Data.colors) || "black";
-
-            // dynamic icon size
-            const sizeLevel =
-              parseInt((iconSizes[iconIdx] || "Size_0").split("_")[1]) || 0;
-            const baseSize = 8;
-            const fontSize = Math.min(baseSize + sizeLevel * 2, 20);
-            iconEl.style.fontSize = `${fontSize}px`;
-
-            const contentItem = contents[iconIdx] || {};
-
-            // If content object is empty, append icon only
-            if (!Object.keys(contentItem).length) {
-              iconRow.appendChild(iconEl);
-              return;
-            }
-
-            // normalize content keys (support provided keys)
-            const text = contentItem.text || "";
-            const textDetail = contentItem.textDetail || text;
-            const IdName = contentItem?.rectangleTooltipId;
-            const contentConversionShow =
-              contentItem?.content_conversion?.display || false;
-            const contentConversion = contentItem?.content_conversion;
-
-            // wrapper that contains icon + text
-            const wrapper = document.createElement("div");
-            wrapper.style.display = "flex";
-            wrapper.style.alignItems = "center";
-            wrapper.style.justifyContent = "space-between";
-            wrapper.style.gap = "4px";
-
-            const p = document.createElement("p");
-            p.textContent = limitText(text, 10);
-            p.style.color = contentItem.textColor || "white";
-            p.style.margin = "0";
-            direction ? "" : (p.style.position = "relative");
-            if (contentItem?.background_color) {
-              p.style.padding = "10px";
-              p.classList.add("box-shadow-box");
-              p.style.textAlign = "center";
-              p.style.borderRadius = "20px";
-              p.style.width = "130px";
-              p.style.backgroundColor =
-                resolveColor(contentItem?.background_color, JSON_Data.colors) ||
-                "white";
-              p.style.color = contentItem.textColor || "black";
-              p.textContent = limitText(text, 20);
-            }
-
-            p.style.fontSize = `${getFontSize(9, 10, 11)}px`;
-            p.title = textDetail || text;
-            if (IdName) p.id = IdName;
-
-            wrapper.appendChild(iconEl);
-            wrapper.appendChild(p);
-            if (
-              contentItem?.iconConfig?.display == true &&
-              contentItem?.content_conversion?.display == true
-            ) {
-              const iconCfg = contentItem.iconConfig;
-
-              wrapper.classList.add("wrapper-relative");
-
-              // SET INITIAL TOGGLE STATE
-              const defaultState = (
-                iconCfg.ByDefaultBehaviour || "Close"
-              ).toLowerCase();
-              let isOpen = defaultState === "open";
-
-              // DEFINE UNIQUE RECTANGLE ID NOW (same format as conversionClass later)
-              const rectangle_id = contentItem.rectangleTooltipId;
-
-              // STORE INITIAL STATE IN thingsToDisplay
-              thingsToDisplay.push({
-                rectangle_id,
-                isOpen,
-              });
-
-              // BUILD THE TOGGLE BUTTON
-              const logo = document.createElement("div");
-              logo.className = "rect-logo";
-
-              const icon = document.createElement("i");
-              logo.appendChild(icon);
-
-              // UPDATE UI FUNCTION
-              function updateLogoUI() {
-                if (isOpen) {
-                  icon.className = iconCfg.OpenFontAwsomeicon;
-                  icon.style.color =
-                    resolveColor(
-                      iconCfg.OpenFontAwsomeiconColor,
-                      JSON_Data.colors
-                    ) || "black";
-                  logo.style.border = `1px solid ${
-                    resolveColor(
-                      iconCfg.OpenFontAwsomeiconColor,
-                      JSON_Data.colors
-                    ) || "black"
-                  }`;
-                } else {
-                  icon.className = iconCfg.CloseFontAwsomeicon;
-                  icon.style.color =
-                    resolveColor(
-                      iconCfg.CloseFontAwsomeiconColor,
-                      JSON_Data.colors
-                    ) || "black";
-                  logo.style.border = `1px solid ${
-                    resolveColor(
-                      iconCfg.CloseFontAwsomeiconColor,
-                      JSON_Data.colors
-                    ) || "black"
-                  }`;
-                }
-              }
-
-              // INITIAL UPDATE
-              updateLogoUI();
-
-              // CLICK TOGGLE
-              logo.addEventListener("click", (e) => {
-                e.stopPropagation();
-
-                // 1) Toggle state
-                isOpen = !isOpen;
-
-                // 2) Update global array
-                const stored = thingsToDisplay.find(
-                  (t) => t.rectangle_id === rectangle_id
-                );
-                if (stored) stored.isOpen = isOpen;
-
-                // 3) Find rectangle via ID and toggle it
-                const rectId = rectangle_id + "_rectangle";
-                const rectEl = document.getElementById(rectId);
-                if (rectEl) {
-                  rectEl.style.display = isOpen ? "" : "none";
-                }
-
-                // 4) Toggle polygon stack using the new ID
-                const polygonId = rectangle_id + "_Polygon";
-                const polygonEl = document.getElementById(polygonId);
-                if (polygonEl) {
-                  polygonEl.style.display = isOpen ? "" : "none";
-                }
-
-                const lineEl = document.getElementById(rectangle_id + "_Line");
-                if (lineEl) lineEl.style.display = isOpen ? "" : "none";
-
-                const pointEl = document.getElementById(
-                  rectangle_id + "_Line_Point"
-                );
-                if (pointEl) pointEl.style.display = isOpen ? "" : "none";
-
-                // 5) Update icon UI
-                updateLogoUI();
-              });
-
-              wrapper.appendChild(logo);
-            }
-
-            iconRow.appendChild(wrapper);
-            if (contentConversionShow) {
-              conversionTasks.push({
-                contentConversion,
-                iconIdx,
-                targetId: IdName || null,
-                wrapperIndex: iconRow.children.length - 1,
-                connectionIndex: i,
-              });
-            }
-          });
-
-          rectDiv.appendChild(iconRow);
-        }
-        pptBox.appendChild(rectDiv);
-
-        let linkPairs = [];
-        // --- New Part ---
-        if (conversionTasks.length > 0) {
-          conversionTasks.forEach((task, tIndex) => {
-            const convClass = `conversion-rect-sec${sectionIdx}-sub${idx}-conn${i}-icon${task.iconIdx}`;
-            const oldConv = pptBox.querySelector(`.${convClass}`);
-            if (oldConv) oldConv.remove();
-
-            let targetEl = task.targetId
-              ? document.getElementById(task.targetId)
-              : null;
-
-            if (!targetEl) {
-              const iconRowEl = rectDiv.querySelector(".icon-row");
-              if (iconRowEl) {
-                const wrapperEl = iconRowEl.children[task.wrapperIndex];
-                if (wrapperEl)
-                  targetEl = wrapperEl.querySelector("p") || wrapperEl;
-              }
-            }
-            if (!targetEl) return;
-
-            const targetRect = targetEl.getBoundingClientRect();
-            const pptNowRect = pptBox.getBoundingClientRect();
-
-            // MAIN DIV
-            const convDiv = document.createElement("div");
-            convDiv.className = convClass;
-            convDiv.id = task.targetId + "_rectangle";
-            convDiv.style.position = "absolute";
-            convDiv.style.zIndex = 5;
-            linkPairs.push({
-              convClass,
-              polygonClass: null,
-            });
-
-            const convWidth = 145;
-            const offSet = 6;
-
-            convDiv.style.left =
-              Math.round(
-                targetRect.left -
-                  pptNowRect.left +
-                  targetRect.width / 2 -
-                  convWidth / 2
-              ) +
-              offSet +
-              "px";
-            convDiv.style.width = "125px";
-            convDiv.style.top = `${direction ? GlobalHeight?365:505 : 164}px`;
-
-            const cfg = task.contentConversion;
-            const logoCfg = cfg?.logo_titles_config || {};
-
-            const titles = logoCfg.logo_title || [];
-            const details = logoCfg.logo_detail || [];
-            const bgColors = logoCfg.logo_title_background_color || [];
-            const borderColors = logoCfg.logo_title_border_color || [];
-            const textColors = logoCfg.logo_title_color || [];
-            const idPrefix = logoCfg.logo_id_name || "";
-
-            // UNIQUE CLASS NAME FOR THIS RECTANGLE
-            const uniqueRectClass = `icon_plus_name_rectangle_${i}_${task.iconIdx}`;
-
-            const iconPlus = document.createElement("div");
-            iconPlus.className = `icon_plus_name ${uniqueRectClass}`;
-            iconPlus.style.display = "flex";
-            iconPlus.style.flexDirection = "column";
-            iconPlus.style.alignItems = "center";
-
-            // USER ICON
-            const userIcon = document.createElement("i");
-            userIcon.className = `fa-solid fa-user fa-user-rectangle_${i}_${task.iconIdx}`;
-
-            // dynamic user icon colors
-            userIcon.style.border = `2px solid ${
-              resolveColor(cfg.logo_heading_border_color, JSON_Data.colors) ||
-              "#a334c8"
-            }`;
-            userIcon.style.background =
-              resolveColor(cfg.logo_color, JSON_Data.colors) || "#a334c8";
-            userIcon.style.position = "relative";
-            userIcon.style.webkitBackgroundClip = "text";
-            userIcon.style.webkitTextFillColor = "transparent";
-            userIcon.style.display = "flex";
-            userIcon.style.alignItems = "center";
-            userIcon.style.justifyContent = "center";
-            userIcon.style.width = "35px";
-            userIcon.style.height = "35px";
-            userIcon.style.borderRadius = "50%";
-            userIcon.style.bottom = "-10px";
-            userIcon.style.zIndex = "3";
-            userIcon.style.pointerEvents="auto"
-
-            iconPlus.appendChild(userIcon);
-
-            // WRAPPER CLASS
-            let wrapperClass = "";
-            if (titles.length === 1)
-              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-one";
-            else if (titles.length === 2)
-              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-two";
-            else if (titles.length === 3)
-              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-three";
-            else
-              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-four";
-
-            const wrapper = document.createElement("div");
-            wrapper.className = wrapperClass;
-            wrapper.style.position = "relative";
-            wrapper.style.zIndex = "5";
-            if (idPrefix) wrapper.id = idPrefix;
-
-            // ==== 2×2 PILL GRID ====
-            function hasValue(v) {
-              return v !== null && v !== undefined && String(v).trim() !== "";
-            }
-
-            // Find how many actual items you have
-            const itemsCount = Math.max(
-              (titles && titles.length) || 0,
-              (details && details.length) || 0
-            );
-
-            for (let row = 0; row < 2; row++) {
-              const rowDiv = document.createElement("div");
-              rowDiv.className = "icon-plus-name-box-enclosed-rectangle";
-              rowDiv.style.width = "100%";
-              rowDiv.style.height = "49%";
-              rowDiv.style.display = "flex";
-              rowDiv.style.alignItems = "center";
-              rowDiv.style.justifyContent = "center";
-
-              for (let col = 0; col < 2; col++) {
-                const idx2 = row * 2 + col;
-
-                //  If no data exists for this index → SKIP
-                if (idx2 >= itemsCount) continue;
-                const title = titles?.[idx2];
-                const detail = details?.[idx2];
-
-                //  Skip if both title & detail are empty/undefined
-                if (!hasValue(title) && !hasValue(detail)) continue;
-
-                // Build pill
-                const pill = document.createElement("p");
-                pill.className = `icon-plus-name-paragraph-${i}-${
-                  task.iconIdx
-                }-${idx2 + 1}`;
-                pill.title = hasValue(detail)
-                  ? detail
-                  : hasValue(title)
-                  ? title
-                  : "";
-                pill.textContent = hasValue(title)
-                  ? title
-                  : hasValue(detail)
-                  ? detail
-                  : "";
-
-                pill.style.fontSize = "9px";
-                pill.style.margin = "0";
-                pill.style.padding = "8px 6px";
-                pill.style.borderRadius = "16px";
-                pill.style.textAlign="center"
-                pill.style.minWidth = "30px";
-                pill.style.whiteSpace = "nowrap";
-                pill.style.overflow = "hidden";
-                pill.style.textOverflow = "ellipsis";
-
-                pill.style.background =
-                  resolveColor(bgColors[idx2], JSON_Data.colors) || "white";
-
-                pill.style.border = `1px solid ${
-                  resolveColor(borderColors[idx2], JSON_Data.colors) ||
-                  "#a334c8"
-                }`;
-
-                pill.style.color = textColors[idx2] || "#000";
-
-                rowDiv.appendChild(pill);
-              }
-
-              wrapper.appendChild(rowDiv);
-            }
-
-            iconPlus.appendChild(wrapper);
-            convDiv.appendChild(iconPlus);
-            pptBox.appendChild(convDiv);
-
-            const titleEl = document.getElementById(task.targetId);
-            const pptRect = pptBox.getBoundingClientRect();
-            const titleRect = titleEl.getBoundingClientRect();
-            const reactEl = convDiv.querySelector(".icon_plus_name");
-            const rectBoxRect = reactEl.getBoundingClientRect();
-
-            const titleBottomY = titleRect.bottom - pptRect.top;
-            const rectangleTopY = rectBoxRect.top - pptRect.top;
-            let verticalGap = rectangleTopY - titleBottomY;
-            if (!direction) {
-              verticalGap =
-                titleRect.y - rectBoxRect.y - rectBoxRect.height + 38;
-            }
-            const styleId = `style-${convClass}`;
-            let oldStyle = document.getElementById(styleId);
-            if (oldStyle) oldStyle.remove();
-            const style = document.createElement("style");
-            style.id = styleId;
-            const safeClass = convClass.replace(/:/g, "\\:");
-
-            const state = thingsToDisplay.find(
-              (t) => t.rectangle_id === task.targetId
-            );
-            if (state && !state.isOpen) {
-              convDiv.style.display = "none";
-            }
-
-            // Inject CSS with dynamic height using verticalGap
-            style.textContent = `
-  .${safeClass}::before {
-      content: "";
-      position: absolute;
-      top: ${direction ? -verticalGap + 10 : "45"}px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: ${verticalGap}px;
-      background: ${
-        resolveColor(cfg.top_down_arrow?.line_color, JSON_Data.colors) ||
-        "#a334c8"
-      };
-      z-index: 2;
-  }
-  .${safeClass}::after {
-      content: "";
-      position: absolute;
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent;
-      left: 50%;
-      top: ${direction ? -verticalGap + 5 : verticalGap + 40}px;
-      z-index: 1;
-      transform: translateX(-50%);
-      border-${direction ? "bottom" : "top"}: 7px solid ${
-              resolveColor(cfg.top_down_arrow?.arrow_color, JSON_Data.colors) ||
-              "#a334c8"
-            };;
-  }
-`;
-
-            document.head.appendChild(style);
-          });
-        }
-        // New Part - Polygons
-        if (conversionTasks.length > 0) {
-          const allowedLevels = [
-            "Level_1",
-            "Level_2",
-            "Level_3",
-            "Level_4",
-            "Level_5",
-            "Level_6",
-            "Level_7",
-            "Level_8",
-            "Level_9",
-            "Level_10",
-          ];
-          const compartmentTop = GlobalHeight?510:660;
-          const compartmentHeight = 200; // container height
-          const compartmentSize = 20; // distance between shapes vertically
-          const SHAPE_W = 13;
-          const SHAPE_H = 11;
-
-          // For this connection: look at content[] (each may carry content_conversion)
-          const contents = Array.isArray(connection.config?.content)
-            ? connection.config.content
-            : [];
-
-          contents.forEach((contentItem, contentIdx) => {
-            const conv = contentItem?.content_conversion;
-            if (!conv || !(conv.display === true || conv.display === "true"))
-              return;
-            const targetId = contentItem.rectangleTooltipId;
-
-            // bottom_shape_positions may be an object (single) or array (normalize to array)
-            let bottomShapePositions =
-              conv.bottom_shape_positions || conv.bottom_shape_positions;
-            // support both object and array-of-objects
-            if (!bottomShapePositions) return;
-            if (!Array.isArray(bottomShapePositions)) {
-              bottomShapePositions = [bottomShapePositions];
-            }
-            let targetEl = null;
-            const rectTooltipId = contentItem.rectangleTooltipId || null;
-            if (rectTooltipId)
-              targetEl = document.getElementById(rectTooltipId);
-
-            // fallback: try to find matching wrapper inside rectDiv (if it exists)
-            if (!targetEl) {
-              const iconRowEl = rectDiv
-                ? rectDiv.querySelector(".icon-row")
-                : null;
-              if (iconRowEl) {
-                const wrapper =
-                  iconRowEl.children[contentIdx] || iconRowEl.children[0];
-                if (wrapper) {
-                  targetEl = wrapper.querySelector("p") || wrapper;
-                }
-              }
-            }
-
-            if (!targetEl || !isVisible(targetEl)) {
-              const oldClassNamePrefix = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}`;
-              const oldEls = pptBox.querySelectorAll(
-                `[class*="${oldClassNamePrefix}"]`
-              );
-              oldEls.forEach((el) => {
-                const styleTag = document.querySelector(
-                  `style[data-conn="${el.className}"]`
-                );
-                if (styleTag) styleTag.remove();
-                el.remove();
-              });
-              return;
-            }
-
-            const pptNow = pptBox.getBoundingClientRect();
-            const targetRect = targetEl.getBoundingClientRect();
-            const midpointX = targetRect.left + targetRect.width / 2;
-            const leftRelativeToPPT = Math.round(midpointX - pptNow.left);
-
-            // For each bottomShapePositions group create a vertical polygon stack container
-            bottomShapePositions.forEach((group, groupIdx) => {
-              // className must be unique
-              const className = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}_grp${groupIdx}`;
-              linkPairs[linkPairs.length - 1].polygonClass = className;
-
-              // cleanup previous
-              const prev = pptBox.querySelector(`.${className}`);
-              if (prev) prev.remove();
-              const prevStyle = document.querySelector(
-                `style[data-conn="${className}"]`
-              );
-              if (prevStyle) prevStyle.remove();
-
-              // normalize levels array
-              let rawLevels = Array.isArray(group.levels) ? group.levels : [];
-              const levelsArr = rawLevels
-                .map((lv) => (lv || "").toString().trim())
-                .filter(
-                  (lv, p, self) =>
-                    allowedLevels.includes(lv) && self.indexOf(lv) === p
-                );
-
-              if (!levelsArr.length) return; // nothing to draw
-
-              const state = thingsToDisplay.find(
-                (t) => t.rectangle_id === contentItem.rectangleTooltipId
-              );
-              // prepare style (vertical container positioned by midpoint)
-              const styleEl = document.createElement("style");
-              styleEl.setAttribute("data-conn", className);
-              styleEl.textContent = `
-.${className} {
-  position: absolute;
-  left: ${leftRelativeToPPT - Math.round(SHAPE_W / 2) - (direction ? 3 : 0)}px;
-  top: ${compartmentTop}px;
-  width: ${SHAPE_W}px;
-  height: ${compartmentHeight}px;
-  z-index: 5;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  pointer-events: none;
-  box-sizing: border-box;
-}
-.${className} .polygon-inner {
-  width: ${SHAPE_W}px;
-  height: ${SHAPE_H}px;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  transform: translateY(0) rotateZ(30deg);
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-bottom: 0px;
-  visibility: hidden;
-  position: absolute;
-}
-`;
-              document.head.appendChild(styleEl);
-
-              // build container
-              const container = document.createElement("div");
-              container.className = className;
-              container.id = targetId + "_Polygon";
-              // create up to 10 compartments (Level_1 .. Level_10)
-              for (let levelIndex = 1; levelIndex <= 10; levelIndex++) {
-                const inner = document.createElement("div");
-                inner.className = "polygon-inner";
-                inner.style.top = `${
-                  (levelIndex - 1) * compartmentSize +
-                  (compartmentSize - SHAPE_H) / 2
-                }px`;
-
-                const levelName = `Level_${levelIndex}`;
-                if (levelsArr.includes(levelName)) {
-                  inner.style.visibility = "visible";
-
-                  // color resolution: group.color can be array or single value
-                  let colorVal = null;
-                  if (
-                    Array.isArray(group.color) &&
-                    group.color[levelIndex - 1]
-                  ) {
-                    colorVal = group.color[levelIndex - 1];
-                  } else if (Array.isArray(group.color) && group.color[0]) {
-                    colorVal = group.color[0];
-                  } else if (group.color) {
-                    colorVal = group.color;
-                  }
-
-                  let resolvedColor = null;
-                  try {
-                    if (typeof resolveColor === "function" && colorVal)
-                      resolvedColor = resolveColor(colorVal, JSON_Data.colors);
-                  } catch (e) {
-                    resolvedColor = null;
-                  }
-                  inner.style.background =
-                    resolvedColor || colorVal || "#dcdcdc";
-                }
-
-                container.appendChild(inner);
-              }
-              if (state && !state.isOpen) {
-                container.style.display = "none";
-              }
-              pptBox.appendChild(container);
-            });
-          });
-        }
-
-        if (conversionTasks.length > 0) {
-          conversionTasks.forEach((task, tIndex) => {
-            linkPairs.forEach((pair) => {
-              const rectSelector = direction
-                ? `.${pair.convClass}`
-                : `#${task.targetId}`;
-              const rectEl = document.querySelector(rectSelector);
-              const polyEl = document.querySelector(`.${pair.polygonClass}`);
-
-              if (!rectEl || !polyEl) return;
-
-              // Temporarily show hidden elements for measurement
-              const wasRectHidden = rectEl.style.display === "none";
-              const wasPolyHidden = polyEl.style.display === "none";
-
-              if (wasRectHidden) rectEl.style.display = "";
-              if (wasPolyHidden) polyEl.style.display = "";
-
-              // Measure
-              const rectBox = rectEl.getBoundingClientRect();
-              const polyBox = polyEl.getBoundingClientRect();
-              const pptRect = pptBox.getBoundingClientRect();
-
-              // Restore original hidden state
-              if (wasRectHidden) rectEl.style.display = "none";
-              if (wasPolyHidden) polyEl.style.display = "none";
-
-              const top = rectBox.bottom - pptRect.top;
-              const bottom = polyBox.top - pptRect.top;
-              const height = bottom - top;
-
-              if (height <= 0) return;
-
-              // Unique IDs for line and point
-              const lineId = task.targetId + "_Line";
-              const pointId = task.targetId + "_Line_Point";
-
-              // Remove old line & point
-              const oldLine = document.getElementById(lineId);
-              if (oldLine) oldLine.remove();
-
-              const oldPoint = document.getElementById(pointId);
-              if (oldPoint) oldPoint.remove();
-
-              // Colors
-              const BottomLineColor =
-                resolveColor(
-                  task.contentConversion.bottom_line_color,
-                  JSON_Data.colors
-                ) || "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
-              const BottomPointColor =
-                resolveColor(
-                  task.contentConversion.bottom_point_color,
-                  JSON_Data.colors
-                ) || "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
-
-              // Height offset by levels
-              const offsets = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185];
-              const levelStr =
-                task.contentConversion.bottom_Line_postion || "Level_1";
-              const levelNum = parseInt(levelStr.split("_")[1]);
-              let LineHeightOffset = offsets[levelNum - 1] ?? offsets[0];
-
-              // Point position adjustment
-              let logo_title_num =
-                task.contentConversion.logo_titles_config.logo_title.length;
-              logo_title_num = Math.max(1, Math.min(logo_title_num, 4));
-
-              const topValues = { 1: 4, 2: 4, 3: 4, 4: 30 };
-              const topPx = topValues[logo_title_num] ?? 22;
-
-              // Calculate X position
-              const xCenter = rectBox.left + rectBox.width / 2 - pptRect.left;
-
-              // --- Create the vertical line ---
-              const lineDiv = document.createElement("div");
-              lineDiv.id = lineId;
-              lineDiv.style.position = "absolute";
-              lineDiv.style.left = xCenter + "px";
-              lineDiv.style.top = top + "px";
-              lineDiv.style.width = "1px";
-              lineDiv.style.height = height + LineHeightOffset + "px";
-              lineDiv.style.background = BottomLineColor;
-              lineDiv.style.transform = "translateX(-50%)";
-              lineDiv.style.zIndex = "3";
-
-              // --- Create the circle point ---
-              const pointDiv = document.createElement("div");
-              pointDiv.id = pointId;
-              pointDiv.style.position = "absolute";
-              pointDiv.style.left = xCenter + "px";
-              pointDiv.style.top = top - topPx + "px";
-              if (!direction) {
-                pointDiv.style.top = top - 3 + "px";
-              }
-              pointDiv.style.width = "5px";
-              pointDiv.style.height = "5px";
-              pointDiv.style.borderRadius = "50%";
-              pointDiv.style.background = BottomPointColor;
-              pointDiv.style.transform = "translateX(-50%)";
-              pointDiv.style.zIndex = "5";
-
-              pptBox.appendChild(lineDiv);
-              pptBox.appendChild(pointDiv);
-
-              // Hide if default state = close
-              const state = thingsToDisplay.find(
-                (t) => t.rectangle_id === task.targetId
-              );
-              if (state && !state.isOpen) {
-                lineDiv.style.display = "none";
-                pointDiv.style.display = "none";
-              }
-            });
-          });
-        }
-      });
-    });
-  });
-}
-
-drawConnectingRectangle(JSON_Data,height);
-
 function drawConnectingCircle(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
   if (!pptBox) {
@@ -6617,7 +5662,6 @@ function drawBottomTimelineSeries(JSON_Data) {
         oldLines.forEach((line) => line.remove());
         return;
       }
-      console.log(timeline)
 
       timeline.timlines.forEach((item, i) => {
         const timelineClass = `timeline-bottom-line-${sectionIdx}-${idx}-${i}`;
@@ -6898,8 +5942,15 @@ function ToolTip_Creation(JSON_Data) {
               wrapperX = tgtRectNow.left + tgtRectNow.width - CW / 3;
             else wrapperX = tgtRectNow.left - CW / 3 + TW;
 
-            const finalTop = Math.round(wrapperY - pptRectNow.top);
-            const finalLeft = Math.round(wrapperX - pptRectNow.left);
+            let finalTop, finalLeft;
+
+            if (height) {
+              finalTop = Math.round(wrapperY - pptRectNow.top);
+              finalLeft = Math.round(wrapperX - pptRectNow.left);
+            } else {
+              finalTop = Math.round(wrapperY);
+              finalLeft = Math.round(wrapperX);
+            }
 
             wrapper.style.top = `${finalTop}px`;
             wrapper.style.left = `${finalLeft}px`;
@@ -7089,6 +6140,1100 @@ function ToolTip_Creation(JSON_Data) {
 }
 
 ToolTip_Creation(JSON_Data);
+
+const skipSpacingTasks = [];
+function drawConnectingRectangle(JSON_Data,GlobalHeight) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("PPT-Box not found.");
+    return;
+  }
+
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, idx) => {
+      const rectangleData = sg.content?.connecting_Rectangle;
+
+      // If not enabled → remove old and skip
+      if (
+        !rectangleData ||
+        !(rectangleData.display === "true" || rectangleData.display === true)
+      ) {
+        const oldRects = pptBox.querySelectorAll(
+          `[class*="connection-Rectangle-sec${sectionIdx}-sub${idx}-rect"]`
+        );
+        oldRects.forEach((rect) => rect.remove());
+        const oldConvRects = pptBox.querySelectorAll(
+          `[class*="conversion-rect-sec${sectionIdx}-sub${idx}-"]`
+        );
+        oldConvRects.forEach((c) => c.remove());
+
+        return;
+      }
+
+      rectangleData.connections.forEach((connection, i) => {
+        const className = `connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}`;
+        // Remove any prior one
+        const oldRect = pptBox.querySelector(`.${className}`);
+        if (oldRect) oldRect.remove();
+
+        // look up endpoints
+        const startEl = document.getElementById(connection.starting);
+        const endEl = document.getElementById(connection.ending);
+        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
+          return;
+
+        // ---- SKIP STEPS LOGIC (OPTIONAL) ----
+        const skipSteps =
+          typeof connection.skipSteps === "number"
+            ? connection.skipSteps
+            : 0;
+
+        const skipPlacement = connection.skipPlacement || "start";
+
+        skipSpacingTasks.push({
+          skipSteps,
+          skipPlacement,
+          starting: connection.starting,
+          ending: connection.ending
+        });
+
+
+        // measurements
+        const pptRect = pptBox.getBoundingClientRect();
+        const startRect = startEl.getBoundingClientRect();
+        const endRect = endEl.getBoundingClientRect();
+        const distant_Space = 5;
+
+        const startX =
+          connection.start_from_starting === "true" ||
+          connection.start_from_starting === true
+            ? startRect.left - distant_Space
+            : startRect.left + startRect.width + distant_Space;
+
+        const endX =
+          connection.end_from_ending === "true" ||
+          connection.end_from_ending === true
+            ? endRect.left + endRect.width + distant_Space
+            : endRect.left - distant_Space;
+
+        const left = Math.min(startX, endX) - pptRect.left - distant_Space;
+        const width = Math.abs(endX - startX);
+
+        const heightLevelNum =
+          parseInt((connection.height || "Level_1").split("_")[1]) || 1;
+        const height = Math.min(
+          Math.max(20 + (heightLevelNum - 1) * 5, 10),
+          direction ? GlobalHeight?140:270 : GlobalHeight?95:235
+        );
+
+        const borderLevelNum =
+          parseInt((connection.border_thickness || "Level_1").split("_")[1]) ||
+          1;
+        const borderSize = Math.min(
+          Math.max(6 + (borderLevelNum - 1) * 2, 4),
+          20
+        );
+
+        const color =
+          resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
+        const topOffset = 397;
+        const reverseTopOffset = GlobalHeight?312:462;
+        const topOffsetPageReverse = 220;
+        const topOffsetrReversePageReverse = GlobalHeight?490:640;
+
+        // ---- Handle Config ----
+        const config = connection.config;
+        const hasConfig = !!config;
+
+        const icons = config?.fontAwsomeicons || config?.fontAwsomeicon || [];
+        const colors = config?.iconColors || config?.iconColor || [];
+        const iconSizes = config?.iconSize || config?.iconSizes || [];
+        const iconCount = icons.length;
+
+        // justify_content mapping
+        const justifyMap = {
+          center: "center",
+          between: "space-between",
+          evenly: "space-evenly",
+        };
+        const justifyValue =
+          justifyMap[(config?.justify_content || "").toLowerCase()] || "center";
+
+        // width calculation from start_end_gaps
+        const startEndGapsLevel =
+          parseInt((config?.start_end_gaps || "Level_0").split("_")[1]) || 0;
+        const widthPercent = Math.max(0, 100 - startEndGapsLevel * 5);
+
+        const midLineHeight = 14;
+
+        // Shape mapping (NEW PART)
+        const shapeMap = {
+          rectangle: "border-radius: 0 0 0 0;",
+          rounded_sm: "border-radius: 5px;",
+          rounded_lg: "border-radius: 15px;",
+          rounded_x_lg: "border-radius: 25px;",
+          rounded_xx_lg: "border-radius: 35px;",
+          rounded_xxx_lg: "border-radius: 50px;",
+          rounded_bottom_left: "border-radius: 0 0 0 20px;",
+          rounded_bottom_right: "border-radius: 0 0 20px 0;",
+          rounded_top_left: "border-radius: 12px 0 0 0;",
+          rounded_top_right: "border-radius: 0 12px 0 0;",
+          rounded_top: "border-radius: 12px 12px 0 0;",
+          rounded_bottom: "border-radius: 0 0 12px 12px;",
+        };
+
+        const shapeStyle =
+          shapeMap[(config?.shape || "").toLowerCase()] ||
+          shapeMap["rectangle"];
+
+        // inject style for rectangle
+        const styleEl = document.createElement("style");
+        styleEl.textContent = `
+          .${className} {
+            position: absolute;
+            left: ${left}px;
+            width: ${width}px;
+            height: ${height}px;
+            border-bottom: ${borderSize}px solid ${color};
+            border-left: ${borderSize}px solid ${color};
+            border-right: ${borderSize}px solid ${color};
+            ${shapeStyle}
+            box-sizing: border-box;
+            background:transparent;
+            pointer-events: none;
+            z-index: 2;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            ${
+              alignmentDirection(config.direction) === "reverse"
+                ? `bottom: ${
+                    direction
+                      ? topOffsetrReversePageReverse + midLineHeight
+                      : reverseTopOffset + midLineHeight
+                  }px;
+               transform:rotateZ(180deg);
+              `
+                : `top: ${direction ? topOffsetPageReverse : topOffset}px;`
+            }
+          }
+
+          .${className} .icon-row {
+            display: flex;
+            justify-content: ${justifyValue};
+            width: ${widthPercent}%;
+            align-items: center;
+            position: absolute;
+            margin: 0;
+            bottom: -${borderSize / 2}px;
+            transform: translateY(50%);
+            pointer-events: auto;
+          }
+
+          .${className} .icon-row i {
+            transition: font-size 0.2s ease;
+          }
+            
+        `;
+        // inject style for the small square logo above text (only once)
+        if (!document.getElementById("rect-icon-style")) {
+          const style = document.createElement("style");
+          style.id = "rect-icon-style";
+          style.innerHTML = `
+            .rect-logo {
+              position: absolute;
+              top: -15px; 
+              right: 5px;
+              width: 15px;
+              height: 15px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 2px;
+              box-sizing: border-box;
+              cursor: pointer;
+              background: white;
+              z-index: 5;
+              transition: border-color .12s, transform .08s;
+            }
+            .rect-logo:active { transform: scale(.96); }
+            .rect-logo i { font-size: 10px; line-height: 1; margin-top:1px; }
+            .icon-row .wrapper-relative { position: relative; }
+          `;
+          document.head.appendChild(style);
+        }
+
+        document.head.appendChild(styleEl);
+
+        // create main rect container
+        const rectDiv = document.createElement("div");
+        rectDiv.className = className;
+
+        // Prepare a list to track conversion tasks that must be created AFTER rectDiv is appended
+        const conversionTasks = [];
+        const thingsToDisplay = [];
+
+        // if config present → add icon row
+        if (hasConfig && iconCount > 0) {
+          const iconRow = document.createElement("div");
+          iconRow.className = "icon-row";
+
+          const contents = Array.isArray(config?.content) ? config.content : [];
+
+          icons.forEach((iconClass, iconIdx) => {
+            const iconEl = document.createElement("i");
+            iconEl.className = iconClass;
+            iconEl.style.color =
+              resolveColor(colors[iconIdx], JSON_Data.colors) || "black";
+
+            // dynamic icon size
+            const sizeLevel =
+              parseInt((iconSizes[iconIdx] || "Size_0").split("_")[1]) || 0;
+            const baseSize = 8;
+            const fontSize = Math.min(baseSize + sizeLevel * 2, 20);
+            iconEl.style.fontSize = `${fontSize}px`;
+
+            const contentItem = contents[iconIdx] || {};
+
+            // If content object is empty, append icon only
+            if (!Object.keys(contentItem).length) {
+              iconRow.appendChild(iconEl);
+              return;
+            }
+
+            // normalize content keys (support provided keys)
+            const text = contentItem.text || "";
+            const textDetail = contentItem.textDetail || text;
+            const IdName = contentItem?.rectangleTooltipId;
+            const contentConversionShow =
+              contentItem?.content_conversion?.display || false;
+            const contentConversion = contentItem?.content_conversion;
+
+            // wrapper that contains icon + text
+            const wrapper = document.createElement("div");
+            wrapper.style.display = "flex";
+            wrapper.style.alignItems = "center";
+            wrapper.style.justifyContent = "space-between";
+            wrapper.style.gap = "4px";
+
+            const p = document.createElement("p");
+            p.textContent = limitText(text, 10);
+            p.style.color = contentItem.textColor || "white";
+            p.style.margin = "0";
+            direction ? "" : (p.style.position = "relative");
+            if (contentItem?.background_color) {
+              p.style.padding = "10px";
+              p.classList.add("box-shadow-box");
+              p.style.textAlign = "center";
+              p.style.borderRadius = "20px";
+              p.style.width = "130px";
+              p.style.backgroundColor =
+                resolveColor(contentItem?.background_color, JSON_Data.colors) ||
+                "white";
+              p.style.color = contentItem.textColor || "black";
+              p.textContent = limitText(text, 20);
+            }
+
+            p.style.fontSize = `${getFontSize(9, 10, 11)}px`;
+            p.title = textDetail || text;
+            if (IdName) p.id = IdName;
+
+            wrapper.appendChild(iconEl);
+            wrapper.appendChild(p);
+            if (
+              contentItem?.iconConfig?.display == true &&
+              contentItem?.content_conversion?.display == true
+            ) {
+              const iconCfg = contentItem.iconConfig;
+
+              wrapper.classList.add("wrapper-relative");
+
+              // SET INITIAL TOGGLE STATE
+              const defaultState = (
+                iconCfg.ByDefaultBehaviour || "Close"
+              ).toLowerCase();
+              let isOpen = defaultState === "open";
+
+              // DEFINE UNIQUE RECTANGLE ID NOW (same format as conversionClass later)
+              const rectangle_id = contentItem.rectangleTooltipId;
+
+              // STORE INITIAL STATE IN thingsToDisplay
+              thingsToDisplay.push({
+                rectangle_id,
+                isOpen,
+              });
+
+              // BUILD THE TOGGLE BUTTON
+              const logo = document.createElement("div");
+              logo.className = "rect-logo";
+
+              const icon = document.createElement("i");
+              logo.appendChild(icon);
+
+              // UPDATE UI FUNCTION
+              function updateLogoUI() {
+                if (isOpen) {
+                  icon.className = iconCfg.OpenFontAwsomeicon;
+                  icon.style.color =
+                    resolveColor(
+                      iconCfg.OpenFontAwsomeiconColor,
+                      JSON_Data.colors
+                    ) || "black";
+                  logo.style.border = `1px solid ${
+                    resolveColor(
+                      iconCfg.OpenFontAwsomeiconColor,
+                      JSON_Data.colors
+                    ) || "black"
+                  }`;
+                } else {
+                  icon.className = iconCfg.CloseFontAwsomeicon;
+                  icon.style.color =
+                    resolveColor(
+                      iconCfg.CloseFontAwsomeiconColor,
+                      JSON_Data.colors
+                    ) || "black";
+                  logo.style.border = `1px solid ${
+                    resolveColor(
+                      iconCfg.CloseFontAwsomeiconColor,
+                      JSON_Data.colors
+                    ) || "black"
+                  }`;
+                }
+              }
+
+              // INITIAL UPDATE
+              updateLogoUI();
+
+              // CLICK TOGGLE
+              logo.addEventListener("click", (e) => {
+                e.stopPropagation();
+
+                // 1) Toggle state
+                isOpen = !isOpen;
+
+                // 2) Update global array
+                const stored = thingsToDisplay.find(
+                  (t) => t.rectangle_id === rectangle_id
+                );
+                if (stored) stored.isOpen = isOpen;
+
+                // 3) Find rectangle via ID and toggle it
+                const rectId = rectangle_id + "_rectangle";
+                const rectEl = document.getElementById(rectId);
+                if (rectEl) {
+                  rectEl.style.display = isOpen ? "" : "none";
+                }
+
+                // 4) Toggle polygon stack using the new ID
+                const polygonId = rectangle_id + "_Polygon";
+                const polygonEl = document.getElementById(polygonId);
+                if (polygonEl) {
+                  polygonEl.style.display = isOpen ? "" : "none";
+                }
+
+                const lineEl = document.getElementById(rectangle_id + "_Line");
+                if (lineEl) lineEl.style.display = isOpen ? "" : "none";
+
+                const pointEl = document.getElementById(
+                  rectangle_id + "_Line_Point"
+                );
+                if (pointEl) pointEl.style.display = isOpen ? "" : "none";
+
+                // 5) Update icon UI
+                updateLogoUI();
+              });
+
+              wrapper.appendChild(logo);
+            }
+
+            iconRow.appendChild(wrapper);
+            if (contentConversionShow) {
+              conversionTasks.push({
+                contentConversion,
+                iconIdx,
+                targetId: IdName || null,
+                wrapperIndex: iconRow.children.length - 1,
+                connectionIndex: i,
+              });
+            }
+          });
+
+          rectDiv.appendChild(iconRow);
+        }
+        pptBox.appendChild(rectDiv);
+
+        let linkPairs = [];
+        // --- New Part ---
+        if (conversionTasks.length > 0) {
+          conversionTasks.forEach((task, tIndex) => {
+            const convClass = `conversion-rect-sec${sectionIdx}-sub${idx}-conn${i}-icon${task.iconIdx}`;
+            const oldConv = pptBox.querySelector(`.${convClass}`);
+            if (oldConv) oldConv.remove();
+
+            let targetEl = task.targetId
+              ? document.getElementById(task.targetId)
+              : null;
+
+            if (!targetEl) {
+              const iconRowEl = rectDiv.querySelector(".icon-row");
+              if (iconRowEl) {
+                const wrapperEl = iconRowEl.children[task.wrapperIndex];
+                if (wrapperEl)
+                  targetEl = wrapperEl.querySelector("p") || wrapperEl;
+              }
+            }
+            if (!targetEl) return;
+
+            const targetRect = targetEl.getBoundingClientRect();
+            const pptNowRect = pptBox.getBoundingClientRect();
+
+            // MAIN DIV
+            const convDiv = document.createElement("div");
+            convDiv.className = convClass;
+            convDiv.id = task.targetId + "_rectangle";
+            convDiv.style.position = "absolute";
+            convDiv.style.zIndex = 5;
+            linkPairs.push({
+              convClass,
+              polygonClass: null,
+            });
+
+            const convWidth = 145;
+            const offSet = 6;
+
+            convDiv.style.left =
+              Math.round(
+                targetRect.left -
+                  pptNowRect.left +
+                  targetRect.width / 2 -
+                  convWidth / 2
+              ) +
+              offSet +
+              "px";
+            convDiv.style.width = "125px";
+            convDiv.style.top = `${direction ? GlobalHeight?365:505 : 164}px`;
+
+            const cfg = task.contentConversion;
+            const logoCfg = cfg?.logo_titles_config || {};
+
+            const titles = logoCfg.logo_title || [];
+            const details = logoCfg.logo_detail || [];
+            const bgColors = logoCfg.logo_title_background_color || [];
+            const borderColors = logoCfg.logo_title_border_color || [];
+            const textColors = logoCfg.logo_title_color || [];
+            const idPrefix = logoCfg.logo_id_name || "";
+
+            // UNIQUE CLASS NAME FOR THIS RECTANGLE
+            const uniqueRectClass = `icon_plus_name_rectangle_${i}_${task.iconIdx}`;
+
+            const iconPlus = document.createElement("div");
+            iconPlus.className = `icon_plus_name ${uniqueRectClass}`;
+            iconPlus.style.display = "flex";
+            iconPlus.style.flexDirection = "column";
+            iconPlus.style.alignItems = "center";
+
+            // USER ICON
+            const userIcon = document.createElement("i");
+            userIcon.className = `fa-solid fa-user fa-user-rectangle_${i}_${task.iconIdx}`;
+
+            // dynamic user icon colors
+            userIcon.style.border = `2px solid ${
+              resolveColor(cfg.logo_heading_border_color, JSON_Data.colors) ||
+              "#a334c8"
+            }`;
+            userIcon.style.background =
+              resolveColor(cfg.logo_color, JSON_Data.colors) || "#a334c8";
+            userIcon.style.position = "relative";
+            userIcon.style.webkitBackgroundClip = "text";
+            userIcon.style.webkitTextFillColor = "transparent";
+            userIcon.style.display = "flex";
+            userIcon.style.alignItems = "center";
+            userIcon.style.justifyContent = "center";
+            userIcon.style.width = "35px";
+            userIcon.style.height = "35px";
+            userIcon.style.borderRadius = "50%";
+            userIcon.style.bottom = "-10px";
+            userIcon.style.zIndex = "3";
+            userIcon.style.pointerEvents="auto"
+
+            iconPlus.appendChild(userIcon);
+
+            // WRAPPER CLASS
+            let wrapperClass = "";
+            if (titles.length === 1)
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-one";
+            else if (titles.length === 2)
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-two";
+            else if (titles.length === 3)
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-three";
+            else
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-four";
+
+            const wrapper = document.createElement("div");
+            wrapper.className = wrapperClass;
+            wrapper.style.position = "relative";
+            wrapper.style.zIndex = "5";
+            if (idPrefix) wrapper.id = idPrefix;
+
+            // ==== 2×2 PILL GRID ====
+            function hasValue(v) {
+              return v !== null && v !== undefined && String(v).trim() !== "";
+            }
+
+            // Find how many actual items you have
+            const itemsCount = Math.max(
+              (titles && titles.length) || 0,
+              (details && details.length) || 0
+            );
+
+            for (let row = 0; row < 2; row++) {
+              const rowDiv = document.createElement("div");
+              rowDiv.className = "icon-plus-name-box-enclosed-rectangle";
+              rowDiv.style.width = "100%";
+              rowDiv.style.height = "49%";
+              rowDiv.style.display = "flex";
+              rowDiv.style.alignItems = "center";
+              rowDiv.style.justifyContent = "center";
+
+              for (let col = 0; col < 2; col++) {
+                const idx2 = row * 2 + col;
+
+                //  If no data exists for this index → SKIP
+                if (idx2 >= itemsCount) continue;
+                const title = titles?.[idx2];
+                const detail = details?.[idx2];
+
+                //  Skip if both title & detail are empty/undefined
+                if (!hasValue(title) && !hasValue(detail)) continue;
+
+                // Build pill
+                const pill = document.createElement("p");
+                pill.className = `icon-plus-name-paragraph-${i}-${
+                  task.iconIdx
+                }-${idx2 + 1}`;
+                pill.title = hasValue(detail)
+                  ? detail
+                  : hasValue(title)
+                  ? title
+                  : "";
+                pill.textContent = hasValue(title)
+                  ? title
+                  : hasValue(detail)
+                  ? detail
+                  : "";
+
+                pill.style.fontSize = "9px";
+                pill.style.margin = "0";
+                pill.style.padding = "8px 6px";
+                pill.style.borderRadius = "16px";
+                pill.style.textAlign="center"
+                pill.style.minWidth = "30px";
+                pill.style.whiteSpace = "nowrap";
+                pill.style.overflow = "hidden";
+                pill.style.textOverflow = "ellipsis";
+
+                pill.style.background =
+                  resolveColor(bgColors[idx2], JSON_Data.colors) || "white";
+
+                pill.style.border = `1px solid ${
+                  resolveColor(borderColors[idx2], JSON_Data.colors) ||
+                  "#a334c8"
+                }`;
+
+                pill.style.color = textColors[idx2] || "#000";
+
+                rowDiv.appendChild(pill);
+              }
+
+              wrapper.appendChild(rowDiv);
+            }
+
+            iconPlus.appendChild(wrapper);
+            convDiv.appendChild(iconPlus);
+            pptBox.appendChild(convDiv);
+
+            const titleEl = document.getElementById(task.targetId);
+            const pptRect = pptBox.getBoundingClientRect();
+            const titleRect = titleEl.getBoundingClientRect();
+            const reactEl = convDiv.querySelector(".icon_plus_name");
+            const rectBoxRect = reactEl.getBoundingClientRect();
+
+            const titleBottomY = titleRect.bottom - pptRect.top;
+            const rectangleTopY = rectBoxRect.top - pptRect.top;
+            let verticalGap = rectangleTopY - titleBottomY;
+            if (!direction) {
+              verticalGap =
+                titleRect.y - rectBoxRect.y - rectBoxRect.height + 38;
+            }
+            const styleId = `style-${convClass}`;
+            let oldStyle = document.getElementById(styleId);
+            if (oldStyle) oldStyle.remove();
+            const style = document.createElement("style");
+            style.id = styleId;
+            const safeClass = convClass.replace(/:/g, "\\:");
+
+            const state = thingsToDisplay.find(
+              (t) => t.rectangle_id === task.targetId
+            );
+            if (state && !state.isOpen) {
+              convDiv.style.display = "none";
+            }
+
+            // Inject CSS with dynamic height using verticalGap
+            style.textContent = `
+  .${safeClass}::before {
+      content: "";
+      position: absolute;
+      top: ${direction ? -verticalGap + 10 : "45"}px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: ${verticalGap}px;
+      background: ${
+        resolveColor(cfg.top_down_arrow?.line_color, JSON_Data.colors) ||
+        "#a334c8"
+      };
+      z-index: 2;
+  }
+  .${safeClass}::after {
+      content: "";
+      position: absolute;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      left: 50%;
+      top: ${direction ? -verticalGap + 5 : verticalGap + 40}px;
+      z-index: 1;
+      transform: translateX(-50%);
+      border-${direction ? "bottom" : "top"}: 7px solid ${
+              resolveColor(cfg.top_down_arrow?.arrow_color, JSON_Data.colors) ||
+              "#a334c8"
+            };;
+  }
+`;
+
+            document.head.appendChild(style);
+          });
+        }
+        // New Part - Polygons
+        if (conversionTasks.length > 0) {
+          const allowedLevels = [
+            "Level_1",
+            "Level_2",
+            "Level_3",
+            "Level_4",
+            "Level_5",
+            "Level_6",
+            "Level_7",
+            "Level_8",
+            "Level_9",
+            "Level_10",
+          ];
+          const compartmentTop = GlobalHeight?510:660;
+          const compartmentHeight = 200; // container height
+          const compartmentSize = 20; // distance between shapes vertically
+          const SHAPE_W = 13;
+          const SHAPE_H = 11;
+
+          // For this connection: look at content[] (each may carry content_conversion)
+          const contents = Array.isArray(connection.config?.content)
+            ? connection.config.content
+            : [];
+
+          contents.forEach((contentItem, contentIdx) => {
+            const conv = contentItem?.content_conversion;
+            if (!conv || !(conv.display === true || conv.display === "true"))
+              return;
+            const targetId = contentItem.rectangleTooltipId;
+
+            // bottom_shape_positions may be an object (single) or array (normalize to array)
+            let bottomShapePositions =
+              conv.bottom_shape_positions || conv.bottom_shape_positions;
+            // support both object and array-of-objects
+            if (!bottomShapePositions) return;
+            if (!Array.isArray(bottomShapePositions)) {
+              bottomShapePositions = [bottomShapePositions];
+            }
+            let targetEl = null;
+            const rectTooltipId = contentItem.rectangleTooltipId || null;
+            if (rectTooltipId)
+              targetEl = document.getElementById(rectTooltipId);
+
+            // fallback: try to find matching wrapper inside rectDiv (if it exists)
+            if (!targetEl) {
+              const iconRowEl = rectDiv
+                ? rectDiv.querySelector(".icon-row")
+                : null;
+              if (iconRowEl) {
+                const wrapper =
+                  iconRowEl.children[contentIdx] || iconRowEl.children[0];
+                if (wrapper) {
+                  targetEl = wrapper.querySelector("p") || wrapper;
+                }
+              }
+            }
+
+            if (!targetEl || !isVisible(targetEl)) {
+              const oldClassNamePrefix = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}`;
+              const oldEls = pptBox.querySelectorAll(
+                `[class*="${oldClassNamePrefix}"]`
+              );
+              oldEls.forEach((el) => {
+                const styleTag = document.querySelector(
+                  `style[data-conn="${el.className}"]`
+                );
+                if (styleTag) styleTag.remove();
+                el.remove();
+              });
+              return;
+            }
+
+            const pptNow = pptBox.getBoundingClientRect();
+            const targetRect = targetEl.getBoundingClientRect();
+            const midpointX = targetRect.left + targetRect.width / 2;
+            const leftRelativeToPPT = Math.round(midpointX - pptNow.left);
+
+            // For each bottomShapePositions group create a vertical polygon stack container
+            bottomShapePositions.forEach((group, groupIdx) => {
+              // className must be unique
+              const className = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}_grp${groupIdx}`;
+              linkPairs[linkPairs.length - 1].polygonClass = className;
+
+              // cleanup previous
+              const prev = pptBox.querySelector(`.${className}`);
+              if (prev) prev.remove();
+              const prevStyle = document.querySelector(
+                `style[data-conn="${className}"]`
+              );
+              if (prevStyle) prevStyle.remove();
+
+              // normalize levels array
+              let rawLevels = Array.isArray(group.levels) ? group.levels : [];
+              const levelsArr = rawLevels
+                .map((lv) => (lv || "").toString().trim())
+                .filter(
+                  (lv, p, self) =>
+                    allowedLevels.includes(lv) && self.indexOf(lv) === p
+                );
+
+              if (!levelsArr.length) return; // nothing to draw
+
+              const state = thingsToDisplay.find(
+                (t) => t.rectangle_id === contentItem.rectangleTooltipId
+              );
+              // prepare style (vertical container positioned by midpoint)
+              const styleEl = document.createElement("style");
+              styleEl.setAttribute("data-conn", className);
+              styleEl.textContent = `
+.${className} {
+  position: absolute;
+  left: ${leftRelativeToPPT - Math.round(SHAPE_W / 2) - (direction ? 3 : 0)}px;
+  top: ${compartmentTop}px;
+  width: ${SHAPE_W}px;
+  height: ${compartmentHeight}px;
+  z-index: 5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.${className} .polygon-inner {
+  width: ${SHAPE_W}px;
+  height: ${SHAPE_H}px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transform: translateY(0) rotateZ(30deg);
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 0px;
+  visibility: hidden;
+  position: absolute;
+}
+`;
+              document.head.appendChild(styleEl);
+
+              // build container
+              const container = document.createElement("div");
+              container.className = className;
+              container.id = targetId + "_Polygon";
+              // create up to 10 compartments (Level_1 .. Level_10)
+              for (let levelIndex = 1; levelIndex <= 10; levelIndex++) {
+                const inner = document.createElement("div");
+                inner.className = "polygon-inner";
+                inner.style.top = `${
+                  (levelIndex - 1) * compartmentSize +
+                  (compartmentSize - SHAPE_H) / 2
+                }px`;
+
+                const levelName = `Level_${levelIndex}`;
+                if (levelsArr.includes(levelName)) {
+                  inner.style.visibility = "visible";
+
+                  // color resolution: group.color can be array or single value
+                  let colorVal = null;
+                  if (
+                    Array.isArray(group.color) &&
+                    group.color[levelIndex - 1]
+                  ) {
+                    colorVal = group.color[levelIndex - 1];
+                  } else if (Array.isArray(group.color) && group.color[0]) {
+                    colorVal = group.color[0];
+                  } else if (group.color) {
+                    colorVal = group.color;
+                  }
+
+                  let resolvedColor = null;
+                  try {
+                    if (typeof resolveColor === "function" && colorVal)
+                      resolvedColor = resolveColor(colorVal, JSON_Data.colors);
+                  } catch (e) {
+                    resolvedColor = null;
+                  }
+                  inner.style.background =
+                    resolvedColor || colorVal || "#dcdcdc";
+                }
+
+                container.appendChild(inner);
+              }
+              if (state && !state.isOpen) {
+                container.style.display = "none";
+              }
+              pptBox.appendChild(container);
+            });
+          });
+        }
+
+        if (conversionTasks.length > 0) {
+          conversionTasks.forEach((task, tIndex) => {
+            linkPairs.forEach((pair) => {
+              const rectSelector = direction
+                ? `.${pair.convClass}`
+                : `#${task.targetId}`;
+              const rectEl = document.querySelector(rectSelector);
+              const polyEl = document.querySelector(`.${pair.polygonClass}`);
+
+              if (!rectEl || !polyEl) return;
+
+              // Temporarily show hidden elements for measurement
+              const wasRectHidden = rectEl.style.display === "none";
+              const wasPolyHidden = polyEl.style.display === "none";
+
+              if (wasRectHidden) rectEl.style.display = "";
+              if (wasPolyHidden) polyEl.style.display = "";
+
+              // Measure
+              const rectBox = rectEl.getBoundingClientRect();
+              const polyBox = polyEl.getBoundingClientRect();
+              const pptRect = pptBox.getBoundingClientRect();
+
+              // Restore original hidden state
+              if (wasRectHidden) rectEl.style.display = "none";
+              if (wasPolyHidden) polyEl.style.display = "none";
+
+              const top = rectBox.bottom - pptRect.top;
+              const bottom = polyBox.top - pptRect.top;
+              const height = bottom - top;
+
+              if (height <= 0) return;
+
+              // Unique IDs for line and point
+              const lineId = task.targetId + "_Line";
+              const pointId = task.targetId + "_Line_Point";
+
+              // Remove old line & point
+              const oldLine = document.getElementById(lineId);
+              if (oldLine) oldLine.remove();
+
+              const oldPoint = document.getElementById(pointId);
+              if (oldPoint) oldPoint.remove();
+
+              // Colors
+              const BottomLineColor =
+                resolveColor(
+                  task.contentConversion.bottom_line_color,
+                  JSON_Data.colors
+                ) || "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
+              const BottomPointColor =
+                resolveColor(
+                  task.contentConversion.bottom_point_color,
+                  JSON_Data.colors
+                ) || "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
+
+              // Height offset by levels
+              const offsets = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185];
+              const levelStr =
+                task.contentConversion.bottom_Line_postion || "Level_1";
+              const levelNum = parseInt(levelStr.split("_")[1]);
+              let LineHeightOffset = offsets[levelNum - 1] ?? offsets[0];
+
+              // Point position adjustment
+              let logo_title_num =
+                task.contentConversion.logo_titles_config.logo_title.length;
+              logo_title_num = Math.max(1, Math.min(logo_title_num, 4));
+
+              const topValues = { 1: 4, 2: 4, 3: 4, 4: 30 };
+              const topPx = topValues[logo_title_num] ?? 22;
+
+              // Calculate X position
+              const xCenter = rectBox.left + rectBox.width / 2 - pptRect.left;
+
+              // --- Create the vertical line ---
+              const lineDiv = document.createElement("div");
+              lineDiv.id = lineId;
+              lineDiv.style.position = "absolute";
+              lineDiv.style.left = xCenter + "px";
+              lineDiv.style.top = top + "px";
+              lineDiv.style.width = "1px";
+              lineDiv.style.height = height + LineHeightOffset + "px";
+              lineDiv.style.background = BottomLineColor;
+              lineDiv.style.transform = "translateX(-50%)";
+              lineDiv.style.zIndex = "3";
+
+              // --- Create the circle point ---
+              const pointDiv = document.createElement("div");
+              pointDiv.id = pointId;
+              pointDiv.style.position = "absolute";
+              pointDiv.style.left = xCenter + "px";
+              pointDiv.style.top = top - topPx + "px";
+              if (!direction) {
+                pointDiv.style.top = top - 3 + "px";
+              }
+              pointDiv.style.width = "5px";
+              pointDiv.style.height = "5px";
+              pointDiv.style.borderRadius = "50%";
+              pointDiv.style.background = BottomPointColor;
+              pointDiv.style.transform = "translateX(-50%)";
+              pointDiv.style.zIndex = "5";
+
+              pptBox.appendChild(lineDiv);
+              pptBox.appendChild(pointDiv);
+
+              // Hide if default state = close
+              const state = thingsToDisplay.find(
+                (t) => t.rectangle_id === task.targetId
+              );
+              if (state && !state.isOpen) {
+                lineDiv.style.display = "none";
+                pointDiv.style.display = "none";
+              }
+            });
+          });
+        }
+      });
+    });
+  });
+}
+drawConnectingRectangle(JSON_Data,height);
+
+function applySkipSpacing(skipSpacingTasks) {
+  requestAnimationFrame(() => {
+    /* ===============================
+       0️⃣ CLEANUP OLD SPACERS
+    =============================== */
+    document.querySelectorAll(".skip-spacer").forEach(el => el.remove());
+
+    const groupSpacingMap = new Map();
+    const groupElementsMap = new Map();
+
+    /* ===============================
+       1️⃣ PROCESS TASKS (SPACERS)
+    =============================== */
+    skipSpacingTasks.forEach(task => {
+      const { skipSteps, skipPlacement, starting, ending } = task;
+
+      if (!skipSteps || skipSteps <= 0) return;
+
+      const spacingPx = skipSteps * 150;
+      const targetId =
+        skipPlacement === "start" ? starting : ending;
+
+      if (!targetId) return;
+
+      function createSkipSpacer() {
+        const spacer = document.createElement("div");
+        spacer.className = "skip-spacer";
+        spacer.style.width = `${spacingPx}px`;
+        spacer.style.minHeight = "30px";
+        spacer.style.height = "100%";
+        spacer.style.background = "transparent";
+        spacer.style.pointerEvents = "none";
+        spacer.style.flexShrink = "0";
+        return spacer;
+      }
+
+      /* ---- subgroups-on-line ---- */
+      const onLineTarget = document.getElementById(targetId);
+      if (onLineTarget && onLineTarget.parentElement) {
+        const spacer = createSkipSpacer();
+        skipPlacement === "start"
+          ? onLineTarget.after(spacer)
+          : onLineTarget.before(spacer);
+
+        const subGroupsOnLine = onLineTarget.parentElement;
+        const subGroupDiv = subGroupsOnLine.parentElement;
+
+        if (subGroupDiv) {
+          const prev = groupSpacingMap.get(subGroupDiv) || 0;
+          groupSpacingMap.set(subGroupDiv, Math.max(prev, spacingPx));
+
+          groupElementsMap.set(subGroupDiv, {
+            subGroupsOnLine,
+            subGroupMidTop: subGroupDiv.querySelector(".subgroups-mid-top"),
+          });
+        }
+      }
+
+      /* ---- subgroups-mid-top ---- */
+      const midTopTarget = document.querySelector(
+        `.icon_plus_name[data-midtop-for="${targetId}"]`
+      );
+
+      if (midTopTarget && midTopTarget.parentElement) {
+        const spacer = createSkipSpacer();
+        skipPlacement === "start"
+          ? midTopTarget.after(spacer)
+          : midTopTarget.before(spacer);
+      }
+    });
+
+    /* ===============================
+       2️⃣ APPLY WIDTHS
+    =============================== */
+    groupElementsMap.forEach((els, subGroupDiv) => {
+      const spacingPx = groupSpacingMap.get(subGroupDiv) || 0;
+      const { subGroupMidTop } = els;
+
+      if (subGroupMidTop) {
+        if (!subGroupDiv.dataset.baseMidTopWidth) {
+          subGroupDiv.dataset.baseMidTopWidth =
+            subGroupMidTop.getBoundingClientRect().width;
+        }
+
+        const baseWidth =
+          parseFloat(subGroupDiv.dataset.baseMidTopWidth);
+
+        subGroupMidTop.style.width =
+          `${baseWidth + spacingPx}px`;
+      }
+    });
+      drawLogoOnMidLine(JSON_Data);
+      drawConnectingLines(JSON_Data);
+      drawConnectingTextLine(JSON_Data,height);
+      drawConnectingRectangle(JSON_Data,height);
+      drawBottomTimelineSeries(JSON_Data);
+      drawConnectingCircle(JSON_Data);
+      adjustFooterWidth(JSON_Data);
+      adjustMidLineWidth(JSON_Data);
+      drawMultiplePolygons(JSON_Data);
+      connectingBottomText(JSON_Data);
+      warning_Logo(JSON_Data);
+    
+  });
+}
+
+applySkipSpacing(skipSpacingTasks)
 
 function drawPageBottomShapes(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");

@@ -1,6 +1,1537 @@
 // Latest JSON at the Top
 
-JSON_Data10={}
+JSON_Data10={
+  footer: {
+    footer_label: {
+      footer_1_label: "Ambulatory",
+      footer_2_label: "Hospital",
+      footer_3_label: "Other structure",
+      footer_4_label: "Home",
+      footer_5_label: "Hospital Drugstore"
+    },
+    label_width: {
+      footer_1_width: "90",
+      footer_2_width: "90",
+      footer_3_width: "90",
+      footer_4_width: "90",
+      footer_5_width: "90",
+    },
+    footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
+  },
+  Page_Configuration: {
+    background_color: "linear-gradient(to bottom, #92cfdf,white 60%)",
+    border_color: "black",
+    scroll_horizontal: true,
+    direction: "reverse",
+    PageHeight:"extended",
+    exportName: "Process_Journey",
+    bottomShapesConfig: {
+      shapes: ["circle", "trapezium", "circle", "trapezium"],
+      shapesColor: ["#ffc130", "#00a9bd", "#ffc130", "#00a9bd"],
+      text: ["Timings", "Locus", "Timings", "Locus"],
+      textColor: ["white", "white", "white", "white"],
+    },
+  },
+  mid_line_config: {
+    color: "#58e3d2",
+    shadow:
+      "0 0 70px #58e3d2, 0 0 30px #b8f4eb,0 0 20px #58e3d2, 0 0 100px #b8f4eb;",
+    logo_config: [
+      {
+        type: "Between",
+        on_line_id_start: "on_line_content_4",
+        on_line_id_end: "on_line_content_5",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "Between",
+        on_line_id_start: "on_line_content_6",
+        on_line_id_end: "on_line_content_7",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "Between",
+        on_line_id_start: "on_line_content_8",
+        on_line_id_end: "on_line_content_9",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "Between",
+        on_line_id_start: "on_line_content_10",
+        on_line_id_end: "on_line_content_11",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "Start",
+        on_line_id_start: "on_line_content_1",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+      {
+        type: "End",
+        on_line_id_end: "on_line_content_13",
+        fontAwsomeIcon: "fa-solid fa-angles-right",
+        fontColor: "white",
+        fontSize: "Level_1",
+      },
+    ],
+  },
+  colors: {
+    white_color: "#ffffff",
+    black_color: "#000000",
+    Common_Header_title: "#515151",
+    Common_Header_Line: "#adafaf",
+    Common_SubHeader_title: "rgb(81, 81, 81)",
+    Common_SubHeader_lineRight: "#c4c9ca",
+    Common_logo_heading: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+    Common_logo_border: "#a334c8",
+    Common_logo: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+    Common_logo_title: "linear-gradient(to right top, #a334c8 20%, #f65467)",
+    Common_TopDown_arror: "#a334c8",
+    Common_TopDown_Line: "linear-gradient(to bottom, #ff5d62 70%, #9f30cb)",
+    Common_ConnectingLine_arrow: "#a334c8",
+    Common_ConnectingLine_line: "#9f30cb",
+    Common_ConnectingRectangle: "#58e3d2",
+    Common_AboveLine_Text: "#7a1bffff",
+    Common_onLineContent_font: "#000000",
+    Common_onLineContent_Background: "#e6fffc",
+    Common_onLineContent_Point:
+      "linear-gradient(to right top, #207cb2 1%, #41cbc8)",
+    Common_onLineContent_Line:
+      "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)",
+    Common_onLineContent_Shape: "linear-gradient(to top, #1375af 5%, #45d0cb)",
+    Common_timeLineSeries_Background:
+      "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+    Common_timeLineSeries_Border: "#ffc100",
+    Common_transparent: "transparent",
+  },
+  fontConfig: {
+    fontsize: "small",
+    fontFamilyCDN:
+      "https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap",
+    fontFamily: ["sans-serif"],
+  },
+  body: [
+    {
+      component: "Header",
+      title: "Diagnosis",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: true,
+        line_color: "white",
+        collapsabile: true,
+      },
+      start_content: {
+        display: true,
+        logo_title: "Patient",
+        link: "www.youtube.com",
+        logo_title_detail: "Patients",
+        configurations: {
+          logo_color: "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
+          logo_border_color: "#2394b9",
+          logo_title_color: "white_color",
+          logo_background_color:
+            "linear-gradient(to right top, #2394b9 10%, #5df3e4)",
+        },
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
+          },
+          content: {
+            logo_heading: ["", ""],
+            logo_heading_color: [
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
+              "Common_transparent",
+            ],
+            logo_heading_border_color: [
+              "#a334c8",
+              "#a334c8",
+              "#a334c8",
+              "Common_transparent",
+            ],
+            logo_color: ["#a334c8", "#a334c8", "#a334c8", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: ["GP"],
+                links: [""],
+                logo_id_name: "logo_title_id1",
+                logo_detail: ["GP"],
+                logo_title_background_color: ["white"],
+                logo_title_border: [true],
+                logo_title_border_color: ["#a334c8"],
+                logo_title_color: ["#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Neurologist", "", "Nurse"],
+                links: [""],
+                logo_id_name: "logo_title_id2",
+                logo_detail: ["Neurologist", "", "Nurse"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Radiologist", "", "Bio & Other"],
+                links: [""],
+                logo_id_name: "logo_title_id3",
+                logo_detail: ["Radiologist", "", "Bio & Other"],
+                logo_title_background_color: ["white", "white", "white"],
+                logo_title_border: [true, true, true],
+                logo_title_border_color: ["#a334c8", "#a334c8", "#a334c8"],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["GP"],
+                links: [""],
+                logo_id_name: "logo_title_id4",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["black"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+            ],
+            line_right: "false",
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "logo_title_id1",
+                  ending: "logo_title_id2",
+                  height: "Level_5",
+                },
+                {
+                  starting: "logo_title_id2",
+                  ending: "logo_title_id4",
+                  height: "Level_5",
+                },
+              ],
+              arrow_color: ["#9f30cb", "#9f30cb"],
+              line_color: ["#9f30cb", "#9f30cb"],
+            },
+            connecting_Text_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_6",
+                  start_from: "start",
+                  end_from: "mid",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text_Position: "above",
+                  text: "Process",
+                  text_color: "black",
+                  line_color: "black",
+                },
+              ],
+            },
+            ToolTip_Creation: [
+              {
+                display: true,
+                content_id: "on_line_content_4",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy: "click",
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+              {
+                display: true,
+                content_id: "on_line_content_3",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy: "click",
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+              {
+                display: true,
+                content_id: "on_line_content_1",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy: "hover",
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+            ],
+            on_line_content_configuration: {
+              content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
+              bordered: [{}, { border: true }],
+              showHideBtn: [
+                {
+                  display: true,
+                  OpenFontAwsomeicon: "fa-regular fa-user",
+                  CloseFontAwsomeicon: "fa-regular fa-ban",
+                  OpenFontAwsomeiconColor: "purple",
+                  CloseFontAwsomeiconColor: "red",
+                  ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id1"]
+                },
+                {
+                  display: true,
+                  OpenFontAwsomeicon: "fa-regular fa-user",
+                  CloseFontAwsomeicon: "fa-regular fa-ban",
+                  OpenFontAwsomeiconColor: "purple",
+                  CloseFontAwsomeiconColor: "red",
+                  ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id2"]
+                },
+                {
+                  display: true,
+                  OpenFontAwsomeicon: "fa-regular fa-user",
+                  CloseFontAwsomeicon: "fa-regular fa-ban",
+                  OpenFontAwsomeiconColor: "purple",
+                  CloseFontAwsomeiconColor: "red",
+                  ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id3"]
+                },
+                {
+                  display: true,
+                  OpenFontAwsomeicon: "fa-regular fa-user",
+                  CloseFontAwsomeicon: "fa-regular fa-ban",
+                  OpenFontAwsomeiconColor: "purple",
+                  CloseFontAwsomeiconColor: "red",
+                  ByDefaultBehaviour: "open",
+                  ReferencedLogoID:["logo_title_id4"]
+                },
+              ],
+              logo: [
+                {
+                  display: true,
+                  logoPosition: "Start",
+                  logo: "fa-solid fa-location-dot",
+                  logoColor: "black",
+                },
+                {
+                  display: true,
+                  logoPosition: "End",
+                  logo: "fa-solid fa-link",
+                  logoColor: "blue",
+                },
+                {
+                  display: true,
+                  logoPosition: "Both",
+                  logo: [
+                    "fa-solid fa-code-branch",
+                    "fa-solid fa-hexagon-nodes",
+                  ],
+                  logoColor: ["purple", "green"],
+                },
+                {
+                  display: false,
+                },
+              ],
+              striping: [
+                {
+                  stripped: true,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+                {
+                  stripped: false,
+                },
+                {
+                  stripped: false,
+                },
+                {
+                  stripped: true,
+                  reversed: true,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: [
+                "rounded_right",
+                "rounded_vertices",
+                "rounded_left",
+                "rounded_bottom",
+              ],
+              content_id: [
+                "on_line_content_1",
+                "on_line_content_2",
+                "on_line_content_3",
+                "on_line_content_4",
+              ],
+              content_details: [
+                "SYMPTOMS",
+                "VISIT",
+                "DIAGNOSTIC TESTS",
+                "DIAGNOSIS",
+              ],
+              color: [
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+                "Common_onLineContent_font",
+              ],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
+              bottom_point_color: [
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+              ],
+              bottom_point_position_onLine: [false, false, false, true],
+              bottom_line_color: [
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+              ],
+              bottom_Line_postion: ["Level_6", "Level_7", "Level_8", "Level_7"],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_6"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_7"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_8"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_7"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from symptoms",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_1",
+                  ending: "on_line_content_2",
+                },
+                {
+                  content: "_?? days from results",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_2",
+                  ending: "on_line_content_3",
+                },
+                {
+                  content: "_?? days from results",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_3",
+                  ending: "on_line_content_4",
+                },
+                {
+                  content: "_?? days from symptoms",
+                  height: "Level_18",
+                  show_border: false,
+                  starting: "on_line_content_1",
+                  ending: "on_line_content_4",
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+    {
+      component: "Header",
+      title: "Treatment",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: true,
+        line_color: "white",
+        collapsabile: true,
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
+          },
+          content: {
+            logo_heading: ["", ""],
+            logo_heading_color: ["#a334c8", "Common_transparent"],
+            logo_heading_border_color: ["#a334c8", "Common_transparent"],
+            logo_color: ["#a334c8", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
+                links: [""],
+                logo_id_name: "logo_title_id5",
+                logo_detail: [
+                  "Neurologist",
+                  "Gynecologist",
+                  "Nurse",
+                  "Other Specialists",
+                ],
+                logo_title_background_color: [
+                  "white",
+                  "white",
+                  "white",
+                  "white",
+                ],
+                logo_title_border: [true, true, true, true],
+                logo_title_border_color: [
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                  "#a334c8",
+                ],
+                logo_title_color: ["#a334c8", "#a334c8", "#a334c8", "#a334c8"],
+                top_down_arrow: {
+                  display: true,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Neurologist"],
+                links: [""],
+                logo_id_name: "logo_title_id6",
+                logo_detail: ["Neurologist"],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+            ],
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "logo_title_id5",
+                  ending: "logo_title_id7",
+                  height: "Level_5",
+                },
+              ],
+              arrow_color: ["#9f30cb"],
+              line_color: ["#9f30cb"],
+            },
+            warning_logos: [
+              {
+                target_On_Line_Content: "on_line_content_5",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "end",
+                openBy: "click",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "1",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                },
+                Tooltip_content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                Tooltip_content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+            ],
+            on_line_content_configuration: {
+              content: ["ST DMT SELECTION", "DMT INITIATION"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_sm", "rounded_reverse_vertices"],
+              content_id: ["on_line_content_5", "on_line_content_6"],
+              content_details: ["ST DMT SELECTION", "DMT INITIATION"],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
+              bottom_point_color: [
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+              ],
+              bottom_point_position_onLine: [false, true],
+              bottom_line_color: [
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+              ],
+              bottom_Line_postion: ["Level_7", "Level_10"],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_7"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_7", "Level_9", "Level_10"],
+                  color: [
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                  ],
+                },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from diagnosis",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_4",
+                  ending: "on_line_content_5",
+                },
+                {
+                  content: "_?? days from DMT choice",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_5",
+                  ending: "on_line_content_6",
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+    {
+      component: "Header",
+      title: "Follow-Up",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: true,
+        line_color: "white",
+        collapsabile: true,
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
+          },
+          content: {
+            logo_heading: ["", ""],
+            logo_heading_color: ["Common_transparent", "Common_transparent"],
+            logo_heading_border_color: [
+              "Common_transparent",
+              "Common_transparent",
+            ],
+            logo_color: ["Common_transparent", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id7",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id8",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [true],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+            ],
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connectingBottomText: [
+              {
+                target_On_Line_Content: "on_line_content_8",
+                position: "start",
+                text: "1 alla settimana",
+                textDetail: "1 alla settimana x 3 settimane",
+                textColor: "black",
+                borderColor: "black",
+                height: "Level_1",
+              },
+            ],
+            connecting_Circle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_7",
+                  ending: "on_line_content_8",
+                  start_from: "start",
+                  end_from: "end",
+                  border_thickness: "Level_10",
+                  config: {
+                    fontAwsomeicon: "fa-solid fa-angles-left",
+                    iconColor: "white",
+                    iconSize: "Level_2",
+                    direction: "default",
+                  },
+                },
+              ],
+              color: ["#58e3d2"],
+            },
+            warning_logos: [
+              {
+                target_On_Line_Content: "on_line_content_7",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "end",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "2",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                },
+              },
+            ],
+            connecting_Text_Line: {
+              display: false,
+              connections: [
+                {
+                  starting: "on_line_content_4",
+                  ending: "on_line_content_5",
+                  start_from: "start",
+                  end_from: "end",
+                  line_Thickness: "Level_1",
+                  line_Position: "Level_1",
+                  text: "procedure pre-trettamento",
+                  text_Position: "middle",
+                  text_color: "black",
+                  line_color: "black",
+                },
+              ],
+            },
+            on_line_content_configuration: {
+              content: ["VISIT", "TX CONTINUES"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_top", "rounded_top_right"],
+              content_id: ["on_line_content_7", "on_line_content_8"],
+              content_details: ["ST DMT SELECTION", "DMT INITIATION"],
+              color: ["Common_onLineContent_font", "Common_onLineContent_font"],
+              background_color: [
+                "Common_onLineContent_Background",
+                "Common_onLineContent_Background",
+              ],
+              bottom_point_color: [
+                "Common_onLineContent_Point",
+                "Common_onLineContent_Point",
+              ],
+              bottom_point_position_onLine: [true, true],
+              bottom_line_color: [
+                "Common_onLineContent_Line",
+                "Common_onLineContent_Line",
+              ],
+              bottom_Line_postion: ["Level_7", "Level_9"],
+              bottom_shape_positions: [
+                {
+                  levels: ["Level_7"],
+                  color: ["Common_onLineContent_Shape"],
+                },
+                {
+                  levels: ["Level_6", "Level_7", "Level_8", "Level_9"],
+                  color: [
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                    "Common_onLineContent_Shape",
+                  ],
+                },
+              ],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from DMT initiation",
+                  height: "Level_10",
+                  show_border: false,
+                  starting: "on_line_content_5",
+                  ending: "on_line_content_7",
+                },
+                {
+                  content: "6 months wihout events",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_7",
+                  ending: "on_line_content_8",
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+    {
+      component: "Header",
+      title: "Treatment",
+      configurations: {
+        title_color: "#304c8c",
+        line_right: false,
+        line_color: "white",
+        collapsabile: true,
+      },
+      sub_groups: [
+        {
+          component: "Sub-Header",
+          title: "",
+          configurations: {
+            title_color: "Common_SubHeader_title",
+            collapsabile: false,
+          },
+          content: {
+            logo_heading: ["", "", "", "", ""],
+            logo_heading_color: ["Common_transparent","Common_transparent","Common_transparent","Common_transparent", "Common_transparent"],
+            logo_heading_border_color: [
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent"
+            ],
+            logo_color: ["Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent"],
+            logo_titles_config: [
+              {
+                logo_title: ["Hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id9",
+                logo_detail: ["Common_transparent"],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id10",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id11",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id12",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+              {
+                logo_title: ["Hidden"],
+                links: [""],
+                logo_id_name: "logo_title_id13",
+                logo_detail: [""],
+                logo_title_background_color: ["Common_transparent"],
+                logo_title_border: [false],
+                logo_title_border_color: ["Common_transparent"],
+                logo_title_color: ["Common_transparent"],
+                top_down_arrow: {
+                  display: false,
+                  arrow_color: "#a334c8",
+                  line_color: "#a334c8",
+                },
+              },
+            ],
+            line_right: false,
+            line_color: "Common_SubHeader_lineRight",
+            connecting_Line: {
+              display: true,
+              connections: [
+                {
+                  starting: "logo_title_id5",
+                  ending: "logo_title_id8",
+                  height: "Level_5",
+                },
+              ],
+              arrow_color: ["#9f30cb"],
+              line_color: ["#9f30cb"],
+            },
+            ToolTip_Creation: [
+              {
+                display: true,
+                content_id: "on_line_rectangle_1",
+                vertical_position: "bottom",
+                horizontal_position: "left",
+                openBy: "hover",
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+            ],
+            connecting_Circle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_rectangle_3",
+                  ending: "on_line_rectangle_4",
+                  start_from: "start",
+                  end_from: "end",
+                  border_thickness: "Level_4",
+                  config: {
+                    fontAwsomeicon: "fa-solid fa-angles-left",
+                    iconColor: "white",
+                    iconSize: "Level_2",
+                    direction: "default",
+                  },
+                },
+              ],
+              color: ["#c16fddb5"],
+            },
+            connecting_Rectangle: {
+              display: true,
+              connections: [
+                {
+                  starting: "on_line_content_8",
+                  start_from_starting: false,
+                  ending: "on_line_content_13",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    direction: "reverse",
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_13",
+                  end_from_ending: true,
+                  height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "Common_transparent","white_color", "Common_transparent","white_color", "Common_transparent"],
+                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3","Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "RELAPSE",
+                        textColor: "white",
+                        textDetail: "RELAPSE",
+                        rectangleTooltipId: "on_line_rectangle_1",
+                      },
+                      {
+                        text: "HET DMT SELECTION",
+                        textColor: "black",
+                        textDetail: "HET DMT SELECTION",
+                        rectangleTooltipId: "on_line_rectangle_2",
+                        background_color: "Common_onLineContent_Background",
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
+                        },
+                        content_conversion: {
+                          display: true,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config: {
+                            logo_title: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists",
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id1",
+                            logo_detail: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists",
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          },
+                        },
+                      },
+                      {},
+                      {
+                        text: "VISIT",
+                        textColor: "black",
+                        textDetail: "RELAPSE",
+                        rectangleTooltipId: "on_line_rectangle_3",
+                        background_color: "Common_onLineContent_Background",
+                      },
+                      {
+                        text: "DIAGNOSIS",
+                        textColor: "black",
+                        textDetail: "RELAPSE",
+                        rectangleTooltipId: "on_line_rectangle_4",
+                        background_color: "Common_onLineContent_Background",
+                      },
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_13",
+                  end_from_ending: true,
+                  height: "Level_23",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "Common_transparent","white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {
+                        text: "PROGRESSION SUSPICION",
+                        textColor: "white",
+                        textDetail: "PROGRESSION SUSPICION",
+                        rectangleTooltipId: "on_line_rectangle_5",
+                      },
+                      {
+                        text: "PROGRESSION DMT SELECTION",
+                        textColor: "black",
+                        textDetail: "PROGRESSION DMT SELECTION",
+                        rectangleTooltipId: "on_line_rectangle_6",
+                        background_color: "Common_onLineContent_Background",
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
+                        },
+                        content_conversion: {
+                          display: true,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config: {
+                            logo_title: [
+                              "Dentist",
+                              "",
+                              "Animal Care",
+                              "",
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id2",
+                            logo_detail: [
+                              "Dentist",
+                              "",
+                              "Animal Care",
+                              "",
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          },
+                        },
+                      },
+                      {},
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_13",
+                  end_from_ending: true,
+                  height: "Level_35",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "Common_transparent", "white_color","Common_transparent", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {},
+                      {},
+                      {},
+                      {},
+                      {
+                        text: "TX CONTINUES",
+                        textColor: "black",
+                        textDetail: "TX CONTINUES",
+                        rectangleTooltipId: "on_line_rectangle_7",
+                        background_color: "Common_onLineContent_Background",
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
+                        },
+                        content_conversion: {
+                          display: true,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config: {
+                            logo_title: [
+                              "GP"
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id3",
+                            logo_detail: [
+                              "GP"
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                              "white",
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  starting: "on_line_content_7",
+                  start_from_starting: false,
+                  ending: "on_line_content_13",
+                  end_from_ending: true,
+                  height: "Level_48",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "Common_transparent", "white_color","Common_transparent", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    content: [
+                      {},
+                      {},
+                      {},
+                      {
+                        text: "TX CONTINUES",
+                        textColor: "black",
+                        textDetail: "TX CONTINUES",
+                        rectangleTooltipId: "on_line_rectangle_8",
+                        background_color: "Common_onLineContent_Background",
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
+                        },
+                        content_conversion: {
+                          display: true,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config: {
+                            logo_title: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id4",
+                            logo_detail: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                              "white",
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+              color: ["#58e3d2", "#58e3d2", "#58e3d2"],
+            },
+            on_line_content_configuration: {
+              content: ["Hidden", "Hidden","Hidden","Hidden","Hidden"],
+              striping: [
+                {
+                  stripped: false,
+                  reversed: false,
+                  colors: [
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(255, 255, 255, 0.6)",
+                    "rgba(0, 191, 255, 0.35)",
+                    "rgba(0, 191, 255, 0.35)",
+                  ],
+                },
+              ],
+              link: [""],
+              shapes: ["rounded_bottom_right", "rounded_lg","rounded_lg","rounded_lg","rounded_lg"],
+              content_id: ["on_line_content_9", "on_line_content_10","on_line_content_11","on_line_content_12","on_line_content_13"],
+              content_details: ["", "","","",""],
+              color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
+              background_shadow: [false, false,false,false,false],
+              background_color: ["Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent"],
+              bottom_point_color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
+              bottom_point_position_onLine: [false, false,false,false,false],
+              bottom_line_color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
+              bottom_Line_postion: ["Level_1","Level_1","Level_1","Level_1", "Level_1"],
+              bottom_shape_positions: [],
+            },
+            BottomtimelineSeries: {
+              background_color:
+                "linear-gradient(to right, #f6f4dc10 10%, #ffc305)",
+              border_color: "#ffc305",
+              timlines: [
+                {
+                  content: "_?? days from DMT initiation",
+                  height: "Level_3",
+                  show_border: false,
+                  starting: "on_line_content_8",
+                  ending: "on_line_rectangle_2",
+                }
+              ],
+            },
+          },
+        },
+      ],
+    },
+  ],
+};
 
 JSON_Data9 = {
   footer: {
