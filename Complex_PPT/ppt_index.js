@@ -6,12 +6,7 @@ JSON_Data = {
       footer_2_label: "Hospital",
       footer_3_label: "Other structure",
       footer_4_label: "Home",
-      footer_5_label: "Hospital Drugstore",
-      footer_6_label: "Ambulatory",
-      footer_7_label: "Hospital",
-      footer_8_label: "Other structure",
-      footer_9_label: "Home",
-      footer_10_label: "Hospital Drugstore"
+      footer_5_label: "Hospital Drugstore"
     },
     label_width: {
       footer_1_width: "90",
@@ -19,11 +14,6 @@ JSON_Data = {
       footer_3_width: "90",
       footer_4_width: "90",
       footer_5_width: "90",
-      footer_6_width: "90",
-      footer_7_width: "90",
-      footer_8_width: "90",
-      footer_9_width: "90",
-      footer_10_width: "90",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
   },
@@ -32,7 +22,7 @@ JSON_Data = {
     border_color: "black",
     scroll_horizontal: true,
     direction: "reverse",
-    PageHeight:"extended",
+    PageHeight: "extended",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -319,7 +309,7 @@ JSON_Data = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id1"]
+                  ReferencedLogoID: ["logo_title_id1"],
                 },
                 {
                   display: true,
@@ -328,7 +318,7 @@ JSON_Data = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id2"]
+                  ReferencedLogoID: ["logo_title_id2"],
                 },
                 {
                   display: true,
@@ -337,7 +327,7 @@ JSON_Data = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id3"]
+                  ReferencedLogoID: ["logo_title_id3"],
                 },
                 {
                   display: true,
@@ -346,7 +336,7 @@ JSON_Data = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id4"]
+                  ReferencedLogoID: ["logo_title_id4"],
                 },
               ],
               logo: [
@@ -903,15 +893,27 @@ JSON_Data = {
           },
           content: {
             logo_heading: ["", "", "", "", ""],
-            logo_heading_color: ["Common_transparent","Common_transparent","Common_transparent","Common_transparent", "Common_transparent"],
+            logo_heading_color: [
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+            ],
             logo_heading_border_color: [
               "Common_transparent",
               "Common_transparent",
               "Common_transparent",
               "Common_transparent",
-              "Common_transparent"
+              "Common_transparent",
             ],
-            logo_color: ["Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent"],
+            logo_color: [
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+            ],
             logo_titles_config: [
               {
                 logo_title: ["Hidden"],
@@ -1043,10 +1045,10 @@ JSON_Data = {
                   start_from_starting: false,
                   ending: "on_line_content_6",
                   end_from_ending: true,
-                  skipSteps:2,
-                  skipPlacement:"start",
-                  starting_logo_ID:"logo_title_id1",
-                  ending_logo_ID:"logo_title_id6",
+                  skipSteps: 1,
+                  skipPlacement: "start",
+                  starting_logo_ID: "logo_title_id1",
+                  ending_logo_ID: "logo_title_id6",
                   height: "Level_10",
                   border_thickness: "Level_6",
                   config: {
@@ -1080,8 +1082,24 @@ JSON_Data = {
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
                     ],
-                    iconColors: ["white_color", "white_color", "Common_transparent","white_color", "Common_transparent","white_color", "Common_transparent"],
-                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3","Size_3", "Size_3"],
+                    iconColors: [
+                      "white_color",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                      "Common_transparent",
+                    ],
+                    iconSize: [
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                    ],
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
@@ -1105,6 +1123,12 @@ JSON_Data = {
                           OpenFontAwsomeiconColor: "purple",
                           CloseFontAwsomeiconColor: "red",
                           ByDefaultBehaviour: "open",
+                        },
+                        textIconConfig:{
+                          display:true,
+                          iconPosition:"both",
+                          fontAwsomeIcon:["fa-solid fa-hippo","fa-solid fa-person"],
+                          iconColor:["gray","blue"],
                         },
                         content_conversion: {
                           display: true,
@@ -1175,6 +1199,12 @@ JSON_Data = {
                         textDetail: "RELAPSE",
                         rectangleTooltipId: "on_line_rectangle_3",
                         background_color: "Common_onLineContent_Background",
+                        textIconConfig:{
+                          display:true,
+                          iconPosition:"left",
+                          fontAwsomeIcon:["fa-brands fa-github"],
+                          iconColor:["black"],
+                        },
                       },
                       {
                         text: "DIAGNOSIS",
@@ -1182,6 +1212,12 @@ JSON_Data = {
                         textDetail: "RELAPSE",
                         rectangleTooltipId: "on_line_rectangle_4",
                         background_color: "Common_onLineContent_Background",
+                        textIconConfig:{
+                          display:true,
+                          iconPosition:"right",
+                          fontAwsomeIcon:["fa-solid fa-flag"],
+                          iconColor:["pink"],
+                        },
                       },
                     ],
                   },
@@ -1200,8 +1236,13 @@ JSON_Data = {
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
                     ],
-                    iconColors: ["white_color", "white_color", "Common_transparent","white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3"],
+                    iconColors: [
+                      "white_color",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                    ],
+                    iconSize: ["Size_3", "Size_3", "Size_3", "Size_3"],
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
@@ -1250,20 +1291,10 @@ JSON_Data = {
                           logo_heading_border_color: "#a334c8",
                           logo_color: "#a334c8",
                           logo_titles_config: {
-                            logo_title: [
-                              "Dentist",
-                              "",
-                              "Animal Care",
-                              "",
-                            ],
+                            logo_title: ["Dentist", "", "Animal Care", ""],
                             links: [""],
                             logo_id_name: "on_line_rectangle_logo_title_id2",
-                            logo_detail: [
-                              "Dentist",
-                              "",
-                              "Animal Care",
-                              "",
-                            ],
+                            logo_detail: ["Dentist", "", "Animal Care", ""],
                             logo_title_background_color: [
                               "white",
                               "white",
@@ -1307,8 +1338,20 @@ JSON_Data = {
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
                     ],
-                    iconColors: ["white_color", "Common_transparent", "white_color","Common_transparent", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3"],
+                    iconColors: [
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                    ],
+                    iconSize: [
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                    ],
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
@@ -1355,14 +1398,10 @@ JSON_Data = {
                           logo_heading_border_color: "#a334c8",
                           logo_color: "#a334c8",
                           logo_titles_config: {
-                            logo_title: [
-                              "GP"
-                            ],
+                            logo_title: ["GP"],
                             links: [""],
                             logo_id_name: "on_line_rectangle_logo_title_id3",
-                            logo_detail: [
-                              "GP"
-                            ],
+                            logo_detail: ["GP"],
                             logo_title_background_color: [
                               "white",
                               "white",
@@ -1407,8 +1446,20 @@ JSON_Data = {
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
                     ],
-                    iconColors: ["white_color", "Common_transparent", "white_color","Common_transparent", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3"],
+                    iconColors: [
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                    ],
+                    iconSize: [
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                    ],
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
@@ -1499,7 +1550,7 @@ JSON_Data = {
               color: ["#58e3d2", "#58e3d2", "#58e3d2"],
             },
             on_line_content_configuration: {
-              content: ["Hidden", "Hidden","Hidden","Hidden","Hidden"],
+              content: ["Hidden", "Hidden", "Hidden", "Hidden", "Hidden"],
               striping: [
                 {
                   stripped: false,
@@ -1513,16 +1564,58 @@ JSON_Data = {
                 },
               ],
               link: [""],
-              shapes: ["rounded_bottom_right", "rounded_lg","rounded_lg","rounded_lg","rounded_lg"],
-              content_id: ["on_line_content_9", "on_line_content_10","on_line_content_11","on_line_content_12","on_line_content_13"],
-              content_details: ["", "","","",""],
-              color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
-              background_shadow: [false, false,false,false,false],
-              background_color: ["Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent"],
-              bottom_point_color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
-              bottom_point_position_onLine: [false, false,false,false,false],
-              bottom_line_color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
-              bottom_Line_postion: ["Level_1","Level_1","Level_1","Level_1", "Level_1"],
+              shapes: [
+                "rounded_bottom_right",
+                "rounded_lg",
+                "rounded_lg",
+                "rounded_lg",
+                "rounded_lg",
+              ],
+              content_id: [
+                "on_line_content_9",
+                "on_line_content_10",
+                "on_line_content_11",
+                "on_line_content_12",
+                "on_line_content_13",
+              ],
+              content_details: ["", "", "", "", ""],
+              color: [
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+              ],
+              background_shadow: [false, false, false, false, false],
+              background_color: [
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+              ],
+              bottom_point_color: [
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+              ],
+              bottom_point_position_onLine: [false, false, false, false, false],
+              bottom_line_color: [
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+              ],
+              bottom_Line_postion: [
+                "Level_1",
+                "Level_1",
+                "Level_1",
+                "Level_1",
+                "Level_1",
+              ],
               bottom_shape_positions: [],
             },
             BottomtimelineSeries: {
@@ -1535,8 +1628,8 @@ JSON_Data = {
                   height: "Level_3",
                   show_border: false,
                   starting: "on_line_content_8",
-                  ending: "on_line_rectangle_2",
-                }
+                  ending: "on_line_rectangle_7",
+                },
               ],
             },
           },
@@ -1659,17 +1752,17 @@ function closeAllTooltips() {
   currentlyOpenTooltip = null;
 }
 
-function alignmentHeight(JSON_Portion){
-  const allowedHight=["normal","extended"];
-  if(allowedHight.includes(JSON_Portion)){
+function alignmentHeight(JSON_Portion) {
+  const allowedHight = ["normal", "extended"];
+  if (allowedHight.includes(JSON_Portion)) {
     return JSON_Portion.toLowerCase();
-  }else{
-    return "normal"
+  } else {
+    return "normal";
   }
 }
 
-const height=alignmentHeight(JSON_Data.Page_Configuration.PageHeight)==="normal"
-
+const height =
+  alignmentHeight(JSON_Data.Page_Configuration.PageHeight) === "normal";
 
 function convertToFormat(JsonData) {
   let HTML = ``;
@@ -2729,7 +2822,7 @@ function convertToFormat(JsonData) {
     justify-content: center;
     flex-direction: column;
     position: relative;
-    ${direction ? `margin-top: ${height?150:290}px;` : ""}
+    ${direction ? `margin-top: ${height ? 150 : 290}px;` : ""}
     width: 145px;
     z-index:4;
   }
@@ -2821,7 +2914,7 @@ function convertToFormat(JsonData) {
     };
     height: 367px;
     right: -8px;
-    bottom:${height?325:472}px;
+    bottom:${height ? 325 : 472}px;
     z-index:1;
   }
   .${uniqueClassName}::before {
@@ -2869,65 +2962,159 @@ function convertToFormat(JsonData) {
         }
 
         const revAfterTop =
-          ReverseRow === 2 ? "221px" : ReverseRow === 3 ? `${height?259:400}px` : `${height?235:372}px`;
+          ReverseRow === 2
+            ? "221px"
+            : ReverseRow === 3
+            ? `${height ? 259 : 400}px`
+            : `${height ? 235 : 372}px`;
         const normAfterTop = "30px";
 
         // Define top and height values for each level (reverse + normal)
         const levelConfig = {
           Level_1: {
-            revHeight: ReverseRow === 2 ? 76 : ReverseRow === 3 ? height?60:72 : height?82:98,
-            normHeight: height?[110, 112, 110]:[262,266,265],
+            revHeight:
+              ReverseRow === 2
+                ? 76
+                : ReverseRow === 3
+                ? height
+                  ? 60
+                  : 72
+                : height
+                ? 82
+                : 98,
+            normHeight: height ? [110, 112, 110] : [262, 266, 265],
           },
           Level_2: {
-            revHeight: ReverseRow === 2 ? 118 : ReverseRow === 3 ? height?80:92 : height?102:118,
-            normHeight: height?[133, 133, 133]:[282,286,285],
+            revHeight:
+              ReverseRow === 2
+                ? 118
+                : ReverseRow === 3
+                ? height
+                  ? 80
+                  : 92
+                : height
+                ? 102
+                : 118,
+            normHeight: height ? [133, 133, 133] : [282, 286, 285],
           },
           Level_3: {
-            revHeight: ReverseRow === 2 ? 136 : ReverseRow === 3 ? height?100:112 : height?122:138,
-            normHeight: height?[150, 152, 152]:[302,306,305],
+            revHeight:
+              ReverseRow === 2
+                ? 136
+                : ReverseRow === 3
+                ? height
+                  ? 100
+                  : 112
+                : height
+                ? 122
+                : 138,
+            normHeight: height ? [150, 152, 152] : [302, 306, 305],
           },
           Level_4: {
-            revHeight: ReverseRow === 2 ? 156 : ReverseRow === 3 ? height?120:132 : height?142:158,
-            normHeight: height?[170, 173, 172]:[322,326,325],
+            revHeight:
+              ReverseRow === 2
+                ? 156
+                : ReverseRow === 3
+                ? height
+                  ? 120
+                  : 132
+                : height
+                ? 142
+                : 158,
+            normHeight: height ? [170, 173, 172] : [322, 326, 325],
           },
           Level_5: {
-            revHeight: ReverseRow === 2 ? 176 : ReverseRow === 3 ? height?140:152 : height?162:178,
-            normHeight: height?[190, 193, 195]:[342,346,345],
+            revHeight:
+              ReverseRow === 2
+                ? 176
+                : ReverseRow === 3
+                ? height
+                  ? 140
+                  : 152
+                : height
+                ? 162
+                : 178,
+            normHeight: height ? [190, 193, 195] : [342, 346, 345],
           },
           Level_6: {
-            revHeight: ReverseRow === 2 ? 176 : ReverseRow === 3 ? height?160:172 : height?182:198,
-            normHeight: height?[210, 212, 210]:[362,366,365],
+            revHeight:
+              ReverseRow === 2
+                ? 176
+                : ReverseRow === 3
+                ? height
+                  ? 160
+                  : 172
+                : height
+                ? 182
+                : 198,
+            normHeight: height ? [210, 212, 210] : [362, 366, 365],
           },
           Level_7: {
-            revHeight: ReverseRow === 2 ? 218 : ReverseRow === 3 ? height?180:192 : height?202:218,
-            normHeight: height?[233, 233, 233]:[382,386,385],
+            revHeight:
+              ReverseRow === 2
+                ? 218
+                : ReverseRow === 3
+                ? height
+                  ? 180
+                  : 192
+                : height
+                ? 202
+                : 218,
+            normHeight: height ? [233, 233, 233] : [382, 386, 385],
           },
           Level_8: {
-            revHeight: ReverseRow === 2 ? 236 : ReverseRow === 3 ? height?200:212 : height?222:238,
-            normHeight: height?[250, 252, 252]:[402,406,405],
+            revHeight:
+              ReverseRow === 2
+                ? 236
+                : ReverseRow === 3
+                ? height
+                  ? 200
+                  : 212
+                : height
+                ? 222
+                : 238,
+            normHeight: height ? [250, 252, 252] : [402, 406, 405],
           },
           Level_9: {
-            revHeight: ReverseRow === 2 ? 256 : ReverseRow === 3 ? height?220:232 : height?242:258,
-            normHeight: height?[270, 273, 272]:[422,426,425],
+            revHeight:
+              ReverseRow === 2
+                ? 256
+                : ReverseRow === 3
+                ? height
+                  ? 220
+                  : 232
+                : height
+                ? 242
+                : 258,
+            normHeight: height ? [270, 273, 272] : [422, 426, 425],
           },
           Level_10: {
-            revHeight: ReverseRow === 2 ? 276 : ReverseRow === 3 ? height?240:252 : height?262:278,
-            normHeight: height?[290, 293, 295]:[442,446,445],
+            revHeight:
+              ReverseRow === 2
+                ? 276
+                : ReverseRow === 3
+                ? height
+                  ? 240
+                  : 252
+                : height
+                ? 262
+                : 278,
+            normHeight: height ? [290, 293, 295] : [442, 446, 445],
           },
         };
 
         // Bottom-point overrides
         const bottomOverrides = {
-          Level_1: { top: 30, height: height?288:440 },
-          Level_2: { top: 30, height: height?308:460 },
-          Level_3: { top: 30, height: height?328:480 },
-          Level_4: { top: 30, height: height?350:500 },
-          Level_5: { top: 30, height: height?368:520 },
-          Level_6: { top: 30, height: height?388:540 },
-          Level_7: { top: 30, height: height?408:560 },
-          Level_8: { top: 30, height: height?428:580 },
-          Level_9: { top: 30, height: height?450:600 },
-          Level_10: { top: 30, height: height?468:620 },
+          Level_1: { top: 30, height: height ? 288 : 440 },
+          Level_2: { top: 30, height: height ? 308 : 460 },
+          Level_3: { top: 30, height: height ? 328 : 480 },
+          Level_4: { top: 30, height: height ? 350 : 500 },
+          Level_5: { top: 30, height: height ? 368 : 520 },
+          Level_6: { top: 30, height: height ? 388 : 540 },
+          Level_7: { top: 30, height: height ? 408 : 560 },
+          Level_8: { top: 30, height: height ? 428 : 580 },
+          Level_9: { top: 30, height: height ? 450 : 600 },
+          Level_10: { top: 30, height: height ? 468 : 620 },
         };
 
         // Get current level config or fallback
@@ -3409,7 +3596,13 @@ function convertToFormat(JsonData) {
           const arrowColor =
             resolveColor(arrowCfg.arrow_color, colors) || "#a334c8";
 
-          const lineHeight = hasAboveLine ? 138 : direction ? (height?138:280) : 152;
+          const lineHeight = hasAboveLine
+            ? 138
+            : direction
+            ? height
+              ? 138
+              : 280
+            : 152;
           const arrowTop = hasAboveLine
             ? getFontSize(148, 148, 148)
             : getFontSize(162, 162, 162);
@@ -3421,11 +3614,11 @@ function convertToFormat(JsonData) {
             linePosition = 78;
           }
 
-          let arrowPosition = height?190:330;
+          let arrowPosition = height ? 190 : 330;
           if (logoTitleCount[i] == 2 || logoTitleCount[i] == 1) {
-            arrowPosition = height?190:330;
+            arrowPosition = height ? 190 : 330;
           } else if (logoTitleCount[i] == 3 || logoTitleCount[i] == 4) {
-            arrowPosition = height?214:354;
+            arrowPosition = height ? 214 : 354;
           }
 
           css += `
@@ -3511,7 +3704,7 @@ body {
   align-items:center;
   justify-content: center;
   font-family: sans-serif;
-  overflow:${height?'hidden':'auto'};
+  overflow:${height ? "hidden" : "auto"};
 }
 .PPT-Box {
   border: 1px solid ${JSON_Data.Page_Configuration.border_color || "#000000"};
@@ -3531,7 +3724,7 @@ body {
 }
 .mid-Line {
   position: absolute;
-  top: ${direction ? height?30:24.7 : height?55:45.5}%;
+  top: ${direction ? (height ? 30 : 24.7) : height ? 55 : 45.5}%;
   left: 55px;
   transform: translateY(-50%);
   height: 15px;
@@ -4001,7 +4194,7 @@ function adjustFooterWidth(JSON_Data) {
 
 adjustFooterWidth(JSON_Data);
 
-function drawConnectingLines(JSON_Data,GlobalHeight) {
+function drawConnectingLines(JSON_Data, GlobalHeight) {
   const pptBox = document.getElementById("PPT-Box");
   if (!pptBox) {
     console.warn("PPT-Box not found.");
@@ -4072,7 +4265,6 @@ function drawConnectingLines(JSON_Data,GlobalHeight) {
           const deltaX = endRect.left - startRect.left;
           const deltaY = endRect.top - startRect.top;
           const width = Math.sqrt(deltaX * deltaX + deltaY * deltaY) - 10;
-          
 
           const left = startRect.left - pptRect.left + startRect.width / 2;
           const top = startRect.top - pptRect.top + (hasAboveLine ? -11 : 0);
@@ -4102,7 +4294,7 @@ function drawConnectingLines(JSON_Data,GlobalHeight) {
                 ${
                   direction
                     ? `transform: rotateX(180deg);
-                   top: ${top - baseBottomH -(GlobalHeight?0:140)}px;
+                   top: ${top - baseBottomH - (GlobalHeight ? 0 : 140)}px;
                   `
                     : `top: ${topH + top}px;`
                 }
@@ -4138,7 +4330,7 @@ function drawConnectingLines(JSON_Data,GlobalHeight) {
     });
   });
 }
-drawConnectingLines(JSON_Data,height);
+drawConnectingLines(JSON_Data, height);
 
 function drawConnectingCircle(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
@@ -4536,8 +4728,6 @@ function drawConnectingTextLine(JSON_Data) {
 
     section.sub_groups.forEach((sg, idx) => {
       const textLineData = sg.content?.connecting_Text_Line;
-
-      // Remove old text-lines for this sub-group if display disabled or config missing
       if (
         !textLineData ||
         !(textLineData.display === "true" || textLineData.display === true)
@@ -4822,7 +5012,7 @@ function drawMultiplePolygons(JSON_Data) {
     "Level_9",
     "Level_10",
   ];
-  const compartmentTop = height?510:660;
+  const compartmentTop = height ? 510 : 660;
   const compartmentHeight = 200;
   const compartmentSize = 20;
   const SHAPE_W = 13;
@@ -5648,92 +5838,137 @@ function drawBottomTimelineSeries(JSON_Data) {
     return;
   }
 
+  const pptRect = pptBox.getBoundingClientRect();
+
+  // 🔹 Get mid-Line reference (ANCHOR)
+  const midLineEl = document.querySelector(".mid-Line");
+  let midLineCenterY = 0;
+
+  if (midLineEl) {
+    const midRect = midLineEl.getBoundingClientRect();
+    midLineCenterY =
+      midRect.top - pptRect.top + midRect.height / 2;
+  }
+
+  const TOLERANCE = 10;
+
   JSON_Data.body.forEach((section, sectionIdx) => {
     if (!section.sub_groups) return;
 
     section.sub_groups.forEach((sg, idx) => {
       const timeline = sg.content?.BottomtimelineSeries;
 
-      // If no timeline or no items, remove any previous lines for this subgroup
+      // 🧹 Cleanup if no timeline
       if (!timeline || !timeline.timlines || timeline.timlines.length === 0) {
         const oldLines = pptBox.querySelectorAll(
           `[class*="timeline-bottom-line-${sectionIdx}-${idx}-"]`
         );
-        oldLines.forEach((line) => line.remove());
+        oldLines.forEach(line => line.remove());
         return;
       }
 
       timeline.timlines.forEach((item, i) => {
         const timelineClass = `timeline-bottom-line-${sectionIdx}-${idx}-${i}`;
 
-        // Always remove any old instance first
-        const oldLine = pptBox.querySelector(`.${timelineClass}`);
-        if (oldLine) oldLine.remove();
-        const oldStyle = document.querySelector(
-          `style[data-timeline="${timelineClass}"]`
-        );
-        if (oldStyle) oldStyle.remove();
+        // 🧹 Remove previous render
+        pptBox.querySelector(`.${timelineClass}`)?.remove();
+        document
+          .querySelector(`style[data-timeline="${timelineClass}"]`)
+          ?.remove();
 
         // --- Look up endpoints ---
         const startEl = document.getElementById(item.starting);
         const endEl = document.getElementById(item.ending);
 
-        // Require BOTH elements present AND visible
         if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl)) {
-          return; // skip if either is missing or hidden
+          return;
         }
 
-        // --- Position + style calculations ---
+        // --- Level-based height (PRIMARY DRIVER) ---
         const levelStr = item.height || "Level_1";
         const levelNum = parseInt(levelStr.split("_")[1]) || 1;
-        const baseTopH = direction?(height?160:300):height?160:260;
+
+        const baseTopH = direction
+          ? height ? 160 : 300
+          : height ? 160 : 260;
+
         const increment = 5;
         const rawTopH = baseTopH + (levelNum - 1) * increment;
-        const topH = Math.min(Math.max(rawTopH, 30), direction ? height?280:430 : height?210:360);
 
+        const topH = Math.min(
+          Math.max(rawTopH, 30),
+          direction ? (height ? 280 : 430) : height ? 210 : 360
+        );
+
+        // --- Geometry ---
         const startRect = startEl.getBoundingClientRect();
         const endRect = endEl.getBoundingClientRect();
-        const pptRect = pptBox.getBoundingClientRect();
 
         const startCenterX =
-        startRect.left - pptRect.left + startRect.width / 2;
+          startRect.left - pptRect.left + startRect.width / 2;
         const endCenterX =
-        endRect.left - pptRect.left + endRect.width / 2;
+          endRect.left - pptRect.left + endRect.width / 2;
 
         const startCenterY =
-        startRect.top - pptRect.top + startRect.height / 2;
+          startRect.top - pptRect.top + startRect.height / 2;
         const endCenterY =
-        endRect.top - pptRect.top + endRect.height / 2;
+          endRect.top - pptRect.top + endRect.height / 2;
 
         const leftX = Math.min(startCenterX, endCenterX);
         const rightX = Math.max(startCenterX, endCenterX);
         const width2 = Math.max(rightX - leftX, 10);
-        const midY = (startCenterY + endCenterY) / 2;
 
-        const left = startRect.left - pptRect.left + startRect.width / 2;
-        const top = midY + (direction ? 105 : 0);
+        const left = startCenterX;
 
+        // 🔹 Base top anchored to mid-Line (NOT midY)
+        const baseTop = midLineCenterY + (direction ? 105 : 0);
+        const startDiff = startCenterY - midLineCenterY;
+        const endDiff = endCenterY - midLineCenterY;
 
+        const normStart =
+          Math.abs(startDiff) <= TOLERANCE ? 0 : startDiff;
+        const normEnd =
+          Math.abs(endDiff) <= TOLERANCE ? 0 : endDiff;
+
+        let verticalOffset = 0;
+
+        if (normStart === 0 && normEnd === 0) {
+          verticalOffset = 0;
+        } else if (normStart === 0) {
+          verticalOffset = normEnd;
+        } else if (normEnd === 0) {
+          verticalOffset = normStart;
+        } else {
+          verticalOffset =
+            Math.abs(normStart) > Math.abs(normEnd)
+              ? normStart
+              : normEnd;
+        }
+        const correctedTop = topH + baseTop ;
+
+        // --- Colors ---
         const bg =
           resolveColor(timeline.background_color, JSON_Data.colors) ||
           "linear-gradient(to right, #f6f4dc10 10%, #ffc305)";
+
         const showBorder =
           item.show_border === "true" || item.show_border === true;
+
         const borderColor = showBorder
           ? resolveColor(timeline.border_color, JSON_Data.colors) || "#ffc100"
           : "transparent";
 
-        // --- Inject new style ---
+        // --- Inject style ---
         const style = document.createElement("style");
         style.setAttribute("data-timeline", timelineClass);
         style.textContent = `
           .${timelineClass} {
             position: absolute;
             z-index: 4;
-            top: ${topH + top}px;
+            top: ${correctedTop}px;
             left: ${left}px;
             width: ${width2 + 4}px;
-            height:20px;
+            height: 20px;
             pointer-events: none;
             background: ${bg};
             border-top-right-radius: 10px;
@@ -5741,64 +5976,64 @@ function drawBottomTimelineSeries(JSON_Data) {
             display: flex;
             align-items: center;
             justify-content: end;
-            text-align:right;
             padding-right: 5px;
             color: black;
           }
-          .${timelineClass} p{
-            width:70%;
-            font-size:${getFontSize(7, 8, 9)}px;
-            font-weight:bold;
-            pointer-events: auto;
-            white-space: nowrap;        
-            overflow: hidden;           
+
+          .${timelineClass} p {
+            width: 70%;
+            font-size: ${getFontSize(7, 8, 9)}px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
             text-overflow: ellipsis;
+            pointer-events: auto;
           }
-          .${timelineClass} i{
-            font-size:${getFontSize(10, 11, 12)}px;
-            margin-top:1px;
+
+          .${timelineClass} i {
+            font-size: ${getFontSize(10, 11, 12)}px;
             margin-left: 5px;
           }
+
           .${timelineClass}::after {
             content: "";
             position: absolute;
             bottom: 55px;
             left: -4px;
-            border-radius: 50%;
             width: 6px;
             height: 6px;
+            border-radius: 50%;
             background: ${borderColor};
           }
+
           .${timelineClass}::before {
             content: "";
             position: absolute;
             bottom: 20px;
-            border-top:1px solid ${borderColor};
-            border-right:1px solid ${borderColor};
-            width:${width2}px;
             left: -3px;
-            height:38px;
-            border-top-right-radius:20px;
+            width: ${width2}px;
+            height: 38px;
+            border-top: 1px solid ${borderColor};
+            border-right: 1px solid ${borderColor};
+            border-top-right-radius: 20px;
           }
         `;
         document.head.appendChild(style);
 
-        // --- Add timeline div ---
+        // --- DOM ---
         const div = document.createElement("div");
         div.className = timelineClass;
-        div.innerHTML =
-          "<p title='" +
-          item.content +
-          "'>" +
-          item.content +
-          "</p><i class='fa-regular fa-clock'></i>";
+        div.innerHTML = `
+          <p title="${item.content}">${item.content}</p>
+          <i class="fa-regular fa-clock"></i>
+        `;
         pptBox.appendChild(div);
       });
     });
   });
 }
-drawBottomTimelineSeries(JSON_Data);
 
+drawBottomTimelineSeries(JSON_Data);
 
 function ToolTip_Creation(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
@@ -6142,7 +6377,7 @@ function ToolTip_Creation(JSON_Data) {
 ToolTip_Creation(JSON_Data);
 
 const skipSpacingTasks = [];
-function drawConnectingRectangle(JSON_Data,GlobalHeight) {
+function drawConnectingRectangle(JSON_Data, GlobalHeight) {
   const pptBox = document.getElementById("PPT-Box");
   if (!pptBox) {
     console.warn("PPT-Box not found.");
@@ -6186,9 +6421,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
 
         // ---- SKIP STEPS LOGIC (OPTIONAL) ----
         const skipSteps =
-          typeof connection.skipSteps === "number"
-            ? connection.skipSteps
-            : 0;
+          typeof connection.skipSteps === "number" ? connection.skipSteps : 0;
 
         const skipPlacement = connection.skipPlacement || "start";
 
@@ -6196,9 +6429,8 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
           skipSteps,
           skipPlacement,
           starting: connection.starting,
-          ending: connection.ending
+          ending: connection.ending,
         });
-
 
         // measurements
         const pptRect = pptBox.getBoundingClientRect();
@@ -6225,7 +6457,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
           parseInt((connection.height || "Level_1").split("_")[1]) || 1;
         const height = Math.min(
           Math.max(20 + (heightLevelNum - 1) * 5, 10),
-          direction ? GlobalHeight?140:270 : GlobalHeight?95:235
+          direction ? (GlobalHeight ? 140 : 270) : GlobalHeight ? 95 : 235
         );
 
         const borderLevelNum =
@@ -6239,9 +6471,9 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
         const color =
           resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
         const topOffset = 397;
-        const reverseTopOffset = GlobalHeight?312:462;
+        const reverseTopOffset = GlobalHeight ? 312 : 462;
         const topOffsetPageReverse = 220;
-        const topOffsetrReversePageReverse = GlobalHeight?490:640;
+        const topOffsetrReversePageReverse = GlobalHeight ? 490 : 640;
 
         // ---- Handle Config ----
         const config = connection.config;
@@ -6411,6 +6643,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
             const contentConversionShow =
               contentItem?.content_conversion?.display || false;
             const contentConversion = contentItem?.content_conversion;
+            const textIcon=contentItem?.textIconConfig
 
             // wrapper that contains icon + text
             const wrapper = document.createElement("div");
@@ -6423,6 +6656,8 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
             p.textContent = limitText(text, 10);
             p.style.color = contentItem.textColor || "white";
             p.style.margin = "0";
+            p.style.position="relative";
+            
             direction ? "" : (p.style.position = "relative");
             if (contentItem?.background_color) {
               p.style.padding = "10px";
@@ -6440,6 +6675,52 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
             p.style.fontSize = `${getFontSize(9, 10, 11)}px`;
             p.title = textDetail || text;
             if (IdName) p.id = IdName;
+
+            if (textIcon?.display) {
+              const position = textIcon.iconPosition?.toLowerCase();
+              const icons = textIcon.fontAwsomeIcon || [];
+              const colors = textIcon.iconColor || [];
+              
+              const createTextIcon = (side, iconClass, color) => {
+                const i = document.createElement("i");
+                i.className = iconClass;
+                i.style.position = "absolute";
+                i.style.top = "50%";
+                i.style.transform = "translateY(-50%)";
+                i.style.fontSize = "15px";
+                i.style.color =
+                  resolveColor(color, JSON_Data.colors) || "black";
+
+                if (side === "left") i.style.left = "3px";
+                if (side === "right") i.style.right = "3px";
+
+                return i;
+              };
+
+              // LEFT ICON
+              if (position === "left" || position === "both") {
+                p.appendChild(
+                  createTextIcon(
+                    "left",
+                    `${IdName}_icon_left ${icons[0]}`,
+                    colors[0]
+                  )
+                );
+              }
+
+              // RIGHT ICON
+              if (position === "right" || position === "both") {
+                const idx = position === "both" ? 1 : 0;
+
+                p.appendChild(
+                  createTextIcon(
+                    "right",
+                    `${IdName}_icon_right ${icons[idx]}`,
+                    colors[idx]
+                  )
+                );
+              }
+            }
 
             wrapper.appendChild(iconEl);
             wrapper.appendChild(p);
@@ -6595,7 +6876,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
             convDiv.className = convClass;
             convDiv.id = task.targetId + "_rectangle";
             convDiv.style.position = "absolute";
-            convDiv.style.zIndex = 5;
+            convDiv.style.zIndex = 2;
             linkPairs.push({
               convClass,
               polygonClass: null,
@@ -6614,7 +6895,9 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
               offSet +
               "px";
             convDiv.style.width = "125px";
-            convDiv.style.top = `${direction ? GlobalHeight?365:505 : 164}px`;
+            convDiv.style.top = `${
+              direction ? (GlobalHeight ? 365 : 505) : 164
+            }px`;
 
             const cfg = task.contentConversion;
             const logoCfg = cfg?.logo_titles_config || {};
@@ -6657,7 +6940,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
             userIcon.style.borderRadius = "50%";
             userIcon.style.bottom = "-10px";
             userIcon.style.zIndex = "3";
-            userIcon.style.pointerEvents="auto"
+            userIcon.style.pointerEvents = "auto";
 
             iconPlus.appendChild(userIcon);
 
@@ -6729,7 +7012,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
                 pill.style.margin = "0";
                 pill.style.padding = "8px 6px";
                 pill.style.borderRadius = "16px";
-                pill.style.textAlign="center"
+                pill.style.textAlign = "center";
                 pill.style.minWidth = "30px";
                 pill.style.whiteSpace = "nowrap";
                 pill.style.overflow = "hidden";
@@ -6831,7 +7114,7 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
             "Level_9",
             "Level_10",
           ];
-          const compartmentTop = GlobalHeight?510:660;
+          const compartmentTop = GlobalHeight ? 510 : 660;
           const compartmentHeight = 200; // container height
           const compartmentSize = 20; // distance between shapes vertically
           const SHAPE_W = 13;
@@ -7125,29 +7408,20 @@ function drawConnectingRectangle(JSON_Data,GlobalHeight) {
     });
   });
 }
-drawConnectingRectangle(JSON_Data,height);
+drawConnectingRectangle(JSON_Data, height);
 
 function applySkipSpacing(skipSpacingTasks) {
-  requestAnimationFrame(() => {
-    /* ===============================
-       0️⃣ CLEANUP OLD SPACERS
-    =============================== */
-    document.querySelectorAll(".skip-spacer").forEach(el => el.remove());
+  document.querySelectorAll(".skip-spacer").forEach((el) => el.remove());
 
     const groupSpacingMap = new Map();
     const groupElementsMap = new Map();
-
-    /* ===============================
-       1️⃣ PROCESS TASKS (SPACERS)
-    =============================== */
-    skipSpacingTasks.forEach(task => {
+    skipSpacingTasks.forEach((task) => {
       const { skipSteps, skipPlacement, starting, ending } = task;
 
       if (!skipSteps || skipSteps <= 0) return;
 
       const spacingPx = skipSteps * 150;
-      const targetId =
-        skipPlacement === "start" ? starting : ending;
+      const targetId = skipPlacement === "start" ? starting : ending;
 
       if (!targetId) return;
 
@@ -7197,10 +7471,6 @@ function applySkipSpacing(skipSpacingTasks) {
           : midTopTarget.before(spacer);
       }
     });
-
-    /* ===============================
-       2️⃣ APPLY WIDTHS
-    =============================== */
     groupElementsMap.forEach((els, subGroupDiv) => {
       const spacingPx = groupSpacingMap.get(subGroupDiv) || 0;
       const { subGroupMidTop } = els;
@@ -7211,29 +7481,25 @@ function applySkipSpacing(skipSpacingTasks) {
             subGroupMidTop.getBoundingClientRect().width;
         }
 
-        const baseWidth =
-          parseFloat(subGroupDiv.dataset.baseMidTopWidth);
+        const baseWidth = parseFloat(subGroupDiv.dataset.baseMidTopWidth);
 
-        subGroupMidTop.style.width =
-          `${baseWidth + spacingPx}px`;
+        subGroupMidTop.style.width = `${baseWidth + spacingPx}px`;
       }
     });
-      drawLogoOnMidLine(JSON_Data);
-      drawConnectingLines(JSON_Data);
-      drawConnectingTextLine(JSON_Data,height);
-      drawConnectingRectangle(JSON_Data,height);
-      drawBottomTimelineSeries(JSON_Data);
-      drawConnectingCircle(JSON_Data);
-      adjustFooterWidth(JSON_Data);
-      adjustMidLineWidth(JSON_Data);
-      drawMultiplePolygons(JSON_Data);
-      connectingBottomText(JSON_Data);
-      warning_Logo(JSON_Data);
-    
-  });
+    drawLogoOnMidLine(JSON_Data);
+    drawConnectingLines(JSON_Data);
+    drawConnectingTextLine(JSON_Data, height);
+    drawConnectingRectangle(JSON_Data, height);
+    drawBottomTimelineSeries(JSON_Data);
+    drawConnectingCircle(JSON_Data);
+    adjustFooterWidth(JSON_Data);
+    adjustMidLineWidth(JSON_Data);
+    drawMultiplePolygons(JSON_Data);
+    connectingBottomText(JSON_Data);
+    warning_Logo(JSON_Data);
 }
 
-applySkipSpacing(skipSpacingTasks)
+applySkipSpacing(skipSpacingTasks);
 
 function drawPageBottomShapes(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
@@ -7498,7 +7764,7 @@ function AddOrRemoveShowHideBtn(Json_Data) {
                 JSON.stringify(referencedLogoIDs)
               );
             } catch (e) {
-              console.warn(e)
+              console.warn(e);
             }
           }
 
@@ -7604,21 +7870,26 @@ function AddOrRemoveShowHideBtn(Json_Data) {
               }
             }
 
-            if (Array.isArray(entry.ReferencedLogoID) && entry.ReferencedLogoID.length) {
+            if (
+              Array.isArray(entry.ReferencedLogoID) &&
+              entry.ReferencedLogoID.length
+            ) {
               entry.ReferencedLogoID.forEach((refId) => {
-                document.querySelectorAll(`[data-starting-id="${refId}"]`).forEach((lineEl) => {
-                  if (entry.currentDisplay) {
-                    // show
-                    lineEl.style.display = "";
-                    lineEl.style.opacity = "";
-                    lineEl.style.pointerEvents = "";
-                  } else {
-                    // hide
-                    lineEl.style.opacity = "0";
-                    lineEl.style.pointerEvents = "none";
-                    lineEl.style.display = "none";
-                  }
-                });
+                document
+                  .querySelectorAll(`[data-starting-id="${refId}"]`)
+                  .forEach((lineEl) => {
+                    if (entry.currentDisplay) {
+                      // show
+                      lineEl.style.display = "";
+                      lineEl.style.opacity = "";
+                      lineEl.style.pointerEvents = "";
+                    } else {
+                      // hide
+                      lineEl.style.opacity = "0";
+                      lineEl.style.pointerEvents = "none";
+                      lineEl.style.display = "none";
+                    }
+                  });
               });
             }
             document.querySelectorAll(`[data-target="${id}"]`).forEach((el) => {

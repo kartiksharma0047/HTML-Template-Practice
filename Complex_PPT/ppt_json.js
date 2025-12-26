@@ -23,7 +23,7 @@ JSON_Data10={
     border_color: "black",
     scroll_horizontal: true,
     direction: "reverse",
-    PageHeight:"extended",
+    PageHeight: "extended",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -310,7 +310,7 @@ JSON_Data10={
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id1"]
+                  ReferencedLogoID: ["logo_title_id1"],
                 },
                 {
                   display: true,
@@ -319,7 +319,7 @@ JSON_Data10={
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id2"]
+                  ReferencedLogoID: ["logo_title_id2"],
                 },
                 {
                   display: true,
@@ -328,7 +328,7 @@ JSON_Data10={
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id3"]
+                  ReferencedLogoID: ["logo_title_id3"],
                 },
                 {
                   display: true,
@@ -337,7 +337,7 @@ JSON_Data10={
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id4"]
+                  ReferencedLogoID: ["logo_title_id4"],
                 },
               ],
               logo: [
@@ -894,15 +894,27 @@ JSON_Data10={
           },
           content: {
             logo_heading: ["", "", "", "", ""],
-            logo_heading_color: ["Common_transparent","Common_transparent","Common_transparent","Common_transparent", "Common_transparent"],
+            logo_heading_color: [
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+            ],
             logo_heading_border_color: [
               "Common_transparent",
               "Common_transparent",
               "Common_transparent",
               "Common_transparent",
-              "Common_transparent"
+              "Common_transparent",
             ],
-            logo_color: ["Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent"],
+            logo_color: [
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+              "Common_transparent",
+            ],
             logo_titles_config: [
               {
                 logo_title: ["Hidden"],
@@ -1030,10 +1042,14 @@ JSON_Data10={
               display: true,
               connections: [
                 {
-                  starting: "on_line_content_8",
+                  starting: "on_line_content_1",
                   start_from_starting: false,
-                  ending: "on_line_content_13",
+                  ending: "on_line_content_6",
                   end_from_ending: true,
+                  skipSteps: 1,
+                  skipPlacement: "start",
+                  starting_logo_ID: "logo_title_id1",
+                  ending_logo_ID: "logo_title_id6",
                   height: "Level_10",
                   border_thickness: "Level_6",
                   config: {
@@ -1067,8 +1083,24 @@ JSON_Data10={
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
                     ],
-                    iconColors: ["white_color", "white_color", "Common_transparent","white_color", "Common_transparent","white_color", "Common_transparent"],
-                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3","Size_3", "Size_3"],
+                    iconColors: [
+                      "white_color",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                      "Common_transparent",
+                    ],
+                    iconSize: [
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                    ],
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
@@ -1092,6 +1124,12 @@ JSON_Data10={
                           OpenFontAwsomeiconColor: "purple",
                           CloseFontAwsomeiconColor: "red",
                           ByDefaultBehaviour: "open",
+                        },
+                        textIconConfig:{
+                          display:true,
+                          iconPosition:"both",
+                          fontAwsomeIcon:["fa-solid fa-hippo","fa-solid fa-person"],
+                          iconColor:["gray","blue"],
                         },
                         content_conversion: {
                           display: true,
@@ -1162,6 +1200,12 @@ JSON_Data10={
                         textDetail: "RELAPSE",
                         rectangleTooltipId: "on_line_rectangle_3",
                         background_color: "Common_onLineContent_Background",
+                        textIconConfig:{
+                          display:true,
+                          iconPosition:"left",
+                          fontAwsomeIcon:["fa-brands fa-github"],
+                          iconColor:["black"],
+                        },
                       },
                       {
                         text: "DIAGNOSIS",
@@ -1169,6 +1213,12 @@ JSON_Data10={
                         textDetail: "RELAPSE",
                         rectangleTooltipId: "on_line_rectangle_4",
                         background_color: "Common_onLineContent_Background",
+                        textIconConfig:{
+                          display:true,
+                          iconPosition:"right",
+                          fontAwsomeIcon:["fa-solid fa-flag"],
+                          iconColor:["pink"],
+                        },
                       },
                     ],
                   },
@@ -1187,8 +1237,13 @@ JSON_Data10={
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
                     ],
-                    iconColors: ["white_color", "white_color", "Common_transparent","white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3"],
+                    iconColors: [
+                      "white_color",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                    ],
+                    iconSize: ["Size_3", "Size_3", "Size_3", "Size_3"],
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
@@ -1237,20 +1292,10 @@ JSON_Data10={
                           logo_heading_border_color: "#a334c8",
                           logo_color: "#a334c8",
                           logo_titles_config: {
-                            logo_title: [
-                              "Dentist",
-                              "",
-                              "Animal Care",
-                              "",
-                            ],
+                            logo_title: ["Dentist", "", "Animal Care", ""],
                             links: [""],
                             logo_id_name: "on_line_rectangle_logo_title_id2",
-                            logo_detail: [
-                              "Dentist",
-                              "",
-                              "Animal Care",
-                              "",
-                            ],
+                            logo_detail: ["Dentist", "", "Animal Care", ""],
                             logo_title_background_color: [
                               "white",
                               "white",
@@ -1294,8 +1339,20 @@ JSON_Data10={
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
                     ],
-                    iconColors: ["white_color", "Common_transparent", "white_color","Common_transparent", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3"],
+                    iconColors: [
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                    ],
+                    iconSize: [
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                    ],
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
@@ -1342,14 +1399,10 @@ JSON_Data10={
                           logo_heading_border_color: "#a334c8",
                           logo_color: "#a334c8",
                           logo_titles_config: {
-                            logo_title: [
-                              "GP"
-                            ],
+                            logo_title: ["GP"],
                             links: [""],
                             logo_id_name: "on_line_rectangle_logo_title_id3",
-                            logo_detail: [
-                              "GP"
-                            ],
+                            logo_detail: ["GP"],
                             logo_title_background_color: [
                               "white",
                               "white",
@@ -1394,8 +1447,20 @@ JSON_Data10={
                       "fa-solid fa-angles-right",
                       "fa-solid fa-angles-right",
                     ],
-                    iconColors: ["white_color", "Common_transparent", "white_color","Common_transparent", "white_color"],
-                    iconSize: ["Size_3", "Size_3", "Size_3","Size_3", "Size_3"],
+                    iconColors: [
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                      "Common_transparent",
+                      "white_color",
+                    ],
+                    iconSize: [
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                      "Size_3",
+                    ],
                     justify_content: "between",
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
@@ -1486,7 +1551,7 @@ JSON_Data10={
               color: ["#58e3d2", "#58e3d2", "#58e3d2"],
             },
             on_line_content_configuration: {
-              content: ["Hidden", "Hidden","Hidden","Hidden","Hidden"],
+              content: ["Hidden", "Hidden", "Hidden", "Hidden", "Hidden"],
               striping: [
                 {
                   stripped: false,
@@ -1500,16 +1565,58 @@ JSON_Data10={
                 },
               ],
               link: [""],
-              shapes: ["rounded_bottom_right", "rounded_lg","rounded_lg","rounded_lg","rounded_lg"],
-              content_id: ["on_line_content_9", "on_line_content_10","on_line_content_11","on_line_content_12","on_line_content_13"],
-              content_details: ["", "","","",""],
-              color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
-              background_shadow: [false, false,false,false,false],
-              background_color: ["Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent", "Common_transparent"],
-              bottom_point_color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
-              bottom_point_position_onLine: [false, false,false,false,false],
-              bottom_line_color: ["Common_transparent", "Common_transparent","Common_transparent","Common_transparent","Common_transparent"],
-              bottom_Line_postion: ["Level_1","Level_1","Level_1","Level_1", "Level_1"],
+              shapes: [
+                "rounded_bottom_right",
+                "rounded_lg",
+                "rounded_lg",
+                "rounded_lg",
+                "rounded_lg",
+              ],
+              content_id: [
+                "on_line_content_9",
+                "on_line_content_10",
+                "on_line_content_11",
+                "on_line_content_12",
+                "on_line_content_13",
+              ],
+              content_details: ["", "", "", "", ""],
+              color: [
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+              ],
+              background_shadow: [false, false, false, false, false],
+              background_color: [
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+              ],
+              bottom_point_color: [
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+              ],
+              bottom_point_position_onLine: [false, false, false, false, false],
+              bottom_line_color: [
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+                "Common_transparent",
+              ],
+              bottom_Line_postion: [
+                "Level_1",
+                "Level_1",
+                "Level_1",
+                "Level_1",
+                "Level_1",
+              ],
               bottom_shape_positions: [],
             },
             BottomtimelineSeries: {
@@ -1522,8 +1629,8 @@ JSON_Data10={
                   height: "Level_3",
                   show_border: false,
                   starting: "on_line_content_8",
-                  ending: "on_line_rectangle_2",
-                }
+                  ending: "on_line_rectangle_7",
+                },
               ],
             },
           },
