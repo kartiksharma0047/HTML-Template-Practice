@@ -6,7 +6,7 @@ JSON_Data = {
       footer_2_label: "Hospital",
       footer_3_label: "Other structure",
       footer_4_label: "Home",
-      footer_5_label: "Hospital Drugstore"
+      footer_5_label: "Hospital Drugstore",
     },
     label_width: {
       footer_1_width: "90",
@@ -1026,12 +1026,17 @@ JSON_Data = {
                   ending: "on_line_rectangle_4",
                   start_from: "start",
                   end_from: "end",
-                  border_thickness: "Level_4",
+                  border_thickness: "Level_5",
                   config: {
                     fontAwsomeicon: "fa-solid fa-angles-left",
                     iconColor: "white",
                     iconSize: "Level_2",
                     direction: "default",
+                  },
+                  shapeConfig: {
+                    shape: "rectangle",
+                    border: "rounded_lg",
+                    height: "Level_3",
                   },
                 },
               ],
@@ -1042,13 +1047,11 @@ JSON_Data = {
               connections: [
                 {
                   starting: "on_line_content_1",
-                  start_from_starting: false,
+                  start_from_starting: true,
                   ending: "on_line_content_6",
                   end_from_ending: true,
                   skipSteps: 1,
                   skipPlacement: "start",
-                  starting_logo_ID: "logo_title_id1",
-                  ending_logo_ID: "logo_title_id6",
                   height: "Level_10",
                   border_thickness: "Level_6",
                   config: {
@@ -1072,6 +1075,7 @@ JSON_Data = {
                   end_from_ending: true,
                   height: "Level_10",
                   border_thickness: "Level_6",
+                  z_Index: "Level_4",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -1124,11 +1128,14 @@ JSON_Data = {
                           CloseFontAwsomeiconColor: "red",
                           ByDefaultBehaviour: "open",
                         },
-                        textIconConfig:{
-                          display:true,
-                          iconPosition:"both",
-                          fontAwsomeIcon:["fa-solid fa-hippo","fa-solid fa-person"],
-                          iconColor:["gray","blue"],
+                        textIconConfig: {
+                          display: true,
+                          iconPosition: "both",
+                          fontAwsomeIcon: [
+                            "fa-solid fa-hippo",
+                            "fa-solid fa-person",
+                          ],
+                          iconColor: ["gray", "blue"],
                         },
                         content_conversion: {
                           display: true,
@@ -1199,11 +1206,11 @@ JSON_Data = {
                         textDetail: "RELAPSE",
                         rectangleTooltipId: "on_line_rectangle_3",
                         background_color: "Common_onLineContent_Background",
-                        textIconConfig:{
-                          display:true,
-                          iconPosition:"left",
-                          fontAwsomeIcon:["fa-brands fa-github"],
-                          iconColor:["black"],
+                        textIconConfig: {
+                          display: true,
+                          iconPosition: "left",
+                          fontAwsomeIcon: ["fa-brands fa-github"],
+                          iconColor: ["black"],
                         },
                       },
                       {
@@ -1212,14 +1219,31 @@ JSON_Data = {
                         textDetail: "RELAPSE",
                         rectangleTooltipId: "on_line_rectangle_4",
                         background_color: "Common_onLineContent_Background",
-                        textIconConfig:{
-                          display:true,
-                          iconPosition:"right",
-                          fontAwsomeIcon:["fa-solid fa-flag"],
-                          iconColor:["pink"],
+                        textIconConfig: {
+                          display: true,
+                          iconPosition: "right",
+                          fontAwsomeIcon: ["fa-solid fa-flag"],
+                          iconColor: ["pink"],
                         },
                       },
                     ],
+                  },
+                  connecting_Branch_Line: {
+                    display: true,
+                    connections: [
+                      {
+                        starting: "on_line_rectangle_2",
+                        ending: "on_line_rectangle_3",
+                        height: "Level_7",
+                      },
+                      {
+                        starting: "on_line_rectangle_2",
+                        ending: "on_line_rectangle_4",
+                        height: "Level_8",
+                      },
+                    ],
+                    arrow_color: ["#9f30cb", "#9f30cb"],
+                    line_color: ["#9f30cb", "#9f30cb"],
                   },
                 },
                 {
@@ -1229,6 +1253,7 @@ JSON_Data = {
                   end_from_ending: true,
                   height: "Level_23",
                   border_thickness: "Level_6",
+                  z_Index: "Level_3",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -1324,12 +1349,13 @@ JSON_Data = {
                   },
                 },
                 {
-                  starting: "on_line_content_7",
-                  start_from_starting: false,
-                  ending: "on_line_content_13",
+                  starting: "on_line_rectangle_2",
+                  start_from_starting: true,
+                  ending: "on_line_rectangle_4",
                   end_from_ending: true,
-                  height: "Level_35",
+                  height: "Level_25",
                   border_thickness: "Level_6",
+                  z_Index: "Level_2",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -1438,6 +1464,7 @@ JSON_Data = {
                   end_from_ending: true,
                   height: "Level_48",
                   border_thickness: "Level_6",
+                  z_Index: "Level_1",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -1464,6 +1491,7 @@ JSON_Data = {
                     start_end_gaps: "Level_2",
                     shape: "rounded_bottom",
                     content: [
+                      {},
                       {},
                       {},
                       {},
@@ -1653,8 +1681,9 @@ const resolveColor = (value, colorMap) => {
   return value;
 };
 
-const getFontSize = (sm, md, lg) => {
-  const fontType = JSON_Data?.fontConfig?.fontsize?.toLowerCase?.() || "small";
+function getFontSize(sm, md, lg) {
+  const fontType =
+    window.JSON_Data?.fontConfig?.fontsize?.toLowerCase?.() || "small";
 
   switch (fontType) {
     case "small":
@@ -1666,7 +1695,280 @@ const getFontSize = (sm, md, lg) => {
     default:
       return sm;
   }
-};
+}
+
+function adjustMidLineWidth(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  const midLine = pptBox?.querySelector(".mid-Line");
+  if (!pptBox || !midLine) return;
+
+  // all logo elements (DOM nodes). Adjust selector if your ids differ.
+  const allChildren = Array.from(
+    pptBox.querySelectorAll("[id^='logo_title_id']"),
+  );
+  if (!allChildren.length) {
+    // nothing to measure
+    midLine.style.width = "0px";
+    return;
+  }
+
+  // container scroll coordinates (relative to container content)
+  const containerScrollLeft = pptBox.scrollLeft;
+  const containerWidth = pptBox.clientWidth;
+  const containerLeft = containerScrollLeft;
+  const containerRight = containerScrollLeft + containerWidth;
+
+  const nodesInfo = allChildren.map((el) => {
+    let x = 0;
+    let node = el;
+    while (node && node !== pptBox && node.offsetParent) {
+      x += node.offsetLeft;
+      node = node.offsetParent;
+    }
+    if (node !== pptBox) {
+      const elRect = el.getBoundingClientRect();
+      const pptRect = pptBox.getBoundingClientRect();
+      x = elRect.left - pptRect.left + pptBox.scrollLeft;
+    }
+    const w = el.offsetWidth || el.getBoundingClientRect().width || 0;
+    return { el, left: x, right: x + w, width: w };
+  });
+
+  // 1) Prefer the right-most element that is currently visible in the container viewport
+  const visibleNodes = nodesInfo.filter(
+    (n) => n.right > containerLeft && n.left < containerRight && n.width > 0,
+  );
+  let targetNodeInfo = null;
+  if (visibleNodes.length) {
+    targetNodeInfo = visibleNodes.reduce(
+      (a, b) => (b.right > a.right ? b : a),
+      visibleNodes[0],
+    );
+  } else {
+    try {
+      const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
+      const configs = lastSubGroup?.content?.logo_titles_config || [];
+      const lastConfigWithId = configs.filter((c) => c.logo_id_name).at(-1);
+      const lastParentId = lastConfigWithId?.logo_id_name || null;
+
+      if (lastParentId) {
+        const elById = pptBox.querySelector(`#${CSS.escape(lastParentId)}`);
+        if (elById) {
+          // find nodeInfo for this element if present
+          targetNodeInfo = nodesInfo.find((n) => n.el === elById) || null;
+        }
+      }
+    } catch (err) {
+      // ignore and fallback below
+      console.warn("adjustMidLineWidth: safe JSON parse failed", err);
+    }
+
+    // 3) If still no target, pick the furthest-right element in DOM (max right)
+    if (!targetNodeInfo) {
+      targetNodeInfo = nodesInfo.reduce(
+        (a, b) => (b.right > a.right ? b : a),
+        nodesInfo[0],
+      );
+    }
+  }
+
+  if (!targetNodeInfo) {
+    midLine.style.width = "0px";
+    return;
+  }
+
+  // midLine offsetLeft relative to container: similar strategy as above
+  let midLeft = 0;
+  {
+    let node = midLine;
+    while (node && node !== pptBox && node.offsetParent) {
+      midLeft += node.offsetLeft;
+      node = node.offsetParent;
+    }
+    if (node !== pptBox) {
+      // fallback to rect-based correction
+      const elRect = midLine.getBoundingClientRect();
+      const pptRect = pptBox.getBoundingClientRect();
+      midLeft = elRect.left - pptRect.left + pptBox.scrollLeft;
+    }
+  }
+
+  // compute width we need so that midLine reaches the right edge of targetNode relative to container content
+  // optionally subtract small right padding if you want a bit of breathing room (0-10 px)
+  const rightPadding = 0;
+
+  // width in pixels relative to container content
+  let desiredWidth = Math.max(0, targetNodeInfo.right - midLeft - rightPadding);
+
+  // clamp width between 0 and the full content width starting from midLeft.
+  // Need maximum possible content width: you can use the furthest right node in nodesInfo.
+  const furthestRight = nodesInfo.reduce(
+    (a, b) => (b.right > a ? b.right : a),
+    0,
+  );
+  const maxPossibleWidth = Math.max(0, furthestRight - midLeft);
+
+  if (desiredWidth > maxPossibleWidth) desiredWidth = maxPossibleWidth;
+  if (desiredWidth < 0) desiredWidth = 0;
+
+  const offset = getFontSize(25, 30, 35);
+
+  desiredWidth = Math.max(0, desiredWidth + offset);
+  midLine.style.width = `${Math.round(desiredWidth)}px`;
+}
+
+function adjustFooterWidth(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  const footer = pptBox?.querySelector(".footer-dark-five-lines");
+  if (!pptBox || !footer) return;
+
+  // one-time binding guard on pptBox to avoid multiple listeners
+  if (!pptBox.__footerWidthBinderAttached) {
+    // debounced runner
+    let t;
+    const runner = () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        try {
+          adjustFooterWidth(JSON_Data);
+        } catch (e) {
+          console.warn("adjustFooterWidth runner error", e);
+        }
+      }, 40);
+    };
+    pptBox.addEventListener("scroll", runner, { passive: true });
+    window.addEventListener("resize", runner);
+    pptBox.__footerWidthBinderAttached = true;
+  }
+
+  // gather logo nodes (those with id starting with logo_title_id) - as a stable array
+  const allChildren = Array.from(
+    pptBox.querySelectorAll("[id^='logo_title_id']"),
+  );
+  if (!allChildren.length) {
+    footer.style.width = "0px";
+    return;
+  }
+
+  // container coords for viewport (in content coordinate space)
+  const containerScrollLeft = pptBox.scrollLeft;
+  const containerWidth = pptBox.clientWidth;
+  const viewportLeft = containerScrollLeft;
+  const viewportRight = containerScrollLeft + containerWidth;
+
+  // build nodesInfo with left/right relative to container content (offsetLeft accumulation, fallback to rect)
+  const nodesInfo = allChildren.map((el) => {
+    let left = 0;
+    let node = el;
+    while (node && node !== pptBox && node.offsetParent) {
+      left += node.offsetLeft;
+      node = node.offsetParent;
+    }
+    if (node !== pptBox) {
+      // fallback to bounding rect correction
+      const elRect = el.getBoundingClientRect();
+      const pptRect = pptBox.getBoundingClientRect();
+      left = elRect.left - pptRect.left + pptBox.scrollLeft;
+    }
+    const width =
+      el.offsetWidth ||
+      (el.getBoundingClientRect && el.getBoundingClientRect().width) ||
+      0;
+    return { el, left, right: left + width, width };
+  });
+
+  // find right-most visible node
+  const visibleNodes = nodesInfo.filter(
+    (n) => n.right > viewportLeft && n.left < viewportRight && n.width > 0,
+  );
+  let targetNode = null;
+
+  if (visibleNodes.length) {
+    targetNode = visibleNodes.reduce((a, b) => (b.right > a.right ? b : a));
+  } else {
+    try {
+      const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
+      const configs = lastSubGroup?.content?.logo_titles_config || [];
+      const logoIds = configs
+        .map((c) => c.logo_id_name)
+        .filter((id) => id && id.trim() !== "");
+      const lastParentId = logoIds.at(-1) || null;
+      if (lastParentId) {
+        // safe id selector (use CSS.escape if available)
+        const safeId =
+          typeof CSS !== "undefined" && CSS.escape
+            ? CSS.escape(lastParentId)
+            : lastParentId.replace(
+                /([#.;?+*~\[\]()>:@!^$\\,{}|\/<>])/g,
+                "\\$1",
+              );
+        const elById = pptBox.querySelector(`#${safeId}`);
+        if (elById) {
+          targetNode = nodesInfo.find((n) => n.el === elById) || null;
+        }
+      }
+    } catch (err) {
+      // ignore and fallback below
+      console.warn("adjustFooterWidth: JSON parse fallback failed", err);
+    }
+
+    if (!targetNode) {
+      targetNode = nodesInfo.reduce(
+        (a, b) => (b.right > a.right ? b : a),
+        nodesInfo[0],
+      );
+    }
+  }
+
+  if (!targetNode) {
+    footer.style.width = "0px";
+    return;
+  }
+
+  // compute footerLeft relative to container
+  let footerLeft = 0;
+  {
+    let node = footer;
+    while (node && node !== pptBox && node.offsetParent) {
+      footerLeft += node.offsetLeft;
+      node = node.offsetParent;
+    }
+    if (node !== pptBox) {
+      const fRect = footer.getBoundingClientRect();
+      const pRect = pptBox.getBoundingClientRect();
+      footerLeft = fRect.left - pRect.left + pptBox.scrollLeft;
+    }
+  }
+
+  // compute logoCount and lastParentId for padding logic (safe)
+  let logoCount = 0;
+  let lastParentIdForCheck = null;
+  try {
+    const lastBody = JSON_Data.body?.at(-1);
+    const lastSubGroup = lastBody?.sub_groups?.at(-1);
+    const configs = lastSubGroup?.content?.logo_titles_config || [];
+    const logoIds = configs
+      .map((cfg) => cfg.logo_id_name)
+      .filter((id) => id && id.trim() !== "");
+    logoCount = logoIds.length;
+    lastParentIdForCheck = logoIds.at(-1) || null;
+  } catch (err) {
+    console.warn("adjustFooterWidth: logo count parse failed", err);
+  }
+
+  // decide footer width setting and calculate desired width clamped to content bounds
+  const footerWidthSetting = (
+    JSON_Data.footer?.footer_width || "auto"
+  ).toLowerCase();
+  if (footerWidthSetting === "default") {
+    footer.style.width = "100%";
+  } else {
+    const rightMost = targetNode.right;
+    const offset = getFontSize(20, 30, 36);
+    let desiredWidth = Math.max(0, rightMost + offset);
+    footer.style.width = `${Math.round(desiredWidth)}px`;
+  }
+}
 
 // Util Function -  Safe normalize function for Appian string input
 function normalizeAppianString(str) {
@@ -1797,9 +2099,9 @@ function convertToFormat(JsonData) {
     }
     <div class="top">
       <h2 class="div-title" title="${limitText(title, 280)}">${limitText(
-      title,
-      titleLimit
-    )}</h2>
+        title,
+        titleLimit,
+      )}</h2>
     </div>
     <div class="mid-top">
       <div class="icon_plus_name">
@@ -1823,12 +2125,12 @@ function convertToFormat(JsonData) {
       const bg =
         resolveColor(
           start_content.configurations.background_color?.[index],
-          JsonData.colors
+          JsonData.colors,
         ) || "white";
       const font =
         resolveColor(
           start_content.configurations.font_color?.[index],
-          JsonData.colors
+          JsonData.colors,
         ) || "black";
       const stepLink = start_content.stepsLink?.[index] || "";
       const stepDetail = start_content.steps_details?.[index] || "";
@@ -1862,37 +2164,37 @@ function convertToFormat(JsonData) {
     const logoGradient =
       resolveColor(
         start_content?.configurations?.logo_color,
-        JsonData.colors
+        JsonData.colors,
       ) || "#2394b9";
     const logo_background =
       resolveColor(
         start_content?.configurations?.logo_para_color,
-        JsonData.colors
+        JsonData.colors,
       ) || "#2394b9";
     const stepBg =
       resolveColor(
         start_content?.configurations?.background_color,
-        JsonData.colors
+        JsonData.colors,
       ) || "white";
     const font_color =
       resolveColor(
         start_content?.configurations?.font_color,
-        JsonData.colors
+        JsonData.colors,
       ) || "black";
     const logo_font_color =
       resolveColor(
         start_content?.configurations?.logo_font_color,
-        JsonData.colors
+        JsonData.colors,
       ) || "black";
     const mid_line_color =
       resolveColor(
         start_content?.configurations?.mid_line_color,
-        JsonData.colors
+        JsonData.colors,
       ) || "#58e3d2";
     const logo_border =
       resolveColor(
         start_content?.configurations?.logo_border_color,
-        JsonData.colors
+        JsonData.colors,
       ) || "#2394b9";
     const line_color =
       resolveColor(configurations?.line_color, JsonData.colors) || "#adafaf";
@@ -2095,7 +2397,7 @@ function convertToFormat(JsonData) {
       border-bottom: 4px solid transparent;
       border-left: 5px solid ${resolveColor(
         boxShapeLineColor,
-        JsonData.colors
+        JsonData.colors,
       )};
       width:0px;
       height:0px;
@@ -2186,7 +2488,7 @@ function convertToFormat(JsonData) {
     const logoBackground =
       resolveColor(
         start_content?.configurations?.logo_background_color,
-        colors
+        colors,
       ) || "linear-gradient(to right top, #2394b9 10%, #5df3e4)";
 
     let html = `<div class="Slide-box ${uniqueClassName}">\n`;
@@ -2203,10 +2505,10 @@ function convertToFormat(JsonData) {
           <div class="icon-plus-name-inner">
             <i class="fa-solid fa-user start-avatar" aria-hidden="true"></i>
             <p class="start-pill ${start_content.link ? "Div-link" : ""}" ${
-        start_content.link
-          ? `onclick="window.open('${start_content.link}', '_blank')"`
-          : ""
-      } title="${limitText(start_content?.logo_title_detail, 280)}">
+              start_content.link
+                ? `onclick="window.open('${start_content.link}', '_blank')"`
+                : ""
+            } title="${limitText(start_content?.logo_title_detail, 280)}">
               ${limitText(start_content?.logo_title, 12)}
             </p>
           </div>
@@ -2257,7 +2559,7 @@ function convertToFormat(JsonData) {
                   logoCfg.logo
                 }" style="color:${resolveColor(
                   logoCfg.logoColor,
-                  "black"
+                  "black",
                 )}"></i>`;
               }
               if (logoCfg.logoPosition === "End") {
@@ -2265,7 +2567,7 @@ function convertToFormat(JsonData) {
                   logoCfg.logo
                 }" style="color:${resolveColor(
                   logoCfg.logoColor,
-                  "black"
+                  "black",
                 )}"></i>`;
               }
               if (logoCfg.logoPosition === "Both") {
@@ -2295,8 +2597,8 @@ function convertToFormat(JsonData) {
             html += `<h6
   title="${limitText(contentDetail, 280)}"
   class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
-              isStriped ? " striped" : ""
-            }"
+    isStriped ? " striped" : ""
+  }"
   ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
 >
   ${logoStart}
@@ -2367,8 +2669,8 @@ function convertToFormat(JsonData) {
     <h6
       title="${limitText(contentDetail, 280)}"
       class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
-            isStriped ? " striped" : ""
-          }"
+        isStriped ? " striped" : ""
+      }"
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
     >
       ${logoStart}
@@ -2412,7 +2714,7 @@ function convertToFormat(JsonData) {
         if (logoHeading) {
           html += `<span class="span-${i + 1}">${limitText(
             logoHeading,
-            10
+            10,
           )}</span>\n`;
         }
 
@@ -2444,9 +2746,9 @@ function convertToFormat(JsonData) {
 
           return `<p ${titleAttr} class="${classes}" ${
             hasLink ? "Div-link" : ""
-          } ${hasLink ? `onclick="window.open('${link}', '_blank')"` : ""}>${
-            hasText ? text : ""
-          }</p>\n`;
+          } ${
+            hasLink ? `onclick="window.open('${link}', '_blank')"` : ""
+          }>${hasText ? text : ""}</p>\n`;
         };
 
         // 🧩 Layout logic
@@ -2457,7 +2759,7 @@ function convertToFormat(JsonData) {
               headings[j],
               logoDetails?.[j],
               links?.[j],
-              `icon-plus-name-paragraph-${j + 1}`
+              `icon-plus-name-paragraph-${j + 1}`,
             );
           }
           html += `</div>\n`;
@@ -2467,7 +2769,7 @@ function convertToFormat(JsonData) {
             headings[2],
             logoDetails?.[2],
             links?.[2],
-            `icon-plus-name-paragraph-3`
+            `icon-plus-name-paragraph-3`,
           );
           html += `</div>\n`;
         } else if (headings.length === 4) {
@@ -2479,7 +2781,7 @@ function convertToFormat(JsonData) {
                 headings[idx],
                 logoDetails?.[idx],
                 links?.[idx],
-                `icon-plus-name-paragraph-${idx + 1}`
+                `icon-plus-name-paragraph-${idx + 1}`,
               );
             }
             html += `</div>\n`;
@@ -2491,7 +2793,7 @@ function convertToFormat(JsonData) {
               logo,
               logoDetails?.[idx],
               links?.[idx],
-              `icon-plus-name-paragraph-${idx + 1}`
+              `icon-plus-name-paragraph-${idx + 1}`,
             );
           });
         }
@@ -2551,13 +2853,13 @@ function convertToFormat(JsonData) {
                 logoCfg.logo
               }" style="color:${resolveColor(
                 logoCfg.logoColor,
-                "black"
+                "black",
               )}"></i>`;
             }
             if (logoCfg.logoPosition === "End") {
               logoEnd = `<i class="${logoCfg.logo}" style="color:${resolveColor(
                 logoCfg.logoColor,
-                "black"
+                "black",
               )}"></i>`;
             }
             if (logoCfg.logoPosition === "Both") {
@@ -2577,11 +2879,11 @@ function convertToFormat(JsonData) {
 
               logoStart = `<i class="${first}" style="color:${resolveColor(
                 firstColor,
-                "black"
+                "black",
               )}"></i>`;
               logoEnd = `<i class="${second}" style="color:${resolveColor(
                 secondColor,
-                "black"
+                "black",
               )}"></i>`;
             }
           }
@@ -2594,8 +2896,8 @@ function convertToFormat(JsonData) {
     <h6
       title="${limitText(contentDetail, 280)}"
       class="${hasShadow ? "box-shadow-box" : ""}${hasLink ? " Div-link" : ""}${
-            isStriped ? " striped" : ""
-          }"
+        isStriped ? " striped" : ""
+      }"
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
     >
       ${logoStart}
@@ -2779,7 +3081,7 @@ function convertToFormat(JsonData) {
     color: ${
       resolveColor(
         configurations?.sub_title_color || configurations?.title_color,
-        colors
+        colors,
       ) || "#515151"
     };
     margin-bottom: 10px;
@@ -2936,7 +3238,7 @@ function convertToFormat(JsonData) {
 
     sub_groups.forEach((sg, subGroupIdx) => {
       const hasAboveLineInner = sg.content.above_line_content?.content?.some(
-        (c) => c && c.trim() !== ""
+        (c) => c && c.trim() !== "",
       );
 
       const inlineContentArray =
@@ -2965,8 +3267,8 @@ function convertToFormat(JsonData) {
           ReverseRow === 2
             ? "221px"
             : ReverseRow === 3
-            ? `${height ? 259 : 400}px`
-            : `${height ? 235 : 372}px`;
+              ? `${height ? 259 : 400}px`
+              : `${height ? 235 : 372}px`;
         const normAfterTop = "30px";
 
         // Define top and height values for each level (reverse + normal)
@@ -2976,12 +3278,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 76
                 : ReverseRow === 3
-                ? height
-                  ? 60
-                  : 72
-                : height
-                ? 82
-                : 98,
+                  ? height
+                    ? 60
+                    : 72
+                  : height
+                    ? 82
+                    : 98,
             normHeight: height ? [110, 112, 110] : [262, 266, 265],
           },
           Level_2: {
@@ -2989,12 +3291,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 118
                 : ReverseRow === 3
-                ? height
-                  ? 80
-                  : 92
-                : height
-                ? 102
-                : 118,
+                  ? height
+                    ? 80
+                    : 92
+                  : height
+                    ? 102
+                    : 118,
             normHeight: height ? [133, 133, 133] : [282, 286, 285],
           },
           Level_3: {
@@ -3002,12 +3304,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 136
                 : ReverseRow === 3
-                ? height
-                  ? 100
-                  : 112
-                : height
-                ? 122
-                : 138,
+                  ? height
+                    ? 100
+                    : 112
+                  : height
+                    ? 122
+                    : 138,
             normHeight: height ? [150, 152, 152] : [302, 306, 305],
           },
           Level_4: {
@@ -3015,12 +3317,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 156
                 : ReverseRow === 3
-                ? height
-                  ? 120
-                  : 132
-                : height
-                ? 142
-                : 158,
+                  ? height
+                    ? 120
+                    : 132
+                  : height
+                    ? 142
+                    : 158,
             normHeight: height ? [170, 173, 172] : [322, 326, 325],
           },
           Level_5: {
@@ -3028,12 +3330,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 176
                 : ReverseRow === 3
-                ? height
-                  ? 140
-                  : 152
-                : height
-                ? 162
-                : 178,
+                  ? height
+                    ? 140
+                    : 152
+                  : height
+                    ? 162
+                    : 178,
             normHeight: height ? [190, 193, 195] : [342, 346, 345],
           },
           Level_6: {
@@ -3041,12 +3343,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 176
                 : ReverseRow === 3
-                ? height
-                  ? 160
-                  : 172
-                : height
-                ? 182
-                : 198,
+                  ? height
+                    ? 160
+                    : 172
+                  : height
+                    ? 182
+                    : 198,
             normHeight: height ? [210, 212, 210] : [362, 366, 365],
           },
           Level_7: {
@@ -3054,12 +3356,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 218
                 : ReverseRow === 3
-                ? height
-                  ? 180
-                  : 192
-                : height
-                ? 202
-                : 218,
+                  ? height
+                    ? 180
+                    : 192
+                  : height
+                    ? 202
+                    : 218,
             normHeight: height ? [233, 233, 233] : [382, 386, 385],
           },
           Level_8: {
@@ -3067,12 +3369,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 236
                 : ReverseRow === 3
-                ? height
-                  ? 200
-                  : 212
-                : height
-                ? 222
-                : 238,
+                  ? height
+                    ? 200
+                    : 212
+                  : height
+                    ? 222
+                    : 238,
             normHeight: height ? [250, 252, 252] : [402, 406, 405],
           },
           Level_9: {
@@ -3080,12 +3382,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 256
                 : ReverseRow === 3
-                ? height
-                  ? 220
-                  : 232
-                : height
-                ? 242
-                : 258,
+                  ? height
+                    ? 220
+                    : 232
+                  : height
+                    ? 242
+                    : 258,
             normHeight: height ? [270, 273, 272] : [422, 426, 425],
           },
           Level_10: {
@@ -3093,12 +3395,12 @@ function convertToFormat(JsonData) {
               ReverseRow === 2
                 ? 276
                 : ReverseRow === 3
-                ? height
-                  ? 240
-                  : 252
-                : height
-                ? 262
-                : 278,
+                  ? height
+                    ? 240
+                    : 252
+                  : height
+                    ? 262
+                    : 278,
             normHeight: height ? [290, 293, 295] : [442, 446, 445],
           },
         };
@@ -3237,10 +3539,10 @@ function convertToFormat(JsonData) {
     sub_groups.forEach((sg, idx) => {
       const logoLength = sg.content?.logo_titles_config?.length || 0;
       const hasAboveLine = sg.content.above_line_content?.content?.some(
-        (c) => c && c.trim() !== ""
+        (c) => c && c.trim() !== "",
       );
       const dynamicWidth =
-        logoLength * getFontSize(160, 170, 180) + (displayStart ? 50 : 0);
+        logoLength * getFontSize(180, 190, 200) + (displayStart ? 50 : 0);
       css += `
 .${uniqueClassName} .${uniqueClassName}-sub-group-div${
         idx + 1
@@ -3252,8 +3554,8 @@ function convertToFormat(JsonData) {
               ? 144
               : 120
             : direction
-            ? 144
-            : getFontSize(140, 132, 132)
+              ? 144
+              : getFontSize(140, 132, 132)
         }px`;
       })()};
 }
@@ -3361,8 +3663,8 @@ function convertToFormat(JsonData) {
       }
 
       .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-          idx + 1
-        } #${id} h6 {
+        idx + 1
+      } #${id} h6 {
           ${shapeStyle}
           ${borderStyle}
           position: relative;
@@ -3370,14 +3672,14 @@ function convertToFormat(JsonData) {
       }
 
       .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-          idx + 1
-        } #${id} h6::after {
+        idx + 1
+      } #${id} h6::after {
           background: ${bottomPoint};
       }
 
       .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-          idx + 1
-        } #${id}.subgroups-on-line-content::after {
+        idx + 1
+      } #${id}.subgroups-on-line-content::after {
           background: ${bottomLine};
       }
   `;
@@ -3393,8 +3695,8 @@ function convertToFormat(JsonData) {
           if (logoPosition === "start") {
             css += `
       .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-              idx + 1
-            } #${id} h6 i:first-of-type {
+        idx + 1
+      } #${id} h6 i:first-of-type {
           left: ${iconOffset}px;
       }
       `;
@@ -3403,8 +3705,8 @@ function convertToFormat(JsonData) {
           if (logoPosition === "end") {
             css += `
       .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-              idx + 1
-            } #${id} h6 i:first-of-type {
+        idx + 1
+      } #${id} h6 i:first-of-type {
           right: ${iconOffset}px;
       }
       `;
@@ -3413,14 +3715,14 @@ function convertToFormat(JsonData) {
           if (logoPosition === "both") {
             css += `
       .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-              idx + 1
-            } #${id} h6 i:first-of-type {
+        idx + 1
+      } #${id} h6 i:first-of-type {
           left: ${iconOffset}px;
       }
 
       .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-              idx + 1
-            } #${id} h6 i:last-of-type {
+        idx + 1
+      } #${id} h6 i:last-of-type {
           right: ${iconOffset}px;
       }
       `;
@@ -3441,8 +3743,8 @@ function convertToFormat(JsonData) {
 
           css += `
       .${uniqueClassName} .${uniqueClassName}-sub-group-div${
-            idx + 1
-          } #${id} .striped {
+        idx + 1
+      } #${id} .striped {
         background: repeating-linear-gradient(
           ${degree}deg,
           ${c1},
@@ -3534,7 +3836,7 @@ function convertToFormat(JsonData) {
             subGroupIdx + 1
           } ${selector} .${classPrefix}${inlineIdx + 1} {${styles(
             color,
-            inlineIdx
+            inlineIdx,
           )}
 }\n`;
         });
@@ -3599,10 +3901,10 @@ function convertToFormat(JsonData) {
           const lineHeight = hasAboveLine
             ? 138
             : direction
-            ? height
-              ? 138
-              : 280
-            : 152;
+              ? height
+                ? 138
+                : 280
+              : 152;
           const arrowTop = hasAboveLine
             ? getFontSize(148, 148, 148)
             : getFontSize(162, 162, 162);
@@ -3815,7 +4117,7 @@ const Final_CSS = PreDefined_CSS_WithScale + result.CSS + dynamicFooterCSS;
 
 const Final_HTML = PreDefined_HTML.replace(
   "<!-- Footer Divs Will Be Added Here -->",
-  footerHTML
+  footerHTML,
 ).replace("<!-- Add Here -->", result.HTML);
 
 document.body.innerHTML = Final_HTML;
@@ -3876,7 +4178,7 @@ function applyFontConfig(JSON_Data) {
 
       // Remove any prior style tag
       const existing = document.querySelector(
-        "style[data-font-family='ppt-font']"
+        "style[data-font-family='ppt-font']",
       );
       if (existing) existing.remove();
 
@@ -3900,127 +4202,6 @@ function applyFontConfig(JSON_Data) {
 
 applyFontConfig(JSON_Data);
 
-//  Adjust Mid-Line Width Dynamically
-function adjustMidLineWidth(JSON_Data) {
-  const pptBox = document.getElementById("PPT-Box");
-  const midLine = pptBox?.querySelector(".mid-Line");
-  if (!pptBox || !midLine) return;
-
-  // all logo elements (DOM nodes). Adjust selector if your ids differ.
-  const allChildren = Array.from(
-    pptBox.querySelectorAll("[id^='logo_title_id']")
-  );
-  if (!allChildren.length) {
-    // nothing to measure
-    midLine.style.width = "0px";
-    return;
-  }
-
-  // container scroll coordinates (relative to container content)
-  const containerScrollLeft = pptBox.scrollLeft;
-  const containerWidth = pptBox.clientWidth;
-  const containerLeft = containerScrollLeft;
-  const containerRight = containerScrollLeft + containerWidth;
-
-  const nodesInfo = allChildren.map((el) => {
-    let x = 0;
-    let node = el;
-    while (node && node !== pptBox && node.offsetParent) {
-      x += node.offsetLeft;
-      node = node.offsetParent;
-    }
-    if (node !== pptBox) {
-      const elRect = el.getBoundingClientRect();
-      const pptRect = pptBox.getBoundingClientRect();
-      x = elRect.left - pptRect.left + pptBox.scrollLeft;
-    }
-    const w = el.offsetWidth || el.getBoundingClientRect().width || 0;
-    return { el, left: x, right: x + w, width: w };
-  });
-
-  // 1) Prefer the right-most element that is currently visible in the container viewport
-  const visibleNodes = nodesInfo.filter(
-    (n) => n.right > containerLeft && n.left < containerRight && n.width > 0
-  );
-  let targetNodeInfo = null;
-  if (visibleNodes.length) {
-    targetNodeInfo = visibleNodes.reduce(
-      (a, b) => (b.right > a.right ? b : a),
-      visibleNodes[0]
-    );
-  } else {
-    try {
-      const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
-      const configs = lastSubGroup?.content?.logo_titles_config || [];
-      const lastConfigWithId = configs.filter((c) => c.logo_id_name).at(-1);
-      const lastParentId = lastConfigWithId?.logo_id_name || null;
-
-      if (lastParentId) {
-        const elById = pptBox.querySelector(`#${CSS.escape(lastParentId)}`);
-        if (elById) {
-          // find nodeInfo for this element if present
-          targetNodeInfo = nodesInfo.find((n) => n.el === elById) || null;
-        }
-      }
-    } catch (err) {
-      // ignore and fallback below
-      console.warn("adjustMidLineWidth: safe JSON parse failed", err);
-    }
-
-    // 3) If still no target, pick the furthest-right element in DOM (max right)
-    if (!targetNodeInfo) {
-      targetNodeInfo = nodesInfo.reduce(
-        (a, b) => (b.right > a.right ? b : a),
-        nodesInfo[0]
-      );
-    }
-  }
-
-  if (!targetNodeInfo) {
-    midLine.style.width = "0px";
-    return;
-  }
-
-  // midLine offsetLeft relative to container: similar strategy as above
-  let midLeft = 0;
-  {
-    let node = midLine;
-    while (node && node !== pptBox && node.offsetParent) {
-      midLeft += node.offsetLeft;
-      node = node.offsetParent;
-    }
-    if (node !== pptBox) {
-      // fallback to rect-based correction
-      const elRect = midLine.getBoundingClientRect();
-      const pptRect = pptBox.getBoundingClientRect();
-      midLeft = elRect.left - pptRect.left + pptBox.scrollLeft;
-    }
-  }
-
-  // compute width we need so that midLine reaches the right edge of targetNode relative to container content
-  // optionally subtract small right padding if you want a bit of breathing room (0-10 px)
-  const rightPadding = 0;
-
-  // width in pixels relative to container content
-  let desiredWidth = Math.max(0, targetNodeInfo.right - midLeft - rightPadding);
-
-  // clamp width between 0 and the full content width starting from midLeft.
-  // Need maximum possible content width: you can use the furthest right node in nodesInfo.
-  const furthestRight = nodesInfo.reduce(
-    (a, b) => (b.right > a ? b.right : a),
-    0
-  );
-  const maxPossibleWidth = Math.max(0, furthestRight - midLeft);
-
-  if (desiredWidth > maxPossibleWidth) desiredWidth = maxPossibleWidth;
-  if (desiredWidth < 0) desiredWidth = 0;
-
-  const offset = getFontSize(25, 30, 35);
-
-  desiredWidth = Math.max(0, desiredWidth + offset);
-  midLine.style.width = `${Math.round(desiredWidth)}px`;
-}
-
 // Usage: call on load and whenever the container scrolls/resizes or content changes
 adjustMidLineWidth(JSON_Data);
 
@@ -4037,161 +4218,6 @@ if (pptBoxEl) {
 }
 
 adjustMidLineWidth(JSON_Data);
-
-// Adjust Footer Width Dynamically
-function adjustFooterWidth(JSON_Data) {
-  const pptBox = document.getElementById("PPT-Box");
-  const footer = pptBox?.querySelector(".footer-dark-five-lines");
-  if (!pptBox || !footer) return;
-
-  // one-time binding guard on pptBox to avoid multiple listeners
-  if (!pptBox.__footerWidthBinderAttached) {
-    // debounced runner
-    let t;
-    const runner = () => {
-      clearTimeout(t);
-      t = setTimeout(() => {
-        try {
-          adjustFooterWidth(JSON_Data);
-        } catch (e) {
-          console.warn("adjustFooterWidth runner error", e);
-        }
-      }, 40);
-    };
-    pptBox.addEventListener("scroll", runner, { passive: true });
-    window.addEventListener("resize", runner);
-    pptBox.__footerWidthBinderAttached = true;
-  }
-
-  // gather logo nodes (those with id starting with logo_title_id) - as a stable array
-  const allChildren = Array.from(
-    pptBox.querySelectorAll("[id^='logo_title_id']")
-  );
-  if (!allChildren.length) {
-    footer.style.width = "0px";
-    return;
-  }
-
-  // container coords for viewport (in content coordinate space)
-  const containerScrollLeft = pptBox.scrollLeft;
-  const containerWidth = pptBox.clientWidth;
-  const viewportLeft = containerScrollLeft;
-  const viewportRight = containerScrollLeft + containerWidth;
-
-  // build nodesInfo with left/right relative to container content (offsetLeft accumulation, fallback to rect)
-  const nodesInfo = allChildren.map((el) => {
-    let left = 0;
-    let node = el;
-    while (node && node !== pptBox && node.offsetParent) {
-      left += node.offsetLeft;
-      node = node.offsetParent;
-    }
-    if (node !== pptBox) {
-      // fallback to bounding rect correction
-      const elRect = el.getBoundingClientRect();
-      const pptRect = pptBox.getBoundingClientRect();
-      left = elRect.left - pptRect.left + pptBox.scrollLeft;
-    }
-    const width =
-      el.offsetWidth ||
-      (el.getBoundingClientRect && el.getBoundingClientRect().width) ||
-      0;
-    return { el, left, right: left + width, width };
-  });
-
-  // find right-most visible node
-  const visibleNodes = nodesInfo.filter(
-    (n) => n.right > viewportLeft && n.left < viewportRight && n.width > 0
-  );
-  let targetNode = null;
-
-  if (visibleNodes.length) {
-    targetNode = visibleNodes.reduce((a, b) => (b.right > a.right ? b : a));
-  } else {
-    try {
-      const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
-      const configs = lastSubGroup?.content?.logo_titles_config || [];
-      const logoIds = configs
-        .map((c) => c.logo_id_name)
-        .filter((id) => id && id.trim() !== "");
-      const lastParentId = logoIds.at(-1) || null;
-      if (lastParentId) {
-        // safe id selector (use CSS.escape if available)
-        const safeId =
-          typeof CSS !== "undefined" && CSS.escape
-            ? CSS.escape(lastParentId)
-            : lastParentId.replace(
-                /([#.;?+*~\[\]()>:@!^$\\,{}|\/<>])/g,
-                "\\$1"
-              );
-        const elById = pptBox.querySelector(`#${safeId}`);
-        if (elById) {
-          targetNode = nodesInfo.find((n) => n.el === elById) || null;
-        }
-      }
-    } catch (err) {
-      // ignore and fallback below
-      console.warn("adjustFooterWidth: JSON parse fallback failed", err);
-    }
-
-    if (!targetNode) {
-      targetNode = nodesInfo.reduce(
-        (a, b) => (b.right > a.right ? b : a),
-        nodesInfo[0]
-      );
-    }
-  }
-
-  if (!targetNode) {
-    footer.style.width = "0px";
-    return;
-  }
-
-  // compute footerLeft relative to container
-  let footerLeft = 0;
-  {
-    let node = footer;
-    while (node && node !== pptBox && node.offsetParent) {
-      footerLeft += node.offsetLeft;
-      node = node.offsetParent;
-    }
-    if (node !== pptBox) {
-      const fRect = footer.getBoundingClientRect();
-      const pRect = pptBox.getBoundingClientRect();
-      footerLeft = fRect.left - pRect.left + pptBox.scrollLeft;
-    }
-  }
-
-  // compute logoCount and lastParentId for padding logic (safe)
-  let logoCount = 0;
-  let lastParentIdForCheck = null;
-  try {
-    const lastBody = JSON_Data.body?.at(-1);
-    const lastSubGroup = lastBody?.sub_groups?.at(-1);
-    const configs = lastSubGroup?.content?.logo_titles_config || [];
-    const logoIds = configs
-      .map((cfg) => cfg.logo_id_name)
-      .filter((id) => id && id.trim() !== "");
-    logoCount = logoIds.length;
-    lastParentIdForCheck = logoIds.at(-1) || null;
-  } catch (err) {
-    console.warn("adjustFooterWidth: logo count parse failed", err);
-  }
-
-  // decide footer width setting and calculate desired width clamped to content bounds
-  const footerWidthSetting = (
-    JSON_Data.footer?.footer_width || "auto"
-  ).toLowerCase();
-  if (footerWidthSetting === "default") {
-    footer.style.width = "100%";
-  } else {
-    const rightMost = targetNode.right;
-    const offset = getFontSize(20, 30, 36);
-    let desiredWidth = Math.max(0, rightMost + offset);
-    footer.style.width = `${Math.round(desiredWidth)}px`;
-  }
-}
-
 adjustFooterWidth(JSON_Data);
 
 function drawConnectingLines(JSON_Data, GlobalHeight) {
@@ -4215,11 +4241,11 @@ function drawConnectingLines(JSON_Data, GlobalHeight) {
     section.sub_groups.forEach((sg, idx) => {
       // Skip if parent group is collapsed
       const parentItem = collapsibleData.find(
-        (p) => p.parent_class === section.unique_class
+        (p) => p.parent_class === section.unique_class,
       );
 
       const hasAboveLine = sg.content?.above_line_content?.content?.some(
-        (c) => c && c.trim() !== ""
+        (c) => c && c.trim() !== "",
       );
       if (parentItem && parentItem.collapsed) return;
 
@@ -4238,7 +4264,7 @@ function drawConnectingLines(JSON_Data, GlobalHeight) {
           if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl)) {
             console.warn(
               "Skipping connection: missing or hidden element",
-              connection
+              connection,
             );
             return; // skip drawing this line
           }
@@ -4281,13 +4307,13 @@ function drawConnectingLines(JSON_Data, GlobalHeight) {
                 border-top: 1px solid ${
                   resolveColor(
                     sg.content.connecting_Line.line_color[i],
-                    JSON_Data.colors
+                    JSON_Data.colors,
                   ) || "#9f30cb"
                 };
                 border-right: 1px solid ${
                   resolveColor(
                     sg.content.connecting_Line.line_color[i],
-                    JSON_Data.colors
+                    JSON_Data.colors,
                   ) || "#9f30cb"
                 };
                 border-top-right-radius: 20px;
@@ -4309,7 +4335,7 @@ function drawConnectingLines(JSON_Data, GlobalHeight) {
                 border-top: 6px solid ${
                   resolveColor(
                     sg.content.connecting_Line.arrow_color[i],
-                    JSON_Data.colors
+                    JSON_Data.colors,
                   ) || "#a334c8"
                 };
                 border-left: 4px solid transparent;
@@ -4351,12 +4377,12 @@ function drawConnectingCircle(JSON_Data) {
         !(circleData.display === "true" || circleData.display === true)
       ) {
         const oldEls = pptBox.querySelectorAll(
-          `[class*="connection-Circle-sec${sectionIdx}-sub${idx}-circle"]`
+          `[class*="connection-Circle-sec${sectionIdx}-sub${idx}-circle"]`,
         );
         oldEls.forEach((el) => {
           // remove related style if present
           const styleTag = document.querySelector(
-            `style[data-conn="${el.className}"]`
+            `style[data-conn="${el.className}"]`,
           );
           if (styleTag) styleTag.remove();
           el.remove();
@@ -4370,7 +4396,7 @@ function drawConnectingCircle(JSON_Data) {
         // remove any prior one + its style
         const old = pptBox.querySelector(`.${className}`);
         const oldStyle = document.querySelector(
-          `style[data-conn="${className}"]`
+          `style[data-conn="${className}"]`,
         );
         if (old) old.remove();
         if (oldStyle) oldStyle.remove();
@@ -4420,7 +4446,7 @@ function drawConnectingCircle(JSON_Data) {
           1;
         const borderSize = Math.min(
           Math.max(6 + (borderLevelNum - 1) * 2, 4),
-          20
+          20,
         );
 
         // Mid Line Height static
@@ -4439,9 +4465,56 @@ function drawConnectingCircle(JSON_Data) {
           diameter / 2 +
           getFontSize(0, 5, 5);
 
+        const elementShape = connection?.shapeConfig?.shape || "circle";
+
+        const shapeMap = {
+          rectangle: "border-radius: 0 0 0 0;",
+          rounded_sm: "border-radius: 5px;",
+          rounded_lg: "border-radius: 15px;",
+          rounded_x_lg: "border-radius: 25px;",
+          rounded_xx_lg: "border-radius: 35px;",
+          rounded_xxx_lg: "border-radius: 50px;",
+          rounded_bottom_left: "border-radius: 0 0 0 20px;",
+          rounded_bottom_right: "border-radius: 0 0 20px 0;",
+          rounded_top_left: "border-radius: 12px 0 0 0;",
+          rounded_top_right: "border-radius: 0 12px 0 0;",
+          rounded_top: "border-radius: 12px 12px 0 0;",
+          rounded_bottom: "border-radius: 0 0 12px 12px;",
+        };
+
+        // value coming from JSON
+        const borderKey = connection?.shapeConfig?.border;
+
+        // ✅ apply only if exists, else default
+        const resolvedBorderRadius = shapeMap[borderKey] || shapeMap.rounded_lg;
+
+        const heightLevel = connection?.shapeConfig?.height || "Level_1";
+
+        // extract number from Level_N
+        let levelNum = parseInt(heightLevel.split("_")[1], 10);
+
+        // fallback safety
+        if (isNaN(levelNum) || levelNum < 1) levelNum = 1;
+
+        // calculate height
+        let resolvedHeight = levelNum * 10;
+
+        // clamp to max 200px
+        if (resolvedHeight > 200) resolvedHeight = 200;
+
+        const connectY = Math.min(startRect.top, endRect.top);
+        const rectangleTop =
+          connectY -
+          pptRect.top -
+          resolvedHeight -
+          borderSize / 2 +
+          getFontSize(0, 5, 5);
+
         const styleEl = document.createElement("style");
         styleEl.setAttribute("data-conn", className);
-        styleEl.textContent = `
+        styleEl.textContent =
+          elementShape == "circle"
+            ? `
           .${className} {
             position: absolute;
             left: ${leftAbs - pptRect.left - distant_Space}px;
@@ -4488,7 +4561,31 @@ function drawConnectingCircle(JSON_Data) {
             z-index: 3;
             line-height: 1;
           }
-        `;
+        `
+            : `.${className} {
+              position: absolute;
+              left: ${leftAbs - pptRect.left - distant_Space}px;
+              width: ${distance - borderSize}px;
+              height: ${resolvedHeight}px;
+              pointer-events: none;
+              ${
+                alignmentDirection(connection.config.direction) === "reverse"
+                  ? `
+                transform: rotateZ(180deg);
+                top: ${
+                  rectangleTop + midLineHeight + resolvedHeight + borderSize
+                }px;
+              `
+                  : `
+                top: ${rectangleTop}px;
+              `
+              }
+              z-index: 1;
+              border-left: ${borderSize}px solid ${color};
+              border-right: ${borderSize}px solid ${color};
+              border-top: ${borderSize}px solid ${color};
+              ${resolvedBorderRadius}
+        }`;
         document.head.appendChild(styleEl);
 
         // build DOM
@@ -4499,6 +4596,20 @@ function drawConnectingCircle(JSON_Data) {
         circle.className = "inner-circle";
 
         container.appendChild(circle);
+        // NEW: rectangle icon row container
+        let rectIconRow = null;
+
+        if (elementShape === "rectangle") {
+          rectIconRow = document.createElement("div");
+          rectIconRow.className = "rect-icon-row";
+          rectIconRow.style.position = "relative";
+          rectIconRow.style.top = `-${borderSize - 1}px`;
+          rectIconRow.style.height = `${borderSize}px`;
+          rectIconRow.style.display = "flex";
+          rectIconRow.style.alignItems = "center";
+          rectIconRow.style.justifyContent = "space-evenly";
+          container.appendChild(rectIconRow);
+        }
 
         const cfg = connection.config || {};
         // don't crash for very small circles
@@ -4520,7 +4631,7 @@ function drawConnectingCircle(JSON_Data) {
           const iconColors = Array.isArray(cfg.iconColor)
             ? cfg.iconColor
             : [cfg.iconColor, cfg.iconColor, cfg.iconColor].map(
-                (c) => c || "black"
+                (c) => c || "black",
               );
 
           const iconSizeArr = Array.isArray(cfg.iconSize)
@@ -4555,20 +4666,29 @@ function drawConnectingCircle(JSON_Data) {
             iconEl.setAttribute("aria-hidden", "true");
 
             // inline styles for exact placement and appearance
-            iconEl.style.left = `${iconCenterX}px`;
-            iconEl.style.top = `${iconCenterY}px`;
-            iconEl.style.transform = `translate(-50%, -50%) ${
-              iconIdx === 1
-                ? "rotateZ(-60deg)"
-                : iconIdx === 2
-                ? "rotateZ(60deg)"
-                : ""
-            }`;
+            if (elementShape === "circle") {
+              // ===== EXISTING CIRCLE BEHAVIOR (UNCHANGED) =====
+              iconEl.style.left = `${iconCenterX}px`;
+              iconEl.style.top = `${iconCenterY}px`;
+              iconEl.style.transform = `translate(-50%, -50%) ${
+                iconIdx === 1
+                  ? "rotateZ(-60deg)"
+                  : iconIdx === 2
+                    ? "rotateZ(60deg)"
+                    : ""
+              }`;
+              container.appendChild(iconEl);
+            } else {
+              rectIconRow.appendChild(iconEl);
+            }
+
             iconEl.style.fontSize = `${fontSize}px`;
             iconEl.style.color = iconColor;
             iconEl.style.zIndex = "3";
             iconEl.style.pointerEvents = "none";
-            container.appendChild(iconEl);
+            if (elementShape === "circle") {
+              container.appendChild(iconEl);
+            }
           }
         }
         pptBox.appendChild(container);
@@ -4603,11 +4723,11 @@ function connectingBottomText(JSON_Data) {
       const bottomArr = sg.content?.connectingBottomText;
       if (!Array.isArray(bottomArr) || bottomArr.length === 0) {
         const oldEls = pptBox.querySelectorAll(
-          `[class*="connection-BottomText-sec${sectionIdx}-sub${subIdx}-"]`
+          `[class*="connection-BottomText-sec${sectionIdx}-sub${subIdx}-"]`,
         );
         oldEls.forEach((el) => {
           const styleTag = document.querySelector(
-            `style[data-conn="${el.className}"]`
+            `style[data-conn="${el.className}"]`,
           );
           if (styleTag) styleTag.remove();
           el.remove();
@@ -4621,7 +4741,7 @@ function connectingBottomText(JSON_Data) {
         // cleanup old
         const old = pptBox.querySelector(`.${className}`);
         const oldStyle = document.querySelector(
-          `style[data-conn="${className}"]`
+          `style[data-conn="${className}"]`,
         );
         if (old) old.remove();
         if (oldStyle) oldStyle.remove();
@@ -4733,11 +4853,11 @@ function drawConnectingTextLine(JSON_Data) {
         !(textLineData.display === "true" || textLineData.display === true)
       ) {
         const oldEls = pptBox.querySelectorAll(
-          `[class*="connection-TextLine-sec${sectionIdx}-sub${idx}-line"]`
+          `[class*="connection-TextLine-sec${sectionIdx}-sub${idx}-line"]`,
         );
         oldEls.forEach((el) => {
           const styleTag = document.querySelector(
-            `style[data-conn="${el.className}"]`
+            `style[data-conn="${el.className}"]`,
           );
           if (styleTag) styleTag.remove();
           el.remove();
@@ -4751,7 +4871,7 @@ function drawConnectingTextLine(JSON_Data) {
         // remove any prior one + its style
         const old = pptBox.querySelector(`.${className}`);
         const oldStyle = document.querySelector(
-          `style[data-conn="${className}"]`
+          `style[data-conn="${className}"]`,
         );
         if (old) old.remove();
         if (oldStyle) oldStyle.remove();
@@ -4796,9 +4916,9 @@ function drawConnectingTextLine(JSON_Data) {
           Math.max(
             parseInt((connection.line_Position || "Level_1").split("_")[1]) ||
               1,
-            1
+            1,
           ),
-          20
+          20,
         );
         const topOffset = (direction ? 238 : 415) + (linePosLevel - 1) * 2; // relative to PPT-Box top
 
@@ -4807,9 +4927,9 @@ function drawConnectingTextLine(JSON_Data) {
           Math.max(
             parseInt((connection.line_Thickness || "Level_1").split("_")[1]) ||
               1,
-            1
+            1,
           ),
-          3
+          3,
         );
         const thicknessMap = { 1: 1, 2: 2, 3: 4 };
         const lineThickness = thicknessMap[thicknessLevel] || 1;
@@ -4824,7 +4944,7 @@ function drawConnectingTextLine(JSON_Data) {
 
         // text position
         const textPos = String(
-          connection.text_Position || "middle"
+          connection.text_Position || "middle",
         ).toLowerCase();
         const textRaw = connection.text || "";
 
@@ -5031,11 +5151,11 @@ function drawMultiplePolygons(JSON_Data) {
       ) {
         // remove old containers
         const oldEls = pptBox.querySelectorAll(
-          `[class*="connection-Polygons-sec${sectionIdx}-sub${subIdx}-grp"]`
+          `[class*="connection-Polygons-sec${sectionIdx}-sub${subIdx}-grp"]`,
         );
         oldEls.forEach((el) => {
           const styleTag = document.querySelector(
-            `style[data-conn="${el.className}"]`
+            `style[data-conn="${el.className}"]`,
           );
           if (styleTag) styleTag.remove();
           el.remove();
@@ -5066,7 +5186,7 @@ function drawMultiplePolygons(JSON_Data) {
           const old = pptBox.querySelector(`.${className}`);
           if (old) old.remove();
           const oldStyle = document.querySelector(
-            `style[data-conn="${className}"]`
+            `style[data-conn="${className}"]`,
           );
           if (oldStyle) oldStyle.remove();
           return;
@@ -5076,7 +5196,7 @@ function drawMultiplePolygons(JSON_Data) {
           const old = pptBox.querySelector(`.${className}`);
           if (old) old.remove();
           const oldStyle = document.querySelector(
-            `style[data-conn="${className}"]`
+            `style[data-conn="${className}"]`,
           );
           if (oldStyle) oldStyle.remove();
           return;
@@ -5092,7 +5212,7 @@ function drawMultiplePolygons(JSON_Data) {
         const prev = pptBox.querySelector(`.${className}`);
         if (prev) prev.remove();
         const prevStyle = document.querySelector(
-          `style[data-conn="${className}"]`
+          `style[data-conn="${className}"]`,
         );
         if (prevStyle) prevStyle.remove();
 
@@ -5101,7 +5221,7 @@ function drawMultiplePolygons(JSON_Data) {
           .map((lv) => lv.trim())
           .filter(
             (lv, i, self) =>
-              allowedLevels.includes(lv) && self.indexOf(lv) === i
+              allowedLevels.includes(lv) && self.indexOf(lv) === i,
           );
 
         if (!levelsArr.length) return;
@@ -5199,7 +5319,7 @@ function drawLogoOnMidLine(JSON_Data) {
     const oldAll = pptBox.querySelectorAll(`[class*="midline-logo-"]`);
     oldAll.forEach((el) => {
       const styleTag = document.querySelector(
-        `style[data-conn="${el.className}"]`
+        `style[data-conn="${el.className}"]`,
       );
       if (styleTag) styleTag.remove();
       el.remove();
@@ -5225,7 +5345,7 @@ function drawLogoOnMidLine(JSON_Data) {
   const prev = pptBox.querySelectorAll(`[class*="midline-logo-"]`);
   prev.forEach((el) => {
     const styleTag = document.querySelector(
-      `style[data-conn="${el.className}"]`
+      `style[data-conn="${el.className}"]`,
     );
     if (styleTag) styleTag.remove();
     el.remove();
@@ -5407,11 +5527,11 @@ function warning_Logo(JSON_Data) {
       if (!warns || warns.length === 0) {
         // Cleanup old warning badges for this subgroup if no display data
         const oldEls = pptBox.querySelectorAll(
-          `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`
+          `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`,
         );
         oldEls.forEach((el) => {
           const styleTag = document.querySelector(
-            `style[data-warn="${el.className}"]`
+            `style[data-warn="${el.className}"]`,
           );
           if (styleTag) styleTag.remove();
           el.remove();
@@ -5421,11 +5541,11 @@ function warning_Logo(JSON_Data) {
 
       // Remove previous badges for this subgroup first
       const oldBadges = pptBox.querySelectorAll(
-        `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`
+        `[class*="warning-logo-sec${sectionIdx}-sub${subIdx}-"]`,
       );
       oldBadges.forEach((el) => {
         const styleTag = document.querySelector(
-          `style[data-warn="${el.className}"]`
+          `style[data-warn="${el.className}"]`,
         );
         if (styleTag) styleTag.remove();
         el.remove();
@@ -5467,7 +5587,7 @@ function warning_Logo(JSON_Data) {
             ? typeof resolveColor === "function"
               ? resolveColor(
                   warn.warningCircleConfig.circleColor,
-                  JSON_Data.colors
+                  JSON_Data.colors,
                 )
               : warn.warningCircleConfig.circleColor
             : "#ffeb3b";
@@ -5475,7 +5595,7 @@ function warning_Logo(JSON_Data) {
             ? typeof resolveColor === "function"
               ? resolveColor(
                   warn.warningCircleConfig.circleBorder,
-                  JSON_Data.colors
+                  JSON_Data.colors,
                 )
               : warn.warningCircleConfig.circleBorder
             : "#000";
@@ -5483,7 +5603,7 @@ function warning_Logo(JSON_Data) {
             ? typeof resolveColor === "function"
               ? resolveColor(
                   warn.warningCircleConfig.circleNumberColor,
-                  JSON_Data.colors
+                  JSON_Data.colors,
                 )
               : warn.warningCircleConfig.circleNumberColor
             : "#000";
@@ -5491,7 +5611,7 @@ function warning_Logo(JSON_Data) {
             ? typeof resolveColor === "function"
               ? resolveColor(
                   warn.warningCircleConfig.circleLineColor,
-                  JSON_Data.colors
+                  JSON_Data.colors,
                 )
               : warn.warningCircleConfig.circleLineColor
             : "#fb2932";
@@ -5499,7 +5619,7 @@ function warning_Logo(JSON_Data) {
             ? typeof resolveColor === "function"
               ? resolveColor(
                   warn.warningCircleConfig.circlePointColor,
-                  JSON_Data.colors
+                  JSON_Data.colors,
                 )
               : warn.warningCircleConfig.circlePointColor
             : "#fb2932";
@@ -5529,7 +5649,7 @@ function warning_Logo(JSON_Data) {
           const gapAbove = 20;
 
           const badgeTop = Math.round(
-            tgtRect.top - pptRect.top - triangleHeight - gapAbove
+            tgtRect.top - pptRect.top - triangleHeight - gapAbove,
           );
           const badgeLeft = Math.round(anchorX);
 
@@ -5744,8 +5864,16 @@ function warning_Logo(JSON_Data) {
             }
 
             handlers.push({ el: triDiv, type: "mouseenter", fn: onEnter });
-            handlers.push({ el: badgeWrap, type: "mouseenter", fn: onEnter });
-            handlers.push({ el: triDiv, type: "mouseleave", fn: onLeaveBadge });
+            handlers.push({
+              el: badgeWrap,
+              type: "mouseenter",
+              fn: onEnter,
+            });
+            handlers.push({
+              el: triDiv,
+              type: "mouseleave",
+              fn: onLeaveBadge,
+            });
             handlers.push({
               el: badgeWrap,
               type: "mouseleave",
@@ -5802,7 +5930,11 @@ function warning_Logo(JSON_Data) {
             badgeWrap.addEventListener("click", onBadgeClick);
 
             handlers.push({ el: triDiv, type: "click", fn: onBadgeClick });
-            handlers.push({ el: badgeWrap, type: "click", fn: onBadgeClick });
+            handlers.push({
+              el: badgeWrap,
+              type: "click",
+              fn: onBadgeClick,
+            });
           }
 
           // Expose API so global closeAllTooltips can call hide()
@@ -5846,8 +5978,7 @@ function drawBottomTimelineSeries(JSON_Data) {
 
   if (midLineEl) {
     const midRect = midLineEl.getBoundingClientRect();
-    midLineCenterY =
-      midRect.top - pptRect.top + midRect.height / 2;
+    midLineCenterY = midRect.top - pptRect.top + midRect.height / 2;
   }
 
   const TOLERANCE = 10;
@@ -5861,9 +5992,9 @@ function drawBottomTimelineSeries(JSON_Data) {
       // 🧹 Cleanup if no timeline
       if (!timeline || !timeline.timlines || timeline.timlines.length === 0) {
         const oldLines = pptBox.querySelectorAll(
-          `[class*="timeline-bottom-line-${sectionIdx}-${idx}-"]`
+          `[class*="timeline-bottom-line-${sectionIdx}-${idx}-"]`,
         );
-        oldLines.forEach(line => line.remove());
+        oldLines.forEach((line) => line.remove());
         return;
       }
 
@@ -5888,16 +6019,14 @@ function drawBottomTimelineSeries(JSON_Data) {
         const levelStr = item.height || "Level_1";
         const levelNum = parseInt(levelStr.split("_")[1]) || 1;
 
-        const baseTopH = direction
-          ? height ? 160 : 300
-          : height ? 160 : 260;
+        const baseTopH = direction ? (height ? 160 : 300) : height ? 160 : 260;
 
         const increment = 5;
         const rawTopH = baseTopH + (levelNum - 1) * increment;
 
         const topH = Math.min(
           Math.max(rawTopH, 30),
-          direction ? (height ? 280 : 430) : height ? 210 : 360
+          direction ? (height ? 280 : 430) : height ? 210 : 360,
         );
 
         // --- Geometry ---
@@ -5906,13 +6035,10 @@ function drawBottomTimelineSeries(JSON_Data) {
 
         const startCenterX =
           startRect.left - pptRect.left + startRect.width / 2;
-        const endCenterX =
-          endRect.left - pptRect.left + endRect.width / 2;
+        const endCenterX = endRect.left - pptRect.left + endRect.width / 2;
 
-        const startCenterY =
-          startRect.top - pptRect.top + startRect.height / 2;
-        const endCenterY =
-          endRect.top - pptRect.top + endRect.height / 2;
+        const startCenterY = startRect.top - pptRect.top + startRect.height / 2;
+        const endCenterY = endRect.top - pptRect.top + endRect.height / 2;
 
         const leftX = Math.min(startCenterX, endCenterX);
         const rightX = Math.max(startCenterX, endCenterX);
@@ -5925,10 +6051,8 @@ function drawBottomTimelineSeries(JSON_Data) {
         const startDiff = startCenterY - midLineCenterY;
         const endDiff = endCenterY - midLineCenterY;
 
-        const normStart =
-          Math.abs(startDiff) <= TOLERANCE ? 0 : startDiff;
-        const normEnd =
-          Math.abs(endDiff) <= TOLERANCE ? 0 : endDiff;
+        const normStart = Math.abs(startDiff) <= TOLERANCE ? 0 : startDiff;
+        const normEnd = Math.abs(endDiff) <= TOLERANCE ? 0 : endDiff;
 
         let verticalOffset = 0;
 
@@ -5940,11 +6064,9 @@ function drawBottomTimelineSeries(JSON_Data) {
           verticalOffset = normStart;
         } else {
           verticalOffset =
-            Math.abs(normStart) > Math.abs(normEnd)
-              ? normStart
-              : normEnd;
+            Math.abs(normStart) > Math.abs(normEnd) ? normStart : normEnd;
         }
-        const correctedTop = topH + baseTop ;
+        const correctedTop = topH + baseTop;
 
         // --- Colors ---
         const bg =
@@ -6035,6 +6157,1799 @@ function drawBottomTimelineSeries(JSON_Data) {
 
 drawBottomTimelineSeries(JSON_Data);
 
+const skipSpacingTasks = [];
+function drawConnectingRectangle(JSON_Data, GlobalHeight) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("PPT-Box not found.");
+    return;
+  }
+
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, idx) => {
+      const rectangleData = sg.content?.connecting_Rectangle;
+
+      // If not enabled → remove old and skip
+      if (
+        !rectangleData ||
+        !(rectangleData.display === "true" || rectangleData.display === true)
+      ) {
+        const oldRects = pptBox.querySelectorAll(
+          `[class*="connection-Rectangle-sec${sectionIdx}-sub${idx}-rect"]`,
+        );
+        oldRects.forEach((rect) => rect.remove());
+        const oldConvRects = pptBox.querySelectorAll(
+          `[class*="conversion-rect-sec${sectionIdx}-sub${idx}-"]`,
+        );
+        oldConvRects.forEach((c) => c.remove());
+
+        return;
+      }
+
+      rectangleData.connections.forEach((connection, i) => {
+        const className = `connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}`;
+        // Remove any prior one
+        const oldRect = pptBox.querySelector(`.${className}`);
+        if (oldRect) oldRect.remove();
+
+        // look up endpoints
+        const startEl = document.getElementById(connection.starting);
+        const endEl = document.getElementById(connection.ending);
+        const startMidTopEl = document.querySelector(
+          `.subgroups-mid-top [data-midtop-for="${connection.starting}"]`,
+        );
+        const endMidTopEl = document.querySelector(
+          `.subgroups-mid-top [data-midtop-for="${connection.ending}"]`,
+        );
+        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
+          return;
+
+        // ---- SKIP STEPS LOGIC (OPTIONAL) ----
+        const skipSteps =
+          typeof connection.skipSteps === "number" ? connection.skipSteps : 0;
+
+        const skipPlacement = connection.skipPlacement || "start";
+
+        skipSpacingTasks.push({
+          skipSteps,
+          skipPlacement,
+          starting: connection.starting,
+          ending: connection.ending,
+        });
+
+        const isRectangleAxisStart =
+          typeof connection.starting === "string" &&
+          connection.starting.includes("on_line_rectangle_");
+
+        const isRectangleAxisEnd =
+          typeof connection.ending === "string" &&
+          connection.ending.includes("on_line_rectangle_");
+
+        // measurements
+        const pptRect = pptBox.getBoundingClientRect();
+        const startRect = startEl.getBoundingClientRect();
+        const endRect = endEl.getBoundingClientRect();
+        const distant_Space = 5;
+        const borderLevelNum =
+          parseInt((connection.border_thickness || "Level_1").split("_")[1]) ||
+          1;
+        const borderSize = Math.min(
+          Math.max(6 + (borderLevelNum - 1) * 2, 4),
+          20,
+        );
+
+        const startX =
+          connection.start_from_starting === "true" ||
+          connection.start_from_starting === true
+            ? startRect.left - distant_Space
+            : startRect.left + startRect.width + distant_Space;
+
+        const endX =
+          connection.end_from_ending === "true" ||
+          connection.end_from_ending === true
+            ? endRect.left + endRect.width + distant_Space
+            : endRect.left - distant_Space;
+
+        let left = Math.min(startX, endX) - pptRect.left - distant_Space;
+        let width = Math.abs(endX - startX);
+
+        const startFromStart =
+          connection.start_from_starting === true ||
+          connection.start_from_starting === "true";
+
+        const endFromEnd =
+          connection.end_from_ending === true ||
+          connection.end_from_ending === "true";
+
+        const gap = borderSize + distant_Space;
+
+        const CONTENT_ID_PREFIX = "on_line_content_";
+
+        const isStartContentEl =
+          typeof connection.starting === "string" &&
+          connection.starting.startsWith(CONTENT_ID_PREFIX);
+
+        const isEndContentEl =
+          typeof connection.ending === "string" &&
+          connection.ending.startsWith(CONTENT_ID_PREFIX);
+
+        if (startFromStart && endFromEnd) {
+          left -= gap;
+          width += gap * 2;
+
+          if (isStartContentEl) {
+            startEl.style.marginLeft = `${gap * 2}px`;
+            startMidTopEl.style.marginLeft = `${gap * 2}px`;
+          }
+          if (isEndContentEl) {
+            endEl.style.marginRight = `${gap * 2}px`;
+            endMidTopEl.style.marginRight = `${gap * 2}px`;
+          }
+        } else if (startFromStart && !endFromEnd) {
+          left -= gap;
+          width -= gap;
+
+          if (isStartContentEl) {
+            startEl.style.marginLeft = `${gap * 2}px`;
+            startMidTopEl.style.marginLeft = `${gap * 2}px`;
+          }
+          if (isEndContentEl) {
+            endEl.style.marginLeft = `${gap * 2}px`;
+            endMidTopEl.style.marginLeft = `${gap * 2}px`;
+          }
+        } else if (!startFromStart && endFromEnd) {
+          left += gap;
+          width += gap;
+
+          if (isStartContentEl) {
+            startEl.style.marginRight = `${gap * 2}px`;
+            startMidTopEl.style.marginRight = `${gap * 2}px`;
+          }
+          if (isEndContentEl) {
+            endEl.style.marginRight = `${gap * 2}px`;
+            endMidTopEl.style.marginRight = `${gap * 2}px`;
+          }
+        } else {
+          left += gap;
+          width -= gap * 2;
+
+          if (isStartContentEl) {
+            startEl.style.marginRight = `${gap * 2}px`;
+            startMidTopEl.style.marginRight = `${gap * 2}px`;
+          }
+          if (isEndContentEl) {
+            endEl.style.marginLeft = `${gap * 2}px`;
+            endMidTopEl.style.marginLeft = `${gap * 2}px`;
+          }
+        }
+
+        width = Math.max(width, 10);
+
+        const heightLevelNum =
+          parseInt((connection.height || "Level_1").split("_")[1]) || 1;
+        const height = Math.min(
+          Math.max(20 + (heightLevelNum - 1) * 5, 10),
+          direction ? (GlobalHeight ? 140 : 270) : GlobalHeight ? 95 : 235,
+        );
+
+        const color =
+          resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
+        const topOffset = 397;
+        const reverseTopOffset = GlobalHeight ? 312 : 462;
+        const topOffsetPageReverse = 220;
+        const topOffsetrReversePageReverse = GlobalHeight ? 490 : 640;
+
+        // ---- Handle Config ----
+        const config = connection.config;
+        const hasConfig = !!config;
+
+        const icons = config?.fontAwsomeicons || config?.fontAwsomeicon || [];
+        const colors = config?.iconColors || config?.iconColor || [];
+        const iconSizes = config?.iconSize || config?.iconSizes || [];
+        const iconCount = icons.length;
+
+        let axisTop = null;
+
+        if (isRectangleAxisStart) {
+          axisTop = startRect.top + startRect.height / 2 - pptRect.top;
+        } else if (isRectangleAxisEnd) {
+          axisTop = endRect.top + endRect.height / 2 - pptRect.top;
+        }
+
+        // justify_content mapping
+        const justifyMap = {
+          center: "center",
+          between: "space-between",
+          evenly: "space-evenly",
+        };
+        const justifyValue =
+          justifyMap[(config?.justify_content || "").toLowerCase()] || "center";
+
+        // width calculation from start_end_gaps
+        const startEndGapsLevel =
+          parseInt((config?.start_end_gaps || "Level_0").split("_")[1]) || 0;
+        const widthPercent = Math.max(0, 100 - startEndGapsLevel * 5);
+
+        const zIndexLevel = connection?.z_Index || "Level_1";
+        let zLevelNum = parseInt(zIndexLevel.split("_")[1], 10);
+        if (isNaN(zLevelNum) || zLevelNum < 1) zLevelNum = 1;
+        let z_Index_Levels = 5 + (zLevelNum - 1);
+        if (z_Index_Levels > 20) z_Index_Levels = 20;
+
+        const midLineHeight = 14;
+
+        // Shape mapping (NEW PART)
+        const shapeMap = {
+          rectangle: "border-radius: 0 0 0 0;",
+          rounded_sm: "border-radius: 5px;",
+          rounded_lg: "border-radius: 15px;",
+          rounded_x_lg: "border-radius: 25px;",
+          rounded_xx_lg: "border-radius: 35px;",
+          rounded_xxx_lg: "border-radius: 50px;",
+          rounded_bottom_left: "border-radius: 0 0 0 20px;",
+          rounded_bottom_right: "border-radius: 0 0 20px 0;",
+          rounded_top_left: "border-radius: 12px 0 0 0;",
+          rounded_top_right: "border-radius: 0 12px 0 0;",
+          rounded_top: "border-radius: 12px 12px 0 0;",
+          rounded_bottom: "border-radius: 0 0 12px 12px;",
+        };
+
+        const shapeStyle =
+          shapeMap[(config?.shape || "").toLowerCase()] ||
+          shapeMap["rectangle"];
+
+        // inject style for rectangle
+        const styleEl = document.createElement("style");
+        styleEl.textContent = `
+          .${className} {
+            position: absolute;
+            left: ${left}px;
+            width: ${width}px;
+            height: ${height}px;
+            border-bottom: ${borderSize}px solid ${color};
+            border-left: ${borderSize}px solid ${color};
+            border-right: ${borderSize}px solid ${color};
+            ${shapeStyle}
+            box-sizing: border-box;
+            background:transparent;
+            pointer-events: none;
+            z-index: ${z_Index_Levels};
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            ${
+              alignmentDirection(config.direction) === "reverse"
+                ? `bottom: ${
+                    direction
+                      ? topOffsetrReversePageReverse + midLineHeight
+                      : reverseTopOffset + midLineHeight
+                  }px;
+               transform:rotateZ(180deg);
+              `
+                : axisTop !== null
+                  ? `top: ${axisTop}px;`
+                  : `top: ${direction ? topOffsetPageReverse : topOffset}px;`
+            }
+          }
+
+          .${className} .icon-row {
+            display: flex;
+            justify-content: ${justifyValue};
+            width: ${widthPercent}%;
+            align-items: center;
+            position: absolute;
+            margin: 0;
+            bottom: -${borderSize / 2}px;
+            transform: translateY(50%);
+            pointer-events: auto;
+          }
+
+          .${className} .icon-row i {
+            transition: font-size 0.2s ease;
+          }
+            
+        `;
+        // inject style for the small square logo above text (only once)
+        if (!document.getElementById("rect-icon-style")) {
+          const style = document.createElement("style");
+          style.id = "rect-icon-style";
+          style.innerHTML = `
+            .rect-logo {
+              position: absolute;
+              top: -15px; 
+              right: 5px;
+              width: 15px;
+              height: 15px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 2px;
+              box-sizing: border-box;
+              cursor: pointer;
+              background: white;
+              z-index: 5;
+              transition: border-color .12s, transform .08s;
+            }
+            .rect-logo:active { transform: scale(.96); }
+            .rect-logo i { font-size: 10px; line-height: 1; margin-top:1px; }
+            .icon-row .wrapper-relative { position: relative; }
+          `;
+          document.head.appendChild(style);
+        }
+
+        document.head.appendChild(styleEl);
+
+        // create main rect container
+        const rectDiv = document.createElement("div");
+        rectDiv.className = className;
+
+        // Prepare a list to track conversion tasks that must be created AFTER rectDiv is appended
+        const conversionTasks = [];
+        const thingsToDisplay = [];
+
+        // if config present → add icon row
+        if (hasConfig && iconCount > 0) {
+          const iconRow = document.createElement("div");
+          iconRow.className = "icon-row";
+
+          const contents = Array.isArray(config?.content) ? config.content : [];
+
+          icons.forEach((iconClass, iconIdx) => {
+            const iconEl = document.createElement("i");
+            iconEl.className = iconClass;
+            iconEl.style.color =
+              resolveColor(colors[iconIdx], JSON_Data.colors) || "black";
+
+            // dynamic icon size
+            const sizeLevel =
+              parseInt((iconSizes[iconIdx] || "Size_0").split("_")[1]) || 0;
+            const baseSize = 8;
+            const fontSize = Math.min(baseSize + sizeLevel * 2, 20);
+            iconEl.style.fontSize = `${fontSize}px`;
+
+            const contentItem = contents[iconIdx] || {};
+
+            // If content object is empty, append icon only
+            if (!Object.keys(contentItem).length) {
+              iconRow.appendChild(iconEl);
+              return;
+            }
+
+            // normalize content keys (support provided keys)
+            const text = contentItem.text || "";
+            const textDetail = contentItem.textDetail || text;
+            const IdName = contentItem?.rectangleTooltipId;
+            const contentConversionShow =
+              contentItem?.content_conversion?.display || false;
+            const contentConversion = contentItem?.content_conversion;
+            const textIcon = contentItem?.textIconConfig;
+
+            // wrapper that contains icon + text
+            const wrapper = document.createElement("div");
+            wrapper.style.display = "flex";
+            wrapper.style.alignItems = "center";
+            wrapper.style.justifyContent = "space-between";
+            wrapper.style.gap = "4px";
+
+            const p = document.createElement("p");
+            p.textContent = limitText(text, 10);
+            p.style.color = contentItem.textColor || "white";
+            p.style.margin = "0";
+            p.style.position = "relative";
+
+            direction ? "" : (p.style.position = "relative");
+            if (contentItem?.background_color) {
+              p.style.padding = "10px";
+              p.classList.add("box-shadow-box");
+              p.style.textAlign = "center";
+              p.style.borderRadius = "20px";
+              p.style.width = "130px";
+              p.style.backgroundColor =
+                resolveColor(contentItem?.background_color, JSON_Data.colors) ||
+                "white";
+              p.style.color = contentItem.textColor || "black";
+              p.textContent = limitText(text, 20);
+            }
+
+            p.style.fontSize = `${getFontSize(9, 10, 11)}px`;
+            p.title = textDetail || text;
+            if (IdName) p.id = IdName;
+
+            if (textIcon?.display) {
+              const position = textIcon.iconPosition?.toLowerCase();
+              const icons = textIcon.fontAwsomeIcon || [];
+              const colors = textIcon.iconColor || [];
+
+              const createTextIcon = (side, iconClass, color) => {
+                const i = document.createElement("i");
+                i.className = iconClass;
+                i.style.position = "absolute";
+                i.style.top = "50%";
+                i.style.transform = "translateY(-50%)";
+                i.style.fontSize = "15px";
+                i.style.color =
+                  resolveColor(color, JSON_Data.colors) || "black";
+
+                if (side === "left") i.style.left = "3px";
+                if (side === "right") i.style.right = "3px";
+
+                return i;
+              };
+
+              // LEFT ICON
+              if (position === "left" || position === "both") {
+                p.appendChild(
+                  createTextIcon(
+                    "left",
+                    `${IdName}_icon_left ${icons[0]}`,
+                    colors[0],
+                  ),
+                );
+              }
+
+              // RIGHT ICON
+              if (position === "right" || position === "both") {
+                const idx = position === "both" ? 1 : 0;
+
+                p.appendChild(
+                  createTextIcon(
+                    "right",
+                    `${IdName}_icon_right ${icons[idx]}`,
+                    colors[idx],
+                  ),
+                );
+              }
+            }
+
+            wrapper.appendChild(iconEl);
+            wrapper.appendChild(p);
+            if (
+              contentItem?.iconConfig?.display == true &&
+              contentItem?.content_conversion?.display == true
+            ) {
+              const iconCfg = contentItem.iconConfig;
+
+              wrapper.classList.add("wrapper-relative");
+
+              // SET INITIAL TOGGLE STATE
+              const defaultState = (
+                iconCfg.ByDefaultBehaviour || "Close"
+              ).toLowerCase();
+              let isOpen = defaultState === "open";
+
+              // DEFINE UNIQUE RECTANGLE ID NOW (same format as conversionClass later)
+              const rectangle_id = contentItem.rectangleTooltipId;
+
+              // STORE INITIAL STATE IN thingsToDisplay
+              thingsToDisplay.push({
+                rectangle_id,
+                isOpen,
+              });
+
+              // BUILD THE TOGGLE BUTTON
+              const logo = document.createElement("div");
+              logo.className = "rect-logo";
+
+              const icon = document.createElement("i");
+              logo.appendChild(icon);
+
+              // UPDATE UI FUNCTION
+              function updateLogoUI() {
+                if (isOpen) {
+                  icon.className = iconCfg.OpenFontAwsomeicon;
+                  icon.style.color =
+                    resolveColor(
+                      iconCfg.OpenFontAwsomeiconColor,
+                      JSON_Data.colors,
+                    ) || "black";
+                  logo.style.border = `1px solid ${
+                    resolveColor(
+                      iconCfg.OpenFontAwsomeiconColor,
+                      JSON_Data.colors,
+                    ) || "black"
+                  }`;
+                } else {
+                  icon.className = iconCfg.CloseFontAwsomeicon;
+                  icon.style.color =
+                    resolveColor(
+                      iconCfg.CloseFontAwsomeiconColor,
+                      JSON_Data.colors,
+                    ) || "black";
+                  logo.style.border = `1px solid ${
+                    resolveColor(
+                      iconCfg.CloseFontAwsomeiconColor,
+                      JSON_Data.colors,
+                    ) || "black"
+                  }`;
+                }
+              }
+
+              // INITIAL UPDATE
+              updateLogoUI();
+
+              // CLICK TOGGLE
+              logo.addEventListener("click", (e) => {
+                e.stopPropagation();
+
+                // 1) Toggle state
+                isOpen = !isOpen;
+
+                // 2) Update global array
+                const stored = thingsToDisplay.find(
+                  (t) => t.rectangle_id === rectangle_id,
+                );
+                if (stored) stored.isOpen = isOpen;
+
+                // 3) Find rectangle via ID and toggle it
+                const rectId = rectangle_id + "_rectangle";
+                const rectEl = document.getElementById(rectId);
+                if (rectEl) {
+                  rectEl.style.display = isOpen ? "" : "none";
+                }
+
+                // 4) Toggle polygon stack using the new ID
+                const polygonId = rectangle_id + "_Polygon";
+                const polygonEl = document.getElementById(polygonId);
+                if (polygonEl) {
+                  polygonEl.style.display = isOpen ? "" : "none";
+                }
+
+                const lineEl = document.getElementById(rectangle_id + "_Line");
+                if (lineEl) lineEl.style.display = isOpen ? "" : "none";
+
+                const pointEl = document.getElementById(
+                  rectangle_id + "_Line_Point",
+                );
+                if (pointEl) pointEl.style.display = isOpen ? "" : "none";
+
+                // 5) Update icon UI
+                updateLogoUI();
+              });
+
+              wrapper.appendChild(logo);
+            }
+
+            iconRow.appendChild(wrapper);
+            if (contentConversionShow) {
+              conversionTasks.push({
+                contentConversion,
+                iconIdx,
+                targetId: IdName || null,
+                wrapperIndex: iconRow.children.length - 1,
+                connectionIndex: i,
+              });
+            }
+          });
+
+          rectDiv.appendChild(iconRow);
+        }
+        pptBox.appendChild(rectDiv);
+
+        let linkPairs = [];
+        // --- New Part ---
+        if (conversionTasks.length > 0) {
+          conversionTasks.forEach((task, tIndex) => {
+            const convClass = `conversion-rect-sec${sectionIdx}-sub${idx}-conn${i}-icon${task.iconIdx}`;
+            const oldConv = pptBox.querySelector(`.${convClass}`);
+            if (oldConv) oldConv.remove();
+
+            let targetEl = task.targetId
+              ? document.getElementById(task.targetId)
+              : null;
+
+            if (!targetEl) {
+              const iconRowEl = rectDiv.querySelector(".icon-row");
+              if (iconRowEl) {
+                const wrapperEl = iconRowEl.children[task.wrapperIndex];
+                if (wrapperEl)
+                  targetEl = wrapperEl.querySelector("p") || wrapperEl;
+              }
+            }
+            if (!targetEl) return;
+
+            const targetRect = targetEl.getBoundingClientRect();
+            const pptNowRect = pptBox.getBoundingClientRect();
+
+            // MAIN DIV
+            const convDiv = document.createElement("div");
+            convDiv.className = convClass;
+            convDiv.id = task.targetId + "_rectangle";
+            convDiv.style.position = "absolute";
+            convDiv.style.zIndex = 2;
+            linkPairs.push({
+              convClass,
+              polygonClass: null,
+            });
+
+            const convWidth = 145;
+            const offSet = 6;
+
+            convDiv.style.left =
+              Math.round(
+                targetRect.left -
+                  pptNowRect.left +
+                  targetRect.width / 2 -
+                  convWidth / 2,
+              ) +
+              offSet +
+              "px";
+            convDiv.style.width = "125px";
+            convDiv.style.top = `${
+              direction ? (GlobalHeight ? 365 : 505) : 164
+            }px`;
+
+            const cfg = task.contentConversion;
+            const logoCfg = cfg?.logo_titles_config || {};
+
+            const titles = logoCfg.logo_title || [];
+            const details = logoCfg.logo_detail || [];
+            const bgColors = logoCfg.logo_title_background_color || [];
+            const borderColors = logoCfg.logo_title_border_color || [];
+            const textColors = logoCfg.logo_title_color || [];
+            const idPrefix = logoCfg.logo_id_name || "";
+
+            // UNIQUE CLASS NAME FOR THIS RECTANGLE
+            const uniqueRectClass = `icon_plus_name_rectangle_${i}_${task.iconIdx}`;
+
+            const iconPlus = document.createElement("div");
+            iconPlus.className = `icon_plus_name ${uniqueRectClass}`;
+            iconPlus.style.display = "flex";
+            iconPlus.style.flexDirection = "column";
+            iconPlus.style.alignItems = "center";
+
+            // USER ICON
+            const userIcon = document.createElement("i");
+            userIcon.className = `fa-solid fa-user fa-user-rectangle_${i}_${task.iconIdx}`;
+
+            // dynamic user icon colors
+            userIcon.style.border = `2px solid ${
+              resolveColor(cfg.logo_heading_border_color, JSON_Data.colors) ||
+              "#a334c8"
+            }`;
+            userIcon.style.background =
+              resolveColor(cfg.logo_color, JSON_Data.colors) || "#a334c8";
+            userIcon.style.position = "relative";
+            userIcon.style.webkitBackgroundClip = "text";
+            userIcon.style.webkitTextFillColor = "transparent";
+            userIcon.style.display = "flex";
+            userIcon.style.alignItems = "center";
+            userIcon.style.justifyContent = "center";
+            userIcon.style.width = "35px";
+            userIcon.style.height = "35px";
+            userIcon.style.borderRadius = "50%";
+            userIcon.style.bottom = "-10px";
+            userIcon.style.zIndex = "3";
+            userIcon.style.pointerEvents = "auto";
+
+            iconPlus.appendChild(userIcon);
+
+            // WRAPPER CLASS
+            let wrapperClass = "";
+            if (titles.length === 1)
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-one";
+            else if (titles.length === 2)
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-two";
+            else if (titles.length === 3)
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-three";
+            else
+              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-four";
+
+            const wrapper = document.createElement("div");
+            wrapper.className = wrapperClass;
+            wrapper.style.position = "relative";
+            wrapper.style.zIndex = "5";
+            if (idPrefix) wrapper.id = idPrefix;
+
+            // ==== 2×2 PILL GRID ====
+            function hasValue(v) {
+              return v !== null && v !== undefined && String(v).trim() !== "";
+            }
+
+            // Find how many actual items you have
+            const itemsCount = Math.max(
+              (titles && titles.length) || 0,
+              (details && details.length) || 0,
+            );
+
+            for (let row = 0; row < 2; row++) {
+              const rowDiv = document.createElement("div");
+              rowDiv.className = "icon-plus-name-box-enclosed-rectangle";
+              rowDiv.style.width = "100%";
+              rowDiv.style.height = "49%";
+              rowDiv.style.display = "flex";
+              rowDiv.style.alignItems = "center";
+              rowDiv.style.justifyContent = "center";
+
+              for (let col = 0; col < 2; col++) {
+                const idx2 = row * 2 + col;
+
+                //  If no data exists for this index → SKIP
+                if (idx2 >= itemsCount) continue;
+                const title = titles?.[idx2];
+                const detail = details?.[idx2];
+
+                //  Skip if both title & detail are empty/undefined
+                if (!hasValue(title) && !hasValue(detail)) continue;
+
+                // Build pill
+                const pill = document.createElement("p");
+                pill.className = `icon-plus-name-paragraph-${i}-${
+                  task.iconIdx
+                }-${idx2 + 1}`;
+                pill.title = hasValue(detail)
+                  ? detail
+                  : hasValue(title)
+                    ? title
+                    : "";
+                pill.textContent = hasValue(title)
+                  ? title
+                  : hasValue(detail)
+                    ? detail
+                    : "";
+
+                pill.style.fontSize = "9px";
+                pill.style.margin = "0";
+                pill.style.padding = "8px 6px";
+                pill.style.borderRadius = "16px";
+                pill.style.textAlign = "center";
+                pill.style.minWidth = "30px";
+                pill.style.whiteSpace = "nowrap";
+                pill.style.overflow = "hidden";
+                pill.style.textOverflow = "ellipsis";
+
+                pill.style.background =
+                  resolveColor(bgColors[idx2], JSON_Data.colors) || "white";
+
+                pill.style.border = `1px solid ${
+                  resolveColor(borderColors[idx2], JSON_Data.colors) ||
+                  "#a334c8"
+                }`;
+
+                pill.style.color = textColors[idx2] || "#000";
+
+                rowDiv.appendChild(pill);
+              }
+
+              wrapper.appendChild(rowDiv);
+            }
+
+            iconPlus.appendChild(wrapper);
+            convDiv.appendChild(iconPlus);
+            pptBox.appendChild(convDiv);
+
+            const titleEl = document.getElementById(task.targetId);
+            const pptRect = pptBox.getBoundingClientRect();
+            const titleRect = titleEl.getBoundingClientRect();
+            const reactEl = convDiv.querySelector(".icon_plus_name");
+            const rectBoxRect = reactEl.getBoundingClientRect();
+
+            const titleBottomY = titleRect.bottom - pptRect.top;
+            const rectangleTopY = rectBoxRect.top - pptRect.top;
+            let verticalGap = rectangleTopY - titleBottomY;
+            if (!direction) {
+              verticalGap =
+                titleRect.y - rectBoxRect.y - rectBoxRect.height + 38;
+            }
+            const styleId = `style-${convClass}`;
+            let oldStyle = document.getElementById(styleId);
+            if (oldStyle) oldStyle.remove();
+            const style = document.createElement("style");
+            style.id = styleId;
+            const safeClass = convClass.replace(/:/g, "\\:");
+
+            const state = thingsToDisplay.find(
+              (t) => t.rectangle_id === task.targetId,
+            );
+            if (state && !state.isOpen) {
+              convDiv.style.display = "none";
+            }
+
+            // Inject CSS with dynamic height using verticalGap
+            style.textContent = `
+  .${safeClass}::before {
+      content: "";
+      position: absolute;
+      top: ${direction ? -verticalGap + 10 : "45"}px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: ${verticalGap}px;
+      background: ${
+        resolveColor(cfg.top_down_arrow?.line_color, JSON_Data.colors) ||
+        "#a334c8"
+      };
+      z-index: 2;
+  }
+  .${safeClass}::after {
+      content: "";
+      position: absolute;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      left: 50%;
+      top: ${direction ? -verticalGap + 5 : verticalGap + 40}px;
+      z-index: 1;
+      transform: translateX(-50%);
+      border-${direction ? "bottom" : "top"}: 7px solid ${
+        resolveColor(cfg.top_down_arrow?.arrow_color, JSON_Data.colors) ||
+        "#a334c8"
+      };;
+  }
+`;
+
+            document.head.appendChild(style);
+          });
+        }
+        // New Part - Polygons
+        if (conversionTasks.length > 0) {
+          const allowedLevels = [
+            "Level_1",
+            "Level_2",
+            "Level_3",
+            "Level_4",
+            "Level_5",
+            "Level_6",
+            "Level_7",
+            "Level_8",
+            "Level_9",
+            "Level_10",
+          ];
+          const compartmentTop = GlobalHeight ? 510 : 660;
+          const compartmentHeight = 200; // container height
+          const compartmentSize = 20; // distance between shapes vertically
+          const SHAPE_W = 13;
+          const SHAPE_H = 11;
+
+          // For this connection: look at content[] (each may carry content_conversion)
+          const contents = Array.isArray(connection.config?.content)
+            ? connection.config.content
+            : [];
+
+          contents.forEach((contentItem, contentIdx) => {
+            const conv = contentItem?.content_conversion;
+            if (!conv || !(conv.display === true || conv.display === "true"))
+              return;
+            const targetId = contentItem.rectangleTooltipId;
+
+            // bottom_shape_positions may be an object (single) or array (normalize to array)
+            let bottomShapePositions =
+              conv.bottom_shape_positions || conv.bottom_shape_positions;
+            // support both object and array-of-objects
+            if (!bottomShapePositions) return;
+            if (!Array.isArray(bottomShapePositions)) {
+              bottomShapePositions = [bottomShapePositions];
+            }
+            let targetEl = null;
+            const rectTooltipId = contentItem.rectangleTooltipId || null;
+            if (rectTooltipId)
+              targetEl = document.getElementById(rectTooltipId);
+
+            // fallback: try to find matching wrapper inside rectDiv (if it exists)
+            if (!targetEl) {
+              const iconRowEl = rectDiv
+                ? rectDiv.querySelector(".icon-row")
+                : null;
+              if (iconRowEl) {
+                const wrapper =
+                  iconRowEl.children[contentIdx] || iconRowEl.children[0];
+                if (wrapper) {
+                  targetEl = wrapper.querySelector("p") || wrapper;
+                }
+              }
+            }
+
+            if (!targetEl || !isVisible(targetEl)) {
+              const oldClassNamePrefix = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}`;
+              const oldEls = pptBox.querySelectorAll(
+                `[class*="${oldClassNamePrefix}"]`,
+              );
+              oldEls.forEach((el) => {
+                const styleTag = document.querySelector(
+                  `style[data-conn="${el.className}"]`,
+                );
+                if (styleTag) styleTag.remove();
+                el.remove();
+              });
+              return;
+            }
+
+            const pptNow = pptBox.getBoundingClientRect();
+            const targetRect = targetEl.getBoundingClientRect();
+            const midpointX = targetRect.left + targetRect.width / 2;
+            const leftRelativeToPPT = Math.round(midpointX - pptNow.left);
+
+            // For each bottomShapePositions group create a vertical polygon stack container
+            bottomShapePositions.forEach((group, groupIdx) => {
+              // className must be unique
+              const className = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}_grp${groupIdx}`;
+              linkPairs[linkPairs.length - 1].polygonClass = className;
+
+              // cleanup previous
+              const prev = pptBox.querySelector(`.${className}`);
+              if (prev) prev.remove();
+              const prevStyle = document.querySelector(
+                `style[data-conn="${className}"]`,
+              );
+              if (prevStyle) prevStyle.remove();
+
+              // normalize levels array
+              let rawLevels = Array.isArray(group.levels) ? group.levels : [];
+              const levelsArr = rawLevels
+                .map((lv) => (lv || "").toString().trim())
+                .filter(
+                  (lv, p, self) =>
+                    allowedLevels.includes(lv) && self.indexOf(lv) === p,
+                );
+
+              if (!levelsArr.length) return; // nothing to draw
+
+              const state = thingsToDisplay.find(
+                (t) => t.rectangle_id === contentItem.rectangleTooltipId,
+              );
+              // prepare style (vertical container positioned by midpoint)
+              const styleEl = document.createElement("style");
+              styleEl.setAttribute("data-conn", className);
+              styleEl.textContent = `
+.${className} {
+  position: absolute;
+  left: ${leftRelativeToPPT - Math.round(SHAPE_W / 2) - (direction ? 3 : 0)}px;
+  top: ${compartmentTop}px;
+  width: ${SHAPE_W}px;
+  height: ${compartmentHeight}px;
+  z-index: 5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.${className} .polygon-inner {
+  width: ${SHAPE_W}px;
+  height: ${SHAPE_H}px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transform: translateY(0) rotateZ(30deg);
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 0px;
+  visibility: hidden;
+  position: absolute;
+}
+`;
+              document.head.appendChild(styleEl);
+
+              // build container
+              const container = document.createElement("div");
+              container.className = className;
+              container.id = targetId + "_Polygon";
+              // create up to 10 compartments (Level_1 .. Level_10)
+              for (let levelIndex = 1; levelIndex <= 10; levelIndex++) {
+                const inner = document.createElement("div");
+                inner.className = "polygon-inner";
+                inner.style.top = `${
+                  (levelIndex - 1) * compartmentSize +
+                  (compartmentSize - SHAPE_H) / 2
+                }px`;
+
+                const levelName = `Level_${levelIndex}`;
+                if (levelsArr.includes(levelName)) {
+                  inner.style.visibility = "visible";
+
+                  // color resolution: group.color can be array or single value
+                  let colorVal = null;
+                  if (
+                    Array.isArray(group.color) &&
+                    group.color[levelIndex - 1]
+                  ) {
+                    colorVal = group.color[levelIndex - 1];
+                  } else if (Array.isArray(group.color) && group.color[0]) {
+                    colorVal = group.color[0];
+                  } else if (group.color) {
+                    colorVal = group.color;
+                  }
+
+                  let resolvedColor = null;
+                  try {
+                    if (typeof resolveColor === "function" && colorVal)
+                      resolvedColor = resolveColor(colorVal, JSON_Data.colors);
+                  } catch (e) {
+                    resolvedColor = null;
+                  }
+                  inner.style.background =
+                    resolvedColor || colorVal || "#dcdcdc";
+                }
+
+                container.appendChild(inner);
+              }
+              if (state && !state.isOpen) {
+                container.style.display = "none";
+              }
+              pptBox.appendChild(container);
+            });
+          });
+        }
+
+        if (conversionTasks.length > 0) {
+          conversionTasks.forEach((task, tIndex) => {
+            linkPairs.forEach((pair) => {
+              const rectSelector = direction
+                ? `.${pair.convClass}`
+                : `#${task.targetId}`;
+              const rectEl = document.querySelector(rectSelector);
+              const polyEl = document.querySelector(`.${pair.polygonClass}`);
+
+              if (!rectEl || !polyEl) return;
+
+              // Temporarily show hidden elements for measurement
+              const wasRectHidden = rectEl.style.display === "none";
+              const wasPolyHidden = polyEl.style.display === "none";
+
+              if (wasRectHidden) rectEl.style.display = "";
+              if (wasPolyHidden) polyEl.style.display = "";
+
+              // Measure
+              const rectBox = rectEl.getBoundingClientRect();
+              const polyBox = polyEl.getBoundingClientRect();
+              const pptRect = pptBox.getBoundingClientRect();
+
+              // Restore original hidden state
+              if (wasRectHidden) rectEl.style.display = "none";
+              if (wasPolyHidden) polyEl.style.display = "none";
+
+              const top = rectBox.bottom - pptRect.top;
+              const bottom = polyBox.top - pptRect.top;
+              const height = bottom - top;
+
+              if (height <= 0) return;
+
+              // Unique IDs for line and point
+              const lineId = task.targetId + "_Line";
+              const pointId = task.targetId + "_Line_Point";
+
+              // Remove old line & point
+              const oldLine = document.getElementById(lineId);
+              if (oldLine) oldLine.remove();
+
+              const oldPoint = document.getElementById(pointId);
+              if (oldPoint) oldPoint.remove();
+
+              // Colors
+              const BottomLineColor =
+                resolveColor(
+                  task.contentConversion.bottom_line_color,
+                  JSON_Data.colors,
+                ) || "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
+              const BottomPointColor =
+                resolveColor(
+                  task.contentConversion.bottom_point_color,
+                  JSON_Data.colors,
+                ) || "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
+
+              // Height offset by levels
+              const offsets = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185];
+              const levelStr =
+                task.contentConversion.bottom_Line_postion || "Level_1";
+              const levelNum = parseInt(levelStr.split("_")[1]);
+              let LineHeightOffset = offsets[levelNum - 1] ?? offsets[0];
+
+              // Point position adjustment
+              let logo_title_num =
+                task.contentConversion.logo_titles_config.logo_title.length;
+              logo_title_num = Math.max(1, Math.min(logo_title_num, 4));
+
+              const topValues = { 1: 4, 2: 4, 3: 4, 4: 30 };
+              const topPx = topValues[logo_title_num] ?? 22;
+
+              // Calculate X position
+              const xCenter = rectBox.left + rectBox.width / 2 - pptRect.left;
+
+              // --- Create the vertical line ---
+              const lineDiv = document.createElement("div");
+              lineDiv.id = lineId;
+              lineDiv.style.position = "absolute";
+              lineDiv.style.left = xCenter + "px";
+              lineDiv.style.top = top + "px";
+              lineDiv.style.width = "1px";
+              lineDiv.style.height = height + LineHeightOffset + "px";
+              lineDiv.style.background = BottomLineColor;
+              lineDiv.style.transform = "translateX(-50%)";
+              lineDiv.style.zIndex = "3";
+
+              // --- Create the circle point ---
+              const pointDiv = document.createElement("div");
+              pointDiv.id = pointId;
+              pointDiv.style.position = "absolute";
+              pointDiv.style.left = xCenter + "px";
+              pointDiv.style.top = top - topPx + "px";
+              if (!direction) {
+                pointDiv.style.top = top - 3 + "px";
+              }
+              pointDiv.style.width = "5px";
+              pointDiv.style.height = "5px";
+              pointDiv.style.borderRadius = "50%";
+              pointDiv.style.background = BottomPointColor;
+              pointDiv.style.transform = "translateX(-50%)";
+              pointDiv.style.zIndex = "5";
+
+              pptBox.appendChild(lineDiv);
+              pptBox.appendChild(pointDiv);
+
+              // Hide if default state = close
+              const state = thingsToDisplay.find(
+                (t) => t.rectangle_id === task.targetId,
+              );
+              if (state && !state.isOpen) {
+                lineDiv.style.display = "none";
+                pointDiv.style.display = "none";
+              }
+            });
+          });
+        }
+      });
+    });
+  });
+}
+
+drawConnectingRectangle(JSON_Data, height);
+
+function drawBranchConnectingLines(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("PPT-Box not found.");
+    return;
+  }
+
+  /* ===============================
+     CLEAN OLD BRANCH LINES
+  =============================== */
+  pptBox
+    .querySelectorAll("[class^='branch-connecting-line-sec']")
+    .forEach((el) => el.remove());
+
+  document.querySelectorAll("style").forEach((styleEl) => {
+    if (styleEl.textContent.includes("branch-connecting-line-sec")) {
+      styleEl.remove();
+    }
+  });
+
+  const ELEMENT_HEIGHT = 29;
+
+  function resolveBranchHeight(levelStr) {
+    const levelNum = parseInt(levelStr?.split("_")[1]) || 1;
+    const MIN = 33;
+    const MAX = 130;
+    const STEP = 5;
+
+    return Math.min(MIN + (levelNum - 1) * STEP, MAX);
+  }
+
+  JSON_Data.body.forEach((section, sectionIdx) => {
+    if (section.component !== "Header") return;
+    if (!section.sub_groups) return;
+
+    section.sub_groups.forEach((sg, subIdx) => {
+      if (sg.component !== "Sub-Header") return;
+
+      const rectConfig = sg.content?.connecting_Rectangle;
+      if (!rectConfig || !Array.isArray(rectConfig.connections)) return;
+
+      rectConfig.connections.forEach((rectConn, rectIndex) => {
+        const branchLine = rectConn.connecting_Branch_Line;
+        if (
+          !branchLine ||
+          (branchLine.display !== true && branchLine.display !== "true")
+        )
+          return;
+
+        branchLine.connections.forEach((connection, i) => {
+          const startEl = document.getElementById(connection.starting);
+          const endEl = document.getElementById(connection.ending);
+
+          if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
+            return;
+
+          const startRect = startEl.getBoundingClientRect();
+          const endRect = endEl.getBoundingClientRect();
+          const pptRect = pptBox.getBoundingClientRect();
+
+          const startCX = startRect.left + startRect.width / 2;
+          const startCY = startRect.top + startRect.height / 2;
+          const endCX = endRect.left + endRect.width / 2;
+          const endCY = endRect.top + endRect.height / 2;
+
+          const tolerance = 6;
+          const sameX = Math.abs(startCX - endCX) <= tolerance;
+          const sameY = Math.abs(startCY - endCY) <= tolerance;
+
+          if (!sameX && !sameY) return;
+
+          const thickness = 2;
+          const branchHeight = resolveBranchHeight(connection.height);
+
+          let left, top, width, height;
+          const offset = 6;
+
+          if (sameY) {
+            // └── Horizontal + vertical branch
+            left = Math.min(startCX, endCX) - pptRect.left + offset;
+            width = Math.abs(endCX - startCX) - offset * 2;
+            top = startCY - pptRect.top + ELEMENT_HEIGHT;
+            height = branchHeight;
+          } else {
+            // │ Vertical branch
+            left = startCX - pptRect.left - thickness / 2;
+            width = thickness;
+            top = Math.min(startCY, endCY) - pptRect.top + offset;
+            height = Math.abs(endCY - startCY) - offset * 2;
+          }
+
+          if (width <= 0 || height <= 0) return;
+
+          const lineColor =
+            resolveColor(branchLine.line_color?.[i], JSON_Data.colors) ||
+            "#9f30cb";
+          const arrowColor =
+            resolveColor(branchLine.arrow_color?.[i], JSON_Data.colors) ||
+            "#9f30cb";
+
+          const lineClass = `branch-connecting-line-sec${sectionIdx}-${subIdx}-${rectIndex}-${i}`;
+
+          const style = document.createElement("style");
+          style.textContent = `
+            .${lineClass} {
+              position: absolute;
+              z-index: 1;
+              pointer-events: none;
+              left: ${left - 9}px;
+              top: ${top - 5}px;
+              width: ${width}px;
+              height: ${height}px;
+              border-bottom: 1px solid ${lineColor};
+              border-right: 1px solid ${lineColor};
+              border-bottom-right-radius: 20px;
+            }
+
+            .${lineClass}::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: 0;
+              transform: translate(50%);
+              border-bottom: 6px solid ${arrowColor};
+              border-left: 4px solid transparent;
+              border-right: 4px solid transparent;
+            }
+          `;
+          document.head.appendChild(style);
+
+          const lineDiv = document.createElement("div");
+          lineDiv.className = lineClass;
+          pptBox.appendChild(lineDiv);
+        });
+      });
+    });
+  });
+}
+
+drawBranchConnectingLines(JSON_Data);
+
+function applySkipSpacing(skipSpacingTasks) {
+  document.querySelectorAll(".skip-spacer").forEach((el) => el.remove());
+
+  const groupSpacingMap = new Map();
+  const groupElementsMap = new Map();
+  skipSpacingTasks.forEach((task) => {
+    const { skipSteps, skipPlacement, starting, ending } = task;
+
+    if (!skipSteps || skipSteps <= 0) return;
+
+    const spacingPx = skipSteps * 150;
+    const targetId = skipPlacement === "start" ? starting : ending;
+
+    if (!targetId) return;
+
+    function createSkipSpacer() {
+      const spacer = document.createElement("div");
+      spacer.className = "skip-spacer";
+      spacer.style.width = `${spacingPx}px`;
+      spacer.style.minHeight = "30px";
+      spacer.style.height = "100%";
+      spacer.style.background = "transparent";
+      spacer.style.pointerEvents = "none";
+      spacer.style.flexShrink = "0";
+      return spacer;
+    }
+
+    /* ---- subgroups-on-line ---- */
+    const onLineTarget = document.getElementById(targetId);
+    if (onLineTarget && onLineTarget.parentElement) {
+      const spacer = createSkipSpacer();
+      skipPlacement === "start"
+        ? onLineTarget.after(spacer)
+        : onLineTarget.before(spacer);
+
+      const subGroupsOnLine = onLineTarget.parentElement;
+      const subGroupDiv = subGroupsOnLine.parentElement;
+
+      if (subGroupDiv) {
+        const prev = groupSpacingMap.get(subGroupDiv) || 0;
+        groupSpacingMap.set(subGroupDiv, Math.max(prev, spacingPx));
+
+        groupElementsMap.set(subGroupDiv, {
+          subGroupsOnLine,
+          subGroupMidTop: subGroupDiv.querySelector(".subgroups-mid-top"),
+        });
+      }
+    }
+
+    /* ---- subgroups-mid-top ---- */
+    const midTopTarget = document.querySelector(
+      `.icon_plus_name[data-midtop-for="${targetId}"]`,
+    );
+
+    if (midTopTarget && midTopTarget.parentElement) {
+      const spacer = createSkipSpacer();
+      skipPlacement === "start"
+        ? midTopTarget.after(spacer)
+        : midTopTarget.before(spacer);
+    }
+  });
+  groupElementsMap.forEach((els, subGroupDiv) => {
+    const spacingPx = groupSpacingMap.get(subGroupDiv) || 0;
+    const { subGroupMidTop } = els;
+
+    if (subGroupMidTop) {
+      if (!subGroupDiv.dataset.baseMidTopWidth) {
+        subGroupDiv.dataset.baseMidTopWidth =
+          subGroupMidTop.getBoundingClientRect().width;
+      }
+
+      const baseWidth = parseFloat(subGroupDiv.dataset.baseMidTopWidth);
+
+      subGroupMidTop.style.width = `${baseWidth + spacingPx}px`;
+    }
+  });
+  drawLogoOnMidLine(JSON_Data);
+  drawConnectingLines(JSON_Data, height);
+  drawConnectingTextLine(JSON_Data, height);
+  drawConnectingRectangle(JSON_Data, height);
+  drawBranchConnectingLines(JSON_Data);
+  drawBottomTimelineSeries(JSON_Data);
+  drawConnectingCircle(JSON_Data);
+  adjustFooterWidth(JSON_Data);
+  adjustMidLineWidth(JSON_Data);
+  drawMultiplePolygons(JSON_Data);
+  connectingBottomText(JSON_Data);
+  warning_Logo(JSON_Data);
+}
+
+applySkipSpacing(skipSpacingTasks);
+
+function drawPageBottomShapes(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox) {
+    console.warn("drawPageBottomShapes: PPT-Box not found.");
+    return;
+  }
+
+  const config = JSON_Data?.Page_Configuration?.bottomShapesConfig;
+  if (!config || !config.shapes || config.shapes.length === 0) {
+    console.warn("drawPageBottomShapes: bottomShapesConfig missing or empty.");
+    return;
+  }
+
+  // Ensure pptBox is positioned so absolute children align to it
+  const computedPosition = window.getComputedStyle(pptBox).position;
+  if (!computedPosition || computedPosition === "static") {
+    pptBox.style.position = "relative";
+  }
+
+  // Cleanup previous elements / handlers
+  const prevParent = pptBox.querySelector(".page-bottom-shapes-parent");
+  if (prevParent) prevParent.remove();
+  if (window._pptBottomShapesResizeHandler) {
+    window.removeEventListener("resize", window._pptBottomShapesResizeHandler);
+    window._pptBottomShapesResizeHandler = null;
+  }
+  if (window._pptBottomShapesScrollHandler) {
+    pptBox.removeEventListener("scroll", window._pptBottomShapesScrollHandler);
+    window._pptBottomShapesScrollHandler = null;
+  }
+
+  const shapes = config.shapes;
+  const colors = config.shapesColor || [];
+  const texts = config.text || [];
+  const textColors = config.textColor || [];
+
+  // Create parent container that will span content width
+  const parent = document.createElement("div");
+  parent.className = "page-bottom-shapes-parent";
+  parent.style.position = "absolute";
+  parent.style.left = "0px";
+  parent.style.bottom = "100px";
+  // parent.style.height = "170px";
+  parent.style.zIndex = "3";
+  // parent.style.overflow = "hidden";
+  parent.style.pointerEvents = "none";
+  parent.style.display = "flex";
+  parent.style.justifyContent = "space-between";
+  parent.style.alignItems = "center";
+
+  // Create two child wrappers (left and right)
+  const leftChild = document.createElement("div");
+  const rightChild = document.createElement("div");
+  [leftChild, rightChild].forEach((c) => {
+    c.style.display = "flex";
+    c.style.flexDirection = "row";
+    c.style.gap = "15px";
+    c.style.padding = "0";
+    c.style.margin = "0";
+    c.style.width = "40px";
+    c.style.position = "relative";
+    c.style.pointerEvents = "auto";
+  });
+  leftChild.style.transform = "rotate(90deg)";
+  leftChild.style.top = "-135px";
+  rightChild.style.transform = "rotate(-90deg)";
+  leftChild.className = "page-bottom-shapes-wrapper side-left";
+  rightChild.className = "page-bottom-shapes-wrapper side-right";
+
+  // Create shape wrapper + rotated inner shape (prevents layout gap)
+  function createShape(i, sideIndex) {
+    const shapeType = shapes[i] || "circle";
+    const bgColor = resolveColor(colors[i], "#888");
+    const label = texts[i] || "";
+    const labelColor = resolveColor(textColors[i], "white");
+
+    // outer wrapper takes the rotated footprint so layout doesn't leave gaps
+    const wrapper = document.createElement("div");
+    wrapper.style.display = "flex";
+    wrapper.style.alignItems = "center";
+    wrapper.style.justifyContent = "center";
+    wrapper.style.overflow = "visible";
+    wrapper.style.height = "40px";
+    wrapper.style.pointerEvents = "none";
+    // wrapper.style.transform =
+    //   sideIndex === 0 ? "rotate(90deg)" : "rotate(-90deg)";
+
+    const shape = document.createElement("div");
+    shape.className = `bottom-shape-${i}-${shapeType}`;
+    shape.innerText = label;
+    shape.style.color = labelColor;
+    shape.style.fontSize = "10px";
+    shape.style.fontWeight = "600";
+    shape.style.display = "flex";
+    shape.style.alignItems = "center";
+    shape.style.justifyContent = "center";
+    shape.style.width = "80px";
+    shape.style.height = "40px";
+    shape.style.background = bgColor;
+    shape.style.pointerEvents = "auto";
+
+    if (shapeType === "circle") {
+      shape.style.borderTopLeftRadius = "80px";
+      shape.style.borderTopRightRadius = "80px";
+      shape.style.borderBottomLeftRadius = "0";
+      shape.style.borderBottomRightRadius = "0";
+    } else if (shapeType === "trapezium") {
+      shape.style.clipPath = "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)";
+    }
+    wrapper.appendChild(shape);
+    return wrapper;
+  }
+
+  // place shapes (1-2 -> left, 3-4 -> right)
+  const leftShapesCount = Math.min(2, shapes.length);
+  for (let i = 0; i < leftShapesCount; i++) {
+    leftChild.appendChild(createShape(i, 0));
+  }
+  for (let i = 2; i < Math.min(4, shapes.length); i++) {
+    rightChild.appendChild(createShape(i, 1));
+  }
+
+  parent.appendChild(leftChild);
+  parent.appendChild(rightChild);
+  pptBox.appendChild(parent);
+
+  function computeContentWidth() {
+    try {
+      // selector used in your adjustMidLineWidth
+      const allChildren = Array.from(
+        pptBox.querySelectorAll("[id^='logo_title_id']"),
+      );
+      if (!allChildren.length) {
+        // fallback to scrollWidth (includes full content width)
+        return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
+      }
+
+      const pptRect = pptBox.getBoundingClientRect();
+      const nodesInfo = allChildren.map((el) => {
+        const elRect = el.getBoundingClientRect();
+        const left = elRect.left - pptRect.left + pptBox.scrollLeft;
+        const w = el.offsetWidth || elRect.width || 0;
+        return { el, left, right: left + w, width: w };
+      });
+
+      // find furthest-right node
+      const furthest = nodesInfo.reduce(
+        (acc, n) => (n.right > acc ? n.right : acc),
+        0,
+      );
+      if (furthest > 0) {
+        return Math.max(Math.ceil(furthest + 4), pptBox.clientWidth);
+      }
+
+      // fallback
+      return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
+    } catch (err) {
+      console.warn("computeContentWidth failed:", err);
+      return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
+    }
+  }
+
+  // size parent to content width
+  function sizeParentToContent() {
+    const contentW = computeContentWidth();
+    parent.style.width = contentW + "px";
+  }
+  sizeParentToContent();
+  parent.recalcBottomShapes = sizeParentToContent;
+  window._pptBottomShapesResizeHandler = function () {
+    sizeParentToContent();
+  };
+  window.addEventListener("resize", window._pptBottomShapesResizeHandler);
+  window._pptBottomShapesScrollHandler = function () {
+    sizeParentToContent();
+  };
+  pptBox.addEventListener("scroll", window._pptBottomShapesScrollHandler);
+}
+
+drawPageBottomShapes(JSON_Data);
+
+function AddOrRemoveShowHideBtn(JSON_Data) {
+  const onLineContentData = [];
+
+  if (!JSON_Data || !Array.isArray(JSON_Data.body)) {
+    console.warn("Invalid JSON data");
+    return onLineContentData;
+  }
+
+  JSON_Data.body.forEach((page) => {
+    if (!page || page.component !== "Header") return;
+
+    const subGroups = page.sub_groups || [];
+
+    subGroups.forEach((sg) => {
+      const onLineCfg = sg?.content?.on_line_content_configuration;
+      if (!onLineCfg) return;
+
+      const ids = onLineCfg.content_id || [];
+      const showHideArr = onLineCfg.showHideBtn || [];
+
+      ids.forEach((id, index) => {
+        const sh = showHideArr[index];
+
+        const display = !!(sh && sh.display === true);
+        const show = display;
+
+        let currentDisplay =
+          (sh?.ByDefaultBehaviour || "open").toLowerCase() === "open";
+
+        const OpenFontAwsomeicon = sh?.OpenFontAwsomeicon;
+        const CloseFontAwsomeicon = sh?.CloseFontAwsomeicon;
+        const OpenFontAwsomeiconColor =
+          resolveColor(sh?.OpenFontAwsomeiconColor, JSON_Data.colors) ||
+          "black";
+        const CloseFontAwsomeiconColor =
+          resolveColor(sh?.CloseFontAwsomeiconColor, JSON_Data.colors) ||
+          "black";
+        const referencedLogoIDs = Array.isArray(sh?.ReferencedLogoID)
+          ? sh.ReferencedLogoID.slice()
+          : [];
+
+        onLineContentData.push({
+          onlineId: id,
+          show,
+          currentDisplay,
+          OpenFontAwsomeicon,
+          CloseFontAwsomeicon,
+          OpenFontAwsomeiconColor,
+          CloseFontAwsomeiconColor,
+          ByDefaultBehaviour: sh?.ByDefaultBehaviour || "open",
+          ReferencedLogoID: referencedLogoIDs,
+        });
+
+        if (display) {
+          const subgroupsOnLineContentDiv = document.getElementById(id);
+          if (!subgroupsOnLineContentDiv) return;
+          const btnId = `${id}_toggle_${index}_${Math.random()
+            .toString()
+            .slice(2)}`;
+          const btnWrapper = document.createElement("div");
+          btnWrapper.id = btnId;
+          btnWrapper.className = "showHideBtn";
+
+          const iEl = document.createElement("i");
+
+          const initialIcon = currentDisplay
+            ? OpenFontAwsomeicon
+            : CloseFontAwsomeicon;
+          const initialColor = currentDisplay
+            ? OpenFontAwsomeiconColor
+            : CloseFontAwsomeiconColor;
+
+          initialIcon.split(/\s+/).forEach((cls) => iEl.classList.add(cls));
+          iEl.style.color = initialColor;
+
+          if (referencedLogoIDs.length) {
+            try {
+              btnWrapper.setAttribute(
+                "data-referenced-ids",
+                JSON.stringify(referencedLogoIDs),
+              );
+            } catch (e) {
+              console.warn(e);
+            }
+          }
+
+          btnWrapper.appendChild(iEl);
+
+          btnWrapper.style.borderColor = initialColor;
+
+          subgroupsOnLineContentDiv.appendChild(btnWrapper);
+
+          btnWrapper.addEventListener("click", () => {
+            const entry = onLineContentData.find((o) => o.onlineId === id);
+            if (!entry) return;
+
+            entry.currentDisplay = !entry.currentDisplay;
+
+            iEl.className = "";
+            const newIconClass = entry.currentDisplay
+              ? entry.OpenFontAwsomeicon
+              : entry.CloseFontAwsomeicon;
+
+            newIconClass.split(/\s+/).forEach((cls) => iEl.classList.add(cls));
+
+            const newColor = entry.currentDisplay
+              ? entry.OpenFontAwsomeiconColor
+              : entry.CloseFontAwsomeiconColor;
+
+            iEl.style.color = newColor;
+            btnWrapper.style.borderColor = newColor;
+
+            // === NEW PART: toggle inside subgroups-mid-top ===
+            const subgroupsOnLine = subgroupsOnLineContentDiv.parentElement;
+            const SubGroupDiv = subgroupsOnLine.parentElement;
+            const subgroupsOnLineContentDivH6 =
+              subgroupsOnLineContentDiv.querySelector("h6");
+
+            if (!direction && subgroupsOnLineContentDivH6) {
+              const uniqueId = subgroupsOnLineContentDiv.id;
+
+              if (entry.currentDisplay) {
+                // SHOW → remove override
+                delete dynamicAfterCSS[uniqueId + "_h6"];
+              } else {
+                // HIDE → override pseudo-element background
+                dynamicAfterCSS[uniqueId + "_h6"] = `
+                        #${uniqueId} h6::after {
+                            background: transparent !important;
+                        }
+                    `;
+              }
+              updateDynamicAfterCSS();
+            }
+
+            const iconBlock = SubGroupDiv.querySelector(
+              `.icon_plus_name[data-midtop-for="${id}"]`,
+            );
+
+            if (iconBlock) {
+              if (entry.currentDisplay) {
+                // SHOW
+                iconBlock.style.opacity = "1";
+                iconBlock.style.borderColor = "";
+                iconBlock.style.background = "";
+                iconBlock.querySelectorAll("*").forEach((el) => {
+                  el.style.opacity = "";
+                  el.style.color = "";
+                  el.style.background = "";
+                  el.style.borderColor = "";
+                  el.style.webkitTextFillColor = "";
+                });
+              } else {
+                // HIDE
+                iconBlock.style.opacity = "0";
+                iconBlock.style.borderColor = "transparent";
+                iconBlock.style.background = "transparent";
+
+                iconBlock.querySelectorAll("*").forEach((el) => {
+                  el.style.opacity = "0";
+                  el.style.color = "transparent";
+                  el.style.background = "transparent";
+                  el.style.borderColor = "transparent";
+                  el.style.webkitTextFillColor = "transparent";
+                });
+              }
+            }
+            if (subgroupsOnLineContentDiv) {
+              const uniqueId = subgroupsOnLineContentDiv.id;
+
+              if (!uniqueId) {
+                console.warn(
+                  "Element does not have an ID, cannot toggle ::after",
+                );
+              } else {
+                if (entry.currentDisplay) {
+                  delete dynamicAfterCSS[uniqueId];
+                } else {
+                  dynamicAfterCSS[uniqueId] = `
+                #${uniqueId}::after {
+                    display: none !important;
+                }
+            `;
+                }
+                updateDynamicAfterCSS();
+              }
+            }
+
+            if (
+              Array.isArray(entry.ReferencedLogoID) &&
+              entry.ReferencedLogoID.length
+            ) {
+              entry.ReferencedLogoID.forEach((refId) => {
+                document
+                  .querySelectorAll(`[data-starting-id="${refId}"]`)
+                  .forEach((lineEl) => {
+                    if (entry.currentDisplay) {
+                      // show
+                      lineEl.style.display = "";
+                      lineEl.style.opacity = "";
+                      lineEl.style.pointerEvents = "";
+                    } else {
+                      // hide
+                      lineEl.style.opacity = "0";
+                      lineEl.style.pointerEvents = "none";
+                      lineEl.style.display = "none";
+                    }
+                  });
+              });
+            }
+            document.querySelectorAll(`[data-target="${id}"]`).forEach((el) => {
+              if (entry.currentDisplay) {
+                el.style.opacity = "1";
+                el.style.pointerEvents = "auto";
+              } else {
+                el.style.opacity = "0";
+                el.style.pointerEvents = "none";
+              }
+            });
+          });
+        }
+      });
+    });
+  });
+}
+
+AddOrRemoveShowHideBtn(JSON_Data);
+
+const dynamicAfterCSS = {};
+
+function updateDynamicAfterCSS() {
+  const css = Object.values(dynamicAfterCSS).join("\n");
+
+  let styleEl = document.getElementById("dynamicAfterStyle");
+  if (!styleEl) {
+    styleEl = document.createElement("style");
+    styleEl.id = "dynamicAfterStyle";
+    document.head.appendChild(styleEl);
+  }
+
+  styleEl.textContent = css;
+}
+
 function ToolTip_Creation(JSON_Data) {
   const pptBox = document.getElementById("PPT-Box");
   if (!pptBox) {
@@ -6086,11 +8001,11 @@ function ToolTip_Creation(JSON_Data) {
             const oldWrapper = pptBox.querySelector(`.${base}`);
             if (oldWrapper) oldWrapper.remove();
             const style = document.querySelector(
-              `style[data-tooltip="${base}"]`
+              `style[data-tooltip="${base}"]`,
             );
             if (style) style.remove();
             const popupStyle = document.querySelector(
-              `style[data-tooltip="${base}-popup"]`
+              `style[data-tooltip="${base}-popup"]`,
             );
             if (popupStyle) popupStyle.remove();
             return;
@@ -6259,7 +8174,11 @@ function ToolTip_Creation(JSON_Data) {
             targetEl.addEventListener("mouseleave", onLeaveTarget);
             wrapper.addEventListener("mouseleave", onLeaveWrapper);
 
-            handlers.push({ el: targetEl, type: "mouseenter", fn: onEnter });
+            handlers.push({
+              el: targetEl,
+              type: "mouseenter",
+              fn: onEnter,
+            });
             handlers.push({
               el: targetEl,
               type: "mouseleave",
@@ -6327,7 +8246,11 @@ function ToolTip_Creation(JSON_Data) {
             targetEl.addEventListener("click", onTargetClick);
             wrapper.addEventListener("mouseleave", onWrapperMouseLeave);
 
-            handlers.push({ el: targetEl, type: "click", fn: onTargetClick });
+            handlers.push({
+              el: targetEl,
+              type: "click",
+              fn: onTargetClick,
+            });
             handlers.push({
               el: wrapper,
               type: "mouseleave",
@@ -6376,1555 +8299,6 @@ function ToolTip_Creation(JSON_Data) {
 
 ToolTip_Creation(JSON_Data);
 
-const skipSpacingTasks = [];
-function drawConnectingRectangle(JSON_Data, GlobalHeight) {
-  const pptBox = document.getElementById("PPT-Box");
-  if (!pptBox) {
-    console.warn("PPT-Box not found.");
-    return;
-  }
-
-  JSON_Data.body.forEach((section, sectionIdx) => {
-    if (!section.sub_groups) return;
-
-    section.sub_groups.forEach((sg, idx) => {
-      const rectangleData = sg.content?.connecting_Rectangle;
-
-      // If not enabled → remove old and skip
-      if (
-        !rectangleData ||
-        !(rectangleData.display === "true" || rectangleData.display === true)
-      ) {
-        const oldRects = pptBox.querySelectorAll(
-          `[class*="connection-Rectangle-sec${sectionIdx}-sub${idx}-rect"]`
-        );
-        oldRects.forEach((rect) => rect.remove());
-        const oldConvRects = pptBox.querySelectorAll(
-          `[class*="conversion-rect-sec${sectionIdx}-sub${idx}-"]`
-        );
-        oldConvRects.forEach((c) => c.remove());
-
-        return;
-      }
-
-      rectangleData.connections.forEach((connection, i) => {
-        const className = `connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}`;
-        // Remove any prior one
-        const oldRect = pptBox.querySelector(`.${className}`);
-        if (oldRect) oldRect.remove();
-
-        // look up endpoints
-        const startEl = document.getElementById(connection.starting);
-        const endEl = document.getElementById(connection.ending);
-        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
-          return;
-
-        // ---- SKIP STEPS LOGIC (OPTIONAL) ----
-        const skipSteps =
-          typeof connection.skipSteps === "number" ? connection.skipSteps : 0;
-
-        const skipPlacement = connection.skipPlacement || "start";
-
-        skipSpacingTasks.push({
-          skipSteps,
-          skipPlacement,
-          starting: connection.starting,
-          ending: connection.ending,
-        });
-
-        // measurements
-        const pptRect = pptBox.getBoundingClientRect();
-        const startRect = startEl.getBoundingClientRect();
-        const endRect = endEl.getBoundingClientRect();
-        const distant_Space = 5;
-
-        const startX =
-          connection.start_from_starting === "true" ||
-          connection.start_from_starting === true
-            ? startRect.left - distant_Space
-            : startRect.left + startRect.width + distant_Space;
-
-        const endX =
-          connection.end_from_ending === "true" ||
-          connection.end_from_ending === true
-            ? endRect.left + endRect.width + distant_Space
-            : endRect.left - distant_Space;
-
-        const left = Math.min(startX, endX) - pptRect.left - distant_Space;
-        const width = Math.abs(endX - startX);
-
-        const heightLevelNum =
-          parseInt((connection.height || "Level_1").split("_")[1]) || 1;
-        const height = Math.min(
-          Math.max(20 + (heightLevelNum - 1) * 5, 10),
-          direction ? (GlobalHeight ? 140 : 270) : GlobalHeight ? 95 : 235
-        );
-
-        const borderLevelNum =
-          parseInt((connection.border_thickness || "Level_1").split("_")[1]) ||
-          1;
-        const borderSize = Math.min(
-          Math.max(6 + (borderLevelNum - 1) * 2, 4),
-          20
-        );
-
-        const color =
-          resolveColor(rectangleData.color?.[i], JSON_Data.colors) || "#58e3d2";
-        const topOffset = 397;
-        const reverseTopOffset = GlobalHeight ? 312 : 462;
-        const topOffsetPageReverse = 220;
-        const topOffsetrReversePageReverse = GlobalHeight ? 490 : 640;
-
-        // ---- Handle Config ----
-        const config = connection.config;
-        const hasConfig = !!config;
-
-        const icons = config?.fontAwsomeicons || config?.fontAwsomeicon || [];
-        const colors = config?.iconColors || config?.iconColor || [];
-        const iconSizes = config?.iconSize || config?.iconSizes || [];
-        const iconCount = icons.length;
-
-        // justify_content mapping
-        const justifyMap = {
-          center: "center",
-          between: "space-between",
-          evenly: "space-evenly",
-        };
-        const justifyValue =
-          justifyMap[(config?.justify_content || "").toLowerCase()] || "center";
-
-        // width calculation from start_end_gaps
-        const startEndGapsLevel =
-          parseInt((config?.start_end_gaps || "Level_0").split("_")[1]) || 0;
-        const widthPercent = Math.max(0, 100 - startEndGapsLevel * 5);
-
-        const midLineHeight = 14;
-
-        // Shape mapping (NEW PART)
-        const shapeMap = {
-          rectangle: "border-radius: 0 0 0 0;",
-          rounded_sm: "border-radius: 5px;",
-          rounded_lg: "border-radius: 15px;",
-          rounded_x_lg: "border-radius: 25px;",
-          rounded_xx_lg: "border-radius: 35px;",
-          rounded_xxx_lg: "border-radius: 50px;",
-          rounded_bottom_left: "border-radius: 0 0 0 20px;",
-          rounded_bottom_right: "border-radius: 0 0 20px 0;",
-          rounded_top_left: "border-radius: 12px 0 0 0;",
-          rounded_top_right: "border-radius: 0 12px 0 0;",
-          rounded_top: "border-radius: 12px 12px 0 0;",
-          rounded_bottom: "border-radius: 0 0 12px 12px;",
-        };
-
-        const shapeStyle =
-          shapeMap[(config?.shape || "").toLowerCase()] ||
-          shapeMap["rectangle"];
-
-        // inject style for rectangle
-        const styleEl = document.createElement("style");
-        styleEl.textContent = `
-          .${className} {
-            position: absolute;
-            left: ${left}px;
-            width: ${width}px;
-            height: ${height}px;
-            border-bottom: ${borderSize}px solid ${color};
-            border-left: ${borderSize}px solid ${color};
-            border-right: ${borderSize}px solid ${color};
-            ${shapeStyle}
-            box-sizing: border-box;
-            background:transparent;
-            pointer-events: none;
-            z-index: 2;
-            overflow: visible;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            ${
-              alignmentDirection(config.direction) === "reverse"
-                ? `bottom: ${
-                    direction
-                      ? topOffsetrReversePageReverse + midLineHeight
-                      : reverseTopOffset + midLineHeight
-                  }px;
-               transform:rotateZ(180deg);
-              `
-                : `top: ${direction ? topOffsetPageReverse : topOffset}px;`
-            }
-          }
-
-          .${className} .icon-row {
-            display: flex;
-            justify-content: ${justifyValue};
-            width: ${widthPercent}%;
-            align-items: center;
-            position: absolute;
-            margin: 0;
-            bottom: -${borderSize / 2}px;
-            transform: translateY(50%);
-            pointer-events: auto;
-          }
-
-          .${className} .icon-row i {
-            transition: font-size 0.2s ease;
-          }
-            
-        `;
-        // inject style for the small square logo above text (only once)
-        if (!document.getElementById("rect-icon-style")) {
-          const style = document.createElement("style");
-          style.id = "rect-icon-style";
-          style.innerHTML = `
-            .rect-logo {
-              position: absolute;
-              top: -15px; 
-              right: 5px;
-              width: 15px;
-              height: 15px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border-radius: 2px;
-              box-sizing: border-box;
-              cursor: pointer;
-              background: white;
-              z-index: 5;
-              transition: border-color .12s, transform .08s;
-            }
-            .rect-logo:active { transform: scale(.96); }
-            .rect-logo i { font-size: 10px; line-height: 1; margin-top:1px; }
-            .icon-row .wrapper-relative { position: relative; }
-          `;
-          document.head.appendChild(style);
-        }
-
-        document.head.appendChild(styleEl);
-
-        // create main rect container
-        const rectDiv = document.createElement("div");
-        rectDiv.className = className;
-
-        // Prepare a list to track conversion tasks that must be created AFTER rectDiv is appended
-        const conversionTasks = [];
-        const thingsToDisplay = [];
-
-        // if config present → add icon row
-        if (hasConfig && iconCount > 0) {
-          const iconRow = document.createElement("div");
-          iconRow.className = "icon-row";
-
-          const contents = Array.isArray(config?.content) ? config.content : [];
-
-          icons.forEach((iconClass, iconIdx) => {
-            const iconEl = document.createElement("i");
-            iconEl.className = iconClass;
-            iconEl.style.color =
-              resolveColor(colors[iconIdx], JSON_Data.colors) || "black";
-
-            // dynamic icon size
-            const sizeLevel =
-              parseInt((iconSizes[iconIdx] || "Size_0").split("_")[1]) || 0;
-            const baseSize = 8;
-            const fontSize = Math.min(baseSize + sizeLevel * 2, 20);
-            iconEl.style.fontSize = `${fontSize}px`;
-
-            const contentItem = contents[iconIdx] || {};
-
-            // If content object is empty, append icon only
-            if (!Object.keys(contentItem).length) {
-              iconRow.appendChild(iconEl);
-              return;
-            }
-
-            // normalize content keys (support provided keys)
-            const text = contentItem.text || "";
-            const textDetail = contentItem.textDetail || text;
-            const IdName = contentItem?.rectangleTooltipId;
-            const contentConversionShow =
-              contentItem?.content_conversion?.display || false;
-            const contentConversion = contentItem?.content_conversion;
-            const textIcon=contentItem?.textIconConfig
-
-            // wrapper that contains icon + text
-            const wrapper = document.createElement("div");
-            wrapper.style.display = "flex";
-            wrapper.style.alignItems = "center";
-            wrapper.style.justifyContent = "space-between";
-            wrapper.style.gap = "4px";
-
-            const p = document.createElement("p");
-            p.textContent = limitText(text, 10);
-            p.style.color = contentItem.textColor || "white";
-            p.style.margin = "0";
-            p.style.position="relative";
-            
-            direction ? "" : (p.style.position = "relative");
-            if (contentItem?.background_color) {
-              p.style.padding = "10px";
-              p.classList.add("box-shadow-box");
-              p.style.textAlign = "center";
-              p.style.borderRadius = "20px";
-              p.style.width = "130px";
-              p.style.backgroundColor =
-                resolveColor(contentItem?.background_color, JSON_Data.colors) ||
-                "white";
-              p.style.color = contentItem.textColor || "black";
-              p.textContent = limitText(text, 20);
-            }
-
-            p.style.fontSize = `${getFontSize(9, 10, 11)}px`;
-            p.title = textDetail || text;
-            if (IdName) p.id = IdName;
-
-            if (textIcon?.display) {
-              const position = textIcon.iconPosition?.toLowerCase();
-              const icons = textIcon.fontAwsomeIcon || [];
-              const colors = textIcon.iconColor || [];
-              
-              const createTextIcon = (side, iconClass, color) => {
-                const i = document.createElement("i");
-                i.className = iconClass;
-                i.style.position = "absolute";
-                i.style.top = "50%";
-                i.style.transform = "translateY(-50%)";
-                i.style.fontSize = "15px";
-                i.style.color =
-                  resolveColor(color, JSON_Data.colors) || "black";
-
-                if (side === "left") i.style.left = "3px";
-                if (side === "right") i.style.right = "3px";
-
-                return i;
-              };
-
-              // LEFT ICON
-              if (position === "left" || position === "both") {
-                p.appendChild(
-                  createTextIcon(
-                    "left",
-                    `${IdName}_icon_left ${icons[0]}`,
-                    colors[0]
-                  )
-                );
-              }
-
-              // RIGHT ICON
-              if (position === "right" || position === "both") {
-                const idx = position === "both" ? 1 : 0;
-
-                p.appendChild(
-                  createTextIcon(
-                    "right",
-                    `${IdName}_icon_right ${icons[idx]}`,
-                    colors[idx]
-                  )
-                );
-              }
-            }
-
-            wrapper.appendChild(iconEl);
-            wrapper.appendChild(p);
-            if (
-              contentItem?.iconConfig?.display == true &&
-              contentItem?.content_conversion?.display == true
-            ) {
-              const iconCfg = contentItem.iconConfig;
-
-              wrapper.classList.add("wrapper-relative");
-
-              // SET INITIAL TOGGLE STATE
-              const defaultState = (
-                iconCfg.ByDefaultBehaviour || "Close"
-              ).toLowerCase();
-              let isOpen = defaultState === "open";
-
-              // DEFINE UNIQUE RECTANGLE ID NOW (same format as conversionClass later)
-              const rectangle_id = contentItem.rectangleTooltipId;
-
-              // STORE INITIAL STATE IN thingsToDisplay
-              thingsToDisplay.push({
-                rectangle_id,
-                isOpen,
-              });
-
-              // BUILD THE TOGGLE BUTTON
-              const logo = document.createElement("div");
-              logo.className = "rect-logo";
-
-              const icon = document.createElement("i");
-              logo.appendChild(icon);
-
-              // UPDATE UI FUNCTION
-              function updateLogoUI() {
-                if (isOpen) {
-                  icon.className = iconCfg.OpenFontAwsomeicon;
-                  icon.style.color =
-                    resolveColor(
-                      iconCfg.OpenFontAwsomeiconColor,
-                      JSON_Data.colors
-                    ) || "black";
-                  logo.style.border = `1px solid ${
-                    resolveColor(
-                      iconCfg.OpenFontAwsomeiconColor,
-                      JSON_Data.colors
-                    ) || "black"
-                  }`;
-                } else {
-                  icon.className = iconCfg.CloseFontAwsomeicon;
-                  icon.style.color =
-                    resolveColor(
-                      iconCfg.CloseFontAwsomeiconColor,
-                      JSON_Data.colors
-                    ) || "black";
-                  logo.style.border = `1px solid ${
-                    resolveColor(
-                      iconCfg.CloseFontAwsomeiconColor,
-                      JSON_Data.colors
-                    ) || "black"
-                  }`;
-                }
-              }
-
-              // INITIAL UPDATE
-              updateLogoUI();
-
-              // CLICK TOGGLE
-              logo.addEventListener("click", (e) => {
-                e.stopPropagation();
-
-                // 1) Toggle state
-                isOpen = !isOpen;
-
-                // 2) Update global array
-                const stored = thingsToDisplay.find(
-                  (t) => t.rectangle_id === rectangle_id
-                );
-                if (stored) stored.isOpen = isOpen;
-
-                // 3) Find rectangle via ID and toggle it
-                const rectId = rectangle_id + "_rectangle";
-                const rectEl = document.getElementById(rectId);
-                if (rectEl) {
-                  rectEl.style.display = isOpen ? "" : "none";
-                }
-
-                // 4) Toggle polygon stack using the new ID
-                const polygonId = rectangle_id + "_Polygon";
-                const polygonEl = document.getElementById(polygonId);
-                if (polygonEl) {
-                  polygonEl.style.display = isOpen ? "" : "none";
-                }
-
-                const lineEl = document.getElementById(rectangle_id + "_Line");
-                if (lineEl) lineEl.style.display = isOpen ? "" : "none";
-
-                const pointEl = document.getElementById(
-                  rectangle_id + "_Line_Point"
-                );
-                if (pointEl) pointEl.style.display = isOpen ? "" : "none";
-
-                // 5) Update icon UI
-                updateLogoUI();
-              });
-
-              wrapper.appendChild(logo);
-            }
-
-            iconRow.appendChild(wrapper);
-            if (contentConversionShow) {
-              conversionTasks.push({
-                contentConversion,
-                iconIdx,
-                targetId: IdName || null,
-                wrapperIndex: iconRow.children.length - 1,
-                connectionIndex: i,
-              });
-            }
-          });
-
-          rectDiv.appendChild(iconRow);
-        }
-        pptBox.appendChild(rectDiv);
-
-        let linkPairs = [];
-        // --- New Part ---
-        if (conversionTasks.length > 0) {
-          conversionTasks.forEach((task, tIndex) => {
-            const convClass = `conversion-rect-sec${sectionIdx}-sub${idx}-conn${i}-icon${task.iconIdx}`;
-            const oldConv = pptBox.querySelector(`.${convClass}`);
-            if (oldConv) oldConv.remove();
-
-            let targetEl = task.targetId
-              ? document.getElementById(task.targetId)
-              : null;
-
-            if (!targetEl) {
-              const iconRowEl = rectDiv.querySelector(".icon-row");
-              if (iconRowEl) {
-                const wrapperEl = iconRowEl.children[task.wrapperIndex];
-                if (wrapperEl)
-                  targetEl = wrapperEl.querySelector("p") || wrapperEl;
-              }
-            }
-            if (!targetEl) return;
-
-            const targetRect = targetEl.getBoundingClientRect();
-            const pptNowRect = pptBox.getBoundingClientRect();
-
-            // MAIN DIV
-            const convDiv = document.createElement("div");
-            convDiv.className = convClass;
-            convDiv.id = task.targetId + "_rectangle";
-            convDiv.style.position = "absolute";
-            convDiv.style.zIndex = 2;
-            linkPairs.push({
-              convClass,
-              polygonClass: null,
-            });
-
-            const convWidth = 145;
-            const offSet = 6;
-
-            convDiv.style.left =
-              Math.round(
-                targetRect.left -
-                  pptNowRect.left +
-                  targetRect.width / 2 -
-                  convWidth / 2
-              ) +
-              offSet +
-              "px";
-            convDiv.style.width = "125px";
-            convDiv.style.top = `${
-              direction ? (GlobalHeight ? 365 : 505) : 164
-            }px`;
-
-            const cfg = task.contentConversion;
-            const logoCfg = cfg?.logo_titles_config || {};
-
-            const titles = logoCfg.logo_title || [];
-            const details = logoCfg.logo_detail || [];
-            const bgColors = logoCfg.logo_title_background_color || [];
-            const borderColors = logoCfg.logo_title_border_color || [];
-            const textColors = logoCfg.logo_title_color || [];
-            const idPrefix = logoCfg.logo_id_name || "";
-
-            // UNIQUE CLASS NAME FOR THIS RECTANGLE
-            const uniqueRectClass = `icon_plus_name_rectangle_${i}_${task.iconIdx}`;
-
-            const iconPlus = document.createElement("div");
-            iconPlus.className = `icon_plus_name ${uniqueRectClass}`;
-            iconPlus.style.display = "flex";
-            iconPlus.style.flexDirection = "column";
-            iconPlus.style.alignItems = "center";
-
-            // USER ICON
-            const userIcon = document.createElement("i");
-            userIcon.className = `fa-solid fa-user fa-user-rectangle_${i}_${task.iconIdx}`;
-
-            // dynamic user icon colors
-            userIcon.style.border = `2px solid ${
-              resolveColor(cfg.logo_heading_border_color, JSON_Data.colors) ||
-              "#a334c8"
-            }`;
-            userIcon.style.background =
-              resolveColor(cfg.logo_color, JSON_Data.colors) || "#a334c8";
-            userIcon.style.position = "relative";
-            userIcon.style.webkitBackgroundClip = "text";
-            userIcon.style.webkitTextFillColor = "transparent";
-            userIcon.style.display = "flex";
-            userIcon.style.alignItems = "center";
-            userIcon.style.justifyContent = "center";
-            userIcon.style.width = "35px";
-            userIcon.style.height = "35px";
-            userIcon.style.borderRadius = "50%";
-            userIcon.style.bottom = "-10px";
-            userIcon.style.zIndex = "3";
-            userIcon.style.pointerEvents = "auto";
-
-            iconPlus.appendChild(userIcon);
-
-            // WRAPPER CLASS
-            let wrapperClass = "";
-            if (titles.length === 1)
-              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-one";
-            else if (titles.length === 2)
-              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-two";
-            else if (titles.length === 3)
-              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-three";
-            else
-              wrapperClass = "icon-plus-name-box icon-plus-name-box-for-four";
-
-            const wrapper = document.createElement("div");
-            wrapper.className = wrapperClass;
-            wrapper.style.position = "relative";
-            wrapper.style.zIndex = "5";
-            if (idPrefix) wrapper.id = idPrefix;
-
-            // ==== 2×2 PILL GRID ====
-            function hasValue(v) {
-              return v !== null && v !== undefined && String(v).trim() !== "";
-            }
-
-            // Find how many actual items you have
-            const itemsCount = Math.max(
-              (titles && titles.length) || 0,
-              (details && details.length) || 0
-            );
-
-            for (let row = 0; row < 2; row++) {
-              const rowDiv = document.createElement("div");
-              rowDiv.className = "icon-plus-name-box-enclosed-rectangle";
-              rowDiv.style.width = "100%";
-              rowDiv.style.height = "49%";
-              rowDiv.style.display = "flex";
-              rowDiv.style.alignItems = "center";
-              rowDiv.style.justifyContent = "center";
-
-              for (let col = 0; col < 2; col++) {
-                const idx2 = row * 2 + col;
-
-                //  If no data exists for this index → SKIP
-                if (idx2 >= itemsCount) continue;
-                const title = titles?.[idx2];
-                const detail = details?.[idx2];
-
-                //  Skip if both title & detail are empty/undefined
-                if (!hasValue(title) && !hasValue(detail)) continue;
-
-                // Build pill
-                const pill = document.createElement("p");
-                pill.className = `icon-plus-name-paragraph-${i}-${
-                  task.iconIdx
-                }-${idx2 + 1}`;
-                pill.title = hasValue(detail)
-                  ? detail
-                  : hasValue(title)
-                  ? title
-                  : "";
-                pill.textContent = hasValue(title)
-                  ? title
-                  : hasValue(detail)
-                  ? detail
-                  : "";
-
-                pill.style.fontSize = "9px";
-                pill.style.margin = "0";
-                pill.style.padding = "8px 6px";
-                pill.style.borderRadius = "16px";
-                pill.style.textAlign = "center";
-                pill.style.minWidth = "30px";
-                pill.style.whiteSpace = "nowrap";
-                pill.style.overflow = "hidden";
-                pill.style.textOverflow = "ellipsis";
-
-                pill.style.background =
-                  resolveColor(bgColors[idx2], JSON_Data.colors) || "white";
-
-                pill.style.border = `1px solid ${
-                  resolveColor(borderColors[idx2], JSON_Data.colors) ||
-                  "#a334c8"
-                }`;
-
-                pill.style.color = textColors[idx2] || "#000";
-
-                rowDiv.appendChild(pill);
-              }
-
-              wrapper.appendChild(rowDiv);
-            }
-
-            iconPlus.appendChild(wrapper);
-            convDiv.appendChild(iconPlus);
-            pptBox.appendChild(convDiv);
-
-            const titleEl = document.getElementById(task.targetId);
-            const pptRect = pptBox.getBoundingClientRect();
-            const titleRect = titleEl.getBoundingClientRect();
-            const reactEl = convDiv.querySelector(".icon_plus_name");
-            const rectBoxRect = reactEl.getBoundingClientRect();
-
-            const titleBottomY = titleRect.bottom - pptRect.top;
-            const rectangleTopY = rectBoxRect.top - pptRect.top;
-            let verticalGap = rectangleTopY - titleBottomY;
-            if (!direction) {
-              verticalGap =
-                titleRect.y - rectBoxRect.y - rectBoxRect.height + 38;
-            }
-            const styleId = `style-${convClass}`;
-            let oldStyle = document.getElementById(styleId);
-            if (oldStyle) oldStyle.remove();
-            const style = document.createElement("style");
-            style.id = styleId;
-            const safeClass = convClass.replace(/:/g, "\\:");
-
-            const state = thingsToDisplay.find(
-              (t) => t.rectangle_id === task.targetId
-            );
-            if (state && !state.isOpen) {
-              convDiv.style.display = "none";
-            }
-
-            // Inject CSS with dynamic height using verticalGap
-            style.textContent = `
-  .${safeClass}::before {
-      content: "";
-      position: absolute;
-      top: ${direction ? -verticalGap + 10 : "45"}px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: ${verticalGap}px;
-      background: ${
-        resolveColor(cfg.top_down_arrow?.line_color, JSON_Data.colors) ||
-        "#a334c8"
-      };
-      z-index: 2;
-  }
-  .${safeClass}::after {
-      content: "";
-      position: absolute;
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent;
-      left: 50%;
-      top: ${direction ? -verticalGap + 5 : verticalGap + 40}px;
-      z-index: 1;
-      transform: translateX(-50%);
-      border-${direction ? "bottom" : "top"}: 7px solid ${
-              resolveColor(cfg.top_down_arrow?.arrow_color, JSON_Data.colors) ||
-              "#a334c8"
-            };;
-  }
-`;
-
-            document.head.appendChild(style);
-          });
-        }
-        // New Part - Polygons
-        if (conversionTasks.length > 0) {
-          const allowedLevels = [
-            "Level_1",
-            "Level_2",
-            "Level_3",
-            "Level_4",
-            "Level_5",
-            "Level_6",
-            "Level_7",
-            "Level_8",
-            "Level_9",
-            "Level_10",
-          ];
-          const compartmentTop = GlobalHeight ? 510 : 660;
-          const compartmentHeight = 200; // container height
-          const compartmentSize = 20; // distance between shapes vertically
-          const SHAPE_W = 13;
-          const SHAPE_H = 11;
-
-          // For this connection: look at content[] (each may carry content_conversion)
-          const contents = Array.isArray(connection.config?.content)
-            ? connection.config.content
-            : [];
-
-          contents.forEach((contentItem, contentIdx) => {
-            const conv = contentItem?.content_conversion;
-            if (!conv || !(conv.display === true || conv.display === "true"))
-              return;
-            const targetId = contentItem.rectangleTooltipId;
-
-            // bottom_shape_positions may be an object (single) or array (normalize to array)
-            let bottomShapePositions =
-              conv.bottom_shape_positions || conv.bottom_shape_positions;
-            // support both object and array-of-objects
-            if (!bottomShapePositions) return;
-            if (!Array.isArray(bottomShapePositions)) {
-              bottomShapePositions = [bottomShapePositions];
-            }
-            let targetEl = null;
-            const rectTooltipId = contentItem.rectangleTooltipId || null;
-            if (rectTooltipId)
-              targetEl = document.getElementById(rectTooltipId);
-
-            // fallback: try to find matching wrapper inside rectDiv (if it exists)
-            if (!targetEl) {
-              const iconRowEl = rectDiv
-                ? rectDiv.querySelector(".icon-row")
-                : null;
-              if (iconRowEl) {
-                const wrapper =
-                  iconRowEl.children[contentIdx] || iconRowEl.children[0];
-                if (wrapper) {
-                  targetEl = wrapper.querySelector("p") || wrapper;
-                }
-              }
-            }
-
-            if (!targetEl || !isVisible(targetEl)) {
-              const oldClassNamePrefix = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}`;
-              const oldEls = pptBox.querySelectorAll(
-                `[class*="${oldClassNamePrefix}"]`
-              );
-              oldEls.forEach((el) => {
-                const styleTag = document.querySelector(
-                  `style[data-conn="${el.className}"]`
-                );
-                if (styleTag) styleTag.remove();
-                el.remove();
-              });
-              return;
-            }
-
-            const pptNow = pptBox.getBoundingClientRect();
-            const targetRect = targetEl.getBoundingClientRect();
-            const midpointX = targetRect.left + targetRect.width / 2;
-            const leftRelativeToPPT = Math.round(midpointX - pptNow.left);
-
-            // For each bottomShapePositions group create a vertical polygon stack container
-            bottomShapePositions.forEach((group, groupIdx) => {
-              // className must be unique
-              const className = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}_grp${groupIdx}`;
-              linkPairs[linkPairs.length - 1].polygonClass = className;
-
-              // cleanup previous
-              const prev = pptBox.querySelector(`.${className}`);
-              if (prev) prev.remove();
-              const prevStyle = document.querySelector(
-                `style[data-conn="${className}"]`
-              );
-              if (prevStyle) prevStyle.remove();
-
-              // normalize levels array
-              let rawLevels = Array.isArray(group.levels) ? group.levels : [];
-              const levelsArr = rawLevels
-                .map((lv) => (lv || "").toString().trim())
-                .filter(
-                  (lv, p, self) =>
-                    allowedLevels.includes(lv) && self.indexOf(lv) === p
-                );
-
-              if (!levelsArr.length) return; // nothing to draw
-
-              const state = thingsToDisplay.find(
-                (t) => t.rectangle_id === contentItem.rectangleTooltipId
-              );
-              // prepare style (vertical container positioned by midpoint)
-              const styleEl = document.createElement("style");
-              styleEl.setAttribute("data-conn", className);
-              styleEl.textContent = `
-.${className} {
-  position: absolute;
-  left: ${leftRelativeToPPT - Math.round(SHAPE_W / 2) - (direction ? 3 : 0)}px;
-  top: ${compartmentTop}px;
-  width: ${SHAPE_W}px;
-  height: ${compartmentHeight}px;
-  z-index: 5;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  pointer-events: none;
-  box-sizing: border-box;
-}
-.${className} .polygon-inner {
-  width: ${SHAPE_W}px;
-  height: ${SHAPE_H}px;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  transform: translateY(0) rotateZ(30deg);
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-bottom: 0px;
-  visibility: hidden;
-  position: absolute;
-}
-`;
-              document.head.appendChild(styleEl);
-
-              // build container
-              const container = document.createElement("div");
-              container.className = className;
-              container.id = targetId + "_Polygon";
-              // create up to 10 compartments (Level_1 .. Level_10)
-              for (let levelIndex = 1; levelIndex <= 10; levelIndex++) {
-                const inner = document.createElement("div");
-                inner.className = "polygon-inner";
-                inner.style.top = `${
-                  (levelIndex - 1) * compartmentSize +
-                  (compartmentSize - SHAPE_H) / 2
-                }px`;
-
-                const levelName = `Level_${levelIndex}`;
-                if (levelsArr.includes(levelName)) {
-                  inner.style.visibility = "visible";
-
-                  // color resolution: group.color can be array or single value
-                  let colorVal = null;
-                  if (
-                    Array.isArray(group.color) &&
-                    group.color[levelIndex - 1]
-                  ) {
-                    colorVal = group.color[levelIndex - 1];
-                  } else if (Array.isArray(group.color) && group.color[0]) {
-                    colorVal = group.color[0];
-                  } else if (group.color) {
-                    colorVal = group.color;
-                  }
-
-                  let resolvedColor = null;
-                  try {
-                    if (typeof resolveColor === "function" && colorVal)
-                      resolvedColor = resolveColor(colorVal, JSON_Data.colors);
-                  } catch (e) {
-                    resolvedColor = null;
-                  }
-                  inner.style.background =
-                    resolvedColor || colorVal || "#dcdcdc";
-                }
-
-                container.appendChild(inner);
-              }
-              if (state && !state.isOpen) {
-                container.style.display = "none";
-              }
-              pptBox.appendChild(container);
-            });
-          });
-        }
-
-        if (conversionTasks.length > 0) {
-          conversionTasks.forEach((task, tIndex) => {
-            linkPairs.forEach((pair) => {
-              const rectSelector = direction
-                ? `.${pair.convClass}`
-                : `#${task.targetId}`;
-              const rectEl = document.querySelector(rectSelector);
-              const polyEl = document.querySelector(`.${pair.polygonClass}`);
-
-              if (!rectEl || !polyEl) return;
-
-              // Temporarily show hidden elements for measurement
-              const wasRectHidden = rectEl.style.display === "none";
-              const wasPolyHidden = polyEl.style.display === "none";
-
-              if (wasRectHidden) rectEl.style.display = "";
-              if (wasPolyHidden) polyEl.style.display = "";
-
-              // Measure
-              const rectBox = rectEl.getBoundingClientRect();
-              const polyBox = polyEl.getBoundingClientRect();
-              const pptRect = pptBox.getBoundingClientRect();
-
-              // Restore original hidden state
-              if (wasRectHidden) rectEl.style.display = "none";
-              if (wasPolyHidden) polyEl.style.display = "none";
-
-              const top = rectBox.bottom - pptRect.top;
-              const bottom = polyBox.top - pptRect.top;
-              const height = bottom - top;
-
-              if (height <= 0) return;
-
-              // Unique IDs for line and point
-              const lineId = task.targetId + "_Line";
-              const pointId = task.targetId + "_Line_Point";
-
-              // Remove old line & point
-              const oldLine = document.getElementById(lineId);
-              if (oldLine) oldLine.remove();
-
-              const oldPoint = document.getElementById(pointId);
-              if (oldPoint) oldPoint.remove();
-
-              // Colors
-              const BottomLineColor =
-                resolveColor(
-                  task.contentConversion.bottom_line_color,
-                  JSON_Data.colors
-                ) || "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
-              const BottomPointColor =
-                resolveColor(
-                  task.contentConversion.bottom_point_color,
-                  JSON_Data.colors
-                ) || "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
-
-              // Height offset by levels
-              const offsets = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185];
-              const levelStr =
-                task.contentConversion.bottom_Line_postion || "Level_1";
-              const levelNum = parseInt(levelStr.split("_")[1]);
-              let LineHeightOffset = offsets[levelNum - 1] ?? offsets[0];
-
-              // Point position adjustment
-              let logo_title_num =
-                task.contentConversion.logo_titles_config.logo_title.length;
-              logo_title_num = Math.max(1, Math.min(logo_title_num, 4));
-
-              const topValues = { 1: 4, 2: 4, 3: 4, 4: 30 };
-              const topPx = topValues[logo_title_num] ?? 22;
-
-              // Calculate X position
-              const xCenter = rectBox.left + rectBox.width / 2 - pptRect.left;
-
-              // --- Create the vertical line ---
-              const lineDiv = document.createElement("div");
-              lineDiv.id = lineId;
-              lineDiv.style.position = "absolute";
-              lineDiv.style.left = xCenter + "px";
-              lineDiv.style.top = top + "px";
-              lineDiv.style.width = "1px";
-              lineDiv.style.height = height + LineHeightOffset + "px";
-              lineDiv.style.background = BottomLineColor;
-              lineDiv.style.transform = "translateX(-50%)";
-              lineDiv.style.zIndex = "3";
-
-              // --- Create the circle point ---
-              const pointDiv = document.createElement("div");
-              pointDiv.id = pointId;
-              pointDiv.style.position = "absolute";
-              pointDiv.style.left = xCenter + "px";
-              pointDiv.style.top = top - topPx + "px";
-              if (!direction) {
-                pointDiv.style.top = top - 3 + "px";
-              }
-              pointDiv.style.width = "5px";
-              pointDiv.style.height = "5px";
-              pointDiv.style.borderRadius = "50%";
-              pointDiv.style.background = BottomPointColor;
-              pointDiv.style.transform = "translateX(-50%)";
-              pointDiv.style.zIndex = "5";
-
-              pptBox.appendChild(lineDiv);
-              pptBox.appendChild(pointDiv);
-
-              // Hide if default state = close
-              const state = thingsToDisplay.find(
-                (t) => t.rectangle_id === task.targetId
-              );
-              if (state && !state.isOpen) {
-                lineDiv.style.display = "none";
-                pointDiv.style.display = "none";
-              }
-            });
-          });
-        }
-      });
-    });
-  });
-}
-drawConnectingRectangle(JSON_Data, height);
-
-function applySkipSpacing(skipSpacingTasks) {
-  document.querySelectorAll(".skip-spacer").forEach((el) => el.remove());
-
-    const groupSpacingMap = new Map();
-    const groupElementsMap = new Map();
-    skipSpacingTasks.forEach((task) => {
-      const { skipSteps, skipPlacement, starting, ending } = task;
-
-      if (!skipSteps || skipSteps <= 0) return;
-
-      const spacingPx = skipSteps * 150;
-      const targetId = skipPlacement === "start" ? starting : ending;
-
-      if (!targetId) return;
-
-      function createSkipSpacer() {
-        const spacer = document.createElement("div");
-        spacer.className = "skip-spacer";
-        spacer.style.width = `${spacingPx}px`;
-        spacer.style.minHeight = "30px";
-        spacer.style.height = "100%";
-        spacer.style.background = "transparent";
-        spacer.style.pointerEvents = "none";
-        spacer.style.flexShrink = "0";
-        return spacer;
-      }
-
-      /* ---- subgroups-on-line ---- */
-      const onLineTarget = document.getElementById(targetId);
-      if (onLineTarget && onLineTarget.parentElement) {
-        const spacer = createSkipSpacer();
-        skipPlacement === "start"
-          ? onLineTarget.after(spacer)
-          : onLineTarget.before(spacer);
-
-        const subGroupsOnLine = onLineTarget.parentElement;
-        const subGroupDiv = subGroupsOnLine.parentElement;
-
-        if (subGroupDiv) {
-          const prev = groupSpacingMap.get(subGroupDiv) || 0;
-          groupSpacingMap.set(subGroupDiv, Math.max(prev, spacingPx));
-
-          groupElementsMap.set(subGroupDiv, {
-            subGroupsOnLine,
-            subGroupMidTop: subGroupDiv.querySelector(".subgroups-mid-top"),
-          });
-        }
-      }
-
-      /* ---- subgroups-mid-top ---- */
-      const midTopTarget = document.querySelector(
-        `.icon_plus_name[data-midtop-for="${targetId}"]`
-      );
-
-      if (midTopTarget && midTopTarget.parentElement) {
-        const spacer = createSkipSpacer();
-        skipPlacement === "start"
-          ? midTopTarget.after(spacer)
-          : midTopTarget.before(spacer);
-      }
-    });
-    groupElementsMap.forEach((els, subGroupDiv) => {
-      const spacingPx = groupSpacingMap.get(subGroupDiv) || 0;
-      const { subGroupMidTop } = els;
-
-      if (subGroupMidTop) {
-        if (!subGroupDiv.dataset.baseMidTopWidth) {
-          subGroupDiv.dataset.baseMidTopWidth =
-            subGroupMidTop.getBoundingClientRect().width;
-        }
-
-        const baseWidth = parseFloat(subGroupDiv.dataset.baseMidTopWidth);
-
-        subGroupMidTop.style.width = `${baseWidth + spacingPx}px`;
-      }
-    });
-    drawLogoOnMidLine(JSON_Data);
-    drawConnectingLines(JSON_Data);
-    drawConnectingTextLine(JSON_Data, height);
-    drawConnectingRectangle(JSON_Data, height);
-    drawBottomTimelineSeries(JSON_Data);
-    drawConnectingCircle(JSON_Data);
-    adjustFooterWidth(JSON_Data);
-    adjustMidLineWidth(JSON_Data);
-    drawMultiplePolygons(JSON_Data);
-    connectingBottomText(JSON_Data);
-    warning_Logo(JSON_Data);
-}
-
-applySkipSpacing(skipSpacingTasks);
-
-function drawPageBottomShapes(JSON_Data) {
-  const pptBox = document.getElementById("PPT-Box");
-  if (!pptBox) {
-    console.warn("drawPageBottomShapes: PPT-Box not found.");
-    return;
-  }
-
-  const config = JSON_Data?.Page_Configuration?.bottomShapesConfig;
-  if (!config || !config.shapes || config.shapes.length === 0) {
-    console.warn("drawPageBottomShapes: bottomShapesConfig missing or empty.");
-    return;
-  }
-
-  // Ensure pptBox is positioned so absolute children align to it
-  const computedPosition = window.getComputedStyle(pptBox).position;
-  if (!computedPosition || computedPosition === "static") {
-    pptBox.style.position = "relative";
-  }
-
-  // Cleanup previous elements / handlers
-  const prevParent = pptBox.querySelector(".page-bottom-shapes-parent");
-  if (prevParent) prevParent.remove();
-  if (window._pptBottomShapesResizeHandler) {
-    window.removeEventListener("resize", window._pptBottomShapesResizeHandler);
-    window._pptBottomShapesResizeHandler = null;
-  }
-  if (window._pptBottomShapesScrollHandler) {
-    pptBox.removeEventListener("scroll", window._pptBottomShapesScrollHandler);
-    window._pptBottomShapesScrollHandler = null;
-  }
-
-  const shapes = config.shapes;
-  const colors = config.shapesColor || [];
-  const texts = config.text || [];
-  const textColors = config.textColor || [];
-
-  // Create parent container that will span content width
-  const parent = document.createElement("div");
-  parent.className = "page-bottom-shapes-parent";
-  parent.style.position = "absolute";
-  parent.style.left = "0px";
-  parent.style.bottom = "100px";
-  // parent.style.height = "170px";
-  parent.style.zIndex = "3";
-  // parent.style.overflow = "hidden";
-  parent.style.pointerEvents = "none";
-  parent.style.display = "flex";
-  parent.style.justifyContent = "space-between";
-  parent.style.alignItems = "center";
-
-  // Create two child wrappers (left and right)
-  const leftChild = document.createElement("div");
-  const rightChild = document.createElement("div");
-  [leftChild, rightChild].forEach((c) => {
-    c.style.display = "flex";
-    c.style.flexDirection = "row";
-    c.style.gap = "15px";
-    c.style.padding = "0";
-    c.style.margin = "0";
-    c.style.width = "40px";
-    c.style.position = "relative";
-    c.style.pointerEvents = "auto";
-  });
-  leftChild.style.transform = "rotate(90deg)";
-  leftChild.style.top = "-135px";
-  rightChild.style.transform = "rotate(-90deg)";
-  leftChild.className = "page-bottom-shapes-wrapper side-left";
-  rightChild.className = "page-bottom-shapes-wrapper side-right";
-
-  // Create shape wrapper + rotated inner shape (prevents layout gap)
-  function createShape(i, sideIndex) {
-    const shapeType = shapes[i] || "circle";
-    const bgColor = resolveColor(colors[i], "#888");
-    const label = texts[i] || "";
-    const labelColor = resolveColor(textColors[i], "white");
-
-    // outer wrapper takes the rotated footprint so layout doesn't leave gaps
-    const wrapper = document.createElement("div");
-    wrapper.style.display = "flex";
-    wrapper.style.alignItems = "center";
-    wrapper.style.justifyContent = "center";
-    wrapper.style.overflow = "visible";
-    wrapper.style.height = "40px";
-    wrapper.style.pointerEvents = "none";
-    // wrapper.style.transform =
-    //   sideIndex === 0 ? "rotate(90deg)" : "rotate(-90deg)";
-
-    const shape = document.createElement("div");
-    shape.className = `bottom-shape-${i}-${shapeType}`;
-    shape.innerText = label;
-    shape.style.color = labelColor;
-    shape.style.fontSize = "10px";
-    shape.style.fontWeight = "600";
-    shape.style.display = "flex";
-    shape.style.alignItems = "center";
-    shape.style.justifyContent = "center";
-    shape.style.width = "80px";
-    shape.style.height = "40px";
-    shape.style.background = bgColor;
-    shape.style.pointerEvents = "auto";
-
-    if (shapeType === "circle") {
-      shape.style.borderTopLeftRadius = "80px";
-      shape.style.borderTopRightRadius = "80px";
-      shape.style.borderBottomLeftRadius = "0";
-      shape.style.borderBottomRightRadius = "0";
-    } else if (shapeType === "trapezium") {
-      shape.style.clipPath = "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)";
-    }
-    wrapper.appendChild(shape);
-    return wrapper;
-  }
-
-  // place shapes (1-2 -> left, 3-4 -> right)
-  const leftShapesCount = Math.min(2, shapes.length);
-  for (let i = 0; i < leftShapesCount; i++) {
-    leftChild.appendChild(createShape(i, 0));
-  }
-  for (let i = 2; i < Math.min(4, shapes.length); i++) {
-    rightChild.appendChild(createShape(i, 1));
-  }
-
-  parent.appendChild(leftChild);
-  parent.appendChild(rightChild);
-  pptBox.appendChild(parent);
-
-  function computeContentWidth() {
-    try {
-      // selector used in your adjustMidLineWidth
-      const allChildren = Array.from(
-        pptBox.querySelectorAll("[id^='logo_title_id']")
-      );
-      if (!allChildren.length) {
-        // fallback to scrollWidth (includes full content width)
-        return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
-      }
-
-      const pptRect = pptBox.getBoundingClientRect();
-      const nodesInfo = allChildren.map((el) => {
-        const elRect = el.getBoundingClientRect();
-        const left = elRect.left - pptRect.left + pptBox.scrollLeft;
-        const w = el.offsetWidth || elRect.width || 0;
-        return { el, left, right: left + w, width: w };
-      });
-
-      // find furthest-right node
-      const furthest = nodesInfo.reduce(
-        (acc, n) => (n.right > acc ? n.right : acc),
-        0
-      );
-      if (furthest > 0) {
-        return Math.max(Math.ceil(furthest + 4), pptBox.clientWidth);
-      }
-
-      // fallback
-      return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
-    } catch (err) {
-      console.warn("computeContentWidth failed:", err);
-      return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
-    }
-  }
-
-  // size parent to content width
-  function sizeParentToContent() {
-    const contentW = computeContentWidth();
-    parent.style.width = contentW + "px";
-  }
-  sizeParentToContent();
-  parent.recalcBottomShapes = sizeParentToContent;
-  window._pptBottomShapesResizeHandler = function () {
-    sizeParentToContent();
-  };
-  window.addEventListener("resize", window._pptBottomShapesResizeHandler);
-  window._pptBottomShapesScrollHandler = function () {
-    sizeParentToContent();
-  };
-  pptBox.addEventListener("scroll", window._pptBottomShapesScrollHandler);
-}
-
-drawPageBottomShapes(JSON_Data);
-
-function AddOrRemoveShowHideBtn(Json_Data) {
-  const onLineContentData = [];
-
-  if (!Json_Data || !Array.isArray(Json_Data.body)) {
-    console.warn("Invalid JSON data");
-    return onLineContentData;
-  }
-
-  Json_Data.body.forEach((page) => {
-    if (!page || page.component !== "Header") return;
-
-    const subGroups = page.sub_groups || [];
-
-    subGroups.forEach((sg) => {
-      const onLineCfg = sg?.content?.on_line_content_configuration;
-      if (!onLineCfg) return;
-
-      const ids = onLineCfg.content_id || [];
-      const showHideArr = onLineCfg.showHideBtn || [];
-
-      ids.forEach((id, index) => {
-        const sh = showHideArr[index];
-
-        const display = !!(sh && sh.display === true);
-        const show = display;
-
-        let currentDisplay =
-          (sh?.ByDefaultBehaviour || "open").toLowerCase() === "open";
-
-        const OpenFontAwsomeicon = sh?.OpenFontAwsomeicon;
-        const CloseFontAwsomeicon = sh?.CloseFontAwsomeicon;
-        const OpenFontAwsomeiconColor =
-          resolveColor(sh?.OpenFontAwsomeiconColor, Json_Data.colors) ||
-          "black";
-        const CloseFontAwsomeiconColor =
-          resolveColor(sh?.CloseFontAwsomeiconColor, Json_Data.colors) ||
-          "black";
-        const referencedLogoIDs = Array.isArray(sh?.ReferencedLogoID)
-          ? sh.ReferencedLogoID.slice()
-          : [];
-
-        onLineContentData.push({
-          onlineId: id,
-          show,
-          currentDisplay,
-          OpenFontAwsomeicon,
-          CloseFontAwsomeicon,
-          OpenFontAwsomeiconColor,
-          CloseFontAwsomeiconColor,
-          ByDefaultBehaviour: sh?.ByDefaultBehaviour || "open",
-          ReferencedLogoID: referencedLogoIDs,
-        });
-
-        if (display) {
-          const subgroupsOnLineContentDiv = document.getElementById(id);
-          if (!subgroupsOnLineContentDiv) return;
-          const btnId = `${id}_toggle_${index}_${Math.random()
-            .toString()
-            .slice(2)}`;
-          const btnWrapper = document.createElement("div");
-          btnWrapper.id = btnId;
-          btnWrapper.className = "showHideBtn";
-
-          const iEl = document.createElement("i");
-
-          const initialIcon = currentDisplay
-            ? OpenFontAwsomeicon
-            : CloseFontAwsomeicon;
-          const initialColor = currentDisplay
-            ? OpenFontAwsomeiconColor
-            : CloseFontAwsomeiconColor;
-
-          initialIcon.split(/\s+/).forEach((cls) => iEl.classList.add(cls));
-          iEl.style.color = initialColor;
-
-          if (referencedLogoIDs.length) {
-            try {
-              btnWrapper.setAttribute(
-                "data-referenced-ids",
-                JSON.stringify(referencedLogoIDs)
-              );
-            } catch (e) {
-              console.warn(e);
-            }
-          }
-
-          btnWrapper.appendChild(iEl);
-
-          btnWrapper.style.borderColor = initialColor;
-
-          subgroupsOnLineContentDiv.appendChild(btnWrapper);
-
-          btnWrapper.addEventListener("click", () => {
-            const entry = onLineContentData.find((o) => o.onlineId === id);
-            if (!entry) return;
-
-            entry.currentDisplay = !entry.currentDisplay;
-
-            iEl.className = "";
-            const newIconClass = entry.currentDisplay
-              ? entry.OpenFontAwsomeicon
-              : entry.CloseFontAwsomeicon;
-
-            newIconClass.split(/\s+/).forEach((cls) => iEl.classList.add(cls));
-
-            const newColor = entry.currentDisplay
-              ? entry.OpenFontAwsomeiconColor
-              : entry.CloseFontAwsomeiconColor;
-
-            iEl.style.color = newColor;
-            btnWrapper.style.borderColor = newColor;
-
-            // === NEW PART: toggle inside subgroups-mid-top ===
-            const subgroupsOnLine = subgroupsOnLineContentDiv.parentElement;
-            const SubGroupDiv = subgroupsOnLine.parentElement;
-            const subgroupsOnLineContentDivH6 =
-              subgroupsOnLineContentDiv.querySelector("h6");
-
-            if (!direction && subgroupsOnLineContentDivH6) {
-              const uniqueId = subgroupsOnLineContentDiv.id;
-
-              if (entry.currentDisplay) {
-                // SHOW → remove override
-                delete dynamicAfterCSS[uniqueId + "_h6"];
-              } else {
-                // HIDE → override pseudo-element background
-                dynamicAfterCSS[uniqueId + "_h6"] = `
-                        #${uniqueId} h6::after {
-                            background: transparent !important;
-                        }
-                    `;
-              }
-              updateDynamicAfterCSS();
-            }
-
-            const iconBlock = SubGroupDiv.querySelector(
-              `.icon_plus_name[data-midtop-for="${id}"]`
-            );
-
-            if (iconBlock) {
-              if (entry.currentDisplay) {
-                // SHOW
-                iconBlock.style.opacity = "1";
-                iconBlock.style.borderColor = "";
-                iconBlock.style.background = "";
-                iconBlock.querySelectorAll("*").forEach((el) => {
-                  el.style.opacity = "";
-                  el.style.color = "";
-                  el.style.background = "";
-                  el.style.borderColor = "";
-                  el.style.webkitTextFillColor = "";
-                });
-              } else {
-                // HIDE
-                iconBlock.style.opacity = "0";
-                iconBlock.style.borderColor = "transparent";
-                iconBlock.style.background = "transparent";
-
-                iconBlock.querySelectorAll("*").forEach((el) => {
-                  el.style.opacity = "0";
-                  el.style.color = "transparent";
-                  el.style.background = "transparent";
-                  el.style.borderColor = "transparent";
-                  el.style.webkitTextFillColor = "transparent";
-                });
-              }
-            }
-            if (subgroupsOnLineContentDiv) {
-              const uniqueId = subgroupsOnLineContentDiv.id;
-
-              if (!uniqueId) {
-                console.warn(
-                  "Element does not have an ID, cannot toggle ::after"
-                );
-              } else {
-                if (entry.currentDisplay) {
-                  delete dynamicAfterCSS[uniqueId];
-                } else {
-                  dynamicAfterCSS[uniqueId] = `
-                #${uniqueId}::after {
-                    display: none !important;
-                }
-            `;
-                }
-                updateDynamicAfterCSS();
-              }
-            }
-
-            if (
-              Array.isArray(entry.ReferencedLogoID) &&
-              entry.ReferencedLogoID.length
-            ) {
-              entry.ReferencedLogoID.forEach((refId) => {
-                document
-                  .querySelectorAll(`[data-starting-id="${refId}"]`)
-                  .forEach((lineEl) => {
-                    if (entry.currentDisplay) {
-                      // show
-                      lineEl.style.display = "";
-                      lineEl.style.opacity = "";
-                      lineEl.style.pointerEvents = "";
-                    } else {
-                      // hide
-                      lineEl.style.opacity = "0";
-                      lineEl.style.pointerEvents = "none";
-                      lineEl.style.display = "none";
-                    }
-                  });
-              });
-            }
-            document.querySelectorAll(`[data-target="${id}"]`).forEach((el) => {
-              if (entry.currentDisplay) {
-                el.style.opacity = "1";
-                el.style.pointerEvents = "auto";
-              } else {
-                el.style.opacity = "0";
-                el.style.pointerEvents = "none";
-              }
-            });
-          });
-        }
-      });
-    });
-  });
-}
-
-AddOrRemoveShowHideBtn(JSON_Data);
-
-const dynamicAfterCSS = {};
-
-function updateDynamicAfterCSS() {
-  const css = Object.values(dynamicAfterCSS).join("\n");
-
-  let styleEl = document.getElementById("dynamicAfterStyle");
-  if (!styleEl) {
-    styleEl = document.createElement("style");
-    styleEl.id = "dynamicAfterStyle";
-    document.head.appendChild(styleEl);
-  }
-
-  styleEl.textContent = css;
-}
-
 function collapsabile() {
   const parents = document.querySelectorAll(".Slide-box");
 
@@ -7932,7 +8306,7 @@ function collapsabile() {
   if (collapsibleData.length === 0) {
     parents.forEach((parent) => {
       const parentClasses = Array.from(parent.classList).filter(
-        (c) => c !== "Slide-box"
+        (c) => c !== "Slide-box",
       );
       const parentId = parentClasses.join(" ");
 
@@ -7940,7 +8314,7 @@ function collapsabile() {
       const h1 = parent.querySelector("h1");
       if (h1 && !parent.hasAttribute("data-title")) {
         const textNode = Array.from(h1.childNodes).find(
-          (n) => n.nodeType === Node.TEXT_NODE
+          (n) => n.nodeType === Node.TEXT_NODE,
         );
         const originalTitle = textNode ? textNode.textContent.trim() : "";
         parent.setAttribute("data-title", originalTitle);
@@ -7956,7 +8330,7 @@ function collapsabile() {
         const h2 = sg.querySelector("h2");
         if (h2 && !sg.hasAttribute("data-title")) {
           const textNode = Array.from(h2.childNodes).find(
-            (n) => n.nodeType === Node.TEXT_NODE
+            (n) => n.nodeType === Node.TEXT_NODE,
           );
           const originalTitle = textNode ? textNode.textContent.trim() : "";
           sg.setAttribute("data-title", originalTitle);
@@ -7981,18 +8355,18 @@ function collapsabile() {
     if (e.target.matches("h1 i") && e.target.closest(".Slide-box")) {
       const parentBox = e.target.closest(".Slide-box");
       const parentId = Array.from(parentBox.classList).filter(
-        (c) => c !== "Slide-box"
+        (c) => c !== "Slide-box",
       )[0];
       const icon = e.target;
 
       const parentItem = collapsibleData.find(
-        (item) => item.parent_class === parentId
+        (item) => item.parent_class === parentId,
       );
       if (!parentItem) return;
 
       const h1 = parentBox.querySelector("h1");
       const titleNode = Array.from(h1.childNodes).find(
-        (n) => n.nodeType === Node.TEXT_NODE
+        (n) => n.nodeType === Node.TEXT_NODE,
       );
       const originalTitle = parentBox.getAttribute("data-title") || "";
       const subGroups = parentBox.querySelector(".sub-groups");
@@ -8017,9 +8391,10 @@ function collapsabile() {
 
       // redraw after any toggle
       drawBottomTimelineSeries(JSON_Data);
-      drawConnectingLines(JSON_Data);
+      drawConnectingLines(JSON_Data, height);
       drawConnectingTextLine(JSON_Data);
       drawConnectingRectangle(JSON_Data);
+      drawBranchConnectingLines(JSON_Data);
       drawConnectingCircle(JSON_Data);
       adjustFooterWidth(JSON_Data);
       adjustMidLineWidth(JSON_Data);
@@ -8037,7 +8412,7 @@ function collapsabile() {
 
       collapsibleData.forEach((parentItem) => {
         const childItem = parentItem.sub_groups.find(
-          (sg) => sg.unique_class === childId
+          (sg) => sg.unique_class === childId,
         );
         if (!childItem) return;
 
@@ -8047,7 +8422,7 @@ function collapsabile() {
         // If no label span exists, create one wrapping only the text nodes
         if (!labelSpan) {
           const textNodes = Array.from(h2.childNodes).filter(
-            (n) => n.nodeType === Node.TEXT_NODE
+            (n) => n.nodeType === Node.TEXT_NODE,
           );
           if (textNodes.length > 0) {
             labelSpan = document.createElement("span");
@@ -8089,9 +8464,10 @@ function collapsabile() {
 
         // redraw after any toggle
         drawBottomTimelineSeries(JSON_Data);
-        drawConnectingLines(JSON_Data);
+        drawConnectingLines(JSON_Data, height);
         drawConnectingTextLine(JSON_Data);
         drawConnectingRectangle(JSON_Data);
+        drawBranchConnectingLines(JSON_Data);
         drawConnectingCircle(JSON_Data);
         adjustFooterWidth(JSON_Data);
         adjustMidLineWidth(JSON_Data);
