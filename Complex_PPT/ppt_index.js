@@ -167,7 +167,7 @@ JSON_Data = {
             logo_color: ["#a334c8", "#a334c8", "#a334c8", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: ["GP"],
+                logo_title: ["abcdefghijklmnopqrstuvwxyzjch"],
                 links: [""],
                 logo_id_name: "logo_title_id1",
                 logo_detail: ["GP"],
@@ -532,7 +532,7 @@ JSON_Data = {
                   "Neurologist",
                   "Gynecologist",
                   "Nurse",
-                  "Other Specialists",
+                  "Other Specialistsygfvnbjy",
                 ],
                 logo_title_background_color: [
                   "white",
@@ -555,10 +555,10 @@ JSON_Data = {
                 },
               },
               {
-                logo_title: ["Neurologist"],
+                logo_title: ["Hidden"],
                 links: [""],
                 logo_id_name: "logo_title_id6",
-                logo_detail: ["Neurologist"],
+                logo_detail: ["Hidden"],
                 logo_title_background_color: ["Common_transparent"],
                 logo_title_border: [true],
                 logo_title_border_color: ["Common_transparent"],
@@ -1008,10 +1008,21 @@ JSON_Data = {
             ToolTip_Creation: [
               {
                 display: true,
-                content_id: "on_line_rectangle_1",
+                content_id: "warning_logo_4",
                 vertical_position: "bottom",
-                horizontal_position: "left",
-                openBy: "hover",
+                horizontal_position: "right",
+                openBy: "click",
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+              {
+                display: true,
+                content_id: "on_line_rectangle_3",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy: "click",
                 content_HTML:
                   "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
                 content_CSS:
@@ -1047,12 +1058,35 @@ JSON_Data = {
               connections: [
                 {
                   starting: "on_line_content_1",
-                  start_from_starting: true,
-                  ending: "on_line_content_6",
+                  start_from_starting: false,
+                  ending: "on_line_content_4",
                   end_from_ending: true,
                   skipSteps: 1,
                   skipPlacement: "start",
                   height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    direction: "reverse",
+                  },
+                },
+                {
+                  starting: "on_line_content_5",
+                  start_from_starting: true,
+                  ending: "on_line_content_7",
+                  end_from_ending: true,
+                  skipSteps: 1,
+                  skipPlacement: "start",
+                  height: "Level_15",
                   border_thickness: "Level_6",
                   config: {
                     fontAwsomeicons: [
@@ -1211,6 +1245,75 @@ JSON_Data = {
                           iconPosition: "left",
                           fontAwsomeIcon: ["fa-brands fa-github"],
                           iconColor: ["black"],
+                        },
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
+                        },
+                        content_conversion: {
+                          display: true,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config: {
+                            logo_title: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists",
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id300",
+                            logo_detail: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists",
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          },
                         },
                       },
                       {
@@ -1577,6 +1680,41 @@ JSON_Data = {
               ],
               color: ["#58e3d2", "#58e3d2", "#58e3d2"],
             },
+            warning_logos: [
+              {
+                warning_logo_id: "warning_logo_4",
+                target_On_Line_Content: "on_line_rectangle_4",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "middle",
+                openBy: "click",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "1",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                },
+              },
+              {
+                warning_logo_id: "warning_logo_7",
+                target_On_Line_Content: "on_line_rectangle_7",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "end",
+                openBy: "click",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "1",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                },
+              },
+            ],
+
             on_line_content_configuration: {
               content: ["Hidden", "Hidden", "Hidden", "Hidden", "Hidden"],
               striping: [
@@ -2996,6 +3134,7 @@ function convertToFormat(JsonData) {
     }px;
     left:10px;
     z-index:2;
+    margin-right:20px;
   }
 
   .${uniqueClassName}-start-block .icon-plus-name-inner {
@@ -3126,6 +3265,8 @@ function convertToFormat(JsonData) {
     position: relative;
     ${direction ? `margin-top: ${height ? 150 : 290}px;` : ""}
     width: 145px;
+    margin-left:15px;
+    margin-right:15px;
     z-index:4;
   }
   .${uniqueClassName} .icon_plus_name span {
@@ -3186,6 +3327,8 @@ function convertToFormat(JsonData) {
   }
   .${uniqueClassName} .subgroups-on-line-content{
     position: relative;
+    margin-left:15px;
+    margin-right:15px;
   }
   .${uniqueClassName} .subgroups-on-line-content h6{
     margin: 0;
@@ -3870,6 +4013,7 @@ function convertToFormat(JsonData) {
         color: ${resolvedText};
         -webkit-text-fill-color: ${resolvedText};
         min-width:30px;
+        max-width:135px;
         ${bgBorder[titleIdx] ? `border:1px solid ${resolvedBorderColor}` : ""}
       }\n`;
         });
@@ -5563,6 +5707,7 @@ function warning_Logo(JSON_Data) {
 
           // Build unique scoped base
           const base = `warning-logo-sec${sectionIdx}-sub${subIdx}-${warnIdx}-${targetId}`;
+          const logoID =warn?.warning_logo_id;
           const pptRect = pptBox.getBoundingClientRect();
           const tgtRect = targetEl.getBoundingClientRect();
 
@@ -5683,6 +5828,7 @@ function warning_Logo(JSON_Data) {
               bottom:0px;
               background:${circlePointColor};
               transform:translate(-50%,50%);
+              z-index: 10;
             }
             .${base}::before{
               content:"";
@@ -5692,6 +5838,7 @@ function warning_Logo(JSON_Data) {
               border-left:2px solid ${circleLineColor};
               height:19px;
               transform:translate(-50%,100%);
+              z-index: 10;
             }
             .${base}__triangle {
               width: 0;
@@ -5702,6 +5849,7 @@ function warning_Logo(JSON_Data) {
               border-bottom: ${triangleHeight}px solid ${triColor};
               position: relative;
               pointer-events: auto;
+              z-index: 10;
             }
             .${base}__fa {
               position: absolute;
@@ -5711,6 +5859,7 @@ function warning_Logo(JSON_Data) {
               font-size: ${iconFs}px;
               color: ${iconColor};
               pointer-events: none;
+              z-index: 10;
             }
             .${base}__circle {
               position: absolute;
@@ -5728,16 +5877,7 @@ function warning_Logo(JSON_Data) {
               color: ${circleNumberColor};
               background: ${circleColor};
               pointer-events: none;
-            }
-            .${base}__popup {
-              display: none;
-              position: absolute;
-              left: 0%;
-              top: calc(100% + 6px);
-              z-index: 60;
-              pointer-events: auto;
-              /* popup initial basic box-sizing so user CSS can override */
-              box-sizing: border-box;
+              z-index: 10;
             }
           `;
           document.head.appendChild(styleEl);
@@ -5745,6 +5885,10 @@ function warning_Logo(JSON_Data) {
           // main badge DOM
           const badgeWrap = document.createElement("div");
           badgeWrap.className = base;
+
+          if (logoID && !document.getElementById(logoID)) {
+            badgeWrap.id = logoID;
+          }
 
           const triDiv = document.createElement("div");
           triDiv.className = `${base}__triangle`;
@@ -5764,195 +5908,7 @@ function warning_Logo(JSON_Data) {
             circ.textContent = circleNumber;
             badgeWrap.appendChild(circ);
           }
-
-          // popup content
-          const hasPopupHTML = !!(
-            warn.Tooltip_content_HTML &&
-            String(warn.Tooltip_content_HTML).trim()
-          );
-          let popupNode = null;
-          if (hasPopupHTML) {
-            const popup = document.createElement("div");
-            popup.className = `${base}__popup`;
-            popup.innerHTML =
-              typeof normalizeAppianString === "function"
-                ? normalizeAppianString(warn.Tooltip_content_HTML)
-                : warn.Tooltip_content_HTML;
-
-            if (warn.Tooltip_content_CSS) {
-              const popupStyle = document.createElement("style");
-              popupStyle.setAttribute("data-warn", `${base}-popup`);
-              // scope this css to the PPT box + popup
-              popupStyle.textContent = `#${pptBox.id} .${base}__popup { ${warn.Tooltip_content_CSS} }`;
-              document.head.appendChild(popupStyle);
-            }
-            badgeWrap.appendChild(popup);
-            popupNode = popup;
-          }
-
-          // append to pptBox
           pptBox.appendChild(badgeWrap);
-
-          // popup API and handlers
-          const handlers = [];
-          let api = null;
-
-          const showPopup = () => {
-            closeAllTooltips();
-            if (popupNode) {
-              popupNode.style.display = "block";
-              // measure or reposition if needed in future - currently absolute positioned relative to badgeWrap
-            }
-            api.isOpen = true;
-            currentlyOpenTooltip = api;
-          };
-
-          const hidePopup = () => {
-            if (popupNode) popupNode.style.display = "none";
-            api.isOpen = false;
-            if (currentlyOpenTooltip === api) currentlyOpenTooltip = null;
-          };
-
-          // default openBy handling: click unless explicitly "hover"
-          const openByRaw = (warn.openBy || "click").toString().toLowerCase();
-          const openBy = openByRaw === "hover" ? "hover" : "click";
-
-          if (openBy === "hover") {
-            // Hover: show on tri or badge hover, keep open when cursor is over popup
-            const onEnter = (ev) => {
-              // close other tooltips/popups and open this
-              closeAllTooltips();
-              showPopup();
-            };
-            const onLeaveBadge = (ev) => {
-              setTimeout(() => {
-                if (popupNode) {
-                  if (
-                    !popupNode.matches(":hover") &&
-                    !badgeWrap.matches(":hover")
-                  )
-                    hidePopup();
-                } else {
-                  // no popup → nothing to keep open
-                  hidePopup();
-                }
-              }, 120);
-            };
-            const onPopupLeave = () => {
-              hidePopup();
-            };
-
-            triDiv.addEventListener("mouseenter", onEnter);
-            badgeWrap.addEventListener("mouseenter", onEnter);
-            triDiv.addEventListener("mouseleave", onLeaveBadge);
-            badgeWrap.addEventListener("mouseleave", onLeaveBadge);
-            if (popupNode) {
-              popupNode.addEventListener("mouseleave", onPopupLeave);
-              popupNode.addEventListener("mouseenter", () => {
-                // keep open while hovered
-              });
-              handlers.push({
-                el: popupNode,
-                type: "mouseleave",
-                fn: onPopupLeave,
-              });
-              handlers.push({
-                el: popupNode,
-                type: "mouseenter",
-                fn: () => {},
-              });
-            }
-
-            handlers.push({ el: triDiv, type: "mouseenter", fn: onEnter });
-            handlers.push({
-              el: badgeWrap,
-              type: "mouseenter",
-              fn: onEnter,
-            });
-            handlers.push({
-              el: triDiv,
-              type: "mouseleave",
-              fn: onLeaveBadge,
-            });
-            handlers.push({
-              el: badgeWrap,
-              type: "mouseleave",
-              fn: onLeaveBadge,
-            });
-          } else {
-            // Click mode: toggle popup on badge click. Clicking outside closes it. Clicking inside popup should not close it.
-            let isOpen = false;
-
-            const onDocClick = (ev) => {
-              if (
-                !badgeWrap.contains(ev.target) &&
-                !(popupNode && popupNode.contains(ev.target))
-              ) {
-                isOpen = false;
-                hidePopup();
-                document.removeEventListener("click", onDocClick);
-                document.removeEventListener("keydown", onEsc);
-              }
-            };
-
-            const onEsc = (ev) => {
-              if (ev.key === "Escape" || ev.key === "Esc") {
-                isOpen = false;
-                hidePopup();
-                document.removeEventListener("click", onDocClick);
-                document.removeEventListener("keydown", onEsc);
-              }
-            };
-
-            const onBadgeClick = (ev) => {
-              // prevent document click from closing immediately
-              ev.stopPropagation();
-
-              // close other open tooltip/popup (but not self if toggling)
-              if (currentlyOpenTooltip && currentlyOpenTooltip !== api) {
-                closeAllTooltips();
-              }
-
-              isOpen = !isOpen;
-              if (isOpen) {
-                showPopup();
-                document.addEventListener("click", onDocClick);
-                document.addEventListener("keydown", onEsc);
-              } else {
-                hidePopup();
-                document.removeEventListener("click", onDocClick);
-                document.removeEventListener("keydown", onEsc);
-              }
-            };
-
-            // allow clicking triangle or entire badgeWrap to toggle
-            triDiv.addEventListener("click", onBadgeClick);
-            badgeWrap.addEventListener("click", onBadgeClick);
-
-            handlers.push({ el: triDiv, type: "click", fn: onBadgeClick });
-            handlers.push({
-              el: badgeWrap,
-              type: "click",
-              fn: onBadgeClick,
-            });
-          }
-
-          // Expose API so global closeAllTooltips can call hide()
-          api = {
-            hide: hidePopup,
-            show: showPopup,
-            get isOpen() {
-              return this._isOpen || false;
-            },
-            set isOpen(v) {
-              this._isOpen = !!v;
-            },
-          };
-
-          // store a small reference on the DOM node (useful for debugging / external control)
-          badgeWrap.__warningApi = api;
-
-          // Done - no need to return, but created popup will now behave as required
         } catch (e) {
           console.error("warning_Logo error for", warnIdx, e);
         }
@@ -6197,12 +6153,6 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
         // look up endpoints
         const startEl = document.getElementById(connection.starting);
         const endEl = document.getElementById(connection.ending);
-        const startMidTopEl = document.querySelector(
-          `.subgroups-mid-top [data-midtop-for="${connection.starting}"]`,
-        );
-        const endMidTopEl = document.querySelector(
-          `.subgroups-mid-top [data-midtop-for="${connection.ending}"]`,
-        );
         if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
           return;
 
@@ -6240,21 +6190,7 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
           20,
         );
 
-        const startX =
-          connection.start_from_starting === "true" ||
-          connection.start_from_starting === true
-            ? startRect.left - distant_Space
-            : startRect.left + startRect.width + distant_Space;
-
-        const endX =
-          connection.end_from_ending === "true" ||
-          connection.end_from_ending === true
-            ? endRect.left + endRect.width + distant_Space
-            : endRect.left - distant_Space;
-
-        let left = Math.min(startX, endX) - pptRect.left - distant_Space;
-        let width = Math.abs(endX - startX);
-
+        // ---- RECTANGLE GEOMETRY (FINAL & CORRECT) ----
         const startFromStart =
           connection.start_from_starting === true ||
           connection.start_from_starting === "true";
@@ -6263,69 +6199,47 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
           connection.end_from_ending === true ||
           connection.end_from_ending === "true";
 
-        const gap = borderSize + distant_Space;
+        const extraGap = 5;
+        const offset = borderSize + extraGap;
 
-        const CONTENT_ID_PREFIX = "on_line_content_";
+        // Determine anchors
+        const startAnchor = startFromStart
+          ? startRect.left
+          : startRect.left + startRect.width;
 
-        const isStartContentEl =
-          typeof connection.starting === "string" &&
-          connection.starting.startsWith(CONTENT_ID_PREFIX);
+        const endAnchor = endFromEnd
+          ? endRect.left + endRect.width
+          : endRect.left;
 
-        const isEndContentEl =
-          typeof connection.ending === "string" &&
-          connection.ending.startsWith(CONTENT_ID_PREFIX);
+        // Base bounds
+        let rawLeft = Math.min(startAnchor, endAnchor);
+        let rawRight = Math.max(startAnchor, endAnchor);
 
-        if (startFromStart && endFromEnd) {
-          left -= gap;
-          width += gap * 2;
-
-          if (isStartContentEl) {
-            startEl.style.marginLeft = `${gap * 2}px`;
-            startMidTopEl.style.marginLeft = `${gap * 2}px`;
-          }
-          if (isEndContentEl) {
-            endEl.style.marginRight = `${gap * 2}px`;
-            endMidTopEl.style.marginRight = `${gap * 2}px`;
-          }
-        } else if (startFromStart && !endFromEnd) {
-          left -= gap;
-          width -= gap;
-
-          if (isStartContentEl) {
-            startEl.style.marginLeft = `${gap * 2}px`;
-            startMidTopEl.style.marginLeft = `${gap * 2}px`;
-          }
-          if (isEndContentEl) {
-            endEl.style.marginLeft = `${gap * 2}px`;
-            endMidTopEl.style.marginLeft = `${gap * 2}px`;
-          }
-        } else if (!startFromStart && endFromEnd) {
-          left += gap;
-          width += gap;
-
-          if (isStartContentEl) {
-            startEl.style.marginRight = `${gap * 2}px`;
-            startMidTopEl.style.marginRight = `${gap * 2}px`;
-          }
-          if (isEndContentEl) {
-            endEl.style.marginRight = `${gap * 2}px`;
-            endMidTopEl.style.marginRight = `${gap * 2}px`;
-          }
+        // Apply offset ONLY outward
+        // Start side
+        if (startFromStart) {
+          // rectangle exits left side of start step
+          rawLeft -= offset;
         } else {
-          left += gap;
-          width -= gap * 2;
-
-          if (isStartContentEl) {
-            startEl.style.marginRight = `${gap * 2}px`;
-            startMidTopEl.style.marginRight = `${gap * 2}px`;
-          }
-          if (isEndContentEl) {
-            endEl.style.marginLeft = `${gap * 2}px`;
-            endMidTopEl.style.marginLeft = `${gap * 2}px`;
-          }
+          // rectangle exits right side of start step
+          rawLeft += 5;
         }
 
+        // End side
+        if (endFromEnd) {
+          // rectangle exits right side of end step
+          rawRight += offset;
+        } else {
+          // rectangle exits left side of end step
+          rawRight -= 5;
+        }
+
+        // Final placement
+        let left = rawLeft - pptRect.left;
+        let width = rawRight - rawLeft;
+
         width = Math.max(width, 10);
+
 
         const heightLevelNum =
           parseInt((connection.height || "Level_1").split("_")[1]) || 1;
@@ -6728,7 +6642,6 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
         }
         pptBox.appendChild(rectDiv);
 
-        let linkPairs = [];
         // --- New Part ---
         if (conversionTasks.length > 0) {
           conversionTasks.forEach((task, tIndex) => {
@@ -6759,10 +6672,11 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
             convDiv.id = task.targetId + "_rectangle";
             convDiv.style.position = "absolute";
             convDiv.style.zIndex = 2;
-            linkPairs.push({
-              convClass,
-              polygonClass: null,
-            });
+            task.linkPair = {
+  convClass,
+  polygonClass: null,
+};
+
 
             const convWidth = 145;
             const offSet = 6;
@@ -7064,7 +6978,14 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
             bottomShapePositions.forEach((group, groupIdx) => {
               // className must be unique
               const className = `connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}_content${contentIdx}_grp${groupIdx}`;
-              linkPairs[linkPairs.length - 1].polygonClass = className;
+              const task = conversionTasks.find(
+  t => t.targetId === contentItem.rectangleTooltipId
+);
+
+if (task && task.linkPair) {
+  task.linkPair.polygonClass = className;
+}
+
 
               // cleanup previous
               const prev = pptBox.querySelector(`.${className}`);
@@ -7169,121 +7090,104 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
             });
           });
         }
-
+        // Lines
         if (conversionTasks.length > 0) {
           conversionTasks.forEach((task, tIndex) => {
-            linkPairs.forEach((pair) => {
-              const rectSelector = direction
-                ? `.${pair.convClass}`
-                : `#${task.targetId}`;
-              const rectEl = document.querySelector(rectSelector);
-              const polyEl = document.querySelector(`.${pair.polygonClass}`);
+            conversionTasks.forEach((task) => {
+  if (!task.linkPair) return;
 
-              if (!rectEl || !polyEl) return;
+  const { convClass, polygonClass } = task.linkPair;
+  if (!polygonClass) return;
 
-              // Temporarily show hidden elements for measurement
-              const wasRectHidden = rectEl.style.display === "none";
-              const wasPolyHidden = polyEl.style.display === "none";
+  const rectSelector = direction
+    ? `.${convClass}`
+    : `#${task.targetId}`;
 
-              if (wasRectHidden) rectEl.style.display = "";
-              if (wasPolyHidden) polyEl.style.display = "";
+  const rectEl = document.querySelector(rectSelector);
+  const polyEl = document.querySelector(`.${polygonClass}`);
 
-              // Measure
-              const rectBox = rectEl.getBoundingClientRect();
-              const polyBox = polyEl.getBoundingClientRect();
-              const pptRect = pptBox.getBoundingClientRect();
+  if (!rectEl || !polyEl) return;
 
-              // Restore original hidden state
-              if (wasRectHidden) rectEl.style.display = "none";
-              if (wasPolyHidden) polyEl.style.display = "none";
+  // Temporarily show hidden elements for measurement
+  const wasRectHidden = rectEl.style.display === "none";
+  const wasPolyHidden = polyEl.style.display === "none";
 
-              const top = rectBox.bottom - pptRect.top;
-              const bottom = polyBox.top - pptRect.top;
-              const height = bottom - top;
+  if (wasRectHidden) rectEl.style.display = "";
+  if (wasPolyHidden) polyEl.style.display = "";
 
-              if (height <= 0) return;
+  const rectBox = rectEl.getBoundingClientRect();
+  const polyBox = polyEl.getBoundingClientRect();
+  const pptRect = pptBox.getBoundingClientRect();
 
-              // Unique IDs for line and point
-              const lineId = task.targetId + "_Line";
-              const pointId = task.targetId + "_Line_Point";
+  if (wasRectHidden) rectEl.style.display = "none";
+  if (wasPolyHidden) polyEl.style.display = "none";
 
-              // Remove old line & point
-              const oldLine = document.getElementById(lineId);
-              if (oldLine) oldLine.remove();
+  const top = rectBox.bottom - pptRect.top;
+  const bottom = polyBox.top - pptRect.top;
+  const height = bottom - top;
+  if (height <= 0) return;
 
-              const oldPoint = document.getElementById(pointId);
-              if (oldPoint) oldPoint.remove();
+  const lineId = task.targetId + "_Line";
+  const pointId = task.targetId + "_Line_Point";
 
-              // Colors
-              const BottomLineColor =
-                resolveColor(
-                  task.contentConversion.bottom_line_color,
-                  JSON_Data.colors,
-                ) || "linear-gradient(to bottom, #bbeeea 70%, #a5c9e1)";
-              const BottomPointColor =
-                resolveColor(
-                  task.contentConversion.bottom_point_color,
-                  JSON_Data.colors,
-                ) || "linear-gradient(to right top, #207cb2 1%, #41cbc8)";
+  document.getElementById(lineId)?.remove();
+  document.getElementById(pointId)?.remove();
 
-              // Height offset by levels
-              const offsets = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185];
-              const levelStr =
-                task.contentConversion.bottom_Line_postion || "Level_1";
-              const levelNum = parseInt(levelStr.split("_")[1]);
-              let LineHeightOffset = offsets[levelNum - 1] ?? offsets[0];
+  const BottomLineColor =
+    resolveColor(
+      task.contentConversion.bottom_line_color,
+      JSON_Data.colors
+    ) || "#a5c9e1";
 
-              // Point position adjustment
-              let logo_title_num =
-                task.contentConversion.logo_titles_config.logo_title.length;
-              logo_title_num = Math.max(1, Math.min(logo_title_num, 4));
+  const BottomPointColor =
+    resolveColor(
+      task.contentConversion.bottom_point_color,
+      JSON_Data.colors
+    ) || "#41cbc8";
 
-              const topValues = { 1: 4, 2: 4, 3: 4, 4: 30 };
-              const topPx = topValues[logo_title_num] ?? 22;
+  const offsets = [5, 25, 45, 65, 85, 105, 125, 145, 165, 185];
+  const levelNum = parseInt(
+    (task.contentConversion.bottom_Line_postion || "Level_1").split("_")[1]
+  );
+  const LineHeightOffset = offsets[levelNum - 1] ?? offsets[0];
 
-              // Calculate X position
-              const xCenter = rectBox.left + rectBox.width / 2 - pptRect.left;
+  const xCenter = rectBox.left + rectBox.width / 2 - pptRect.left;
 
-              // --- Create the vertical line ---
-              const lineDiv = document.createElement("div");
-              lineDiv.id = lineId;
-              lineDiv.style.position = "absolute";
-              lineDiv.style.left = xCenter + "px";
-              lineDiv.style.top = top + "px";
-              lineDiv.style.width = "1px";
-              lineDiv.style.height = height + LineHeightOffset + "px";
-              lineDiv.style.background = BottomLineColor;
-              lineDiv.style.transform = "translateX(-50%)";
-              lineDiv.style.zIndex = "3";
+  const lineDiv = document.createElement("div");
+  lineDiv.id = lineId;
+  lineDiv.style.position = "absolute";
+  lineDiv.style.left = `${xCenter}px`;
+  lineDiv.style.top = `${top}px`;
+  lineDiv.style.width = "1px";
+  lineDiv.style.height = `${height + LineHeightOffset}px`;
+  lineDiv.style.background = BottomLineColor;
+  lineDiv.style.transform = "translateX(-50%)";
+  lineDiv.style.zIndex = "3";
 
-              // --- Create the circle point ---
-              const pointDiv = document.createElement("div");
-              pointDiv.id = pointId;
-              pointDiv.style.position = "absolute";
-              pointDiv.style.left = xCenter + "px";
-              pointDiv.style.top = top - topPx + "px";
-              if (!direction) {
-                pointDiv.style.top = top - 3 + "px";
-              }
-              pointDiv.style.width = "5px";
-              pointDiv.style.height = "5px";
-              pointDiv.style.borderRadius = "50%";
-              pointDiv.style.background = BottomPointColor;
-              pointDiv.style.transform = "translateX(-50%)";
-              pointDiv.style.zIndex = "5";
+  const pointDiv = document.createElement("div");
+  pointDiv.id = pointId;
+  pointDiv.style.position = "absolute";
+  pointDiv.style.left = `${xCenter}px`;
+  pointDiv.style.top = `${top - 3}px`;
+  pointDiv.style.width = "5px";
+  pointDiv.style.height = "5px";
+  pointDiv.style.borderRadius = "50%";
+  pointDiv.style.background = BottomPointColor;
+  pointDiv.style.transform = "translateX(-50%)";
+  pointDiv.style.zIndex = "5";
 
-              pptBox.appendChild(lineDiv);
-              pptBox.appendChild(pointDiv);
+  pptBox.appendChild(lineDiv);
+  pptBox.appendChild(pointDiv);
 
-              // Hide if default state = close
-              const state = thingsToDisplay.find(
-                (t) => t.rectangle_id === task.targetId,
-              );
-              if (state && !state.isOpen) {
-                lineDiv.style.display = "none";
-                pointDiv.style.display = "none";
-              }
-            });
+  const state = thingsToDisplay.find(
+    t => t.rectangle_id === task.targetId
+  );
+  if (state && !state.isOpen) {
+    lineDiv.style.display = "none";
+    pointDiv.style.display = "none";
+  }
+});
+
           });
         }
       });
@@ -7435,29 +7339,28 @@ function drawBranchConnectingLines(JSON_Data) {
 drawBranchConnectingLines(JSON_Data);
 
 function applySkipSpacing(skipSpacingTasks) {
-  document.querySelectorAll(".skip-spacer").forEach((el) => el.remove());
+  // 1️⃣ Remove old spacers
+  document.querySelectorAll(".skip-spacer").forEach(el => el.remove());
 
-  const groupSpacingMap = new Map();
-  const groupElementsMap = new Map();
-  skipSpacingTasks.forEach((task) => {
+  const groupSpacingMap = new Map();   // subGroupDiv → total spacing
+  const groupElementsMap = new Map();  // subGroupDiv → elements
+
+  // 2️⃣ Insert spacers
+  skipSpacingTasks.forEach(task => {
     const { skipSteps, skipPlacement, starting, ending } = task;
-
     if (!skipSteps || skipSteps <= 0) return;
 
     const spacingPx = skipSteps * 150;
     const targetId = skipPlacement === "start" ? starting : ending;
-
     if (!targetId) return;
 
     function createSkipSpacer() {
       const spacer = document.createElement("div");
       spacer.className = "skip-spacer";
       spacer.style.width = `${spacingPx}px`;
-      spacer.style.minHeight = "30px";
       spacer.style.height = "100%";
-      spacer.style.background = "transparent";
-      spacer.style.pointerEvents = "none";
       spacer.style.flexShrink = "0";
+      spacer.style.pointerEvents = "none";
       return spacer;
     }
 
@@ -7473,8 +7376,9 @@ function applySkipSpacing(skipSpacingTasks) {
       const subGroupDiv = subGroupsOnLine.parentElement;
 
       if (subGroupDiv) {
+        // ✅ SUM spacing, do NOT max
         const prev = groupSpacingMap.get(subGroupDiv) || 0;
-        groupSpacingMap.set(subGroupDiv, Math.max(prev, spacingPx));
+        groupSpacingMap.set(subGroupDiv, prev + spacingPx);
 
         groupElementsMap.set(subGroupDiv, {
           subGroupsOnLine,
@@ -7483,9 +7387,9 @@ function applySkipSpacing(skipSpacingTasks) {
       }
     }
 
-    /* ---- subgroups-mid-top ---- */
+    /* ---- subgroups-mid-top (icon placeholders only) ---- */
     const midTopTarget = document.querySelector(
-      `.icon_plus_name[data-midtop-for="${targetId}"]`,
+      `.icon_plus_name[data-midtop-for="${targetId}"]`
     );
 
     if (midTopTarget && midTopTarget.parentElement) {
@@ -7495,21 +7399,17 @@ function applySkipSpacing(skipSpacingTasks) {
         : midTopTarget.before(spacer);
     }
   });
-  groupElementsMap.forEach((els, subGroupDiv) => {
-    const spacingPx = groupSpacingMap.get(subGroupDiv) || 0;
-    const { subGroupMidTop } = els;
 
-    if (subGroupMidTop) {
-      if (!subGroupDiv.dataset.baseMidTopWidth) {
-        subGroupDiv.dataset.baseMidTopWidth =
-          subGroupMidTop.getBoundingClientRect().width;
-      }
+  // 3️⃣ FORCE mid-top width to match on-line width
+  groupElementsMap.forEach((els) => {
+    const { subGroupsOnLine, subGroupMidTop } = els;
+    if (!subGroupsOnLine || !subGroupMidTop) return;
 
-      const baseWidth = parseFloat(subGroupDiv.dataset.baseMidTopWidth);
-
-      subGroupMidTop.style.width = `${baseWidth + spacingPx}px`;
-    }
+    const realWidth = subGroupsOnLine.scrollWidth;
+    subGroupMidTop.style.width = `${realWidth}px`;
   });
+
+  // 4️⃣ Redraw dependents
   drawLogoOnMidLine(JSON_Data);
   drawConnectingLines(JSON_Data, height);
   drawConnectingTextLine(JSON_Data, height);

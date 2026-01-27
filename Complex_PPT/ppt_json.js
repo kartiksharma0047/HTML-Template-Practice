@@ -1,6 +1,6 @@
 // Latest JSON at the Top
 
-JSON_Data11={
+JSON_Data11 = {
   footer: {
     footer_label: {
       footer_1_label: "Ambulatory",
@@ -168,7 +168,7 @@ JSON_Data11={
             logo_color: ["#a334c8", "#a334c8", "#a334c8", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: ["GP"],
+                logo_title: ["abcdefghijklmnopqrstuvwxyzjch"],
                 links: [""],
                 logo_id_name: "logo_title_id1",
                 logo_detail: ["GP"],
@@ -533,7 +533,7 @@ JSON_Data11={
                   "Neurologist",
                   "Gynecologist",
                   "Nurse",
-                  "Other Specialists",
+                  "Other Specialistsygfvnbjy",
                 ],
                 logo_title_background_color: [
                   "white",
@@ -556,10 +556,10 @@ JSON_Data11={
                 },
               },
               {
-                logo_title: ["Neurologist"],
+                logo_title: ["Hidden"],
                 links: [""],
                 logo_id_name: "logo_title_id6",
-                logo_detail: ["Neurologist"],
+                logo_detail: ["Hidden"],
                 logo_title_background_color: ["Common_transparent"],
                 logo_title_border: [true],
                 logo_title_border_color: ["Common_transparent"],
@@ -1009,10 +1009,21 @@ JSON_Data11={
             ToolTip_Creation: [
               {
                 display: true,
-                content_id: "on_line_rectangle_1",
+                content_id: "warning_logo_4",
                 vertical_position: "bottom",
-                horizontal_position: "left",
-                openBy: "hover",
+                horizontal_position: "right",
+                openBy: "click",
+                content_HTML:
+                  "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
+                content_CSS:
+                  ".popup-card { background: #3c3c3cff; color: #f5f5f5; width: 200px; min-height: 220px; display: flex; flex-direction: column; padding: 18px 20px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; } .popup-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.45); } .popup-header { margin-bottom: 10px; } .popup-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.7px; color: #aaa; margin-bottom: 2px; } .popup-title { font-size: 16px; font-weight: 600; margin: 0; color: #fff; } .popup-section { margin-top: 12px; } .popup-subtitle { font-size: 11px; color: #bbb; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px; } .popup-tags { display: flex; flex-wrap: wrap; gap: 6px; } .popup-tag { background: #1f1f1f; border: 1px solid #333; border-radius: 4px; font-size: 10px; padding: 3px 7px; color: #eee; transition: background 0.2s; } .popup-tag:hover { background: #2c2c2c; } .popup-text { font-size: 11px; line-height: 1.4; margin: 4px 0; color: #ddd; } .popup-note { font-size: 10px; color: #aaa; line-height: 1.3; margin-top: 4px; border-left: 2px solid #444; padding-left: 6px; }",
+              },
+              {
+                display: true,
+                content_id: "on_line_rectangle_3",
+                vertical_position: "bottom",
+                horizontal_position: "right",
+                openBy: "click",
                 content_HTML:
                   "<div class='popup-card'><div class='popup-header'><p class='popup-section-label'>Diagnosis</p><h4 class='popup-title'>Diagnosis</h4></div><div class='popup-section'><p class='popup-subtitle'>RELATED ACTORS</p><div class='popup-tags'><a href='https://www.youtube.com/' target='_blank' class='popup-tag'>Radiologist</a><span class='popup-tag'>Bio & Other</span></div></div><div class='popup-section'><p class='popup-subtitle'>LOCUS</p><p class='popup-text'>This step takes place mainly in <strong>Private Care</strong> and other related structures.</p><p class='popup-note'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officia.</p></div></div>",
                 content_CSS:
@@ -1034,11 +1045,11 @@ JSON_Data11={
                     iconSize: "Level_2",
                     direction: "default",
                   },
-                  shapeConfig:{
-                    shape:"rectangle",
-                    border:"rounded_lg",
-                    height:"Level_3",
-                  }
+                  shapeConfig: {
+                    shape: "rectangle",
+                    border: "rounded_lg",
+                    height: "Level_3",
+                  },
                 },
               ],
               color: ["#c16fddb5"],
@@ -1049,11 +1060,34 @@ JSON_Data11={
                 {
                   starting: "on_line_content_1",
                   start_from_starting: false,
-                  ending: "on_line_content_6",
+                  ending: "on_line_content_4",
                   end_from_ending: true,
                   skipSteps: 1,
                   skipPlacement: "start",
                   height: "Level_10",
+                  border_thickness: "Level_6",
+                  config: {
+                    fontAwsomeicons: [
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                      "fa-solid fa-angles-right",
+                    ],
+                    iconColors: ["white_color", "white_color", "white_color"],
+                    iconSize: ["Size_3", "Size_3", "Size_3"],
+                    justify_content: "between",
+                    start_end_gaps: "Level_2",
+                    shape: "rounded_bottom",
+                    direction: "reverse",
+                  },
+                },
+                {
+                  starting: "on_line_content_5",
+                  start_from_starting: true,
+                  ending: "on_line_content_7",
+                  end_from_ending: true,
+                  skipSteps: 1,
+                  skipPlacement: "start",
+                  height: "Level_15",
                   border_thickness: "Level_6",
                   config: {
                     fontAwsomeicons: [
@@ -1076,7 +1110,7 @@ JSON_Data11={
                   end_from_ending: true,
                   height: "Level_10",
                   border_thickness: "Level_6",
-                  z_Index:"Level_4",
+                  z_Index: "Level_4",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -1213,6 +1247,75 @@ JSON_Data11={
                           fontAwsomeIcon: ["fa-brands fa-github"],
                           iconColor: ["black"],
                         },
+                        iconConfig: {
+                          display: true,
+                          OpenFontAwsomeicon: "fa-regular fa-user",
+                          CloseFontAwsomeicon: "fa-regular fa-ban",
+                          OpenFontAwsomeiconColor: "purple",
+                          CloseFontAwsomeiconColor: "red",
+                          ByDefaultBehaviour: "open",
+                        },
+                        content_conversion: {
+                          display: true,
+                          bottom_point_color: "Common_onLineContent_Point",
+                          bottom_line_color: "Common_onLineContent_Line",
+                          bottom_Line_postion: "Level_9",
+                          bottom_shape_positions: {
+                            levels: [
+                              "Level_6",
+                              "Level_7",
+                              "Level_8",
+                              "Level_9",
+                            ],
+                            color: [
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                              "Common_onLineContent_Shape",
+                            ],
+                          },
+                          logo_heading: "",
+                          logo_heading_color: "#a334c8",
+                          logo_heading_border_color: "#a334c8",
+                          logo_color: "#a334c8",
+                          logo_titles_config: {
+                            logo_title: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists",
+                            ],
+                            links: [""],
+                            logo_id_name: "on_line_rectangle_logo_title_id300",
+                            logo_detail: [
+                              "Neurologist",
+                              "Gynecologist",
+                              "Nurse",
+                              "Other Specialists",
+                            ],
+                            logo_title_background_color: [
+                              "white",
+                              "white",
+                              "white",
+                            ],
+                            logo_title_border_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            logo_title_color: [
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                              "#a334c8",
+                            ],
+                            top_down_arrow: {
+                              display: true,
+                              arrow_color: "#a334c8",
+                              line_color: "#a334c8",
+                            },
+                          },
+                        },
                       },
                       {
                         text: "DIAGNOSIS",
@@ -1229,7 +1332,7 @@ JSON_Data11={
                       },
                     ],
                   },
-                  connecting_Branch_Line:{
+                  connecting_Branch_Line: {
                     display: true,
                     connections: [
                       {
@@ -1243,9 +1346,9 @@ JSON_Data11={
                         height: "Level_8",
                       },
                     ],
-                    arrow_color: ["#9f30cb","#9f30cb"],
-                    line_color: ["#9f30cb","#9f30cb"],
-                  }
+                    arrow_color: ["#9f30cb", "#9f30cb"],
+                    line_color: ["#9f30cb", "#9f30cb"],
+                  },
                 },
                 {
                   starting: "on_line_content_7",
@@ -1254,7 +1357,7 @@ JSON_Data11={
                   end_from_ending: true,
                   height: "Level_23",
                   border_thickness: "Level_6",
-                  z_Index:"Level_3",
+                  z_Index: "Level_3",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -1356,7 +1459,7 @@ JSON_Data11={
                   end_from_ending: true,
                   height: "Level_25",
                   border_thickness: "Level_6",
-                  z_Index:"Level_2",
+                  z_Index: "Level_2",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -1465,7 +1568,7 @@ JSON_Data11={
                   end_from_ending: true,
                   height: "Level_48",
                   border_thickness: "Level_6",
-                  z_Index:"Level_1",
+                  z_Index: "Level_1",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -1578,6 +1681,41 @@ JSON_Data11={
               ],
               color: ["#58e3d2", "#58e3d2", "#58e3d2"],
             },
+            warning_logos: [
+              {
+                warning_logo_id: "warning_logo_4",
+                target_On_Line_Content: "on_line_rectangle_4",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "middle",
+                openBy: "click",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "1",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                },
+              },
+              {
+                warning_logo_id: "warning_logo_7",
+                target_On_Line_Content: "on_line_rectangle_7",
+                fontAwsomeIcon: "fa-solid fa-exclamation",
+                fontAwsomeIconColor: "white",
+                position: "end",
+                openBy: "click",
+                warningColor: "#fb2932",
+                warningCircleConfig: {
+                  display: true,
+                  circleColor: "#fb2932",
+                  circleNumber: "1",
+                  circleBorder: "#2323239c",
+                  circleNumberColor: "white",
+                },
+              },
+            ],
+
             on_line_content_configuration: {
               content: ["Hidden", "Hidden", "Hidden", "Hidden", "Hidden"],
               striping: [
@@ -1668,7 +1806,7 @@ JSON_Data11={
   ],
 };
 
-JSON_Data10={
+JSON_Data10 = {
   footer: {
     footer_label: {
       footer_1_label: "Ambulatory",
@@ -2702,11 +2840,11 @@ JSON_Data10={
                     iconSize: "Level_2",
                     direction: "default",
                   },
-                  shapeConfig:{
-                    shape:"rectangle",
-                    border:"rounded_lg",
-                    height:"Level_3",
-                  }
+                  shapeConfig: {
+                    shape: "rectangle",
+                    border: "rounded_lg",
+                    height: "Level_3",
+                  },
                 },
               ],
               color: ["#c16fddb5"],
@@ -2744,7 +2882,7 @@ JSON_Data10={
                   end_from_ending: true,
                   height: "Level_10",
                   border_thickness: "Level_6",
-                  z_Index:"Level_4",
+                  z_Index: "Level_4",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -2905,7 +3043,7 @@ JSON_Data10={
                   end_from_ending: true,
                   height: "Level_23",
                   border_thickness: "Level_6",
-                  z_Index:"Level_3",
+                  z_Index: "Level_3",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -3007,7 +3145,7 @@ JSON_Data10={
                   end_from_ending: true,
                   height: "Level_35",
                   border_thickness: "Level_6",
-                  z_Index:"Level_2",
+                  z_Index: "Level_2",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -3116,7 +3254,7 @@ JSON_Data10={
                   end_from_ending: true,
                   height: "Level_48",
                   border_thickness: "Level_6",
-                  z_Index:"Level_1",
+                  z_Index: "Level_1",
                   config: {
                     fontAwsomeicons: [
                       "fa-solid fa-angles-right",
@@ -3351,7 +3489,7 @@ JSON_Data9 = {
     border_color: "black",
     scroll_horizontal: true,
     direction: "reverse",
-    PageHeight:"normal",
+    PageHeight: "normal",
     exportName: "Process_Journey",
     bottomShapesConfig: {
       shapes: ["circle", "trapezium", "circle", "trapezium"],
@@ -3630,7 +3768,7 @@ JSON_Data9 = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id1"]
+                  ReferencedLogoID: ["logo_title_id1"],
                 },
                 {
                   display: true,
@@ -3639,7 +3777,7 @@ JSON_Data9 = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id2"]
+                  ReferencedLogoID: ["logo_title_id2"],
                 },
                 {
                   display: true,
@@ -3648,7 +3786,7 @@ JSON_Data9 = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id3"]
+                  ReferencedLogoID: ["logo_title_id3"],
                 },
                 {
                   display: true,
@@ -3657,7 +3795,7 @@ JSON_Data9 = {
                   OpenFontAwsomeiconColor: "purple",
                   CloseFontAwsomeiconColor: "red",
                   ByDefaultBehaviour: "open",
-                  ReferencedLogoID:["logo_title_id4"]
+                  ReferencedLogoID: ["logo_title_id4"],
                 },
               ],
               logo: [
