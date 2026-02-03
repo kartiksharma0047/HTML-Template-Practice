@@ -9,11 +9,11 @@ JSON_Data = {
       footer_5_label: "Hospital Drugstore",
     },
     label_width: {
-      footer_1_width: "90",
-      footer_2_width: "90",
-      footer_3_width: "90",
-      footer_4_width: "90",
-      footer_5_width: "90",
+      footer_1_width: "96",
+      footer_2_width: "96",
+      footer_3_width: "96",
+      footer_4_width: "96",
+      footer_5_width: "96",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
   },
@@ -1836,133 +1836,76 @@ function getFontSize(sm, md, lg) {
 }
 
 function adjustMidLineWidth(JSON_Data) {
+  if (__isRedrawing) return;
   const pptBox = document.getElementById("PPT-Box");
   const midLine = pptBox?.querySelector(".mid-Line");
   if (!pptBox || !midLine) return;
 
-  // all logo elements (DOM nodes). Adjust selector if your ids differ.
+  // Collect all logo nodes
   const allChildren = Array.from(
-    pptBox.querySelectorAll("[id^='logo_title_id']"),
+    pptBox.querySelectorAll("[id^='logo_title_id']")
   );
+
   if (!allChildren.length) {
-    // nothing to measure
     midLine.style.width = "0px";
     return;
   }
 
-  // container scroll coordinates (relative to container content)
-  const containerScrollLeft = pptBox.scrollLeft;
-  const containerWidth = pptBox.clientWidth;
-  const containerLeft = containerScrollLeft;
-  const containerRight = containerScrollLeft + containerWidth;
-
+  // Build geometry info relative to container content
   const nodesInfo = allChildren.map((el) => {
-    let x = 0;
-    let node = el;
-    while (node && node !== pptBox && node.offsetParent) {
-      x += node.offsetLeft;
-      node = node.offsetParent;
-    }
-    if (node !== pptBox) {
-      const elRect = el.getBoundingClientRect();
-      const pptRect = pptBox.getBoundingClientRect();
-      x = elRect.left - pptRect.left + pptBox.scrollLeft;
-    }
-    const w = el.offsetWidth || el.getBoundingClientRect().width || 0;
-    return { el, left: x, right: x + w, width: w };
-  });
+  let left = 0;
+  let node = el;
 
-  // 1) Prefer the right-most element that is currently visible in the container viewport
-  const visibleNodes = nodesInfo.filter(
-    (n) => n.right > containerLeft && n.left < containerRight && n.width > 0,
-  );
-  let targetNodeInfo = null;
-  if (visibleNodes.length) {
-    targetNodeInfo = visibleNodes.reduce(
-      (a, b) => (b.right > a.right ? b : a),
-      visibleNodes[0],
-    );
-  } else {
-    try {
-      const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
-      const configs = lastSubGroup?.content?.logo_titles_config || [];
-      const lastConfigWithId = configs.filter((c) => c.logo_id_name).at(-1);
-      const lastParentId = lastConfigWithId?.logo_id_name || null;
-
-      if (lastParentId) {
-        const elById = pptBox.querySelector(`#${CSS.escape(lastParentId)}`);
-        if (elById) {
-          // find nodeInfo for this element if present
-          targetNodeInfo = nodesInfo.find((n) => n.el === elById) || null;
-        }
-      }
-    } catch (err) {
-      // ignore and fallback below
-      console.warn("adjustMidLineWidth: safe JSON parse failed", err);
-    }
-
-    // 3) If still no target, pick the furthest-right element in DOM (max right)
-    if (!targetNodeInfo) {
-      targetNodeInfo = nodesInfo.reduce(
-        (a, b) => (b.right > a.right ? b : a),
-        nodesInfo[0],
-      );
-    }
+  while (node && node !== pptBox && node.offsetParent) {
+    left += node.offsetLeft;
+    node = node.offsetParent;
   }
+  const width = el.offsetWidth || 0;
 
-  if (!targetNodeInfo) {
-    midLine.style.width = "0px";
-    return;
-  }
+  return {
+    left,
+    right: left + width,
+    width,
+  };
+});
 
-  // midLine offsetLeft relative to container: similar strategy as above
-  let midLeft = 0;
-  {
-    let node = midLine;
-    while (node && node !== pptBox && node.offsetParent) {
-      midLeft += node.offsetLeft;
-      node = node.offsetParent;
-    }
-    if (node !== pptBox) {
-      // fallback to rect-based correction
-      const elRect = midLine.getBoundingClientRect();
-      const pptRect = pptBox.getBoundingClientRect();
-      midLeft = elRect.left - pptRect.left + pptBox.scrollLeft;
-    }
-  }
 
-  // compute width we need so that midLine reaches the right edge of targetNode relative to container content
-  // optionally subtract small right padding if you want a bit of breathing room (0-10 px)
-  const rightPadding = 0;
-
-  // width in pixels relative to container content
-  let desiredWidth = Math.max(0, targetNodeInfo.right - midLeft - rightPadding);
-
-  // clamp width between 0 and the full content width starting from midLeft.
-  // Need maximum possible content width: you can use the furthest right node in nodesInfo.
+  // 🔑 GLOBAL right-most boundary of the entire workflow
   const furthestRight = nodesInfo.reduce(
-    (a, b) => (b.right > a ? b.right : a),
-    0,
+    (max, n) => Math.max(max, n.right),
+    0
   );
-  const maxPossibleWidth = Math.max(0, furthestRight - midLeft);
 
-  if (desiredWidth > maxPossibleWidth) desiredWidth = maxPossibleWidth;
-  if (desiredWidth < 0) desiredWidth = 0;
+  // Compute midLine left relative to container content
+  let midLeft = 0;
+{
+  let node = midLine;
+  while (node && node !== pptBox && node.offsetParent) {
+    midLeft += node.offsetLeft;
+    node = node.offsetParent;
+  }
+}
 
+
+  // Width = full content span (NOT viewport dependent)
+  let desiredWidth = Math.max(0, furthestRight - midLeft);
+
+  // Visual breathing offset
   const offset = getFontSize(25, 30, 35);
+  desiredWidth += offset;
 
-  desiredWidth = Math.max(0, desiredWidth + offset);
   midLine.style.width = `${Math.round(desiredWidth)}px`;
 }
 
 function adjustFooterWidth(JSON_Data) {
+  if (window.__isRedrawing) return;
+
   const pptBox = document.getElementById("PPT-Box");
   const footer = pptBox?.querySelector(".footer-dark-five-lines");
   if (!pptBox || !footer) return;
 
-  // one-time binding guard on pptBox to avoid multiple listeners
+  // One-time binding guard
   if (!pptBox.__footerWidthBinderAttached) {
-    // debounced runner
     let t;
     const runner = () => {
       clearTimeout(t);
@@ -1979,91 +1922,43 @@ function adjustFooterWidth(JSON_Data) {
     pptBox.__footerWidthBinderAttached = true;
   }
 
-  // gather logo nodes (those with id starting with logo_title_id) - as a stable array
+  // Collect all logo nodes
   const allChildren = Array.from(
-    pptBox.querySelectorAll("[id^='logo_title_id']"),
+    pptBox.querySelectorAll("[id^='logo_title_id']")
   );
+
   if (!allChildren.length) {
     footer.style.width = "0px";
     return;
   }
 
-  // container coords for viewport (in content coordinate space)
-  const containerScrollLeft = pptBox.scrollLeft;
-  const containerWidth = pptBox.clientWidth;
-  const viewportLeft = containerScrollLeft;
-  const viewportRight = containerScrollLeft + containerWidth;
-
-  // build nodesInfo with left/right relative to container content (offsetLeft accumulation, fallback to rect)
+  // Build geometry strictly in CONTENT SPACE
   const nodesInfo = allChildren.map((el) => {
     let left = 0;
     let node = el;
+
     while (node && node !== pptBox && node.offsetParent) {
       left += node.offsetLeft;
       node = node.offsetParent;
     }
-    if (node !== pptBox) {
-      // fallback to bounding rect correction
-      const elRect = el.getBoundingClientRect();
-      const pptRect = pptBox.getBoundingClientRect();
-      left = elRect.left - pptRect.left + pptBox.scrollLeft;
-    }
-    const width =
-      el.offsetWidth ||
-      (el.getBoundingClientRect && el.getBoundingClientRect().width) ||
-      0;
-    return { el, left, right: left + width, width };
+
+    // No fallback to viewport math — intentional
+    const width = el.offsetWidth || 0;
+
+    return {
+      left,
+      right: left + width,
+      width,
+    };
   });
 
-  // find right-most visible node
-  const visibleNodes = nodesInfo.filter(
-    (n) => n.right > viewportLeft && n.left < viewportRight && n.width > 0,
+  // 🔑 GLOBAL right-most boundary of entire workflow (content-space)
+  const furthestRight = nodesInfo.reduce(
+    (max, n) => Math.max(max, n.right),
+    0
   );
-  let targetNode = null;
 
-  if (visibleNodes.length) {
-    targetNode = visibleNodes.reduce((a, b) => (b.right > a.right ? b : a));
-  } else {
-    try {
-      const lastSubGroup = JSON_Data.body?.at(-1)?.sub_groups?.at(-1);
-      const configs = lastSubGroup?.content?.logo_titles_config || [];
-      const logoIds = configs
-        .map((c) => c.logo_id_name)
-        .filter((id) => id && id.trim() !== "");
-      const lastParentId = logoIds.at(-1) || null;
-      if (lastParentId) {
-        // safe id selector (use CSS.escape if available)
-        const safeId =
-          typeof CSS !== "undefined" && CSS.escape
-            ? CSS.escape(lastParentId)
-            : lastParentId.replace(
-                /([#.;?+*~\[\]()>:@!^$\\,{}|\/<>])/g,
-                "\\$1",
-              );
-        const elById = pptBox.querySelector(`#${safeId}`);
-        if (elById) {
-          targetNode = nodesInfo.find((n) => n.el === elById) || null;
-        }
-      }
-    } catch (err) {
-      // ignore and fallback below
-      console.warn("adjustFooterWidth: JSON parse fallback failed", err);
-    }
-
-    if (!targetNode) {
-      targetNode = nodesInfo.reduce(
-        (a, b) => (b.right > a.right ? b : a),
-        nodesInfo[0],
-      );
-    }
-  }
-
-  if (!targetNode) {
-    footer.style.width = "0px";
-    return;
-  }
-
-  // compute footerLeft relative to container
+  // Compute footerLeft in CONTENT SPACE
   let footerLeft = 0;
   {
     let node = footer;
@@ -2071,41 +1966,27 @@ function adjustFooterWidth(JSON_Data) {
       footerLeft += node.offsetLeft;
       node = node.offsetParent;
     }
-    if (node !== pptBox) {
-      const fRect = footer.getBoundingClientRect();
-      const pRect = pptBox.getBoundingClientRect();
-      footerLeft = fRect.left - pRect.left + pptBox.scrollLeft;
-    }
+    // No viewport fallback
   }
 
-  // compute logoCount and lastParentId for padding logic (safe)
-  let logoCount = 0;
-  let lastParentIdForCheck = null;
-  try {
-    const lastBody = JSON_Data.body?.at(-1);
-    const lastSubGroup = lastBody?.sub_groups?.at(-1);
-    const configs = lastSubGroup?.content?.logo_titles_config || [];
-    const logoIds = configs
-      .map((cfg) => cfg.logo_id_name)
-      .filter((id) => id && id.trim() !== "");
-    logoCount = logoIds.length;
-    lastParentIdForCheck = logoIds.at(-1) || null;
-  } catch (err) {
-    console.warn("adjustFooterWidth: logo count parse failed", err);
-  }
-
-  // decide footer width setting and calculate desired width clamped to content bounds
+  // Footer width setting
   const footerWidthSetting = (
     JSON_Data.footer?.footer_width || "auto"
   ).toLowerCase();
+
   if (footerWidthSetting === "default") {
     footer.style.width = "100%";
-  } else {
-    const rightMost = targetNode.right;
-    const offset = getFontSize(20, 30, 36);
-    let desiredWidth = Math.max(0, rightMost + offset);
-    footer.style.width = `${Math.round(desiredWidth)}px`;
+    return;
   }
+
+  // Width = full content span (scroll-independent)
+  let desiredWidth = Math.max(0, furthestRight - footerLeft);
+
+  // Visual breathing offset
+  const offset = getFontSize(20, 30, 36);
+  desiredWidth += offset;
+
+  footer.style.width = `${Math.round(desiredWidth)}px`;
 }
 
 // Util Function -  Safe normalize function for Appian string input
@@ -2156,15 +2037,19 @@ const direction =
 
 function isVisible(el) {
   if (!el) return false;
-  const rect = el.getBoundingClientRect();
-  const style = window.getComputedStyle(el);
-  return (
-    style.display !== "none" &&
-    style.visibility !== "hidden" &&
-    rect.width > 0 &&
-    rect.height > 0
-  );
+
+  let node = el;
+  while (node && node !== document.body) {
+    const style = getComputedStyle(node);
+    if (style.display === "none" || style.visibility === "hidden") {
+      return false;
+    }
+    node = node.parentElement;
+  }
+
+  return el.offsetWidth > 0 && el.offsetHeight > 0;
 }
+
 
 const footerLabels = JSON_Data.footer.footer_label;
 const footerKeys = Object.keys(footerLabels)
@@ -2203,6 +2088,22 @@ function alignmentHeight(JSON_Portion) {
 
 const height =
   alignmentHeight(JSON_Data.Page_Configuration.PageHeight) === "normal";
+
+function getRelativePosition(el, container) {
+  const r = el.getBoundingClientRect();
+  const c = container.getBoundingClientRect();
+
+  return {
+    left: r.left - c.left + container.scrollLeft,
+    top:  r.top  - c.top  + container.scrollTop,
+    width: r.width,
+    height: r.height,
+    right: r.right - c.left + container.scrollLeft,
+    bottom: r.bottom - c.top + container.scrollTop
+  };
+}
+
+let __isRedrawing = false;
 
 function convertToFormat(JsonData) {
   let HTML = ``;
@@ -4428,16 +4329,23 @@ function drawConnectingLines(JSON_Data, GlobalHeight) {
           const height = Math.min(Math.max(rawHeight, 30), 130);
           const topH = Math.min(Math.max(rawTopH, 30), 130);
 
-          const startRect = startEl.getBoundingClientRect();
-          const endRect = endEl.getBoundingClientRect();
-          const pptRect = pptBox.getBoundingClientRect();
+const startRect = getRelativePosition(startEl, pptBox);
+const endRect   = getRelativePosition(endEl, pptBox);
 
-          const deltaX = endRect.left - startRect.left;
-          const deltaY = endRect.top - startRect.top;
-          const width = Math.sqrt(deltaX * deltaX + deltaY * deltaY) - 10;
+// center points
+const startX = startRect.left + startRect.width / 2;
+const startY = startRect.top  + startRect.height / 2;
+const endX   = endRect.left   + endRect.width / 2;
+const endY   = endRect.top    + endRect.height / 2;
 
-          const left = startRect.left - pptRect.left + startRect.width / 2;
-          const top = startRect.top - pptRect.top + (hasAboveLine ? -11 : 0);
+const deltaX = endX - startX;
+const deltaY = endY - startY;
+
+const width = Math.sqrt(deltaX * deltaX + deltaY * deltaY) - 10;
+
+const left = startX;
+const top  = startY + (hasAboveLine ? -11 : 0);
+
 
           const lineClass = `connecting-line-sec${sectionIdx}-sub${idx}-line${i}`;
           const dynamicStyle = `
@@ -4552,9 +4460,8 @@ function drawConnectingCircle(JSON_Data) {
           return;
 
         // measurements
-        const pptRect = pptBox.getBoundingClientRect();
-        const startRect = startEl.getBoundingClientRect();
-        const endRect = endEl.getBoundingClientRect();
+const startRect = getRelativePosition(startEl, pptBox);
+const endRect   = getRelativePosition(endEl, pptBox);
         const distant_Space = 5;
 
         // normalize start_from / end_from to "start" | "middle" | "end"
@@ -4603,7 +4510,6 @@ function drawConnectingCircle(JSON_Data) {
         const minTop = Math.min(startRect.top, endRect.top);
         const topOffset =
           minTop -
-          pptRect.top -
           diameter +
           borderSize / 2 +
           diameter / 2 +
@@ -4649,7 +4555,6 @@ function drawConnectingCircle(JSON_Data) {
         const connectY = Math.min(startRect.top, endRect.top);
         const rectangleTop =
           connectY -
-          pptRect.top -
           resolvedHeight -
           borderSize / 2 +
           getFontSize(0, 5, 5);
@@ -4661,7 +4566,7 @@ function drawConnectingCircle(JSON_Data) {
             ? `
           .${className} {
             position: absolute;
-            left: ${leftAbs - pptRect.left - distant_Space}px;
+            left: ${leftAbs - distant_Space}px;
             width: ${diameter}px;
             height: ${radius}px;
             overflow: hidden;
@@ -4708,7 +4613,7 @@ function drawConnectingCircle(JSON_Data) {
         `
             : `.${className} {
               position: absolute;
-              left: ${leftAbs - pptRect.left - distant_Space}px;
+              left: ${leftAbs - distant_Space}px;
               width: ${distance - borderSize}px;
               height: ${resolvedHeight}px;
               pointer-events: none;
@@ -4893,8 +4798,7 @@ function connectingBottomText(JSON_Data) {
         const targetEl = document.getElementById(item.target_On_Line_Content);
         if (!targetEl || !isVisible(targetEl)) return;
 
-        const pptRect = pptBox.getBoundingClientRect();
-        const targetRect = targetEl.getBoundingClientRect();
+        const targetRect = getRelativePosition(targetEl, pptBox);
         const level = parseLevel(item.height, 10);
         const baseHeight = 15;
         const rectHeight = baseHeight + (level - 1) * 5;
@@ -4907,8 +4811,8 @@ function connectingBottomText(JSON_Data) {
 
         const outset = 8;
         const posRaw = String(item.position || "start").toLowerCase();
-        const elemLeft = targetRect.left - pptRect.left;
-        const elemRight = targetRect.left - pptRect.left + targetRect.width;
+        const elemLeft = targetRect.left;
+        const elemRight = targetRect.left + targetRect.width;
         const elemCenter = elemLeft + targetRect.width / 2;
 
         let leftPx;
@@ -4920,7 +4824,7 @@ function connectingBottomText(JSON_Data) {
           leftPx = elemLeft + outset;
         }
 
-        const topPx = targetRect.bottom - pptRect.top - 1;
+        const topPx = targetRect.bottom - 1;
 
         const styleEl = document.createElement("style");
         styleEl.setAttribute("data-conn", className);
@@ -5027,9 +4931,8 @@ function drawConnectingTextLine(JSON_Data) {
           return;
 
         // measurements
-        const pptRect = pptBox.getBoundingClientRect();
-        const startRect = startEl.getBoundingClientRect();
-        const endRect = endEl.getBoundingClientRect();
+        const startRect = getRelativePosition(startEl, pptBox);
+        const endRect = getRelativePosition(endEl, pptBox);
 
         // normalize start_from / end_from to "start" | "middle" | "end"
         const normalize = (v) => {
@@ -5107,7 +5010,7 @@ function drawConnectingTextLine(JSON_Data) {
         styleEl.textContent = `
           .${className} {
             position: absolute;
-            left: ${leftAbs - pptRect.left}px;
+            left: ${leftAbs}px;
             width: ${distance}px;
             top: ${topOffset}px;
             z-index: 3;
@@ -5347,10 +5250,9 @@ function drawMultiplePolygons(JSON_Data) {
         }
         // --- end NEW ---
 
-        const pptRect = pptBox.getBoundingClientRect();
-        const targetRect = targetEl.getBoundingClientRect();
+        const targetRect = getRelativePosition(targetEl, pptBox);
         const midpointX = targetRect.left + targetRect.width / 2;
-        const leftRelativeToPPT = Math.round(midpointX - pptRect.left);
+        const leftRelativeToPPT = Math.round(midpointX);
 
         // Unique container class
         const prev = pptBox.querySelector(`.${className}`);
@@ -5546,9 +5448,8 @@ function drawLogoOnMidLine(JSON_Data) {
     }
 
     // get bounding rects relative to PPT-Box
-    const pptRect = pptBox.getBoundingClientRect();
-    const sRect = startEl ? startEl.getBoundingClientRect() : null;
-    const eRect = endEl ? endEl.getBoundingClientRect() : null;
+    const sRect = startEl ? getRelativePosition(startEl, pptBox) : null;
+    const eRect = endEl ? getRelativePosition(endEl, pptBox) : null;
 
     // compute icon center coordinates (left, top) relative to PPT-Box
     let iconCenterX = 0;
@@ -5556,24 +5457,23 @@ function drawLogoOnMidLine(JSON_Data) {
     const offsetBetween = 10;
     if (typeRaw === "between") {
       // x1 = start.right, x2 = end.left
-      const x1 = sRect.left - pptRect.left + sRect.width;
-      const x2 = eRect.left - pptRect.left;
+      const x1 = sRect.left + sRect.width;
+      const x2 = eRect.left;
       const midX = x1 + (x2 - x1) / 2;
       iconCenterX = midX;
-      // y: midpoint between vertical centers of the two elements (so "mid line")
-      const sCenterY = sRect.top - pptRect.top + sRect.height / 2;
-      const eCenterY = eRect.top - pptRect.top + eRect.height / 2;
+      const sCenterY = sRect.top + sRect.height / 2;
+      const eCenterY = eRect.top + eRect.height / 2;
       iconCenterY = (sCenterY + eCenterY) / 2;
     } else if (typeRaw === "start") {
       // place left of element (so icon to left of element)
-      const elemLeft = sRect.left - pptRect.left;
-      const elemCenterY = sRect.top - pptRect.top + sRect.height / 2;
+      const elemLeft = sRect.left;
+      const elemCenterY = sRect.top + sRect.height / 2;
       iconCenterX = elemLeft - offsetBetween;
       iconCenterY = elemCenterY;
     } else if (typeRaw === "end") {
       // place right of element
-      const elemRight = eRect.left - pptRect.left + eRect.width;
-      const elemCenterY = eRect.top - pptRect.top + eRect.height / 2;
+      const elemRight = eRect.left + eRect.width;
+      const elemCenterY = eRect.top + eRect.height / 2;
       iconCenterX = elemRight + offsetBetween;
       iconCenterY = elemCenterY;
     }
@@ -5708,8 +5608,7 @@ function warning_Logo(JSON_Data) {
           // Build unique scoped base
           const base = `warning-logo-sec${sectionIdx}-sub${subIdx}-${warnIdx}-${targetId}`;
           const logoID =warn?.warning_logo_id;
-          const pptRect = pptBox.getBoundingClientRect();
-          const tgtRect = targetEl.getBoundingClientRect();
+          const tgtRect = getRelativePosition(targetEl, pptBox);
 
           // cleanup previous with same class
           const old = pptBox.querySelector(`.${base}`);
@@ -5780,11 +5679,11 @@ function warning_Logo(JSON_Data) {
           // compute anchor X
           const pos = String(warn.position || "middle").toLowerCase();
           const computeAnchorX = (rect, part) => {
-            if (part === "start") return rect.left - pptRect.left + 20;
-            if (part === "end")
-              return rect.left - pptRect.left + rect.width - 20;
-            return rect.left - pptRect.left + rect.width / 2;
+            if (part === "start") return rect.left + 20;
+            if (part === "end") return rect.left + rect.width - 20;
+            return rect.left + rect.width / 2;
           };
+
           const anchorX = computeAnchorX(tgtRect, pos);
 
           // geometry
@@ -5794,8 +5693,9 @@ function warning_Logo(JSON_Data) {
           const gapAbove = 20;
 
           const badgeTop = Math.round(
-            tgtRect.top - pptRect.top - triangleHeight - gapAbove,
+            tgtRect.top - triangleHeight - gapAbove
           );
+
           const badgeLeft = Math.round(anchorX);
 
           // create style scoped
@@ -5926,15 +5826,13 @@ function drawBottomTimelineSeries(JSON_Data) {
     return;
   }
 
-  const pptRect = pptBox.getBoundingClientRect();
-
   // 🔹 Get mid-Line reference (ANCHOR)
   const midLineEl = document.querySelector(".mid-Line");
   let midLineCenterY = 0;
 
   if (midLineEl) {
-    const midRect = midLineEl.getBoundingClientRect();
-    midLineCenterY = midRect.top - pptRect.top + midRect.height / 2;
+    const midRect = getRelativePosition(midLineEl, pptBox);
+    midLineCenterY = midRect.top + midRect.height / 2;
   }
 
   const TOLERANCE = 10;
@@ -5986,15 +5884,14 @@ function drawBottomTimelineSeries(JSON_Data) {
         );
 
         // --- Geometry ---
-        const startRect = startEl.getBoundingClientRect();
-        const endRect = endEl.getBoundingClientRect();
+        const startRect = getRelativePosition(startEl, pptBox);
+        const endRect = getRelativePosition(endEl, pptBox);
 
-        const startCenterX =
-          startRect.left - pptRect.left + startRect.width / 2;
-        const endCenterX = endRect.left - pptRect.left + endRect.width / 2;
+        const startCenterX = startRect.left + startRect.width / 2;
+        const endCenterX = endRect.left + endRect.width / 2;
 
-        const startCenterY = startRect.top - pptRect.top + startRect.height / 2;
-        const endCenterY = endRect.top - pptRect.top + endRect.height / 2;
+        const startCenterY = startRect.top + startRect.height / 2;
+        const endCenterY = endRect.top + endRect.height / 2;
 
         const leftX = Math.min(startCenterX, endCenterX);
         const rightX = Math.max(startCenterX, endCenterX);
@@ -6113,6 +6010,43 @@ function drawBottomTimelineSeries(JSON_Data) {
 
 drawBottomTimelineSeries(JSON_Data);
 
+function isElementCollapsed(el) {
+  if (!el) return true;
+
+  // Walk up until Slide-box
+  let node = el;
+  while (node && !node.classList?.contains("Slide-box")) {
+    node = node.parentElement;
+  }
+  if (!node) return true;
+
+  const parentClass = Array.from(node.classList).find(
+    c => c !== "Slide-box"
+  );
+
+  const parentData = collapsibleData.find(
+    p => p.parent_class === parentClass
+  );
+  if (!parentData) return false;
+
+  if (parentData.collapsed) return true;
+
+  // Check subgroup
+  let sgNode = el;
+  while (sgNode && !sgNode.classList?.contains("sub-group-div")) {
+    sgNode = sgNode.parentElement;
+  }
+
+  if (!sgNode) return false;
+
+  const sgClass = Array.from(sgNode.classList).join(" ");
+  const sgData = parentData.sub_groups.find(
+    sg => sg.unique_class === sgClass
+  );
+
+  return sgData?.collapsed === true;
+}
+
 const skipSpacingTasks = [];
 function drawConnectingRectangle(JSON_Data, GlobalHeight) {
   const pptBox = document.getElementById("PPT-Box");
@@ -6153,10 +6087,9 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
         // look up endpoints
         const startEl = document.getElementById(connection.starting);
         const endEl = document.getElementById(connection.ending);
-        if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
+        if (!startEl || !endEl )
           return;
 
-        // ---- SKIP STEPS LOGIC (OPTIONAL) ----
         const skipSteps =
           typeof connection.skipSteps === "number" ? connection.skipSteps : 0;
 
@@ -6178,10 +6111,8 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
           connection.ending.includes("on_line_rectangle_");
 
         // measurements
-        const pptRect = pptBox.getBoundingClientRect();
-        const startRect = startEl.getBoundingClientRect();
-        const endRect = endEl.getBoundingClientRect();
-        const distant_Space = 5;
+        const startRect = getRelativePosition(startEl, pptBox);
+        const endRect = getRelativePosition(endEl, pptBox);
         const borderLevelNum =
           parseInt((connection.border_thickness || "Level_1").split("_")[1]) ||
           1;
@@ -6235,7 +6166,7 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
         }
 
         // Final placement
-        let left = rawLeft - pptRect.left;
+        let left = rawLeft;
         let width = rawRight - rawLeft;
 
         width = Math.max(width, 10);
@@ -6267,9 +6198,9 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
         let axisTop = null;
 
         if (isRectangleAxisStart) {
-          axisTop = startRect.top + startRect.height / 2 - pptRect.top;
+          axisTop = startRect.top + startRect.height / 2;
         } else if (isRectangleAxisEnd) {
-          axisTop = endRect.top + endRect.height / 2 - pptRect.top;
+          axisTop = endRect.top + endRect.height / 2;
         }
 
         // justify_content mapping
@@ -6611,12 +6542,14 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
                   polygonEl.style.display = isOpen ? "" : "none";
                 }
 
-                const lineEl = document.getElementById(rectangle_id + "_Line");
-                if (lineEl) lineEl.style.display = isOpen ? "" : "none";
-
-                const pointEl = document.getElementById(
-                  rectangle_id + "_Line_Point",
-                );
+                pptBox
+  .querySelectorAll(
+    `[id^="${rectangle_id}_Line_"],
+     [id^="${rectangle_id}_Line_Point_"]`
+  )
+  .forEach(el => {
+    el.style.display = isOpen ? "" : "none";
+  });
                 if (pointEl) pointEl.style.display = isOpen ? "" : "none";
 
                 // 5) Update icon UI
@@ -6642,6 +6575,31 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
         }
         pptBox.appendChild(rectDiv);
 
+const connectionVisible =
+  startEl &&
+  endEl &&
+  isVisible(startEl) &&
+  isVisible(endEl) &&
+  !isElementCollapsed(startEl) &&
+  !isElementCollapsed(endEl);
+
+
+if (!connectionVisible) {
+  // remove rectangle
+  pptBox.querySelectorAll(
+    `[class*="connection-Rectangle-sec${sectionIdx}-sub${idx}-rect${i}"],
+     [class*="conversion-rect-sec${sectionIdx}-sub${idx}-conn${i}"],
+     [class*="connecting_polygons_rect_${sectionIdx}_${idx}_conn${i}"]`
+  ).forEach(el => el.remove());
+
+  conversionTasks.forEach((task, tIndex) => {
+    document.getElementById(`${task.targetId}_Line_${tIndex}`)?.remove();
+    document.getElementById(`${task.targetId}_Line_Point_${tIndex}`)?.remove();
+  });
+
+  return;
+}
+
         // --- New Part ---
         if (conversionTasks.length > 0) {
           conversionTasks.forEach((task, tIndex) => {
@@ -6663,8 +6621,7 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
             }
             if (!targetEl) return;
 
-            const targetRect = targetEl.getBoundingClientRect();
-            const pptNowRect = pptBox.getBoundingClientRect();
+            const targetRect=getRelativePosition(targetEl, pptBox)
 
             // MAIN DIV
             const convDiv = document.createElement("div");
@@ -6673,23 +6630,14 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
             convDiv.style.position = "absolute";
             convDiv.style.zIndex = 2;
             task.linkPair = {
-  convClass,
-  polygonClass: null,
-};
-
-
+              convClass,
+              polygonClass: null,
+            };
             const convWidth = 145;
             const offSet = 6;
 
-            convDiv.style.left =
-              Math.round(
-                targetRect.left -
-                  pptNowRect.left +
-                  targetRect.width / 2 -
-                  convWidth / 2,
-              ) +
-              offSet +
-              "px";
+            convDiv.style.left = Math.round(targetRect.left + targetRect.width / 2 - convWidth / 2 + offSet) + "px";
+
             convDiv.style.width = "125px";
             convDiv.style.top = `${
               direction ? (GlobalHeight ? 365 : 505) : 164
@@ -6835,13 +6783,13 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
             pptBox.appendChild(convDiv);
 
             const titleEl = document.getElementById(task.targetId);
-            const pptRect = pptBox.getBoundingClientRect();
-            const titleRect = titleEl.getBoundingClientRect();
+            const titleRect = getRelativePosition(titleEl, pptBox);
             const reactEl = convDiv.querySelector(".icon_plus_name");
-            const rectBoxRect = reactEl.getBoundingClientRect();
+            const rectBoxRect = getRelativePosition(reactEl, pptBox);
 
-            const titleBottomY = titleRect.bottom - pptRect.top;
-            const rectangleTopY = rectBoxRect.top - pptRect.top;
+            const titleBottomY = titleRect.top + titleRect.height;
+            const rectangleTopY = rectBoxRect.top;
+
             let verticalGap = rectangleTopY - titleBottomY;
             if (!direction) {
               verticalGap =
@@ -6969,10 +6917,8 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
               return;
             }
 
-            const pptNow = pptBox.getBoundingClientRect();
-            const targetRect = targetEl.getBoundingClientRect();
-            const midpointX = targetRect.left + targetRect.width / 2;
-            const leftRelativeToPPT = Math.round(midpointX - pptNow.left);
+            const targetRect = getRelativePosition(targetEl, pptBox);
+            const leftRelativeToPPT = Math.round(targetRect.left + targetRect.width / 2);
 
             // For each bottomShapePositions group create a vertical polygon stack container
             bottomShapePositions.forEach((group, groupIdx) => {
@@ -7093,7 +7039,7 @@ if (task && task.linkPair) {
         // Lines
         if (conversionTasks.length > 0) {
           conversionTasks.forEach((task, tIndex) => {
-            conversionTasks.forEach((task) => {
+            
   if (!task.linkPair) return;
 
   const { convClass, polygonClass } = task.linkPair;
@@ -7112,23 +7058,23 @@ if (task && task.linkPair) {
   const wasRectHidden = rectEl.style.display === "none";
   const wasPolyHidden = polyEl.style.display === "none";
 
-  if (wasRectHidden) rectEl.style.display = "";
-  if (wasPolyHidden) polyEl.style.display = "";
+  if (wasRectHidden || wasPolyHidden) {
+    return;
+  }
 
-  const rectBox = rectEl.getBoundingClientRect();
-  const polyBox = polyEl.getBoundingClientRect();
-  const pptRect = pptBox.getBoundingClientRect();
+  const rectBox = getRelativePosition(rectEl, pptBox);
+  const polyBox = getRelativePosition(polyEl, pptBox);
 
   if (wasRectHidden) rectEl.style.display = "none";
   if (wasPolyHidden) polyEl.style.display = "none";
 
-  const top = rectBox.bottom - pptRect.top;
-  const bottom = polyBox.top - pptRect.top;
+  const top = rectBox.top + rectBox.height;
+  const bottom = polyBox.top;
   const height = bottom - top;
   if (height <= 0) return;
 
-  const lineId = task.targetId + "_Line";
-  const pointId = task.targetId + "_Line_Point";
+  const lineId  = `${task.targetId}_Line_${tIndex}`;
+  const pointId = `${task.targetId}_Line_Point_${tIndex}`;
 
   document.getElementById(lineId)?.remove();
   document.getElementById(pointId)?.remove();
@@ -7151,7 +7097,7 @@ if (task && task.linkPair) {
   );
   const LineHeightOffset = offsets[levelNum - 1] ?? offsets[0];
 
-  const xCenter = rectBox.left + rectBox.width / 2 - pptRect.left;
+  const xCenter = rectBox.left + rectBox.width / 2;
 
   const lineDiv = document.createElement("div");
   lineDiv.id = lineId;
@@ -7180,13 +7126,14 @@ if (task && task.linkPair) {
   pptBox.appendChild(pointDiv);
 
   const state = thingsToDisplay.find(
-    t => t.rectangle_id === task.targetId
-  );
-  if (state && !state.isOpen) {
-    lineDiv.style.display = "none";
-    pointDiv.style.display = "none";
-  }
-});
+  t => t.rectangle_id === task.targetId
+);
+
+if (!state || !state.isOpen) {
+  document.getElementById(lineId)?.remove();
+  document.getElementById(pointId)?.remove();
+  return;
+}
 
           });
         }
@@ -7253,9 +7200,8 @@ function drawBranchConnectingLines(JSON_Data) {
           if (!startEl || !endEl || !isVisible(startEl) || !isVisible(endEl))
             return;
 
-          const startRect = startEl.getBoundingClientRect();
-          const endRect = endEl.getBoundingClientRect();
-          const pptRect = pptBox.getBoundingClientRect();
+          const startRect = getRelativePosition(startEl, pptBox);
+          const endRect = getRelativePosition(endEl, pptBox);
 
           const startCX = startRect.left + startRect.width / 2;
           const startCY = startRect.top + startRect.height / 2;
@@ -7276,15 +7222,15 @@ function drawBranchConnectingLines(JSON_Data) {
 
           if (sameY) {
             // └── Horizontal + vertical branch
-            left = Math.min(startCX, endCX) - pptRect.left + offset;
+            left = Math.min(startCX, endCX) + offset;
             width = Math.abs(endCX - startCX) - offset * 2;
-            top = startCY - pptRect.top + ELEMENT_HEIGHT;
+            top = startCY + ELEMENT_HEIGHT;
             height = branchHeight;
           } else {
             // │ Vertical branch
-            left = startCX - pptRect.left - thickness / 2;
+            left = startCX - thickness / 2;
             width = thickness;
-            top = Math.min(startCY, endCY) - pptRect.top + offset;
+            top = Math.min(startCY, endCY) + offset;
             height = Math.abs(endCY - startCY) - offset * 2;
           }
 
@@ -7563,13 +7509,29 @@ function drawPageBottomShapes(JSON_Data) {
         return Math.max(pptBox.clientWidth, pptBox.scrollWidth || 0);
       }
 
-      const pptRect = pptBox.getBoundingClientRect();
       const nodesInfo = allChildren.map((el) => {
-        const elRect = el.getBoundingClientRect();
-        const left = elRect.left - pptRect.left + pptBox.scrollLeft;
-        const w = el.offsetWidth || elRect.width || 0;
-        return { el, left, right: left + w, width: w };
+        let left = 0;
+        let node = el;
+
+        while (node && node !== pptBox && node.offsetParent) {
+          left += node.offsetLeft;
+          node = node.offsetParent;
+        }
+
+        // fallback (rare, but safe)
+        if (node !== pptBox) {
+          left = el.offsetLeft || 0;
+        }
+
+        const width = el.offsetWidth || 0;
+
+        return {
+          left,
+          right: left + width,
+          width,
+        };
       });
+
 
       // find furthest-right node
       const furthest = nodesInfo.reduce(
@@ -7970,7 +7932,6 @@ function ToolTip_Creation(JSON_Data) {
 
           // measure & position function (reads current rectangles)
           const measureAndPosition = () => {
-            const pptRectNow = pptBox.getBoundingClientRect();
             const tgtRectNow = targetEl.getBoundingClientRect();
             const popupRect = wrapper.getBoundingClientRect();
             const TW = popupRect.width,
@@ -7992,15 +7953,9 @@ function ToolTip_Creation(JSON_Data) {
               wrapperX = tgtRectNow.left + tgtRectNow.width - CW / 3;
             else wrapperX = tgtRectNow.left - CW / 3 + TW;
 
-            let finalTop, finalLeft;
+            let finalTop = Math.round(wrapperY);
+            let finalLeft = Math.round(wrapperX);
 
-            if (height) {
-              finalTop = Math.round(wrapperY - pptRectNow.top);
-              finalLeft = Math.round(wrapperX - pptRectNow.left);
-            } else {
-              finalTop = Math.round(wrapperY);
-              finalLeft = Math.round(wrapperX);
-            }
 
             wrapper.style.top = `${finalTop}px`;
             wrapper.style.left = `${finalLeft}px`;
@@ -8289,19 +8244,35 @@ function collapsabile() {
         icon.classList.add("fa-square-caret-right");
       }
 
-      // redraw after any toggle
-      drawBottomTimelineSeries(JSON_Data);
-      drawConnectingLines(JSON_Data, height);
-      drawConnectingTextLine(JSON_Data);
-      drawConnectingRectangle(JSON_Data);
-      drawBranchConnectingLines(JSON_Data);
-      drawConnectingCircle(JSON_Data);
-      adjustFooterWidth(JSON_Data);
-      adjustMidLineWidth(JSON_Data);
-      drawMultiplePolygons(JSON_Data);
-      connectingBottomText(JSON_Data);
-      drawLogoOnMidLine(JSON_Data);
-      warning_Logo(JSON_Data);
+const pptBox = document.getElementById("PPT-Box");
+const prevScrollLeft = pptBox.scrollLeft;
+const prevScrollTop = pptBox.scrollTop;
+
+window.__isRedrawing = true;
+
+// redraw after any toggle
+drawBottomTimelineSeries(JSON_Data);
+drawConnectingLines(JSON_Data, height);
+drawConnectingTextLine(JSON_Data);
+drawConnectingRectangle(JSON_Data);
+drawBranchConnectingLines(JSON_Data);
+drawConnectingCircle(JSON_Data);
+adjustFooterWidth(JSON_Data);
+adjustMidLineWidth(JSON_Data);
+drawMultiplePolygons(JSON_Data);
+connectingBottomText(JSON_Data);
+drawLogoOnMidLine(JSON_Data);
+warning_Logo(JSON_Data);
+
+// 🔒 restore scroll AFTER layout stabilizes
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    pptBox.scrollLeft = prevScrollLeft;
+    pptBox.scrollTop = prevScrollTop;
+    window.__isRedrawing = false;
+  });
+});
+
     }
 
     // ===== SUBGROUP COLLAPSE =====
@@ -8362,19 +8333,34 @@ function collapsabile() {
           icon.classList.add("fa-square-caret-right");
         }
 
-        // redraw after any toggle
-        drawBottomTimelineSeries(JSON_Data);
-        drawConnectingLines(JSON_Data, height);
-        drawConnectingTextLine(JSON_Data);
-        drawConnectingRectangle(JSON_Data);
-        drawBranchConnectingLines(JSON_Data);
-        drawConnectingCircle(JSON_Data);
-        adjustFooterWidth(JSON_Data);
-        adjustMidLineWidth(JSON_Data);
-        drawMultiplePolygons(JSON_Data);
-        connectingBottomText(JSON_Data);
-        drawLogoOnMidLine(JSON_Data);
-        warning_Logo(JSON_Data);
+const pptBox = document.getElementById("PPT-Box");
+const prevScrollLeft = pptBox.scrollLeft;
+const prevScrollTop = pptBox.scrollTop;
+
+window.__isRedrawing = true;
+
+// redraw after any toggle
+drawBottomTimelineSeries(JSON_Data);
+drawConnectingLines(JSON_Data, height);
+drawConnectingTextLine(JSON_Data);
+drawConnectingRectangle(JSON_Data);
+drawBranchConnectingLines(JSON_Data);
+drawConnectingCircle(JSON_Data);
+adjustFooterWidth(JSON_Data);
+adjustMidLineWidth(JSON_Data);
+drawMultiplePolygons(JSON_Data);
+connectingBottomText(JSON_Data);
+drawLogoOnMidLine(JSON_Data);
+warning_Logo(JSON_Data);
+
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    pptBox.scrollLeft = prevScrollLeft;
+    pptBox.scrollTop = prevScrollTop;
+    window.__isRedrawing = false;
+  });
+});
+
       });
     }
   });
