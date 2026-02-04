@@ -9,11 +9,11 @@ JSON_Data = {
       footer_5_label: "Hospital Drugstore",
     },
     label_width: {
-      footer_1_width: "96",
-      footer_2_width: "96",
-      footer_3_width: "96",
-      footer_4_width: "96",
-      footer_5_width: "96",
+      footer_1_width: "on_line_content_1",
+      footer_2_width: "on_line_content_2",
+      footer_3_width: "on_line_content_3",
+      footer_4_width: "on_line_content_1",
+      footer_5_width: "on_line_content_1",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
   },
@@ -167,7 +167,7 @@ JSON_Data = {
             logo_color: ["#a334c8", "#a334c8", "#a334c8", "Common_transparent"],
             logo_titles_config: [
               {
-                logo_title: ["abcdefghijklmnopqrstuvwxyzjch"],
+                logo_title: ["1234567890123456789012345678901234567890123456789012345"],
                 links: [""],
                 logo_id_name: "logo_title_id1",
                 logo_detail: ["GP"],
@@ -299,7 +299,7 @@ JSON_Data = {
               },
             ],
             on_line_content_configuration: {
-              content: ["SYMPTOMS", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
+              content: ["SYMPTOMSUDYSCBHJSKJUHIYGUDSBCHJDSYDJSMCJ", "VISIT", "DIAGNOSTIC TESTS", "DIAGNOSIS"],
               bordered: [{}, { border: true }],
               showHideBtn: [
                 {
@@ -521,8 +521,8 @@ JSON_Data = {
             logo_titles_config: [
               {
                 logo_title: [
-                  "Neurologist",
-                  "Gynecologist",
+                  "Infermiere di Coordinamento123",
+                  "Infermiere di Coordinamento123",
                   "Nurse",
                   "Other Specialists",
                 ],
@@ -2713,7 +2713,7 @@ function convertToFormat(JsonData) {
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
     >
       ${logoStart}
-      <span>${limitText(c, 20)}</span>
+      <span>${c}</span>
       ${logoEnd}
     </h6>
   `;
@@ -2940,7 +2940,7 @@ function convertToFormat(JsonData) {
       ${hasLink ? ` onclick="window.open('${link}', '_blank')"` : ""}
     >
       ${logoStart}
-      <span>${limitText(c, 20)}</span>
+      <span>${c}</span>
       ${logoEnd}
     </h6>
   `;
@@ -3239,6 +3239,8 @@ function convertToFormat(JsonData) {
     text-align:center;
     position: relative;
     transition:0.1s all;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .${uniqueClassName} .subgroups-on-line-content h6 i {
     position: absolute;
@@ -3248,7 +3250,6 @@ function convertToFormat(JsonData) {
     top: 50%;
     transform: translateY(-50%);
   }
-  /* === Right Line example === */
   ${
     configurations.line_right
       ? `
@@ -4170,6 +4171,112 @@ document.body.innerHTML = Final_HTML;
 const styleTag = document.createElement("style");
 styleTag.textContent = Final_CSS;
 document.head.appendChild(styleTag);
+
+function extendStepWidthActorWidth(JSON_Data) {
+  const STEP_WIDTH = "270px";
+  const ACTOR_WIDTH = "290px";
+
+  if (!JSON_Data || !Array.isArray(JSON_Data.body)) {
+    console.warn("extendStepWidthActorWidth: Invalid JSON");
+    return;
+  }
+
+  // 1. Collect step IDs
+  const stepIds = [];
+
+  JSON_Data.body.forEach((page) => {
+    if (page?.component !== "Header") return;
+
+    page.sub_groups?.forEach((sg) => {
+      const cfg = sg?.content?.on_line_content_configuration;
+      if (!cfg) return;
+
+      (cfg.content_id || []).forEach((id) => {
+        if (typeof id === "string" && id.startsWith("on_line_content_")) {
+          stepIds.push(id);
+        }
+      });
+    });
+  });
+
+  // 2. Process each step
+  stepIds.forEach((stepId) => {
+    const stepEl = document.getElementById(stepId);
+    if (!stepEl) return;
+
+    const stepH6 = stepEl.querySelector("h6");
+    if (!stepH6) return;
+
+    const spanEl = stepH6.querySelector("span");
+    if (!spanEl) return;
+
+    // Cache original step text (prevent double truncation)
+    if (!spanEl.__originalText) {
+      spanEl.__originalText = spanEl.textContent.trim();
+    }
+
+    const actorEl = document.querySelector(
+      `.icon_plus_name[data-midtop-for="${stepId}"]`
+    );
+    if (!actorEl) return;
+
+    const nameBox = actorEl.querySelector(".icon-plus-name-box");
+    if (!nameBox) return;
+
+    let shouldExpand = false;
+
+    // CASE 1: only <p>, no enclosed divs
+    const enclosedDivs = nameBox.querySelectorAll(
+      ".icon-plus-name-box-enclosed"
+    );
+
+    if (enclosedDivs.length === 0) {
+      const p = nameBox.querySelector("p");
+      if (p && p.textContent.trim().length >= 30) {
+        shouldExpand = true;
+      }
+    }
+    // CASE 2: enclosed divs with <p>
+    else {
+      enclosedDivs.forEach((div) => {
+        const p = div.querySelector("p");
+        if (p && p.textContent.trim().length >= 13) {
+          shouldExpand = true;
+        }
+      });
+    }
+
+    // 3. Apply width + text rules
+    let textLimit;
+
+    if (shouldExpand) {
+      // Step side
+      stepH6.style.width = STEP_WIDTH;
+
+      // Actor container
+      actorEl.style.width = ACTOR_WIDTH;
+      actorEl.style.minWidth = ACTOR_WIDTH;
+
+      // Icon + name box
+      nameBox.style.width = ACTOR_WIDTH;
+      nameBox.style.minWidth = ACTOR_WIDTH;
+
+      // All <p> inside (direct or enclosed)
+      nameBox.querySelectorAll("p").forEach((p) => {
+        p.style.maxWidth = ACTOR_WIDTH;
+      });
+
+      textLimit = 40;
+    } else {
+      textLimit = 17;
+    }
+
+    // Apply step text limit using EXISTING function
+    spanEl.textContent = limitText(spanEl.__originalText, textLimit);
+  });
+}
+
+extendStepWidthActorWidth(JSON_Data)
 
 function applyFontConfig(JSON_Data) {
   const { fontConfig } = JSON_Data || {};
@@ -6542,14 +6649,24 @@ function drawConnectingRectangle(JSON_Data, GlobalHeight) {
                   polygonEl.style.display = isOpen ? "" : "none";
                 }
 
+                // 5) Line and Bottom Point Toogle
                 pptBox
-  .querySelectorAll(
-    `[id^="${rectangle_id}_Line_"],
-     [id^="${rectangle_id}_Line_Point_"]`
-  )
-  .forEach(el => {
-    el.style.display = isOpen ? "" : "none";
-  });
+                .querySelectorAll(
+                  `[id^="${rectangle_id}_Line_"],
+                  [id^="${rectangle_id}_Line_Point_"]`
+                )
+                .forEach(el => {
+                  el.style.display = isOpen ? "" : "none";
+                });
+                // 6) Toggle associated branch connecting lines
+                pptBox
+                .querySelectorAll(
+                  `[data-starting-element-id="${rectangle_id}"]`
+                )
+                .forEach(lineEl => {
+                  lineEl.style.display = isOpen ? "" : "none";
+                });
+
                 if (pointEl) pointEl.style.display = isOpen ? "" : "none";
 
                 // 5) Update icon UI
@@ -7275,6 +7392,10 @@ function drawBranchConnectingLines(JSON_Data) {
 
           const lineDiv = document.createElement("div");
           lineDiv.className = lineClass;
+          lineDiv.setAttribute(
+            "data-starting-element-id",
+            connection.starting
+          );
           pptBox.appendChild(lineDiv);
         });
       });
@@ -7283,6 +7404,109 @@ function drawBranchConnectingLines(JSON_Data) {
 }
 
 drawBranchConnectingLines(JSON_Data);
+
+function footerWidthFixes(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox || !JSON_Data?.footer?.label_width) return;
+
+  const footer = pptBox.querySelector(".footer-dark-five-lines");
+  if (!footer) return;
+
+  const footerDivs = footer.children;
+
+  /* ---------------------------------------
+     Collect FIRST step ID inline (no helper)
+  --------------------------------------- */
+  let firstStepId = null;
+
+  if (Array.isArray(JSON_Data.body)) {
+    JSON_Data.body.some((page) => {
+      if (page?.component !== "Header") return false;
+
+      return page.sub_groups?.some((sg) => {
+        const cfg = sg?.content?.on_line_content_configuration;
+        if (!cfg) return false;
+
+        return (cfg.content_id || []).some((id) => {
+          if (typeof id === "string" && id.startsWith("on_line_content_")) {
+            firstStepId = id;
+            return true;
+          }
+          return false;
+        });
+      });
+    });
+  }
+
+  if (!firstStepId) return;
+
+  /* ---------------------------------------
+     Apply footer widths
+  --------------------------------------- */
+  Object.keys(JSON_Data.footer.label_width).forEach((widthKey) => {
+    const index = parseInt(
+      widthKey.replace("footer_", "").replace("_width", "")
+    );
+
+    if (isNaN(index) || index < 1 || index > 10) return;
+
+    const rawValue = JSON_Data.footer.label_width[widthKey];
+    let widthCSS = null;
+    if (
+      typeof rawValue === "string" &&
+      rawValue.trim() !== "" &&
+      !isNaN(rawValue)
+    ) {
+      let pct = parseFloat(rawValue);
+      pct = Math.max(0, Math.min(200, pct));
+      widthCSS = `${pct}%`;
+    }
+    else {
+      let stepId = null;
+
+      // valid step id provided
+      if (
+        typeof rawValue === "string" &&
+        rawValue.startsWith("on_line_content_") &&
+        document.getElementById(rawValue)
+      ) {
+        stepId = rawValue;
+      } else {
+        stepId = firstStepId;
+      }
+
+      const stepEl = document.getElementById(stepId);
+      if (!stepEl) return;
+
+      const pos = getRelativePosition(stepEl, pptBox);
+
+      // CONTENT-SPACE left
+      let stepLeft = 0;
+      let node = stepEl;
+      while (node && node !== pptBox && node.offsetParent) {
+        stepLeft += node.offsetLeft;
+        node = node.offsetParent;
+      }
+
+      const contentWidth = pptBox.scrollWidth;
+
+      // 🔑 RIGHT-ANCHORED, SCROLL-SAFE FINAL WIDTH
+      const desiredWidth = Math.max(
+        0,
+        contentWidth - stepLeft + pos.width
+      );
+
+      widthCSS = `${Math.round(desiredWidth)}px`;
+    }
+
+    const footerDiv = footerDivs[index - 1];
+    if (footerDiv && widthCSS) {
+      footerDiv.style.width = widthCSS;
+    }
+  });
+}
+
+footerWidthFixes(JSON_Data);
 
 function applySkipSpacing(skipSpacingTasks) {
   // 1️⃣ Remove old spacers
@@ -8258,6 +8482,7 @@ drawConnectingRectangle(JSON_Data);
 drawBranchConnectingLines(JSON_Data);
 drawConnectingCircle(JSON_Data);
 adjustFooterWidth(JSON_Data);
+footerWidthFixes(JSON_Data);
 adjustMidLineWidth(JSON_Data);
 drawMultiplePolygons(JSON_Data);
 connectingBottomText(JSON_Data);
@@ -8347,6 +8572,7 @@ drawConnectingRectangle(JSON_Data);
 drawBranchConnectingLines(JSON_Data);
 drawConnectingCircle(JSON_Data);
 adjustFooterWidth(JSON_Data);
+footerWidthFixes(JSON_Data);
 adjustMidLineWidth(JSON_Data);
 drawMultiplePolygons(JSON_Data);
 connectingBottomText(JSON_Data);
