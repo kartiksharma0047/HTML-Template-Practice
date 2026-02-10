@@ -1,4 +1,5 @@
 let collapsibleData = [];
+
 JSON_Data = {
   footer: {
     footer_label: {
@@ -6,14 +7,14 @@ JSON_Data = {
       footer_2_label: "Hospital",
       footer_3_label: "Other structure",
       footer_4_label: "Home",
-      footer_5_label: "Hospital Drugstore",
+      footer_5_label: "Nerulogist Hospital Center",
     },
     label_width: {
       footer_1_width: "on_line_content_1",
       footer_2_width: "on_line_content_2",
       footer_3_width: "on_line_content_3",
-      footer_4_width: "on_line_content_1",
-      footer_5_width: "on_line_content_1",
+      footer_4_width: "on_line_content_4",
+      footer_5_width: "on_line_content_5",
     },
     footer_lines_color: "linear-gradient(to bottom, #f5fbfb, #eaf0f0)",
   },
@@ -1906,21 +1907,20 @@ function adjustFooterWidth(JSON_Data) {
 
   // One-time binding guard
   if (!pptBox.__footerWidthBinderAttached) {
-    let t;
-    const runner = () => {
-      clearTimeout(t);
-      t = setTimeout(() => {
-        try {
-          adjustFooterWidth(JSON_Data);
-        } catch (e) {
-          console.warn("adjustFooterWidth runner error", e);
-        }
-      }, 40);
-    };
-    pptBox.addEventListener("scroll", runner, { passive: true });
-    window.addEventListener("resize", runner);
-    pptBox.__footerWidthBinderAttached = true;
-  }
+  const runner = () => {
+    if (window.__isRedrawing) return;
+    try {
+      adjustFooterWidth(inputData);
+    } catch (e) {
+      console.warn("adjustFooterWidth runner error", e);
+    }
+  };
+
+  pptBox.addEventListener("scroll", runner, { passive: true });
+  window.addEventListener("resize", runner);
+  pptBox.__footerWidthBinderAttached = true;
+}
+
 
   // Collect all logo nodes
   const allChildren = Array.from(
@@ -4354,23 +4354,22 @@ function applyFontConfig(JSON_Data) {
 
 applyFontConfig(JSON_Data);
 
-// Usage: call on load and whenever the container scrolls/resizes or content changes
-adjustMidLineWidth(JSON_Data);
 
 const pptBoxEl = document.getElementById("PPT-Box");
-if (pptBoxEl) {
-  // debounce helper to avoid too many layout recalcs
-  let _timer = null;
-  const debouncedAdjust = () => {
-    clearTimeout(_timer);
-    _timer = setTimeout(() => adjustMidLineWidth(JSON_Data), 40);
+if (pptBoxEl && !pptBoxEl.__layoutBinderAttached) {
+  const runner = () => {
+    if (window.__isRedrawing) return;
+
+    adjustMidLineWidth(JSON_Data);
+    footerWidthFixes(JSON_Data);
+    adjustFooterWidth(JSON_Data);
   };
-  pptBoxEl.addEventListener("scroll", debouncedAdjust, { passive: true });
-  window.addEventListener("resize", debouncedAdjust);
+
+  pptBoxEl.addEventListener("scroll", runner, { passive: true });
+  window.addEventListener("resize", runner);
+  pptBoxEl.__layoutBinderAttached = true;
 }
 
-adjustMidLineWidth(JSON_Data);
-adjustFooterWidth(JSON_Data);
 
 function drawConnectingLines(JSON_Data, GlobalHeight) {
   const pptBox = document.getElementById("PPT-Box");
@@ -7405,109 +7404,6 @@ function drawBranchConnectingLines(JSON_Data) {
 
 drawBranchConnectingLines(JSON_Data);
 
-function footerWidthFixes(JSON_Data) {
-  const pptBox = document.getElementById("PPT-Box");
-  if (!pptBox || !JSON_Data?.footer?.label_width) return;
-
-  const footer = pptBox.querySelector(".footer-dark-five-lines");
-  if (!footer) return;
-
-  const footerDivs = footer.children;
-
-  /* ---------------------------------------
-     Collect FIRST step ID inline (no helper)
-  --------------------------------------- */
-  let firstStepId = null;
-
-  if (Array.isArray(JSON_Data.body)) {
-    JSON_Data.body.some((page) => {
-      if (page?.component !== "Header") return false;
-
-      return page.sub_groups?.some((sg) => {
-        const cfg = sg?.content?.on_line_content_configuration;
-        if (!cfg) return false;
-
-        return (cfg.content_id || []).some((id) => {
-          if (typeof id === "string" && id.startsWith("on_line_content_")) {
-            firstStepId = id;
-            return true;
-          }
-          return false;
-        });
-      });
-    });
-  }
-
-  if (!firstStepId) return;
-
-  /* ---------------------------------------
-     Apply footer widths
-  --------------------------------------- */
-  Object.keys(JSON_Data.footer.label_width).forEach((widthKey) => {
-    const index = parseInt(
-      widthKey.replace("footer_", "").replace("_width", "")
-    );
-
-    if (isNaN(index) || index < 1 || index > 10) return;
-
-    const rawValue = JSON_Data.footer.label_width[widthKey];
-    let widthCSS = null;
-    if (
-      typeof rawValue === "string" &&
-      rawValue.trim() !== "" &&
-      !isNaN(rawValue)
-    ) {
-      let pct = parseFloat(rawValue);
-      pct = Math.max(0, Math.min(200, pct));
-      widthCSS = `${pct}%`;
-    }
-    else {
-      let stepId = null;
-
-      // valid step id provided
-      if (
-        typeof rawValue === "string" &&
-        rawValue.startsWith("on_line_content_") &&
-        document.getElementById(rawValue)
-      ) {
-        stepId = rawValue;
-      } else {
-        stepId = firstStepId;
-      }
-
-      const stepEl = document.getElementById(stepId);
-      if (!stepEl) return;
-
-      const pos = getRelativePosition(stepEl, pptBox);
-
-      // CONTENT-SPACE left
-      let stepLeft = 0;
-      let node = stepEl;
-      while (node && node !== pptBox && node.offsetParent) {
-        stepLeft += node.offsetLeft;
-        node = node.offsetParent;
-      }
-
-      const contentWidth = pptBox.scrollWidth;
-
-      // 🔑 RIGHT-ANCHORED, SCROLL-SAFE FINAL WIDTH
-      const desiredWidth = Math.max(
-        0,
-        contentWidth - stepLeft + pos.width
-      );
-
-      widthCSS = `${Math.round(desiredWidth)}px`;
-    }
-
-    const footerDiv = footerDivs[index - 1];
-    if (footerDiv && widthCSS) {
-      footerDiv.style.width = widthCSS;
-    }
-  });
-}
-
-footerWidthFixes(JSON_Data);
-
 function applySkipSpacing(skipSpacingTasks) {
   // 1️⃣ Remove old spacers
   document.querySelectorAll(".skip-spacer").forEach(el => el.remove());
@@ -7588,6 +7484,7 @@ function applySkipSpacing(skipSpacingTasks) {
   drawBottomTimelineSeries(JSON_Data);
   drawConnectingCircle(JSON_Data);
   adjustFooterWidth(JSON_Data);
+  footerWidthFixes(JSON_Data)
   adjustMidLineWidth(JSON_Data);
   drawMultiplePolygons(JSON_Data);
   connectingBottomText(JSON_Data);
@@ -8378,6 +8275,114 @@ function ToolTip_Creation(JSON_Data) {
 
 ToolTip_Creation(JSON_Data);
 
+function footerWidthFixes(JSON_Data) {
+  const pptBox = document.getElementById("PPT-Box");
+  if (!pptBox || !JSON_Data?.footer?.label_width) return;
+
+  const footer = pptBox.querySelector(".footer-dark-five-lines");
+  if (!footer) return;
+
+  const footerDivs = footer.children;
+
+  /* ---------------------------------------
+     1. Collect ALL steps in DOM order
+  --------------------------------------- */
+  const allSteps = Array.from(
+    pptBox.querySelectorAll('[id^="on_line_content_"]')
+  );
+  if (!allSteps.length) return;
+
+  /* ---------------------------------------
+     2. ACTIVE steps (display-safe)
+  --------------------------------------- */
+  const activeSteps = allSteps.filter(step => {
+    let node = step;
+    while (node && node !== pptBox) {
+      const style = getComputedStyle(node);
+      if (style.display === "none") return false;
+      node = node.parentElement;
+    }
+    return true;
+  });
+
+  if (!activeSteps.length) return;
+
+  /* ---------------------------------------
+     3. Reset widths (safe)
+  --------------------------------------- */
+  Array.from(footerDivs).forEach(div => {
+    div.style.width = "";
+  });
+
+  /* ---------------------------------------
+     4. Geometry anchors (STABLE)
+  --------------------------------------- */
+  const pptRect = pptBox.getBoundingClientRect();
+  const contentWidth = pptBox.scrollWidth;
+
+  /* ---------------------------------------
+     5. Apply footer widths
+  --------------------------------------- */
+  Object.keys(JSON_Data.footer.label_width).forEach(widthKey => {
+    const index = parseInt(
+      widthKey.replace("footer_", "").replace("_width", ""),
+      10
+    );
+    if (isNaN(index) || index < 1 || index > footerDivs.length) return;
+
+    const rawValue = JSON_Data.footer.label_width[widthKey];
+    let widthCSS = null;
+
+    /* ===== Percentage ===== */
+    if (
+      typeof rawValue === "string" &&
+      rawValue.trim() !== "" &&
+      !isNaN(rawValue)
+    ) {
+      let pct = Math.max(0, Math.min(200, parseFloat(rawValue)));
+      widthCSS = `${pct}%`;
+    }
+
+    /* ===== Step-based ===== */
+    else {
+      let targetStep = null;
+
+      if (
+        typeof rawValue === "string" &&
+        rawValue.startsWith("on_line_content_")
+      ) {
+        const startIdx = allSteps.findIndex(s => s.id === rawValue);
+        if (startIdx !== -1) {
+          targetStep =
+            activeSteps.find(
+              s => allSteps.indexOf(s) >= startIdx
+            ) || activeSteps[0];
+        }
+      }
+
+      if (!targetStep) {
+        targetStep = activeSteps[0];
+      }
+
+      const stepRect = targetStep.getBoundingClientRect();
+
+      // 🔑 CONTENT-SPACE LEFT (SCROLL SAFE)
+      const stepLeft =
+        stepRect.left - pptRect.left + pptBox.scrollLeft;
+
+      const desiredWidth = Math.max(0, contentWidth - stepLeft);
+      widthCSS = `${Math.round(desiredWidth)}px`;
+    }
+
+    const footerDiv = footerDivs[index - 1];
+    if (footerDiv && widthCSS) {
+      footerDiv.style.width = widthCSS;
+    }
+  });
+}
+
+footerWidthFixes(JSON_Data);
+
 function collapsabile() {
   const parents = document.querySelectorAll(".Slide-box");
 
@@ -8481,8 +8486,8 @@ drawConnectingTextLine(JSON_Data);
 drawConnectingRectangle(JSON_Data);
 drawBranchConnectingLines(JSON_Data);
 drawConnectingCircle(JSON_Data);
-adjustFooterWidth(JSON_Data);
 footerWidthFixes(JSON_Data);
+adjustFooterWidth(JSON_Data);
 adjustMidLineWidth(JSON_Data);
 drawMultiplePolygons(JSON_Data);
 connectingBottomText(JSON_Data);
@@ -8571,8 +8576,8 @@ drawConnectingTextLine(JSON_Data);
 drawConnectingRectangle(JSON_Data);
 drawBranchConnectingLines(JSON_Data);
 drawConnectingCircle(JSON_Data);
-adjustFooterWidth(JSON_Data);
 footerWidthFixes(JSON_Data);
+adjustFooterWidth(JSON_Data);
 adjustMidLineWidth(JSON_Data);
 drawMultiplePolygons(JSON_Data);
 connectingBottomText(JSON_Data);
